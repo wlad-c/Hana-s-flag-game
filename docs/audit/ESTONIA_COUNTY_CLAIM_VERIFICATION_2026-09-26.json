@@ -1,0 +1,1803 @@
+{
+  "auditDate": "2026-09-26",
+  "repository": "wladimirchagas/Hana-s-flag-game",
+  "applicationRevision": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "scope": "All 15 current Estonian county flag meaning records, corresponding images and internal SVG metadata. Municipal flags, maps, population and city flags are outside this ledger.",
+  "method": [
+    "Read all 15 complete English descriptions and Estonian Government Office blazons/explanations.",
+    "Downloaded and visually compared all 15 official SVGs with repository images.",
+    "Parsed all 15 SVG root identifiers and embedded descriptive metadata.",
+    "Read National Archives historical panels 2,6-1,9,10-1,12; all 22 panels downloaded, other panels only visually screened at contact-sheet scale.",
+    "Common statements counted once per record; some compound design claims remain grouped. This is not a universal atomic-claim denominator."
+  ],
+  "counts": {
+    "records": 15,
+    "imagesVisuallyCompared": 15,
+    "claimGroups": 136,
+    "statuses": {
+      "verified": 104,
+      "corroborated-secondary": 13,
+      "imprecise": 1,
+      "unverified": 10,
+      "conflicting-evidence": 2,
+      "incorrect": 2,
+      "partially-verified": 4
+    },
+    "incorrectInternalImageIdentifiers": 2
+  },
+  "findings": [
+    "F84: EE-57 eagle described as hawk",
+    "F85: EE-86 current sword direction described incorrectly",
+    "F86: EE-37 and EE-51 SVG root/layer identifiers say Flag of Elva"
+  ],
+  "historicalEvidenceManifest": [
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/1-1600x2133.jpg",
+      "file": "archive-1-1600x2133.jpg",
+      "sha256": "d7a28e07c24b3a431b60b3dc63747e79eab28cfaa20c3b9f5d6a7e640bfedbbe"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg",
+      "file": "archive-2-1600x2133.jpg",
+      "sha256": "92c91ab664a19df3a735120b6a17863170233f85b34697e116726b185c19e64b"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/2-2-1600x2133.jpg",
+      "file": "archive-2-2-1600x2133.jpg",
+      "sha256": "bd4c686ca3bbdf12dccac0f2181b86edcdc9de97bcf77ed90844828c9f929a07"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/2-3-1600x2133.jpg",
+      "file": "archive-2-3-1600x2133.jpg",
+      "sha256": "bb63ab0cb8546288ecb509b40c907b95a2b049b601c7aa0d3b7493e565d0b5c7"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/3-1-1600x2133.jpg",
+      "file": "archive-3-1-1600x2133.jpg",
+      "sha256": "9e5683c5d4cf3faee4c8cc5ba033455ad85eab2d1bd262bf3fa92e5c5041b435"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/3-2-1600x2133.jpg",
+      "file": "archive-3-2-1600x2133.jpg",
+      "sha256": "0bf54c603b0899b2b6c3c59f4ec6264cade4f4d4515b503213dddd35b7d9c625"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/4-1-1600x2133.jpg",
+      "file": "archive-4-1-1600x2133.jpg",
+      "sha256": "77ab0a641560eff4af694d4334a300699beaf526f4f02e262ef3bd5e274d6c3d"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/4-2-1600x2133.jpg",
+      "file": "archive-4-2-1600x2133.jpg",
+      "sha256": "055aa5c23256c71e1cae2a0e019022b133328a08b5fb7313df912130c561b680"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/5-1600x2133.jpg",
+      "file": "archive-5-1600x2133.jpg",
+      "sha256": "a2d5aa5e3f519323b57a2ae5f923a5679feda9130e6a34e512b74ea1a370e3ce"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/6-1-1600x2133.jpg",
+      "file": "archive-6-1-1600x2133.jpg",
+      "sha256": "0dcef10482842012f67df9d0ff33e426977fe44ace0e7b81cdc475aae715e827"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/6-2-1600x2133.jpg",
+      "file": "archive-6-2-1600x2133.jpg",
+      "sha256": "3469f467fbb695ba85821712232ac767f88d3e6fb95209a7650b8303b4c9febc"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/6-3-1600x2133.jpg",
+      "file": "archive-6-3-1600x2133.jpg",
+      "sha256": "bf202a0df2de5624d7093103ebad679221ab5ca188f4d8bd8fe3527e80f04222"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/7-1-1600x2133.jpg",
+      "file": "archive-7-1-1600x2133.jpg",
+      "sha256": "43f4ea34049ba7201460d22781b38c887625a9b707f7b461d8d39117ddcb7979"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/7-2-1600x2133.jpg",
+      "file": "archive-7-2-1600x2133.jpg",
+      "sha256": "1bffec5e20a7ee70276cb3e695159723cc2b4c2814eb33fe59de76d0e557239d"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/8-1-1600x2133.jpg",
+      "file": "archive-8-1-1600x2133.jpg",
+      "sha256": "7ce8f024011bdbad4cb477d00606318f0d1da2194d8e0215144ff92ca9320111"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/8-2-1600x2133.jpg",
+      "file": "archive-8-2-1600x2133.jpg",
+      "sha256": "083bba1ee28194aff5042688b9dfba1e9799883bbbcf7af906aa81f2dec7ba10"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/9-1600x2133.jpg",
+      "file": "archive-9-1600x2133.jpg",
+      "sha256": "84ac9f088cd9c3d04156865d1bf2be1d0d54b19946e233bf9e5711ba60592ac0"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/10-1-1600x2133.jpg",
+      "file": "archive-10-1-1600x2133.jpg",
+      "sha256": "3b8a81c68a31860f493bd77579b991638fdebe9708dcf70ef5c08017af076ea7"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/10-2-1600x2133.jpg",
+      "file": "archive-10-2-1600x2133.jpg",
+      "sha256": "0feb832160991805bb98a52fce1bc71d362238fa18491f88cf1a11c4a2e549b2"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/11-1-1600x2133.jpg",
+      "file": "archive-11-1-1600x2133.jpg",
+      "sha256": "9aad7a01ae20a5304ec057e1fef1d381883ff95aceb033a09bb8b9b2946aa259"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/11-2-1600x2133.jpg",
+      "file": "archive-11-2-1600x2133.jpg",
+      "sha256": "960e60e4e496ebb6bb48efeb956d40825fd84569289ea1f8414c436938ead905"
+    },
+    {
+      "url": "https://www.ra.ee/wp-content/uploads/2017/01/12-1600x2133.jpg",
+      "file": "archive-12-1600x2133.jpg",
+      "sha256": "acebee05b7b05ec697ea3827a45296a63cdd4e2af9d0badeb5284740cd99dc76"
+    }
+  ],
+  "limits": [
+    "No wholesale correctness certification of an entire record; unresolved claims retain their own status.",
+    "The 1939 shared-pattern date has primary archival support. The 1996/97 registrations largely remain secondary-corroborated.",
+    "Historical proposal artwork must not be confused with current statutory artwork.",
+    "A mismatch in legacy source filename/code alone does not establish a wrong flag; the visible county identity was separately checked.",
+    "No application content or image was changed."
+  ],
+  "records": [
+    {
+      "code": "EE-37",
+      "applicationRecord": {
+        "description": "Harju County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 24 December 1996. The arms, a silver cross on red, are based on the small arms of Tallinn and were confirmed on 5 February 1937.",
+        "sources": [
+          {
+            "title": "Harju maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Harju_maakonna_lipp"
+          },
+          {
+            "title": "Harju maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Harju_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/harju-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/harju-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/harju-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 24 December 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Silver cross on red",
+          "status": "verified",
+          "evidence": "Matches official blazon and both renderings.",
+          "source": "https://www.riigikantselei.ee/harju-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Based on Tallinn small arms",
+          "status": "verified",
+          "evidence": "Government Office explicitly identifies this derivation.",
+          "source": "https://www.riigikantselei.ee/harju-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Arms confirmed 5 February 1937",
+          "status": "verified",
+          "evidence": "Government Office decision 50; distinguishes earlier 1929 approval.",
+          "source": "https://www.riigikantselei.ee/harju-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-37.svg",
+        "sha256": "e914edc652a00ff3363b65c90c92c769a5646f23c8e6c71120ea46962d9781ae",
+        "gitBlobSha1": "bbb662830a7672fb0f35beca59509269261aeb2a",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-37.svg",
+        "primaryReference": {
+          "code": "EE-37",
+          "url": "https://www.riigikantselei.ee/harju-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "387de8a7c01b5859293b2c4301144562bb7b313b638bbdc1d0340d9ea8b077ee",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Harju%20maakonna%20lipp.svg\" alt=\"Harju maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Harju%20maakonna%20lipp.svg",
+            "file": "37-official.svg",
+            "sha256": "72a983135ccae0918eb281ea2b2600691ecd3ad46d5623e3a59c621b2cf2a4f6"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "width": "471",
+            "height": "300",
+            "id": "Flag of Elva",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Flag_of_et-Harju_maakond.svg"
+          },
+          "wrongEntityIdentifier": true,
+          "status": "incorrect-internal-identifier",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-39",
+      "applicationRecord": {
+        "description": "Hiiu County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 25 November 1996. The arms show a vertical red rope tied in three knots between four red lilies on silver. The lilies, drawn from the arms of the Ungern-Sternberg family, stand for Hiiumaa’s four parishes. The rope comes from a legend in the collection Esivanemate varandus: an old man of Hiiumaa gave men from Tallinn, stranded on the island in distress at sea, a length of rope with three knots so that they would get home safely.",
+        "sources": [
+          {
+            "title": "Hiiu maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Hiiu_maakonna_lipp"
+          },
+          {
+            "title": "Hiiu maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Hiiu_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 25 November 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Red vertical rope with three knots and four red lilies on silver",
+          "status": "verified",
+          "evidence": "Official description and visual comparison agree.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Lilies derived from Ungern-Sternberg arms",
+          "status": "verified",
+          "evidence": "Government Office confirms family derivation.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Four lilies represent four parishes",
+          "status": "imprecise",
+          "evidence": "Official page says four valda, i.e. municipalities/rural municipalities. Parish can also translate vald in administrative English; specify historical administrative units and date to avoid conflating kihelkonnad.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Rope legend: Hiiumaa man gives three-knot rope to distressed Tallinn sailors",
+          "status": "verified",
+          "evidence": "Government Office confirms the legend as a legend, not a historical event.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Legend is in Esivanemate varandus",
+          "status": "unverified",
+          "evidence": "Exact collection attribution not established by retrieved primary source.",
+          "source": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-39.svg",
+        "sha256": "584a0c05768e734786caed26355be7527e7082d2e3ece28748efc7ca1a124bb5",
+        "gitBlobSha1": "2b5873fcaeb647b67b68cc8f3289c62da63709f8",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-39.svg",
+        "primaryReference": {
+          "code": "EE-39",
+          "url": "https://www.riigikantselei.ee/hiiu-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "2b4c3f7b95b67db72fc55546f42fe73e3b42fd5fd081313bdb1e1eba0e0c4fb4",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Hiiu%20maakonna%20lipp.svg\" alt=\"Hiiu maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Hiiu%20maakonna%20lipp.svg",
+            "file": "39-official.svg",
+            "sha256": "9eaf362e090ffdd4911667b6851ae17602b2775b5f33fda53d29e3aed15965e2"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "width": "471.43px",
+            "height": "300px",
+            "viewBox": "0 0 471.43 300",
+            "id": "svg36",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Hiiumaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-44",
+      "applicationRecord": {
+        "description": "Ida-Viru County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 9 June 1997. The arms show, on blue, a silver castle wall ending in a red-roofed tower, with two crossed silver swords above it. They come from the arms of the old Virumaa county, first granted in 1928; the castle and wall are explained as defence against the enemy from the east, protecting the people’s culture and freedom.",
+        "sources": [
+          {
+            "title": "Ida-Viru maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Ida-Viru_maakonna_lipp"
+          },
+          {
+            "title": "Ida-Viru maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Ida-Viru_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/ida-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/ida-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/ida-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 9 June 1997",
+          "status": "unverified",
+          "evidence": "Booklet mirror instead gives local establishment 15 May 1990, a different event. It does not disprove claimed 9 June 1997 registration.",
+          "source": "https://www.riigikantselei.ee/ida-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Silver castle wall and tower with red roof, two crossed silver swords on blue",
+          "status": "verified",
+          "evidence": "Government Office artwork agrees, including red rather than gold roof.",
+          "source": "https://www.riigikantselei.ee/ida-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Derived from former Virumaa arms",
+          "status": "verified",
+          "evidence": "National Archives Virumaa panel shows the earlier and 1937 designs.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/9-1600x2133.jpg"
+        },
+        {
+          "claim": "First granted in 1928",
+          "status": "conflicting-evidence",
+          "evidence": "National Archives panel says first approval 1930 and reproduces government decision dated 12 February 1930; Viru Instituut quiz gives 1928. An earlier local adoption may explain this, but it is not established. Distinguish local design/adoption and government confirmation.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/9-1600x2133.jpg"
+        },
+        {
+          "claim": "Castle/wall as defence against the east",
+          "status": "verified",
+          "evidence": "Archives describes the 1926 rationale as a defensive wall toward the east.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/9-1600x2133.jpg"
+        },
+        {
+          "claim": "Specifically protects culture and freedom",
+          "status": "unverified",
+          "evidence": "Exact expanded interpretation not established in the sources read.",
+          "source": "https://www.riigikantselei.ee/ida-viru-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-44.svg",
+        "sha256": "e5709e5727837f090c16edb21e79034aaae6f8f0bd1081c01cfdd054d737f5a0",
+        "gitBlobSha1": "d2cda1684344fde9aba1c0ef4d4efcfffb155853",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-45.svg",
+        "primaryReference": {
+          "code": "EE-44",
+          "url": "https://www.riigikantselei.ee/ida-viru-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "43ccefb934e4ea4b9e45b480f1edaa010cfb7eaca76e7181a5161e740ec4fff7",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Ida-Viru%20maakonna%20lipp.svg\" alt=\"Ida-Viru maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Ida-Viru%20maakonna%20lipp.svg",
+            "file": "44-official.svg",
+            "sha256": "8927a021463c01862e572322623b8d63682a6808606cce63e0d24c1a5823f149"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Ida-Virumaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-49",
+      "applicationRecord": {
+        "description": "Jõgeva County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 10 October 1996. The arms are divided diagonally, blue over green, by a silver wavy band carrying two blue wavy lines, with a gold clover leaf on the blue and three gold ears of grain on the green.",
+        "sources": [
+          {
+            "title": "Jõgeva maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Jõgeva_maakonna_lipp"
+          },
+          {
+            "title": "Jõgeva maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Jõgeva_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/jogeva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/jogeva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/jogeva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 10 October 1996",
+          "status": "conflicting-evidence",
+          "evidence": "App gives 10 October; booklet mirror gives 10 November 1996. Locate register entry before correction. Mirror provenance is not fully established.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf#page=4"
+        },
+        {
+          "claim": "Blue/green diagonal field with silver wavy band and two blue wavy lines",
+          "status": "verified",
+          "evidence": "Official blazon and visual comparison agree.",
+          "source": "https://www.riigikantselei.ee/jogeva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Gold clover in blue and three gold grain ears in green",
+          "status": "verified",
+          "evidence": "Clover is present in both images; small thumbnail appearance was not a missing-element defect.",
+          "source": "https://www.riigikantselei.ee/jogeva-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-49.svg",
+        "sha256": "ddf30ce41b43293cb2de515cad9edee42a4a95e88b7b303daa2b609404922b80",
+        "gitBlobSha1": "81946c5a4523cdf2b179d879718734ea1ca0f83a",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-50.svg",
+        "primaryReference": {
+          "code": "EE-49",
+          "url": "https://www.riigikantselei.ee/jogeva-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "5132e229a2f5ada8cc120d814ec4b23c5e901a5bfdef3deadf21d722201b659d",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/J%C3%B5geva%20maakonna%20lipp.svg\" alt=\"Jõgeva maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/J%C3%B5geva%20maakonna%20lipp.svg",
+            "file": "49-official.svg",
+            "sha256": "4d021b4fcef896c5209e702f190155fac18d81eb44453fe4b031bf0e5f155114"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Jõgevamaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-51",
+      "applicationRecord": {
+        "description": "Järva County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 3 October 1996. The arms, confirmed on 5 February 1937, show a silver castle with a tower on blue, above three silver wavy bars.",
+        "sources": [
+          {
+            "title": "Järva maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Järva_maakonna_lipp"
+          },
+          {
+            "title": "Järva maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Järva_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/jarva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/jarva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/jarva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 3 October 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Silver castle with tower on blue and three silver wavy bars",
+          "status": "verified",
+          "evidence": "Matches official blazon and artwork.",
+          "source": "https://www.riigikantselei.ee/jarva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Arms confirmed 5 February 1937",
+          "status": "verified",
+          "evidence": "Government Office decision 59.",
+          "source": "https://www.riigikantselei.ee/jarva-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-51.svg",
+        "sha256": "4d74b61011e166ed02df1b03451b29a2d8509c345d1cf5b01539391138db9133",
+        "gitBlobSha1": "ca34ed74f1c3a80b6fea7ddabd244ed81dfb65a0",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-52.svg",
+        "primaryReference": {
+          "code": "EE-51",
+          "url": "https://www.riigikantselei.ee/jarva-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "a57cc51e00d5edeaa76daa2e2229dbd174336b11f740adf01846e7f32e2a4aa8",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/J%C3%A4rva%20maakonna%20lipp.svg\" alt=\"Järva maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/J%C3%A4rva%20maakonna%20lipp.svg",
+            "file": "51-official.svg",
+            "sha256": "5dc20076c43fd59345af3d08f7d0c312e5b4c7fa633a58fac218d58e35cf99c0"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "width": "471",
+            "height": "300",
+            "id": "Flag of Elva",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Flag_of_et-Järva_maakond.svg"
+          },
+          "wrongEntityIdentifier": true,
+          "status": "incorrect-internal-identifier",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-57",
+      "applicationRecord": {
+        "description": "Lääne County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 11 October 1996. The arms, confirmed on 5 February 1937, show a silver hawk with raised wings, golden legs and a ring of gold around its head, on red. They are based on the arms of the Bishopric of Ösel–Wiek (Saare-Lääne).",
+        "sources": [
+          {
+            "title": "Lääne maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Lääne_maakonna_lipp"
+          },
+          {
+            "title": "Lääne maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Lääne_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 11 October 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Silver hawk on red",
+          "status": "incorrect",
+          "evidence": "Official species is kotkas (eagle), not hawk. F84.",
+          "source": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Raised wings, gold halo and gold legs/talons",
+          "status": "verified",
+          "evidence": "Official text specifies eagle rising and looking back with gold halo; official SVG also depicts gold talons.",
+          "source": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Arms confirmed 5 February 1937",
+          "status": "verified",
+          "evidence": "Government Office decision 57.",
+          "source": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Derived from Bishopric of Osel-Wiek / Saare-Laane",
+          "status": "partially-verified",
+          "evidence": "Government Office identifies the episcopal arms of Lihula and Haapsalu; broader bishopric naming is compatible but not separately documented in this pass.",
+          "source": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-57.svg",
+        "sha256": "9a683e55229f1338fde34ca77ed73fb6ee925ee4af4a81325cd732740d988ee2",
+        "gitBlobSha1": "b9559007d4b03d0b7603f884c62f1da864c1ed90",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-56.svg",
+        "primaryReference": {
+          "code": "EE-57",
+          "url": "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "29f7021ea882db1120d0e4f5a8f1a7172fb886e94a2f325e98e7a85c042c4f73",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/L%C3%A4%C3%A4ne%20maakonna%20lipp.svg\" alt=\"Lääne maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/L%C3%A4%C3%A4ne%20maakonna%20lipp.svg",
+            "file": "57-official.svg",
+            "sha256": "4da663d9c81ab3b0794049a5100b4857223ba491b4f872179c85cdc11ddd258f"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "viewBox": "0 0 471.43 300"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-59",
+      "applicationRecord": {
+        "description": "Lääne-Viru County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 26 September 1996. The arms show, on blue, a silver castle wall ending in a gold-roofed tower, with two crossed silver swords above it. They come from the arms of the old Virumaa county (on the heraldry council’s advice their red was replaced with gold); the castle and wall are read as defence against the enemy from the east, protecting the people’s culture and freedom.",
+        "sources": [
+          {
+            "title": "Lääne-Viru maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Lääne-Viru_maakonna_lipp"
+          },
+          {
+            "title": "Lääne-Viru maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Lääne-Viru_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/laane-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/laane-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/laane-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 26 September 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Silver castle wall and tower with gold roof, two crossed silver swords on blue",
+          "status": "verified",
+          "evidence": "Official blazon and render agree; correct distinguishing roof colour from Ida-Viru.",
+          "source": "https://www.riigikantselei.ee/laane-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Derived from former Virumaa arms",
+          "status": "verified",
+          "evidence": "Archives shows predecessor and current Government Office description records revision in 1996.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/9-1600x2133.jpg"
+        },
+        {
+          "claim": "Red replaced by gold on heraldry council advice",
+          "status": "partially-verified",
+          "evidence": "Current gold roof and 1996 revision verified; advisory attribution not established.",
+          "source": "https://www.riigikantselei.ee/laane-viru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Defence against east",
+          "status": "verified",
+          "evidence": "Shared historical Virumaa rationale in Archives.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/9-1600x2133.jpg"
+        },
+        {
+          "claim": "Protecting culture and freedom",
+          "status": "unverified",
+          "evidence": "Expanded interpretation not independently established.",
+          "source": "https://www.riigikantselei.ee/laane-viru-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-59.svg",
+        "sha256": "01cf0a300b63e388b165399e50ca27762ae1dc10a3e242d99a0abf7aac859d4f",
+        "gitBlobSha1": "764a0290c7811152686f77ada1303192fde65058",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-60.svg",
+        "primaryReference": {
+          "code": "EE-59",
+          "url": "https://www.riigikantselei.ee/laane-viru-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "3c62ff1470b0d1118560293b9318f4e2c780ea287ff8bc41ab328f466a413fe6",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/L%C3%A4%C3%A4ne-Viru%20maakonna%20lipp.svg\" alt=\"Lääne-Viru maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/L%C3%A4%C3%A4ne-Viru%20maakonna%20lipp.svg",
+            "file": "59-official.svg",
+            "sha256": "0016a55b6bb2a4bd2c0d1388866bd6726b5eef6e7f16e17213af8f728a458fb6"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Lääne-Virumaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-65",
+      "applicationRecord": {
+        "description": "Põlva County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 7 November 1996. The arms show three black beavers sitting in a diagonal row on gold. Põlva is a newcomer to Estonia’s administrative map, just as beavers are newcomers to its wildlife: a native species that had vanished through heavy hunting. People and beavers here are said to share traits too: they keep somewhat to themselves, are tenacious and hard-working, and go their own way. There are three beavers because the county’s parishes were formed from three earlier administrative units.",
+        "sources": [
+          {
+            "title": "Põlva maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Põlva_maakonna_lipp"
+          },
+          {
+            "title": "Põlva maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Põlva_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 7 November 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Three seated black beavers in a diagonal row on gold",
+          "status": "verified",
+          "evidence": "Official blazon and image agree.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "New administrative unit and recently returned beavers",
+          "status": "partially-verified",
+          "evidence": "Government Office connects beaver arrival from Pskov with establishment of Polva district. General newcomer analogy is supported; precise biological history needs separate evidence.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Beavers native but vanished through heavy hunting",
+          "status": "unverified",
+          "evidence": "Historical ecological statement not independently sourced in this pass.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Residents and beavers share tenacity, industry and independence",
+          "status": "unverified",
+          "evidence": "Character interpretation absent from retrieved official explanation; should be attributed rather than presented as fact.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Three beavers represent three earlier administrative units",
+          "status": "verified",
+          "evidence": "Government Office names former Petseri, Tartu and Voru areas; use municipalities rather than ambiguous parishes.",
+          "source": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-65.svg",
+        "sha256": "c8c8adafb57b334cc9d35677c1567ac041883db55101b23cb84de64645c19a32",
+        "gitBlobSha1": "c9a5010cece1f94a9a8f9705bb2a10185766a3f5",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-64.svg",
+        "primaryReference": {
+          "code": "EE-65",
+          "url": "https://www.riigikantselei.ee/polva-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "3f3d9b901aa3af51e486b9748ae01764c6ab62e190183ca1f0a7f7a0d1ae4638",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/P%C3%B5lva%20maakonna%20lipp.svg\" alt=\"Põlva maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/P%C3%B5lva%20maakonna%20lipp.svg",
+            "file": "65-official.svg",
+            "sha256": "a12808ab47ff0ce923365457f9830a2376770458745dfeb615b180ace84e6583"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Põlvamaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-67",
+      "applicationRecord": {
+        "description": "Pärnu County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 26 September 1996. The arms, a black bear rampant on gold, were confirmed on 5 February 1937 and registered again on the same day as the flag.",
+        "sources": [
+          {
+            "title": "Pärnu maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Pärnu_maakonna_lipp"
+          },
+          {
+            "title": "Pärnu maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Pärnu_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/parnu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/parnu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/parnu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 26 September 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Black bear rampant on gold",
+          "status": "verified",
+          "evidence": "Matches official blazon and image.",
+          "source": "https://www.riigikantselei.ee/parnu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Arms confirmed 5 February 1937",
+          "status": "verified",
+          "evidence": "Government Office decision 51.",
+          "source": "https://www.riigikantselei.ee/parnu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Arms registered again 26 September 1996 with flag",
+          "status": "unverified",
+          "evidence": "Current Government Office page does not establish this registration event; booklet mirror corroborates flag date only.",
+          "source": "https://www.riigikantselei.ee/parnu-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-67.svg",
+        "sha256": "6c9da3b61b2caca8648eaf373924ff4903c270f23f5132ff98b99e7dda7b4303",
+        "gitBlobSha1": "b0722a1c1797f78d4df6d7d68e1c74325a81a1b2",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-68.svg",
+        "primaryReference": {
+          "code": "EE-67",
+          "url": "https://www.riigikantselei.ee/parnu-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "15338cf6f5ec07e41fb72daed1b34f006dbf760508b87604b323b9d1dd02ff8e",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/P%C3%A4rnu%20maakonna%20lipp.svg\" alt=\"Pärnu maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/P%C3%A4rnu%20maakonna%20lipp.svg",
+            "file": "67-official.svg",
+            "sha256": "c3ca3af5bd4c4071274d34acba91d585276a600df636e69a6ed982f8b7ed815b"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Pärnumaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-70",
+      "applicationRecord": {
+        "description": "Rapla County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 7 November 1996. The arms are quartered by a silver cross, red, gold, blue and red. The colours are borrowed from the arms of the neighbouring counties: red from Harju and Lääne, blue from Järva and gold from Pärnu.",
+        "sources": [
+          {
+            "title": "Rapla maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Rapla_maakonna_lipp"
+          },
+          {
+            "title": "Rapla maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Rapla_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/rapla-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/rapla-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/rapla-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 7 November 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Silver cross quarters red/gold/blue/red field",
+          "status": "verified",
+          "evidence": "Official blazon and image agree.",
+          "source": "https://www.riigikantselei.ee/rapla-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Colours from Harju/Laane red, Jarva blue, Parnu gold",
+          "status": "verified",
+          "evidence": "Official explanation explicitly identifies these county arms.",
+          "source": "https://www.riigikantselei.ee/rapla-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-70.svg",
+        "sha256": "51c902e533aa1b447c508cf8e4c640d66df11fc0d02734e83318cab0acaff348",
+        "gitBlobSha1": "19c497e5ba7973682eddaa6dddb28cb36122215f",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-71.svg",
+        "primaryReference": {
+          "code": "EE-70",
+          "url": "https://www.riigikantselei.ee/rapla-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "49f5781c94dde9ac014c6df22d277b4d0f60990441e2798a6645808fe994b009",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Rapla%20maakonna%20lipp.svg\" alt=\"Rapla maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Rapla%20maakonna%20lipp.svg",
+            "file": "70-official.svg",
+            "sha256": "c7234ca3f14b5b2ff1e923813ce7da8eb62812cfdd4bff81037a043a5a5ef67e"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "width": "471.42999",
+            "height": "300"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-74",
+      "applicationRecord": {
+        "description": "Saare County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 26 September 1996. The arms, confirmed on 5 February 1937, show a silver Viking ship under sail, with seven round shields along its side, on three silver wavy bars on blue. The Viking ship at sea stands for the islanders’ once-powerful navy.",
+        "sources": [
+          {
+            "title": "Saare maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Saare_maakonna_lipp"
+          },
+          {
+            "title": "Saare maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Saare_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 26 September 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Silver Viking ship under sail on blue",
+          "status": "verified",
+          "evidence": "Official artwork agrees.",
+          "source": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Seven round shields along side",
+          "status": "verified",
+          "evidence": "Seven gold shields in official blazon and both images.",
+          "source": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Three silver wavy bars",
+          "status": "verified",
+          "evidence": "Official blazon and images agree.",
+          "source": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Arms confirmed 5 February 1937",
+          "status": "verified",
+          "evidence": "Government Office decision 60.",
+          "source": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Represents once-powerful island navy",
+          "status": "partially-verified",
+          "evidence": "Archives supports maritime trading and overseas military expeditions as 1926 rationale; exact powerful-navy wording not directly established.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/12-1600x2133.jpg"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-74.svg",
+        "sha256": "9752551d78a57506b4f8c2c3e51564fef9e3aa3fe24912b66659216715d11e7d",
+        "gitBlobSha1": "1efceb9c4651f5902ac9655b848a5492db7c3ad7",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-74.svg",
+        "primaryReference": {
+          "code": "EE-74",
+          "url": "https://www.riigikantselei.ee/saare-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "33c2e6b65134b0a5ac04fd1bf6750365c4a805120ef32cbedb5341dc15b24f65",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Saare%20maakonna%20lipp.svg\" alt=\"Saare maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Saare%20maakonna%20lipp.svg",
+            "file": "74-official.svg",
+            "sha256": "5a30711a8bacfd2ba38cdf22aa7b8d0984d0be28a910c290e7a98ac61f213624"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Saaremaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-78",
+      "applicationRecord": {
+        "description": "Tartu County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 25 September 1996. The arms are divided diagonally, blue over green, by a silver wavy band carrying two blue wavy lines, with a gold six-pointed star above and a gold oak branch below; Günther Reindorff drew the present version in 1937. The elements go back to the county’s 1926 design, which explained the wavy band as the Emajõgi river that divides the county, the star as Tartu University spreading culture and education across Estonia, and the oak as the oak grove of Taara known from folk songs.",
+        "sources": [
+          {
+            "title": "Tartu maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Tartu_maakonna_lipp"
+          },
+          {
+            "title": "Tartu maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Tartu_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 25 September 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Blue/green diagonal field, silver wavy band with two blue lines",
+          "status": "verified",
+          "evidence": "Official blazon and render agree.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Gold six-pointed star and gold oak branch",
+          "status": "verified",
+          "evidence": "Official blazon and render agree.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Gunther Reindorff drew present version in 1937",
+          "status": "unverified",
+          "evidence": "1937 confirmation verified; exact artist and drawing-year attribution not established by sources read.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Elements trace to 1926 design",
+          "status": "verified",
+          "evidence": "Archives Tartumaa panel describes the 1926 recommendations and later approval.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/6-1-1600x2133.jpg"
+        },
+        {
+          "claim": "Wavy band represents Emajogi",
+          "status": "verified",
+          "evidence": "Government Office and Archives agree.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Star represents Tartu University spreading culture and education",
+          "status": "verified",
+          "evidence": "Government Office confirms interpretation.",
+          "source": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Oak refers to Taara grove in folk songs",
+          "status": "verified",
+          "evidence": "Archives explicitly connects motif with Taara oak grove in folk songs and tales.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/6-1-1600x2133.jpg"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-78.svg",
+        "sha256": "f1ba789558375eb8fb0f2898115034c75028fb5c4f8984ec8001c369d4acbcb3",
+        "gitBlobSha1": "c24ebdf0db648aebebf6b26838940e05fb61823e",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-79.svg",
+        "primaryReference": {
+          "code": "EE-78",
+          "url": "https://www.riigikantselei.ee/tartu-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "9fae513deec481c8e2d20264708c91c85c9c301187ea14f6f3ca6e7e38fe2866",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Tartu%20maakonna%20lipp.svg\" alt=\"Tartu maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Tartu%20maakonna%20lipp.svg",
+            "file": "78-official.svg",
+            "sha256": "32b671142d07f861ad95e00de64dcff126e8668b81f5612f84b0ed7ca17dcde8"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Tartumaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-82",
+      "applicationRecord": {
+        "description": "Valga County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 17 September 1996. The arms are divided diagonally, with four silver five-pointed stars on the blue upper half and a plain silver lower half. The four stars are the four counties whose parts formed Valga County in 1920.",
+        "sources": [
+          {
+            "title": "Valga maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Valga_maakonna_lipp"
+          },
+          {
+            "title": "Valga maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Valga_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/valga-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/valga-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/valga-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 17 September 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Diagonal division with blue upper and silver lower field",
+          "status": "verified",
+          "evidence": "Official blazon and render agree.",
+          "source": "https://www.riigikantselei.ee/valga-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Four silver five-pointed stars",
+          "status": "verified",
+          "evidence": "Official blazon and render agree.",
+          "source": "https://www.riigikantselei.ee/valga-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Stars represent four counties forming Valga in 1920",
+          "status": "verified",
+          "evidence": "Government Office confirms four county components and 1920 formation; app does not name counties.",
+          "source": "https://www.riigikantselei.ee/valga-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-82.svg",
+        "sha256": "abae047c83955560de2788333e1cd8f4fc54ff0a8196600f0d8a5bea1e1ff2db",
+        "gitBlobSha1": "71727c002374e22ab308a4e5fadda44c9f8bdf1b",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-81.svg",
+        "primaryReference": {
+          "code": "EE-82",
+          "url": "https://www.riigikantselei.ee/valga-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "268d3be5955250a13ba3929f467dcc062fbdbf2ebb271c9d8a34c2d468ae309c",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Valga%20maakonna%20lipp.svg\" alt=\"Valga maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Valga%20maakonna%20lipp.svg",
+            "file": "82-official.svg",
+            "sha256": "3c83a9700617ad5e6acc1ef60f2c2873a1e28b40a2446cf841aba9c127f10e51"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Valgamaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-84",
+      "applicationRecord": {
+        "description": "Viljandi County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 26 August 1996. The arms, confirmed on 5 February 1937, show on blue a silver eagle with raised wings, golden beak and legs, holding a silver sword with a golden hilt; on its breast is a green shield with three golden ears of grain on one stalk.",
+        "sources": [
+          {
+            "title": "Viljandi maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Viljandi_maakonna_lipp"
+          },
+          {
+            "title": "Viljandi maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Viljandi_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 26 August 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Silver eagle with raised wings on blue",
+          "status": "verified",
+          "evidence": "Official blazon and images agree.",
+          "source": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Gold beak and legs, silver sword with gold hilt",
+          "status": "verified",
+          "evidence": "Official artwork confirms tinctures and sword.",
+          "source": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Green breast shield with three gold grain ears from one stalk",
+          "status": "verified",
+          "evidence": "Official artwork confirms.",
+          "source": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Arms confirmed 5 February 1937",
+          "status": "verified",
+          "evidence": "Government Office decision 52.",
+          "source": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-84.svg",
+        "sha256": "4b63100ba67be626d0cac7a8328860d8d7eae9da7c70b5968796841566123a3b",
+        "gitBlobSha1": "5017117ec2e1713cd7543e12024261df80d57958",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-84.svg",
+        "primaryReference": {
+          "code": "EE-84",
+          "url": "https://www.riigikantselei.ee/viljandi-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "029140def91b194f1228ba50d7184b3897fc75b97a18896f3b7fc2c6f46f1ed0",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/Viljandi%20maakonna_lipp.svg\" alt=\"Viljandi maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/Viljandi%20maakonna_lipp.svg",
+            "file": "84-official.svg",
+            "sha256": "3a905aefc3ed76ee4b929cc4a56b94d5fa178ae71fc38d110503e792fcfabac0"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "viewBox": "0 0 471.43 300"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    },
+    {
+      "code": "EE-86",
+      "applicationRecord": {
+        "description": "Võru County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August 1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms at the centre of the white stripe as its distinguishing mark. It was registered on 12 December 1996. The arms show, on blue, a gold ring and the silver sword of Kalevipoeg with a golden hilt, pointing downwards. Blue stands for a hopeful future and Võrumaa’s blue sky; the gold ring (võru) names the county, and the sword stands for its readiness to defend itself.",
+        "sources": [
+          {
+            "title": "Võru maakonna lipp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Võru_maakonna_lipp"
+          },
+          {
+            "title": "Võru maakonna vapp — Wikipedia (Estonian)",
+            "url": "https://et.wikipedia.org/wiki/Võru_maakonna_vapp"
+          },
+          {
+            "title": "Estonia: Subdivisions — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ee-sub.html"
+          }
+        ]
+      },
+      "claims": [
+        {
+          "claim": "Two equal horizontal stripes, white above green",
+          "status": "verified",
+          "evidence": "Government Office description and SVG agree.",
+          "source": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Flag ratio height:width 7:11",
+          "status": "verified",
+          "evidence": "Explicit official ratio. Assets EE-37/51 use 471x300 (0.091% width rounding); others approximately 471.43x300. Rounding not treated as a substantive error.",
+          "source": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "County arms centred in upper white stripe",
+          "status": "verified",
+          "evidence": "Identity and upper-field placement agree. Exact drawing geometry and shield size differ from the Government Office SVG; no pixel-exact or construction-spec certification is claimed.",
+          "source": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Shared county flag pattern confirmed 7 August 1939",
+          "status": "verified",
+          "evidence": "National Archives county-flags panel explicitly dates approval of the shared white/green pattern; this is not the adoption date of every later county design.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg"
+        },
+        {
+          "claim": "Flag registered 12 December 1996",
+          "status": "corroborated-secondary",
+          "evidence": "Date matches historical booklet mirror, but original register record or authenticated primary-hosted booklet has not been retrieved.",
+          "source": "https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf"
+        },
+        {
+          "claim": "Gold ring and silver sword with gold hilt on blue",
+          "status": "verified",
+          "evidence": "Official blazon and artwork agree.",
+          "source": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Sword is that of Kalevipoeg",
+          "status": "verified",
+          "evidence": "National Archives describes Kalevipoeg sword motif in early proposals.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/10-1-1600x2133.jpg"
+        },
+        {
+          "claim": "Sword points downwards",
+          "status": "incorrect",
+          "evidence": "Current official and repository drawings show point at viewer upper right and hilt at lower left. Historical proposals include downward swords, but they are not this current image. F85.",
+          "source": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Blue represents hopeful future and blue sky",
+          "status": "unverified",
+          "evidence": "Interpretation not established in the current Government Office page or Archives panel read.",
+          "source": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+        },
+        {
+          "claim": "Gold ring names county",
+          "status": "verified",
+          "evidence": "Archives identifies gold voru as county symbol; wordplay uses the Estonian word for ring.",
+          "source": "https://www.ra.ee/wp-content/uploads/2017/01/10-1-1600x2133.jpg"
+        },
+        {
+          "claim": "Sword represents readiness to defend",
+          "status": "unverified",
+          "evidence": "Exact current symbolism not established by retrieved primary sources.",
+          "source": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+        }
+      ],
+      "image": {
+        "path": "public/flags/sub/EE/EE-86.svg",
+        "sha256": "60ec12ba32116c268f34bd8f019562482eb4eeb627a867c7a2572918f4a1152c",
+        "gitBlobSha1": "692cc7ef4a80990a93b4e3ccf4ba2a93536032af",
+        "originUrl": "https://cdn.jsdelivr.net/gh/amckenna41/iso3166-flags@main/iso3166-2-flags/EE/EE-87.svg",
+        "primaryReference": {
+          "code": "EE-86",
+          "url": "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark",
+          "htmlSha256": "642f4e0ea1037047166f980bc2920c3c611f95304e17cc1f1a9a07e28f97c736",
+          "status": "retrieved",
+          "flagImageTags": [
+            "<img width height class=\"img-fluid\" src=\"/sites/default/files/2021-02/V%C3%B5ru%20maakonna%20lipp.svg\" alt=\"Võru maakonna lipp\">"
+          ],
+          "flagImage": {
+            "url": "https://www.riigikantselei.ee/sites/default/files/2021-02/V%C3%B5ru%20maakonna%20lipp.svg",
+            "file": "86-official.svg",
+            "sha256": "537b041823a9b6db41e1335ac7774d522a47f8228639ce195fa793b548c0e02b"
+          }
+        },
+        "visualStatus": "county-identity-and-major-heraldic-elements-match",
+        "exactGeometry": "not-certified",
+        "licence": "unverified",
+        "metadata": {
+          "rootAttributes": {
+            "id": "svg2010",
+            "width": "471.42999",
+            "height": "300",
+            "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "Võrumaa_lipp.svg"
+          },
+          "wrongEntityIdentifier": false,
+          "status": "no-wrong-entity-identifier-found",
+          "limit": "SVG internal identifiers are not demonstrated to be visible UI captions. Embedded RDF contains only format/type, or is absent; licence and attribution must be checked in the asset provenance layer."
+        }
+      }
+    }
+  ]
+}
