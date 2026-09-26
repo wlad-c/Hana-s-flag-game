@@ -82,6 +82,8 @@ Require separate verified fields for institution type, current existence, jurisd
 
 All **510 non-document changed files** at `e3c1a35` were downloaded and matched their Git blob hashes. All **249 added/modified images** decoded and were visually screened: **96 central-bank marks, 76 subdivision flags, two capital flags and 75 media images**. This is a complete visual screen of this delta, not universal identity/geometry/heraldic certification. The central-bank registry has 195 entries, 96 with images.
 
+At this revision the media registries contain **937 newspaper records (901 images)** and **166 agency records (165 images)**. All **30 prior confirmed wrong-entity assets** remain referenced with unchanged blobs through both intervening deltas. The saved image ledger records that reconciliation. Cross-registry duplicate IDs are counted as separate records; there are 1,103 total record instances, not 1,094 unique IDs. The current artwork coverage increase therefore does not close the earlier identity findings.
+
 
 ## Earlier reconciliation — application revision db3ba05
 
@@ -373,7 +375,7 @@ The [primary 2026 CSV](https://rsf.org/sites/default/files/import_classement/202
 
 ## Continuation checkpoint — 21 September 2026
 
-The next application snapshot is **11e30bb569b2e599a82ea5d51998a9998ed78acb**, 44 commits after 7dda29d (including audit-document commits). Its comparison lists 164 changed paths, including further logos and eleven additional index datasets. This newer delta is being fetched and is **not yet fully audited**. Findings below are pinned to 7dda29d unless stated otherwise. The rough universal-work estimate remains about **10% complete / 90% remaining**, not a measured percentage of atomic claims.
+The next application snapshot is **11e30bb569b2e599a82ea5d51998a9998ed78acb**, 44 commits after 7dda29d (including audit-document commits). Its comparison lists 164 changed paths, including further logos and ten additional index datasets. This newer delta is being fetched and is **not yet fully audited**. Findings below are pinned to 7dda29d unless stated otherwise. The rough universal-work estimate remains about **10% complete / 90% remaining**, not a measured percentage of atomic claims.
 
 The 7dda29d image delta is now recorded in [the 164-image / 163-record ledger](audit/MEDIA_7DDA_CLAIM_VERIFICATION_2026-09-21.json). All files were hash-checked, decoded and visually screened, and every caption read. Only specifically identified primary comparisons constitute identity verification; the other 159 identity verdicts remain unverified. This ledger also enumerates the fields of all 39 newly added agencies, preserving their unresolved status rather than treating the entire record as verified.
 
