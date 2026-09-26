@@ -4,6 +4,34 @@
 
 This supplements [the original audit](LEARN_FACTUAL_AUDIT_2026-09-13.md) and [the continuation findings F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md). No application data was changed. The evidence ledgers below are intended to preserve both positive verification and failures for subsequent work.
 
+## Estonia county continuation — 26 September 2026
+
+All **15 county flag images** were compared with the Estonian Government Office's SVG artwork and Estonian-language descriptions. All 15 complete Learn descriptions and internal SVG identifiers were inspected. The [Estonia evidence ledger](audit/ESTONIA_COUNTY_CLAIM_VERIFICATION_2026-09-26.json) contains **136 claim groups: 104 verified, 13 corroborated by a secondary-hosted booklet, 4 partly verified, 10 unverified, 2 conflicting, 1 imprecise, and 2 incorrect**, plus two incorrect internal image identifiers. These are grouped checks, not a universal atomic-claim denominator. Major visual identity and heraldic elements agree for all 15; exact geometry, colour specifications and licensing are not certified.
+
+The National Archives' [county-flags panel](https://www.ra.ee/wp-content/uploads/2017/01/2-1600x2133.jpg) confirms the shared white/green pattern's approval on **7 August 1939**. This is the common pattern's history, not the adoption date of every later county's design. All 22 panels from its [historical exhibition](https://www.ra.ee/naitus/maakondade-lipud-ja-vapid/) were downloaded; five relevant panels were read at full size, while the remaining panels were screened only at contact-sheet scale.
+
+### F84 — Lääne's eagle is called a hawk
+
+**Confirmed, medium.** `src/data/flagMeanings.ts`, `EE-57`, says “silver hawk.” The [Government Office's Estonian blazon](https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark) identifies an **eagle** (kotkas), rising and looking back, with a gold halo on a red shield. Both the official artwork and repository flag carry the eagle. Correct the species in the explanatory text; retain the separately verified halo and tinctures.
+
+### F85 — Võru's sword direction contradicts the current artwork
+
+**Confirmed, medium.** `EE-86` says the sword points downwards. In both the [Government Office's current flag](https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark) and `public/flags/sub/EE/EE-86.svg`, the blade points toward the **viewer's upper right**, with the hilt at lower left. Some [earlier proposals](https://www.ra.ee/wp-content/uploads/2017/01/10-1-1600x2133.jpg) did have downward swords, but they are not the current design displayed. Describe the present orientation explicitly rather than inferring blade direction from the heraldic term for diagonal placement.
+
+### F86 — Two county SVGs retain an unrelated town identifier
+
+**Confirmed, low; embedded metadata only.** `public/flags/sub/EE/EE-37.svg` (Harju) and `EE-51.svg` (Järva) both contain the root identifier and Inkscape current-layer label **“Flag of Elva.”** Their visible designs are the appropriate county flags, and their document-name attributes identify the counties correctly. This is stale internal identification, not proof that the displayed flag is Elva's. Replace the identifier and dependent references consistently. Add a provenance record linking the entity, artwork version, source and licence; an SVG filename or generic RDF format entry is insufficient verification.
+
+### Estonia cautions and cleared suspicions
+
+- **Ida-Viru's “first granted in 1928” remains a conflict.** The [National Archives' Virumaa panel](https://www.ra.ee/wp-content/uploads/2017/01/9-1600x2133.jpg) says first confirmation in 1930 and reproduces the government decision dated 12 February 1930; a [Viru Instituut historical quiz](https://viruinstituut.ee/vii-vooru-vastused_2019/) gives 1928. An earlier local adoption could explain the difference. Require the event, authority and primary record before asserting a universal first-grant date.
+- **Jõgeva's registration month is unresolved:** app 10 October 1996 versus 10 November in a [secondary-hosted historical booklet](https://geopoliticaybanderas.wordpress.com/wp-content/uploads/2018/09/estonia-condados.pdf#page=4). The original register entry is still needed. Thirteen other flag-registration dates match that booklet but are not upgraded to primary verification.
+- Hiiu's “four parishes” should identify historical administrative units and period. The Government Office says four `valda`; parish can translate a civil municipality in English but also suggests the different `kihelkond` concept. Do not infer today's subdivision count.
+- **Cleared:** Ida-Viru and Lääne-Viru correctly have different roof colours (red/gold). Jõgeva's clover is present. Saare's seven shields, Tartu's six-pointed star and Valga's four five-pointed stars agree with the official references.
+- Repository drawings differ from Government Office renderings in shield size and linework. This pass establishes identity and major heraldic content, not a legal finding that every drawing variation is prohibited. Harju/Järva's 471:300 canvas is a small rounding difference from 11:7, not a material ratio error.
+
+No application data or artwork was changed. The current repository head was rechecked before this continuation's saves; no newer application revision was found beyond the pinned `e3c1a35` snapshot.
+
 ## Current continuation — 26 September 2026
 
 **Progress estimate: approximately 10% complete / 90% remaining.** This estimates the work required for universal independent verification, not the percentage of a fully enumerated atomic-claim inventory. The completed comparisons below do not establish that all narratives, boundaries, historical periods, logos, licences, or metadata are correct.
