@@ -144,7 +144,23 @@
       "metadata": "All 31 affected records lose logo, logoExplainer and licenceNote; each now carries an explicit no-image explanation. Removed assets absent from complete 10,743-entry Git tree.",
       "limit": "Verified removal of wrong assignments; replacement artwork, broader entity data and universal logo provenance remain unverified."
     },
-    "F52_F61": {
+    "F51_F57": {
+      "status": "specific-file-removal-verified-only",
+      "files": [
+        "scripts/generate-island-logos.mjs",
+        "public/newspaper-logos/nr/naoero-gazette.svg",
+        "public/newspaper-logos/nr/nauru-bulletin.svg",
+        "public/newspaper-logos/nr/nauru-gio.svg",
+        "public/newspaper-logos/va/acta-apostolicae-sedis.svg"
+      ],
+      "note": "Deletion confirmed from repository delta/tree. Decode-gate implementation observed in source, but full latest asset-set gate was not rerun; no universal authenticity certification."
+    },
+    "F59": {
+      "status": "specific-newspaper-removal-verified",
+      "removedRecord": "va-vatican-news",
+      "note": "Record absent from current newspaper registry and PNG absent from tree. Classification elsewhere not re-audited."
+    },
+    "F52": {
       "status": "partially-resolved-with-audit-correction",
       "newspaperCaptions": [
         {
@@ -401,21 +417,9 @@
       ],
       "remaining": "Minor caption errors in Libération, Die Welt and USA Today; fix both runtime data and purge-fabricated-newspaper-logos.mjs overrides. Broader caption claims retain their own statuses."
     },
-    "F51_F57": {
-      "status": "specific-file-removal-verified-only",
-      "files": [
-        "scripts/generate-island-logos.mjs",
-        "public/newspaper-logos/nr/naoero-gazette.svg",
-        "public/newspaper-logos/nr/nauru-bulletin.svg",
-        "public/newspaper-logos/nr/nauru-gio.svg",
-        "public/newspaper-logos/va/acta-apostolicae-sedis.svg"
-      ],
-      "note": "Deletion confirmed from repository delta/tree. Decode-gate implementation observed in source, but full latest asset-set gate was not rerun; no universal authenticity certification."
-    },
-    "F59": {
-      "status": "specific-newspaper-removal-verified",
-      "removedRecord": "va-vatican-news",
-      "note": "Record absent from current newspaper registry and PNG absent from tree. Classification elsewhere not re-audited."
+    "F61": {
+      "status": "not-reassessed-in-this-batch",
+      "note": "The ten F61 entries and version-specific artwork issues retain their previous statuses."
     }
   },
   "registryCounts": {
