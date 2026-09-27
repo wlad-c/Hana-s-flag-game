@@ -55,13 +55,13 @@ const EXPLAINER_OVERRIDES = {
   },
   "us-usa-today": {
     logoExplainer:
-      "Cyan-blue circular badge beside the bold sans-serif wordmark 'USA TODAY' — the 2020 identity combining the signature blue disc with the Futura-derived title.",
+      "A cyan-blue disc beside the bold black sans-serif capitals 'USA TODAY'.",
     licenceNote:
       "USA Today masthead is a trademark of Gannett Co., Inc., bundled from Wikimedia Commons (File:USA Today (2020-01-29).svg; PD-textlogo) for educational reference in Learn mode.",
   },
   "gb-the-guardian": {
     logoExplainer:
-      "Stacked slab-serif wordmark 'The Guardian' in Guardian Egyptian — the post-2018 title treatment used across print and digital.",
+      "Black high-contrast serif wordmark 'The Guardian', stacked on two lines.",
     licenceNote:
       "The Guardian masthead trademark bundled from Wikimedia Commons (File:The Guardian 2018.svg) for educational reference in Learn mode.",
   },
@@ -97,7 +97,7 @@ const EXPLAINER_OVERRIDES = {
   },
   "ca-la-presse": {
     logoExplainer:
-      "Bold wordmark for La Presse — the Montreal daily's 2012 digital-era title treatment.",
+      "White bold sans-serif capitals 'LA PRESSE', stacked on two lines on a red square.",
     licenceNote:
       "La Presse masthead trademark bundled from Wikimedia Commons (File:2012 logo for La Presse newspaper.svg) for educational reference in Learn mode.",
   },
@@ -122,7 +122,7 @@ const EXPLAINER_OVERRIDES = {
   "de-die-welt": {
     logo: "newspaper-logos/de/die-welt.png",
     logoExplainer:
-      "Wordmark for Die Welt — the Berlin daily's title treatment on white.",
+      "Dark-grey sans-serif capitals 'DIE WELT' with a blue-and-white globe between the two words.",
     licenceNote:
       "Die Welt masthead trademark bundled from Wikimedia Commons (File:Die Welt Logo 2015.png) for educational reference in Learn mode.",
   },
@@ -140,19 +140,19 @@ const EXPLAINER_OVERRIDES = {
   },
   "fr-le-figaro": {
     logoExplainer:
-      "Ornate gothic masthead spelling 'Le Figaro' — the historic Paris daily's nameplate.",
+      "White serif capitals spelling 'LE FIGARO' on a blue rectangle, with a white quill feather set against the F.",
     licenceNote:
       "Le Figaro masthead trademark bundled from Wikimedia Commons (File:Le Figaro logo.svg) for educational reference in Learn mode.",
   },
   "fr-ouest-france": {
     logoExplainer:
-      "Wordmark for Ouest-France — Brittany's high-circulation regional daily title treatment.",
+      "Red lower-case 'ouest france' stacked on two lines beside a red disc divided by white lines.",
     licenceNote:
       "Ouest-France masthead trademark bundled from Wikimedia Commons (File:Ouest-France logo.svg) for educational reference in Learn mode.",
   },
   "fr-liberation": {
     logoExplainer:
-      "Condensed white sans-serif 'Libération' over a red lozenge with a black drop shadow — the paper's distinctive title treatment.",
+      "Condensed white capitals spelling 'Libération', outlined in black with a heavy black offset shadow, laid across a red lozenge.",
     licenceNote:
       "Libération masthead trademark bundled from Wikimedia Commons (File:Logo liberation.svg) for educational reference in Learn mode.",
   },

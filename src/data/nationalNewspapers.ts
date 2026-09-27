@@ -3848,7 +3848,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "revenueModel": "Philanthropic donations, government journalism tax credits, and digital advertising",
       "logo": "newspaper-logos/ca/la-presse.svg",
-      "logoExplainer": "Bold wordmark for La Presse — the Montreal daily's 2012 digital-era title treatment.",
+      "logoExplainer": "White bold sans-serif capitals 'LA PRESSE', stacked on two lines on a red square.",
       "licenceNote": "La Presse masthead trademark bundled from Wikimedia Commons (File:2012 logo for La Presse newspaper.svg) for educational reference in Learn mode.",
       "sources": [
         "https://www.lapresse.ca",
@@ -5870,7 +5870,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "revenueModel": "Digital subscriptions, television broadcasting revenue, and programmatic advertising",
       "logo": "newspaper-logos/de/die-welt.png",
-      "logoExplainer": "Wordmark for Die Welt — the Berlin daily's title treatment on white.",
+      "logoExplainer": "Dark-grey sans-serif capitals 'DIE WELT' with a blue-and-white globe between the two words.",
       "licenceNote": "Die Welt masthead trademark bundled from Wikimedia Commons (File:Die Welt Logo 2015.png) for educational reference in Learn mode.",
       "sources": [
         "https://www.welt.de",
@@ -7826,7 +7826,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "revenueModel": "Digital subscriptions, print sales, luxury advertising, and magazine supplements",
       "logo": "newspaper-logos/fr/le-figaro.svg",
-      "logoExplainer": "Ornate gothic masthead spelling 'Le Figaro' — the historic Paris daily's nameplate.",
+      "logoExplainer": "White serif capitals spelling 'LE FIGARO' on a blue rectangle, with a white quill feather set against the F.",
       "licenceNote": "Le Figaro masthead trademark bundled from Wikimedia Commons (File:Le Figaro logo.svg) for educational reference in Learn mode.",
       "sources": [
         "https://www.lefigaro.fr",
@@ -7854,7 +7854,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "revenueModel": "Reader subscriptions, philanthropic endowment support, and advertising",
       "logo": "newspaper-logos/fr/libération.svg",
-      "logoExplainer": "Condensed white sans-serif 'Libération' over a red lozenge with a black drop shadow — the paper's distinctive title treatment.",
+      "logoExplainer": "Condensed white capitals spelling 'Libération', outlined in black with a heavy black offset shadow, laid across a red lozenge.",
       "licenceNote": "Libération masthead trademark bundled from Wikimedia Commons (File:Logo liberation.svg) for educational reference in Learn mode.",
       "sources": [
         "https://www.liberation.fr",
@@ -7882,7 +7882,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "revenueModel": "Print subscriptions, retail kiosk sales, and local display advertising",
       "logo": "newspaper-logos/fr/ouest-france.svg",
-      "logoExplainer": "Wordmark for Ouest-France — Brittany's high-circulation regional daily title treatment.",
+      "logoExplainer": "Red lower-case 'ouest france' stacked on two lines beside a red disc divided by white lines.",
       "licenceNote": "Ouest-France masthead trademark bundled from Wikimedia Commons (File:Ouest-France logo.svg) for educational reference in Learn mode.",
       "sources": [
         "https://www.ouest-france.fr",
@@ -8103,7 +8103,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "revenueModel": "Voluntary reader donations/memberships, digital subscriptions, print sales, and philanthropic foundation grants",
       "logo": "newspaper-logos/gb/the-guardian.svg",
-      "logoExplainer": "Stacked slab-serif wordmark 'The Guardian' in Guardian Egyptian — the post-2018 title treatment used across print and digital.",
+      "logoExplainer": "Black high-contrast serif wordmark 'The Guardian', stacked on two lines.",
       "licenceNote": "The Guardian masthead trademark bundled from Wikimedia Commons (File:The Guardian 2018.svg) for educational reference in Learn mode.",
       "sources": [
         "https://www.theguardian.com",
@@ -17794,110 +17794,23 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
   ],
   "NR": [
     {
-      "id": "nr-naoero-gazette",
-      "countryCode": "NR",
-      "name": "Naoero Gazette",
-      "officialName": "Republic of Nauru Government Gazette",
-      "englishTranslation": "Nauru Gazette",
-      "founded": 1968,
-      "frequency": "Weekly & extraordinary statutory editions",
-      "format": "Official gazette & government record bulletin",
-      "language": "English, Nauruan",
-      "headquarters": "Yaren District",
-      "owner": {
-        "name": "Republic of Nauru",
-        "type": "Government department / official state publisher"
-      },
-      "editorialStance": "Official public record; ministerial appointments, statutory notices, parliamentary enactments, and government regulations",
-      "readership": {
-        "metric": "Circulated throughout government ministries, courts, state corporations, and public libraries nationwide",
-        "source": "Government Information Office of Nauru"
-      },
-      "revenueModel": "Fully public-funded state gazette",
-      "logo": "newspaper-logos/nr/naoero-gazette.svg",
-      "logoExplainer": "Official masthead displaying the national coat of arms of Nauru with traditional frigatebird and coconut palm crest.",
-      "sources": [
-        "https://www.naurugov.nr",
-        "https://en.wikipedia.org/wiki/Nauru"
-      ]
-    },
-    {
       "id": "nr-mwinen-ko",
       "countryCode": "NR",
       "name": "Mwinen Ko",
-      "officialName": "Mwinen Ko Community Newsletter",
-      "englishTranslation": "Let's Talk About It",
-      "founded": 2010,
-      "frequency": "Monthly community newspaper",
-      "format": "Community print newsletter & digital PDF bulletin",
+      "officialName": "Mwinen Ko",
+      "frequency": "Monthly",
+      "format": "Print newspaper",
       "language": "Nauruan, English",
-      "headquarters": "Aiwo / Yaren",
+      "headquarters": "Nauru Media Bureau, Government Offices, Yaren",
       "owner": {
-        "name": "Nauru Community Media Association",
-        "type": "Civic community non-profit"
+        "name": "Nauru Media Bureau",
+        "type": "Government media bureau (Ministry for Telecommunications and Media)"
       },
-      "editorialStance": "Local community affairs, district sports, environmental awareness, phosphate rehabilitation, and youth stories",
-      "readership": {
-        "metric": "Read by households across all 14 districts of Nauru (population ~12,000)",
-        "source": "Nauru Community Media Archive"
-      },
-      "revenueModel": "Community grants and local public announcements",
+      "editorialStance": "Government and community news, published by the bureau that also runs Nauru's television and radio news",
+      "revenueModel": "Cover price ($1 at local retail outlets) and advertising",
       "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
       "sources": [
-        "https://www.naurugov.nr",
-        "https://en.wikipedia.org/wiki/Nauru"
-      ]
-    },
-    {
-      "id": "nr-nauru-chronicle",
-      "countryCode": "NR",
-      "name": "The Nauru Chronicle",
-      "officialName": "The Nauru Chronicle",
-      "founded": 2005,
-      "frequency": "Fortnightly independent bulletin",
-      "format": "Independent newsprint & digital bulletin",
-      "language": "English, Nauruan",
-      "headquarters": "Yaren District",
-      "owner": {
-        "name": "Pacific Voices Publishing",
-        "type": "Independent civic publisher"
-      },
-      "editorialStance": "Civic discourse, Pacific regional affairs, environmental policy, and independent commentary",
-      "readership": {
-        "metric": "Distributed across Nauru and among the Pacific island diaspora in Australia and Fiji",
-        "source": "Pacific Islands News Association (PINA)"
-      },
-      "revenueModel": "Community contributions and local sponsor notices",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
-      "sources": [
-        "https://www.pina.com.fj",
-        "https://en.wikipedia.org/wiki/Media_of_Nauru"
-      ]
-    },
-    {
-      "id": "nr-central-star-news",
-      "countryCode": "NR",
-      "name": "Central Star News",
-      "officialName": "Central Star News Bulletin",
-      "founded": 2015,
-      "frequency": "Fortnightly community bulletin",
-      "format": "Community newsletter & social news bulletin",
-      "language": "English, Nauruan",
-      "headquarters": "Aiwo District",
-      "owner": {
-        "name": "Aiwo & Buada Community Council",
-        "type": "District community council"
-      },
-      "editorialStance": "Local district news, civic events, school achievements, and sports leagues",
-      "readership": {
-        "metric": "Reaches community members in western and central districts of the island",
-        "source": "Local Council Records"
-      },
-      "revenueModel": "Local council funding and community contributions",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
-      "sources": [
-        "https://www.naurugov.nr",
-        "https://en.wikipedia.org/wiki/Districts_of_Nauru"
+        "https://www.nauru.gov.nr/media/58467/nauru_20bulletin_20_02_7feb2017_20_28150_29.pdf"
       ]
     }
   ],
@@ -24778,7 +24691,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "revenueModel": "Print newsstand sales, hotel distribution agreements, digital paywall subscriptions, and programmatic digital advertising",
       "logo": "newspaper-logos/us/usa-today.svg",
-      "logoExplainer": "Cyan-blue circular badge beside the bold sans-serif wordmark 'USA TODAY' — the 2020 identity combining the signature blue disc with the Futura-derived title.",
+      "logoExplainer": "A cyan-blue disc beside the bold black sans-serif capitals 'USA TODAY'.",
       "licenceNote": "USA Today masthead is a trademark of Gannett Co., Inc., bundled from Wikimedia Commons (File:USA Today (2020-01-29).svg; PD-textlogo) for educational reference in Learn mode.",
       "sources": [
         "https://www.usatoday.com",

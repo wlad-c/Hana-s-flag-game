@@ -9,6 +9,7 @@
 import { readFileSync, existsSync, statSync } from "node:fs";
 import { dirname, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = resolve(__dirname, "..", "src", "data", "nationalNewspapers.ts");
@@ -69,6 +70,7 @@ const failures = [];
 const seenIds = new Set();
 let totalNewspapers = 0;
 
+const decodeQueue = [];
 for (const [countryKey, list] of Object.entries(newspapersByCountry)) {
   if (!Array.isArray(list)) {
     failures.push(`Country entry ${countryKey} must be an array of newspapers`);
@@ -101,7 +103,8 @@ for (const [countryKey, list] of Object.entries(newspapersByCountry)) {
     if (!paper.name || typeof paper.name !== "string" || !paper.name.trim()) {
       failures.push(`${ctx}: missing or empty name`);
     }
-    if (typeof paper.founded !== "number" || paper.founded < 1500 || paper.founded > 2026) {
+    // founded and readership are optional: an unsourced value is omitted, never defaulted.
+    if (paper.founded !== undefined && (typeof paper.founded !== "number" || paper.founded < 1500 || paper.founded > 2026)) {
       failures.push(`${ctx}: founded year "${paper.founded}" invalid`);
     }
     if (!paper.headquarters || typeof paper.headquarters !== "string") {
@@ -116,7 +119,7 @@ for (const [countryKey, list] of Object.entries(newspapersByCountry)) {
     if (!paper.format || typeof paper.format !== "string") {
       failures.push(`${ctx}: missing or empty format`);
     }
-    if (!paper.readership || typeof paper.readership.metric !== "string" || typeof paper.readership.source !== "string") {
+    if (paper.readership !== undefined && (typeof paper.readership.metric !== "string" || typeof paper.readership.source !== "string")) {
       failures.push(`${ctx}: missing or incomplete readership (metric and source required)`);
     }
 
@@ -211,6 +214,7 @@ for (const [countryKey, list] of Object.entries(newspapersByCountry)) {
       const ext = extname(cleanRel).toLowerCase();
       const buf = readFileSync(logoAbs);
       const kind = sniffImageKind(buf);
+      decodeQueue.push({ ctx, file: logoAbs });
 
       if (ext === ".svg") {
         if (st.size > MAX_SVG_SIZE) {
@@ -261,6 +265,16 @@ for (const [countryKey, list] of Object.entries(newspapersByCountry)) {
         }
       }
     }
+  }
+}
+
+// Sniffing "<svg" is not decoding: an SVG that uses xlink:href without declaring
+// xmlns:xlink sniffs fine and then renders as a broken image (the Naoero Gazette).
+for (const { ctx, file } of decodeQueue) {
+  try {
+    await sharp(file).png().toBuffer();
+  } catch (err) {
+    failures.push(`${ctx}: logo does not decode as an image (${String(err.message).slice(0, 160)})`);
   }
 }
 

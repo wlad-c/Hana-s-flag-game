@@ -21,7 +21,7 @@ export const PUBLIC_BROADCASTERS: Record<string, readonly PublicBroadcaster[]> =
       name: "ABC",
       officialName: "Australian Broadcasting Corporation",
       founded: 1932,
-      primaryFunding: "Federal government budget appropriation (triennial funding envelope from the Commonwealth Government)",
+      primaryFunding: "Federal government budget appropriation, set in five-year funding terms (the first began on 1 July 2023, replacing the earlier three-year terms; the terms operate by government convention)",
       headquarters: "Ultimo, Sydney, New South Wales",
       annualPublicFunding: {
         total: "A$1,139.7 million (FY 2023–24)",
@@ -39,6 +39,7 @@ export const PUBLIC_BROADCASTERS: Record<string, readonly PublicBroadcaster[]> =
         "The famous ABC 'Lissajous curve' (popularly known as the 'Worms' or oscilloscope wave) was created in 1965 by ABC senior graphic designer Bill Kennard. It depicts a continuous looping curve formed by an oscilloscope when tuning broadcast equipment (a 3:1 frequency ratio), symbolizing electronic transmission, technical precision, and national unity across the continent.",
       sources: [
         "https://about.abc.net.au/reports-publications/abc-annual-report-2023-24/",
+        "https://www.infrastructure.gov.au/have-your-say/review-options-support-national-broadcasters-independence",
         "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2024/australia",
         "https://www.acma.gov.au/australian-content",
       ],

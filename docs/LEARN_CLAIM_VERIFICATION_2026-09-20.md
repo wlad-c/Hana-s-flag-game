@@ -92,7 +92,20 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - **F44:** 600 → Sui China; the 1500 "Mughal era begins" clause is removed (founded 1526); 1920 → three empires gone, the defeated Ottoman Empire being partitioned, sultanate abolished 1922; 2000 BC "Old Kingdom" → Middle Kingdom.
   - **New finding (R04):** none of the names in the 2000 BC `ERA_OVERRIDES` block is a feature in `world_bc2000.geojson` (which uses Egypt, Hittites, Ur, Xia …), and there is no remap for that era, so the block is unreachable. It also held 14 polities from centuries later (Hittite Empire, Shang, New Kingdom, Hammurabi's Babylon, Mitanni, Amorites as "Indo-European", Phoenicians, Sabaeans, Vedic and Gangetic kingdoms, early Zhou, Mycenae, Hattusas, Arzawa). Those 14 are deleted. The remaining entries are still unreachable; wiring the era's real names is **unclaimed**.
   - **Exposure:** `EraSlider`, the only component that renders `Era.summary`, is not mounted anywhere, so the summary fixes are repository corrections with no live exposure today.
-- **F45:** the 1920 Hejaz note now describes the bundled image (black, white and green bands, red hoist triangle, the Arab Revolt colours; *Flag of the Arab Revolt* dates this variant 1920–1926), and says Nejd conquered the kingdom in 1925. The 1938 Hejaz entry is removed: `world_1938` has no Hejaz feature, and the note falsely claimed "the GeoJSON includes it". | In the running app, 1920 Hejaz shows the corrected note and flag. The historical-flag-validity, era-explanations, anachronism, continents and historical-maps checks, `check-national-flags` and `tsc` pass. **Not pushed:** the VM's GitHub token has expired (all pushes since f0c9407d fail with "Invalid username or token"), so every commit from 7685d26f onward is local only and **not live**. |
+- **F45:** the 1920 Hejaz note now describes the bundled image (black, white and green bands, red hoist triangle, the Arab Revolt colours; *Flag of the Arab Revolt* dates this variant 1920–1926), and says Nejd conquered the kingdom in 1925. The 1938 Hejaz entry is removed: `world_1938` has no Hejaz feature, and the note falsely claimed "the GeoJSON includes it". | In the running app, 1920 Hejaz shows the corrected note and flag. The historical-flag-validity, era-explanations, anachronism, continents and historical-maps checks, `check-national-flags` and `tsc` pass. The push was blocked by an expired VM token between f0c9407d and 03723e33; everything reached `main` at 03723e33. |
+| 2026-09-27 19:45 Melbourne / 09:45 UTC | Opus 5.5 | F48 (Nauru papers), F50 (ABC funding term), F51 (composite mastheads), F52 (captions vs artwork), F57 (undecodable SVG), part of F49 (defaulted fields) | Implemented — awaiting verification |
+- **F52:** rendered the three Olympic marks and all 20 replacement mastheads from `purge-fabricated-newspaper-logos.mjs` in a montage before editing.
+  - GB (red/blue lion's head), KE (white figure with raised arms over black, red and green bands; the audit's "bird" was not what I saw either, so the text says only what is drawn) and BM (rings, then BERMUDA, then the arms) design lines now match their images.
+  - Le Figaro (white serif capitals and quill on blue), La Presse, Die Welt, Ouest-France, USA Today and The Guardian captions now describe the image. Unsourced typeface and year claims ("Guardian Egyptian, post-2018", "2020 identity … Futura-derived", "2012 digital-era") are trimmed.
+  - **Libération disagreement:** the render shows **white** letters with heavy black outlines and a black offset shadow on the red lozenge, not "predominantly black letterforms". The caption is refined but keeps white. Codex, please re-check against your render.
+- **F48:** the University of Canterbury holdings date Central Star News to 1991–92 and The Nauru Chronicle to 1993–c.1995. Both were presented as current papers with invented owners ("Aiwo & Buada Community Council", "Pacific Voices Publishing"), so both records are removed; re-adding either needs a sourced current-operation claim.
+  - Mwinen Ko is rebuilt from the government's Nauru Bulletin (7 Feb 2017, p.4): monthly print publication of the Nauru Media Bureau (Ministry for Telecommunications and Media), $1 at local retail outlets, with an advertising manager on staff. The invented "Nauru Community Media Association" owner, the 2010 founding year, the "Let's Talk About It" gloss and the "Nauru Community Media Archive" readership source are removed.
+- **F49 (partial):** `founded` and `readership` are now **optional** in `Newspaper`, in `check-national-newspapers.mjs` (still validated when present) and in the panel and grid (rows render only when present). The schema no longer forces a generator to invent them. The 55 + 3 "Audience Review 2024" strings are **not yet** addressed (unclaimed).
+- **F51 / F57:**
+  - `scripts/generate-island-logos.mjs` is deleted, along with its remaining outputs (`nr/naoero-gazette.svg`, `nr/nauru-bulletin.svg`, `va/acta-apostolicae-sedis.svg`) and the orphaned `nr/nauru-gio.svg`.
+  - The Naoero Gazette record is removed: it is an official statutory record, not a news retailer, and its masthead was the broken composite.
+  - Both media checks now **rasterise every logo with sharp**. Tested: re-inserting the Gazette SVG fails with "Namespace prefix xlink … is not defined", and the real data passes. The size/primitive "fabricated" heuristic is left in place as a review flag; a provenance manifest (F51/F62) is unclaimed.
+- **F50:** the ABC's funding is described as five-year terms, the first from 1 July 2023 (replacing three-year terms), operating by convention; the department's review page is cited. Appropriation vs revenue for the A$1,139.7m figure is **not yet** checked against the annual report. | Newspaper, agency, national-flag, grid-content, grid-grouping, image-key and user-facing-copy checks and `tsc` pass. In the running app, Mwinen Ko shows the sourced fields with no Founded or Readership row. The full `flags:check` passed on 03723e33 (before this batch). |
 
 ### Open handoff cautions
 
@@ -646,21 +659,21 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | F40 | Ethiopia regions | Needs data | As F03. |
 | F41 | Zimbabwe (Nambya), Austria (German), Namibia (English), Rwanda (Swahili) | **Fixed** | Constitutions of Zimbabwe s. 6, Austria Art. 8, Namibia Art. 3; gov.rw. |
 | F42 | Cuba lists the withdrawn CUC | **Fixed** | Decree-Law 37/2021. |
-| F43 | "195 UN member states" | Implemented (local) | Summary distinguishes 193 members + 2 observers. |
-| F44 | 600/1500/1920 era anachronisms | Implemented (local) | Plus 2000 BC; 14 unreachable anachronistic overrides removed (R04). Summaries are not currently rendered. |
-| F45 | Hejaz flag prose contradicts image | Implemented (local) | 1920 prose matches image; unreachable 1938 entry removed. |
+| F43 | "195 UN member states" | Implemented — awaiting verification | Summary distinguishes 193 members + 2 observers. |
+| F44 | 600/1500/1920 era anachronisms | Implemented — awaiting verification | Plus 2000 BC; 14 unreachable anachronistic overrides removed (R04). Summaries are not currently rendered. |
+| F45 | Hejaz flag prose contradicts image | Implemented — awaiting verification | 1920 prose matches image; unreachable 1938 entry removed. |
 | F46 | Freedom House 2024 mismatches | Closed earlier | Replaced by the 2026 dataset, which the audit verified (see "Resolution of earlier Freedom House finding"). |
 | F47 | GDP year dropped; unsourced fallbacks | Queued | |
-| F48 | Nauru newspaper dates/ownership | Queued | |
-| F49 | Generator invents newspaper defaults and citations | Queued | |
-| F50 | ABC funding term | Queued | |
-| F51 | Generated composite mastheads | Queued | |
-| F52 | Olympic/newspaper captions contradict images | Queued | |
-| F53 | Brazil Olympic text: 1889 dynasties | Implemented (local) | Continuity from the imperial flag; Decree 4 cited. |
-| F54 | Bermuda grouped as Caribbean | Implemented (local) | Grouped with North America (M49 Northern America). |
+| F48 | Nauru newspaper dates/ownership | Implemented — awaiting verification | Two historical titles removed; Mwinen Ko rebuilt from the government bulletin. |
+| F49 | Generator invents newspaper defaults and citations | Partly implemented | founded/readership optional; "Audience Review 2024" strings unclaimed. |
+| F50 | ABC funding term | Implemented — awaiting verification | Appropriation vs revenue still open. |
+| F51 | Generated composite mastheads | Implemented — awaiting verification | Generator and composites deleted; provenance manifest unclaimed. |
+| F52 | Olympic/newspaper captions contradict images | Implemented — awaiting verification | Libération disputed — see ledger. |
+| F53 | Brazil Olympic text: 1889 dynasties | Implemented — awaiting verification | Continuity from the imperial flag; Decree 4 cited. |
+| F54 | Bermuda grouped as Caribbean | Implemented — awaiting verification | Grouped with North America (M49 Northern America). |
 | F55 | Kenya 8 provinces → 47 counties | Needs data | As F03. |
 | F56 | "Leg power" inferred from government membership | Queued | Conflicts with a CLAUDE.md hard rule (fallback is deliberate); needs owner decision — see note when reached. |
-| F57 | Broken Naoero Gazette SVG | Queued | |
+| F57 | Broken Naoero Gazette SVG | Implemented — awaiting verification | Record removed; decode gate added to both media checks. |
 | F58 | Generated "sources were checked" text | Queued | |
 | F59 | Vatican News in two registries | Queued | |
 | F60, F64 | 30 wrong-entity media logos | Queued | |
@@ -670,17 +683,17 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | F66, F75 | Media generators' default facts | Queued | |
 | F67 | V-Dem release vs observation year, PS scope | Queued | |
 | F68 | 58 census counts labelled "estimate" | Queued | With F06. |
-| F70 | CPI missing prior ranks shown as unchanged | Implemented (local) | |
-| F71 | DPI rank universe, Panama category | Implemented (local) | Congo → CD still unresolved. |
+| F70 | CPI missing prior ranks shown as unchanged | Implemented — awaiting verification | |
+| F71 | DPI rank universe, Panama category | Implemented — awaiting verification | Congo → CD still unresolved. |
 | F72–F74 | Europa Press, SMNA, RADOR | Queued | |
 | F76 | CPI checker fails open | Queued | |
-| F77 | GPI Honduras rank | Implemented (local) | |
-| F78 | Soft Power Guatemala movement | Implemented (local) | 19 missing movements filled. |
+| F77 | GPI Honduras rank | Implemented — awaiting verification | |
+| F78 | Soft Power Guatemala movement | Implemented — awaiting verification | 19 missing movements filled. |
 | F79 | Necenzurirano / N1 merged | Queued | |
 | F80–F83 | Central banks: false presence/absence, Morocco, Brunei, generator claims | Queued | |
 | F84–F86 | Estonia: Lääne eagle, Võru sword, "Flag of Elva" SVG ids | Fixed | Pushed in f0c9407d. Per-file provenance manifest (F86 part) unclaimed. |
-| F87, F88 | NZ seats, Green co-leaders | Implemented (local) | NZ First and Te Pāti Māori still missing. |
-| F89 | Six party position contradictions | Implemented (local) | New singleton-position gate. |
+| F87, F88 | NZ seats, Green co-leaders | Implemented — awaiting verification | NZ First and Te Pāti Māori still missing. |
+| F89 | Six party position contradictions | Implemented — awaiting verification | New singleton-position gate. |
 
 ### Work log
 
@@ -702,4 +715,5 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 - **27 Sep 2026 — F87–F89.** NZ Labour and ACT seats, the 123-seat chamber and the Green co-leaders are corrected. All six position contradictions are resolved against the parties' own Wikipedia infoboxes, and a singleton-label consistency gate is added to `check-political-parties.mjs`.
 - **27 Sep 2026 — F77, F78.** Honduras's GPI rank corrected to the publisher's 97, and the check that encoded the false tie is fixed. Guatemala's Soft Power movement is corrected, and the 19 absent movements are read from the rendered cards; the check now requires a movement for every country.
 - **27 Sep 2026 — F70, F71.** Unknown CPI movements are dropped, not shown as zero. DPI tiers now follow the printed appendix, and DPI ranks run over the full 98-unit survey.
-- **27 Sep 2026 — F43–F45, F53, F54.** Era summaries corrected (not currently rendered), 14 unreachable anachronistic 2000 BC overrides removed (new R04), Hejaz prose matched to its image, Brazil Olympic colours explained as imperial continuity, Bermuda grouped with North America. **Push blocked:** the VM's GitHub token has expired, so commits from 7685d26f onward are local only.
+- **27 Sep 2026 — F43–F45, F53, F54.** Era summaries corrected (not currently rendered), 14 unreachable anachronistic 2000 BC overrides removed (new R04), Hejaz prose matched to its image, Brazil Olympic colours explained as imperial continuity, Bermuda grouped with North America. Pushes were blocked by an expired token between f0c9407d and 03723e33; all of it landed on `main` at 03723e33.
+- **27 Sep 2026 — F48, F50–F52, F57, part of F49.** Nauru newspapers corrected from the government bulletin; composite-masthead generator and outputs deleted; media checks now decode every logo; nine captions matched to their artwork; ABC five-year funding terms; `founded`/`readership` no longer forced.
