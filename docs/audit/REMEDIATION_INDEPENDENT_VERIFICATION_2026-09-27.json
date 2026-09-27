@@ -1,0 +1,192 @@
+{
+  "auditDate": "2026-09-27",
+  "auditor": "Codex",
+  "repository": "wladimirchagas/Hana-s-flag-game",
+  "baselineBeforeFixes": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "reviewRevision": "7c75c3182419e125b29cbde27e1d02935cbd6e22",
+  "scope": "Specific F84–F89 corrections, not blanket closure of findings or the complete Opus remediation batch.",
+  "records": [
+    {
+      "id": "F84",
+      "status": "independently-verified-specific-fix",
+      "entity": "EE-57",
+      "result": "Current description says silver eagle, matching the Government Office Estonian blazon (kotkas).",
+      "sources": [
+        "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark"
+      ],
+      "limitation": "Other dates and symbolic interpretations keep their earlier per-claim status."
+    },
+    {
+      "id": "F85",
+      "status": "independently-verified-specific-fix",
+      "entity": "EE-86",
+      "result": "Current description has sword hilt lower-left and blade upper-right, matching the previously inspected bundled and official artwork and the Estonian blazon.",
+      "sources": [
+        "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark"
+      ],
+      "limitation": "All other historical/interpretive claims are outside this correction check."
+    },
+    {
+      "id": "F86",
+      "status": "partially-resolved",
+      "result": "Both incorrect Flag of Elva identifiers removed. Old/new Sharp raster outputs identical at 1200×800 bounding box; pixel comparison covers the full decoded images.",
+      "checks": [
+        {
+          "path": "public/flags/sub/EE/EE-37.svg",
+          "beforeSha256": "e914edc652a00ff3363b65c90c92c769a5646f23c8e6c71120ea46962d9781ae",
+          "afterSha256": "518d837442b67a0ce88db30c8cd52eb999dde903c9dff753a28739f0de2d797f",
+          "pixelIdentical": true,
+          "oldElvaText": true,
+          "newElvaText": false,
+          "beforeGitBlob": "bbb662830a7672fb0f35beca59509269261aeb2a"
+        },
+        {
+          "path": "public/flags/sub/EE/EE-51.svg",
+          "beforeSha256": "4d74b61011e166ed02df1b03451b29a2d8509c345d1cf5b01539391138db9133",
+          "afterSha256": "de32c99c5a341fd19af171bbf4794c3b0b385de2a0c63f3e9732bba89c12484f",
+          "pixelIdentical": true,
+          "oldElvaText": true,
+          "newElvaText": false,
+          "beforeGitBlob": "ca34ed74f1c3a80b6fea7ddabd244ed81dfb65a0"
+        }
+      ],
+      "remaining": "Per-file provenance, version and licence manifest recommendation remains unimplemented; pixel equality is not proof of rights."
+    },
+    {
+      "id": "F87",
+      "status": "partially-resolved",
+      "result": "Labour 34 and ACT 11 independently corroborated by Parliament. All four seatsTotal values now 123.",
+      "remaining": "National 48, Green 15 and current denominator are not settled by a November 2025 snapshot. Current Parliament overview gives National 49/Green 14, while the archived Collins record ends her Papakura membership on 14 May 2026; preserve dated source conflict rather than substituting overview numbers. Distinguish allocated from occupied seats and add as-of date.",
+      "sources": [
+        "https://www3.parliament.nz/en/mps-and-electorates/political-parties/",
+        "https://www3.parliament.nz/mi/mps-and-electorates/former-members-of-parliament/collins-judith/"
+      ]
+    },
+    {
+      "id": "F88",
+      "status": "independently-verified-specific-fix",
+      "result": "Both current Green co-leaders, Marama Davidson and Chlöe Swarbrick, now named; corroborated by their current party profiles.",
+      "sources": [
+        "https://www.greens.org.nz/marama_davidson",
+        "https://www.greens.org.nz/chloe_swarbrick"
+      ]
+    },
+    {
+      "id": "F89",
+      "status": "independently-verified-internal-consistency-fix",
+      "recordsScanned": 842,
+      "remainingSingletonContradictions": [],
+      "correctedRecords": [
+        {
+          "before": {
+            "id": "PL-PSL",
+            "country": "PL",
+            "positionRaw": "Right-wing",
+            "ideologyPosition": "centre-right"
+          },
+          "after": {
+            "id": "PL-PSL",
+            "positionRaw": "Centre-right",
+            "ideologyPosition": "centre-right"
+          }
+        },
+        {
+          "before": {
+            "id": "MX-MORENA",
+            "country": "MX",
+            "positionRaw": "Centre-left",
+            "ideologyPosition": "left"
+          },
+          "after": {
+            "id": "MX-MORENA",
+            "positionRaw": "Centre-left",
+            "ideologyPosition": "centre-left"
+          }
+        },
+        {
+          "before": {
+            "id": "GH-NPP",
+            "country": "GH",
+            "positionRaw": "Centre-right",
+            "ideologyPosition": "right"
+          },
+          "after": {
+            "id": "GH-NPP",
+            "positionRaw": "Centre-right",
+            "ideologyPosition": "centre-right"
+          }
+        },
+        {
+          "before": {
+            "id": "NZ-NAT",
+            "country": "NZ",
+            "positionRaw": "Centre-right",
+            "ideologyPosition": "right"
+          },
+          "after": {
+            "id": "NZ-NAT",
+            "positionRaw": "Centre-right",
+            "ideologyPosition": "centre-right"
+          }
+        },
+        {
+          "before": {
+            "id": "ZA-DA",
+            "country": "ZA",
+            "positionRaw": "Centre-right",
+            "ideologyPosition": "right"
+          },
+          "after": {
+            "id": "ZA-DA",
+            "positionRaw": "Centre to centre-right",
+            "ideologyPosition": "centre-right"
+          }
+        },
+        {
+          "before": {
+            "id": "ZA-EFF",
+            "country": "ZA",
+            "positionRaw": "Far-left",
+            "ideologyPosition": "left"
+          },
+          "after": {
+            "id": "ZA-EFF",
+            "positionRaw": "Far-left",
+            "ideologyPosition": "far-left"
+          }
+        }
+      ],
+      "result": "Six contradictions removed; singleton consistency guard added.",
+      "limitation": "Agreement between two fields is not independent verification of ideological classifications. Range/group judgments and the entire party registry remain subject to sourcing audit."
+    }
+  ],
+  "nzAfter": [
+    {
+      "id": "NZ-LAB",
+      "seats": 34,
+      "seatsTotal": 123,
+      "leader": "Chris Hipkins"
+    },
+    {
+      "id": "NZ-NAT",
+      "seats": 48,
+      "seatsTotal": 123,
+      "leader": "Christopher Luxon"
+    },
+    {
+      "id": "NZ-ACT",
+      "seats": 11,
+      "seatsTotal": 123,
+      "leader": "David Seymour"
+    },
+    {
+      "id": "NZ-GRN",
+      "seats": 15,
+      "seatsTotal": 123,
+      "leader": "Marama Davidson; Chlöe Swarbrick"
+    }
+  ],
+  "deploymentEvidence": "LIVE_VISA_AND_REMEDIATION_2026-09-27.json",
+  "otherOpusFixes": "Awaiting independent verification unless separately documented.",
+  "applicationEditsByCodex": false
+}
