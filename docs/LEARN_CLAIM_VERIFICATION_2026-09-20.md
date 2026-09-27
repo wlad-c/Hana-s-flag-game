@@ -1,5 +1,7 @@
 # Learn claim and artwork verification — 20 September 2026
 
+> **Remediation is under way.** A Cursor cloud agent is implementing these findings, and continuing the audit, from 27 September 2026. Who is fixing what, the branch/PR, and the status of every finding are in [Remediation log](#remediation-log--cursor-agent-from-27-september-2026) at the end of this file. Read it before starting a fix, to avoid duplicate work.
+
 **Universal verification is not complete.** This report records completed full-dataset comparisons and new image/metadata findings. It does not certify all 4,638 records in the seven large registries at `db3ba05`, every sentence, every historical date, every boundary or all artwork as correct. Unchecked and unresolved claims remain explicitly unverified; an image decoding successfully or matching a third-party download does not establish authenticity.
 
 This supplements [the original audit](LEARN_FACTUAL_AUDIT_2026-09-13.md) and [the continuation findings F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md). No application data was changed by Codex during the audit work recorded below. Implementation by other agents must be tracked in the shared log. The evidence ledgers below are intended to preserve both positive verification and failures for subsequent work.
@@ -536,3 +538,97 @@ The DPI checker independently demonstrates a related limit: it enforces app-deri
 - Net Press: the [publisher site](https://www.netpress.online/) supplies the unusual “rugamba.Net Press” header and identifies the agency in its adjacent banner. The apparent identity concern is cleared.
 - MINA, Mediafax and La Estrella use commemorative variants. Captions acknowledge the anniversary text; add validity/variant dates before presenting them as timeless branding.
 - Soir Info: its citation and claimed asset-origin domains differ; identity remains unresolved after unsuccessful source retrieval. Retrieval failure is not evidence that the logo is false.
+
+## Remediation log — Cursor agent, from 27 September 2026
+
+**Who:** a Cursor cloud agent, working for the repository owner. **What:** implementing the confirmed findings F01–F89 from this report and the two earlier ones ([F01–F39](LEARN_FACTUAL_AUDIT_2026-09-13.md), [F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md)), then continuing the audit and fixing what it finds. New findings from this agent are numbered **R01, R02, …** so they cannot collide with the ChatGPT audit's F-numbers.
+
+**Branch / PR:** `cursor/learn-audit-remediation-853e`. Changes are **not on `main` until the owner merges the PR**; until then the status below describes the branch, not the live site. The auditing agent's evidence sections above are left untouched; this log only records remediation.
+
+**How to coordinate:** before fixing a finding, check its row. If you take one, add your name to the row in the same commit as your first change.
+
+**Method, applied to every fix:**
+- Each value is re-checked against the primary source cited in the finding (or a better one) before it is changed; the audit's summary is not copied on trust. The source is recorded next to the data (for example in `src/data/countryFactCorrections.json`), not only here.
+- Generated files are corrected at the generator or its override table first, so a regeneration cannot undo the fix.
+- The repository's hard rules (`CLAUDE.md`) still apply: no geometry edits to historical era maps, no invented flags or coordinates, visual verification in the running app.
+
+### Status of every finding
+
+Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Queued** (agreed fix, not started) · **Needs data** (the fix needs a primary dataset not yet obtained, e.g. official boundaries) · **Model change** (the finding asks for a schema/UI change, scheduled separately) · **Closed earlier** (already fixed before this log began).
+
+| Finding | Topic | Status | Notes |
+|---|---|---|---|
+| F01 | Equatorial Guinea capital (Ciudad de la Paz) | Queued | Needs capital coordinates from Wikidata and a capital-marker change, done with F15. |
+| F02 | Japanese passport emblem called paulownia | Queued | |
+| F03 | Vietnam 63 → 34 provinces | Needs data | Official 2025 boundaries, codes, capitals and populations must change together. |
+| F04 | Angola 18 → 21 provinces | Needs data | As F03. |
+| F05 | National population pinned to 2024, year discarded | Queued | |
+| F06 | Population method defaults to "estimate" | Queued | |
+| F07 | Population shares mix vintages | Model change | |
+| F08 | Equatorial Guinea anthem plays Guinea's video | Queued | |
+| F09, F10 | 2000 BCE "Old Kingdom", 500 BCE "early Maurya" | Queued | |
+| F11, F12 | Germany: SSW missing, SPD co-chair Bas missing | Queued | |
+| F13 | Party sources mostly Wikipedia-only | Model change | Addressed country by country in the party sweep. |
+| F14 | Passports lack issuance dates | Model change | |
+| F15 | Sri Lanka capital roles | Queued | |
+| F16 | Zimbabwe currency omits ZiG | **Fixed** | ZWG added first; withdrawn bond notes (ZWB) removed; rand symbol corrected from "Rs" to "R". Source: RBZ, and the RBZ site quoting ZiG/ZWG on 27 Sep 2026. |
+| F17 | Historical populations unsourced | Model change | |
+| F18 | Administrative taxonomy | Model change | Follows the F03-type migrations. |
+| F19 | Hammurabi in the 2000 BCE overrides | Queued | |
+| F20 | Iraq 1960 prose describes the royal flag | Queued | |
+| F21 | Kyrgyzstan flag has pre-2023 wavy rays | Queued | |
+| F22–F28 | Burundi, Indonesia, Nepal, Norway, Kazakhstan, Burkina Faso, Mali subdivisions | Needs data | As F03. |
+| F29 | South Africa omits SASL | **Fixed** | Source: CRL Rights Commission, 20 Jul 2023. |
+| F30 | Algeria omits Tamazight | **Fixed** | Source: Constitution Art. 4. |
+| F31 | Azerbaijan lists Russian as official | **Fixed** | Source: Constitution Art. 21. |
+| F32 | Switzerland "Swiss German" | **Fixed** | Source: Constitution Art. 4. |
+| F33 | Bolivia lists 4 of 37 official languages | **Fixed** | All 37 from Constitution Art. 5(I). |
+| F34 | Sierra Leone SLE | Closed earlier | |
+| F35 | Socialist Bosnia canton colours reversed | Queued | |
+| F36 | Cuban arms chronology contradicts itself | Queued | |
+| F37 | Mali/Somalia and Oman/Romania share anthem segments | Queued | |
+| F38 | Explainers cite Grokipedia/Fandom | Queued | The 12 named Grokipedia/Fandom citations first. |
+| F39 | Bundle corrections overridden by the live API | **Fixed** | `src/data/countryFactCorrections.json` is applied by the generator and after the REST Countries merge in `src/api/countries.ts`. |
+| F40 | Ethiopia regions | Needs data | As F03. |
+| F41 | Zimbabwe (Nambya), Austria (German), Namibia (English), Rwanda (Swahili) | **Fixed** | Constitutions of Zimbabwe s. 6, Austria Art. 8, Namibia Art. 3; gov.rw. |
+| F42 | Cuba lists the withdrawn CUC | **Fixed** | Decree-Law 37/2021. |
+| F43 | "195 UN member states" | Queued | |
+| F44 | 600/1500/1920 era anachronisms | Queued | |
+| F45 | Hejaz flag prose contradicts image | Queued | |
+| F46 | Freedom House 2024 mismatches | Closed earlier | Replaced by the 2026 dataset, which the audit verified (see "Resolution of earlier Freedom House finding"). |
+| F47 | GDP year dropped; unsourced fallbacks | Queued | |
+| F48 | Nauru newspaper dates/ownership | Queued | |
+| F49 | Generator invents newspaper defaults and citations | Queued | |
+| F50 | ABC funding term | Queued | |
+| F51 | Generated composite mastheads | Queued | |
+| F52 | Olympic/newspaper captions contradict images | Queued | |
+| F53 | Brazil Olympic text: 1889 dynasties | Queued | |
+| F54 | Bermuda grouped as Caribbean | Queued | |
+| F55 | Kenya 8 provinces → 47 counties | Needs data | As F03. |
+| F56 | "Leg power" inferred from government membership | Queued | Conflicts with a CLAUDE.md hard rule (fallback is deliberate); needs owner decision — see note when reached. |
+| F57 | Broken Naoero Gazette SVG | Queued | |
+| F58 | Generated "sources were checked" text | Queued | |
+| F59 | Vatican News in two registries | Queued | |
+| F60, F64 | 30 wrong-entity media logos | Queued | |
+| F61, F65, F69 | Captions/asset roles contradict images | Queued | |
+| F62 | Artwork provenance manifest | Model change | |
+| F63 | Japan tourism 2025 total | Queued | |
+| F66, F75 | Media generators' default facts | Queued | |
+| F67 | V-Dem release vs observation year, PS scope | Queued | |
+| F68 | 58 census counts labelled "estimate" | Queued | With F06. |
+| F70 | CPI missing prior ranks shown as unchanged | Queued | |
+| F71 | DPI rank universe, Panama category | Queued | |
+| F72–F74 | Europa Press, SMNA, RADOR | Queued | |
+| F76 | CPI checker fails open | Queued | |
+| F77 | GPI Honduras rank | Queued | |
+| F78 | Soft Power Guatemala movement | Queued | |
+| F79 | Necenzurirano / N1 merged | Queued | |
+| F80–F83 | Central banks: false presence/absence, Morocco, Brunei, generator claims | Queued | |
+| F84–F86 | Estonia: Lääne eagle, Võru sword, "Flag of Elva" SVG ids | Queued | |
+| F87, F88 | NZ seats, Green co-leaders | Queued | |
+| F89 | Six party position contradictions | Queued | |
+
+### Work log
+
+- **27 Sep 2026, 04:10 UTC — started.** Read all three reports; created the branch and this log.
+- **27 Sep 2026 — country-fact corrections (F16, F29–F33, F39, F41, F42).** Re-checked each constitutional text myself (Constitute Project editions of the constitutions of Bolivia, Zimbabwe, Austria, Namibia, Azerbaijan, Algeria and Switzerland; gov.rw; the CRL Rights Commission; the Reserve Bank of Zimbabwe site). Also corrected the rand's symbol in Zimbabwe's list ("Rs" → "R", an upstream error the audit did not list). Mechanism: `src/data/countryFactCorrections.json`, read by `scripts/build-country-facts.mjs` and `src/api/countries.ts`, applied in place to `src/data/countryFacts.ts`.
