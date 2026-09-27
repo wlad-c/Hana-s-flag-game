@@ -85,6 +85,14 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
   - The data comment states that the rank is app-derived (the report prints no rank column).
 
 `check-dpi-data.mjs` now ranks over the 98 units and asserts the published tiers. Congo → CD remains **unresolved**, as Codex noted. | In the running app: Panama "Rank 77 · Negative · -15", Kazakhstan "Rank 98", Belize CPI "Rank 104 · Score 36" with no movement. The DPI, CPI and chart-band checks pass. |
+| 2026-09-27 19:05 Melbourne / 09:05 UTC | Opus 5.5 | F43, F44, F45 (era summaries, 2000 BC overrides, Hejaz), F53 (Brazil Olympic colours), F54 (Bermuda grouping) | Implemented — awaiting verification |
+- **F53:** the explainer now says the green and yellow were **carried over** from the 1822 imperial flag (Braganza / Habsburg, per *Flag of Brazil*) and that Decree No. 4 of 19 Nov 1889 kept them when the globe replaced the imperial arms. The Planalto decree is added as a source (the page timed out from this VM, so the "kept the old colours" wording rests on the audit's reading plus Wikipedia). An uncited "the Committee's website confirms" clause is trimmed.
+- **F54:** Bermuda's `subcontinent` is now "North America" in both `iocAssociations.ts` and `fifaAssociations.ts`. That is the label the app already uses for UN M49 Northern America (US, Canada), so no one-card heading is created. The confederation zone is untouched. In the running app, Football associations → Group by sub-continent shows NORTH AMERICA (4): Bermuda, Canada, Mexico, United States.
+- **F43:** the Today summary now reads "195 countries — the 193 UN member states plus the two UN observer states, the Holy See and Palestine". No other user-facing string says "195 UN members"; code comments are left alone.
+- **F44:** 600 → Sui China; the 1500 "Mughal era begins" clause is removed (founded 1526); 1920 → three empires gone, the defeated Ottoman Empire being partitioned, sultanate abolished 1922; 2000 BC "Old Kingdom" → Middle Kingdom.
+  - **New finding (R04):** none of the names in the 2000 BC `ERA_OVERRIDES` block is a feature in `world_bc2000.geojson` (which uses Egypt, Hittites, Ur, Xia …), and there is no remap for that era, so the block is unreachable. It also held 14 polities from centuries later (Hittite Empire, Shang, New Kingdom, Hammurabi's Babylon, Mitanni, Amorites as "Indo-European", Phoenicians, Sabaeans, Vedic and Gangetic kingdoms, early Zhou, Mycenae, Hattusas, Arzawa). Those 14 are deleted. The remaining entries are still unreachable; wiring the era's real names is **unclaimed**.
+  - **Exposure:** `EraSlider`, the only component that renders `Era.summary`, is not mounted anywhere, so the summary fixes are repository corrections with no live exposure today.
+- **F45:** the 1920 Hejaz note now describes the bundled image (black, white and green bands, red hoist triangle, the Arab Revolt colours; *Flag of the Arab Revolt* dates this variant 1920–1926), and says Nejd conquered the kingdom in 1925. The 1938 Hejaz entry is removed: `world_1938` has no Hejaz feature, and the note falsely claimed "the GeoJSON includes it". | In the running app, 1920 Hejaz shows the corrected note and flag. The historical-flag-validity, era-explanations, anachronism, continents and historical-maps checks, `check-national-flags` and `tsc` pass. **Not pushed:** the VM's GitHub token has expired (all pushes since f0c9407d fail with "Invalid username or token"), so every commit from 7685d26f onward is local only and **not live**. |
 
 ### Open handoff cautions
 
@@ -638,9 +646,9 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | F40 | Ethiopia regions | Needs data | As F03. |
 | F41 | Zimbabwe (Nambya), Austria (German), Namibia (English), Rwanda (Swahili) | **Fixed** | Constitutions of Zimbabwe s. 6, Austria Art. 8, Namibia Art. 3; gov.rw. |
 | F42 | Cuba lists the withdrawn CUC | **Fixed** | Decree-Law 37/2021. |
-| F43 | "195 UN member states" | Queued | |
-| F44 | 600/1500/1920 era anachronisms | Queued | |
-| F45 | Hejaz flag prose contradicts image | Queued | |
+| F43 | "195 UN member states" | Implemented (local) | Summary distinguishes 193 members + 2 observers. |
+| F44 | 600/1500/1920 era anachronisms | Implemented (local) | Plus 2000 BC; 14 unreachable anachronistic overrides removed (R04). Summaries are not currently rendered. |
+| F45 | Hejaz flag prose contradicts image | Implemented (local) | 1920 prose matches image; unreachable 1938 entry removed. |
 | F46 | Freedom House 2024 mismatches | Closed earlier | Replaced by the 2026 dataset, which the audit verified (see "Resolution of earlier Freedom House finding"). |
 | F47 | GDP year dropped; unsourced fallbacks | Queued | |
 | F48 | Nauru newspaper dates/ownership | Queued | |
@@ -648,8 +656,8 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | F50 | ABC funding term | Queued | |
 | F51 | Generated composite mastheads | Queued | |
 | F52 | Olympic/newspaper captions contradict images | Queued | |
-| F53 | Brazil Olympic text: 1889 dynasties | Queued | |
-| F54 | Bermuda grouped as Caribbean | Queued | |
+| F53 | Brazil Olympic text: 1889 dynasties | Implemented (local) | Continuity from the imperial flag; Decree 4 cited. |
+| F54 | Bermuda grouped as Caribbean | Implemented (local) | Grouped with North America (M49 Northern America). |
 | F55 | Kenya 8 provinces → 47 counties | Needs data | As F03. |
 | F56 | "Leg power" inferred from government membership | Queued | Conflicts with a CLAUDE.md hard rule (fallback is deliberate); needs owner decision — see note when reached. |
 | F57 | Broken Naoero Gazette SVG | Queued | |
@@ -662,17 +670,17 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | F66, F75 | Media generators' default facts | Queued | |
 | F67 | V-Dem release vs observation year, PS scope | Queued | |
 | F68 | 58 census counts labelled "estimate" | Queued | With F06. |
-| F70 | CPI missing prior ranks shown as unchanged | Queued | |
-| F71 | DPI rank universe, Panama category | Queued | |
+| F70 | CPI missing prior ranks shown as unchanged | Implemented (local) | |
+| F71 | DPI rank universe, Panama category | Implemented (local) | Congo → CD still unresolved. |
 | F72–F74 | Europa Press, SMNA, RADOR | Queued | |
 | F76 | CPI checker fails open | Queued | |
-| F77 | GPI Honduras rank | Queued | |
-| F78 | Soft Power Guatemala movement | Queued | |
+| F77 | GPI Honduras rank | Implemented (local) | |
+| F78 | Soft Power Guatemala movement | Implemented (local) | 19 missing movements filled. |
 | F79 | Necenzurirano / N1 merged | Queued | |
 | F80–F83 | Central banks: false presence/absence, Morocco, Brunei, generator claims | Queued | |
-| F84–F86 | Estonia: Lääne eagle, Võru sword, "Flag of Elva" SVG ids | Queued | |
-| F87, F88 | NZ seats, Green co-leaders | Queued | |
-| F89 | Six party position contradictions | Queued | |
+| F84–F86 | Estonia: Lääne eagle, Võru sword, "Flag of Elva" SVG ids | Fixed | Pushed in f0c9407d. Per-file provenance manifest (F86 part) unclaimed. |
+| F87, F88 | NZ seats, Green co-leaders | Implemented (local) | NZ First and Te Pāti Māori still missing. |
+| F89 | Six party position contradictions | Implemented (local) | New singleton-position gate. |
 
 ### Work log
 
@@ -694,3 +702,4 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 - **27 Sep 2026 — F87–F89.** NZ Labour and ACT seats, the 123-seat chamber and the Green co-leaders are corrected. All six position contradictions are resolved against the parties' own Wikipedia infoboxes, and a singleton-label consistency gate is added to `check-political-parties.mjs`.
 - **27 Sep 2026 — F77, F78.** Honduras's GPI rank corrected to the publisher's 97, and the check that encoded the false tie is fixed. Guatemala's Soft Power movement is corrected, and the 19 absent movements are read from the rendered cards; the check now requires a movement for every country.
 - **27 Sep 2026 — F70, F71.** Unknown CPI movements are dropped, not shown as zero. DPI tiers now follow the printed appendix, and DPI ranks run over the full 98-unit survey.
+- **27 Sep 2026 — F43–F45, F53, F54.** Era summaries corrected (not currently rendered), 14 unreachable anachronistic 2000 BC overrides removed (new R04), Hejaz prose matched to its image, Brazil Olympic colours explained as imperial continuity, Bermuda grouped with North America. **Push blocked:** the VM's GitHub token has expired, so commits from 7685d26f onward are local only.
