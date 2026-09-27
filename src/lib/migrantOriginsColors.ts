@@ -49,9 +49,9 @@ export const MIGRANT_ORIGINS_COLORS = {
 
 /** Interpolate `t` ∈ [0,1] across MIGRANT_ORIGINS_BLUE. */
 export function migrantBlueAt(t: number): string {
-  const palette = MIGRANT_ORIGINS_BLUE;
+  const palette: readonly string[] = MIGRANT_ORIGINS_BLUE;
   const x = Math.min(1, Math.max(0, t));
-  if (palette.length === 1) return palette[0];
+  if (palette.length <= 1) return palette[0] ?? "#dbeafe";
   const scaled = x * (palette.length - 1);
   const i = Math.floor(scaled);
   const f = scaled - i;
