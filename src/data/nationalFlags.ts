@@ -1264,7 +1264,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
     { id: "kh-khmer-republic", category: "historical", name: "Flag of the Khmer Republic", from: 1970, to: 1975, priorPolity: "the Khmer Republic", path: "national-flags/kh/cambodia-khmer-republic.svg", design: "The blue flag with Angkor Wat and three stars, of the republic that deposed the monarchy in 1970.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Cambodia" },
     { id: "kh-french", category: "historical", name: "Flag of the French Protectorate of Cambodia", from: 1863, to: 1948, sovereign: "France", path: "national-flags/kh/cambodia-french.svg", design: "The blue-bordered red flag with a white temple, flown under the French protectorate.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Cambodia" },
     { id: "kh-army", category: "military", name: "Flag of the Royal Cambodian Armed Forces", path: "national-flags/kh/cambodia-army.svg", design: "The armed forces' flag.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Cambodia" },
-    { id: "kh-royal-standard", category: "standard", name: "Royal Standard of the King of Cambodia", from: 1993, to: 9999, path: "national-flags/kh/cambodia-royal-standard.svg", design: "The royal standard bearing the arms.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Cambodia" },
+    { id: "kh-royal-standard", category: "standard", name: "Royal Standard of the King of Cambodia", from: 1993, to: 9999, path: "national-flags/kh/cambodia-royal-standard.svg", design: "A blue field bearing the royal arms of Cambodia in gold.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Cambodia" },
     { id: "kh-arms", category: "coatofarms", name: "Royal arms of Cambodia", from: 1953, to: 9999, path: "national-flags/kh/cambodia-arms.svg", design: "A sacred sword on ceremonial trays beneath the Unalome, on a mantle held by a gajasingha and a rajasingha bearing two five-tiered parasols, over the motto Ruler of the Kingdom of Cambodia.", source: "https://en.wikipedia.org/wiki/Royal_arms_of_Cambodia" },
     { id: "kh-passport", category: "passport", name: "Passport of Cambodia", path: "national-flags/kh/kh-passport.webp", design: "The cover of the Cambodia passport.", source: "https://gicg.net/passport/kh/" },
     { id: "kh-football-crest", category: "footballcrest", name: "Crest of the Cambodia national football team", path: "national-flags/kh/kh-football-crest.svg", design: "A blue line-art depiction of a four-faced Bayon-style tower, framed by a red decorative wreath, with a blue \"FFC\" ribbon and a football below.", source: "https://en.wikipedia.org/wiki/Football_Federation_of_Cambodia" },
@@ -1474,7 +1474,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
     { id: "ma-france", category: "historical", name: "Flag of France", from: 1912, to: 1956, sovereign: "France", path: "national-flags/ma/ma-france.svg", design: "The flag of France, flown over the French protectorate of Morocco until independence in 1956.", source: "https://en.wikipedia.org/wiki/French_protectorate_in_Morocco" },
     { id: "ma-alawi", category: "historical", name: "Flag of the Alawi Sultanate", from: 1666, to: 1915, priorPolity: "the Alawi Sultanate", path: "national-flags/ma/morocco-alawi.svg", design: "A plain red field — the flag of the sultanate before the pentagram was added in 1915.", source: "https://en.wikipedia.org/wiki/List_of_Moroccan_flags" },
     { id: "ma-naval-jack", category: "maritime", name: "Naval jack of Morocco", path: "national-flags/ma/morocco-naval-jack.svg", design: "A red swallow-tailed field with yellow and green charges.", source: "https://en.wikipedia.org/wiki/List_of_Moroccan_flags" },
-    { id: "ma-royal", category: "standard", name: "Royal standard of Morocco", from: 1915, to: 9999, path: "national-flags/ma/morocco-royal-standard.svg", design: "A green field bearing the national flag in the canton.", source: "https://en.wikipedia.org/wiki/List_of_Moroccan_flags" },
+    { id: "ma-royal", category: "standard", name: "Royal standard of Morocco", path: "national-flags/ma/morocco-royal-standard.svg", design: "A green field bearing the coat of arms of Morocco: the crowned red shield with the setting sun and green pentagram, supported by two lions above a scroll with a Qur'anic verse.", source: "https://en.wikipedia.org/wiki/List_of_Moroccan_flags" },
     { id: "ma-arms", category: "coatofarms", name: "Coat of arms of Morocco", from: 1957, to: 9999, path: "national-flags/ma/ma-arms.svg", design: "A red shield bearing a green pentagram over the Atlas Mountains and a rising sun, borne by two lions beneath the royal crown.", source: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Morocco" },
     { id: "ma-passport", category: "passport", name: "Passport of Morocco", path: "national-flags/ma/ma-passport.webp", design: "The cover of the Morocco passport.", source: "https://gicg.net/passport/ma/" },
     { id: "ma-football-crest", category: "footballcrest", name: "Crest of the Morocco national football team", path: "national-flags/ma/ma-football-crest.svg", design: "The crest of the Morocco national football team — a green circular badge bearing a white-bordered green star and a gold royal crown, with red bands hanging below, ringed by the federation's name in Arabic and French (“FÉDÉRATION ROYALE MAROCAINE DE FOOTBALL”, FRMF).", source: "https://en.wikipedia.org/wiki/Morocco_national_football_team" },
@@ -1671,7 +1671,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
     { id: "my-government-ensign", category: "maritime", name: "Government ensign of Malaysia", path: "national-flags/my/malaysia-government-ensign.svg", design: "A blue field with the flag of Malaysia in the canton — worn by government vessels.", source: "https://en.wikipedia.org/wiki/List_of_Malaysian_flags" },
     { id: "my-navy-1957", category: "maritime", name: "Naval ensign of the Royal Malayan Navy (1957–1963)", from: 1957, to: 1963, path: "national-flags/my/malaya-navy-ensign-1957.svg", design: "St George's Cross on a white field with the flag of Malaya in the canton.", source: "https://en.wikipedia.org/wiki/List_of_Malaysian_flags" },
     { id: "my-civil-ensign-malaya", category: "maritime", name: "Civil ensign of the Federation of Malaya (1957–1963)", from: 1957, to: 1963, path: "national-flags/my/malaya-civil-ensign.svg", design: "A red field with the flag of Malaya in a blue-fimbriated canton.", source: "https://en.wikipedia.org/wiki/List_of_Malaysian_flags" },
-    { id: "my-agong", category: "standard", name: "Standard of the Yang di-Pertuan Agong", from: 1988, to: 9999, path: "national-flags/my/malaysia-agong.svg", design: "The royal standard of Malaysia's elected king.", source: "https://en.wikipedia.org/wiki/List_of_Malaysian_flags" },
+    { id: "my-agong", category: "standard", name: "Standard of the Yang di-Pertuan Agong", from: 1988, to: 9999, path: "national-flags/my/malaysia-agong.svg", design: "A royal-yellow field bearing the coat of arms of Malaysia within a gold wreath of rice paddy.", source: "https://en.wikipedia.org/wiki/List_of_Malaysian_flags" },
     { id: "my-arms", category: "coatofarms", name: "Coat of arms of Malaysia", path: "national-flags/my/malaysia-arms.svg", design: "A shield held by two tigers, crowned by a yellow crescent and fourteen-pointed federal star, above a motto ribbon.", source: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Malaysia" },
     { id: "my-passport", category: "passport", name: "Malaysian passport", path: "national-flags/my/malaysia-passport.svg", design: "A dark red cover with the Malaysian coat of arms in gold, the country's name above and PASSPORT/PASPORT below.", source: "https://en.wikipedia.org/wiki/Malaysian_passport" },
     { id: "my-football-crest", category: "footballcrest", name: "Crest of the Football Association of Malaysia (FAM)", path: "national-flags/my/my-football-crest.svg", design: "The crest of the Football Association of Malaysia — a leaping Malayan tiger over a football on a black shield, ringed by a wreath and the banner “Persatuan Bolasepak Malaysia”.", source: "https://en.wikipedia.org/wiki/Football_Association_of_Malaysia" },
@@ -1757,7 +1757,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
     { id: "no-official-national", category: "official", name: "Flag of Norway", from: 1821, to: 9999, primary: true, path: "flags/no.svg", design: "The national flag of Norway, in the form adopted in 1821.", source: "https://en.wikipedia.org/wiki/Flag_of_Norway" },
     { id: "no-union-1844", category: "historical", name: "Flag of Norway (1844–1899)", from: 1844, to: 1899, path: "national-flags/no/union-1844.svg", design: "The red-white-blue Nordic cross defaced in the canton with the Swedish–Norwegian union badge (popularly the 'herring salad'), flown during the union with Sweden; the badge was removed from the civil flag in 1899.", source: "https://en.wikipedia.org/wiki/Flag_of_Norway" },
     { id: "no-1814", category: "historical", name: "Flag of Norway (1814–1821)", from: 1814, to: 1821, path: "national-flags/no/dano-1814.svg", design: "The Dano-Norwegian Dannebrog — a red field with a white-bordered red cross — defaced in the canton with the gold Norwegian lion bearing an axe, flown in the years after 1814 before the modern flag was adopted in 1821.", source: "https://en.wikipedia.org/wiki/Flag_of_Norway" },
-    { id: "no-war-flag", category: "military", name: "Naval ensign and war flag of Norway", from: 1905, to: 9999, path: "national-flags/no/norway-war-flag.svg", design: "The national flag in swallow-tailed form, flown by the armed forces.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
+    { id: "no-war-flag", category: "military", name: "Naval ensign and war flag of Norway", from: 1905, to: 9999, path: "national-flags/no/norway-war-flag.svg", design: "The national flag with a swallowtail and tongue (a three-tailed fly), flown as the state flag and by the armed forces.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
     { id: "no-naval-jack", category: "maritime", name: "Naval jack of Norway", path: "national-flags/no/norway-naval-jack.svg", design: "The national flag in square proportions.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
     { id: "no-royal", category: "standard", name: "Royal Standard of Norway", from: 1905, to: 9999, path: "national-flags/no/norway-royal-standard.svg", design: "The coat of arms of Norway on a red field.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
     { id: "no-crown-prince", category: "standard", name: "Standard of the Crown Prince of Norway", from: 1924, to: 9999, path: "national-flags/no/norway-crown-prince.svg", design: "The royal standard differenced for the heir.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
@@ -4990,9 +4990,9 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "de-navy": {
-    description: "The forked swallowtail shape, adopted in 1956, marks this as the German Navy's ensign, following a naval tradition — inherited via Denmark's 1625 regulations — of reserving a swallow-tailed flag for the battle fleet to distinguish it from merchant shipping's plain rectangular flag.",
+    description: "Introduced in 1956, the flag of the German Navy is the federal government flag — the black-red-gold tricolour with the federal shield — ending in a swallowtail. The forked fly is what marks it as the navy's flag rather than the plain rectangular government flag, and the navy also flies it as its jack.",
     sources: [
-      { title: "Swallowtail (flag) — Grokipedia", url: "https://grokipedia.com/page/Swallowtail_(flag)" },
+      { title: "Flag of Germany — military flags (Wikipedia)", url: "https://en.wikipedia.org/wiki/Flag_of_Germany#Military_flags" },
     ],
   },
   "de-president": {
@@ -5453,9 +5453,10 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "es-1938": {
-    description: "The first Francoist coat of arms placed the crowned royal shield before a black eagle spreading its wings — the Eagle of Saint John, a heraldic device tied to the Catholic Monarchs Ferdinand and Isabella that Franco's regime revived to claim their religious and imperial legacy. It bore the Pillars of Hercules, the yoke and arrows of the Catholic Monarchs, and a scroll reading \"Una, Grande y Libre\" (\"One, Great and Free\"), summing up the Nationalist regime's ideology of unity and authoritarian rule.",
+    description: "In 1938 Franco's government put a new coat of arms on the red-yellow-red flag, reviving elements of the arms of the Catholic Monarchs, Isabella and Ferdinand, whose marriage had united Spain: the black Eagle of Saint John behind the shield, and their yoke and bundle of arrows. The crowned shield quarters Castile, León, Aragon and Navarre, with Granada at its point, and the Pillars of Hercules were placed outside the eagle's spread wings. A new version of the eagle was fixed by the flag regulation of October 1945.",
     sources: [
-      { title: "Symbols of Francoism — Grokipedia", url: "https://grokipedia.com/page/Symbols_of_Francoism" },
+      { title: "Coat of arms of Spain — Francoist Spain (Wikipedia)", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Spain" },
+      { title: "Flag of Spain — Francoist Spain (Wikipedia)", url: "https://en.wikipedia.org/wiki/Flag_of_Spain" },
     ],
   },
   "es-1931": {
@@ -7388,9 +7389,9 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "kh-royal-standard": {
-    description: "The royal arms show a light-blue shield bearing an Ounalom (the Khmer form of the Buddhist Aum symbol) above a sword on ceremonial platters and a laurel wreath — the Ounalom representing the path to enlightenment — supported by the Gajasingha (a lion with an elephant's trunk) and the Rajasingha (the royal lion), each holding a five-tiered royal umbrella for the King and Queen, beneath the Royal Crown; blue marks the arms as those of the monarchy, and the motto beneath reads 'Ruler of the Kingdom of Cambodia'.",
+    description: "The standard carries the royal arms of Cambodia, the symbol of the monarchy, restored for official use in 1993 when the monarchy returned. The light-blue shield bears the unalome, the Khmer form of the Aum sign, above a sword resting on two ceremonial pedestalled platters. It is held by the Gajasingha, a lion with an elephant's trunk, and the Rajasingha, the royal lion, each holding a five-tiered royal umbrella; the two umbrellas represent the King and the Queen. The royal crown sits above, and the banner below reads \"Ruler of the Kingdom of Cambodia\".",
     sources: [
-      { title: "Coat of arms of Cambodia — Monarchies Wiki", url: "https://monarchies.fandom.com/wiki/Coat_of_arms_of_Cambodia" },
+      { title: "Royal arms of Cambodia — Wikipedia", url: "https://en.wikipedia.org/wiki/Royal_arms_of_Cambodia" },
     ],
   },
   "kh-arms": {
@@ -8178,9 +8179,11 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "ma-royal": {
-    description: "A green field — the colour of Islam and, in Morocco's royal usage, of the sultanate — carries the national flag in the canton, itself red bearing a green pentagram known as the Seal of Solomon: introduced by Sultan Yusef in 1915, the five-pointed star is read as standing for the five pillars of Islam, giving the standard's canton the same Islamic symbolism as the national flag it displays.",
+    description: "The royal standard is a green field bearing the coat of arms of Morocco, the King's arms of dominion introduced on 14 August 1957. The red shield carries a setting sun over a stylised green-gold band, charged with the green pentagram of the national flag, which Morocco reads as the five pillars of Islam. The Royal Crown sits above the shield, two lions support it, and the scroll beneath carries a Qur'anic verse (47:7), \"In tanṣurū Allāha yanṣurkum\" — \"If you help God, He will help you\".",
     sources: [
-      { title: "Coat of arms of Morocco — Grokipedia", url: "https://grokipedia.com/page/Coat_of_arms_of_Morocco" },
+      { title: "Coat of arms of Morocco — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Morocco" },
+      { title: "List of Moroccan flags — royal standard (Wikipedia)", url: "https://en.wikipedia.org/wiki/List_of_Moroccan_flags#Royal_standard" },
+      { title: "Flag of Morocco — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Morocco" },
     ],
   },
   "ma-arms": {
@@ -8744,9 +8747,10 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "mx-1893": {
-    description: "Decreed by Porfirio Díaz on 30 December 1880 and in use from 1893, this redrawing of Mexico's eagle emblem — now facing forward with wings spread, gripping the serpent in its beak on the nopal cactus, semi-encircled by a laurel wreath — replaced the varied earlier renderings of the eagle with a single unified design, in keeping with Díaz's drive for order and modern national symbolism.",
+    description: "After years of wildly varying eagles, Porfirio Díaz's government set out to standardise the national arms: a circular of 30 December 1880 from Education Secretary Carlos Díez Gutiérrez restated the 1823 decree. This flag carries the later Porfirian eagle drawn by Juan de Dios Fernández — front-facing with its wings spread, the serpent in its beak, standing on the nopal between branches of oak and laurel — popularly called the \"Centennial Eagle\" because it flew around the 1910 centenary of independence. Spanish-language Wikipedia dates this design from 1898 rather than 1893. It lasted until Venustiano Carranza's 1916 decree turned the eagle side-on.",
     sources: [
-      { title: "History of the flags of Mexico — Grokipedia", url: "https://grokipedia.com/page/history_of_the_flags_of_mexico" },
+      { title: "Bandera de México — época porfirista (Wikipedia, Spanish)", url: "https://es.wikipedia.org/wiki/Bandera_de_M%C3%A9xico" },
+      { title: "Flag of Mexico — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Mexico" },
     ],
   },
   "mx-1823": {
@@ -8936,9 +8940,9 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "my-agong": {
-    description: "A yellow field — the colour of Malay royalty, standing for the sovereignty of the country's elected head of state — bears the Jata Negara, Malaysia's coat of arms, wreathed by two sheaves of paddy (rice) for abundance and prosperity; it is the standard of the Yang di-Pertuan Agong, the king elected every five years by and from the hereditary rulers of Malaysia's nine Malay states.",
+    description: "The standard of the Yang di-Pertuan Agong is royal yellow with the coat of arms of Malaysia at its centre, ringed by a gold wreath of rice paddy — yellow and gold both being traditional royal colours in the Malay peninsula. The Agong is Malaysia's king, elected to a five-year term by and from the rulers of the nine Malay states.",
     sources: [
-      { title: "Yang di-Pertuan Agong — Culture Wikia", url: "https://culture.fandom.com/wiki/Yang_di-Pertuan_Agong" },
+      { title: "Yang di-Pertuan Agong — royal standards (Wikipedia)", url: "https://en.wikipedia.org/wiki/Yang_di-Pertuan_Agong#Royal_standards" },
     ],
   },
   "my-arms": {
@@ -9281,9 +9285,10 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "no-war-flag": {
-    description: "The forked swallowtail shape marks this as Norway's state and war flag, distinguishing it from the plain rectangular civil flag flown by private citizens — a distinction inherited via Denmark from a 1625 regulation that reserved the swallow-tailed ensign for the battle fleet.",
+    description: "Norway's flag law makes the state flag the same red flag with the white-bordered blue cross as the civil flag, but \"med Split og Tunge\" — with a swallowtail and a tongue, the three-tailed fly — for state buildings and state vessels, and the armed forces fly it as the war flag and naval ensign. The forked fly is simply what distinguishes the state's flag from the plain rectangular flag private citizens fly.",
     sources: [
-      { title: "Swallowtail (flag) — Grokipedia", url: "https://grokipedia.com/page/Swallowtail_(flag)" },
+      { title: "Lov om Norges Flag (flaggloven) of 10 December 1898, § 2 — Lovdata (Norwegian)", url: "https://lovdata.no/dokument/NL/lov/1898-12-10-1" },
+      { title: "Flag of Norway — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Norway" },
     ],
   },
   "no-naval-jack": {
@@ -9335,9 +9340,9 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "np-1856": {
-    description: "Adopted around 1856 under the powerful chief minister Jung Bahadur Rana, this early form of Nepal's double-pennon flag stacked two crimson triangles bordered in green, the upper bearing a crescent moon and the lower a twelve-rayed sun — both given human faces, a device credited to the Rana rulers weaving solar and lunar dynastic symbolism into the state's standard.",
+    description: "This earlier form of Nepal's double pennon — the joining of two pennons once used by rival branches of the ruling dynasty — shows the crescent moon and the sun with human faces, which were removed only when the flag was standardised in 1962. According to some historians, the Rana ruler Jung Bahadur gave the emblems their faces, the moon standing for the Shah kings as Rajputs of the Lunar dynasty and the sun for the Ranas themselves as Rajputs of the Solar dynasty.",
     sources: [
-      { title: "History of Flags~Nepal — Fandom", url: "https://johnny-otgs-world.fandom.com/wiki/History_of_Flags~Nepal" },
+      { title: "Flag of Nepal — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Nepal" },
     ],
   },
   "np-royal": {
@@ -11973,9 +11978,10 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "us-army": {
-    description: "The Roman cuirass beneath an unsheathed sword topped by a Phrygian cap (a Revolutionary-era symbol of liberty) stands for readiness to defend the nation; the surrounding musket, cannon, drum and other implements represent the Army's tools, under the motto \"This We'll Defend\".",
+    description: "The flag, adopted by President Eisenhower on 12 June 1956 (Executive Order 10670), carries the War Office seal. By the Army Institute of Heraldry's reading, the Roman cuirass at the centre is a symbol of strength and defence; the sword, espontoon, musket, bayonet, cannon, mortar and shells are the Army's implements; and the drum stands for public notice of the Army's purpose to serve the nation. The Phrygian \"cap of liberty\" on the point of the sword, and the rattlesnake holding the motto \"This We'll Defend\" — both found on colonial American flags — signify the Army's constant readiness to defend the United States. The year 1775 is when the Continental Army was created.",
     sources: [
-      { title: "Seal and emblem of the United States Department of the Army — Grokipedia", url: "https://grokipedia.com/page/Seal_and_emblem_of_the_United_States_Department_of_the_Army" },
+      { title: "Seal of the United States Department of the Army — symbolism, quoting the Institute of Heraldry (Wikipedia)", url: "https://en.wikipedia.org/wiki/Seal_of_the_United_States_Department_of_the_Army" },
+      { title: "Flag of the United States Army — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_United_States_Army" },
     ],
   },
   "us-navy": {
@@ -12310,9 +12316,9 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "ve-president": {
-    description: "The presidential standard bears Venezuela's coat of arms: a sheaf of wheat for the union and agricultural wealth of the republic's states, a bundle of weapons and two flags bound with laurel for triumph in the war of independence, a wild white horse recalling Simón Bolívar's own horse Palomo as an emblem of freedom, and two crossed cornucopias overflowing with tropical fruit for the nation's abundance.",
+    description: "The presidential standard bears Venezuela's coat of arms. On red, a sheaf of wheat stands for the union of the republic's states and the nation's wealth; on yellow, weapons and two national flags bound with laurel symbolise triumph in war; on blue, a wild white horse, recalling Simón Bolívar's horse Palomo, runs free as an emblem of independence and freedom. Two crossed cornucopias above pour out the nation's wealth.",
     sources: [
-      { title: "Coat of arms of Venezuela — Grokipedia", url: "https://grokipedia.com/page/Coat_of_arms_of_Venezuela" },
+      { title: "Coat of arms of Venezuela — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Venezuela" },
     ],
   },
   "ve-arms": {
