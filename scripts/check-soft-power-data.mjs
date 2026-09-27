@@ -95,6 +95,12 @@ for (let i = 1; i <= 193; i++) {
   }
 }
 
+// Every 2026 country card prints a previous rank, so every entry carries a movement.
+for (const [code, exp] of fromCsv) {
+  if (exp.rankChange === undefined) errors.push(`${code}: missing rankChange (the 2026 card prints a previous rank)`);
+}
+if (fromCsv.get("GT")?.rankChange !== -6) errors.push("GT: 2026 rank 126, previous 120 — rankChange must be -6");
+
 for (const [code, exp] of fromCsv) {
   const extract = SOFT_POWER_2026_DATA[code];
   const demo = DEMOCRACY_DATA[code]?.softPower;

@@ -156,15 +156,20 @@ for (const [code, rank, score, rating, change] of spots) {
   }
 }
 
-// Tied ranks must share a rank number (Jamaica/Serbia 70; Cambodia/Honduras 96; Haiti/Nigeria 142).
+// Tied ranks must share a rank number (Jamaica/Serbia 70; Haiti/Nigeria 142).
 for (const [a, b, rank] of [
   ["JM", "RS", 70],
-  ["KH", "HN", 96],
   ["HT", "NG", 142],
 ]) {
   if (expected.get(a)?.rank !== rank || expected.get(b)?.rank !== rank) {
     errors.push(`tie ${a}/${b} must both be rank ${rank}`);
   }
+}
+
+// Equal rounded scores are NOT a tie unless the publisher prints one: the 2026
+// report ranks Cambodia 96 and Honduras 97, both at 2.075.
+if (expected.get("KH")?.rank !== 96 || expected.get("HN")?.rank !== 97) {
+  errors.push("Cambodia/Honduras must keep the publisher's ranks 96/97, not a tie");
 }
 
 // Non-UN GPI territories must stay absent.

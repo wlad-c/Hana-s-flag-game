@@ -71,6 +71,12 @@ New finding **R03**, below. | Checked in the running app (dev server, via Philip
   - ZA-DA: label → "Centre to centre-right", grouping centre-right.
 
 New gate in `check-political-parties.mjs`: a single-category `positionRaw` must group under the same `ideologyPosition`. It fails when one fix is reverted and passes on all 842 records. | In the running app, NZ → Learn more → Political parties shows Greens "Co-leaders Marama Davidson; Chlöe Swarbrick" at 15/123 and National "Centre-right" at 48/123; all NZ logos paint and there are no page errors. `check-political-parties` passes. Also noted in `docs/POLITICAL_PARTY_AUDIT_2026.md` (NZ left unticked: NZ First and Te Pāti Māori are still missing). |
+| 2026-09-27 17:40 Melbourne / 07:40 UTC | Opus 5.5 | F77 (GPI Honduras rank), F78 (Soft Power Guatemala movement and 19 missing movements) | Implemented — awaiting verification | Downloaded both publisher PDFs.
+- **F77:** IEP 2026 p.13 prints "96 Cambodia 2.075 ↓8" and "97 Honduras 2.075 ↑13". Honduras's rank is now 97 in all four copies (CSV, extract, `democracyData`, `countryFacts`); the +13 movement was already right. `check-gpi-data.mjs` had **hard-coded the wrong tie** ("KH/HN must both be rank 96"). It now asserts the publisher's 96/97. The Jamaica/Serbia 70 and Haiti/Nigeria 142 ties were checked in the same table and are genuine.
+- **F78:** rendered Brand Finance's country cards (PDF pp. 8–9) and read each previous rank. GT 126 from 120 = −6. The 19 missing movements are now filled:
+  - AF +2, SO +4, LC 0, ER +6, DJ −3, MH +6, SR 0, TL −3, PW +5, LS −1;
+  - VC −11, TO −4, FM +2, KN −3, TV +1, VU +1, NR −4, KI 0, SL −3.
+  `check-soft-power-data.mjs` now fails if any entry lacks a movement, or if GT ≠ −6. | In the running app: Honduras shows "Rank 97 (+13)", Guatemala "Rank 126 (-6)", St Vincent "Rank 186 (-11)". The GPI and Soft Power checks and `tsc` pass. Persona inputs (frozen) are not touched. |
 
 ### Open handoff cautions
 
@@ -678,3 +684,4 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 - **27 Sep 2026 — F38 part 2 and R03.** The last 13 Grokipedia/Fandom citations were re-sourced or trimmed. Main source: the 1975 *Symbols of the State* book, which gives Misamis Occidental, Laguna, Albay, Mindoro, South Cotabato and others their official seal meanings. Romblon's and Sorsogon's explainers described an older seal than the bundled image (R03). Venezuela's Federal Dependencies explainer was removed as unsourceable. Checked in the running dev app. A deep link with `subdivisions=1` drops subdivision mode in dev (StrictMode) but works in production; this is dev-only and not fixed.
 - **27 Sep 2026 — F84–F86 (Estonia).** Lääne's hawk corrected to an eagle, and Võru's sword orientation corrected, both against the Government Office blazons plus a render of the bundled SVG. The stale "Flag of Elva" ids in the Harju and Järva SVGs are renamed. The provenance-manifest part of F86 is still open.
 - **27 Sep 2026 — F87–F89.** NZ Labour and ACT seats, the 123-seat chamber and the Green co-leaders are corrected. All six position contradictions are resolved against the parties' own Wikipedia infoboxes, and a singleton-label consistency gate is added to `check-political-parties.mjs`.
+- **27 Sep 2026 — F77, F78.** Honduras's GPI rank corrected to the publisher's 97, and the check that encoded the false tie is fixed. Guatemala's Soft Power movement is corrected, and the 19 absent movements are read from the rendered cards; the check now requires a movement for every country.

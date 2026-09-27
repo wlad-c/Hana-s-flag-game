@@ -102,7 +102,7 @@ export const GPI_2026_DATA = {
   "CI": { "year": 2026, "rating": "Medium", "rank": 93, "rankChange": -9, "score": 2.061 },
   "GE": { "year": 2026, "rating": "Medium", "rank": 94, "rankChange": 1, "score": 2.066 },
   "SA": { "year": 2026, "rating": "Medium", "rank": 95, "rankChange": -2, "score": 2.067 },
-  "HN": { "year": 2026, "rating": "Medium", "rank": 96, "rankChange": 13, "score": 2.075 },
+  "HN": { "year": 2026, "rating": "Medium", "rank": 97, "rankChange": 13, "score": 2.075 },
   "KH": { "year": 2026, "rating": "Medium", "rank": 96, "rankChange": -8, "score": 2.075 },
   "TZ": { "year": 2026, "rating": "Medium", "rank": 98, "rankChange": -20, "score": 2.080 },
   "FR": { "year": 2026, "rating": "Medium", "rank": 99, "rankChange": 3, "score": 2.083 },
