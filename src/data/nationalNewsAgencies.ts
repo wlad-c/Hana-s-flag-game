@@ -660,10 +660,8 @@ export const NATIONAL_NEWS_AGENCIES: Record<string, readonly NewsAgency[]> = {
       "editorialStance": "Official national news agency; parliamentary proceedings, state visits, and rural development news",
       "readership": {"metric":"Primary news supplier to all Botswana national radio, TV, and print newspapers","source":"BOPA Department Review 2023"},
       "revenueModel": "Direct state budget funding",
-      "logo": "newspaper-logos/bw/bopa.svg",
-      "logoExplainer": "Official masthead/brand mark for BOPA, sourced from Wikimedia Commons and visually verified.",
-      "licenceNote": "BOPA brand mark trademark bundled from Wikimedia Commons (File:BOPA logo.svg) for educational reference in Learn mode.",
-      "sources": ["https://www.dailynews.gov.bw","https://en.wikipedia.org/wiki/Botswana_Press_Agency"],
+      "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency.",
+      "sources": ["https://www.dailynews.gov.bw","https://en.wikipedia.org/wiki/Botswana_Press_Agency"]
     }
   ],
   "BY": [
@@ -681,10 +679,8 @@ export const NATIONAL_NEWS_AGENCIES: Record<string, readonly NewsAgency[]> = {
       "editorialStance": "Official state news agency; presidential decrees, government policies, and national affairs",
       "readership": {"metric":"Primary news supplier to all domestic Belarusian print newspapers, TV channels, and radio stations","source":"BelTA Official Annual Report 2023"},
       "revenueModel": "Direct state budget funding and subscriber licensing",
-      "logo": "newspaper-logos/by/belta.svg",
-      "logoExplainer": "Official masthead/brand mark for BelTA, sourced from Wikimedia Commons and visually verified.",
-      "licenceNote": "BelTA brand mark trademark bundled from Wikimedia Commons (File:BonBelta.svg) for educational reference in Learn mode.",
-      "sources": ["https://www.belta.by","https://en.wikipedia.org/wiki/Belarusian_Telegraph_Agency"],
+      "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency.",
+      "sources": ["https://www.belta.by","https://en.wikipedia.org/wiki/Belarusian_Telegraph_Agency"]
     },
     {
       "id": "by-belapan",
@@ -840,10 +836,8 @@ export const NATIONAL_NEWS_AGENCIES: Record<string, readonly NewsAgency[]> = {
       "readership": {"metric":"Primary source of verified regional dispatch news for all Ivorian print, radio, and TV stations","source":"AIP Official Report 2023"},
       "annualPublicFunding": {"total":"Public budget allocation","perCapita":"State funded"},
       "revenueModel": "State budget subsidy and agency syndication",
-      "logo": "newspaper-logos/ci/aip.png",
-      "logoExplainer": "Official masthead/brand mark for AIP, sourced from Wikimedia Commons and visually verified.",
-      "licenceNote": "AIP brand mark trademark bundled from Wikimedia Commons (File:AIP Logo.png) for educational reference in Learn mode.",
-      "sources": ["https://www.aip.ci","https://en.wikipedia.org/wiki/Agence_Ivoirienne_de_Presse"],
+      "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency.",
+      "sources": ["https://www.aip.ci","https://en.wikipedia.org/wiki/Agence_Ivoirienne_de_Presse"]
     }
   ],
   "CN": [
@@ -1681,10 +1675,8 @@ export const NATIONAL_NEWS_AGENCIES: Record<string, readonly NewsAgency[]> = {
       "readership": {"metric":"Deploys journalists across all 47 counties of Kenya, feeding news wire dispatches to all domestic media","source":"Ministry of Information Kenya 2023 Report"},
       "annualPublicFunding": {"total":"Parliamentary budget appropriation","perCapita":"State funded"},
       "revenueModel": "Parliamentary state budget funding and agency syndication",
-      "logo": "newspaper-logos/ke/kna.svg",
-      "logoExplainer": "Official 'KNA' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "KNA masthead trademark bundled from Wikimedia Commons (File:KNA-Logo.svg) for educational reference in Learn mode.",
-      "sources": ["https://www.kenyanews.go.ke","https://en.wikipedia.org/wiki/Kenya_News_Agency"],
+      "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency.",
+      "sources": ["https://www.kenyanews.go.ke","https://en.wikipedia.org/wiki/Kenya_News_Agency"]
     }
   ],
   "KG": [
@@ -2364,10 +2356,8 @@ export const NATIONAL_NEWS_AGENCIES: Record<string, readonly NewsAgency[]> = {
       "editorialStance": "Africa's largest national news wire agency; statutory monopoly wire provider distributing comprehensive, factual reporting on the Presidency, National Assembly, 36 state governments, oil sector regulations, and ECOWAS diplomacy",
       "readership": {"metric":"Supplies wire feeds to over 250 print newspapers, television networks, and radio stations across all 36 states of Nigeria","source":"News Agency of Nigeria Annual Audit 2023"},
       "revenueModel": "Federal government subvention and wire syndication subscription fees",
-      "logo": "newspaper-logos/ng/nan.png",
-      "logoExplainer": "Official 'NAN (News Agency of Nigeria)' masthead/logo as used by the publisher — sourced from the outlet's own site.",
-      "licenceNote": "NAN (News Agency of Nigeria) masthead trademark bundled from the publisher's official site brand assets for educational reference in Learn mode.",
-      "sources": ["https://nannews.ng","https://en.wikipedia.org/wiki/News_Agency_of_Nigeria"],
+      "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency.",
+      "sources": ["https://nannews.ng","https://en.wikipedia.org/wiki/News_Agency_of_Nigeria"]
     }
   ],
   "NL": [

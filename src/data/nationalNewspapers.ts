@@ -585,9 +585,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Media Ownership Monitor Albania 2023"
       },
       "revenueModel": "Print sales, display advertising, and digital sponsorships",
-      "logo": "newspaper-logos/al/panorama.svg",
-      "logoExplainer": "Official 'Panorama' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "Panorama masthead trademark bundled from Wikimedia Commons (File:Panorama-Logo.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.panorama.com.al",
         "https://en.wikipedia.org/wiki/Panorama_(Albanian_newspaper)"
@@ -1540,9 +1538,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "metric": "Highest-traffic BiH news website",
         "source": "https://www.klix.ba"
       },
-      "logo": "newspaper-logos/ba/klix.jpg",
-      "logoExplainer": "Official 'Klix.ba' masthead/logo as used by the publisher — sourced from the outlet's own site.",
-      "licenceNote": "Klix.ba masthead trademark bundled from the publisher's official site brand assets for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.klix.ba"
       ]
@@ -2155,9 +2151,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Trud Media Kit 2023"
       },
       "revenueModel": "Print sales and commercial display advertising",
-      "logo": "newspaper-logos/bg/trud.png",
-      "logoExplainer": "Bold 'Труд' / Trud masthead — the Sofia daily brand mark.",
-      "licenceNote": "Trademark bundled from Wikimedia Commons (File:LogoTrud.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://trud.bg",
         "https://en.wikipedia.org/wiki/Trud_(Bulgarian_newspaper)"
@@ -2850,9 +2844,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "La Razón Media Kit 2024"
       },
       "revenueModel": "Print sales, corporate display ads, and subscriptions",
-      "logo": "newspaper-logos/bo/la-razon.svg",
-      "logoExplainer": "Official 'La Razón' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "La Razón masthead trademark bundled from Wikimedia Commons (File:La Razón logo.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.la-razon.com",
         "https://en.wikipedia.org/wiki/La_Raz%C3%B3n_(Bolivia)"
@@ -3101,9 +3093,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "The Tribune Media Kit 2023"
       },
       "revenueModel": "Print newsstand sales and advertising",
-      "logo": "newspaper-logos/bs/tribune.jpg",
-      "logoExplainer": "Official 'The Tribune' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "The Tribune masthead trademark bundled from Wikimedia Commons (File:The Tribune logo.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.tribune242.com",
         "https://en.wikipedia.org/wiki/The_Tribune_(Bahamas)"
@@ -4779,9 +4769,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Free Media Group Archive"
       },
       "revenueModel": "Print sales and local advertising",
-      "logo": "newspaper-logos/cm/le-messager.svg",
-      "logoExplainer": "Official 'Le Messager' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "Le Messager masthead trademark bundled from Wikimedia Commons (File:Logo Le Messager.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.lemessager.cm",
         "https://en.wikipedia.org/wiki/Le_Messager_(Cameroon)"
@@ -5378,9 +5366,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "A Semana Online Profile 2023"
       },
       "revenueModel": "Print sales and digital display advertising",
-      "logo": "newspaper-logos/cv/a-semana.svg",
-      "logoExplainer": "Official 'A Semana' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "A Semana masthead trademark bundled from Wikimedia Commons (File:Logo-semana.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://asemana.publ.cv",
         "https://pt.wikipedia.org/wiki/A_Semana"
@@ -7231,9 +7217,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "GfK DAM / OJD Interactiva / Unidad Editorial 2023"
       },
       "revenueModel": "Digital subscriptions, newsstand sales, and commercial brand advertising",
-      "logo": "newspaper-logos/es/el-mundo.svg",
-      "logoExplainer": "Black 'EL MUNDO' wordmark with an oversized red capital M — the Spanish daily's distinctive masthead.",
-      "licenceNote": "El Mundo masthead trademark bundled from Wikimedia Commons (File:Periodico El Mundo.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.elmundo.es",
         "https://en.wikipedia.org/wiki/El_Mundo_(Spain)"
@@ -7574,9 +7558,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "https://en.wikipedia.org/wiki/Aamulehti"
       },
       "revenueModel": "Subscriptions and advertising",
-      "logo": "newspaper-logos/fi/aamulehti.svg",
-      "logoExplainer": "Official 'Aamulehti' masthead/logo as used by the publisher — sourced from the outlet's own site.",
-      "licenceNote": "Aamulehti masthead trademark bundled from the publisher's official site brand assets for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.aamulehti.fi",
         "https://en.wikipedia.org/wiki/Aamulehti"
@@ -8711,9 +8693,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Gambia Press Union Historical Archive 2023"
       },
       "revenueModel": "Print sales and historical archives licensing",
-      "logo": "newspaper-logos/gm/daily-observer-gambia.jpg",
-      "logoExplainer": "Official 'Daily Observer' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "Daily Observer masthead trademark bundled from Wikimedia Commons (File:The Daily Observer.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://en.wikipedia.org/wiki/Daily_Observer_(The_Gambia)"
       ]
@@ -9655,9 +9635,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Diario Tiempo Audience Review 2024"
       },
       "revenueModel": "Digital subscriptions, print sales, and commercial advertising",
-      "logo": "newspaper-logos/hn/diario-tiempo.png",
-      "logoExplainer": "Official 'Diario Tiempo' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "Diario Tiempo masthead trademark bundled from Wikimedia Commons (File:Logo Diario El Tiempo.png) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://tiempo.hn/",
         "https://honduras.mom-gmr.org/"
@@ -9682,9 +9660,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "La Tribuna Audience Review 2024"
       },
       "revenueModel": "Digital subscriptions, print sales, and commercial advertising",
-      "logo": "newspaper-logos/hn/la-tribuna.jpg",
-      "logoExplainer": "Blackletter 'LA TRIBUNA' nameplate with 'Decano de la Prensa Nacional' strap — Honduras daily masthead.",
-      "licenceNote": "La Tribuna (Honduras) masthead trademark bundled from Wikimedia Commons (File:Logo La Tribuna.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.latribuna.hn/",
         "https://cph.hn/"
@@ -10100,9 +10076,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Blikk Audience Review 2024"
       },
       "revenueModel": "Digital subscriptions, print sales, and commercial advertising",
-      "logo": "newspaper-logos/hu/blikk.svg",
-      "logoExplainer": "'Blikk' masthead — the Budapest tabloid brand mark.",
-      "licenceNote": "Trademark bundled from Wikimedia Commons (File:Blikk logo.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.ringier.hu/",
         "https://www.blikk.hu/"
@@ -11478,9 +11452,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Al-Ghad Media Group Audit 2024"
       },
       "revenueModel": "Commercial advertising, digital display, and print sales",
-      "logo": "newspaper-logos/jo/al-ghad.svg",
-      "logoExplainer": "Official 'Al-Ghad' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "Al-Ghad masthead trademark bundled from Wikimedia Commons (File:AlGhad TV.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://alghad.com",
         "https://en.wikipedia.org/wiki/Al_Ghad"
@@ -16045,9 +16017,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Media Watch Organisation Mauritius 2023"
       },
       "revenueModel": "Print sales, digital advertising, and corporate subscriptions",
-      "logo": "newspaper-logos/mu/l-express.svg",
-      "logoExplainer": "Official masthead/brand mark for L'Express, sourced from Wikimedia Commons and visually verified.",
-      "licenceNote": "L'Express masthead trademark bundled from Wikimedia Commons (File:Logo L'Express.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://lexpress.mu",
         "https://fr.wikipedia.org/wiki/L%27Express_(Maurice)"
@@ -16242,9 +16212,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Avas Audience Insight 2024"
       },
       "revenueModel": "Digital advertising, programmatic networks, and commercial sponsorships",
-      "logo": "newspaper-logos/mv/avas.jpg",
-      "logoExplainer": "Official masthead/brand mark for Avas, sourced from Wikimedia Commons and visually verified.",
-      "licenceNote": "Avas masthead trademark bundled from Wikimedia Commons (File:Logo of AVAS.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://avas.mv"
       ]
@@ -16458,9 +16426,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Comscore Mexico / El Universal Audit 2023"
       },
       "revenueModel": "Print circulation, digital subscriptions (El Universal Plus), and display advertising",
-      "logo": "newspaper-logos/mx/el-universal.svg",
-      "logoExplainer": "Burgundy serif 'EL UNIVERSAL' — Mexico City's historic daily masthead.",
-      "licenceNote": "El Universal masthead trademark bundled from Wikimedia Commons (File:Logo El Universal 2021.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.eluniversal.com.mx",
         "https://es.wikipedia.org/wiki/El_Universal_(M%C3%A9xico)"
@@ -16908,9 +16874,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "NEPC Annual Report 2023"
       },
       "revenueModel": "State budget grant, newspaper sales, and government tender notices",
-      "logo": "newspaper-logos/na/new-era.jpg",
-      "logoExplainer": "Official masthead/brand mark for New Era, sourced from Wikimedia Commons and visually verified.",
-      "licenceNote": "New Era masthead trademark bundled from Wikimedia Commons (File:New-Era-Logo.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://neweralive.na",
         "https://en.wikipedia.org/wiki/New_Era_(Namibia)"
@@ -17107,9 +17071,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Audit Bureau of Circulations Nigeria / Similarweb 2023"
       },
       "revenueModel": "Print sales, digital advertising, classifieds, and event partnerships",
-      "logo": "newspaper-logos/ng/the-punch.jpg",
-      "logoExplainer": "Official 'The Punch' masthead/logo as used by the publisher — sourced from the outlet's own site.",
-      "licenceNote": "The Punch masthead trademark bundled from the publisher's official site brand assets for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://punchng.com",
         "https://en.wikipedia.org/wiki/The_Punch"
@@ -17216,9 +17178,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "https://en.wikipedia.org/wiki/Thisday"
       },
       "revenueModel": "Advertising and print/digital sales",
-      "logo": "newspaper-logos/ng/thisday.jpg",
-      "logoExplainer": "Official 'THISDAY' masthead/logo as used by the publisher — sourced from the outlet's own site.",
-      "licenceNote": "THISDAY masthead trademark bundled from the publisher's official site brand assets for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.thisdaylive.com",
         "https://en.wikipedia.org/wiki/Thisday"
@@ -17916,9 +17876,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "https://en.wikipedia.org/wiki/The_Post_(New_Zealand_newspaper)"
       },
       "revenueModel": "Subscriptions, print sales, and advertising",
-      "logo": "newspaper-logos/nz/the-post.png",
-      "logoExplainer": "Official 'The Post' masthead/logo as used by the publisher — sourced from Wikimedia Commons.",
-      "licenceNote": "The Post masthead trademark bundled from Wikimedia Commons (File:The post logo.png) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.thepost.co.nz",
         "https://en.wikipedia.org/wiki/The_Post_(New_Zealand_newspaper)"
@@ -18278,9 +18236,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Kantar IBOPE Media Peru 2023"
       },
       "revenueModel": "Print sales, digital programmatic advertising, and video sponsorships",
-      "logo": "newspaper-logos/pe/la-republica.jpg",
-      "logoExplainer": "'La República' masthead — the Lima daily brand mark.",
-      "licenceNote": "Trademark bundled from Wikimedia Commons (File:La República logo.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://larepublica.pe",
         "https://es.wikipedia.org/wiki/La_Rep%C3%BAblica_(Per%C3%BA)"
@@ -18470,9 +18426,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "metric": "Major PNG news website",
         "source": "https://www.looppng.com"
       },
-      "logo": "newspaper-logos/pg/loop-png.png",
-      "logoExplainer": "Yellow disc with black overlapping-loop play mark — Loop PNG's digital news brand emblem.",
-      "licenceNote": "Loop PNG brand mark trademark bundled from Wikimedia Commons (File:Loops logo.png) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.looppng.com"
       ]
@@ -19214,9 +19168,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "https://en.wikipedia.org/wiki/Expresso_(newspaper)"
       },
       "revenueModel": "Subscriptions, print sales, and advertising",
-      "logo": "newspaper-logos/pt/expresso.png",
-      "logoExplainer": "Serif 'EXPRESSO' masthead wordmark — Portugal's leading quality weekly nameplate (rasterised from Wikimedia Commons File:EXPRESSO Logo.svg for size limits).",
-      "licenceNote": "Expresso masthead trademark bundled from Wikimedia Commons (File:EXPRESSO Logo.svg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://expresso.pt",
         "https://en.wikipedia.org/wiki/Expresso_(newspaper)"
@@ -19378,9 +19330,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Editorial Azeta / Similarweb 2023"
       },
       "revenueModel": "Print sales, digital subscriptions (ABC Digital), and major commercial advertising",
-      "logo": "newspaper-logos/py/abc-color.jpg",
-      "logoExplainer": "Official masthead/brand mark for ABC Color, sourced from Wikimedia Commons and visually verified.",
-      "licenceNote": "ABC Color masthead trademark bundled from Wikimedia Commons (File:ABC color logo.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.abc.com.py",
         "https://es.wikipedia.org/wiki/ABC_Color"
@@ -23544,9 +23494,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Syndicat National des Journalistes Tunisiens (SNJT)"
       },
       "revenueModel": "Print newsstand sales, commercial advertising, and digital subscriptions",
-      "logo": "newspaper-logos/tn/assabah.jpg",
-      "logoExplainer": "Arabic 'الصباح' masthead — Assabah's brand mark.",
-      "licenceNote": "Trademark bundled from Wikimedia Commons (File:Assabah-logo.jpg) for educational reference in Learn mode.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this title.",
       "sources": [
         "https://www.assabah.com.tn",
         "https://en.wikipedia.org/wiki/Assabah_(newspaper)"
@@ -25168,45 +25116,6 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "https://www.ncregister.com",
         "https://en.wikipedia.org/wiki/National_Catholic_Register"
       ]
-    },
-    {
-      "id": "va-vatican-news",
-      "countryCode": "VA",
-      "name": "Vatican News",
-      "officialName": "Dicastero per la Comunicazione",
-      "nativeName": "Dicastero per la Comunicazione",
-      "englishTranslation": "Dicastery for Communication (incorporating Vatican News and L'Osservatore Romano)",
-      "motto": {
-        "original": "Unicuique suum / Non praevalebunt",
-        "translation": "To each his own / They shall not prevail (Matthew 16:18)"
-      },
-      "founded": 2017,
-      "frequency": "Continuous 24/7 global multimedia newswire",
-      "format": "Multilingual digital news portal, Vatican Radio audio stream, print daily (L'Osservatore Romano), and television feed (Vatican Media)",
-      "language": "53 broadcast languages (including Italian, English, Spanish, French, Portuguese, German, Arabic, Polish, Chinese, and Latin)",
-      "headquarters": "Piazza Pia 3, Rome / Vatican City State",
-      "owner": {
-        "name": "Holy See (The Roman Curia / Dicastery for Communication)",
-        "type": "Sovereign state media & pastoral communications organ"
-      },
-      "editorialStance": "Official global communications service of the Holy See, providing universal coverage of the Papacy, the Roman Curia, international diplomacy, and the worldwide Catholic Church",
-      "readership": {
-        "metric": "11.5+ million monthly digital visitors across 53 languages; broadcast syndication to over 1,000 affiliate radio networks and press agencies worldwide",
-        "source": "Dicastero per la Comunicazione Relazione di Bilancio & Vatican Media Analytics 2024"
-      },
-      "annualPublicFunding": {
-        "total": "€38.5 million total annual operating budget for the Dicastery for Communication",
-        "perCapita": "€48,125 / resident / year (across Vatican City's ~800 residents; serves 1.39 billion Catholics globally at €0.03/person)"
-      },
-      "revenueModel": "Funded directly by the Holy See Roman Curia budget (Holy See patrimony and Peter's Pence apostolic collection)",
-      "logo": "newspaper-logos/va/vatican-news.png",
-      "logoExplainer": "The Vatican News identity features the signature red background of papal ceremonial heraldry. On the left, a crisp square frame contains the Keys of Saint Peter crossed in saltire (one gold, one silver) bound by a cordon and surmounted by the papal triple tiara (triregnum), symbolizing papal apostolic authority and spiritual ministry. To the right, 'VATICAN NEWS' is rendered in clean geometric white typography, contrasting tradition with modern global accessibility.",
-      "sources": [
-        "https://www.vaticannews.va/",
-        "https://www.comunicazione.va/",
-        "https://www.vatican.va/roman_curia/secretariat-communication/index.htm"
-      ],
-      "licenceNote": "Holy See Dicastery for Communication trademark bundled for educational reference in Learn mode."
     }
   ],
   "VC": [

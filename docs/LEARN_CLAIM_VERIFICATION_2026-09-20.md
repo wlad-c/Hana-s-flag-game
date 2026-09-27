@@ -110,6 +110,12 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - **F58:** 34 newspaper records and 1 agency record carried a `noImageReason` claiming a specific research history (named sources "checked") that no one had performed; the text was a generator constant. Each is replaced with a plain statement that is true by construction: "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo." (agencies: "…emblem… agency…").
   - The same constants are replaced in the four generators that emitted them (`apply-newspaper-top5.mjs`, `apply-newspaper-top5-batch2.mjs`, `purge-fabricated-newspaper-logos.mjs`, `purge-fabricated-agency-logos.mjs`), so a regen cannot reintroduce the false research claim.
   - Hand-written reasons that describe real, recorded research are untouched. | Newspaper, agency and user-facing-copy checks pass. |
+| 2026-09-27 20:55 Melbourne / 10:55 UTC | Opus 5.5 | F59 (Vatican News misfiled), F60 + F64 (30 wrong-entity media logos, plus El Mundo) | Implemented — awaiting verification |
+- **F60 / F64:** rendered all 31 bundled images in one montage before touching them. 17 are another organisation on sight: the Soviet ТРУД with СССР emblems, TELUS Digital, a HELSINGIN SANOMAT masthead on Aamulehti, Semana 35 años, the Nigeria Police crest, FERMA, Loops, EXPRESSO industrial, ABC television, BonBelta, the Danish BOPA, Katholische Nachrichten-Agentur, the APC party logo, the New Era cap brand, the Bangladeshi আভাস/AVAS, the Paraguayan La Tribuna naming Carlos Ruiz Apezteguia, and the Argentine El Tiempo.
+  - For six of the remaining plain wordmarks, the Commons metadata was re-read and each named a different entity: El Universal (Cartagena), The Tribune (India), Le Messager (France), Blikk (a Norwegian magazine) and Panorama (NDR television). The La Razón lookup failed and is not re-verified by me.
+  - All 26 newspaper and 5 agency images are quarantined: `logo`/`logoExplainer`/`licenceNote` are removed, the files are deleted, and a plain `noImageReason` says an earlier image was another organisation's logo. `es-el-mundo` is included because the audit found its cited file categorised under Medellín and conflicting with the Spanish publisher's masthead.
+  - Replacing any of these needs an identity-bound source (entity + country + official domain), per F62. None is claimed.
+- **F59:** Acta Apostolicae Sedis and the Nauru gazette were already gone (F51/F48), and Vatican News is no longer in the agency registry. The remaining `va-vatican-news` newspaper record was a Holy See multimedia portal filed as a newspaper. It carried L'Osservatore Romano's motto and budget/visitor figures cited to an unlocatable "Relazione di Bilancio". It is removed with its logo, and `apply-agency-non-agency-cleanup.mjs` no longer migrates it into newspapers. L'Osservatore Romano remains as the Holy See's newspaper. The "what does 'top' mean" methodology point is **not** addressed (unclaimed). | In the running app, Top newspapers → Trud and THISDAY show the "—" no-image tile; Vatican City lists AsiaNews, Donne Chiesa Mondo, L'Osservatore Romano and National Catholic Register; no page errors. Newspaper, agency, user-facing-copy, grid-content and image-key checks and `tsc` pass. |
 
 ### Open handoff cautions
 
@@ -679,8 +685,8 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | F56 | "Leg power" inferred from government membership | Queued | Conflicts with a CLAUDE.md hard rule (fallback is deliberate); needs owner decision — see note when reached. |
 | F57 | Broken Naoero Gazette SVG | Implemented — awaiting verification | Record removed; decode gate added to both media checks. |
 | F58 | Generated "sources were checked" text | Implemented — awaiting verification | Generators fixed too. |
-| F59 | Vatican News in two registries | Queued | |
-| F60, F64 | 30 wrong-entity media logos | Queued | |
+| F59 | Vatican News in two registries | Implemented — awaiting verification | Record removed from newspapers; "top" methodology unclaimed. |
+| F60, F64 | 30 wrong-entity media logos | Implemented — awaiting verification | All 30 + El Mundo quarantined (no-image); replacements unclaimed. |
 | F61, F65, F69 | Captions/asset roles contradict images | Queued | |
 | F62 | Artwork provenance manifest | Model change | |
 | F63 | Japan tourism 2025 total | Queued | |
@@ -722,3 +728,4 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 - **27 Sep 2026 — F43–F45, F53, F54.** Era summaries corrected (not currently rendered), 14 unreachable anachronistic 2000 BC overrides removed (new R04), Hejaz prose matched to its image, Brazil Olympic colours explained as imperial continuity, Bermuda grouped with North America. Pushes were blocked by an expired token between f0c9407d and 03723e33; all of it landed on `main` at 03723e33.
 - **27 Sep 2026 — F48, F50–F52, F57, part of F49.** Nauru newspapers corrected from the government bulletin; composite-masthead generator and outputs deleted; media checks now decode every logo; nine captions matched to their artwork; ABC five-year funding terms; `founded`/`readership` no longer forced.
 - **27 Sep 2026 — F58.** Generated gap text that claimed a research history nobody performed is replaced in 35 records and in the four generators that emitted it.
+- **27 Sep 2026 — F59, F60, F64.** 31 wrong-entity media images quarantined after a montage and metadata spot-check; the misfiled Vatican News portal record removed from newspapers.

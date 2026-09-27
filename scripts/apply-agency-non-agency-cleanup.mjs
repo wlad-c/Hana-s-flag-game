@@ -151,7 +151,6 @@ const MIGRATE_IF_ROOM = new Set([
   "st-jornal-transparencia",
   "tm-neytralny-turkmenistan",
   "tm-turkmenistan-gazeti",
-  "va-vatican-news",
 ]);
 
 /** Business / niche — remove from agencies, do not force into top-5 newspapers. */
