@@ -4115,6 +4115,27 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
+.migrant-origins-legend__scale {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+}
+
+.migrant-origins-legend__bar {
+  display: inline-block;
+  width: 4.5rem;
+  height: 13px;
+  border-radius: 3px;
+  flex: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.migrant-origins-panel {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
 .democracy-map-legend__gradient {
   width: 5.5rem;
   height: 13px;

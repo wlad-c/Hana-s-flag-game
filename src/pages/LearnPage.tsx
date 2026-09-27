@@ -21,6 +21,9 @@ import { PassportMapControl } from "../components/PassportMapControl";
 import { VisaAccessMapLegend } from "../components/VisaAccessMapLegend";
 import { DiasporaMapControl } from "../components/DiasporaMapControl";
 import { DiasporaMapLegend } from "../components/DiasporaMapLegend";
+import { MigrantOriginsMapControl } from "../components/MigrantOriginsMapControl";
+import { MigrantOriginsMapLegend } from "../components/MigrantOriginsMapLegend";
+import { MigrantOriginsPanelRows } from "../components/MigrantOriginsPanelRows";
 import { DemocracyIndexChart } from "../components/DemocracyIndexChart";
 import type { ChartAxisSelection } from "../lib/chartAxes";
 import {
@@ -68,6 +71,14 @@ import {
   getDiasporaColorOverlay,
   type DiasporaMapMode,
 } from "../lib/diasporaColors";
+import {
+  formatMigrantStock,
+  getMigrantOriginsColorOverlay,
+  isMigrantOriginsMode,
+  migrantStockFor,
+  MIGRANT_ORIGINS_SOURCE,
+  type MigrantOriginsMapMode,
+} from "../lib/migrantOriginsColors";
 import { meaningLabel, symbolNoun } from "../lib/nationalFlags";
 import { withFootballCrestStats } from "../lib/footballCrestStats";
 import {
@@ -336,8 +347,12 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   const [passportMapMode, setPassportMapMode] = useState<PassportMapMode>(null);
   // Diaspora heatmap (🌐 control): colour destinations by how many people born
   // in a chosen country live there. Mutually exclusive with flag / passport /
-  // democracy layers.
+  // migrant-origins / democracy layers.
   const [diasporaMapMode, setDiasporaMapMode] = useState<DiasporaMapMode>(null);
+  // Migrant origins (↕ control): colour origins by how many people born there
+  // live in a chosen destination. Inverse of diaspora; same mutual-exclusion set.
+  const [migrantOriginsMapMode, setMigrantOriginsMapMode] =
+    useState<MigrantOriginsMapMode>(null);
   // City overlay (capitals only: national on the world map, national +
   // subdivision on the subdivision map). Like the flag overlay, it is OFF by
   // default and shared across the world + subdivision maps, so toggling it on
@@ -683,10 +698,11 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   const toggleFlagMap = useCallback(() => {
     setShowFlagMap((prev) => {
       const next = !prev;
-      // Flag overlay, passport, diaspora, and democracy layers are mutually exclusive.
+      // Flag overlay, passport, diaspora, migrant-origins, and democracy layers are mutually exclusive.
       if (next) {
         setPassportMapMode(null);
         setDiasporaMapMode(null);
+        setMigrantOriginsMapMode(null);
         setDemocracyMapMode(null);
       }
       return next;
@@ -697,6 +713,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     if (next !== null) {
       setShowFlagMap(false);
       setDiasporaMapMode(null);
+      setMigrantOriginsMapMode(null);
       setDemocracyMapMode(null);
     }
   }, []);
@@ -705,15 +722,29 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     if (next !== null) {
       setShowFlagMap(false);
       setPassportMapMode(null);
+      setMigrantOriginsMapMode(null);
       setDemocracyMapMode(null);
     }
   }, []);
+  const handleMigrantOriginsMapModeChange = useCallback(
+    (next: MigrantOriginsMapMode) => {
+      setMigrantOriginsMapMode(next);
+      if (next !== null) {
+        setShowFlagMap(false);
+        setPassportMapMode(null);
+        setDiasporaMapMode(null);
+        setDemocracyMapMode(null);
+      }
+    },
+    [],
+  );
   const handleDemocracyMapModeChange = useCallback((next: DemocracyMapMode) => {
     setDemocracyMapMode(next);
     if (next !== null) {
       setShowFlagMap(false);
       setPassportMapMode(null);
       setDiasporaMapMode(null);
+      setMigrantOriginsMapMode(null);
     }
   }, []);
   const toggleCities = useCallback(() => {
@@ -1358,6 +1389,12 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     return getDiasporaColorOverlay(diasporaMapMode);
   }, [isModernEra, diasporaMapMode]);
 
+  // Migrant origins into a chosen destination (UN DESA IMS 2024).
+  const migrantOriginsColorOverlay = useMemo(() => {
+    if (!isModernEra || !isMigrantOriginsMode(migrantOriginsMapMode)) return null;
+    return getMigrantOriginsColorOverlay(migrantOriginsMapMode.code);
+  }, [isModernEra, migrantOriginsMapMode]);
+
   // Flag overlay for historical eras: maps polity NAME → absolute flag URL.
   // Built from the same flagEntries used by FlagGrid so the URL resolution
   // (relative /historical-flags/ paths vs absolute flagcdn URLs) is consistent.
@@ -1562,6 +1599,34 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         };
       };
     }
+    if (isMigrantOriginsMode(migrantOriginsMapMode)) {
+      const destCode = migrantOriginsMapMode.code;
+      const destName =
+        countries.find((c) => c.code === destCode)?.name ?? destCode;
+      return (code: string) => {
+        const color = migrantOriginsColorOverlay?.get(code) ?? null;
+        if (code === destCode) {
+          return {
+            measure: `Migrant origins into ${destName}`,
+            value: "Selected destination",
+            category: null,
+            color,
+            year: MIGRANT_ORIGINS_SOURCE.year,
+          };
+        }
+        const stock = migrantStockFor(destCode, code);
+        return {
+          measure: `Born here, living in ${destName}`,
+          value:
+            stock == null
+              ? null
+              : `${formatMigrantStock(stock)} people`,
+          category: null,
+          color,
+          year: MIGRANT_ORIGINS_SOURCE.year,
+        };
+      };
+    }
     return null;
   }, [
     democracyMapMode,
@@ -1570,6 +1635,8 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     passportColorOverlay,
     diasporaMapMode,
     diasporaColorOverlay,
+    migrantOriginsMapMode,
+    migrantOriginsColorOverlay,
     countries,
   ]);
 
@@ -1606,6 +1673,12 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
           <DiasporaMapControl
             mode={diasporaMapMode}
             onChange={handleDiasporaMapModeChange}
+          />
+        )}
+        {isModernEra && (
+          <MigrantOriginsMapControl
+            mode={migrantOriginsMapMode}
+            onChange={handleMigrantOriginsMapModeChange}
           />
         )}
         {CITIES_FEATURE_ENABLED && (
@@ -1645,7 +1718,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       </>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
+    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, migrantOriginsMapMode, handleMigrantOriginsMapModeChange, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
   );
 
   // Leaner control set for the subdivision map: just the flag-overlay
@@ -2339,7 +2412,12 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             showSubnationalBorders={mapView.showSubnationalBorders}
             extraControls={mapExtraControls}
             flagOverlay={modernFlagOverlay}
-            fillOverride={democracyColorOverlay ?? passportColorOverlay ?? diasporaColorOverlay}
+            fillOverride={
+              democracyColorOverlay ??
+              passportColorOverlay ??
+              diasporaColorOverlay ??
+              migrantOriginsColorOverlay
+            }
             cityOverlay={worldCityOverlay}
             dataTooltip={isModernEra ? mapDataTooltip : null}
             belowMapNode={
@@ -2349,6 +2427,10 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
                 <VisaAccessMapLegend passportCode={passportMapMode.code} />
               ) : isModernEra && diasporaMapMode ? (
                 <DiasporaMapLegend originCode={diasporaMapMode} />
+              ) : isModernEra && isMigrantOriginsMode(migrantOriginsMapMode) ? (
+                <MigrantOriginsMapLegend
+                  destinationCode={migrantOriginsMapMode.code}
+                />
               ) : null
             }
           />
@@ -2618,6 +2700,12 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
                               </div>
                             }
                           />
+                          {isMigrantOriginsMode(migrantOriginsMapMode) && (
+                            <MigrantOriginsPanelRows
+                              destinationCode={migrantOriginsMapMode.code}
+                              originCode={display.country.code}
+                            />
+                          )}
                         </>
                       )}
                       {(subdivisionMode
