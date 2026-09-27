@@ -2,94 +2,91 @@
 
 ## What it is
 
-The Learn-mode world-map toolbar gains a **diaspora** control (globe icon,
-next to the passport / visa-access control). It is a **dropdown**:
+The Learn-mode world-map **diaspora** control (globe icon) colours destinations
+for a chosen origin. It offers **two sourced measures** — pick the measure,
+then the country:
 
 1. **Off** — default map colours.
-2. **People born in… living abroad** — type to filter, or scroll, then pick
-   any of the **195** UN members / permanent observers. The map then paints
-   every *other* country as a **green heatmap** of how many people born in the
-   selected origin live there.
+2. **Living abroad now (foreign-born stock, 2020)** — how many people *born in*
+   the origin live in each destination today.
+3. **Moved 2015–2020 (estimated flows)** — estimated people who *moved* from
+   the origin to each destination during that five-year window.
 
-The flag overlay, passport/visa layer, diaspora layer, and democracy/index
-layer are **mutually exclusive** — turning one on clears the others.
+Flag / passport·visa / diaspora / democracy layers stay mutually exclusive.
+
+## What these numbers are — and are not
+
+| Concept | In this feature? | Meaning |
+|---------|------------------|---------|
+| **Foreign-born stock** | Yes — “Living abroad now” | People born in O living in D at a point in time (census / register concept). Long-settled migrants still count. |
+| **Period migration flow** | Yes — “Moved 2015–2020” | Estimated movers O→D during 2015–2020 (Abel & Cohen). |
+| **Ethnic / ancestry “historical diaspora”** | **No** | e.g. Brazil-born Japanese-Brazilians whose grandparents migrated in the early 1900s. That is ancestry, not birthplace — no global bilateral matrix of that kind is bundled here, and we do not invent one. |
+
+Example (Japan → Brazil):
+
+- **Stock (2020):** ~62,000 Japan-born residents of Brazil (World Bank).
+- **Flow (2015–2020):** ~21,000 estimated movers Japan→Brazil in that window (Abel & Cohen).
+- **Ethnic Nikkei community in Brazil:** on the order of 1–2 million — **not** shown; it is a different concept.
 
 ## Colours
 
-| Role | Colour | Hex |
-|------|--------|-----|
-| Fewest people (of destinations with a positive stock) | Light green | `#d8f3e0` |
-| Most people | Dark green | `#004d1a` |
-| Selected origin (home) | Black | `#000000` |
-| Destination with **no** positive stock in the source | Neutral land | *(unchanged)* |
+Same green heatmap for both measures: light `#d8f3e0` → dark `#004d1a`, origin
+black `#000000`, missing pairs stay neutral land. Log-scaled within the
+selected origin’s own min→max.
 
-Intensity is **log-scaled** across the origin’s own min→max positive stocks
-(skew is extreme: millions vs dozens). Equal min/max (a single destination)
-maps to full dark green.
+## Sources — never fabricated
 
-A legend under the map names the origin, shows the green gradient with the
-sourced min→max counts, the origin swatch, the total people abroad and how
-many destinations have a reported stock, and the UN DESA citation. Hover or
-tap a destination for the exact stock in the data tooltip.
-
-## Source — never fabricated
+### Stock — World Bank Global Bilateral Migration Matrix 1960–2020
 
 | Field | Value |
 |-------|--------|
-| Publisher | [United Nations DESA Population Division](https://www.un.org/development/desa/pd/content/international-migrant-stock) |
-| Dataset | **International Migrant Stock 2024** |
-| File | `undesa_pd_2024_ims_stock_by_sex_destination_and_origin.xlsx` |
-| Sheet | **Table 1** — international migrant stock at mid-year, both sexes, by country of destination and origin |
-| Year | mid-**2024** |
-| Licence | **CC BY 3.0 IGO** |
-| Upstream xlsx sha256 | `0e10179d05186041a65cf5c6200943b2231701f9c1fd33cbbe21d23b8ea47316` |
-| Bundled extract | `scripts/data/diaspora-migrant-stock-2024.csv` (+ `.meta.json`) |
-| Generated runtime data | `src/data/diaspora.ts` |
+| Publisher | World Bank (World Development Report 2023 Migration Database) |
+| File | `WBMM_1960_2020.xlsx` (from [WDR 2023 data](https://www.worldbank.org/en/publication/wdr2023/data)) |
+| Year | **2020** (male + female summed) |
+| Bundled extract | `scripts/data/diaspora-migrant-stock-2020-wb.csv` |
+| Upstream xlsx sha256 | `0f6b085b83fb1b4203f01c3fe736c5e64dcab5291ed7ce77c028e12ce84ea28b` |
 
-The generator (`scripts/build-diaspora.mjs`) keeps **only** the game’s 195 UN
-codes as origins and destinations. Upstream aggregates (M49 ≥ 900) and
-non-UN entities are dropped. Home cells (`origin === destination`) are
-omitted; the overlay paints the selected origin black. **Zero / blank cells
-are omitted** — never invented. A missing origin→destination pair on the map
-simply stays the neutral land colour.
+Chosen over UN DESA IMS 2024 Table 1 because DESA omits many real corridors
+(e.g. Australia→United States / France / Germany / Thailand / Korea) even
+though the reverse (those countries→Australia) is present. Legacy ISO3
+aliases mapped: `ROM→RO`, `ZAR→CD`, `YUG→RS`, `TMP→TL`. Montenegro and
+Vatican City have no WB country codes — honest empty stock for those origins.
 
-M49 numeric codes are mapped to ISO 3166-1 alpha-2 via
-[lukes/ISO-3166-Countries-with-Regional-Codes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
-(the same lineage used elsewhere in this repo for UN geography).
+### Flow — Abel & Cohen bilateral estimates (2015–2020)
 
-Coverage of the bundled extract (as of the 2024 file above): **195** origins,
-**8,178** positive bilateral pairs. Some well-known corridors may be absent
-from Table 1 for a given origin (the source simply has no positive cell) —
-those destinations stay uncoloured rather than estimated.
+| Field | Value |
+|-------|--------|
+| Citation | Abel & Cohen (2019), *Scientific Data* — [doi:10.1038/s41597-019-0089-3](https://www.nature.com/articles/s41597-019-0089-3) |
+| Collection | [Figshare c.4470464](https://doi.org/10.6084/m9.figshare.c.4470464) (update using UN DESA IMS 2024 / WPP 2024) |
+| Method | **`da_pb_closed`** (closed demographic accounting, pseudo-Bayesian) — the paper finds closed accounting methods correlate best with reported flows |
+| Period | **2015–2020** |
+| Bundled extract | `scripts/data/diaspora-migrant-flow-2015-2020.csv` |
+| Licence | CC BY 4.0 |
+
+These are **modelled** flows from stock changes, not raw border counts. Treat
+them as estimates.
 
 ## How to refresh
 
 ```bash
-# 1. Download the official xlsx from the UN DESA page above, record its
-#    sha256 in scripts/data/diaspora-migrant-stock-2024.meta.json, then
-#    re-extract Table 1 country×country cells into
-#    scripts/data/diaspora-migrant-stock-2024.csv
-#    (origin,destination,stock — positive integers only; UN-195 only).
+# Stock — download Global-Migration-Matrix-1960-2020.zip from WDR 2023 data,
+# unzip WBMM_1960_2020.xlsx, then:
+node scripts/extract-diaspora-wb.mjs /path/to/WBMM_1960_2020.xlsx
 
-# 2. Regenerate + check
+# Flow — refresh scripts/data/diaspora-migrant-flow-2015-2020.csv from the
+# Figshare CSV (year0=2015, da_pb_closed, UN-195 only); update .meta.json hashes.
+
 node scripts/build-diaspora.mjs
 npm run flags:check:diaspora
 ```
 
-Do **not** hand-edit `src/data/diaspora.ts` — it is generated.
+Do **not** hand-edit `src/data/diaspora.ts`.
 
 ## Enforcement
 
-`scripts/check-diaspora.mjs` (`npm run flags:check:diaspora`, in
-`npm run flags:check` and the `flag-integrity` / `check-proportions` CI job)
-fails when:
-
-- the generated file’s recorded CSV sha256 drifts from the bundled CSV;
-- any UN-195 origin is missing, or any cell disagrees with the CSV;
-- a home cell or non-UN code appears in the extract;
-- `LearnPage` / `DiasporaMapControl` / `DiasporaMapLegend` / `diasporaColors`
-  stop wiring the control, overlay, legend, green endpoints, home black, or
-  log scale.
+`scripts/check-diaspora.mjs` fails when stock/flow drift from their CSVs, when
+Australia’s stock loses US/FR/DE/TH/KR, when the UI drops stock/flow wiring,
+or when heatmap endpoints / log scale / home black drift.
 
 ## UI surfaces
 
@@ -98,5 +95,5 @@ fails when:
 | Toolbar dropdown | `src/components/DiasporaMapControl.tsx` |
 | Below-map legend | `src/components/DiasporaMapLegend.tsx` |
 | Colours + scale | `src/lib/diasporaColors.ts` |
-| Wiring | `src/pages/LearnPage.tsx` (`diasporaMapMode`, mutual exclusivity with flags / passport / democracy, `fillOverride`, data tooltip) |
-| Legend gradient CSS | `.democracy-map-legend__gradient` in `src/App.css` |
+| Data | `src/data/diaspora.ts` (`DIASPORA_STOCK`, `DIASPORA_FLOW`) |
+| Wiring | `src/pages/LearnPage.tsx` |

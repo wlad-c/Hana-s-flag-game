@@ -1,20 +1,32 @@
 /**
- * Learn-mode world-map colours for "diaspora from country X" mode.
+ * Learn-mode world-map colours for diaspora STOCK and FLOW modes.
  *
- * Destination countries are painted as a green heatmap of how many people
- * born in the selected origin live there (UN DESA International Migrant
- * Stock). Darker green = larger stock; lighter green = smaller stock.
- * The selected origin itself is black. Destinations with no sourced positive
- * stock stay the neutral land colour — never fabricated.
+ * STOCK — foreign-born living in each destination (World Bank 2020).
+ * FLOW  — estimated movers during 2015–2020 (Abel & Cohen da_pb_closed).
  *
- * Data: src/data/diaspora.ts (generated from UN DESA 2024 — never invent).
+ * Neither is ethnic/ancestry diaspora. Missing pairs stay neutral land —
+ * never fabricated.
  */
-import { DIASPORA, DIASPORA_SOURCE } from "../data/diaspora";
+import {
+  DIASPORA_STOCK,
+  DIASPORA_FLOW,
+  DIASPORA_STOCK_SOURCE,
+  DIASPORA_FLOW_SOURCE,
+} from "../data/diaspora";
 
-export { DIASPORA_SOURCE };
+export {
+  DIASPORA_STOCK_SOURCE,
+  DIASPORA_FLOW_SOURCE,
+  /** @deprecated alias of DIASPORA_STOCK_SOURCE */
+  DIASPORA_STOCK_SOURCE as DIASPORA_SOURCE,
+};
 
-/** Selected origin ISO code, or null when the layer is off. */
-export type DiasporaMapMode = string | null;
+export type DiasporaMeasure = "stock" | "flow";
+
+/** Selected origin + measure, or null when the layer is off. */
+export type DiasporaMapMode =
+  | null
+  | { kind: DiasporaMeasure; code: string };
 
 /** Green heatmap endpoints (light → dark). */
 export const DIASPORA_HEATMAP = {
@@ -32,6 +44,10 @@ export const DIASPORA_HEATMAP_STOPS: readonly string[] = [
   "#1b7a3d",
   "#004d1a",
 ];
+
+function matrixFor(kind: DiasporaMeasure): Readonly<Record<string, Readonly<Record<string, number>>>> {
+  return kind === "flow" ? DIASPORA_FLOW : DIASPORA_STOCK;
+}
 
 function lerp(a: number, b: number, t: number): number {
   return a + (b - a) * t;
@@ -63,70 +79,84 @@ export function diasporaHeatColor(t: number): string {
   return rgbToHex(lerp(r1, r2, clamped), lerp(g1, g2, clamped), lerp(b1, b2, clamped));
 }
 
-export function diasporaStockFor(origin: string, destination: string): number | null {
+export function diasporaValueFor(
+  kind: DiasporaMeasure,
+  origin: string,
+  destination: string,
+): number | null {
   if (origin === destination) return null;
-  const row = DIASPORA[origin];
+  const row = matrixFor(kind)[origin];
   if (!row) return null;
   const n = row[destination];
   return typeof n === "number" && n > 0 ? n : null;
 }
 
-export function formatDiasporaStock(n: number): string {
+/** @deprecated Prefer diasporaValueFor("stock", …) */
+export function diasporaStockFor(origin: string, destination: string): number | null {
+  return diasporaValueFor("stock", origin, destination);
+}
+
+export function formatDiasporaNumber(n: number): string {
   return n.toLocaleString("en-US");
 }
 
-/**
- * Destinations with a positive stock for `origin`, plus min/max used to scale
- * the heatmap. Returns null when the origin has no sourced diaspora rows.
- */
-export function diasporaScale(origin: string): {
-  stocks: ReadonlyMap<string, number>;
+/** @deprecated Prefer formatDiasporaNumber */
+export const formatDiasporaStock = formatDiasporaNumber;
+
+export function diasporaScale(
+  kind: DiasporaMeasure,
+  origin: string,
+): {
+  values: ReadonlyMap<string, number>;
   min: number;
   max: number;
   destinations: number;
-  totalAbroad: number;
+  total: number;
 } | null {
-  const row = DIASPORA[origin];
+  const row = matrixFor(kind)[origin];
   if (!row) return null;
-  const stocks = new Map<string, number>();
+  const values = new Map<string, number>();
   let min = Infinity;
   let max = -Infinity;
-  let totalAbroad = 0;
+  let total = 0;
   for (const [dest, n] of Object.entries(row)) {
     if (n > 0) {
-      stocks.set(dest, n);
+      values.set(dest, n);
       if (n < min) min = n;
       if (n > max) max = n;
-      totalAbroad += n;
+      total += n;
     }
   }
-  if (stocks.size === 0) return null;
-  return { stocks, min, max, destinations: stocks.size, totalAbroad };
+  if (values.size === 0) return null;
+  return { values, min, max, destinations: values.size, total };
 }
 
-/**
- * Log-scaled t∈[0,1] for a stock relative to an origin's min/max.
- * Equal min/max (single destination) → full dark green.
- */
-export function diasporaHeatT(stock: number, min: number, max: number): number {
-  if (!(stock > 0) || !(min > 0) || !(max > 0)) return 0;
+export function diasporaHeatT(value: number, min: number, max: number): number {
+  if (!(value > 0) || !(min > 0) || !(max > 0)) return 0;
   if (max === min) return 1;
   const logMin = Math.log(min);
   const logMax = Math.log(max);
-  return (Math.log(stock) - logMin) / (logMax - logMin);
+  return (Math.log(value) - logMin) / (logMax - logMin);
 }
 
-/**
- * Build the fill override map for holders-of-origin living abroad.
- * Origin country → black; destinations with stock → green heatmap.
- */
-export function getDiasporaColorOverlay(originCode: string): Map<string, string> | null {
-  const scale = diasporaScale(originCode);
+export function getDiasporaColorOverlay(
+  kind: DiasporaMeasure,
+  originCode: string,
+): Map<string, string> | null {
+  const scale = diasporaScale(kind, originCode);
   if (!scale) return null;
   const overlay = new Map<string, string>();
   overlay.set(originCode, DIASPORA_HEATMAP.home);
-  for (const [dest, stock] of scale.stocks) {
-    overlay.set(dest, diasporaHeatColor(diasporaHeatT(stock, scale.min, scale.max)));
+  for (const [dest, value] of scale.values) {
+    overlay.set(dest, diasporaHeatColor(diasporaHeatT(value, scale.min, scale.max)));
   }
   return overlay;
+}
+
+export function diasporaMeasureLabel(kind: DiasporaMeasure): string {
+  return kind === "flow" ? "Moved 2015–2020 (estimated)" : "Living abroad now (foreign-born)";
+}
+
+export function diasporaValueNoun(kind: DiasporaMeasure): string {
+  return kind === "flow" ? "movers" : "people";
 }
