@@ -1,12 +1,19 @@
 #!/usr/bin/env node
 /**
- * Generates src/data/diaspora.ts from the committed UN DESA extract.
+ * Generates src/data/diaspora.ts from the committed stock + flow extracts.
  *
- * Source (never fabricated):
- *   scripts/data/diaspora-migrant-stock-2024.csv
- *   upstream: UN DESA International Migrant Stock 2024
- *     (Table 1 — both sexes, mid-year 2024, destination × origin)
- *   licence: CC BY 3.0 IGO
+ * STOCK (people living abroad now — foreign-born):
+ *   scripts/data/diaspora-migrant-stock-2020-wb.csv
+ *   World Bank Global Bilateral Migration Matrix 1960–2020 (WDR 2023), year 2020
+ *
+ * FLOW (people who moved in a five-year window — estimated):
+ *   scripts/data/diaspora-migrant-flow-2015-2020.csv
+ *   Abel & Cohen (2019) bilateral flow estimates, da_pb_closed, period 2015–2020
+ *   (Figshare update using UN DESA IMS 2024 / WPP 2024 inputs)
+ *
+ * Neither is an ethnic/ancestry “historical diaspora” (e.g. Brazil-born
+ * Japanese-Brazilians). Stock = birthplace of people alive there now.
+ * Flow = estimated movers during the period. Never fabricate.
  *
  * Re-run: node scripts/build-diaspora.mjs
  */
@@ -17,10 +24,15 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const CSV = resolve(__dirname, "data/diaspora-migrant-stock-2024.csv");
-const META = resolve(__dirname, "data/diaspora-migrant-stock-2024.meta.json");
+const STOCK_CSV = resolve(__dirname, "data/diaspora-migrant-stock-2020-wb.csv");
+const STOCK_META = resolve(__dirname, "data/diaspora-migrant-stock-2020-wb.meta.json");
+const FLOW_CSV = resolve(__dirname, "data/diaspora-migrant-flow-2015-2020.csv");
+const FLOW_META = resolve(__dirname, "data/diaspora-migrant-flow-2015-2020.meta.json");
 const UN_CODES_FILE = resolve(ROOT, "src/lib/unMemberStates.ts");
 const OUT = resolve(ROOT, "src/data/diaspora.ts");
+
+/** Origins the World Bank stock matrix has no country code for. */
+const STOCK_ALLOWED_MISSING = new Set(["ME", "VA"]);
 
 function loadUnCodes(src) {
   const m = src.match(/UN_MEMBER_CODES[\s\S]*?=[\s\S]*?new Set\(\[([\s\S]*?)\]\)/);
@@ -30,88 +42,134 @@ function loadUnCodes(src) {
   return new Set(codes);
 }
 
+/**
+ * @param {string} csvPath
+ * @param {string} valueKey label for errors
+ * @param {Set<string>} unCodes
+ */
+function loadPairs(csvPath, valueKey, unCodes) {
+  const bytes = readFileSync(csvPath);
+  const sha = createHash("sha256").update(bytes).digest("hex");
+  const lines = bytes.toString("utf8").trim().split(/\r?\n/);
+  const header = lines[0];
+  const expectedHeader = valueKey === "stock" ? "origin,destination,stock" : "origin,destination,flow";
+  if (header !== expectedHeader) throw new Error(`Bad header in ${csvPath}: ${header}`);
+  /** @type {Map<string, Map<string, number>>} */
+  const byOrigin = new Map();
+  for (let i = 1; i < lines.length; i++) {
+    const [origin, destination, raw] = lines[i].split(",");
+    if (!unCodes.has(origin) || !unCodes.has(destination)) {
+      throw new Error(`Non-UN ${origin}→${destination} in ${csvPath}`);
+    }
+    if (origin === destination) throw new Error(`Home cell ${origin} in ${csvPath}`);
+    const n = Number(raw);
+    if (!Number.isInteger(n) || n <= 0) throw new Error(`Bad ${valueKey} line ${i + 1} in ${csvPath}`);
+    if (!byOrigin.has(origin)) byOrigin.set(origin, new Map());
+    byOrigin.get(origin).set(destination, n);
+  }
+  return { byOrigin, sha, pairCount: lines.length - 1 };
+}
+
+function bodyFrom(byOrigin) {
+  return [...byOrigin.keys()]
+    .sort()
+    .map((o) => {
+      const dests = [...byOrigin.get(o).entries()].sort(([a], [b]) => a.localeCompare(b));
+      const inner = dests.map(([d, n]) => `    ${JSON.stringify(d)}: ${n},`).join("\n");
+      return `  ${JSON.stringify(o)}: {\n${inner}\n  },`;
+    })
+    .join("\n");
+}
+
 const unCodes = loadUnCodes(readFileSync(UN_CODES_FILE, "utf8"));
-const meta = JSON.parse(readFileSync(META, "utf8"));
-const csvBytes = readFileSync(CSV);
-const csvSha = createHash("sha256").update(csvBytes).digest("hex");
-const lines = csvBytes.toString("utf8").trim().split(/\r?\n/);
-if (lines[0] !== "origin,destination,stock") {
-  throw new Error(`Unexpected CSV header: ${lines[0]}`);
-}
+const stockMeta = JSON.parse(readFileSync(STOCK_META, "utf8"));
+const flowMeta = JSON.parse(readFileSync(FLOW_META, "utf8"));
+const stock = loadPairs(STOCK_CSV, "stock", unCodes);
+const flow = loadPairs(FLOW_CSV, "flow", unCodes);
 
-/** @type {Map<string, Map<string, number>>} */
-const byOrigin = new Map();
-for (let i = 1; i < lines.length; i++) {
-  const [origin, destination, stockRaw] = lines[i].split(",");
-  if (!origin || !destination) throw new Error(`Malformed line ${i + 1}`);
-  if (!unCodes.has(origin) || !unCodes.has(destination)) {
-    throw new Error(`Non-UN code on line ${i + 1}: ${origin}→${destination}`);
-  }
-  if (origin === destination) {
-    throw new Error(`Home cell must be omitted: ${origin}`);
-  }
-  const stock = Number(stockRaw);
-  if (!Number.isFinite(stock) || stock <= 0 || !Number.isInteger(stock)) {
-    throw new Error(`Bad stock on line ${i + 1}: ${stockRaw}`);
-  }
-  if (!byOrigin.has(origin)) byOrigin.set(origin, new Map());
-  byOrigin.get(origin).set(destination, stock);
+const stockMissing = [...unCodes].filter((c) => !stock.byOrigin.has(c)).sort();
+const stockUnexpected = stockMissing.filter((c) => !STOCK_ALLOWED_MISSING.has(c));
+if (stockUnexpected.length) {
+  throw new Error(`Stock origins missing (not allowlisted): ${stockUnexpected.join(", ")}`);
 }
-
-const missing = [...unCodes].filter((c) => !byOrigin.has(c)).sort();
-if (missing.length) {
-  throw new Error(`Origins with no diaspora rows: ${missing.join(", ")}`);
-}
-
-const sorted = [...byOrigin.keys()].sort();
-const body = sorted
-  .map((o) => {
-    const dests = [...byOrigin.get(o).entries()].sort(([a], [b]) => a.localeCompare(b));
-    const inner = dests.map(([d, n]) => `    ${JSON.stringify(d)}: ${n},`).join("\n");
-    return `  ${JSON.stringify(o)}: {\n${inner}\n  },`;
-  })
-  .join("\n");
 
 const out = `// GENERATED by scripts/build-diaspora.mjs — DO NOT EDIT BY HAND.
 // Re-run: node scripts/build-diaspora.mjs
 //
-// Bilateral international migrant stock (people born in origin living in
-// destination) for the Learn world-map diaspora heatmap. SOURCED from UN DESA
-// International Migrant Stock 2024 — never hand-written or approximated. A
-// missing origin→destination cell means the source reported no positive stock
-// for that pair; the map leaves it the neutral land colour.
+// Two measures for the Learn diaspora heatmap — never invent numbers:
 //
-// Source: ${meta.sourceName}
-// Dataset page: ${meta.sourceUrl}
-// File: ${meta.fileName} (${meta.sheet})
-// Year: ${meta.year}
-// Licence: ${meta.license}
-// Upstream xlsx sha256: ${meta.xlsxSha256}
-// Bundled CSV sha256: ${csvSha}
+// 1) STOCK — people born in origin living in destination at a point in time
+//    (foreign-born / country-of-birth census concept). Includes long-settled
+//    migrants still alive there; EXCLUDES destination-born descendants
+//    (so it is NOT an ethnic “historical diaspora”).
+//    Source: World Bank Global Bilateral Migration Matrix 1960–2020 (WDR 2023), year 2020.
+//
+// 2) FLOW — estimated people who moved origin→destination during 2015–2020.
+//    Source: Abel & Cohen (2019) bilateral flow estimates, method da_pb_closed
+//    (Figshare update with UN DESA IMS 2024 / WPP 2024 inputs).
+//
+// Stock CSV sha256: ${stock.sha}
+// Flow CSV sha256:  ${flow.sha}
 
-/** Provenance for the bundled diaspora matrix. */
-export const DIASPORA_SOURCE = {
-  name: ${JSON.stringify(meta.sourceName)},
-  url: ${JSON.stringify(meta.sourceUrl)},
-  fileUrl: ${JSON.stringify(meta.fileUrl)},
-  fileName: ${JSON.stringify(meta.fileName)},
-  sheet: ${JSON.stringify(meta.sheet)},
-  year: ${meta.year},
-  license: ${JSON.stringify(meta.license)},
-  xlsxSha256: ${JSON.stringify(meta.xlsxSha256)},
-  csvSha256: ${JSON.stringify(csvSha)},
+/** Provenance for the foreign-born STOCK matrix (year ${stockMeta.year}). */
+export const DIASPORA_STOCK_SOURCE = {
+  kind: "stock" as const,
+  name: ${JSON.stringify(stockMeta.sourceName)},
+  url: ${JSON.stringify(stockMeta.sourceUrl)},
+  fileUrl: ${JSON.stringify(stockMeta.fileUrl)},
+  fileName: ${JSON.stringify(stockMeta.fileName)},
+  sheet: ${JSON.stringify(stockMeta.sheet)},
+  year: ${stockMeta.year},
+  license: ${JSON.stringify(stockMeta.license)},
+  xlsxSha256: ${JSON.stringify(stockMeta.xlsxSha256)},
+  csvSha256: ${JSON.stringify(stock.sha)},
+  concept:
+    "Foreign-born stock: people born in the origin country who live in the destination at mid-year of the stated year. Not ethnic ancestry; not a period flow.",
 } as const;
 
+/** Provenance for the five-year FLOW matrix (${flowMeta.period}). */
+export const DIASPORA_FLOW_SOURCE = {
+  kind: "flow" as const,
+  name: ${JSON.stringify(flowMeta.sourceName)},
+  url: ${JSON.stringify(flowMeta.sourceUrl)},
+  paperUrl: ${JSON.stringify(flowMeta.paperUrl)},
+  fileUrl: ${JSON.stringify(flowMeta.fileUrl)},
+  fileName: ${JSON.stringify(flowMeta.fileName)},
+  method: ${JSON.stringify(flowMeta.method)},
+  period: ${JSON.stringify(flowMeta.period)},
+  year0: ${flowMeta.year0},
+  year1: ${flowMeta.year1},
+  license: ${JSON.stringify(flowMeta.license)},
+  upstreamSha256: ${JSON.stringify(flowMeta.upstreamSha256)},
+  csvSha256: ${JSON.stringify(flow.sha)},
+  concept:
+    "Estimated migration flow: people who moved from origin to destination during the five-year period. Modelled from stock changes (Abel & Cohen); not a border-count census.",
+} as const;
+
+/** @deprecated Use DIASPORA_STOCK_SOURCE — kept so older imports keep working during the rename. */
+export const DIASPORA_SOURCE = DIASPORA_STOCK_SOURCE;
+
 /**
- * origin ISO alpha-2 → destination ISO alpha-2 → migrant stock (people).
- * Home (origin === destination) is omitted.
+ * Foreign-born STOCK: origin → destination → people (World Bank 2020).
+ * Montenegro (ME) and Vatican City (VA) have no rows in the WB matrix.
  */
-export const DIASPORA: Readonly<Record<string, Readonly<Record<string, number>>>> = {
-${body}
+export const DIASPORA_STOCK: Readonly<Record<string, Readonly<Record<string, number>>>> = {
+${bodyFrom(stock.byOrigin)}
 };
+
+/**
+ * Estimated FLOW 2015–2020: origin → destination → movers (Abel & Cohen da_pb_closed).
+ */
+export const DIASPORA_FLOW: Readonly<Record<string, Readonly<Record<string, number>>>> = {
+${bodyFrom(flow.byOrigin)}
+};
+
+/** @deprecated Alias of DIASPORA_STOCK for older call sites. */
+export const DIASPORA = DIASPORA_STOCK;
 `;
 
 writeFileSync(OUT, out, "utf8");
 console.log(`Wrote ${OUT}`);
-console.log(`  ${sorted.length} origin(s); ${lines.length - 1} bilateral pair(s)`);
-console.log(`  CSV sha256 ${csvSha}`);
+console.log(`  stock: ${stock.byOrigin.size} origins, ${stock.pairCount} pairs`);
+console.log(`  flow:  ${flow.byOrigin.size} origins, ${flow.pairCount} pairs`);
+if (stockMissing.length) console.log(`  stock honest gaps: ${stockMissing.join(", ")}`);

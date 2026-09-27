@@ -1,0 +1,18 @@
+{
+  "sourceName": "Abel & Cohen bilateral international migration flow estimates (updated with UN DESA IMS 2024 / WPP 2024 inputs)",
+  "sourceUrl": "https://doi.org/10.6084/m9.figshare.c.4470464",
+  "paperUrl": "https://www.nature.com/articles/s41597-019-0089-3",
+  "fileUrl": "https://ndownloader.figshare.com/files/53235671",
+  "fileName": "abel_cohen_bilateral_flows.csv",
+  "method": "da_pb_closed",
+  "methodNote": "Demographic accounting, pseudo-Bayesian average of migrant transitions and stayers \u2014 closed system. Abel & Cohen (2019) find closed demographic-accounting methods correlate best with reported flow data.",
+  "period": "2015-2020",
+  "year0": 2015,
+  "year1": 2020,
+  "license": "CC BY 4.0 (Figshare / Scientific Data)",
+  "upstreamSha256": "db2c2b3179e52b1c0e1a59aff009c1aa2c83661e56011bb520f3009d8fdd2f7e",
+  "csvSha256": "34787d0a5ce0c25441acbb913affd8ef3f4d580d8370194e1c7a7bca6c4b1a16",
+  "pairCount": 17965,
+  "originCount": 194,
+  "notes": "Estimated five-year migration FLOWS (people who moved origin\u2192destination during 2015\u20132020), not stocks and not ethnic/ancestry diasporas. Rounded da_pb_closed to integers; zeros omitted. UN-195 only."
+}

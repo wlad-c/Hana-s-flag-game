@@ -66,8 +66,8 @@ import {
 } from "../lib/visaAccessColors";
 import {
   diasporaScale,
-  diasporaStockFor,
-  formatDiasporaStock,
+  diasporaValueFor,
+  formatDiasporaNumber,
   getDiasporaColorOverlay,
   type DiasporaMapMode,
 } from "../lib/diasporaColors";
@@ -1383,10 +1383,11 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   }, [isModernEra, passportMapMode, countries]);
 
   // Diaspora heatmap fill: destinations coloured by how many people born in
-  // the selected origin live there (src/data/diaspora.ts — UN DESA 2024).
+  // the selected origin live there (src/data/diaspora.ts — World Bank stock /
+  // Abel & Cohen flows).
   const diasporaColorOverlay = useMemo(() => {
     if (!isModernEra || !diasporaMapMode) return null;
-    return getDiasporaColorOverlay(diasporaMapMode);
+    return getDiasporaColorOverlay(diasporaMapMode.kind, diasporaMapMode.code);
   }, [isModernEra, diasporaMapMode]);
 
   // Migrant origins into a chosen destination (UN DESA IMS 2024).
@@ -1569,33 +1570,42 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       };
     }
     if (diasporaMapMode) {
-      const originCode = diasporaMapMode;
+      const { kind, code: originCode } = diasporaMapMode;
       const originName =
         countries.find((c) => c.code === originCode)?.name ?? originCode;
-      const scale = diasporaScale(originCode);
+      const scale = diasporaScale(kind, originCode);
+      const measure =
+        kind === "flow"
+          ? `Moved from ${originName}, 2015–2020`
+          : `Born in ${originName}, living abroad`;
+      const year = 2020;
       return (code: string) => {
         const color = diasporaColorOverlay?.get(code) ?? null;
         if (code === originCode) {
           return {
-            measure: `Diaspora from ${originName}`,
+            measure,
             value: "Origin country",
             category: null,
             color,
-            year: 2024,
+            year,
           };
         }
-        const stock = diasporaStockFor(originCode, code);
+        const value = diasporaValueFor(kind, originCode, code);
         return {
-          measure: `Diaspora from ${originName}`,
+          measure,
           value:
-            stock != null
-              ? `${formatDiasporaStock(stock)} people`
+            value != null
+              ? kind === "flow"
+                ? `${formatDiasporaNumber(value)} movers`
+                : `${formatDiasporaNumber(value)} people`
               : scale
-                ? "No stock reported"
+                ? kind === "flow"
+                  ? "No flow estimated"
+                  : "No stock reported"
                 : null,
           category: null,
           color,
-          year: 2024,
+          year,
         };
       };
     }
@@ -2426,7 +2436,10 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
               ) : isModernEra && isVisaPassportMode(passportMapMode) ? (
                 <VisaAccessMapLegend passportCode={passportMapMode.code} />
               ) : isModernEra && diasporaMapMode ? (
-                <DiasporaMapLegend originCode={diasporaMapMode} />
+                <DiasporaMapLegend
+                  kind={diasporaMapMode.kind}
+                  originCode={diasporaMapMode.code}
+                />
               ) : isModernEra && isMigrantOriginsMode(migrantOriginsMapMode) ? (
                 <MigrantOriginsMapLegend
                   destinationCode={migrantOriginsMapMode.code}

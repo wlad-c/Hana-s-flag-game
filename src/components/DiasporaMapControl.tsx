@@ -4,7 +4,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { ALL_COUNTRY_OPTIONS, countrySearchNames } from "../lib/countrySelection";
 import { normalizeForSearch } from "../lib/searchNormalize";
 import { blurActiveElementThenRun } from "../lib/dismissKeyboard";
-import type { DiasporaMapMode } from "../lib/diasporaColors";
+import {
+  diasporaMeasureLabel,
+  type DiasporaMapMode,
+  type DiasporaMeasure,
+} from "../lib/diasporaColors";
 
 export type DiasporaMapControlProps = {
   mode: DiasporaMapMode;
@@ -12,12 +16,16 @@ export type DiasporaMapControlProps = {
 };
 
 /**
- * Learn world-map toolbar control: colour destinations by how many people
- * born in a chosen country live there (diaspora heatmap).
+ * Learn world-map toolbar: diaspora STOCK (foreign-born living abroad) or
+ * FLOW (estimated movers in 2015–2020). Not ethnic ancestry.
+ *
+ * Measure is chosen first (Stock | Flow), then one shared country list —
+ * stacking two 195-row lists buried Flow below the fold.
  */
 export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [draftKind, setDraftKind] = useState<DiasporaMeasure>("stock");
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const popoverStyle = usePopoverBounds(open, ref, 420);
@@ -42,11 +50,12 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
 
   useEffect(() => {
     if (open) {
+      setDraftKind(mode?.kind ?? "stock");
       queueMicrotask(() => inputRef.current?.focus());
     } else {
       setQuery("");
     }
-  }, [open]);
+  }, [open, mode?.kind]);
 
   const select = (next: DiasporaMapMode) => {
     blurActiveElementThenRun(() => {
@@ -57,8 +66,9 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
 
   const isActive = mode !== null;
   const activeName = mode
-    ? ALL_COUNTRY_OPTIONS.find((c) => c.code === mode)?.name ?? mode
+    ? ALL_COUNTRY_OPTIONS.find((c) => c.code === mode.code)?.name ?? mode.code
     : null;
+  const activeKind = mode?.kind ?? null;
 
   const normalizedQuery = normalizeForSearch(query.trim());
   const filteredCountries = useMemo(() => {
@@ -75,6 +85,14 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
     });
   }, [normalizedQuery]);
 
+  const pickMeasure = (kind: DiasporaMeasure) => {
+    setDraftKind(kind);
+    // If a country is already selected, switch measure in place without closing.
+    if (mode) {
+      onChange({ kind, code: mode.code });
+    }
+  };
+
   return (
     <div className="democracy-map-control diaspora-map-control" ref={ref}>
       <button
@@ -83,11 +101,15 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-label={
-          activeName
-            ? `Colour countries by diaspora from ${activeName}`
-            : "Colour countries by diaspora from a selected country"
+          activeName && activeKind
+            ? `Colour countries by ${diasporaMeasureLabel(activeKind).toLowerCase()} from ${activeName}`
+            : "Colour countries by diaspora stock or recent migration flows"
         }
-        title={activeName ? `Diaspora from ${activeName}` : "Diaspora heatmap"}
+        title={
+          activeName && activeKind
+            ? `${activeName} — ${diasporaMeasureLabel(activeKind)}`
+            : "Diaspora map"
+        }
       >
         <span className="world-map__zoom-icon" aria-hidden="true">
           <UiIcon name="globe" />
@@ -113,9 +135,36 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
 
             <div className="democracy-map-control__group">
               <hr className="democracy-map-control__divider" aria-hidden="true" />
-              <p className="democracy-map-control__group-label">
-                People born in… living abroad
+              <p className="democracy-map-control__group-label">Measure</p>
+              <button
+                type="button"
+                className={`map-view-control__preset${draftKind === "stock" ? " map-view-control__preset--active" : ""}`}
+                onClick={() => pickMeasure("stock")}
+                aria-pressed={draftKind === "stock"}
+              >
+                Living abroad now (foreign-born stock, 2020)
+              </button>
+              <button
+                type="button"
+                className={`map-view-control__preset${draftKind === "flow" ? " map-view-control__preset--active" : ""}`}
+                onClick={() => pickMeasure("flow")}
+                aria-pressed={draftKind === "flow"}
+              >
+                Moved 2015–2020 (estimated flows)
+              </button>
+              <p
+                className="passport-map-control__empty"
+                style={{ margin: "0.35rem 0 0.5rem", fontSize: "0.75rem" }}
+              >
+                {draftKind === "flow"
+                  ? "Estimated movers during that five-year window (Abel & Cohen), not a lifetime stock."
+                  : "People born in the origin who live in each destination today — not ethnic descendants."}
               </p>
+            </div>
+
+            <div className="democracy-map-control__group">
+              <hr className="democracy-map-control__divider" aria-hidden="true" />
+              <p className="democracy-map-control__group-label">Origin country</p>
               <label className="passport-map-control__filter-label" htmlFor="diaspora-map-filter">
                 Filter countries
               </label>
@@ -134,13 +183,18 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
               <ul
                 className="passport-map-control__list"
                 role="listbox"
-                aria-label="Countries of origin"
+                aria-label={
+                  draftKind === "stock"
+                    ? "Origin countries — foreign-born stock"
+                    : "Origin countries — 2015–2020 flows"
+                }
               >
                 {filteredCountries.length === 0 ? (
                   <li className="passport-map-control__empty">No matching countries</li>
                 ) : (
                   filteredCountries.map((c) => {
-                    const active = mode === c.code;
+                    const active =
+                      mode?.kind === draftKind && mode.code === c.code;
                     return (
                       <li key={c.code}>
                         <button
@@ -148,7 +202,7 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
                           role="option"
                           aria-selected={active}
                           className={`map-view-control__preset${active ? " map-view-control__preset--active" : ""}`}
-                          onClick={() => select(c.code)}
+                          onClick={() => select({ kind: draftKind, code: c.code })}
                         >
                           {c.name}
                         </button>
