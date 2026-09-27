@@ -78,6 +78,13 @@ on:
       - "scripts/data/gggr-2026.csv"
       - "scripts/data/gggr2026Data.mjs"
       - "scripts/check-gpi-data.mjs"
+      - "scripts/check-visa-access.mjs"
+      - "scripts/build-visa-access.mjs"
+      - "scripts/data/passport-index-tidy-iso2.csv"
+      - "src/data/visaAccess.ts"
+      - "src/lib/visaAccessColors.ts"
+      - "src/components/PassportMapControl.tsx"
+      - "src/components/VisaAccessMapLegend.tsx"
       - "scripts/check-fiw-data.mjs"
       - "scripts/build-fiw.mjs"
       - "scripts/data/fiw-2026.csv"
@@ -256,6 +263,9 @@ jobs:
 
       - name: Verify IEP Global Peace Index 2026 data matches the official extract
         run: node scripts/check-gpi-data.mjs
+
+      - name: Verify Passport Index visa-access matrix matches the bundled extract
+        run: node scripts/check-visa-access.mjs
 
       - name: Verify Freedom House Freedom in the World 2026 data matches the official extract
         run: node scripts/check-fiw-data.mjs
@@ -451,6 +461,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: npm
+
+      # Several of the checks below (news agencies, newspapers, airlines, …)
+      # import sharp for image sniffing — without npm ci the job fails with
+      # ERR_MODULE_NOT_FOUND before asserting anything.
+      - name: Install dependencies
+        run: npm ci
 
       - name: Verify every flag-meaning entry is sourced and well-formed
         run: node scripts/check-flag-meanings.mjs

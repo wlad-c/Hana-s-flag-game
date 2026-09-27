@@ -17,6 +17,8 @@ import { useZoomPan } from "../hooks/useZoomPan";
 import { MapViewControl } from "../components/MapViewControl";
 import { DemocracyMapControl } from "../components/DemocracyMapControl";
 import { DemocracyMapLegend } from "../components/DemocracyMapLegend";
+import { PassportMapControl } from "../components/PassportMapControl";
+import { VisaAccessMapLegend } from "../components/VisaAccessMapLegend";
 import { DemocracyIndexChart } from "../components/DemocracyIndexChart";
 import type { ChartAxisSelection } from "../lib/chartAxes";
 import {
@@ -48,6 +50,15 @@ import {
 } from "../lib/nationalSymbolImages";
 import { NATIONAL_FLAG_MEANINGS } from "../data/nationalFlags";
 import { PASSPORT_COLORS } from "../data/passportColors";
+import {
+  getVisaAccessColorOverlay,
+  isPassportCoversMode,
+  isVisaPassportMode,
+  visaAccessCategoryFor,
+  visaAccessCategoryLabel,
+  VISA_ACCESS_COLORS,
+  type PassportMapMode,
+} from "../lib/visaAccessColors";
 import { meaningLabel, symbolNoun } from "../lib/nationalFlags";
 import { withFootballCrestStats } from "../lib/footballCrestStats";
 import {
@@ -310,11 +321,10 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   const [hovered, setHovered] = useState<Selection | null>(null);
   const [selected, setSelected] = useState<Selection | null>(null);
   const [showFlagMap, setShowFlagMap] = useState(false);
-  // "Colour countries by passport" layer for the world map (🛂 toggle). Fills
-  // each country with its passport cover's predominant colour. Mutually
-  // exclusive with the flag overlay (owner request) — turning one on turns the
-  // other off — since both are ways of colouring what a country is.
-  const [showPassportColors, setShowPassportColors] = useState(false);
+  // Passport map layer (🛂 control): either passport-cover colours, or visa
+  // access for holders of a chosen country's passport. Mutually exclusive with
+  // the flag overlay and the democracy/index layer (owner request).
+  const [passportMapMode, setPassportMapMode] = useState<PassportMapMode>(null);
   // City overlay (capitals only: national on the world map, national +
   // subdivision on the subdivision map). Like the flag overlay, it is OFF by
   // default and shared across the world + subdivision maps, so toggling it on
@@ -660,29 +670,26 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   const toggleFlagMap = useCallback(() => {
     setShowFlagMap((prev) => {
       const next = !prev;
-      // Flag overlay, passport-colour, and democracy layers are mutually exclusive.
+      // Flag overlay, passport map, and democracy layers are mutually exclusive.
       if (next) {
-        setShowPassportColors(false);
+        setPassportMapMode(null);
         setDemocracyMapMode(null);
       }
       return next;
     });
   }, []);
-  const togglePassportColors = useCallback(() => {
-    setShowPassportColors((prev) => {
-      const next = !prev;
-      if (next) {
-        setShowFlagMap(false);
-        setDemocracyMapMode(null);
-      }
-      return next;
-    });
+  const handlePassportMapModeChange = useCallback((next: PassportMapMode) => {
+    setPassportMapMode(next);
+    if (next !== null) {
+      setShowFlagMap(false);
+      setDemocracyMapMode(null);
+    }
   }, []);
   const handleDemocracyMapModeChange = useCallback((next: DemocracyMapMode) => {
     setDemocracyMapMode(next);
     if (next !== null) {
       setShowFlagMap(false);
-      setShowPassportColors(false);
+      setPassportMapMode(null);
     }
   }, []);
   const toggleCities = useCallback(() => {
@@ -1301,19 +1308,24 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isModernEra, showFlagMap, countries]);
 
-  // Passport-colour fill for the modern world map: maps alpha-2 code → the
-  // country's predominant passport-cover colour (src/data/passportColors.ts,
-  // generated from the bundled cover images). Countries with no bundled passport
-  // are absent, so the map leaves them the neutral land colour.
+  // Passport map fill for the modern world map: either each country's
+  // predominant passport-cover colour, or visa-access colours for holders of
+  // a selected passport (src/data/visaAccess.ts — Passport Index).
   const passportColorOverlay = useMemo(() => {
-    if (!isModernEra || !showPassportColors) return null;
-    const m = new Map<string, string>();
-    for (const c of countries) {
-      const hex = PASSPORT_COLORS[c.code];
-      if (hex) m.set(c.code, hex);
+    if (!isModernEra || !passportMapMode) return null;
+    if (isPassportCoversMode(passportMapMode)) {
+      const m = new Map<string, string>();
+      for (const c of countries) {
+        const hex = PASSPORT_COLORS[c.code];
+        if (hex) m.set(c.code, hex);
+      }
+      return m;
     }
-    return m;
-  }, [isModernEra, showPassportColors, countries]);
+    if (isVisaPassportMode(passportMapMode)) {
+      return getVisaAccessColorOverlay(passportMapMode.code);
+    }
+    return null;
+  }, [isModernEra, passportMapMode, countries]);
 
   // Flag overlay for historical eras: maps polity NAME → absolute flag URL.
   // Built from the same flagEntries used by FlagGrid so the URL resolution
@@ -1468,10 +1480,34 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   // paints with, so the swatch always matches the country's fill. Memoised so
   // WorldProgressMap only sees a new function when the colour mode changes.
   const mapDataTooltip = useMemo(() => {
-    if (!democracyMapMode) return null;
-    return (code: string) =>
-      getMapDataTooltip(democracyMapMode, code, democracyColorOverlay);
-  }, [democracyMapMode, democracyColorOverlay]);
+    if (democracyMapMode) {
+      return (code: string) =>
+        getMapDataTooltip(democracyMapMode, code, democracyColorOverlay);
+    }
+    if (isVisaPassportMode(passportMapMode)) {
+      const passportCode = passportMapMode.code;
+      const passportName =
+        countries.find((c) => c.code === passportCode)?.name ?? passportCode;
+      return (code: string) => {
+        const cat = visaAccessCategoryFor(passportCode, code);
+        const color = passportColorOverlay?.get(code) ?? (cat ? VISA_ACCESS_COLORS[cat] : null);
+        return {
+          measure: `Visa access (${passportName} passport)`,
+          value: cat ? visaAccessCategoryLabel(cat) : null,
+          category: null,
+          color,
+          year: null,
+        };
+      };
+    }
+    return null;
+  }, [
+    democracyMapMode,
+    democracyColorOverlay,
+    passportMapMode,
+    passportColorOverlay,
+    countries,
+  ]);
 
   // Rotation + view-centre controls shared by both WorldProgressMap and
   // HistoricalMap so the buttons are always present regardless of era.
@@ -1494,20 +1530,13 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         >
           <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="flag" /></span>
         </button>
-        {/* Colour countries by their passport cover's predominant colour. Modern
-            world map only (passports are a present-day thing), immediately after
-            the flag overlay, and mutually exclusive with it. */}
+        {/* Passport map: cover colours OR visa access for a chosen passport.
+            Modern world map only; mutually exclusive with the flag overlay. */}
         {isModernEra && (
-          <button
-            type="button"
-            className={`world-map__zoom-btn world-map__zoom-btn--layer${showPassportColors ? " world-map__zoom-btn--active" : ""}`}
-            onClick={togglePassportColors}
-            aria-pressed={showPassportColors}
-            aria-label={showPassportColors ? "Hide passport colours on map" : "Colour countries by passport"}
-            title={showPassportColors ? "Hide passport colours" : "Colour countries by passport"}
-          >
-            <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="passport" /></span>
-          </button>
+          <PassportMapControl
+            mode={passportMapMode}
+            onChange={handlePassportMapModeChange}
+          />
         )}
         {CITIES_FEATURE_ENABLED && (
           <button
@@ -1546,7 +1575,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       </>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, showPassportColors, togglePassportColors, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
+    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
   );
 
   // Leaner control set for the subdivision map: just the flag-overlay
@@ -2246,6 +2275,8 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             belowMapNode={
               isModernEra && democracyMapMode ? (
                 <DemocracyMapLegend mode={democracyMapMode} />
+              ) : isModernEra && isVisaPassportMode(passportMapMode) ? (
+                <VisaAccessMapLegend passportCode={passportMapMode.code} />
               ) : null
             }
           />

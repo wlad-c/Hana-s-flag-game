@@ -1,6 +1,6 @@
 // Generates src/data/passportColors.ts — each country's PREDOMINANT passport
-// cover colour, for the Learn world-map "colour countries by passport" layer
-// (the 🛂 toolbar toggle next to the 🚩 flag overlay).
+// cover colour, for the Learn world-map passport control's "Passport cover
+// colours" option (🛂 dropdown next to the 🚩 flag overlay).
 //
 // SOURCED, never fabricated: the colour is the dominant colour of the country's
 // OWN bundled ordinary-passport cover image (the same file the National-symbols
