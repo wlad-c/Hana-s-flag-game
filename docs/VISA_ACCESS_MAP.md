@@ -21,11 +21,13 @@ is a **dropdown**, not a simple on/off toggle:
 | Visa on arrival | Blue | `#2563eb` |
 | eVisa / ETA (`e-visa` + `eta` in the source) | Yellow | `#ca8a04` |
 | Visa required | Red | `#dc2626` |
-| No admission (rare; sourced) | Dark grey | `#4b5563` |
-| Selected passport (home) | Purple | `#7c3aed` |
+| No admission (rare; sourced) | Dark red | `#7f0000` |
+| Selected passport (home) | Black | `#000000` |
 
-A legend under the map names the selected passport and lists these bands. Hover
-or tap a country for the same category in the data tooltip.
+A legend under the map names the selected passport and lists these bands with
+a **sourced count** per category (e.g. `Visa free (64 countries)`), taken from
+the same matrix the map paints. Hover or tap a country for the category in the
+data tooltip.
 
 ## Source — never fabricated
 

@@ -6,8 +6,8 @@
  *   visa-on-arrival  → blue
  *   evisa (e-visa + eta) → yellow
  *   visa-required    → red
- *   home (selected passport) → purple
- *   no-admission     → dark grey (sourced Passport Index state; rare)
+ *   no-admission     → dark red (sourced Passport Index state; rare)
+ *   home (selected passport) → black
  *
  * Data: src/data/visaAccess.ts (generated from Passport Index — never fabricate).
  */
@@ -42,8 +42,9 @@ export const VISA_ACCESS_COLORS = {
   "visa-on-arrival": "#2563eb",
   evisa: "#ca8a04",
   "visa-required": "#dc2626",
-  "no-admission": "#4b5563",
-  home: "#7c3aed",
+  /** Darker than visa-required so "no admission" stays distinct. */
+  "no-admission": "#7f0000",
+  home: "#000000",
 } as const;
 
 export type VisaAccessLegendKey = keyof typeof VISA_ACCESS_COLORS;
@@ -82,8 +83,37 @@ export function visaAccessCategoryFor(
 }
 
 /**
+ * Count how many destinations fall in each legend category for holders of
+ * `passportCode`. Home is always 1 when the passport exists in the matrix.
+ * Counts come from the same `VISA_ACCESS` rows the map paints — never guessed.
+ */
+export function visaAccessCategoryCounts(
+  passportCode: string,
+): Record<VisaAccessLegendKey, number> | null {
+  const row = VISA_ACCESS[passportCode];
+  if (!row) return null;
+  const counts: Record<VisaAccessLegendKey, number> = {
+    "visa-free": 0,
+    "visa-on-arrival": 0,
+    evisa: 0,
+    "visa-required": 0,
+    "no-admission": 0,
+    home: 1,
+  };
+  for (const cat of Object.values(row)) {
+    counts[cat] += 1;
+  }
+  return counts;
+}
+
+export function formatVisaAccessCountLabel(base: string, count: number): string {
+  const unit = count === 1 ? "country" : "countries";
+  return `${base} (${count} ${unit})`;
+}
+
+/**
  * Build the fill override map for the world map when colouring by visa access
- * for holders of `passportCode`. Home is purple; every sourced destination
+ * for holders of `passportCode`. Home is black; every sourced destination
  * takes its category colour. Destinations with no row are omitted (neutral land).
  */
 export function getVisaAccessColorOverlay(
