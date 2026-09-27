@@ -4,6 +4,14 @@
 
 This supplements [the original audit](LEARN_FACTUAL_AUDIT_2026-09-13.md) and [the continuation findings F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md). No application data was changed. The evidence ledgers below are intended to preserve both positive verification and failures for subsequent work.
 
+## Public deployment reconciliation — 27 September 2026
+
+The [served-build evidence ledger](audit/LIVE_DEPLOYMENT_VERIFICATION_2026-09-27.json) records direct HTTP retrieval from [the public application](https://wladimirchagas.github.io/Hana-s-flag-game/). Its HTML referenced `assets/index-CKYpuTC7.js`; that bundle identifies build **`014d3a4`**, timestamp **2026-09-27T03:52:30.284Z**. This is an audit-document commit after application revision `e3c1a35`.
+
+Static inspection confirms that the public bundle contains **Labour 36 seats, ACT 8 seats, James Shaw as Green co-leader, all four 120-seat denominators, and all six F89 grouping contradictions**. All **four publicly served NZ logo files are byte-for-byte identical** to the pinned repository assets. The ledger preserves URLs, bundle/image SHA-256 values and extracted fields.
+
+These are observations of public HTTP responses and bundled data, **not a fresh rendered-browser UI check** or a claim that every user's cached service-worker version is identical. No downloaded application JavaScript was executed during this check. The earlier rendered-UI observations remain separately dated below.
+
 ## New Zealand parties and global position consistency — 27 September 2026
 
 The [New Zealand field ledger](audit/NEW_ZEALAND_PARTIES_CLAIM_VERIFICATION_2026-09-27.json) now assesses **all 82 populated top-level fields in all four NZ records** at `e3c1a35`. A field can contain several claims: this is full field coverage, **not 82 verified facts**. Founding years, party identities, three current leaders and government participation were corroborated through the Electoral Commission, Parliament, Cabinet Office, Ministry for Culture and Heritage, Te Papa and party sources. Māori-interface parliamentary pages were consulted alongside English sources; much of their factual body text remains English.
@@ -37,7 +45,7 @@ All four records use `seatsTotal = 120`, the nominal chamber size, without disti
 
 `PoliticalPartyGrid.tsx` groups directly on `ideologyPosition`, and the data model supports each of these categories separately. Resolve each contradiction against dated, attributable evidence rather than choosing one field arbitrarily. Add a consistency gate for exact singleton labels, with explicit documented overrides where justified. Other records passing this check are internally consistent only; their political classifications are not thereby verified.
 
-**Still open in this batch:** full ideology-tag substantiation, exact registered artwork versions and colours, original image/licence provenance, and live deployment reconciliation. The broader universal audit remains incomplete. No application data or artwork was changed.
+**Still open in this batch:** full ideology-tag substantiation, exact registered artwork versions and colours, original image/licence provenance, and a fresh rendered-UI check. Public bundle/artwork reconciliation is documented above. The broader universal audit remains incomplete. No application data or artwork was changed.
 
 ## Population continuation — 27 September 2026
 
