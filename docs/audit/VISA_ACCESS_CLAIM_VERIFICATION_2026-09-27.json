@@ -1,0 +1,1333 @@
+{
+  "auditDate": "2026-09-27",
+  "auditor": "Codex",
+  "repository": "wladimirchagas/Hana-s-flag-game",
+  "dataRevision": "7c75c3182419e125b29cbde27e1d02935cbd6e22",
+  "presentationFollowupRevision": "1ee7c78515b494e25aa5e40b59fabd07af47a7d9",
+  "findings": [
+    "F90",
+    "F91",
+    "F92"
+  ],
+  "universalVerificationComplete": false,
+  "sourceProvenance": {
+    "upstream": "https://github.com/imorte/passport-index-data",
+    "commit": "842d43ce5045a93b051af664e955310ccc9b7341",
+    "edition": "2026-02-17",
+    "csvPath": "scripts/data/passport-index-tidy-iso2.csv",
+    "gitBlobSha": "c90054300eb2e0615ebf088412c3040d6958026f",
+    "csvSha256": "d985f861c1d03be9de61a9257c3fbb7b4ef94677b5e3827012cc4d602ab45fcf",
+    "exactUpstreamContentMatch": true,
+    "note": "Upstream and bundled fetches returned the same content and Git blob SHA. Exact raw-byte hash verified after removing the scratch mirror’s extra terminal newline."
+  },
+  "integrity": {
+    "sourceRows": 39601,
+    "uniqueSourcePairs": 39601,
+    "passportOrigins": 195,
+    "foreignPairs": 37830,
+    "eachOriginHas194Destinations": true,
+    "categoryTotals": {
+      "visa-free": 12040,
+      "visa-required": 11705,
+      "evisa": 8814,
+      "visa-on-arrival": 5231,
+      "no-admission": 40
+    },
+    "mappingMismatches": [],
+    "meaning": "Reproduction of third-party data, not independent factual verification."
+  },
+  "primaryComparisonSummary": {
+    "boundedPairsChecked": 108,
+    "categoryMatchesUnderConditions": 106,
+    "incorrect": 2,
+    "sampling": "Targeted destination-policy comparisons, not a random sample or an error-rate estimate."
+  },
+  "sources": [
+    {
+      "id": "CN-NIA",
+      "publisher": "National Immigration Administration, China",
+      "url": "https://en.nia.gov.cn/n147418/n147463/c183390/content.html",
+      "language": "English",
+      "asOf": "2026-02-17",
+      "scope": "50-country unilateral ordinary-passport exemption list; up to 30 days, specified short-visit purposes."
+    },
+    {
+      "id": "CN-CA-EN",
+      "publisher": "Chinese Embassy in Canada",
+      "url": "https://ca.china-embassy.gov.cn/eng/zytz_0/202602/t20260216_11860601.htm",
+      "language": "English",
+      "published": "2026-02-15",
+      "effectiveFrom": "2026-02-17T00:00:00+08:00",
+      "effectiveUntil": "2026-12-31T24:00:00+08:00"
+    },
+    {
+      "id": "CN-CA-ZH",
+      "publisher": "Chinese Embassy in Canada",
+      "url": "https://ca.china-embassy.gov.cn/zytz/202602/t20260216_11860600.htm",
+      "language": "Chinese",
+      "published": "2026-02-15"
+    },
+    {
+      "id": "NZ-INZ",
+      "publisher": "Immigration New Zealand",
+      "url": "https://www.immigration.govt.nz/visit/what-you-need-to-visit-new-zealand/visa-waiver-countries-and-territories/",
+      "language": "English",
+      "scope": "57 included national origins needing NZeTA under waiver eligibility, plus Australian-passport exception. HK, MO and TW excluded from app universe; passport-type, residence, duration, purpose and other conditions apply."
+    },
+    {
+      "id": "IL-PIBA",
+      "publisher": "Israel Population and Immigration Authority",
+      "url": "https://israel-entry.piba.gov.il/learn-about-evisa-b2/",
+      "bundleUrl": "https://israel-entry.piba.gov.il/static/js/main.56892e15.js",
+      "bundleSha256": "303325e194c1a065bec6ea4a6111ef1015405e3e4aa2378871aa9f7f0b32af2c",
+      "method": "Official page HTML and linked public JavaScript downloaded by HTTP; English localization key evisaDescription2 read statically, no JavaScript executed. It limits current availability to Indian/Sri Lankan passport holders residing in India/Sri Lanka.",
+      "language": "English"
+    },
+    {
+      "id": "IL-MUM",
+      "publisher": "Consulate General of Israel, Mumbai",
+      "url": "https://embassies.gov.il/mumbai/en/announcements/evisa-israel",
+      "language": "English",
+      "scope": "Confirms nationality AND residence limits of eVisa-B2 pilot."
+    },
+    {
+      "id": "IL-TOKYO",
+      "publisher": "Embassy of Israel, Tokyo",
+      "url": "https://embassies.gov.il/sites/default/files/2026-01/b2_entry_visa_for_chinese_citizens_2026_1.pdf",
+      "language": [
+        "Japanese",
+        "English"
+      ],
+      "scope": "Chinese citizens residing in Japan: ordinary B2 application with original passport, residence-card copy and documents sent by registered mail. This is a scoped counterexample, not a universal replacement rule for all 194 origins."
+    }
+  ],
+  "primaryChecks": [
+    {
+      "origin": "AD",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "AT",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "BE",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "BG",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "HR",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "CY",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "DK",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "EE",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "FI",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "FR",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "DE",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "GR",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "HU",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "IS",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "IE",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "IT",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "LV",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "LI",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "LU",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "MT",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "MC",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "ME",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "NL",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "MK",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "NO",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "PL",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "PT",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "RO",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "RU",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "SK",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "SI",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "ES",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "SE",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "CH",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "GB",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "visa required",
+      "actual": "visa-required",
+      "expected": "visa-free",
+      "status": "incorrect",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": "F90"
+    },
+    {
+      "origin": "AU",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "NZ",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "BH",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "BN",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "JP",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "KW",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "OM",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "KR",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "SA",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "AR",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "BR",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "CA",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "visa required",
+      "actual": "visa-required",
+      "expected": "visa-free",
+      "status": "incorrect",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": "F90"
+    },
+    {
+      "origin": "CL",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "PE",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "UY",
+      "destination": "CN",
+      "source": "CN-NIA",
+      "rawSourceValue": "30",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "Ordinary passport, eligible short-visit purpose, maximum 30 days; policy as of 2026-02-17.",
+      "finding": null
+    },
+    {
+      "origin": "AD",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "AR",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "AT",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "BH",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "BE",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "BR",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "BN",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "BG",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "CA",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "CL",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "HR",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "CY",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "CZ",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "DK",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "EE",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "FI",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "FR",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "DE",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "GR",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "HU",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "IS",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "IE",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "IL",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "IT",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "JP",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "KR",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "KW",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "LV",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "LI",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "LT",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "LU",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "MY",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "MT",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "MU",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "MX",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "MC",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "NL",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "NO",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "OM",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "PL",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "PT",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "QA",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "RO",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "SM",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "SA",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "SC",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "SG",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "SK",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "SI",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "ES",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "SE",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "CH",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "AE",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "GB",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "US",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "UY",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "VA",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "eta",
+      "actual": "evisa",
+      "expected": "evisa",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    },
+    {
+      "origin": "AU",
+      "destination": "NZ",
+      "source": "NZ-INZ",
+      "rawSourceValue": "visa free",
+      "actual": "visa-free",
+      "expected": "visa-free",
+      "status": "verified-category-under-stated-conditions",
+      "qualification": "NZeTA grouped with eVisa by explicit product convention; eligibility and passport-type restrictions apply. Australian-passport holders exempt from NZeTA."
+    }
+  ],
+  "israelReview": {
+    "finding": "F91",
+    "all194OriginsStoredAs": "evisa",
+    "upstreamTokenCounts": {
+      "eta": 97,
+      "e-visa": 97
+    },
+    "status": "confirmed-overbroad-model-and-unsupported-blanket-classification",
+    "counterexample": {
+      "origin": "CN",
+      "destination": "IL",
+      "residence": "JP",
+      "actual": "evisa",
+      "primarySource": "IL-TOKYO",
+      "supportedRoute": "Prior consular B2 visa; current primary instructions specify postal submission.",
+      "scopeLimit": "Do not infer 194 replacement categories from this one counterexample."
+    },
+    "conditionalMatches": [
+      {
+        "origin": "IN",
+        "destination": "IL",
+        "actual": "evisa",
+        "status": "conditionally-supported",
+        "residenceRequired": [
+          "IN",
+          "LK"
+        ],
+        "sources": [
+          "IL-PIBA",
+          "IL-MUM"
+        ]
+      },
+      {
+        "origin": "LK",
+        "destination": "IL",
+        "actual": "evisa",
+        "status": "conditionally-supported",
+        "residenceRequired": [
+          "IN",
+          "LK"
+        ],
+        "sources": [
+          "IL-PIBA",
+          "IL-MUM"
+        ]
+      }
+    ],
+    "recommendation": "Retain ETA and eVisa subtypes and add residence, passport type, dates, duration and purpose conditions with official destination-policy sources; use unknown/unverified rather than certifying all origins."
+  },
+  "checkerMutation": {
+    "baseline": {
+      "exit_code": 0,
+      "stdout": "✓ visa-access: 195 passports × 194 destinations; sha256 d985f861c1d0…; UI wired\n",
+      "stderr": ""
+    },
+    "mutation": "Remove GB→CN from both CSV and generated matrix; update recorded CSV SHA-256. Isolated fixture only.",
+    "removedCsvLines": [
+      "GB,CN,visa required"
+    ],
+    "baselineCsvSha256": "d985f861c1d03be9de61a9257c3fbb7b4ef94677b5e3827012cc4d602ab45fcf",
+    "mutatedCsvSha256": "58bbcf17495bdb3f3a8aad73c3893918cbbb587f7a5c2f02b4724604cae46eb8",
+    "actualGbDestinationsAfterMutation": 193,
+    "exit_code": 0,
+    "stdout": "✓ visa-access: 195 passports × 194 destinations; sha256 58bbcf17495b…; UI wired\n",
+    "stderr": "",
+    "latestRevisionRetest": {
+      "revision": "1ee7c78515b494e25aa5e40b59fabd07af47a7d9",
+      "exitCode": 0,
+      "stdout": "✓ visa-access: 195 passports × 194 destinations; sha256 58bbcf17495b…; UI wired\n",
+      "stderr": ""
+    }
+  },
+  "latestLegendCountCheck": {
+    "revision": "1ee7c78515b494e25aa5e40b59fabd07af47a7d9",
+    "passportRowsChecked": 195,
+    "failures": [],
+    "colors": {
+      "visa-free": "#1b7a3d",
+      "visa-on-arrival": "#2563eb",
+      "evisa": "#ca8a04",
+      "visa-required": "#dc2626",
+      "no-admission": "#7f0000",
+      "home": "#000000"
+    },
+    "labels": [
+      "Home (1 country)",
+      "Visa free (0 countries)"
+    ],
+    "limitation": "Confirms counts from stored categories, not factual validity of visa policies or rendered cartography."
+  },
+  "limitations": [
+    "Remaining visa pairs have not received destination-government claim-by-claim verification.",
+    "108 scoped category checks do not verify all metadata, durations, exceptions, passport types or historical visa policies.",
+    "The snapshot date is visible, but it does not cure errors already present on that date.",
+    "No new rendered browser map/boundary check performed.",
+    "No application data or code modified by Codex."
+  ]
+}
