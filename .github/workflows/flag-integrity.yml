@@ -85,6 +85,16 @@ on:
       - "src/lib/visaAccessColors.ts"
       - "src/components/PassportMapControl.tsx"
       - "src/components/VisaAccessMapLegend.tsx"
+      - "scripts/check-migrant-origins.mjs"
+      - "scripts/build-migrant-origins.mjs"
+      - "scripts/extract-undesa-migrant-bilateral.mjs"
+      - "scripts/data/undesa-ims-2024-bilateral-iso2.csv"
+      - "scripts/data/iso3166-m49.json"
+      - "src/data/migrantOrigins.ts"
+      - "src/lib/migrantOriginsColors.ts"
+      - "src/components/MigrantOriginsMapControl.tsx"
+      - "src/components/MigrantOriginsMapLegend.tsx"
+      - "src/components/MigrantOriginsPanelRows.tsx"
       - "scripts/check-diaspora.mjs"
       - "scripts/build-diaspora.mjs"
       - "scripts/extract-diaspora-wb.mjs"
@@ -279,6 +289,9 @@ jobs:
 
       - name: Verify Passport Index visa-access matrix matches the bundled extract
         run: node scripts/check-visa-access.mjs
+
+      - name: Verify UN DESA migrant-origins matrix matches the bundled extract
+        run: node scripts/check-migrant-origins.mjs
 
       - name: Verify UN DESA diaspora migrant-stock matrix matches the bundled extract
         run: node scripts/check-diaspora.mjs
