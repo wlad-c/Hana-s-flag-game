@@ -4,12 +4,17 @@
 // Survey: 94,146 respondents in 98 countries, 19 March–21 April 2026.
 //
 // Index Score = mean of eight net scores (% positive − % negative).
-// Tiers at ±5 / ±15 (report): Very Positive ≥15, Positive 6…14, Neutral −5…5,
-// Negative −14…−6, Very Negative ≤−15.
-// Rank uses competition ranking on Index Score (ties share a rank; next skips).
+// Tiers as grouped in the Country Appendix (pp. 28–29): Very Positive ≥15,
+// Positive 6…14, Neutral −5…5, Negative −15…−6, Very Negative ≤−16 (Panama at
+// −15 is printed under Negative).
+// Rank is app-derived: competition ranking on the published integer Index Score
+// over all 98 surveyed units (ties share a rank; next skips), so Kazakhstan is
+// 98th as the report states. The report prints no rank column, and unrounded
+// estimates may separate displayed ties.
 //
 // Taiwan and Puerto Rico appear in the report but are not UN members in this
-// game’s country set — omitted here (same discipline as other indices).
+// game’s country set — not shown, but their published scores still count
+// towards every rank (DPI_2026_NON_UN_SCORES).
 // Do not invent scores. Re-read the Country Appendix when refreshing.
 
 /**
@@ -64,54 +69,54 @@ export const DPI_2026_DATA = {
   "GB": { "year": 2026, "rating": "Neutral", "rank": 43, "score": -3 }, // United Kingdom
   "PL": { "year": 2026, "rating": "Neutral", "rank": 47, "score": -4 }, // Poland
   "UZ": { "year": 2026, "rating": "Neutral", "rank": 47, "score": -4 }, // Uzbekistan
-  "JP": { "year": 2026, "rating": "Neutral", "rank": 49, "score": -5 }, // Japan
-  "SY": { "year": 2026, "rating": "Neutral", "rank": 49, "score": -5 }, // Syria
-  "CD": { "year": 2026, "rating": "Neutral", "rank": 49, "score": -5 }, // Democratic Republic of the Congo
-  "CO": { "year": 2026, "rating": "Negative", "rank": 52, "score": -6 }, // Colombia
-  "GE": { "year": 2026, "rating": "Negative", "rank": 53, "score": -7 }, // Georgia
-  "NI": { "year": 2026, "rating": "Negative", "rank": 54, "score": -8 }, // Nicaragua
-  "ZA": { "year": 2026, "rating": "Negative", "rank": 54, "score": -8 }, // South Africa
-  "MD": { "year": 2026, "rating": "Negative", "rank": 54, "score": -8 }, // Moldova
-  "MA": { "year": 2026, "rating": "Negative", "rank": 54, "score": -8 }, // Morocco
-  "BD": { "year": 2026, "rating": "Negative", "rank": 58, "score": -9 }, // Bangladesh
-  "BY": { "year": 2026, "rating": "Negative", "rank": 58, "score": -9 }, // Belarus
-  "CI": { "year": 2026, "rating": "Negative", "rank": 58, "score": -9 }, // Côte d'Ivoire
-  "AO": { "year": 2026, "rating": "Negative", "rank": 58, "score": -9 }, // Angola
-  "CL": { "year": 2026, "rating": "Negative", "rank": 62, "score": -10 }, // Chile
-  "PT": { "year": 2026, "rating": "Negative", "rank": 62, "score": -10 }, // Portugal
-  "BO": { "year": 2026, "rating": "Negative", "rank": 64, "score": -11 }, // Bolivia
-  "HN": { "year": 2026, "rating": "Negative", "rank": 64, "score": -11 }, // Honduras
-  "PK": { "year": 2026, "rating": "Negative", "rank": 66, "score": -12 }, // Pakistan
-  "LT": { "year": 2026, "rating": "Negative", "rank": 67, "score": -13 }, // Lithuania
-  "LY": { "year": 2026, "rating": "Negative", "rank": 67, "score": -13 }, // Libya
-  "BR": { "year": 2026, "rating": "Negative", "rank": 67, "score": -13 }, // Brazil
-  "MX": { "year": 2026, "rating": "Negative", "rank": 70, "score": -14 }, // Mexico
-  "EC": { "year": 2026, "rating": "Negative", "rank": 70, "score": -14 }, // Ecuador
-  "TR": { "year": 2026, "rating": "Negative", "rank": 70, "score": -14 }, // Türkiye
-  "DO": { "year": 2026, "rating": "Negative", "rank": 70, "score": -14 }, // Dominican Republic
-  "PE": { "year": 2026, "rating": "Negative", "rank": 70, "score": -14 }, // Peru
-  "PA": { "year": 2026, "rating": "Very Negative", "rank": 75, "score": -15 }, // Panama
-  "UG": { "year": 2026, "rating": "Very Negative", "rank": 76, "score": -16 }, // Uganda
-  "KG": { "year": 2026, "rating": "Very Negative", "rank": 76, "score": -16 }, // Kyrgyzstan
-  "TZ": { "year": 2026, "rating": "Very Negative", "rank": 78, "score": -17 }, // Tanzania
-  "ZW": { "year": 2026, "rating": "Very Negative", "rank": 78, "score": -17 }, // Zimbabwe
-  "IQ": { "year": 2026, "rating": "Very Negative", "rank": 78, "score": -17 }, // Iraq
-  "GR": { "year": 2026, "rating": "Very Negative", "rank": 81, "score": -18 }, // Greece
-  "RS": { "year": 2026, "rating": "Very Negative", "rank": 81, "score": -18 }, // Serbia
-  "NG": { "year": 2026, "rating": "Very Negative", "rank": 83, "score": -20 }, // Nigeria
-  "FR": { "year": 2026, "rating": "Very Negative", "rank": 83, "score": -20 }, // France
-  "GT": { "year": 2026, "rating": "Very Negative", "rank": 85, "score": -21 }, // Guatemala
-  "RU": { "year": 2026, "rating": "Very Negative", "rank": 85, "score": -21 }, // Russia
-  "RO": { "year": 2026, "rating": "Very Negative", "rank": 85, "score": -21 }, // Romania
-  "ID": { "year": 2026, "rating": "Very Negative", "rank": 85, "score": -21 }, // Indonesia
-  "LB": { "year": 2026, "rating": "Very Negative", "rank": 85, "score": -21 }, // Lebanon
-  "PS": { "year": 2026, "rating": "Very Negative", "rank": 90, "score": -22 }, // Palestine
-  "VE": { "year": 2026, "rating": "Very Negative", "rank": 90, "score": -22 }, // Venezuela
-  "CM": { "year": 2026, "rating": "Very Negative", "rank": 92, "score": -23 }, // Cameroon
-  "UA": { "year": 2026, "rating": "Very Negative", "rank": 92, "score": -23 }, // Ukraine
-  "PY": { "year": 2026, "rating": "Very Negative", "rank": 92, "score": -23 }, // Paraguay
-  "YE": { "year": 2026, "rating": "Very Negative", "rank": 95, "score": -25 }, // Yemen
-  "KZ": { "year": 2026, "rating": "Very Negative", "rank": 96, "score": -31 }, // Kazakhstan
+  "JP": { "year": 2026, "rating": "Neutral", "rank": 50, "score": -5 }, // Japan
+  "SY": { "year": 2026, "rating": "Neutral", "rank": 50, "score": -5 }, // Syria
+  "CD": { "year": 2026, "rating": "Neutral", "rank": 50, "score": -5 }, // Democratic Republic of the Congo
+  "CO": { "year": 2026, "rating": "Negative", "rank": 53, "score": -6 }, // Colombia
+  "GE": { "year": 2026, "rating": "Negative", "rank": 54, "score": -7 }, // Georgia
+  "NI": { "year": 2026, "rating": "Negative", "rank": 55, "score": -8 }, // Nicaragua
+  "ZA": { "year": 2026, "rating": "Negative", "rank": 55, "score": -8 }, // South Africa
+  "MD": { "year": 2026, "rating": "Negative", "rank": 55, "score": -8 }, // Moldova
+  "MA": { "year": 2026, "rating": "Negative", "rank": 55, "score": -8 }, // Morocco
+  "BD": { "year": 2026, "rating": "Negative", "rank": 59, "score": -9 }, // Bangladesh
+  "BY": { "year": 2026, "rating": "Negative", "rank": 59, "score": -9 }, // Belarus
+  "CI": { "year": 2026, "rating": "Negative", "rank": 59, "score": -9 }, // Côte d'Ivoire
+  "AO": { "year": 2026, "rating": "Negative", "rank": 59, "score": -9 }, // Angola
+  "CL": { "year": 2026, "rating": "Negative", "rank": 63, "score": -10 }, // Chile
+  "PT": { "year": 2026, "rating": "Negative", "rank": 63, "score": -10 }, // Portugal
+  "BO": { "year": 2026, "rating": "Negative", "rank": 65, "score": -11 }, // Bolivia
+  "HN": { "year": 2026, "rating": "Negative", "rank": 65, "score": -11 }, // Honduras
+  "PK": { "year": 2026, "rating": "Negative", "rank": 68, "score": -12 }, // Pakistan
+  "LT": { "year": 2026, "rating": "Negative", "rank": 69, "score": -13 }, // Lithuania
+  "LY": { "year": 2026, "rating": "Negative", "rank": 69, "score": -13 }, // Libya
+  "BR": { "year": 2026, "rating": "Negative", "rank": 69, "score": -13 }, // Brazil
+  "MX": { "year": 2026, "rating": "Negative", "rank": 72, "score": -14 }, // Mexico
+  "EC": { "year": 2026, "rating": "Negative", "rank": 72, "score": -14 }, // Ecuador
+  "TR": { "year": 2026, "rating": "Negative", "rank": 72, "score": -14 }, // Türkiye
+  "DO": { "year": 2026, "rating": "Negative", "rank": 72, "score": -14 }, // Dominican Republic
+  "PE": { "year": 2026, "rating": "Negative", "rank": 72, "score": -14 }, // Peru
+  "PA": { "year": 2026, "rating": "Negative", "rank": 77, "score": -15 }, // Panama
+  "UG": { "year": 2026, "rating": "Very Negative", "rank": 78, "score": -16 }, // Uganda
+  "KG": { "year": 2026, "rating": "Very Negative", "rank": 78, "score": -16 }, // Kyrgyzstan
+  "TZ": { "year": 2026, "rating": "Very Negative", "rank": 80, "score": -17 }, // Tanzania
+  "ZW": { "year": 2026, "rating": "Very Negative", "rank": 80, "score": -17 }, // Zimbabwe
+  "IQ": { "year": 2026, "rating": "Very Negative", "rank": 80, "score": -17 }, // Iraq
+  "GR": { "year": 2026, "rating": "Very Negative", "rank": 83, "score": -18 }, // Greece
+  "RS": { "year": 2026, "rating": "Very Negative", "rank": 83, "score": -18 }, // Serbia
+  "NG": { "year": 2026, "rating": "Very Negative", "rank": 85, "score": -20 }, // Nigeria
+  "FR": { "year": 2026, "rating": "Very Negative", "rank": 85, "score": -20 }, // France
+  "GT": { "year": 2026, "rating": "Very Negative", "rank": 87, "score": -21 }, // Guatemala
+  "RU": { "year": 2026, "rating": "Very Negative", "rank": 87, "score": -21 }, // Russia
+  "RO": { "year": 2026, "rating": "Very Negative", "rank": 87, "score": -21 }, // Romania
+  "ID": { "year": 2026, "rating": "Very Negative", "rank": 87, "score": -21 }, // Indonesia
+  "LB": { "year": 2026, "rating": "Very Negative", "rank": 87, "score": -21 }, // Lebanon
+  "PS": { "year": 2026, "rating": "Very Negative", "rank": 92, "score": -22 }, // Palestine
+  "VE": { "year": 2026, "rating": "Very Negative", "rank": 92, "score": -22 }, // Venezuela
+  "CM": { "year": 2026, "rating": "Very Negative", "rank": 94, "score": -23 }, // Cameroon
+  "UA": { "year": 2026, "rating": "Very Negative", "rank": 94, "score": -23 }, // Ukraine
+  "PY": { "year": 2026, "rating": "Very Negative", "rank": 94, "score": -23 }, // Paraguay
+  "YE": { "year": 2026, "rating": "Very Negative", "rank": 97, "score": -25 }, // Yemen
+  "KZ": { "year": 2026, "rating": "Very Negative", "rank": 98, "score": -31 }, // Kazakhstan
 };
 
 /** Official DPI tier from Index Score (±5 / ±15). */
@@ -119,6 +124,9 @@ export function dpiTierFromScore(score) {
   if (score >= 15) return "Very Positive";
   if (score > 5) return "Positive";
   if (score >= -5) return "Neutral";
-  if (score > -15) return "Negative";
+  if (score >= -15) return "Negative";
   return "Very Negative";
 }
+
+/** Published Index Scores of the two surveyed non-UN units (Country Appendix p. 28–29). */
+export const DPI_2026_NON_UN_SCORES = { TW: -4, PR: -11 };

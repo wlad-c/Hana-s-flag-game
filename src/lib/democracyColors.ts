@@ -1117,11 +1117,12 @@ export function getDemocracyAxisBands(key: DemocracyIndexKey): DemocracyAxisBand
   if (key === "soft-power") return steppedBands(DECADE_SCORE_BAND_ORDER, 10);
   if (key === "perception") {
     return [
-      { label: "Very Negative", min: -40, max: -15 },
-      { label: "Negative", min: -15, max: -5 },
-      { label: "Neutral", min: -5, max: 5 },
-      { label: "Positive", min: 5, max: 15 },
-      { label: "Very Positive", min: 15, max: 40 },
+      // Integer scores; the report groups −15 as Negative and +15 as Very Positive.
+      { label: "Very Negative", min: -40, max: -15.5 },
+      { label: "Negative", min: -15.5, max: -5.5 },
+      { label: "Neutral", min: -5.5, max: 5.5 },
+      { label: "Positive", min: 5.5, max: 14.5 },
+      { label: "Very Positive", min: 14.5, max: 40 },
     ];
   }
   if (key === "rsf-press") {

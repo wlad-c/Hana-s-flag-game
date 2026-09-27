@@ -31,14 +31,14 @@ export const CPI_2025_DATA = {
   "BH": { "year": 2025, "rating": "50–59", "rank": 56, "rankChange": -3, "score": 50 }, // Bahrain
   "BI": { "year": 2025, "rating": "10–19", "rank": 167, "rankChange": -2, "score": 17 }, // Burundi
   "BJ": { "year": 2025, "rating": "40–49", "rank": 70, "rankChange": -1, "score": 45 }, // Benin
-  "BN": { "year": 2025, "rating": "60–69", "rank": 31, "rankChange": 0, "score": 63 }, // Brunei Darussalam
+  "BN": { "year": 2025, "rating": "60–69", "rank": 31, "score": 63 }, // Brunei Darussalam
   "BO": { "year": 2025, "rating": "20–29", "rank": 136, "rankChange": -3, "score": 28 }, // Bolivia
   "BR": { "year": 2025, "rating": "30–39", "rank": 107, "rankChange": 0, "score": 35 }, // Brazil
   "BS": { "year": 2025, "rating": "60–69", "rank": 29, "rankChange": -1, "score": 64 }, // Bahamas
   "BT": { "year": 2025, "rating": "70–79", "rank": 18, "rankChange": 0, "score": 71 }, // Bhutan
   "BW": { "year": 2025, "rating": "50–59", "rank": 41, "rankChange": 2, "score": 58 }, // Botswana
   "BY": { "year": 2025, "rating": "30–39", "rank": 124, "rankChange": -10, "score": 31 }, // Belarus
-  "BZ": { "year": 2025, "rating": "30–39", "rank": 104, "rankChange": 0, "score": 36 }, // Belize
+  "BZ": { "year": 2025, "rating": "30–39", "rank": 104, "score": 36 }, // Belize
   "CA": { "year": 2025, "rating": "70–79", "rank": 16, "rankChange": -1, "score": 75 }, // Canada
   "CD": { "year": 2025, "rating": "20–29", "rank": 163, "rankChange": 0, "score": 20 }, // Democratic Republic of the Congo
   "CF": { "year": 2025, "rating": "20–29", "rank": 150, "rankChange": -1, "score": 24 }, // Central African Republic

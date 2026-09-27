@@ -77,6 +77,14 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
   - AF +2, SO +4, LC 0, ER +6, DJ −3, MH +6, SR 0, TL −3, PW +5, LS −1;
   - VC −11, TO −4, FM +2, KN −3, TV +1, VU +1, NR −4, KI 0, SL −3.
   `check-soft-power-data.mjs` now fails if any entry lacks a movement, or if GT ≠ −6. | In the running app: Honduras shows "Rank 97 (+13)", Guatemala "Rank 126 (-6)", St Vincent "Rank 186 (-11)". The GPI and Soft Power checks and `tsc` pass. Persona inputs (frozen) are not touched. |
+| 2026-09-27 18:10 Melbourne / 08:10 UTC | Opus 5.5 | F70 (CPI missing prior ranks), F71 (DPI rank universe, Panama category) | Implemented — awaiting verification |
+- **F70:** the official CPI 2025 workbook's timeseries sheet has blank 2024 ranks for Belize and Brunei. Their `rankChange: 0` is removed in all three copies, so no "unchanged" movement is shown. The UI already renders a missing movement as no arrow.
+- **F71:** rendered the report's Country Appendix pp. 28–29. The printed tiers are Very Positive ≥+15, Positive +6…+14, Neutral −5…+5, Negative −6…**−15** (Panama is printed under Negative), and Very Negative ≤−16.
+  - `dpiTierFromScore` is corrected and Panama is now Negative. The chart bands are cut at the half-points between the integer scores (−15.5, −5.5, 5.5, 14.5).
+  - Ranks are now competition ranks over **all 98** published units. Taiwan (−4) and Puerto Rico (−11) are held in `DPI_2026_NON_UN_SCORES`, not shown, but still count, so Kazakhstan is 98th as the report says. 48 ranks changed.
+  - The data comment states that the rank is app-derived (the report prints no rank column).
+
+`check-dpi-data.mjs` now ranks over the 98 units and asserts the published tiers. Congo → CD remains **unresolved**, as Codex noted. | In the running app: Panama "Rank 77 · Negative · -15", Kazakhstan "Rank 98", Belize CPI "Rank 104 · Score 36" with no movement. The DPI, CPI and chart-band checks pass. |
 
 ### Open handoff cautions
 
@@ -685,3 +693,4 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 - **27 Sep 2026 — F84–F86 (Estonia).** Lääne's hawk corrected to an eagle, and Võru's sword orientation corrected, both against the Government Office blazons plus a render of the bundled SVG. The stale "Flag of Elva" ids in the Harju and Järva SVGs are renamed. The provenance-manifest part of F86 is still open.
 - **27 Sep 2026 — F87–F89.** NZ Labour and ACT seats, the 123-seat chamber and the Green co-leaders are corrected. All six position contradictions are resolved against the parties' own Wikipedia infoboxes, and a singleton-label consistency gate is added to `check-political-parties.mjs`.
 - **27 Sep 2026 — F77, F78.** Honduras's GPI rank corrected to the publisher's 97, and the check that encoded the false tie is fixed. Guatemala's Soft Power movement is corrected, and the 19 absent movements are read from the rendered cards; the check now requires a movement for every country.
+- **27 Sep 2026 — F70, F71.** Unknown CPI movements are dropped, not shown as zero. DPI tiers now follow the printed appendix, and DPI ranks run over the full 98-unit survey.
