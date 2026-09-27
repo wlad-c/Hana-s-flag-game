@@ -145,16 +145,26 @@ for (const [label, src, needle] of [
   ["PassportMapControl", control, "covers"],
   ["VisaAccessMapLegend", legend, "VISA_ACCESS_LEGEND"],
   ["VisaAccessMapLegend", legend, "VISA_ACCESS_COLORS"],
+  ["VisaAccessMapLegend", legend, "formatVisaAccessCountLabel"],
+  ["VisaAccessMapLegend", legend, "visaAccessCategoryCounts"],
   ["visaAccessColors", lib, "VISA_ACCESS_COLORS"],
   ["visaAccessColors", lib, "getVisaAccessColorOverlay"],
+  ["visaAccessColors", lib, "visaAccessCategoryCounts"],
+  ["visaAccessColors", lib, "formatVisaAccessCountLabel"],
 ]) {
   if (!src.includes(needle)) errors.push(`${label} no longer references ${needle}`);
 }
 
 // Colour contract the owner asked for (quoted or bare keys in the colours object).
-for (const key of ["visa-free", "visa-on-arrival", "evisa", "visa-required", "home"]) {
+for (const key of ["visa-free", "visa-on-arrival", "evisa", "visa-required", "home", "no-admission"]) {
   const re = new RegExp(`(?:"${key}"|${key}):\\s*"#[0-9a-fA-F]{6}"`);
   if (!re.test(lib)) errors.push(`visaAccessColors missing ${key} hex`);
+}
+if (!/(?:"home"|home):\s*"#000000"/.test(lib)) {
+  errors.push("visaAccessColors home must be black (#000000)");
+}
+if (!/(?:"no-admission"|"no-admission"):\s*"#7f0000"/.test(lib) && !/no-admission:\s*"#7f0000"/.test(lib)) {
+  errors.push("visaAccessColors no-admission must be dark red (#7f0000)");
 }
 
 if (errors.length) {
