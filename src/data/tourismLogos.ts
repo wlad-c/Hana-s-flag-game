@@ -555,7 +555,6 @@ export const TOURISM_LOGOS: Record<string, readonly TourismLogo[]> = {
       countryCode: "CZ",
       name: "VisitCzechia",
       agency: "CzechTourism (agency of the Ministry of Regional Development)",
-      launched: 2013,
       visitors: {
         count: 37202000,
         year: 2019,
@@ -566,7 +565,6 @@ export const TOURISM_LOGOS: Record<string, readonly TourismLogo[]> = {
       logoExplainer:
         "The Czechia destination wordmark used by CzechTourism on visitczechia.com: the single word \"Czechia\" set in a light red-brown serif and underscored by a thick red rule, a plain typographic mark that leads on the short-form country name adopted for international use in 2016.",
       sources: [
-        "https://logos.fandom.com/wiki/Czech_Republic_(tourism)",
         "https://www.visitczechia.com/en-us/about-us",
         "https://en.wikipedia.org/wiki/Tourism_in_the_Czech_Republic",
       ],
