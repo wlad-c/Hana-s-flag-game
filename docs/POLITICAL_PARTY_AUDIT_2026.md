@@ -3229,7 +3229,7 @@ Tick a box only when that country's fix is **merged and live**.
 - [ ] `NA` Namibia
 - [ ] `NR` Naoero
 - [x] `NP` Nepal — merged
-- [ ] `NZ` New Zealand
+- [ ] `NZ` New Zealand — partial fix only, NOT the full country audit (27 Sep 2026, Opus, under Learn-claim findings F87–F89): Labour 36→34, ACT 8→11, seatsTotal 120→123 (54th Parliament: 123 MPs, both at the 2023 Port Waikato by-election and as of Nov 2025); Green leader James Shaw → co-leaders Marama Davidson; Chlöe Swarbrick (Swarbrick since Mar 2024); National grouping right → centre-right (to match its positionRaw and Wikipedia). National's 48 and Green's 15 are left unchanged because sources conflict (Wikipedia and Parliament's overview give National 49; Hansard gives 48). Still open: NZ First (8) and Te Pāti Māori are missing.
 - [ ] `NI` Nicaragua
 - [ ] `NE` Niger
 - [ ] `NG` Nigeria

@@ -136,6 +136,11 @@ const nonEmpty = (s) => typeof s === "string" && s.trim().length > 0;
 const VALID_POSITIONS = new Set([
   "far-left", "left", "centre-left", "centre", "centre-right", "right", "far-right", "other",
 ]);
+const SINGLETON_POSITION_LABELS = {
+  "far-left": "far-left", "left-wing": "left", "left": "left", "centre-left": "centre-left",
+  "centre": "centre", "centrist": "centre", "centre-right": "centre-right",
+  "right-wing": "right", "right": "right", "far-right": "far-right",
+};
 
 const problems = [];
 const fail = (id, msg) => problems.push(`[${id}] ${msg}`);
@@ -192,6 +197,13 @@ for (const [country, parties] of Object.entries(partiesByCountry)) {
     if (!nonEmpty(p.shortName)) fail(id, "empty/missing shortName");
     if (!Array.isArray(p.ideology)) fail(id, "ideology must be an array (may be empty only if positionRaw/ideologyPosition still given)");
     if (!VALID_POSITIONS.has(p.ideologyPosition)) fail(id, `invalid ideologyPosition ${JSON.stringify(p.ideologyPosition)}`);
+    // The grid groups on ideologyPosition while the panel shows positionRaw, so
+    // a single-category label must group under that same category. Ranges
+    // ("Centre to centre-right") are a judgement and are not checked.
+    const singleton = SINGLETON_POSITION_LABELS[String(p.positionRaw ?? "").trim().toLowerCase()];
+    if (singleton && singleton !== p.ideologyPosition) {
+      fail(id, `positionRaw ${JSON.stringify(p.positionRaw)} groups as ${JSON.stringify(p.ideologyPosition)}, expected ${JSON.stringify(singleton)}`);
+    }
     // `founded` is a SHOULD, not a MUST, for the same reason `logo` is: requiring
     // it kept real, seated parties out of the dataset entirely (Thailand's New
     // Dimension and Thai Sub Thawee, Colombia's Partido Demócrata, Bolivia's Bia

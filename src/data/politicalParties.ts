@@ -11457,7 +11457,7 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
         "Economic liberalism"
       ],
       "ideologyPosition": "centre-right",
-      "positionRaw": "Right-wing",
+      "positionRaw": "Centre-right",
       "founded": 1990,
       "coalitionId": "PL-GOV",
       "leader": "Władysław Kosiniak-Kamysz",
@@ -19374,7 +19374,7 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "logoSourceUrl": "https://en.wikipedia.org/wiki/File:MORENA_logo.svg",
       "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
       "ideology": ["Populism", "Leftism", "Anti-corruption"],
-      "ideologyPosition": "left",
+      "ideologyPosition": "centre-left",
       "positionRaw": "Centre-left",
       "founded": 2014,
       "leader": "Claudia Sheinbaum",
@@ -21148,7 +21148,7 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "logoSourceUrl": "https://en.wikipedia.org/wiki/File:New_Patriotic_Party_logo.svg",
       "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
       "ideology": ["Conservatism", "Centre-right", "Liberalism"],
-      "ideologyPosition": "right",
+      "ideologyPosition": "centre-right",
       "positionRaw": "Centre-right",
       "founded": 1992,
       "leader": "John Mahama",
@@ -23649,13 +23649,17 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "leader": "Chris Hipkins",
       "leaderTitle": "Party Leader",
       "inPower": false,
-      "seats": 36,
-      "seatsTotal": 120,
+      "seats": 34,
+      "seatsTotal": 123,
       "chamberName": "House of Representatives",
       "sources": [
         {
           "title": "New Zealand Labour Party – Wikipedia",
           "url": "https://en.wikipedia.org/wiki/New_Zealand_Labour_Party"
+        },
+        {
+          "title": "54th New Zealand Parliament – Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/54th_New_Zealand_Parliament"
         },
         {
           "title": "2023 New Zealand general election – Wikipedia",
@@ -23674,7 +23678,7 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "logoSourceUrl": "https://en.wikipedia.org/wiki/File:New_Zealand_National_Party_logo.svg",
       "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
       "ideology": ["Conservatism", "Centre-right", "Liberalism"],
-      "ideologyPosition": "right",
+      "ideologyPosition": "centre-right",
       "positionRaw": "Centre-right",
       "founded": 1936,
       "leader": "Christopher Luxon",
@@ -23682,12 +23686,16 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "inPower": true,
       "timeInPower": "2023-present",
       "seats": 48,
-      "seatsTotal": 120,
+      "seatsTotal": 123,
       "chamberName": "House of Representatives",
       "sources": [
         {
           "title": "New Zealand National Party – Wikipedia",
           "url": "https://en.wikipedia.org/wiki/New_Zealand_National_Party"
+        },
+        {
+          "title": "54th New Zealand Parliament – Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/54th_New_Zealand_Parliament"
         },
         {
           "title": "2023 New Zealand general election – Wikipedia",
@@ -23713,13 +23721,17 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "leaderTitle": "Party Leader",
       "inPower": true,
       "timeInPower": "2023-present",
-      "seats": 8,
-      "seatsTotal": 120,
+      "seats": 11,
+      "seatsTotal": 123,
       "chamberName": "House of Representatives",
       "sources": [
         {
           "title": "ACT New Zealand – Wikipedia",
           "url": "https://en.wikipedia.org/wiki/ACT_New_Zealand"
+        },
+        {
+          "title": "54th New Zealand Parliament – Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/54th_New_Zealand_Parliament"
         },
         {
           "title": "2023 New Zealand general election – Wikipedia",
@@ -23741,16 +23753,20 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "ideologyPosition": "left",
       "positionRaw": "Left-wing",
       "founded": 1990,
-      "leader": "James Shaw",
-      "leaderTitle": "Co-leader",
+      "leader": "Marama Davidson; Chlöe Swarbrick",
+      "leaderTitle": "Co-leaders",
       "inPower": false,
       "seats": 15,
-      "seatsTotal": 120,
+      "seatsTotal": 123,
       "chamberName": "House of Representatives",
       "sources": [
         {
           "title": "Green Party of Aotearoa New Zealand – Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Green_Party_of_Aotearoa_New_Zealand"
+        },
+        {
+          "title": "54th New Zealand Parliament – Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/54th_New_Zealand_Parliament"
         },
         {
           "title": "2023 New Zealand general election – Wikipedia",
@@ -24719,8 +24735,8 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "logoSourceUrl": "https://en.wikipedia.org/wiki/File:Democratic_Alliance_logo.svg",
       "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
       "ideology": ["Liberalism", "Centre-right", "Capitalism"],
-      "ideologyPosition": "right",
-      "positionRaw": "Centre-right",
+      "ideologyPosition": "centre-right",
+      "positionRaw": "Centre to centre-right",
       "founded": 2000,
       "leader": "John Steenhuisen",
       "leaderTitle": "Party Leader",
@@ -24750,7 +24766,7 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "logoSourceUrl": "https://en.wikipedia.org/wiki/File:EFF_logo.svg",
       "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
       "ideology": ["Pan-Africanism", "Socialism", "Anti-imperialism"],
-      "ideologyPosition": "left",
+      "ideologyPosition": "far-left",
       "positionRaw": "Far-left",
       "founded": 2013,
       "leader": "Julius Malema",
