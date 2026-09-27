@@ -64,7 +64,7 @@ export const IOC_EXTRA: readonly IocExtra[] = [
   { code: "AW", name: "Aruba", parent: "NL", continent: "North America", subcontinent: "Caribbean" },
   { code: "PR", name: "Puerto Rico", parent: "US", continent: "North America", subcontinent: "Caribbean" },
   { code: "VI", name: "U.S. Virgin Islands", parent: "US", continent: "North America", subcontinent: "Caribbean" },
-  { code: "BM", name: "Bermuda", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
+  { code: "BM", name: "Bermuda", parent: "GB", continent: "North America", subcontinent: "North America" },
   { code: "VG", name: "British Virgin Islands", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
   { code: "KY", name: "Cayman Islands", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
   { code: "GU", name: "Guam", parent: "US", continent: "Oceania", subcontinent: "Micronesia" },

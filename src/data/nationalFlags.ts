@@ -3978,9 +3978,10 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "br-olympic-committee": {
-    description: "Green and yellow come from the ruling houses at the time of the flag's 1889 design — green from the House of Braganza (Emperor Pedro I), yellow from the House of Habsburg (Empress Maria Leopoldina) — and the blue globe traces the sky over Rio de Janeiro on the morning of 15 November 1889, the day the Republic was proclaimed. The Committee's own website (cob.org.br) confirms this simplified flag rectangle, without the national flag's usual band of stars or its “Ordem e Progresso” motto, as the current mark it pairs with the Olympic rings and the wordmark “COMITÊ OLÍMPICO DO BRASIL.”",
+    description: "The mark reproduces Brazil's national flag. Its green field and yellow diamond are carried over from the flag of the Empire of Brazil, designed in 1822, where green stood for the House of Braganza of Emperor Pedro I and yellow for the House of Habsburg of Empress Maria Leopoldina. When the Republic replaced the imperial flag on 19 November 1889, Decree No. 4 kept those old colours and replaced the imperial arms for the blue globe, which depicts the sky over Rio de Janeiro on the morning of 15 November 1889, the day the Republic was proclaimed.",
     sources: [
       { title: "Flag of Brazil — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Brazil" },
+      { title: "Decreto nº 4, de 19 de novembro de 1889 — Presidência da República", url: "https://www.planalto.gov.br/ccivil_03/decreto/1851-1899/d0004.htm" },
     ],
   },
   "bs-colonial": {

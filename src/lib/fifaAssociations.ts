@@ -69,7 +69,7 @@ export const FIFA_EXTRA: readonly FifaExtra[] = [
   { code: "PR", name: "Puerto Rico", parent: "US", continent: "North America", subcontinent: "Caribbean" },
   { code: "VI", name: "U.S. Virgin Islands", parent: "US", continent: "North America", subcontinent: "Caribbean" },
   { code: "AI", name: "Anguilla", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
-  { code: "BM", name: "Bermuda", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
+  { code: "BM", name: "Bermuda", parent: "GB", continent: "North America", subcontinent: "North America" },
   { code: "VG", name: "British Virgin Islands", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
   { code: "KY", name: "Cayman Islands", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
   { code: "MS", name: "Montserrat", parent: "GB", continent: "North America", subcontinent: "Caribbean" },
