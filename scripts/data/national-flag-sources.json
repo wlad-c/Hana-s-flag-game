@@ -21722,7 +21722,7 @@
           "file": "jp/japan-imperial-seal.svg",
           "design": "A yellow chrysanthemum of sixteen petals, with a second set of sixteen showing behind them.",
           "meaning": {
-            "description": "Japan has no coat of arms in the European sense; what stands in its place is a mon, a family crest. The sixteen-petal chrysanthemum is the crest of the Imperial House, used by the emperor since the thirteenth century and reserved by law to the imperial family — which is why other members of the family use a fourteen-petal or single-petal version rather than this one. It appears on Japanese passports and on the Order of the Chrysanthemum, so the state’s outward emblem is the dynasty’s crest rather than an emblem of its republican-style institutions. The government separately uses a paulownia crest, the Government Seal, for the cabinet and prime minister.",
+            "description": "Japan has no coat of arms in the European sense; what stands in its place is a mon, a family crest. The sixteen-petal chrysanthemum is the crest of the Imperial House, used by the emperor since the thirteenth century and reserved by law to the imperial family — which is why other members of the family use a fourteen-petal or single-petal version rather than this one. It appears on the Order of the Chrysanthemum and at Japan’s diplomatic missions, so the state’s outward emblem is the dynasty’s crest; passports carry a simplified single-row version instead, because the double chrysanthemum is reserved to the imperial family. The government separately uses a paulownia crest, the Government Seal, for the cabinet and prime minister.",
             "sources": [
               {
                 "title": "Imperial Seal of Japan — Wikipedia",
@@ -21752,10 +21752,14 @@
           "file": "jp/japan-passport.webp",
           "drawnRaster": "A drawn cover rendering, not a photograph of a booklet — no lighting, perspective or wear, which is the distinction this category cares about. No vector equivalent exists on Wikimedia Commons.",
           "licenceNote": "Taken from gicg.net, whose footer reads \"Copyright © 2026 Global. All rights reserved.\" and which states no reuse licence; included at the repository owner's explicit direction after the copyright position was raised. Replace it with a freely-licensed cover if one appears on Wikimedia Commons.",
-          "design": "A dark red cover (ordinary passports) bearing the paulownia Government Seal in gold, with 日本国旅券 / JAPAN PASSPORT.",
+          "design": "A dark red cover (ten-year ordinary passport) bearing a gold sixteen-petal single chrysanthemum, with 日本国旅券 / JAPAN PASSPORT.",
           "meaning": {
-            "description": "The gold crest is the Government Seal — the paulownia mon used by the cabinet — rather than the imperial chrysanthemum, so the passport carries the government’s emblem while the chrysanthemum stays with the Imperial House. Japan colour-codes by validity and type: red for a ten-year ordinary passport, blue for five-year, green for official and dark brown for diplomatic.",
+            "description": "Passport covers conventionally carry the issuing state’s arms, but Japan has no legally defined national emblem, so since 1926 its passports have carried a stylised chrysanthemum, a flower traditionally representative of the country. It is deliberately not the Imperial House’s crest: the imperial chrysanthemum is double, with a second row of sixteen petals showing between the first, while the passport’s is a single row of sixteen. Japan colour-codes by validity and type: red for a ten-year ordinary passport, blue for five-year, green for official and dark brown for diplomatic.",
             "sources": [
+              {
+                "title": "Passport Q&A, Q30: why is the passport cover a chrysanthemum? — Ministry of Foreign Affairs of Japan (Japanese)",
+                "url": "https://www.mofa.go.jp/mofaj/toko/passport/pass_4.html"
+              },
               {
                 "title": "Japanese passport — Wikipedia",
                 "url": "https://en.wikipedia.org/wiki/Japanese_passport"

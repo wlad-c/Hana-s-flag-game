@@ -559,7 +559,7 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | Finding | Topic | Status | Notes |
 |---|---|---|---|
 | F01 | Equatorial Guinea capital (Ciudad de la Paz) | Queued | Needs capital coordinates from Wikidata and a capital-marker change, done with F15. |
-| F02 | Japanese passport emblem called paulownia | Queued | |
+| F02 | Japanese passport emblem called paulownia | **Fixed** | Design line and explainer now describe the single-row sixteen-petal chrysanthemum (no legal national emblem; used since 1926). Checked against MOFA Passport Q&A Q30 and the bundled cover image itself. |
 | F03 | Vietnam 63 → 34 provinces | Needs data | Official 2025 boundaries, codes, capitals and populations must change together. |
 | F04 | Angola 18 → 21 provinces | Needs data | As F03. |
 | F05 | National population pinned to 2024, year discarded | Queued | |
@@ -632,3 +632,4 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 
 - **27 Sep 2026, 04:10 UTC — started.** Read all three reports; created the branch and this log.
 - **27 Sep 2026 — country-fact corrections (F16, F29–F33, F39, F41, F42).** Re-checked each constitutional text myself (Constitute Project editions of the constitutions of Bolivia, Zimbabwe, Austria, Namibia, Azerbaijan, Algeria and Switzerland; gov.rw; the CRL Rights Commission; the Reserve Bank of Zimbabwe site). Also corrected the rand's symbol in Zimbabwe's list ("Rs" → "R", an upstream error the audit did not list). Mechanism: `src/data/countryFactCorrections.json`, read by `scripts/build-country-facts.mjs` and `src/api/countries.ts`, applied in place to `src/data/countryFacts.ts`.
+- **27 Sep 2026 — Japanese passport (F02).** MOFA's passport Q&A (Q30) says Japan has no legally defined national emblem, so passports have carried a stylised chrysanthemum since 1926, deliberately a single row rather than the imperial double chrysanthemum. The bundled cover (`public/national-flags/jp/japan-passport.webp`) was opened and shows exactly that. I fixed the manifest (`scripts/data/national-flag-sources.json`: design, meaning, MOFA source added, and the Imperial Seal explainer's passport sentence), regenerated `src/data/nationalFlags.ts`, and `check-national-flags.mjs` passes.
