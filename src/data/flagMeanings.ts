@@ -15767,12 +15767,13 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       "Lääne County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August " +
       "1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms " +
       "at the centre of the white stripe as its distinguishing mark. It was registered on 11 October " +
-      "1996. The arms, confirmed on 5 February 1937, show a silver hawk with raised wings, golden legs " +
-      "and a ring of gold around its head, on red. They are based on the arms of the Bishopric of " +
+      "1996. The arms, confirmed on 5 February 1937, show on red a silver eagle rising and looking " +
+      "back, with a golden halo around its head. They are based on the arms of the Bishopric of " +
       "Ösel–Wiek (Saare-Lääne).",
     sources: [
       { title: "Lääne maakonna lipp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Lääne_maakonna_lipp" },
       { title: "Lääne maakonna vapp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Lääne_maakonna_vapp" },
+      { title: "Lääne maakonna vapp, lipp ja teenetemärk — Riigikantselei", url: "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark" },
       { title: "Estonia: Subdivisions — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ee-sub.html" },
     ],
   },
@@ -15909,11 +15910,12 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       "1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms " +
       "at the centre of the white stripe as its distinguishing mark. It was registered on 12 December " +
       "1996. The arms show, on blue, a gold ring and the silver sword of Kalevipoeg with a golden hilt, " +
-      "pointing downwards. Blue stands for a hopeful future and Võrumaa’s blue sky; the gold ring " +
+      "set diagonally with its hilt at the lower left and its blade pointing to the upper right. Blue stands for a hopeful future and Võrumaa’s blue sky; the gold ring " +
       "(võru) names the county, and the sword stands for its readiness to defend itself.",
     sources: [
       { title: "Võru maakonna lipp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Võru_maakonna_lipp" },
       { title: "Võru maakonna vapp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Võru_maakonna_vapp" },
+      { title: "Võru maakonna vapp, lipp ja teenetemärk — Riigikantselei", url: "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark" },
       { title: "Estonia: Subdivisions — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ee-sub.html" },
     ],
   },
