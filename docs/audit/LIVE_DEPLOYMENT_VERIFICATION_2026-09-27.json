@@ -1,0 +1,111 @@
+{
+  "url": "https://wladimirchagas.github.io/Hana-s-flag-game/",
+  "status": 200,
+  "sha256": "75cdf7b7a912033414115bc75d4165198ebc49c1fb31041cd77329078016c2c7",
+  "bundle": {
+    "url": "https://wladimirchagas.github.io/Hana-s-flag-game/assets/index-CKYpuTC7.js",
+    "sha256": "4022668293ba2e0a033752f2ccccd433592ea79234e76ececcb097922b8f9e80",
+    "bytes": 11123832
+  },
+  "audit_date": "2026-09-27",
+  "method": "Read-only HTTP retrieval and static bundle inspection; no downloaded JavaScript executed; no new browser UI observation.",
+  "build_commit": "014d3a4",
+  "build_timestamp": "2026-09-27T03:52:30.284Z",
+  "application_revision": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "party_records": [
+    {
+      "id": "NZ-LAB",
+      "bundle_offset": 7015890,
+      "leader": "Chris Hipkins",
+      "ideologyPosition": "centre-left",
+      "positionRaw": "Centre-left",
+      "seats": 36,
+      "seatsTotal": 120
+    },
+    {
+      "id": "NZ-NAT",
+      "bundle_offset": 7016798,
+      "leader": "Christopher Luxon",
+      "ideologyPosition": "right",
+      "positionRaw": "Centre-right",
+      "seats": 48,
+      "seatsTotal": 120
+    },
+    {
+      "id": "NZ-ACT",
+      "bundle_offset": 7017776,
+      "leader": "David Seymour",
+      "ideologyPosition": "right",
+      "positionRaw": "Right-wing",
+      "seats": 8,
+      "seatsTotal": 120
+    },
+    {
+      "id": "NZ-GRN",
+      "bundle_offset": 7018671,
+      "leader": "James Shaw",
+      "ideologyPosition": "left",
+      "positionRaw": "Left-wing",
+      "seats": 15,
+      "seatsTotal": 120
+    }
+  ],
+  "position_conflicts": [
+    {
+      "id": "PL-PSL",
+      "positionRaw": "Right-wing",
+      "ideologyPosition": "centre-right"
+    },
+    {
+      "id": "MX-MORENA",
+      "positionRaw": "Centre-left",
+      "ideologyPosition": "left"
+    },
+    {
+      "id": "GH-NPP",
+      "positionRaw": "Centre-right",
+      "ideologyPosition": "right"
+    },
+    {
+      "id": "NZ-NAT",
+      "positionRaw": "Centre-right",
+      "ideologyPosition": "right"
+    },
+    {
+      "id": "ZA-DA",
+      "positionRaw": "Centre-right",
+      "ideologyPosition": "right"
+    },
+    {
+      "id": "ZA-EFF",
+      "positionRaw": "Far-left",
+      "ideologyPosition": "left"
+    }
+  ],
+  "assets": [
+    {
+      "id": "NZ-LAB",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/party-logos/nz/lab.svg",
+      "sha256": "844122da88962f047b791bead705f1d661a33a03a4096d6cedaa733d1fdee93f",
+      "matches_repository": true
+    },
+    {
+      "id": "NZ-NAT",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/party-logos/nz/nat.svg",
+      "sha256": "4d05df78de46901a6cbb1ce24965bd3ae48410e315dabc99abaaac9eff7257b4",
+      "matches_repository": true
+    },
+    {
+      "id": "NZ-ACT",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/party-logos/nz/act.svg",
+      "sha256": "d8b49e16e17efdee540e55580655b5440783c21243fb3adf59f6cff0f95a8e93",
+      "matches_repository": true
+    },
+    {
+      "id": "NZ-GRN",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/party-logos/nz/grn.svg",
+      "sha256": "cdaa24f55ae870fd1c52e63dc21398377889c3e5578c61cda7e1da2ed9b5f0c8",
+      "matches_repository": true
+    }
+  ]
+}
