@@ -4,6 +4,14 @@
 
 This supplements [the original audit](LEARN_FACTUAL_AUDIT_2026-09-13.md) and [the continuation findings F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md). No application data was changed. The evidence ledgers below are intended to preserve both positive verification and failures for subsequent work.
 
+## Population continuation — 27 September 2026
+
+The [Estonia population ledger](audit/ESTONIA_POPULATION_CLAIM_VERIFICATION_2026-09-26.json) now preserves a complete comparison of **67 repository record instances** against Statistics Estonia table [RV0291U](https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0291U): 15 counties, 11 county aliases, 26 municipalities and 15 capital populations. **All 67 numbers match the official table for their stated year.** Aliases are not additional geographic entities.
+
+The figures refer to 1 January of the stated year. Capital values correctly match city settlement units where the surrounding municipality is larger: for example, Tartu's 2024 settlement population is 97,759, while its city municipality has 101,032. Preserve this scope in metadata. These matches do not independently verify capital status, ISO-code validity, border geometry, or ratios calculated against a live national denominator. The API query and source-response hashes are recorded for reproducibility. Source retrieval/comparison occurred on 26 September UTC; repository persistence was completed on the next continuation.
+
+The repository head was rechecked on 27 September: it still contained the preceding audit commits, with no new application revision beyond the pinned `e3c1a35` snapshot.
+
 ## Estonia county continuation — 26 September 2026
 
 All **15 county flag images** were compared with the Estonian Government Office's SVG artwork and Estonian-language descriptions. All 15 complete Learn descriptions and internal SVG identifiers were inspected. The [Estonia evidence ledger](audit/ESTONIA_COUNTY_CLAIM_VERIFICATION_2026-09-26.json) contains **136 claim groups: 104 verified, 13 corroborated by a secondary-hosted booklet, 4 partly verified, 10 unverified, 2 conflicting, 1 imprecise, and 2 incorrect**, plus two incorrect internal image identifiers. These are grouped checks, not a universal atomic-claim denominator. Major visual identity and heraldic elements agree for all 15; exact geometry, colour specifications and licensing are not certified.
