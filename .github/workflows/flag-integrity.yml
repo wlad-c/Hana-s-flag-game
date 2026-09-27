@@ -85,6 +85,14 @@ on:
       - "src/lib/visaAccessColors.ts"
       - "src/components/PassportMapControl.tsx"
       - "src/components/VisaAccessMapLegend.tsx"
+      - "scripts/check-diaspora.mjs"
+      - "scripts/build-diaspora.mjs"
+      - "scripts/data/diaspora-migrant-stock-2024.csv"
+      - "scripts/data/diaspora-migrant-stock-2024.meta.json"
+      - "src/data/diaspora.ts"
+      - "src/lib/diasporaColors.ts"
+      - "src/components/DiasporaMapControl.tsx"
+      - "src/components/DiasporaMapLegend.tsx"
       - "scripts/check-fiw-data.mjs"
       - "scripts/build-fiw.mjs"
       - "scripts/data/fiw-2026.csv"
@@ -266,6 +274,9 @@ jobs:
 
       - name: Verify Passport Index visa-access matrix matches the bundled extract
         run: node scripts/check-visa-access.mjs
+
+      - name: Verify UN DESA diaspora migrant-stock matrix matches the bundled extract
+        run: node scripts/check-diaspora.mjs
 
       - name: Verify Freedom House Freedom in the World 2026 data matches the official extract
         run: node scripts/check-fiw-data.mjs
