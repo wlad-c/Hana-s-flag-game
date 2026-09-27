@@ -461,6 +461,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: npm
+
+      # Several of the checks below (news agencies, newspapers, airlines, …)
+      # import sharp for image sniffing — without npm ci the job fails with
+      # ERR_MODULE_NOT_FOUND before asserting anything.
+      - name: Install dependencies
+        run: npm ci
 
       - name: Verify every flag-meaning entry is sourced and well-formed
         run: node scripts/check-flag-meanings.mjs
