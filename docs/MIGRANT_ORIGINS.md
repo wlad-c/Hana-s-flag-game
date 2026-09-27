@@ -44,11 +44,17 @@ country is shaded by how many people **born there** live in that destination
 3. `node scripts/check-migrant-origins.mjs` / `npm run flags:check:migrant-origins`  
    CSV ↔ generated file + UI wiring + spot-checks (e.g. US←MX, AU←GB)
 
+## Relationship to the diaspora map
+
+Learn mode also has a **diaspora** layer (`docs/DIASPORA_MAP.md`): pick an
+**origin**, paint **destinations** green. This migrant-origins layer is the
+inverse: pick a **destination**, paint **origins** blue. Both use the same UN
+DESA International Migrant Stock 2024 Table 1; they are mutually exclusive in
+the toolbar with each other and with flag / passport / democracy layers.
+
 ## UI
 
-- `MigrantOriginsMapControl` — toolbar icon; Off + searchable “People living in…” list  
-- `getMigrantOriginsColorOverlay` — blue heatmap + black destination + grey gaps  
-- `MigrantOriginsMapLegend` — scale + source note  
-- `MigrantOriginsPanelRows` — stock / year / citation on the Overview fact-sheet when the layer is on  
-
-Mutually exclusive with the flag overlay, passport map, and democracy/index map layers (same pattern as visa access).
+- `MigrantOriginsMapControl` — toolbar icon; Off + searchable “People living in…” list
+- `getMigrantOriginsColorOverlay` — blue heatmap + black destination + grey gaps
+- `MigrantOriginsMapLegend` — scale + source note
+- `MigrantOriginsPanelRows` — stock / year / citation on the Overview fact-sheet when the layer is on

@@ -4136,6 +4136,18 @@
   border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
 }
 
+.democracy-map-legend__gradient {
+  width: 5.5rem;
+  height: 13px;
+  border-radius: 3px;
+  flex: none;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.democracy-map-legend__item--gradient {
+  align-items: center;
+}
+
 /* --- Data-map tooltip (hover a country, or tap it on touch) --- */
 .map-data-tooltip {
   position: absolute;
