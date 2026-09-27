@@ -1,0 +1,59 @@
+{
+  "retrievedAt": "2026-09-27",
+  "method": "Read-only HTTP and static extraction; downloaded JavaScript was not executed; no new rendered UI check.",
+  "url": "https://wladimirchagas.github.io/Hana-s-flag-game/",
+  "htmlSha256": "92497ad85f6787c4811e2f94794f4923a9927e3eb35c36adec29e8f190b160b6",
+  "bundle": {
+    "url": "https://wladimirchagas.github.io/Hana-s-flag-game/assets/index-CPKeRKiC.js",
+    "sha256": "2be762acb911280e30fd2af20a6e1234cd0fa3757a6f8590884f14dfff624562",
+    "bytes": 11737606
+  },
+  "buildCommit": "07b14a3",
+  "buildTimestamp": "2026-09-27T11:52:47.632Z",
+  "visaMatrix": {
+    "passportRows": 195,
+    "foreignPairs": 37830,
+    "exactObjectMatchTo7c75": true,
+    "GB_CN": "visa-required",
+    "CA_CN": "visa-required",
+    "ILCategories": {
+      "evisa": 194
+    }
+  },
+  "nzPartyRecords": [
+    {
+      "id": "NZ-LAB",
+      "leader": "Chris Hipkins",
+      "ideologyPosition": "centre-left",
+      "positionRaw": "Centre-left",
+      "seats": 34,
+      "seatsTotal": 123
+    },
+    {
+      "id": "NZ-ACT",
+      "leader": "David Seymour",
+      "ideologyPosition": "right",
+      "positionRaw": "Right-wing",
+      "seats": 11,
+      "seatsTotal": 123
+    },
+    {
+      "id": "NZ-NAT",
+      "leader": "Christopher Luxon",
+      "ideologyPosition": "centre-right",
+      "positionRaw": "Centre-right",
+      "seats": 48,
+      "seatsTotal": 123
+    },
+    {
+      "id": "NZ-GRN",
+      "leader": "Marama Davidson; Chl\u00f6e Swarbrick",
+      "ideologyPosition": "left",
+      "positionRaw": "Left-wing",
+      "seats": 15,
+      "seatsTotal": 123
+    }
+  ],
+  "latestRepoCommitDuringReview": "1ee7c78515b494e25aa5e40b59fabd07af47a7d9",
+  "limitation": "This deployment predates PR #1711; later deployments and browser/service-worker cache states not assessed."
+}
