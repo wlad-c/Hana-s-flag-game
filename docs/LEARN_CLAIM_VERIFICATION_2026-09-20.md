@@ -106,6 +106,10 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
   - The Naoero Gazette record is removed: it is an official statutory record, not a news retailer, and its masthead was the broken composite.
   - Both media checks now **rasterise every logo with sharp**. Tested: re-inserting the Gazette SVG fails with "Namespace prefix xlink … is not defined", and the real data passes. The size/primitive "fabricated" heuristic is left in place as a review flag; a provenance manifest (F51/F62) is unclaimed.
 - **F50:** the ABC's funding is described as five-year terms, the first from 1 July 2023 (replacing three-year terms), operating by convention; the department's review page is cited. Appropriation vs revenue for the A$1,139.7m figure is **not yet** checked against the annual report. | Newspaper, agency, national-flag, grid-content, grid-grouping, image-key and user-facing-copy checks and `tsc` pass. In the running app, Mwinen Ko shows the sourced fields with no Founded or Readership row. The full `flags:check` passed on 03723e33 (before this batch). |
+| 2026-09-27 20:30 Melbourne / 10:30 UTC | Opus 5.5 | F58 (generated "sources were checked" gap text) | Implemented — awaiting verification |
+- **F58:** 34 newspaper records and 1 agency record carried a `noImageReason` claiming a specific research history (named sources "checked") that no one had performed; the text was a generator constant. Each is replaced with a plain statement that is true by construction: "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo." (agencies: "…emblem… agency…").
+  - The same constants are replaced in the four generators that emitted them (`apply-newspaper-top5.mjs`, `apply-newspaper-top5-batch2.mjs`, `purge-fabricated-newspaper-logos.mjs`, `purge-fabricated-agency-logos.mjs`), so a regen cannot reintroduce the false research claim.
+  - Hand-written reasons that describe real, recorded research are untouched. | Newspaper, agency and user-facing-copy checks pass. |
 
 ### Open handoff cautions
 
@@ -674,7 +678,7 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 | F55 | Kenya 8 provinces → 47 counties | Needs data | As F03. |
 | F56 | "Leg power" inferred from government membership | Queued | Conflicts with a CLAUDE.md hard rule (fallback is deliberate); needs owner decision — see note when reached. |
 | F57 | Broken Naoero Gazette SVG | Implemented — awaiting verification | Record removed; decode gate added to both media checks. |
-| F58 | Generated "sources were checked" text | Queued | |
+| F58 | Generated "sources were checked" text | Implemented — awaiting verification | Generators fixed too. |
 | F59 | Vatican News in two registries | Queued | |
 | F60, F64 | 30 wrong-entity media logos | Queued | |
 | F61, F65, F69 | Captions/asset roles contradict images | Queued | |
@@ -717,3 +721,4 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
 - **27 Sep 2026 — F70, F71.** Unknown CPI movements are dropped, not shown as zero. DPI tiers now follow the printed appendix, and DPI ranks run over the full 98-unit survey.
 - **27 Sep 2026 — F43–F45, F53, F54.** Era summaries corrected (not currently rendered), 14 unreachable anachronistic 2000 BC overrides removed (new R04), Hejaz prose matched to its image, Brazil Olympic colours explained as imperial continuity, Bermuda grouped with North America. Pushes were blocked by an expired token between f0c9407d and 03723e33; all of it landed on `main` at 03723e33.
 - **27 Sep 2026 — F48, F50–F52, F57, part of F49.** Nauru newspapers corrected from the government bulletin; composite-masthead generator and outputs deleted; media checks now decode every logo; nine captions matched to their artwork; ABC five-year funding terms; `founded`/`readership` no longer forced.
+- **27 Sep 2026 — F58.** Generated gap text that claimed a research history nobody performed is replaced in 35 records and in the four generators that emitted it.

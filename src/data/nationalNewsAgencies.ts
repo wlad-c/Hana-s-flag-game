@@ -2169,7 +2169,7 @@ export const NATIONAL_NEWS_AGENCIES: Record<string, readonly NewsAgency[]> = {
       "editorialStance": "Official national state news agency of Myanmar; distributes official government notifications, administrative orders, diplomatic receptions, state economic projects, and military communiqués",
       "readership": {"metric":"Primary official wire distributor feeding all state broadcast television, radio, and state-owned newspapers nationwide","source":"Ministry of Information Myanmar Annual Report 2023"},
       "revenueModel": "State government budget allocation and newspaper sales",
-      "noImageReason": "No authentic emblem is shown yet. A placeholder graphic was removed. Wikimedia Commons, the agency's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified emblem image is available in the app for this agency yet, so it is listed without one rather than with an invented logo.",
       "sources": ["https://www.moi.gov.mm","https://en.wikipedia.org/wiki/Myanmar_News_Agency"],
     }
   ],

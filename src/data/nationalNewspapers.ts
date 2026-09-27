@@ -559,7 +559,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "https://en.wikipedia.org/wiki/Media_of_Antigua_and_Barbuda"
       },
       "revenueModel": "Digital advertising",
-      "noImageReason": "No masthead image is shown for this newspaper yet. The publisher's official site and Wikimedia Commons were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Media_of_Antigua_and_Barbuda"
       ]
@@ -4044,7 +4044,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Union des Journalistes de Centrafrique 2023"
       },
       "revenueModel": "Street print sales and private advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.le-democrate.com",
         "https://fr.wikipedia.org/wiki/M%C3%A9dias_en_R%C3%A9publique_centrafricaine"
@@ -4096,7 +4096,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Ministère de la Communication RCA 2023"
       },
       "revenueModel": "Print sales and corporate sponsorships",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://fr.wikipedia.org/wiki/M%C3%A9dias_en_R%C3%A9publique_centrafricaine"
       ]
@@ -5433,7 +5433,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Jornal i Archive 2023"
       },
       "revenueModel": "Print sales and local corporate advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.facebook.com/jornalicv",
         "https://pt.wikipedia.org/wiki/Cabo_Verde#Comunica%C3%A7%C3%A3o_social"
@@ -6014,7 +6014,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Djib-Post Audience Analytics 2024"
       },
       "revenueModel": "Digital display advertising and sponsored corporate media",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://djibpost.com"
       ]
@@ -7095,7 +7095,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Eritrean Ministry of Information 2023"
       },
       "revenueModel": "State publishing subsidy and retail kiosk print sales",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://shabait.com/category/haddas-ertra/",
         "https://en.wikipedia.org/wiki/Haddas_Eritrea"
@@ -7120,7 +7120,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Ministry of Information Profile 2023"
       },
       "revenueModel": "State budget funding and print sales",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://shabait.com/category/eritrea-profile/",
         "https://en.wikipedia.org/wiki/Eritrea_Profile"
@@ -7145,7 +7145,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Eritrean Digest Analytics 2024"
       },
       "revenueModel": "Reader patronage and academic media grants",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://eritreandigest.com"
       ]
@@ -8034,7 +8034,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       "frequency": "Continuous digital news",
       "format": "Digital news portal",
       "revenueModel": "Advertising, subscriptions, and/or print sales",
-      "noImageReason": "No masthead image is shown for this newspaper yet. The publisher's official site and Wikimedia Commons were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "id": "ga-infogabon",
       "countryCode": "GA",
       "name": "Info Gabon",
@@ -8295,7 +8295,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Grenada National Archives 2023"
       },
       "revenueModel": "Print sales and community notices",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Eric_Gairy"
       ]
@@ -8319,7 +8319,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Pure Grenada Digital Analytics 2024"
       },
       "revenueModel": "Digital display advertising and international tourism partnerships",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.puregrenada.com"
       ]
@@ -9329,7 +9329,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "N'Pinti Audience Review 2024"
       },
       "revenueModel": "Digital subscriptions, print sales, and commercial advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.gov.gw/",
         "https://www.unesco.org/"
@@ -9410,7 +9410,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Guinendade Audience Review 2024"
       },
       "revenueModel": "Digital subscriptions, print sales, and commercial advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://guinendade.com/",
         "https://rsf.org/"
@@ -9435,7 +9435,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Bissau Weekly Audience Review 2024"
       },
       "revenueModel": "Digital subscriptions, print sales, and commercial advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://bissauweekly.com/",
         "https://www.unesco.org/"
@@ -12122,7 +12122,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "perCapita": "State funded"
       },
       "revenueModel": "State subsidy, print sales, and community notices",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.bpa.gov.ki",
         "https://en.wikipedia.org/wiki/Te_Uekera"
@@ -12147,7 +12147,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Pacific Media Centre Survey"
       },
       "revenueModel": "Print sales and local advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://pmc.aut.ac.nz",
         "https://en.wikipedia.org/wiki/Media_of_Kiribati"
@@ -12173,7 +12173,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Kiribati Church Press 2023"
       },
       "revenueModel": "Church subventions and community subscriptions",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Media_of_Kiribati"
       ]
@@ -12225,7 +12225,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Pacific Islands News Association (PINA)"
       },
       "revenueModel": "Party subscriptions and local press sales",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://pina.com.fj",
         "https://en.wikipedia.org/wiki/Media_of_Kiribati"
@@ -12369,7 +12369,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Mohéli Media Collective 2023"
       },
       "revenueModel": "Community sponsorships and tourism advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://fr.wikipedia.org/wiki/Moh%C3%A9li"
       ]
@@ -13913,7 +13913,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       ]
     },
     {
-      "noImageReason": "No masthead image is shown for this newspaper yet. The publisher's official site and Wikimedia Commons were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "revenueModel": "Advertising, subscriptions, and/or print sales",
       "frequency": "Daily newspaper",
       "format": "Digital news portal",
@@ -14754,7 +14754,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       "frequency": "Continuous digital news",
       "format": "Digital news portal",
       "revenueModel": "Advertising, subscriptions, and/or print sales",
-      "noImageReason": "No masthead image is shown for this newspaper yet. The publisher's official site and Wikimedia Commons were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "id": "mc-monacolive",
       "countryCode": "MC",
       "name": "Monaco Live",
@@ -17808,7 +17808,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
       },
       "editorialStance": "Government and community news, published by the bureau that also runs Nauru's television and radio news",
       "revenueModel": "Cover price ($1 at local retail outlets) and advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.nauru.gov.nr/media/58467/nauru_20bulletin_20_02_7feb2017_20_28150_29.pdf"
       ]
@@ -19247,7 +19247,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Belau National Museum Report 2023"
       },
       "revenueModel": "State statutory appropriation, museum memberships, and cultural publications",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.belaunationalmuseum.net"
       ]
@@ -19352,7 +19352,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "https://en.wikipedia.org/wiki/Media_of_Palau"
       },
       "revenueModel": "Advertising and print sales",
-      "noImageReason": "No masthead image is shown for this newspaper yet. The publisher's official site and Wikimedia Commons were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Media_of_Palau"
       ]
@@ -20598,7 +20598,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Seychelles Heritage Foundation 2023"
       },
       "revenueModel": "Cultural grant funding and subscription sales",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.nation.sc",
         "https://en.wikipedia.org/wiki/Media_of_Seychelles"
@@ -21584,7 +21584,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Registro delle Pubblicazioni Sammarinesi 2023"
       },
       "revenueModel": "Print sales and local corporate advertisements",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.libertas.sm",
         "https://en.wikipedia.org/wiki/San_Marino"
@@ -23395,7 +23395,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "UIET Annual Business Report"
       },
       "revenueModel": "Commercial display advertising, bank notices, and retail sales",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://rysgalbank.com.tm",
         "https://en.wikipedia.org/wiki/Media_of_Turkmenistan"
@@ -23451,7 +23451,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Turkmen State Publishing Service Register"
       },
       "revenueModel": "State subsidies and nationwide institutional subscriptions",
-      "noImageReason": "No authentic emblem is shown yet. A placeholder graphic was removed. Wikimedia Commons, the agency's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified emblem image is available in the app for this agency yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://turkmenmetbugat.gov.tm",
         "https://tk.wikipedia.org/wiki/T%C3%BCrkmenistan_(gazet)"
@@ -24063,7 +24063,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Tuvalu Central Statistics Division / Commonwealth Broadcasting Association"
       },
       "revenueModel": "Government budgetary allocation and public service notices",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.gov.tv",
         "https://en.wikipedia.org/wiki/Tuvalu_Media_Department"
@@ -24090,7 +24090,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Tuvalu Media Review / UNESCO Pacific"
       },
       "revenueModel": "Government publishing subsidy and retail sales",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Tuvalu_Echoes",
         "https://www.unesco.org/en/countries/tv"
@@ -24145,7 +24145,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Tuvalu Paradise Analytics / PINA"
       },
       "revenueModel": "Community sponsorships, tourism notices, and independent contributions",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Media_of_Tuvalu",
         "https://pina.com.fj"
@@ -24174,7 +24174,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Tuvalu Ministry of Justice, Communications and Foreign Affairs"
       },
       "revenueModel": "Government communications budget",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://www.gov.tv",
         "https://en.wikipedia.org/wiki/Tuvalu"
@@ -25697,7 +25697,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Buzz Media Analytics / MAV"
       },
       "revenueModel": "Digital display advertising, sponsored industry features, and social promotions",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Media_of_Vanuatu",
         "https://pina.com.fj"
@@ -25722,7 +25722,7 @@ export const NATIONAL_NEWSPAPERS: Record<string, Newspaper[]> = {
         "source": "Vanuatu Media Association Directory"
       },
       "revenueModel": "Print newsstand sales, classifieds, and commercial advertising",
-      "noImageReason": "No authentic masthead is shown yet. A placeholder graphic was removed. Wikimedia Commons, the newspaper's official site, and common brand sources were checked; listed without an image rather than an invented logo.",
+      "noImageReason": "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.",
       "sources": [
         "https://en.wikipedia.org/wiki/Media_of_Vanuatu",
         "https://pina.com.fj"

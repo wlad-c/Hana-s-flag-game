@@ -19,7 +19,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = resolve(__dirname, "..", "src", "data", "nationalNewspapers.ts");
 
 const NO_IMAGE =
-  "Authentic masthead not yet bundled for this entry. Official publisher site and Wikimedia Commons were checked for a freely-citable logo; none confidently sourced on this pass — listed with no image rather than an invented logo.";
+  "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.";
 
 function loadConst(src, marker) {
   const start = src.indexOf(marker);

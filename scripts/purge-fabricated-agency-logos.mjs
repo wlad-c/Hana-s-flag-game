@@ -13,7 +13,7 @@ const ROOT = resolve(__dirname, "..");
 const DATA = resolve(ROOT, "src/data/nationalNewsAgencies.ts");
 
 const NO_IMAGE_REASON =
-  "Placeholder rect+text SVG removed (fabricated, not the agency's logo). Wikimedia Commons, the agency's official site, and common brand CDNs were checked for a freely-citable authentic emblem; none confidently sourced yet — listed with no image rather than an invented logo.";
+  "No verified emblem image is available in the app for this agency yet, so it is listed without one rather than with an invented logo.";
 
 function isFabricatedOrMissing(rel) {
   const abs = resolve(ROOT, "public", rel.replace(/^\//, ""));

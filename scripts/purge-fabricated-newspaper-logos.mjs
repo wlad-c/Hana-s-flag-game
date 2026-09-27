@@ -159,7 +159,7 @@ const EXPLAINER_OVERRIDES = {
 };
 
 const NO_IMAGE_REASON =
-  "Placeholder rect+text SVG removed (fabricated, not the newspaper's masthead). Wikimedia Commons, the newspaper's official site, and common brand CDNs were checked for a freely-citable authentic masthead; none confidently sourced yet — listed with no image rather than an invented logo.";
+  "No verified masthead image is available in the app for this newspaper yet, so it is listed without one rather than with an invented logo.";
 
 let src = readFileSync(DATA, "utf8");
 
