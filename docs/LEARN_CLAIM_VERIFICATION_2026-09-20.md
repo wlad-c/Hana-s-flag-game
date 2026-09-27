@@ -4,6 +4,41 @@
 
 This supplements [the original audit](LEARN_FACTUAL_AUDIT_2026-09-13.md) and [the continuation findings F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md). No application data was changed. The evidence ledgers below are intended to preserve both positive verification and failures for subsequent work.
 
+## New Zealand parties and global position consistency — 27 September 2026
+
+The [New Zealand field ledger](audit/NEW_ZEALAND_PARTIES_CLAIM_VERIFICATION_2026-09-27.json) now assesses **all 82 populated top-level fields in all four NZ records** at `e3c1a35`. A field can contain several claims: this is full field coverage, **not 82 verified facts**. Founding years, party identities, three current leaders and government participation were corroborated through the Electoral Commission, Parliament, Cabinet Office, Ministry for Culture and Heritage, Te Papa and party sources. Māori-interface parliamentary pages were consulted alongside English sources; much of their factual body text remains English.
+
+All four SVGs were rendered and their hashes/embedded identifiers checked. ACT, Green and Labour have recognizable wordmarks/symbols corroborated by Parliament-hosted artwork; this does not certify exact variants. Labour's reference has a red fern on a white panel and outer border, unlike the bundled white-on-red fern. National's current website has a flat N, whereas the repository has fold shading. The [Electoral Commission register](https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties) records a new National logo on **22 May 2026**, but that exact registered image could not be visually retrieved. Its identity/version comparison remains open. No unsupported wrong-logo finding is asserted. All four files lack embedded title/description/rights metadata; external registry fields provide identity, but their generic non-free notes do not independently establish rights or original provenance.
+
+### F87 — Incorrect New Zealand seat counts and an unqualified nominal denominator
+
+**Confirmed, high for factual counts.** `NZ-LAB.seats = 36` should be **34**, and `NZ-ACT.seats = 8` should be **11** for both the [official 2023 general-election result](https://archive.electionresults.govt.nz/electionresults_2023/) and the [parliamentary overview](https://www3.parliament.nz/en/mps-and-electorates/political-parties/). [Hansard on 25 August 2026](https://hansard.parliament.nz/hansard-transcript/2026-08-25?lang=en) corroborates those strengths.
+
+All four records use `seatsTotal = 120`, the nominal chamber size, without distinguishing it from actual allocation or occupied membership. The general-election result allocated 122 seats; the subsequent Port Waikato seat brought the allocation to 123. Later vacancies require a separate occupied-seat count. Use dated fields for nominal size, allocated seats, occupied seats and party membership, and make ratios use a compatible denominator.
+
+**Avoid a false correction:** National's stored 48 and Green's 15 agree with the 2023 result and August 2026 Hansard. The parliamentary overview instead displays 49 and 14. Preserve that source conflict; a recent crawl is not proof that every field was updated, and voting strength alone is not a complete membership census. NZ First and Te Pāti Māori are absent from the curated NZ set despite holding seats. This is a coverage gap under the explicitly incremental dataset, not evidence of fabrication.
+
+### F88 — New Zealand Green Party displays a former co-leader as current
+
+**Confirmed, medium.** `NZ-GRN.leader = "James Shaw"` is stale. The [party's current people page](https://www.greens.org.nz/about) identifies **Marama Davidson and Chlöe Swarbrick** as co-leaders. [Parliament's Swarbrick record](https://www3.parliament.nz/en/mps-and-electorates/members-of-parliament/swarbrick-chloe/) dates her co-leadership to **10 March 2024**. Model leaders as an array with role and tenure dates, so co-leadership is not silently reduced to one person. Historical Shaw information belongs in a dated historical record.
+
+### F89 — Six party grouping values contradict their stored source labels
+
+**Confirmed internal inconsistency, medium; no independent ideology judgment.** A scan of **all 842 party records** compared exact, single-category `positionRaw` strings with the corresponding `ideologyPosition` enum. Complex ranges were excluded. The [complete mismatch ledger](audit/PARTY_POSITION_CONSISTENCY_2026-09-27.json) contains:
+
+| Party record | Stored source label | Actual UI grouping |
+|---|---|---|
+| `PL-PSL` | Right-wing | Centre-right |
+| `MX-MORENA` | Centre-left | Left |
+| `GH-NPP` | Centre-right | Right |
+| `NZ-NAT` | Centre-right | Right |
+| `ZA-DA` | Centre-right | Right |
+| `ZA-EFF` | Far-left | Left |
+
+`PoliticalPartyGrid.tsx` groups directly on `ideologyPosition`, and the data model supports each of these categories separately. Resolve each contradiction against dated, attributable evidence rather than choosing one field arbitrarily. Add a consistency gate for exact singleton labels, with explicit documented overrides where justified. Other records passing this check are internally consistent only; their political classifications are not thereby verified.
+
+**Still open in this batch:** full ideology-tag substantiation, exact registered artwork versions and colours, original image/licence provenance, and live deployment reconciliation. The broader universal audit remains incomplete. No application data or artwork was changed.
+
 ## Population continuation — 27 September 2026
 
 The [Estonia population ledger](audit/ESTONIA_POPULATION_CLAIM_VERIFICATION_2026-09-26.json) now preserves a complete comparison of **67 repository record instances** against Statistics Estonia table [RV0291U](https://andmed.stat.ee/en/stat/rahvastik__rahvastikunaitajad-ja-koosseis__rahvaarv-ja-rahvastiku-koosseis/RV0291U): 15 counties, 11 county aliases, 26 municipalities and 15 capital populations. **All 67 numbers match the official table for their stated year.** Aliases are not additional geographic entities.
