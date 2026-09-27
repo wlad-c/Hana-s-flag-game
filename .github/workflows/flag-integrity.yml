@@ -78,6 +78,13 @@ on:
       - "scripts/data/gggr-2026.csv"
       - "scripts/data/gggr2026Data.mjs"
       - "scripts/check-gpi-data.mjs"
+      - "scripts/check-visa-access.mjs"
+      - "scripts/build-visa-access.mjs"
+      - "scripts/data/passport-index-tidy-iso2.csv"
+      - "src/data/visaAccess.ts"
+      - "src/lib/visaAccessColors.ts"
+      - "src/components/PassportMapControl.tsx"
+      - "src/components/VisaAccessMapLegend.tsx"
       - "scripts/check-fiw-data.mjs"
       - "scripts/build-fiw.mjs"
       - "scripts/data/fiw-2026.csv"
@@ -256,6 +263,9 @@ jobs:
 
       - name: Verify IEP Global Peace Index 2026 data matches the official extract
         run: node scripts/check-gpi-data.mjs
+
+      - name: Verify Passport Index visa-access matrix matches the bundled extract
+        run: node scripts/check-visa-access.mjs
 
       - name: Verify Freedom House Freedom in the World 2026 data matches the official extract
         run: node scripts/check-fiw-data.mjs
