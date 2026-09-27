@@ -351,7 +351,7 @@ function buildFactsRows(c: Country): { label: string; value: React.ReactNode }[]
   if (c.languages && c.languages.length > 0)
     rows.push({
       label: c.languages.length === 1 ? "Language" : "Languages",
-      value: c.languages.slice(0, 4).join(", "),
+      value: c.languages.join(", "),
     });
   if (c.callingCode) rows.push({ label: "Calling code", value: c.callingCode });
   if (c.tld && c.tld.length > 0)
