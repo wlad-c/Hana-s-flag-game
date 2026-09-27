@@ -1541,7 +1541,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         kind === "flow"
           ? `Moved from ${originName}, 2015–2020`
           : `Born in ${originName}, living abroad`;
-      const year = kind === "flow" ? 2020 : 2020;
+      const year = 2020;
       return (code: string) => {
         const color = diasporaColorOverlay?.get(code) ?? null;
         if (code === originCode) {

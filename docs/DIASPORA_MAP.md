@@ -36,7 +36,7 @@ selected origin’s own min→max.
 
 ## Sources — never fabricated
 
-### Stock — World Bank Global Bilateral Migration Matrix 1960–2020
+### Stock — World Bank Global Bilateral Migration Matrix 1960–2020 (active)
 
 | Field | Value |
 |-------|--------|
@@ -46,11 +46,25 @@ selected origin’s own min→max.
 | Bundled extract | `scripts/data/diaspora-migrant-stock-2020-wb.csv` |
 | Upstream xlsx sha256 | `0f6b085b83fb1b4203f01c3fe736c5e64dcab5291ed7ce77c028e12ce84ea28b` |
 
-Chosen over UN DESA IMS 2024 Table 1 because DESA omits many real corridors
-(e.g. Australia→United States / France / Germany / Thailand / Korea) even
-though the reverse (those countries→Australia) is present. Legacy ISO3
-aliases mapped: `ROM→RO`, `ZAR→CD`, `YUG→RS`, `TMP→TL`. Montenegro and
-Vatican City have no WB country codes — honest empty stock for those origins.
+Stock was **kept** as a first-class layer; denser WB 2020 pairs replaced the
+previous UN DESA Table 1 extract for the live map because DESA omitted many
+real corridors (e.g. Australia→United States / France / Germany / Thailand /
+Korea). Legacy ISO3 aliases mapped: `ROM→RO`, `ZAR→CD`, `YUG→RS`, `TMP→TL`.
+Montenegro and Vatican City have no WB country codes — honest empty stock for
+those origins.
+
+### Stock — UN DESA International Migrant Stock 2024 (retained extract)
+
+The earlier DESA extract remains in the repo for provenance and comparison —
+it is **not** deleted:
+
+| Field | Value |
+|-------|--------|
+| Bundled extract | `scripts/data/diaspora-migrant-stock-2024.csv` |
+| Meta | `scripts/data/diaspora-migrant-stock-2024.meta.json` |
+
+The app’s stock mode reads the World Bank extract only. Do not remove either
+stock CSV when adding flow (or other) layers.
 
 ### Flow — Abel & Cohen bilateral estimates (2015–2020)
 
