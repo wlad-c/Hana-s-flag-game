@@ -255,7 +255,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
   "BA": [
     { id: "ba-official-national", category: "official", name: "Flag of Bosnia and Herzegovina", from: 1998, to: 9999, primary: true, path: "flags/ba.svg", design: "The national flag of Bosnia and Herzegovina, in the form adopted in 1998.", source: "https://en.wikipedia.org/wiki/Flag_of_Bosnia_and_Herzegovina" },
     { id: "ba-1992", category: "historical", name: "Flag of the Republic of Bosnia and Herzegovina (1992–1998)", from: 1992, to: 1998, path: "national-flags/ba/bosnia-1992.svg", design: "The blue flag with the white shield and gold fleurs-de-lis of the Kotromanić dynasty, flown from independence until the current design was imposed in 1998.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Bosnia_and_Herzegovina" },
-    { id: "ba-sr", category: "historical", name: "Flag of SR Bosnia and Herzegovina", from: 1946, to: 1992, priorPolity: "the Socialist Republic of Bosnia and Herzegovina within Yugoslavia", path: "national-flags/ba/bosnia-sr.svg", design: "The red flag with a red star bordered gold in the canton, as a constituent republic of Yugoslavia.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Bosnia_and_Herzegovina" },
+    { id: "ba-sr", category: "historical", name: "Flag of SR Bosnia and Herzegovina", from: 1946, to: 1992, priorPolity: "the Socialist Republic of Bosnia and Herzegovina within Yugoslavia", path: "national-flags/ba/bosnia-sr.svg", design: "A plain red field with, in the canton, the flag of Yugoslavia — blue, white and red with a gold-edged red star — outlined in gold.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Bosnia_and_Herzegovina" },
     { id: "ba-austro", category: "historical", name: "Flag of the Condominium of Bosnia and Herzegovina", from: 1878, to: 1918, sovereign: "Austria-Hungary", path: "national-flags/ba/bosnia-austro.svg", design: "The red-and-yellow flag of the Austro-Hungarian condominium, after the 1878 occupation ended Ottoman rule.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Bosnia_and_Herzegovina" },
     { id: "ba-arms", category: "coatofarms", name: "Coat of arms of Bosnia and Herzegovina", from: 1998, to: 9999, path: "national-flags/ba/bosnia-arms.svg", design: "A blue three-pointed shield with a yellow triangle and a diagonal row of white stars.", source: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Bosnia_and_Herzegovina" },
     { id: "ba-passport", category: "passport", name: "Passport of Bosnia and Herzegovina", path: "national-flags/ba/ba-passport.webp", design: "The cover of the Bosnia and Herzegovina passport.", source: "https://gicg.net/passport/ba/" },
@@ -614,7 +614,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
     { id: "cu-spain", category: "historical", name: "Flag of Spain", from: 1785, to: 1898, sovereign: "Spain", path: "historical-flags/spain-1785.png", design: "The Spanish ensign of 1785, flown until the Spanish–American War ended Spanish rule in 1898.", source: "https://en.wikipedia.org/wiki/List_of_Cuban_flags" },
     { id: "cu-burgundy", category: "historical", name: "Cross of Burgundy", from: 1521, to: 1785, sovereign: "Spain", path: "historical-flags/spain-burgundy.png", design: "The ragged saltire of Burgundy, the Spanish military flag flown over the island.", source: "https://en.wikipedia.org/wiki/List_of_Cuban_flags" },
     { id: "cu-naval-jack", category: "maritime", name: "Naval jack of Cuba", path: "national-flags/cu/cuba-naval-jack.svg", design: "The navy's jack.", source: "https://en.wikipedia.org/wiki/List_of_Cuban_flags" },
-    { id: "cu-president", category: "standard", name: "Flag of the President of Cuba", from: 1959, to: 9999, path: "national-flags/cu/cuba-president.svg", design: "The presidential flag adopted after the revolution.", source: "https://en.wikipedia.org/wiki/List_of_Cuban_flags" },
+    { id: "cu-president", category: "standard", name: "Flag of the President of Cuba", from: 1959, to: 9999, path: "national-flags/cu/cuba-president.svg", design: "A blue field bearing the national coat of arms, ringed by six white five-pointed stars.", source: "https://en.wikipedia.org/wiki/List_of_Cuban_flags" },
     { id: "cu-president-1929", category: "standard", name: "Standard of the President of Cuba (1929–1959)", from: 1929, to: 1959, path: "national-flags/cu/cuba-president-1929.svg", design: "The presidential standard of the pre-revolutionary republic.", source: "https://en.wikipedia.org/wiki/List_of_Cuban_flags" },
     { id: "cu-arms", category: "coatofarms", name: "Coat of arms of Cuba", from: 1906, to: 9999, path: "national-flags/cu/cuba-arms.svg", design: "A shield of three fields before a fasces crowned with a Phrygian cap, supported by an oak branch and a laurel wreath.", source: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Cuba" },
     { id: "cu-passport", category: "passport", name: "Passport of Cuba", path: "national-flags/cu/cu-passport.webp", design: "The cover of the Cuba passport.", source: "https://gicg.net/passport/cu/" },
@@ -3361,9 +3361,9 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "ba-sr": {
-    description: "Adopted 31 December 1946, the flag of the Socialist Republic of Bosnia and Herzegovina was a plain red field bearing a small version of Yugoslavia's own red-white-blue flag, with its red star, in the canton. Unlike Yugoslavia's other constituent republics, which flew variants of pan-Slavic tricolours reflecting a dominant national group, multi-ethnic Bosnia and Herzegovina never adopted symbols of its own during the socialist period, and instead flew this plain marker of its place within the federation.",
+    description: "Adopted on 31 December 1946, the flag of the Socialist Republic of Bosnia and Herzegovina was a plain red field with the Yugoslav federal tricolour — blue over white over red, bearing the gold-edged red star — in the canton. Red continued the plain red flag with a star that the Bosnian-Herzegovinian Partisans had flown in the war and that the republic first used; public discussion before the 1946 constitution favoured a red flag over the national pan-Slavic tricolours of Serbs and Croats, and Belgrade then added the federal tricolour in the canton to mark the republic's place within the federation. The republic also had its own coat of arms during this period, an emblem of the industry it was building.",
     sources: [
-      { title: "Flag of Bosnia and Herzegovina — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Bosnia_and_Herzegovina" },
+      { title: "Flag of Bosnia and Herzegovina — Yugoslav period (Wikipedia)", url: "https://en.wikipedia.org/wiki/Flag_of_Bosnia_and_Herzegovina#Yugoslav_period" },
     ],
   },
   "ba-austro": {
@@ -4809,9 +4809,10 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "cu-president": {
-    description: "The presidential flag bears Cuba's coat of arms: a pointed shield showing the Sierra Maestra mountains beneath a rising sun, a golden key across the Straits of Florida marking Cuba's position as gateway to the Gulf of Mexico, and a royal palm, framed by oak and laurel branches bound in the national colours and topped by a red Phrygian cap on a fasces — the cap and bundled rods together a classical emblem of liberty — adopted in this form after the 1959 revolution.",
+    description: "The flag of the president, listed as in use since 1959, carries Cuba's national coat of arms, which the revolution kept unchanged. The arms were designed by Miguel Teurbe Tolón in 1849, and the shield's specifications were set by presidential decree on 21 April 1906. The upper field is a sea between two capes with a golden key closing the strait beneath a rising sun; the lower left field has five diagonal bands of dark blue and white; the lower right is a valley with a royal palm standing before two mountains. Behind the shield is a fasces crowned with a red Phrygian cap bearing a white star, flanked by branches of laurel and holm oak.",
     sources: [
-      { title: "Coat of arms of Cuba — Grokipedia", url: "https://grokipedia.com/page/Coat_of_arms_of_Cuba" },
+      { title: "Coat of arms of Cuba — Wikipedia (official blazon)", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Cuba" },
+      { title: "List of Cuban flags — governmental flags (Wikipedia)", url: "https://en.wikipedia.org/wiki/List_of_Cuban_flags#Governmental_flags" },
     ],
   },
   "cu-president-1929": {

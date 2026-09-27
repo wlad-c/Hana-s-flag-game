@@ -2909,16 +2909,16 @@
           "priorPolity": "the Socialist Republic of Bosnia and Herzegovina within Yugoslavia",
           "commons": "Flag of Bosnia and Herzegovina (1946–1992).svg",
           "file": "ba/bosnia-sr.svg",
-          "design": "The red flag with a red star bordered gold in the canton, as a constituent republic of Yugoslavia.",
+          "design": "A plain red field with, in the canton, the flag of Yugoslavia — blue, white and red with a gold-edged red star — outlined in gold.",
           "source": "https://en.wikipedia.org/wiki/List_of_flags_of_Bosnia_and_Herzegovina",
           "sha256": "6200e4a164ffeef004ae92d020518c27c1366305ebe716bc3c009d4cfca064f7",
           "fetched": "2026-08-11",
           "meaning": {
-            "description": "Adopted 31 December 1946, the flag of the Socialist Republic of Bosnia and Herzegovina was a plain red field bearing a small version of Yugoslavia's own red-white-blue flag, with its red star, in the canton. Unlike Yugoslavia's other constituent republics, which flew variants of pan-Slavic tricolours reflecting a dominant national group, multi-ethnic Bosnia and Herzegovina never adopted symbols of its own during the socialist period, and instead flew this plain marker of its place within the federation.",
+            "description": "Adopted on 31 December 1946, the flag of the Socialist Republic of Bosnia and Herzegovina was a plain red field with the Yugoslav federal tricolour — blue over white over red, bearing the gold-edged red star — in the canton. Red continued the plain red flag with a star that the Bosnian-Herzegovinian Partisans had flown in the war and that the republic first used; public discussion before the 1946 constitution favoured a red flag over the national pan-Slavic tricolours of Serbs and Croats, and Belgrade then added the federal tricolour in the canton to mark the republic's place within the federation. The republic also had its own coat of arms during this period, an emblem of the industry it was building.",
             "sources": [
               {
-                "title": "Flag of Bosnia and Herzegovina — Vexillology Wiki",
-                "url": "https://vexillology.fandom.com/wiki/Bosnia_and_Herzegovina"
+                "title": "Flag of Bosnia and Herzegovina — Yugoslav period (Wikipedia)",
+                "url": "https://en.wikipedia.org/wiki/Flag_of_Bosnia_and_Herzegovina#Yugoslav_period"
               }
             ]
           }
@@ -9973,16 +9973,20 @@
           "to": 9999,
           "commons": "Flag of the President of Cuba.svg",
           "file": "cu/cuba-president.svg",
-          "design": "The presidential flag adopted after the revolution.",
+          "design": "A blue field bearing the national coat of arms, ringed by six white five-pointed stars.",
           "source": "https://en.wikipedia.org/wiki/List_of_Cuban_flags",
           "sha256": "506b04f3d2d7bcba9e32aa5d9f1485309f94caa388b7b38ee4516febfa89579c",
           "fetched": "2026-08-08",
           "meaning": {
-            "description": "The presidential flag bears Cuba's coat of arms: a pointed shield showing the Sierra Maestra mountains beneath a rising sun, a golden key across the Straits of Florida marking Cuba's position as gateway to the Gulf of Mexico, and a royal palm, framed by oak and laurel branches bound in the national colours and topped by a red Phrygian cap on a fasces — the cap and bundled rods together a classical emblem of liberty — adopted in this form after the 1959 revolution.",
+            "description": "The flag of the president, listed as in use since 1959, carries Cuba's national coat of arms, which the revolution kept unchanged. The arms were designed by Miguel Teurbe Tolón in 1849, and the shield's specifications were set by presidential decree on 21 April 1906. The upper field is a sea between two capes with a golden key closing the strait beneath a rising sun; the lower left field has five diagonal bands of dark blue and white; the lower right is a valley with a royal palm standing before two mountains. Behind the shield is a fasces crowned with a red Phrygian cap bearing a white star, flanked by branches of laurel and holm oak.",
             "sources": [
               {
-                "title": "Coat of arms of Cuba — Grokipedia",
-                "url": "https://grokipedia.com/page/Coat_of_arms_of_Cuba"
+                "title": "Coat of arms of Cuba — Wikipedia (official blazon)",
+                "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Cuba"
+              },
+              {
+                "title": "List of Cuban flags — governmental flags (Wikipedia)",
+                "url": "https://en.wikipedia.org/wiki/List_of_Cuban_flags#Governmental_flags"
               }
             ]
           }
