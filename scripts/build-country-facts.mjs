@@ -16,6 +16,7 @@
 // Re-run with:  node scripts/build-country-facts.mjs
 
 import { writeFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
 import { DEMOCRACY_DATA } from "./data/democracyData.mjs";
@@ -46,6 +47,18 @@ const UN_MEMBER_CODES = new Set([
 const FACT_OVERRIDES = {
   NR: { nameOfficial: "Republic of Naoero" },
 };
+
+// Sourced corrections to mledoze fields (languages, currencies, capital …). The
+// same file is applied by src/api/countries.ts after the live REST merge, so a
+// correction cannot be undone by either the regen or the live API.
+const FACT_CORRECTIONS = JSON.parse(
+  readFileSync(resolve(__dirname, "../src/data/countryFactCorrections.json"), "utf8"),
+).corrections;
+const CORRECTABLE_FIELDS = ["nameOfficial", "capital", "languages", "currencies"];
+for (const [code, c] of Object.entries(FACT_CORRECTIONS)) {
+  const fields = Object.fromEntries(CORRECTABLE_FIELDS.filter((f) => f in c).map((f) => [f, c[f]]));
+  FACT_OVERRIDES[code] = { ...(FACT_OVERRIDES[code] ?? {}), ...fields };
+}
 
 /** Verified estimates for countries missing from World Bank GDP endpoints */
 const GDP_FALLBACKS = {
