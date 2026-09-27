@@ -60,6 +60,17 @@ New finding **R03**, below. | Checked in the running app (dev server, via Philip
 - **F84 (Lääne, EE-57):** the blazon names a *kotkas* (eagle), rising and looking back, with a gold halo on red. "Silver hawk" is corrected to eagle, and the Government Office page is added as a source.
 - **F85 (Võru, EE-86):** the blazon puts the sword *langeva talana* (in bend sinister). A render of the bundled SVG shows the hilt at the lower left and the blade pointing to the upper right. "Pointing downwards" is replaced with that orientation, and the Government Office page is added as a source.
 - **F86:** `EE-37.svg` and `EE-51.svg` each carried "Flag of Elva" twice (the root `id` and the Inkscape `current-layer`). Both are renamed to the county. No `url(#…)` or `href` references them, and both files render unchanged (Harju's cross, Järva's tower). | `check-flag-meanings` and `check-subdivision-flags-bundled` pass. **Remaining for F86:** the audit's suggested per-file provenance record (entity, artwork version, source, licence) is not done; that is a larger manifest change and is unclaimed. |
+| 2026-09-27 17:05 Melbourne / 07:05 UTC | Opus 5.5 | F87, F88, F89 (NZ seats, Green co-leaders, six position contradictions) | Implemented — awaiting verification | Parliament's site is behind a bot check and the Electoral Commission archive returns 403. Evidence used instead: Wikipedia's *54th New Zealand Parliament* standings (123 MPs both at the 2023 Port Waikato by-election and as of Nov 2025; Labour 34; ACT 11) and the Green Party article (Davidson co-leader since 2018, Swarbrick since March 2024).
+- **F87:** Labour 34, ACT 11. `seatsTotal` is 123 for all four records, because the chamber's allocated and occupied membership is 123 in both dated columns; this is not a blind swap for the nominal 120. National 48 and Green 15 are **not changed**, per Codex's caution (the overview gives 49/14, Wikipedia 49/15, Hansard 48/15).
+- **F88:** co-leaders shown as `Marama Davidson; Chlöe Swarbrick`, using the dataset's existing co-leader convention.
+- **F89:** each row checked against the party's current Wikipedia infobox position:
+  - NZ-NAT, GH-NPP: grouping right → centre-right;
+  - MX-MORENA: grouping left → centre-left;
+  - ZA-EFF: grouping left → far-left;
+  - PL-PSL: label Right-wing → Centre-right (the grouping was already right);
+  - ZA-DA: label → "Centre to centre-right", grouping centre-right.
+
+New gate in `check-political-parties.mjs`: a single-category `positionRaw` must group under the same `ideologyPosition`. It fails when one fix is reverted and passes on all 842 records. | In the running app, NZ → Learn more → Political parties shows Greens "Co-leaders Marama Davidson; Chlöe Swarbrick" at 15/123 and National "Centre-right" at 48/123; all NZ logos paint and there are no page errors. `check-political-parties` passes. Also noted in `docs/POLITICAL_PARTY_AUDIT_2026.md` (NZ left unticked: NZ First and Te Pāti Māori are still missing). |
 
 ### Open handoff cautions
 
@@ -666,3 +677,4 @@ Status key: **Fixed** (on the branch, with evidence) · **In progress** · **Que
   `check-national-flags`, `check-user-facing-copy` and `check-quiz-symbol-decks` pass.
 - **27 Sep 2026 — F38 part 2 and R03.** The last 13 Grokipedia/Fandom citations were re-sourced or trimmed. Main source: the 1975 *Symbols of the State* book, which gives Misamis Occidental, Laguna, Albay, Mindoro, South Cotabato and others their official seal meanings. Romblon's and Sorsogon's explainers described an older seal than the bundled image (R03). Venezuela's Federal Dependencies explainer was removed as unsourceable. Checked in the running dev app. A deep link with `subdivisions=1` drops subdivision mode in dev (StrictMode) but works in production; this is dev-only and not fixed.
 - **27 Sep 2026 — F84–F86 (Estonia).** Lääne's hawk corrected to an eagle, and Võru's sword orientation corrected, both against the Government Office blazons plus a render of the bundled SVG. The stale "Flag of Elva" ids in the Harju and Järva SVGs are renamed. The provenance-manifest part of F86 is still open.
+- **27 Sep 2026 — F87–F89.** NZ Labour and ACT seats, the 123-seat chamber and the Green co-leaders are corrected. All six position contradictions are resolved against the parties' own Wikipedia infoboxes, and a singleton-label consistency gate is added to `check-political-parties.mjs`.
