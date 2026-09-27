@@ -16,8 +16,8 @@ This document is the shared audit and implementation record. The detailed JSON f
 
 | Agent | Assigned or observed role | Last documented state | Scope / handoff |
 |---|---|---|---|
-| Codex, this audit thread | Independent factual/artwork audit and verification of implemented fixes; audit-document edits only | **Investigating F84–F89 remediation and the new visa-access map**, claimed 27 Sep 2026 21:50 Melbourne / 11:50 UTC. No application edits claimed. | Pinned review revision `7c75c3182419e125b29cbde27e1d02935cbd6e22`. Other Opus fixes remain awaiting independent verification unless specifically recorded. |
-| Opus 5.5 (Cursor cloud agent) | Implement established findings; continue auditing and implement subsequent confirmed findings | Working on branch `cursor/learn-audit-remediation-853e`, [PR #1709](https://github.com/wladimirchagas/Hana-s-flag-game/pull/1709) (draft, **not merged, not live**). Detailed per-finding status: [Remediation log](#remediation-log--cursor-agent-from-27-september-2026) at the end of this file. | New findings from this agent are numbered **R01, R02, …** so they never collide with Codex's F-numbers. Every change below needs Codex's (or another agent's) independent verification before it is marked verified. |
+| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F84–F89 correction checks and visa F90–F92 documented 27 Sep 2026 22:05 Melbourne / 12:05 UTC; continuing media artwork follow-up. | Data baseline `7c75c318`; PR #1711 at `1ee7c785` also reviewed. No application edits. Other Opus fixes retain pending status unless separately verified. |
+| Opus 5.5 (Cursor cloud agent) | Implement findings and continue audit; see detailed remediation log | Corrections are now on `main`, as documented in Opus's log and observed through `7c75c318`; earlier PR #1709 branch-only state is superseded. | R01, R02, … remain Opus finding IDs. Independent verification and deployment are recorded separately per finding; do not treat merged as verified. |
 
 ### Required work record for every participating agent
 
@@ -32,7 +32,7 @@ For each implementation, record:
 - Remaining limitations and deployment status. Keep implementation, independent verification and public deployment as separate milestones; identify the verifying agent and revision.
 - Any departure from a recommendation and its evidence. Do not silently convert an unresolved candidate into a confirmed error.
 
-Preserve existing finding IDs and dated evidence. Mark a finding's resolution alongside it or link its resolution row here; do not erase the original diagnosis. Refresh the document before allocating new F-numbers; **F89 is the highest numbered finding at this checkpoint**, not a permanent reservation for any agent. Merge concurrent documentation changes and use the current file SHA when saving; never overwrite another agent's progress with a stale full-file copy.
+Preserve existing finding IDs and dated evidence. Mark a finding's resolution alongside it or link its resolution row here; do not erase the original diagnosis. Refresh the document before allocating new F-numbers; **F92 is the highest numbered finding at this checkpoint**, not a permanent reservation for any agent. Merge concurrent documentation changes and use the current file SHA when saving; never overwrite another agent's progress with a stale full-file copy.
 
 ### Work and resolution ledger
 
@@ -119,6 +119,8 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 
 | 2026-09-27 21:50 Melbourne / 11:50 UTC | Codex | F84–F89 remediation; new visa-access map in PR #1710 | Investigating | Independently compare corrected records/artwork and new visa data/presentation against evidence; document remaining gaps | Baseline `7c75c3182419e125b29cbde27e1d02935cbd6e22`; audit-only, no overlapping application edits. |
 
+| 2026-09-27 22:05 Melbourne / 12:05 UTC | Codex | F84–F89 verification; visa F90–F92; PR #1711; public bundle | Independently verified bounded checks; new findings open | 108 primary visa-category comparisons, 37,830 reproduction checks, 842 party consistency checks, two full-image raster equality checks. See new section below. | Evidence commits `303f9224`, `1bbb1747`, `fb9c2331`, `4fbdfd06`; exact readback verified. Public bundle `07b14a3`. F87 denominator, provenance and broader universal verification remain open. |
+
 ### Open handoff cautions
 
 - Universal verification remains incomplete. The 82 NZ field assessments include unresolved and partly verified fields; the 842-record scan checks only internal position consistency. Neither is blanket factual certification.
@@ -128,6 +130,59 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
 - The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
 - Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
+
+## Visa-access audit and independent remediation checks — 27 September 2026
+
+**Codex checkpoint: 22:05 Melbourne / 12:05 UTC.** Data reviewed at `7c75c3182419e125b29cbde27e1d02935cbd6e22` (PR #1710), with the subsequent legend/count change in `1ee7c78515b494e25aa5e40b59fabd07af47a7d9` (PR #1711) also inspected. The [change inventory](audit/REMEDIATION_CHANGE_INVENTORY_2026-09-27.json) records 51 commits / 113 changed paths from `e3c1a35` to `7c75c318`, plus PR #1711's four paths. Inventory inclusion is **not factual verification**.
+
+The [visa evidence ledger](audit/VISA_ACCESS_CLAIM_VERIFICATION_2026-09-27.json) separates:
+- **Complete reproduction check:** all **37,830** foreign passport–destination pairs (195 × 194) match the bundled third-party CSV; all 39,601 source pairs are unique. Bundled and pinned upstream CSVs have identical Git blob `c90054300eb2e0615ebf088412c3040d6958026f` and SHA-256 `d985f861c1d03be9de61a9257c3fbb7b4ef94677b5e3827012cc4d602ab45fcf`.
+- **Bounded primary-policy checks:** **108** pairs checked under stated conditions: China's 50-country unilateral exemption list, New Zealand's 57 included waiver origins, and the Australian-passport exception. **106 category matches and 2 errors.** This targeted sample is not an estimate of the overall error rate. The NZ matches use the product's explicit combined eVisa/ETA category; eligibility, residence/passport type, visit purpose and duration conditions still apply.
+- **Israel qualification check:** all 194 foreign origins are yellow; underlying source tokens are **97 `eta` and 97 `e-visa`**, not 194 ETA entries. Official sources do not support unconditional eVisa access for every visa-required nationality.
+- **PR #1711:** counts independently recomputed for all 195 passport rows; zero arithmetic discrepancies, totals 195 including home. Black home / dark-red no-admission presentation matches the new documentation. This does not validate the underlying immigration rules.
+
+### F90 — China visa exemption missing for British and Canadian ordinary passports (P1)
+
+Both `GB→CN` and `CA→CN` are stored as `visa-required`. China's official [50-country list, dated 17 February 2026](https://en.nia.gov.cn/n147418/n147463/c183390/content.html), includes both. Its Canadian embassy's [Chinese notice](https://ca.china-embassy.gov.cn/zytz/202602/t20260216_11860600.htm) and [English notice](https://ca.china-embassy.gov.cn/eng/zytz_0/202602/t20260216_11860601.htm), published 15 February, specify exemption beginning **00:00 on 17 February 2026**, through **24:00 on 31 December 2026, Beijing time**, for qualifying ordinary-passport short visits of up to **30 days**. Other visit purposes or ineligible travellers still need the appropriate visa.
+
+These two entries were already wrong on the matrix's stated edition date, **17 February 2026**. The other 48 origins on that dated list match at category level. **Recommendation:** correct through a sourced override/generation process that retains the underlying third-party snapshot, effective dates, conditions and primary-policy citations. The edition label alone cannot establish correctness.
+
+### F91 — Israel's blanket eVisa classification drops nationality/residence eligibility (P1)
+
+`src/data/visaAccess.ts` labels every one of 194 foreign origins `evisa`. The official [PIBA eVisa-B2 page](https://israel-entry.piba.gov.il/learn-about-evisa-b2/) and [Mumbai consulate notice](https://embassies.gov.il/mumbai/en/announcements/evisa-israel) restrict the pilot to Indian/Sri Lankan passport holders residing in India/Sri Lanka. The PIBA page's linked public JavaScript was read statically; its English `evisaDescription2` confirms these conditions. URL and SHA-256 are preserved in the ledger.
+
+A concrete counterexample is **Chinese passport holders residing in Japan**: Israel's [2026 Tokyo consular instructions in Japanese and English](https://embassies.gov.il/sites/default/files/2026-01/b2_entry_visa_for_chinese_citizens_2026_1.pdf) require a prior B2 application with original passport and documents submitted by registered mail. That route contradicts an unconditional electronic-visa classification for that traveller profile. The Indian/Sri Lankan entries are **conditionally supported**, not automatically wrong.
+
+**Recommendation:** preserve separate ETA/eVisa source types and passport-type/residence/purpose conditions, backed by destination-government sources. Re-review the 97 `e-visa` source entries. Do not infer 194 replacement classifications from this counterexample or silently equate an online application form with issuance of an eVisa. Where rules are unresolved, retain an explicit unknown/unverified state.
+
+### F92 — Visa completeness checker can certify an incomplete matrix (P2)
+
+The documentation says `check-visa-access.mjs` fails when any destination is missing. An isolated reproduction removed **GB→CN from both CSV and generated object**, then updated the recorded CSV hash. The checker exited **0**, printing **195 passports × 194 destinations**, although GB had only **193** foreign destinations. Clean baseline passed; the same mutation also passed with PR #1711's checker. Exact hashes, output and steps are in the ledger.
+
+The checker compares each generated row to the same CSV-derived row without asserting the complete expected destination set. The **generator** does check the row count; this finding is specifically the independently advertised checker guarantee. **Recommendation:** assert `UN_CODES minus origin` equality for every row, reject duplicate source pairs, and calculate success counts from inspected data. Include an omission test that fails even when source and generated data omit the same pair. No production file was mutated by Codex.
+
+### Independent verification of Opus's F84–F89 corrections
+
+Detailed [remediation evidence](audit/REMEDIATION_INDEPENDENT_VERIFICATION_2026-09-27.json) preserves the exact scope of closure:
+
+| Finding | Independent result at `7c75c318` | Remaining qualification |
+|---|---|---|
+| F84 | **Specific fix verified:** Lääne description now says eagle, matching the Estonian Government Office blazon. | Other dates/interpretations keep their earlier per-claim statuses. |
+| F85 | **Specific fix verified:** Võru sword orientation now matches the inspected artwork. | Does not close all historical symbolism claims. |
+| F86 | **Identifier fix verified:** both unrelated Elva identifiers removed; old/new full-image raster pixels identical. | Per-file provenance/version/licence manifest remains open. |
+| F87 | **Partly resolved:** Labour 34 and ACT 11 corroborated by Parliament. | Current seat denominator/membership needs a consistent as-of basis; all four 123 denominators are not independently certified as current occupied membership. |
+| F88 | **Specific fix verified:** both Green co-leaders named, supported by their current party profiles. | No blanket certification of all party fields. |
+| F89 | **Internal contradiction fixed:** all 842 records rescanned; six previous singleton-label mismatches gone; new consistency guard present. | This does not independently certify all ideological classifications or range judgments. |
+
+F87 source conflict remains explicit: the [Parliament overview](https://www3.parliament.nz/en/mps-and-electorates/political-parties/) still shows National 49 / Green 14, while the [official former-member record](https://www3.parliament.nz/mi/mps-and-electorates/former-members-of-parliament/collins-judith/) ends Judith Collins's Papakura tenure on **14 May 2026**. A November 2025 membership table is insufficient to establish September 2026 occupied membership. Do not resolve this by blindly choosing either the overview or the app. F88 was corroborated with [Davidson's](https://www.greens.org.nz/marama_davidson) and [Swarbrick's](https://www.greens.org.nz/chloe_swarbrick) current profiles.
+
+### Public deployment at this checkpoint
+
+The [new deployment ledger](audit/LIVE_VISA_AND_REMEDIATION_2026-09-27.json) records publicly served bundle `index-CPKeRKiC.js`, build **`07b14a3` / 2026-09-27T11:52:47.632Z**. Static extraction of the complete visa object matches all 37,830 repository pairs, so **F90 and F91 reach the public bundle**. Corrected NZ seat values/co-leader names and National grouping are also in that bundle. This supersedes the earlier `014d3a4` deployment observation **for this retrieved deployment only**.
+
+Method: read-only HTTP retrieval and static inspection, without executing downloaded JavaScript. This is **not** a new rendered-map/UI check, does not establish individual browser cache state, and predates PR #1711. Other Opus fixes remain awaiting independent verification unless separately documented.
+
+**Progress:** universal verification remains incomplete. The earlier approximate **10% complete / 90% remaining** workload estimate is still the best rough estimate; these 37,830 reproduction comparisons must not be counted as 37,830 independently verified visa policies. A defensible atomic-claim percentage still requires a complete inventory. Evidence files above were saved to `main` and read back exactly; no application changes made by Codex.
 
 ## Public deployment reconciliation — 27 September 2026
 
