@@ -2,7 +2,53 @@
 
 **Universal verification is not complete.** This report records completed full-dataset comparisons and new image/metadata findings. It does not certify all 4,638 records in the seven large registries at `db3ba05`, every sentence, every historical date, every boundary or all artwork as correct. Unchecked and unresolved claims remain explicitly unverified; an image decoding successfully or matching a third-party download does not establish authenticity.
 
-This supplements [the original audit](LEARN_FACTUAL_AUDIT_2026-09-13.md) and [the continuation findings F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md). No application data was changed. The evidence ledgers below are intended to preserve both positive verification and failures for subsequent work.
+This supplements [the original audit](LEARN_FACTUAL_AUDIT_2026-09-13.md) and [the continuation findings F40–F59](LEARN_FACTUAL_AUDIT_2026-09-19.md). No application data was changed by Codex during the audit work recorded below. Implementation by other agents must be tracked in the shared log. The evidence ledgers below are intended to preserve both positive verification and failures for subsequent work.
+
+## Shared agent coordination and progress log
+
+**Coordination checkpoint: 27 September 2026, 14:02 Australia/Melbourne (04:02 UTC).** The owner reports that an **Opus 5.5 agent** has been asked to implement findings identified so far, then continue the audit while implementing newly established fixes. This section records that assignment; it does **not** establish that Opus has read this document, started a particular item, or completed any fix. Each agent must record its own observed work here.
+
+This document is the shared audit and implementation record. The detailed JSON files under `docs/audit/` remain supporting evidence. Existing dated findings describe the revision actually inspected and must remain recoverable after corrections.
+
+### Ownership and current state
+
+| Agent | Assigned or observed role | Last documented state | Scope / handoff |
+|---|---|---|---|
+| Codex, this audit thread | Evidence collection and independent factual/artwork verification; audit-document edits | Completed and saved findings through **F89**, NZ field ledger, global position consistency scan, and public-build reconciliation. Current action: coordination update. **No application data or artwork modified by this agent.** | Audited application baseline `e3c1a35e2d7930630c616be12c6510576ded0f6a`; last inspected public build `014d3a4`. No application-fix ownership claimed. |
+| Opus 5.5, separate agent reported by owner | Implement established findings; continue auditing and implement subsequent confirmed findings | Assignment reported by owner; implementation progress and commits **not yet recorded here** | Opus should enter the finding IDs / files it claims before changing them, and update this log as work proceeds. Codex cannot observe that separate agent's internal session. |
+
+### Required work record for every participating agent
+
+Before starting a batch, add or update a row below with the agent, timestamp, finding IDs or precisely bounded new audit scope, affected files, current status and reason for the change. Read the current document and repository revision first. Do not assume an old local copy reflects another agent's work.
+
+Use explicit statuses: **claimed**, **investigating**, **implemented — awaiting verification**, **independently verified**, **blocked**, or **superseded**. A source comparison that confirms existing data is a verified check, not an implemented fix. Keep unsupported claims and conflicting sources unresolved.
+
+For each implementation, record:
+- Finding ID, exact change and factual reason, including primary evidence and relevant historical/as-of dates.
+- Commit or PR, affected records/assets/files, and any linked evidence-ledger update.
+- Validation actually performed and its outcome. Structural checks, successful image decoding and a passing build do not establish factual or visual identity.
+- Remaining limitations and deployment status. Keep implementation, independent verification and public deployment as separate milestones; identify the verifying agent and revision.
+- Any departure from a recommendation and its evidence. Do not silently convert an unresolved candidate into a confirmed error.
+
+Preserve existing finding IDs and dated evidence. Mark a finding's resolution alongside it or link its resolution row here; do not erase the original diagnosis. Refresh the document before allocating new F-numbers; **F89 is the highest numbered finding at this checkpoint**, not a permanent reservation for any agent. Merge concurrent documentation changes and use the current file SHA when saving; never overwrite another agent's progress with a stale full-file copy.
+
+### Work and resolution ledger
+
+| Updated (timezone stated) | Agent | Finding / bounded scope | Status | Action and reason | Commit / validation / remaining work |
+|---|---|---|---|---|---|
+| 2026-09-27 14:02 Melbourne / 04:02 UTC | Codex | Shared coordination record | Documented | Record owner's Opus assignment and distinguish implementation from independent verification | Application unchanged. Read repository head `2e3838a12fade330945ba1e37161f157358e0d66` before this update; no Opus implementation commit was visible in the latest five commits inspected. |
+| 2026-09-27, before coordination checkpoint | Codex | F87–F89; NZ party facts, logos/metadata, public bundle; 842-record position consistency scan | Audit evidence saved; fixes not implemented by Codex | See findings and linked ledgers below; exact artwork versions and source conflicts remain qualified | Report/evidence commits `014d3a4`, `1146207`, `3589908`, `8eda019`, `2e3838a`; saved files read back and verified. |
+| 2026-09-27, owner report | Opus 5.5 | Existing findings and subsequent audit/fix work | Assigned; awaiting agent's own scope/progress entry | Owner requested implementation and continuation in parallel with documentation | Opus to record claimed batches, actual commits and validation here. No completion inferred. |
+
+### Open handoff cautions
+
+- Universal verification remains incomplete. The 82 NZ field assessments include unresolved and partly verified fields; the 842-record scan checks only internal position consistency. Neither is blanket factual certification.
+- F87: Labour 34 and ACT 11 are supported, but distinguish nominal chamber size, allocated seats, occupied seats and dated party membership. Do not blindly replace every 120 denominator with 123.
+- F88: use dated co-leadership information, not a single replacement name that omits the other co-leader.
+- F89: resolve the six contradictions from attributable evidence; do not automatically select either the normalized or raw classification as correct.
+- NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
+- The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
+- Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
 
 ## Public deployment reconciliation — 27 September 2026
 
