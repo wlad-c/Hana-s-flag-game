@@ -157,6 +157,8 @@ for (const [label, src, needle] of [
   ["LearnPage", learn, "diasporaMapMode.kind"],
   ["DiasporaMapControl", control, "Living abroad now"],
   ["DiasporaMapControl", control, "Moved 2015"],
+  ["DiasporaMapControl", control, "draftKind"],
+  ["DiasporaMapControl", control, "pickMeasure"],
   ["DiasporaMapLegend", legend, "DIASPORA_STOCK_SOURCE"],
   ["DiasporaMapLegend", legend, "DIASPORA_FLOW_SOURCE"],
   ["diasporaColors", lib, "getDiasporaColorOverlay"],

@@ -18,10 +18,14 @@ export type DiasporaMapControlProps = {
 /**
  * Learn world-map toolbar: diaspora STOCK (foreign-born living abroad) or
  * FLOW (estimated movers in 2015–2020). Not ethnic ancestry.
+ *
+ * Measure is chosen first (Stock | Flow), then one shared country list —
+ * stacking two 195-row lists buried Flow below the fold.
  */
 export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [draftKind, setDraftKind] = useState<DiasporaMeasure>("stock");
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const popoverStyle = usePopoverBounds(open, ref, 420);
@@ -46,11 +50,12 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
 
   useEffect(() => {
     if (open) {
+      setDraftKind(mode?.kind ?? "stock");
       queueMicrotask(() => inputRef.current?.focus());
     } else {
       setQuery("");
     }
-  }, [open]);
+  }, [open, mode?.kind]);
 
   const select = (next: DiasporaMapMode) => {
     blurActiveElementThenRun(() => {
@@ -80,38 +85,13 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
     });
   }, [normalizedQuery]);
 
-  const countryList = (kind: DiasporaMeasure) => (
-    <ul
-      className="passport-map-control__list"
-      role="listbox"
-      aria-label={
-        kind === "stock"
-          ? "Origin countries — foreign-born stock"
-          : "Origin countries — 2015–2020 flows"
-      }
-    >
-      {filteredCountries.length === 0 ? (
-        <li className="passport-map-control__empty">No matching countries</li>
-      ) : (
-        filteredCountries.map((c) => {
-          const active = mode?.kind === kind && mode.code === c.code;
-          return (
-            <li key={`${kind}-${c.code}`}>
-              <button
-                type="button"
-                role="option"
-                aria-selected={active}
-                className={`map-view-control__preset${active ? " map-view-control__preset--active" : ""}`}
-                onClick={() => select({ kind, code: c.code })}
-              >
-                {c.name}
-              </button>
-            </li>
-          );
-        })
-      )}
-    </ul>
-  );
+  const pickMeasure = (kind: DiasporaMeasure) => {
+    setDraftKind(kind);
+    // If a country is already selected, switch measure in place without closing.
+    if (mode) {
+      onChange({ kind, code: mode.code });
+    }
+  };
 
   return (
     <div className="democracy-map-control diaspora-map-control" ref={ref}>
@@ -153,44 +133,84 @@ export function DiasporaMapControl({ mode, onChange }: DiasporaMapControlProps) 
               Off (Default map)
             </button>
 
-            <label className="passport-map-control__filter-label" htmlFor="diaspora-map-filter">
-              Filter countries
-            </label>
-            <input
-              id="diaspora-map-filter"
-              ref={inputRef}
-              type="search"
-              className="passport-map-control__filter"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Type to filter…"
-              autoComplete="off"
-              autoCorrect="off"
-              spellCheck={false}
-            />
-
             <div className="democracy-map-control__group">
               <hr className="democracy-map-control__divider" aria-hidden="true" />
-              <p className="democracy-map-control__group-label">
+              <p className="democracy-map-control__group-label">Measure</p>
+              <button
+                type="button"
+                className={`map-view-control__preset${draftKind === "stock" ? " map-view-control__preset--active" : ""}`}
+                onClick={() => pickMeasure("stock")}
+                aria-pressed={draftKind === "stock"}
+              >
                 Living abroad now (foreign-born stock, 2020)
+              </button>
+              <button
+                type="button"
+                className={`map-view-control__preset${draftKind === "flow" ? " map-view-control__preset--active" : ""}`}
+                onClick={() => pickMeasure("flow")}
+                aria-pressed={draftKind === "flow"}
+              >
+                Moved 2015–2020 (estimated flows)
+              </button>
+              <p
+                className="passport-map-control__empty"
+                style={{ margin: "0.35rem 0 0.5rem", fontSize: "0.75rem" }}
+              >
+                {draftKind === "flow"
+                  ? "Estimated movers during that five-year window (Abel & Cohen), not a lifetime stock."
+                  : "People born in the origin who live in each destination today — not ethnic descendants."}
               </p>
-              <p className="passport-map-control__empty" style={{ margin: "0 0 0.4rem", fontSize: "0.75rem" }}>
-                People born in the origin who live in each destination today — not
-                ethnic descendants.
-              </p>
-              {countryList("stock")}
             </div>
 
             <div className="democracy-map-control__group">
               <hr className="democracy-map-control__divider" aria-hidden="true" />
-              <p className="democracy-map-control__group-label">
-                Moved 2015–2020 (estimated flows)
-              </p>
-              <p className="passport-map-control__empty" style={{ margin: "0 0 0.4rem", fontSize: "0.75rem" }}>
-                Estimated movers during that five-year window (Abel &amp; Cohen), not
-                a lifetime stock.
-              </p>
-              {countryList("flow")}
+              <p className="democracy-map-control__group-label">Origin country</p>
+              <label className="passport-map-control__filter-label" htmlFor="diaspora-map-filter">
+                Filter countries
+              </label>
+              <input
+                id="diaspora-map-filter"
+                ref={inputRef}
+                type="search"
+                className="passport-map-control__filter"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Type to filter…"
+                autoComplete="off"
+                autoCorrect="off"
+                spellCheck={false}
+              />
+              <ul
+                className="passport-map-control__list"
+                role="listbox"
+                aria-label={
+                  draftKind === "stock"
+                    ? "Origin countries — foreign-born stock"
+                    : "Origin countries — 2015–2020 flows"
+                }
+              >
+                {filteredCountries.length === 0 ? (
+                  <li className="passport-map-control__empty">No matching countries</li>
+                ) : (
+                  filteredCountries.map((c) => {
+                    const active =
+                      mode?.kind === draftKind && mode.code === c.code;
+                    return (
+                      <li key={c.code}>
+                        <button
+                          type="button"
+                          role="option"
+                          aria-selected={active}
+                          className={`map-view-control__preset${active ? " map-view-control__preset--active" : ""}`}
+                          onClick={() => select({ kind: draftKind, code: c.code })}
+                        >
+                          {c.name}
+                        </button>
+                      </li>
+                    );
+                  })
+                )}
+              </ul>
             </div>
           </div>
         </div>
