@@ -16,7 +16,7 @@ This document is the shared audit and implementation record. The detailed JSON f
 
 | Agent | Assigned or observed role | Last documented state | Scope / handoff |
 |---|---|---|---|
-| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F84–F89 correction checks and visa F90–F92 documented 27 Sep 2026 22:05 Melbourne / 12:05 UTC; continuing media artwork follow-up. | Data baseline `7c75c318`; PR #1711 at `1ee7c785` also reviewed. No application edits. Other Opus fixes retain pending status unless separately verified. |
+| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F93–F98 migration/source-pipeline findings documented 28 Sep; World Bank positive-pair comparison complete; UN/flow primary comparison and browser visuals blocked. | Latest application baseline `044711a5`; public build `71e380b` verified. Audit-only edits. Opus remediation milestones remain separately recorded. |
 | Opus 5.5 (Cursor cloud agent) | Implement findings and continue audit; see detailed remediation log | Corrections are now on `main`, as documented in Opus's log and observed through `7c75c318`; earlier PR #1709 branch-only state is superseded. | R01, R02, … remain Opus finding IDs. Independent verification and deployment are recorded separately per finding; do not treat merged as verified. |
 
 ### Required work record for every participating agent
@@ -32,13 +32,14 @@ For each implementation, record:
 - Remaining limitations and deployment status. Keep implementation, independent verification and public deployment as separate milestones; identify the verifying agent and revision.
 - Any departure from a recommendation and its evidence. Do not silently convert an unresolved candidate into a confirmed error.
 
-Preserve existing finding IDs and dated evidence. Mark a finding's resolution alongside it or link its resolution row here; do not erase the original diagnosis. Refresh the document before allocating new F-numbers; **F92 is the highest numbered finding at this checkpoint**, not a permanent reservation for any agent. Merge concurrent documentation changes and use the current file SHA when saving; never overwrite another agent's progress with a stale full-file copy.
+Preserve existing finding IDs and dated evidence. Mark a finding's resolution alongside it or link its resolution row here; do not erase the original diagnosis. Refresh the document before allocating new F-numbers; **F98 is the highest numbered finding at the 28 September migration checkpoint**, not a permanent reservation for any agent. Merge concurrent documentation changes and use the current file SHA when saving; never overwrite another agent's progress with a stale full-file copy.
 
 ### Work and resolution ledger
 
 | Updated (timezone stated) | Agent | Finding / bounded scope | Status | Action and reason | Commit / validation / remaining work |
 |---|---|---|---|---|---|
-| 2026-09-28 15:02 Melbourne / 05:02 UTC | Codex | Changes since `bf7b7709` through `044711a5`: new diaspora stock/flow and migrant-origin layers, 31 changed files | Investigating | Owner reconfirmed Opus implementation/continuation assignment. Codex claims independent audit of new migration datasets, extraction/mapping, labels and public rendering; application fixes remain with Opus. Preserve all existing remediation entries. | Four new commits inventoried. Checking primary-source definitions and reproducibility; no new findings or deployment claims yet. |
+| 2026-09-28, Melbourne | Codex | F93–F98; migration delta through `044711a5` | Independently verified — findings; fixes unclaimed | All 10,037 positive World Bank pairs match; 27,019 zero cells dropped; temporal/definition, refresh, legend and live-check assurance issues documented. | Evidence `6c0c09e`; migration checks pass internally; live build `71e380b` verified; UN/flow downloads 403 and browser stalled. Not universal completion. |
+| 2026-09-28 14:59 Melbourne / 04:59 UTC (claim commit time) | Codex | Changes since `bf7b7709` through `044711a5`: new diaspora stock/flow and migrant-origin layers, 31 changed files | Investigating | Owner reconfirmed Opus implementation/continuation assignment. Codex claims independent audit of new migration datasets, extraction/mapping, labels and public rendering; application fixes remain with Opus. Preserve all existing remediation entries. | Four new commits inventoried. Checking primary-source definitions and reproducibility; no new findings or deployment claims yet. |
 | 2026-09-27 14:02 Melbourne / 04:02 UTC | Codex | Shared coordination record | Documented | Record owner's Opus assignment and distinguish implementation from independent verification | Application unchanged. Read repository head `2e3838a12fade330945ba1e37161f157358e0d66` before this update; no Opus implementation commit was visible in the latest five commits inspected. |
 | 2026-09-27, before coordination checkpoint | Codex | F87–F89; NZ party facts, logos/metadata, public bundle; 842-record position consistency scan | Audit evidence saved; fixes not implemented by Codex | See findings and linked ledgers below; exact artwork versions and source conflicts remain qualified | Report/evidence commits `014d3a4`, `1146207`, `3589908`, `8eda019`, `2e3838a`; saved files read back and verified. |
 | 2026-09-27, owner report | Opus 5.5 | Existing findings and subsequent audit/fix work | Assigned; awaiting agent's own scope/progress entry | Owner requested implementation and continuation in parallel with documentation | Opus to record claimed batches, actual commits and validation here. No completion inferred. |
@@ -131,6 +132,82 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
 - The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
 - Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
+
+## Migration-layer audit — 28 September 2026
+
+**Agent: Codex. Application revision: `044711a56878091f42e00e0a032989262d297b94`.** Four application commits since `bf7b7709` changed 31 paths, introducing diaspora stock/flow and migrant-origins layers. This pass independently checks the World Bank extraction, reads all new extraction/build/check/control/legend/colour code, and reconciles the deployed bundle. It does not certify all migration estimates or the wider application.
+
+Evidence: [Migration source/implementation ledger](audit/MIGRATION_LAYER_VERIFICATION_2026-09-28.json), saved in commit `6c0c09e`.
+
+### Completed comparisons and limits
+
+| Check | Result | Limit |
+|---|---|---|
+| Original World Bank WDR 2023 migration archive and workbook | Downloaded; both SHA-256 hashes match the committed metadata | Establishes exact source-file identity |
+| All 2020 source rows and retained positive pairs | 77,618 male/female rows read; **10,037/10,037 retained positive pairs match**, no numeric differences | Source agreement, not independent validation of the source estimates |
+| Legacy ISO3 aliases | Workbook labels confirm ROM=Romania, ZAR=DR Congo, YUG=Serbia, TMP=Timor-Leste | In particular, YUG→RS is not classified as a misidentification merely from its historical code |
+| Source zeros | **27,019** eligible off-diagonal zero cells omitted | See F95; a source zero is not proof of real-world absence |
+| Two retained UN DESA CSVs | All 8,178 positive pairs agree under transposition; migrant-origins CSV additionally preserves 235 zeros | Internal agreement only: direct primary workbook retrieval returned HTTP 403 |
+| Abel–Cohen flow provenance | Publisher version 8 (26 March 2025) confirms period, IMS2024/WPP2024 inputs, file 53235671, `da_pb_closed`, and CC BY 4.0 | Both source download URLs returned HTTP 403; **17,965 flow values remain independently unverified** |
+| Existing migration checks | Both exit 0 | They compare committed CSVs with generated data and check source strings; they do not prove upstream agreement or rendered behaviour |
+| Public deployment | Bundle `assets/index-BdAwni6S.js`, build `71e380b`, timestamp `2026-09-28T05:00:43.002Z`; ancestry verified after fetching history | Bundle text/commit checked; browser creation stalled and was interrupted, so no rendered-UI pass is claimed |
+
+World Bank positive examples independently reproduced: Japan→Brazil **62,296**, Australia→US **118,905**, Serbia→Germany **184,574**. These are source values for **2020**, not current counts. The flow dataset's 2015–2020 estimates were added after the original 2019 paper; the [publisher's versioned data page](https://figshare.com/articles/dataset/Bilateral_international_migration_flow_estimates_for_200_countries_1990-1995_to_2010-2015_/7731233) establishes this, so their absence from the original paper's 1990–2015 window is not itself an error.
+
+### F93 — 2020 stock is described as people living abroad “now” and “today” (P2)
+
+**Confirmed temporal misstatement.** `DiasporaMapControl.tsx` lines 145/161 say “Living abroad now (foreign-born stock, 2020)” and “live in each destination today”; `diasporaMeasureLabel()` repeats “now.” `docs/DIASPORA_MAP.md` repeats the same present-time claim. The correct workbook column is 2020, and the legend already gives that year. All relevant present-time strings were found in the live bundle.
+
+Use “Living abroad in 2020” and past-tense explanatory text throughout. Keep the source edition and observation year distinct. Update the checker too: `check-diaspora.mjs` currently requires the exact “Living abroad now” substring, which would reject the factual correction. This recommendation is to replace the false expectation, not remove coverage checks.
+
+### F94 — UN migrant stock is universally labelled birthplace-based; documentation also misstates cross-layer equivalence (P2)
+
+**Confirmed definition/provenance problem.** `MigrantOriginsPanelRows.tsx` labels every pair “Born in {origin}, living in {destination}”; generated data and documentation make the same unconditional claim. UN DESA's [2024-edition methodological publication](https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_intlmigstock_2024_key_facts_and_figures_advance-unedited.pdf) says birthplace is preferred but citizenship is used when birthplace data are unavailable. That statement was recovered from the indexed UN publication and corroborated by [Germany's official statistical office](https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Population-Labour-Social-Issues/DemographyMigration/Migrants.html); direct UN PDF retrieval failed. Do not infer which destinations use which basis without the workbook/source notes.
+
+Use “International migrant stock from …” with a visible birthplace/citizenship qualification, or carry destination-specific basis metadata before using “born in.” The World Bank workbook separately defines its own `mig` field as birthplace-based; this finding does not automatically relabel that series.
+
+In addition, `docs/MIGRANT_ORIGINS.md` lines 49–52 still says the blue and green maps use the same UN 2024 table. Active green stock now uses World Bank **2020** while blue stock uses UN **2024**. They are conceptually opposite directions but **not numerical inverses of one matrix**. Document both source/year combinations and avoid implying that changing direction preserves a corridor's value.
+
+### F95 — Published zero cells become “No stock reported” (P2)
+
+**Confirmed loss of source status.** `extract-diaspora-wb.mjs` drops every `mig <= 0` before summing; `diasporaValueFor()` only returns positive numbers; `LearnPage.tsx` then displays “No stock reported” for missing retained pairs. Independent extraction found **27,019** eligible 2020 country-pair cells whose male/female sum is explicitly zero in the workbook but absent from the app. Examples include AU→AF, AU→AO, AU→AL and AU→AE.
+
+The legend's broader “no positive stock” wording is compatible with a zero, but the tooltip's assertion of no reported stock is not the same statement. Preserve separate statuses for source zero, source missing, filtered geography and missing origin; display the source's zero with a methodological qualification. Do not convert an upstream modelled/encoded zero into a claim that nobody lives there. Retaining only positive shading is possible without destroying the source status.
+
+The flow pipeline also omits zeros, but no equivalent primary count is claimed because the upstream flow CSV could not be retrieved.
+
+### F96 — The documented World Bank refresh cannot run from a clean checkout (P2)
+
+**Reproduced.** Running the documented command with the exact original workbook and Python/openpyxl available exits 1 with:
+
+`FileNotFoundError: [Errno 2] No such file or directory: '/tmp/migrant/m49.csv'`
+
+The absolute path is hard-coded at `scripts/extract-diaspora-wb.mjs:32`; that dependency is neither bundled nor created by the documented procedure. No generated application data was changed by the failed run. The independent comparison above deliberately used a separate audit extractor, so the positive numeric result does not clear the refresh failure.
+
+Commit and pin the required alpha-2/alpha-3 mapping (or use an explicitly declared dependency), resolve it relative to the repository, and run the extraction in a clean temporary working directory. Also compute `zipSha256` from the archive actually supplied or remove it from workbook-only refresh output: the current script writes a fixed historical archive hash even when invoked with a different workbook. The flow refresh is manual prose rather than a committed extractor; preserve a reproducible filter/rounding/mapping procedure for that source too.
+
+### F97 — Migration legends do not share their maps' colour calculation; empty diaspora origins contradict the black-origin key (P2)
+
+**Confirmed from implementation; rendered appearance not checked this pass.** The diaspora map linearly interpolates only its two endpoint colours after log-normalising values, while the legend interpolates a different six-stop palette. At normalised position 0.5, the map's RGB interpolation gives `#6ca07d`, whereas the legend lies between `#5cb87a` and `#2d8a4e`. The migrant-origins map uses five blue stops, but its legend uses only the light/dark endpoints. Thus matching positions on the legend and map do not encode the same colour. The diaspora key also omits disclosure that its numeric scale is logarithmic.
+
+For stock origins ME and VA, `diasporaScale()` is null and `getDiasporaColorOverlay()` returns null before inserting the origin's black colour. Nevertheless `DiasporaMapLegend` always shows a black-origin key and a generic fewer→more gradient. This is an unsupported empty-data presentation, not evidence that the missing stocks are zero.
+
+Derive map and legend from one colour/scale function; label logarithmic and per-selection scaling; explicitly show an empty-data state; keep the origin black if that is what the key promises. Verify these cases in the running app before marking this finding independently resolved.
+
+### F98 — Live checker turns unavailable commit ancestry into a false “site behind” conclusion (P2)
+
+**Reproduced assurance failure.** From the fresh depth-1 checkout at `044711a`, `check-live-build.mjs` correctly read live build `71e380b` but could not resolve that newer object locally. Its catch branch treated any `git merge-base --is-ancestor` error as false and asserted that the site was behind. After `git fetch origin main --depth=10`, ancestry `044711a`→`71e380b` succeeded and the live check passed. The initial error was not evidence of a deployment outage.
+
+Distinguish Git exit 1 (known non-ancestor) from exit 128/unknown object or incomplete history; fetch the observed revision when permitted, or return **inconclusive**. Keep actual deployment verification separate from a green workflow and from browser visual verification. No deployment was restarted because the observed site already contained the audited application changes.
+
+### Handoff and unfinished coverage
+
+F93–F98 are established audit findings, **not implemented fixes**. Opus may claim them in the shared log; Codex has not changed application data, generators, tests or UI. Preserve Opus's existing R-number findings and work ownership.
+
+Still required for this batch: primary numeric checks of all UN/flow values, destination-specific migration definitions/territorial notes, raw-zero interpretation, and rendered colour/tooltip/selection checks. The browser stall is a concrete visual-verification blocker; the 403 responses are concrete source-retrieval blockers. Neither makes a claim false by itself.
+
+All earlier outstanding work remains open, including F61 media captions, F90–F92 visa corrections, unresolved institutional/media metadata, flags/arms/passport dating, populations and complete historical boundaries. The earlier informal 10% estimate is not a measured completion percentage and is not upgraded by this batch.
+
 
 ## Visa-access audit and independent remediation checks — 27 September 2026
 
