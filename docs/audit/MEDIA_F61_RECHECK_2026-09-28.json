@@ -1,0 +1,134 @@
+{
+  "checkedAt": "2026-09-28",
+  "agent": "Codex",
+  "revision": "044711a56878091f42e00e0a032989262d297b94",
+  "scope": "F61 ten prior mismatch records plus four variant caveats",
+  "method": "Load current TypeScript registry, render each of ten remaining images using sharp, visually inspect labelled montage and Japan Times close-up, compare all ten retained hashes with original MEDIA_IMAGE_VERIFICATION_2026-09-20.json. No application changes.",
+  "results": {
+    "confirmedCurrentCaptionMismatches": 4,
+    "removedRecords": 4,
+    "withdrawnAuditorError": 1,
+    "broadenedCaption": 1,
+    "variantCaveats": 4,
+    "remainingAssetHashesMatchOriginal": 10
+  },
+  "limits": [
+    "Visual caption agreement only; official brand identity/currentness not independently certified.",
+    "No successful browser rendering check; static SVG rasterization is not animation verification.",
+    "Removed original artwork not re-verified in this pass."
+  ],
+  "records": [
+    {
+      "id": "in-dainik-jagran",
+      "logo": null,
+      "sha256": null,
+      "caption": null,
+      "verdict": "removed_from_current_registry",
+      "observation": "No current newspaper or news-agency record found; historical F61 claim not re-verified against removed artwork."
+    },
+    {
+      "id": "kr-donga-ilbo",
+      "logo": "newspaper-logos/kr/donga-ilbo.svg",
+      "sha256": "6f19045256afffe121065dc99036ccada11cb8053db29b3a5d5593c57599c471",
+      "caption": "Hangul '동아일보' masthead — the Dong-a Ilbo brand mark.",
+      "verdict": "confirmed_unresolved",
+      "observation": "Image reads 東亞日報 in Hanja; caption says Hangul 동아일보."
+    },
+    {
+      "id": "kr-joongang-ilbo",
+      "logo": "newspaper-logos/kr/joongang-ilbo.png",
+      "sha256": "dd37098f8c58eb5c4882d23e93cfe6e6c5e5ed9bb8b07c03cd48131399691c73",
+      "caption": "Hangul '중앙일보' masthead — the JoongAng Ilbo brand mark.",
+      "verdict": "confirmed_unresolved",
+      "observation": "Image reads The JoongAng in Latin letters; caption says Hangul 중앙일보."
+    },
+    {
+      "id": "jp-japan-times",
+      "logo": "newspaper-logos/jp/japan-times.svg",
+      "sha256": "57e8c3205cf80c4fa06d3fcaa3a71a54bf189237717acc7aeaaedfb038f4556a",
+      "caption": "Lowercase 'the japan times' with a red dotted j — the English-language Tokyo daily's wordmark.",
+      "verdict": "prior_audit_finding_withdrawn",
+      "observation": "Exact unchanged SVG has grey the, black japan times, red dot over j. Caption's red-dot claim is visually correct. Earlier monochrome assertion was auditor error."
+    },
+    {
+      "id": "nz-1news",
+      "logo": null,
+      "sha256": null,
+      "caption": null,
+      "verdict": "removed_from_current_registry",
+      "observation": "Current NZ newspaper data instead explicitly references replacement of TVNZ 1News with The Post."
+    },
+    {
+      "id": "it-il-sole-24-ore",
+      "logo": null,
+      "sha256": null,
+      "caption": null,
+      "verdict": "removed_from_current_registry",
+      "observation": "No current newspaper or news-agency record found; not counted as an exposed mismatch."
+    },
+    {
+      "id": "ph-rappler",
+      "logo": "newspaper-logos/ph/rappler.svg",
+      "sha256": "897cce36478d385174d75f6a0a28218152e010054e96f36027cc3dee7bfebb49",
+      "caption": "'Rappler' wordmark — the Manila digital news brand.",
+      "verdict": "confirmed_unresolved",
+      "observation": "White R within orange circular/stroke emblem, not Rappler wordmark."
+    },
+    {
+      "id": "ua-ukrainska-pravda",
+      "logo": "newspaper-logos/ua/ukrainska-pravda.jpg",
+      "sha256": "ca088ba3d2ff95f340fcb44aa995081e65e2d4188f9b1cd9e6c52c94c24b22f2",
+      "caption": "Official 'Ukrainska Pravda' masthead/logo as used by the publisher — sourced from the outlet's own site.",
+      "verdict": "caption_broadened_prior_wordmark_mismatch_not_current",
+      "observation": "Image remains УП monogram; current caption says masthead/logo rather than the earlier full wordmark. Recommend explicitly naming monogram, but do not classify generic logo wording as a definite pixel contradiction."
+    },
+    {
+      "id": "se-dagens-nyheter",
+      "logo": "newspaper-logos/se/dagens-nyheter.jpg",
+      "sha256": "5b380644cc0c3457c76552fbd4dee88cb5f0bb577ae6bbf734d1eac3d66fb63d",
+      "caption": "'Dagens Nyheter' masthead — Sweden's leading morning daily nameplate.",
+      "verdict": "confirmed_unresolved",
+      "observation": "White DN. on black square, not full Dagens Nyheter nameplate."
+    },
+    {
+      "id": "sk-hospodarske-noviny",
+      "logo": null,
+      "sha256": null,
+      "caption": null,
+      "verdict": "removed_from_current_registry",
+      "observation": "Slovak entry absent; Czech cz-hospodarske-noviny is a different record and not this finding."
+    },
+    {
+      "id": "ar-pagina-12",
+      "logo": "newspaper-logos/ar/pagina-12.svg",
+      "sha256": "286be3f00a1d289ac33cbf67ccb4ac2b94db5eba887e6fdf15e5c76eab13d76e",
+      "caption": "Serif 'Página|12' masthead with a vertical bar separating the numeral — the Buenos Aires daily's nameplate.",
+      "verdict": "variant_caveat_unresolved",
+      "observation": "Página|12 with 50 AÑOS DEL GOLPE strap and white-headscarf outline; the strap is a coup-anniversary reference, not the newspaper's 50th anniversary."
+    },
+    {
+      "id": "mx-la-jornada",
+      "logo": "newspaper-logos/mx/la-jornada.webp",
+      "sha256": "5798b87727adb2f12302cd0d7b4836a0af21cbf30c274f6b3645e1b60121053d",
+      "caption": "Joined 'LaJornada' wordmark — Mexico City's left-leaning daily masthead from its own site.",
+      "verdict": "variant_caveat_unresolved",
+      "observation": "LaJornada with CUMPLIMOS 40 años anniversary device."
+    },
+    {
+      "id": "uy-el-observador",
+      "logo": "newspaper-logos/uy/el-observador.png",
+      "sha256": "4e661d5ebdd2a2cacecede3817444e0d0e6ea65b89427f75c4176a8b771366da",
+      "caption": "'El Observador' masthead — the Montevideo daily brand mark.",
+      "verdict": "variant_caveat_unresolved",
+      "observation": "Social-follow callout Seguí esta noticia y más en: above ELOBSERVADOR, not a clean masthead."
+    },
+    {
+      "id": "vn-nhan-dan",
+      "logo": "newspaper-logos/vn/nhan-dan.png",
+      "sha256": "891d4635442cb987f29aac05a8b7b1bc455ebabcfc97eaf2a8f566da7618c75e",
+      "caption": "Vietnamese 'Nhân Dân' masthead — the Communist Party daily.",
+      "verdict": "variant_caveat_unresolved",
+      "observation": "Red Nhân Dân title with Russian онлайн and Cyrillic explanatory strap; record fails to identify Russian-language edition variant."
+    }
+  ]
+}
