@@ -16,7 +16,7 @@ This document is the shared audit and implementation record. The detailed JSON f
 
 | Agent | Assigned or observed role | Last documented state | Scope / handoff |
 |---|---|---|---|
-| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F93–F98 migration/source-pipeline findings documented 28 Sep; World Bank positive-pair comparison complete; UN/flow primary comparison and browser visuals blocked. | Latest application baseline `044711a5`; public build `71e380b` verified. Audit-only edits. Opus remediation milestones remain separately recorded. |
+| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F93–F98 recorded; F61 rechecked: four active mismatches, four removed, Japan Times audit error withdrawn, Ukraine caption broadened. UN/flow primary comparison and browser visuals blocked. | Latest application baseline `044711a5`; public build `71e380b` verified. Audit-only edits. Opus remediation milestones remain separately recorded. |
 | Opus 5.5 (Cursor cloud agent) | Implement findings and continue audit; see detailed remediation log | Corrections are now on `main`, as documented in Opus's log and observed through `7c75c318`; earlier PR #1709 branch-only state is superseded. | R01, R02, … remain Opus finding IDs. Independent verification and deployment are recorded separately per finding; do not treat merged as verified. |
 
 ### Required work record for every participating agent
@@ -38,6 +38,7 @@ Preserve existing finding IDs and dated evidence. Mark a finding's resolution al
 
 | Updated (timezone stated) | Agent | Finding / bounded scope | Status | Action and reason | Commit / validation / remaining work |
 |---|---|---|---|---|---|
+| 2026-09-28, Melbourne | Codex | F61 current caption reconciliation | Independently verified — bounded visual check | Four mismatches remain; four records removed; Ukraine caption broadened; Japan Times finding withdrawn as auditor error. Four variant caveats remain. | Ten retained asset hashes match original ledger. Evidence `dc8df7a`; original Japan Times verdict marked superseded at `bf85d28`. Static visual check, not browser certification. |
 | 2026-09-28, Melbourne | Codex | F61: ten media caption/pixel mismatches and four variant caveats at `044711a5` | Investigating | Re-open exact bundled assets and current captions; preserve identity/current-brand uncertainty separately. Audit-only. | No application edits or ownership overlap with Opus; evidence and outcomes to follow. |
 | 2026-09-28, Melbourne | Codex | F93–F98; migration delta through `044711a5` | Independently verified — findings; fixes unclaimed | All 10,037 positive World Bank pairs match; 27,019 zero cells dropped; temporal/definition, refresh, legend and live-check assurance issues documented. | Evidence `6c0c09e`; migration checks pass internally; live build `71e380b` verified; UN/flow downloads 403 and browser stalled. Not universal completion. |
 | 2026-09-28 14:59 Melbourne / 04:59 UTC (claim commit time) | Codex | Changes since `bf7b7709` through `044711a5`: new diaspora stock/flow and migrant-origin layers, 31 changed files | Investigating | Owner reconfirmed Opus implementation/continuation assignment. Codex claims independent audit of new migration datasets, extraction/mapping, labels and public rendering; application fixes remain with Opus. Preserve all existing remediation entries. | Four new commits inventoried. Checking primary-source definitions and reproducibility; no new findings or deployment claims yet. |
@@ -133,6 +134,26 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
 - The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
 - Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
+
+## F61 independent recheck and audit correction — 28 September 2026
+
+**Revision `044711a5`; Codex; no application edits.** [Per-record evidence](audit/MEDIA_F61_RECHECK_2026-09-28.json), commit `dc8df7a`. All ten remaining images were reopened and visually inspected; their hashes match the original 20 September ledger. The original ledger now also carries the superseding Japan Times correction (`bf85d28`).
+
+| Earlier F61 item | Current outcome |
+|---|---|
+| Dong-a Ilbo | **Still wrong:** image reads Hanja `東亞日報`; caption says Hangul |
+| JoongAng Ilbo | **Still wrong:** image reads Latin `The JoongAng`; caption says Hangul |
+| Rappler | **Still wrong:** R emblem; caption says wordmark |
+| Dagens Nyheter | **Still wrong:** `DN.` monogram; caption says full nameplate |
+| The Japan Times | **WITHDRAWN — auditor error.** The unchanged SVG visibly has a red dot over the j, matching the caption. Earlier “monochrome” description was wrong; no fix is needed for that claim. |
+| Ukrainska Pravda | Image remains `УП`; caption changed from full-wordmark wording to generic “masthead/logo.” The old exact contradiction is no longer current. Explicitly naming the monogram would be clearer; generic “logo” is not proved false. |
+| Dainik Jagran, TVNZ 1News, Il Sole 24 Ore, Slovak Hospodárske noviny | All four absent from current newspaper/news-agency registries. Record removal eliminates current exposure of those captions; it does not establish that the historical assets/captions were correct. |
+
+**Count: four current confirmed mismatches, four removed records, one withdrawn audit error, one broadened caption.** This supersedes any reading of the old ten-row list as ten current confirmed errors.
+
+The four variant caveats remain: Página|12 includes `50 AÑOS DEL GOLPE` and a white-headscarf outline (a coup-anniversary reference, **not** the newspaper's 50th anniversary); La Jornada includes `CUMPLIMOS 40 años`; El Observador includes a social-follow callout; Nhân Dân uses a Russian-language edition lockup. Record the actual variant and date/edition where supported, rather than silently describing a timeless clean masthead. These observations do not independently certify official status/current brand rights.
+
+**Opus handoff:** do not change the Japan Times red-dot caption to satisfy the withdrawn finding. F61 remains partly open for the four current mismatches and four variant caveats. The separate F65/F69 caption/asset-role queues and Delfi's browser-animation question remain open. Browser visual verification is still unavailable following the stalled request.
 
 ## Migration-layer audit — 28 September 2026
 
@@ -520,14 +541,14 @@ These results contradict the latest commits' broad assurance of visually verifie
 
 ## F61 — new explanatory metadata contradicts bundled pixels (P2)
 
-All 227 new explainers were read alongside the images. The following are direct, reproducible discrepancies; they do not require speculation about historical brand adoption:
+Historical 20 September observations follow. **The 28 September F61 recheck above supersedes current status: the Japan Times assertion is withdrawn, four records are removed, and Ukrainska Pravda's caption changed.** The remaining pixel comparisons do not establish official brand adoption:
 
 | ID | Description says | Bundled image shows |
 |---|---|---|
 | `in-dainik-jagran` | Devanagari masthead | Latin `Jagran` below a sun |
 | `kr-donga-ilbo` | Hangul | Hanja `東亞日報` |
 | `kr-joongang-ilbo` | Hangul | Latin `The JoongAng` |
-| `jp-japan-times` | Red dotted j | Monochrome wordmark |
+| `jp-japan-times` | Red dotted j | **WITHDRAWN 28 Sep — auditor error:** unchanged SVG does have the red dot; see F61 recheck above. |
 | `nz-1news` | Red wordmark | Red circular 1 and black news |
 | `it-il-sole-24-ore` | White 24 ORE block | Black lettering with grey shadow |
 | `ph-rappler` | Wordmark | Orange R emblem without the name |
