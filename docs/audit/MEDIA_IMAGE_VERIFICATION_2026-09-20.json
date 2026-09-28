@@ -2460,7 +2460,14 @@
       "provenanceStatus": "publisher_asset_url_not_recorded_in_record",
       "finding": "F61",
       "observation": "Description specifies a red dotted j; bundled image is monochrome.",
-      "fullRecordFactualVerificationComplete": false
+      "fullRecordFactualVerificationComplete": false,
+      "subsequentCorrection": {
+        "checkedAt": "2026-09-28",
+        "agent": "Codex",
+        "status": "withdrawn_auditor_error",
+        "evidence": "MEDIA_F61_RECHECK_2026-09-28.json",
+        "note": "Original descriptionReview retained as historical record but superseded: exact unchanged SVG has a red dot over j. The monochrome assertion was wrong; do not implement a fix based on it."
+      }
     },
     {
       "id": "jp-mainichi-shimbun",
