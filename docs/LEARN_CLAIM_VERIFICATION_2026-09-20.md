@@ -16,7 +16,7 @@ This document is the shared audit and implementation record. The detailed JSON f
 
 | Agent | Assigned or observed role | Last documented state | Scope / handoff |
 |---|---|---|---|
-| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F93–F98 recorded; F61 rechecked: four active mismatches, four removed, Japan Times audit error withdrawn, Ukraine caption broadened. UN/flow primary comparison and browser visuals blocked. | Latest application baseline `044711a5`; public build `71e380b` verified. Audit-only edits. Opus remediation milestones remain separately recorded. |
+| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F93–F103 recorded; F61 rechecked and Japan Times audit error withdrawn; NZ national-symbol evidence saved. UN/flow primary comparison and browser visuals blocked. | Latest application baseline `044711a5`; public build `71e380b` verified. Audit-only edits. Opus remediation milestones remain separately recorded. |
 | Opus 5.5 (Cursor cloud agent) | Implement findings and continue audit; see detailed remediation log | Corrections are now on `main`, as documented in Opus's log and observed through `7c75c318`; earlier PR #1709 branch-only state is superseded. | R01, R02, … remain Opus finding IDs. Independent verification and deployment are recorded separately per finding; do not treat merged as verified. |
 
 ### Required work record for every participating agent
@@ -32,12 +32,13 @@ For each implementation, record:
 - Remaining limitations and deployment status. Keep implementation, independent verification and public deployment as separate milestones; identify the verifying agent and revision.
 - Any departure from a recommendation and its evidence. Do not silently convert an unresolved candidate into a confirmed error.
 
-Preserve existing finding IDs and dated evidence. Mark a finding's resolution alongside it or link its resolution row here; do not erase the original diagnosis. Refresh the document before allocating new F-numbers; **F98 is the highest numbered finding at the 28 September migration checkpoint**, not a permanent reservation for any agent. Merge concurrent documentation changes and use the current file SHA when saving; never overwrite another agent's progress with a stale full-file copy.
+Preserve existing finding IDs and dated evidence. Mark a finding's resolution alongside it or link its resolution row here; do not erase the original diagnosis. Refresh the document before allocating new F-numbers; **F103 is the highest numbered finding at the 28 September national-symbol checkpoint**, not a permanent reservation for any agent. Merge concurrent documentation changes and use the current file SHA when saving; never overwrite another agent's progress with a stale full-file copy.
 
 ### Work and resolution ledger
 
 | Updated (timezone stated) | Agent | Finding / bounded scope | Status | Action and reason | Commit / validation / remaining work |
 |---|---|---|---|---|---|
+| 2026-09-28, Melbourne | Codex | F99–F103: NZ flag chronology, two historical captions/variants, Māori attribution, passport series | Independently verified — bounded source/image checks | Eleven images screened; nine declared hashes match; national/Union flag chronology, royal/United Tribes images, Māori design date/credit and passport series findings saved. | Evidence `0934d44`; official government/PRADO sources; positive arms/design checks retained. No fixes implemented; no country-wide certification. |
 | 2026-09-28, Melbourne | Codex | New Zealand current national flag, coat of arms and passport descriptions/assets | Investigating | Resume previously exploratory national-symbol checks against NZ government sources. Audit-only; historical symbols separately bounded if inspected. | Baseline `044711a5`; no application edits. |
 | 2026-09-28, Melbourne | Codex | F61 current caption reconciliation | Independently verified — bounded visual check | Four mismatches remain; four records removed; Ukraine caption broadened; Japan Times finding withdrawn as auditor error. Four variant caveats remain. | Ten retained asset hashes match original ledger. Evidence `dc8df7a`; original Japan Times verdict marked superseded at `bf85d28`. Static visual check, not browser certification. |
 | 2026-09-28, Melbourne | Codex | F61: ten media caption/pixel mismatches and four variant caveats at `044711a5` | Investigating | Re-open exact bundled assets and current captions; preserve identity/current-brand uncertainty separately. Audit-only. | No application edits or ownership overlap with Opus; evidence and outcomes to follow. |
@@ -135,6 +136,50 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
 - The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
 - Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
+
+## New Zealand national-symbol verification — 28 September 2026
+
+**Codex, application revision `044711a5`; audit-only.** [Evidence ledger](audit/NZ_NATIONAL_SYMBOL_VERIFICATION_2026-09-28.json), commit `0934d44`. All 11 manifest entries were read and all 11 images rendered and visually inspected. All nine declared image hashes agree with the bundled bytes. That is file integrity, not universal authenticity: sports statistics and some historical dates remain unchecked. Relevant incorrect prose was also found in the public `71e380b` bundle.
+
+### F99 — New Zealand flag chronology mixes 1903 legislation and maritime use with national adoption (P1)
+
+**Confirmed.** `src/data/flagAdoptionYears.ts` gives NZ **1903**; `nz-official-national` repeats it in the source manifest, generated data and design line. Yet `flagMeanings.ts` correctly says **1902**. The [government's flag history](https://nzhistory.govt.nz/politics/flags-of-new-zealand/maritime-origins) distinguishes 1869 maritime use, royal approval on 24 March 1902, proclamation on 12 June, and the technical notice on 27 June 1902. Later 1903 legislation did not introduce a different national design.
+
+The historical `nz-union-flag` window also ends in **1867**, but [NZHistory](https://nzhistory.govt.nz/politics/flags-of-new-zealand/union-jack) says the Union Jack remained the national/legal flag until **1902** and continued in use afterwards. The 1867 colonial ship ensign did not replace the onshore flag.
+
+Correct the adoption source/override, generated adoption table, manifest and generated symbol entry together. Preserve overlapping maritime and national-use periods rather than forcing one continuous succession. `seed-national-symbols.mjs` consumes the adoption table; `build-flag-adoption-years.mjs` currently has no NZ corrective override. Do not indiscriminately substitute 1869 for every national-adoption field.
+
+### F100 — The Queen's personal flag explainer adds fern leaves absent from the banner (P2)
+
+**Confirmed pixel contradiction.** `nz-royal-1962` describes “two fern leaves … beneath.” The bundled rectangular banner shows the quartered shield's devices and central crowned E/rose disc; there are **no fern leaves**. It confuses a banner of the shield with the full coat of arms and its external ornaments. Remove that clause or explicitly describe the relationship without assigning the arms' external elements to the flag. This check does not independently certify all dates in the 1962–2022 period or any current successor standard.
+
+### F101 — United Tribes explainer describes a different historical border variant (P2)
+
+**Confirmed artwork/variant mismatch.** The `nz-united-tribes` image has a **white** border around the small canton cross; its explainer describes a black-bordered design. The [government's archival-image note](https://nzhistory.govt.nz/media/photo/united-tribes-flag) expressly distinguishes the officially approved white-border version, reproduced in an 1845 flag book, from the original 1834 black-border version.
+
+Identify the actual displayed variant, distinguish the selection from the later approval/redrawing, and use separate dated images if showing both. Do not “correct” the white border to black without changing the variant attribution and source. The [20 March 1834 selection by 25 northern chiefs](https://nzhistory.govt.nz/politics/flags-of-new-zealand/united-tribes-flag) is supported; this audit does not assign an exact alteration date from the 1845 reproduction alone.
+
+### F102 — Māori flag design date and attribution are incomplete (P2)
+
+**Confirmed.** `nz-maori` says “Designed by Hiraina Marsden in 1990.” [Te Ara](https://teara.govt.nz/en/photograph/32152/tino-rangatiratanga-flag) credits **Hiraina Marsden, Jan Dobson Smith and Linda Munn in 1989**; [NZHistory](https://nzhistory.govt.nz/politics/flags-of-new-zealand/maori-flag) also identifies the three designers. The [Ministry](https://www.mch.govt.nz/our-work/flags-anthems-and-emblems/new-zealand-flag/tino-rangatiratanga-flag) distinguishes development in 1989 from unveiling at Waitangi on 6 February 1990, and Cabinet recognition on 14 December 2009 as the **preferred national Māori flag**.
+
+Correct the prose and full credit; a `from: 1990` public-use window need not be changed to 1989 simply because design work began earlier. Preserve recognition versus statutory status: the Ministry says the flag does not have official status. The existing black/red/white three-realm symbolism and koru interpretation agree with that Ministry source and should not be replaced merely because this entry contains another error.
+
+### F103 — New Zealand passport rendering is an unlabelled earlier cover (P2; concrete instance of F14)
+
+**Confirmed series/presentation gap, not an invalid-passport claim.** The bundled drawing shows **NEW ZEALAND PASSPORT above URUWHENUA AOTEAROA** and warm gold-coloured decoration. DIA's [3 May 2021 announcement](https://www.dia.govt.nz/press.nsf/d77da9b523f12931cc256ac5000d19b6/a6ec02445c0c97bfcc2586ca0000b198!OpenDocument) says the updated cover puts te reo Māori first and explains that older stock would continue to be issued during transition and existing passports remain valid until expiry. [PRADO NZL-AO-04001](https://www.consilium.europa.eu/prado/en/NZL-AO-04001/index.html) identifies first issue as **15 April 2021**, with silver foil on a black cover.
+
+Label the displayed older English-first series and add a sourced current-series cover where available. Keep first issue, announcement, phase-in and expiry separate. Do not assert the old drawing depicts the 2021 series, that all earlier passports are invalid, or that this audit established a precise last-issue date. The gold-toned drawing also needs comparison with an authoritative rendering of its exact older series; it is not certified as an accurate foil-colour reproduction.
+
+### Supported details, completeness gaps and limits
+
+- The current national flag's major design and ratio agree with [Ministry guidance](https://www.mch.govt.nz/our-work/flags-anthems-and-emblems/new-zealand-flag). The app uses `#C8102E/#012169` while current Ministry approximate digital equivalents are `#C91235/#02216E`. Record the palette source and review consistency; this small digital difference is **not** adjudicated here as an unlawful or fabricated flag.
+- The arms' Southern Cross, three ships, fleece, wheat, hammers, European woman with flag, Māori chief with taiaha, St Edward's Crown and **1911 grant / 1956 revision** agree with the [Ministry's account](https://www.mch.govt.nz/our-work/flags-anthems-and-emblems/coat-arms). Every interpretive gloss and fine heraldic line is not thereby verified.
+- The Red Ensign's major design and use on occasions of Māori significance agree with the [official-flags guidance](https://www.mch.govt.nz/our-work/flags-anthems-and-emblems/new-zealand-flag/other-official-new-zealand-flags). Its exact adoption history remains a separate check.
+- That official list also identifies four flags absent from the NZ symbol manifest: **Governor-General's flag, NZ White Ensign, RNZAF Ensign and NZ Civil Air Ensign**. These are documented completeness gaps; adding them requires sourced assets, dates and descriptions.
+- The football and Olympic logos were visually screened only. Medal totals, participation, foundation dates and exact current brand variants remain unverified. Likewise, this pass does not certify the country's entire independence model, subdivisions or historical maps.
+
+**Handoff:** F99–F103 are open, implementation unclaimed. Correct source manifests/generators first and verify rendered cards when browser access is restored. Preserve all prior Opus ownership and implementation records.
 
 ## F61 independent recheck and audit correction — 28 September 2026
 
