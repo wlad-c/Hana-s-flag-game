@@ -1,0 +1,192 @@
+{
+  "auditDate": "2026-09-28",
+  "agent": "Codex",
+  "applicationRevision": "044711a56878091f42e00e0a032989262d297b94",
+  "baseline": "bf7b7709d4549ae14fa968bbed22a165b33022b4",
+  "changedFiles": [
+    ".github/workflows/flag-integrity.yml",
+    "docs/DIASPORA_MAP.md",
+    "docs/MIGRANT_ORIGINS.md",
+    "package.json",
+    "scripts/build-diaspora.mjs",
+    "scripts/build-migrant-origins.mjs",
+    "scripts/check-diaspora.mjs",
+    "scripts/check-migrant-origins.mjs",
+    "scripts/data/diaspora-migrant-flow-2015-2020.csv",
+    "scripts/data/diaspora-migrant-flow-2015-2020.meta.json",
+    "scripts/data/diaspora-migrant-stock-2020-wb.csv",
+    "scripts/data/diaspora-migrant-stock-2020-wb.meta.json",
+    "scripts/data/diaspora-migrant-stock-2024.csv",
+    "scripts/data/diaspora-migrant-stock-2024.meta.json",
+    "scripts/data/iso3166-m49.SOURCE.txt",
+    "scripts/data/iso3166-m49.json",
+    "scripts/data/undesa-ims-2024-bilateral-iso2.csv",
+    "scripts/extract-diaspora-wb.mjs",
+    "scripts/extract-undesa-migrant-bilateral.mjs",
+    "src/App.css",
+    "src/components/DiasporaMapControl.tsx",
+    "src/components/DiasporaMapLegend.tsx",
+    "src/components/MigrantOriginsMapControl.tsx",
+    "src/components/MigrantOriginsMapLegend.tsx",
+    "src/components/MigrantOriginsPanelRows.tsx",
+    "src/components/UiIcon.tsx",
+    "src/data/diaspora.ts",
+    "src/data/migrantOrigins.ts",
+    "src/lib/diasporaColors.ts",
+    "src/lib/migrantOriginsColors.ts",
+    "src/pages/LearnPage.tsx"
+  ],
+  "worldBank": {
+    "revision": "044711a56878091f42e00e0a032989262d297b94",
+    "xlsxSha256": "0f6b085b83fb1b4203f01c3fe736c5e64dcab5291ed7ce77c028e12ce84ea28b",
+    "upstreamRows2020": 77618,
+    "sexValues": {
+      "female": 38809,
+      "male": 38809
+    },
+    "expectedPositivePairs": 10037,
+    "appPositivePairs": 10037,
+    "differences": [],
+    "fractionalRows": 0,
+    "legacyNames": {
+      "ROM": [
+        "Romania"
+      ],
+      "ZAR": [
+        "Congo, Democratic Republic of"
+      ],
+      "YUG": [
+        "Serbia"
+      ],
+      "TMP": [
+        "Timor-Leste"
+      ]
+    },
+    "appTotal": 257359415,
+    "samplePairs": {
+      "JP-BR": 62296,
+      "AU-US": 118905,
+      "RS-DE": 184574,
+      "RS-AU": 44577
+    },
+    "publishedZeroPairsOmitted": 27019,
+    "zeroExamples": [
+      {
+        "origin": "AU",
+        "destination": "AF",
+        "source": 0,
+        "app": null
+      },
+      {
+        "origin": "AU",
+        "destination": "AO",
+        "source": 0,
+        "app": null
+      },
+      {
+        "origin": "AU",
+        "destination": "AL",
+        "source": 0,
+        "app": null
+      },
+      {
+        "origin": "AU",
+        "destination": "AE",
+        "source": 0,
+        "app": null
+      },
+      {
+        "origin": "AU",
+        "destination": "AM",
+        "source": 0,
+        "app": null
+      },
+      {
+        "origin": "AU",
+        "destination": "AZ",
+        "source": 0,
+        "app": null
+      },
+      {
+        "origin": "AU",
+        "destination": "BI",
+        "source": 0,
+        "app": null
+      },
+      {
+        "origin": "AU",
+        "destination": "BJ",
+        "source": 0,
+        "app": null
+      }
+    ],
+    "sourcePage": "https://www.worldbank.org/en/publication/wdr2023/data",
+    "sourceArchive": "https://thedocs.worldbank.org/en/doc/00700f3fc0f4eb17bdc08a372a4a2a13-0050062023/original/Global-Migration-Matrix-1960-2020.zip",
+    "zipSha256": "736ad1d89f2c830930e65e5aa48cce3487ab56cfc633a8ef14b38698ce33db61",
+    "method": "Read 2020 Data sheet rows using openpyxl; map ISO3 via pycountry plus source-label-checked aliases; restrict to UN-195, exclude self pairs, sum sexes; compare every positive pair with committed CSV. Separately inventory zero cells.",
+    "limitations": "Source agreement, not validation of estimates or harmonized territorial coverage."
+  },
+  "unDesa": {
+    "retainedDiasporaPositivePairs": 8178,
+    "migrantOriginsPairs": 8413,
+    "zeros": 235,
+    "positivePairDifferencesBetweenBundledCsvs": 0,
+    "primaryWorkbookStatus": "HTTP 403; primary numeric comparison not completed",
+    "definitionSource": "https://www.un.org/development/desa/pd/sites/www.un.org.development.desa.pd/files/undesa_pd_2025_intlmigstock_2024_key_facts_and_figures_advance-unedited.pdf",
+    "definitionEvidence": "UN indexed publication allows citizenship when birthplace unavailable. PDF direct access returned 403; corroborated by Destatis methodological note.",
+    "corroboration": "https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Population-Labour-Social-Issues/DemographyMigration/Migrants.html"
+  },
+  "flows": {
+    "bundledPositivePairs": 17965,
+    "origins": 194,
+    "method": "da_pb_closed",
+    "period": "2015-2020",
+    "sourceVersion": 8,
+    "sourcePublished": "2025-03-26",
+    "publisherPage": "https://figshare.com/articles/dataset/Bilateral_international_migration_flow_estimates_for_200_countries_1990-1995_to_2010-2015_/7731233",
+    "verified": "Publisher metadata confirms IMS2024/WPP2024, period, file 53235671, method, CC BY 4.0.",
+    "unverified": "Both original and publisher-documented file URLs returned HTTP 403. No upstream hash/numeric comparison."
+  },
+  "checks": [
+    {
+      "command": "node scripts/check-diaspora.mjs",
+      "exit": 0,
+      "scope": "Internal consistency"
+    },
+    {
+      "command": "node scripts/check-migrant-origins.mjs",
+      "exit": 0,
+      "scope": "Internal consistency"
+    },
+    {
+      "command": "node scripts/extract-diaspora-wb.mjs /path/to/WBMM_1960_2020.xlsx",
+      "exit": 1,
+      "error": "FileNotFoundError: /tmp/migrant/m49.csv",
+      "scope": "Correct original workbook; openpyxl installed; no generated file modified"
+    }
+  ],
+  "deployment": {
+    "build": "71e380b",
+    "timestamp": "2026-09-28T05:00:43.002Z",
+    "bundle": "assets/index-BdAwni6S.js",
+    "sha256": "4a25818be6a6f04bcd0501fabf60e8d4485839c97d34aa71e8a16372986c147b",
+    "stringsConfirmed": [
+      "Living abroad now (foreign-born stock, 2020)",
+      "People born in the origin who live in each destination today",
+      "No stock reported",
+      "No country-level figure published in UN DESA"
+    ],
+    "ancestry": "After git fetch origin main --depth=10, git merge-base --is-ancestor 044711a 71e380b succeeded; live checker exited 0",
+    "initialFalseNegative": "Depth-1 checkout lacked live commit; checker exited 1 asserting behind.",
+    "browser": "Creation stalled and was interrupted; no rendered UI verification."
+  },
+  "findingIds": [
+    "F93",
+    "F94",
+    "F95",
+    "F96",
+    "F97",
+    "F98"
+  ],
+  "applicationEdits": false
+}
