@@ -189,7 +189,7 @@ provide Chromium at `/opt/pw-browsers/chromium`.
 | 5 | #1707 `9e8449e` | Slovak, Swiss, Liechtenstein, Limburg, Comoros, Saint Helena and Russian gaps; the quiz accepts identical division flags; new identical-flag gate |
 | 6a | #1708 `e3c1a35` | North Sulawesi's capital is Manado; Schellenberg's is not Vaduz; the Wikidata-capital rejection list and its check |
 | 6b | #1717 `6d8406e` | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
-| 7a | #PRNUM | Iran re-keyed to the current ISO codes: all 31 provinces had shown another province's population, capital and native name. Alborz gained its capital (Karaj); three capital spellings aligned so their populations show |
+| 7a | #1720 | Iran re-keyed to the current ISO codes: all 31 provinces had shown another province's population, capital and native name. Alborz gained its capital (Karaj); three capital spellings aligned so their populations show |
 
 The independent auditor in the shared log screened every image added through `e3c1a35`: 76
 subdivision flags and 2 capital flags. Its findings F84–F86 (Estonian explainers and SVG metadata)

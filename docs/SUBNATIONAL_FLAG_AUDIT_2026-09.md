@@ -525,7 +525,7 @@ yet checked against FOTW (SF-04).
 
 ## Batch 7a — Iran: every province carried another province's data (2026-09-29)
 
-*Shipped in #PRNUM.*
+*Shipped in #1720.*
 
 **What was wrong.** The Iran map (`public/subdivisions/IR.json`) carried the ISO 3166-2:IR codes in
 force before the 2018 update. Every Wikidata-keyed dataset uses the current codes, and the two
