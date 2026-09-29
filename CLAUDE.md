@@ -2981,6 +2981,23 @@ and renders it with the Equal Earth projection (`geoEqualEarth()` from `d3-geo`)
 2. **Never** change the map projection from Equal Earth (`geoEqualEarth()`). This is the
    canonical projection for the entire game — it must be used on every map view, present and future.
 
+   **The one owner-approved exception (2026-09): the Learn-mode Globe view.** The View-centre popover
+   (`MapViewControl`) carries a Projection toggle, Map / Globe, persisted as `MapViewSettings.globe`.
+   Globe draws the SAME data with `geoOrthographic().clipAngle(90)` via the shared
+   `worldProjection()` in `src/lib/mapProjection.ts`, and a drag spins it (`useGlobeDrag`). Rules:
+   - Equal Earth stays the **default** (`globe: false`) and the only projection of every other map
+     (games, subdivision maps). Never flip the default, and never add another projection without
+     approval.
+   - Both Learn maps (`WorldProgressMap`, `HistoricalMap`) must build their projection through
+     `worldProjection()` so Map and Globe can never drift apart.
+   - The globe re-projects every frame. Keep it cheap by **culling, never by thinning**: features
+     wholly on the hidden hemisphere are skipped (`sphericalCap` / `capMayBeVisible`), and the
+     decorative overlays (flags, sub-national borders, capitals, the coastline band) are held back
+     while it moves. Simplifying or resampling coordinates to speed it up is forbidden by rule 3 and
+     the era-geometry rule. The historical basemap land layer still renders during a drag.
+   - A drag must never select a territory (the click that ends a drag is swallowed), and the
+     graticule is decorative (`pointerEvents="none"`).
+
 3. **Never** clip, simplify, or alter country polygon geometries in the topology file or at
    runtime, **except** for the two documented runtime adjustments in `WorldProgressMap.tsx`:
    - **Crimea extraction**: extracted from Russia's MultiPolygon into a separate `DISPUTED_CRIMEA` feature.
