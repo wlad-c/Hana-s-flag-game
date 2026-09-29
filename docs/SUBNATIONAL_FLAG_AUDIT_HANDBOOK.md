@@ -186,7 +186,7 @@ provide Chromium at `/opt/pw-browsers/chromium`.
 | 4 Czechia, Poland, Estonia | #1706 `ab8cea4` | Czech, Polish and Estonian region flags shown under the app's codes, with sourced explainers |
 | 5 | #1707 `9e8449e` | Slovak, Swiss, Liechtenstein, Limburg, Comoros, Saint Helena and Russian gaps; the quiz accepts identical division flags; new identical-flag gate |
 | 6a | #1708 `e3c1a35` | North Sulawesi's capital is Manado; Schellenberg's is not Vaduz; the Wikidata-capital rejection list and its check |
-| 6b | #1717 | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
+| 6b | #1717 `6d8406e` | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
 
 The independent auditor in the shared log screened every image added through `e3c1a35`: 76
 subdivision flags and 2 capital flags. Its findings F84–F86 (Estonian explainers and SVG metadata)
@@ -209,7 +209,7 @@ The ledger's "Follow-ups" section has the detail behind each item.
 
 | ID | Work | Why it matters / first step | Main files | Owner |
 |---|---|---|---|---|
-| SF-02 | Make the capital quiz apply the Learn panel's capital-name check | Right now the quiz can show Tehran's flag as "the capital of Hormozgan". Filter `getPlayableCapitalSubdivisions()` with the same `sameCity` test the panel uses, and add a check | `src/lib/playableSubdivisions.ts`, `src/lib/capitalInfo.ts` | |
+| SF-02 | Reconcile the 81 quiz capitals whose name disagrees with the Learn panel, then make the quiz apply the same agreement check | Measured 29 Sep: 81 of 1,255 quiz capitals disagree with the capital the panel shows. Blindly filtering would drop correct questions: about half are spellings (Gent/Ghent, Odessa/Odesa), some are outdated map capitals where the quiz is right (Banjarbaru, Kropyvnytskyi, Magas), and some are wrong quiz capitals (Iran's code drift puts Tehran on Hormozgan; Singaraja for Bali). Fix each at its source, then add the check and a gate | `scripts/build-cities.mjs` (`SUBNATIONAL_OVERRIDE`), `src/lib/capitalInfo.ts`, `src/lib/playableSubdivisions.ts`, capital-rejection files | Claude Code (this session), batch 7 |
 | SF-03 | Reconcile capital names (255 mismatches) | About 127 are spellings (Gent/Ghent), which need an alias table; about 128 are different cities. Fix at the source: Iran's code drift, Morocco's 2015 regions, Latvia LV-085/086, the Eritrea shift, the Greek, Afghan and Ethiopian swaps, A Coruña, Zangilan; check whether RO-IF's seat is Buftea | `public/subdivisions/*.json`, `scripts/build-capital-details.mjs`, `src/lib/cityRoles.ts` | |
 | SF-04 | Italian capital flags, about 80 still unchecked | Check each against FOTW (via `it-muni.html`), it.wikipedia and the comune's statute; reject undocumented plain bicolours as in 6b | capital-flag files (section 3, step 4) | |
 | SF-05 | Italian province flags | Look for other plain fields missing their arms (the Terni/Udine pattern) and logo flags (IT-RN, IT-SR); fill real *bandiere* still missing (Aosta Valley, South Tyrol and about 12 more) | division-flag files | |
