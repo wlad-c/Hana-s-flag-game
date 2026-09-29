@@ -118,6 +118,21 @@ body {
   min-height: 100vh;
 }
 
+/* iOS Safari zooms the whole page in when a text field whose font is under
+   16px gets focus, and never zooms back out — the page is then wider than
+   the screen and drifts sideways under every swipe (reported 2026-09 on the
+   Learn page after using the grid's 14.4px filter box). Keep every text
+   field at 16px or more on iOS so the zoom never starts. Scoped to iOS
+   (-webkit-touch-callout is iOS-only) so desktop and Android keep their
+   compact sizes; !important so no component rule can reintroduce it. */
+@supports (-webkit-touch-callout: none) {
+  input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="file"], [type="button"], [type="submit"], [type="reset"], [type="image"]),
+  select,
+  textarea {
+    font-size: max(16px, 1em) !important;
+  }
+}
+
 a {
   color: inherit;
 }
