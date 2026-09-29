@@ -429,78 +429,7 @@
   align-self: center;
 }
 
-/* === Toolbar overflow (☰) ============================================
-   Keeps the map-controls toolbar on ONE line. On wide screens the wrapper is
-   transparent (display:contents) so its controls lay out inline; on narrow
-   screens they collapse into a popover behind a ☰ button. */
-.toolbar-overflow {
-  display: contents;
-}
-.toolbar-overflow__toggle {
-  display: none;
-}
-.toolbar-overflow__items {
-  display: contents;
-}
-
 @media (max-width: 680px) {
-  .toolbar-overflow {
-    display: inline-flex;
-    position: relative;
-    align-items: center;
-    /* Pin the kebab to the far-right end of the toolbar. */
-    order: 5;
-    margin-left: auto;
-  }
-  /* With the overflow moved to the end, the divider that separated the layer
-     controls from the Period pill would strand next to the zoom divider —
-     hide it on mobile. */
-  .learn-fs__map .world-map__zoom-divider--era {
-    display: none;
-  }
-  .toolbar-overflow__toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.6rem;
-    height: 2.25rem;
-    padding: 0;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    color: var(--ink);
-    font-size: 1.55rem;
-    font-weight: 900;
-    line-height: 1;
-    cursor: pointer;
-  }
-  .toolbar-overflow__toggle:hover,
-  .toolbar-overflow__toggle:focus-visible {
-    outline: none;
-    color: var(--coral-deep);
-  }
-  .toolbar-overflow__items {
-    display: none;
-    position: absolute;
-    top: calc(100% + 0.45rem);
-    right: 0;
-    z-index: 60;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    padding: 0.55rem;
-    max-width: 13rem;
-    background: var(--paper);
-    border: 3px solid var(--ink);
-    border-radius: 14px;
-    box-shadow: 0 6px 0 var(--ink), 0 12px 28px rgba(26, 34, 56, 0.22);
-  }
-  .toolbar-overflow__items--open {
-    display: flex;
-  }
-
   /* Compact the Period pill so the single-line toolbar fits on phones: drop the
      "Period:" prefix and the "(caption)" so it reads just e.g. "Today ▾". */
   .learn-toolbar__era-prefix,

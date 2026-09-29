@@ -67,11 +67,11 @@ export function MapViewControl({ view, onChange, spinning = false, onToggleSpin 
         className="world-map__zoom-btn map-view-control__trigger"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        aria-label="Change map view centre"
-        title="Change map view centre"
+        aria-label="Map view options"
+        title="Map view — globe, spin, south-up, centre"
       >
-        {/* Simple globe glyph — no external icon dependency. */}
-        <UiIcon name="globe" />
+        <UiIcon name="settings" />
+        <span className="map-view-control__trigger-label">View</span>
       </button>
 
       {open && (

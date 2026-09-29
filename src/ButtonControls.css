@@ -35,7 +35,7 @@ body .learn-toolbar__era-today-badge {
 body .map-view-control__popover { min-width: 0; overscroll-behavior: contain; }
 body button { min-height: 44px; touch-action: manipulation; }
 body button:has(> .ui-icon) { min-width: 44px; }
-body :is(.site-topbar button, .world-map__zoom-btn, .toolbar-overflow__toggle,
+body :is(.site-topbar button, .world-map__zoom-btn,
   .learn-fs__hana-corner, .hero-card__settings,
   .picker__close, .qquiz__close, .all195__close, .profile-modal__close,
   .leaderboard-lightbox__close, .flag-unlock__close, .install-help__close,
@@ -73,12 +73,14 @@ body :is(.site-topbar__left, .site-topbar__right) { gap: .375rem; }
 body .site-topbar__right { flex-shrink: 0; }
 body .learn-fs__map { top: calc(3.5rem + env(safe-area-inset-top)); }
 body .world-map__zoom-btn { width: 44px; height: 44px; padding: 0; }
-body .toolbar-overflow__toggle { width: 44px; height: 44px; }
-body .toolbar-overflow__items--open {
-  background: var(--paper);
-  border: 1px solid var(--atlas-border);
-  border-radius: 10px;
-  box-shadow: var(--shadow-soft);
+body .world-map__zoom-btn.map-view-control__trigger {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  padding: 0 .75rem 0 .6rem;
+  gap: .4rem;
+  font-size: .9rem;
+  font-weight: 600;
 }
 body :is(.anthem-player__pause-icon, .anthem-player__play-icon,
   .anthem-player__skip-icon) { line-height: 1; }
@@ -88,7 +90,7 @@ body button:not(:disabled):focus-visible {
   outline: 2px solid var(--atlas-accent);
   outline-offset: 3px;
 }
-body :is(.site-topbar button, .world-map__zoom-btn, .toolbar-overflow__toggle,
+body :is(.site-topbar button, .world-map__zoom-btn,
   .learn-fs__hana-corner, .hero-card__settings):not(:disabled):hover {
   background: var(--atlas-tint);
   border-color: var(--atlas-accent);
@@ -96,14 +98,14 @@ body :is(.site-topbar button, .world-map__zoom-btn, .toolbar-overflow__toggle,
   box-shadow: none;
   transform: none;
 }
-body :is(.site-topbar button, .world-map__zoom-btn, .toolbar-overflow__toggle,
+body :is(.site-topbar button, .world-map__zoom-btn,
   .learn-fs__hana-corner):not(:disabled):active {
   background: var(--cream-deep);
   box-shadow: inset 0 0 0 1px var(--atlas-accent);
 }
 body :is(.world-map__zoom-btn[aria-pressed="true"],
   .learn-fs__hana-corner[aria-pressed="true"],
-  .toolbar-overflow__toggle[aria-expanded="true"]) {
+  .map-view-control__trigger[aria-expanded="true"]) {
   background: var(--atlas-tint);
   color: var(--atlas-accent);
   border-color: var(--atlas-accent);
