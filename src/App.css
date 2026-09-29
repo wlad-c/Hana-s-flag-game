@@ -407,6 +407,19 @@
   box-shadow: 0 8px 0 var(--ink), 0 14px 24px rgba(26, 34, 56, 0.18);
   max-height: 18rem;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
+.dropdown-list::-webkit-scrollbar {
+  width: 4px;
+}
+.dropdown-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 999px;
 }
 
 /* Default — opens downward below the input. */
@@ -597,6 +610,19 @@
   overflow-y: auto;
   flex: 1 1 auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
+.dropdown-modal__list::-webkit-scrollbar {
+  width: 4px;
+}
+.dropdown-modal__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown-modal__list::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 999px;
 }
 
 .dropdown-modal__option {
@@ -3165,6 +3191,19 @@
   max-height: min(40vh, 16rem);
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
+.passport-map-control__list::-webkit-scrollbar {
+  width: 4px;
+}
+.passport-map-control__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.passport-map-control__list::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 999px;
 }
 
 .passport-map-control__list .map-view-control__preset {

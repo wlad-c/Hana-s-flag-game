@@ -1116,14 +1116,27 @@ export function WorldProgressMap({
                 }
           }
         >
-          {/* Flag clip paths live at SVG root — outside all transforms.
-              Safari has a bug where it applies parent group transforms to
-              <defs> content (clipPath / pattern) when <defs> is nested
-              inside a transformed <g>. Placing <defs> here avoids that.
-              clipPathUnits="userSpaceOnUse" means the clip coordinates are
-              interpreted in the referencing element's coordinate system, so
-              the paths align correctly even when the map is zoomed or
+          {/* Flag clip paths + sphere clip live at SVG root — outside all
+              transforms. Safari has a bug where it applies parent group
+              transforms to <defs> content (clipPath / pattern) when <defs>
+              is nested inside a transformed <g>. Placing <defs> here avoids
+              that. clipPathUnits="userSpaceOnUse" means the clip coordinates
+              are interpreted in the referencing element's coordinate system,
+              so the paths align correctly even when the map is zoomed or
               flipped south-up. */}
+          {spherePath && (
+            <defs>
+              {/* Sphere outline clip — applied to the three-copy rotation
+                  group (inside zoom + south-up transforms) so country
+                  landmasses that reach the globe edge are clipped elegantly
+                  instead of floating outside the outline. The clip path uses
+                  the sphere outline from the same Equal Earth projection as
+                  the country paths, so it matches exactly. */}
+              <clipPath id="wm-sphere-clip" clipPathUnits="userSpaceOnUse">
+                <path d={spherePath} />
+              </clipPath>
+            </defs>
+          )}
           {flagOverlay && (
             <FlagDefs
               flagOverlay={flagOverlay}
@@ -1165,7 +1178,12 @@ export function WorldProgressMap({
               Three copies at -WIDTH, 0, +WIDTH ensure the sphere is always
               fully covered regardless of rotation offset.
               will-change promotes this group to a GPU compositing layer so
-              only the transform changes, not the painted content. */}
+              only the transform changes, not the painted content.
+              clipPath="url(#wm-sphere-clip)" clips all landmasses to the
+              globe outline so countries elegantly disappear at the edges
+              instead of floating outside the globe boundary. The clip is
+              applied here (inside zoom + south-up transforms) so coordinates
+              match the sphere path's coordinate system. */}
           <g
             transform={
               flagTranslateX !== 0
@@ -1173,6 +1191,7 @@ export function WorldProgressMap({
                 : undefined
             }
             style={{ willChange: "transform" }}
+            clipPath={spherePath ? "url(#wm-sphere-clip)" : undefined}
           >
             {(globe ? ([0] as const) : ([-WIDTH, 0, WIDTH] as const)).map((offset) => (
               <g
