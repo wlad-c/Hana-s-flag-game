@@ -1,6 +1,8 @@
 import { UiIcon } from "./UiIcon";
 import { memo, useEffect, useMemo, useRef, useState } from "react";
-import { geoEqualEarth, geoPath } from "d3-geo";
+import { geoGraticule10, geoPath } from "d3-geo";
+import { capMayBeVisible, sphericalCap, worldProjection } from "../lib/mapProjection";
+import { useGlobeDrag } from "../hooks/useGlobeDrag";
 import { merge as topoMerge } from "topojson-client";
 import { useTheme } from "../context/ThemeContext";
 import { useZoomPan, type ZoomPanState } from "../hooks/useZoomPan";
@@ -101,6 +103,8 @@ export type HistoricalMapProps = {
   centerLongitude?: number;
   /** When true, the rendered map is flipped vertically — south at the top. */
   southUp?: boolean;
+  /** When true, render an orthographic globe the user can drag to spin. */
+  globe?: boolean;
   /** Optional extra controls to render below the +/-/⟲ zoom buttons,
    *  e.g. the MapViewControl picker. */
   extraControls?: React.ReactNode;
@@ -363,6 +367,7 @@ export const HistoricalMap = memo(function HistoricalMap({
   onDataLoaded,
   centerLongitude = 0,
   southUp = false,
+  globe = false,
   extraControls,
   flagOverlay = null,
   groupKeyOf,
@@ -382,6 +387,22 @@ export const HistoricalMap = memo(function HistoricalMap({
   // a sibling map component and survive a swap between the two.
   const localZoom = useZoomPan(WIDTH, HEIGHT);
   const zoom = externalZoom ?? localZoom;
+  const globeDrag = useGlobeDrag({
+    width: WIDTH,
+    height: HEIGHT,
+    zoomK: zoom.view.k,
+    southUp,
+    resetKey: `${globe}|${centerLongitude}`,
+  });
+  const liveLon = globe ? centerLongitude + globeDrag.lon : centerLongitude;
+  const liveLat = globe ? globeDrag.lat : 0;
+  const globeMoving = globe && globeDrag.dragging;
+  // The full per-era projection (flag tiles, coastline band, paint order) is
+  // rebuilt only once the globe settles; while dragging, just the outlines move.
+  const settledViewRef = useRef({ lon: liveLon, lat: liveLat });
+  if (!globeMoving) settledViewRef.current = { lon: liveLon, lat: liveLat };
+  const settledLon = settledViewRef.current.lon;
+  const settledLat = settledViewRef.current.lat;
 
   // Load the coastline once. It is era-independent by definition, so it is fetched
   // outside the era effect and never refetched when the era changes. A failure here
@@ -469,9 +490,9 @@ export const HistoricalMap = memo(function HistoricalMap({
 
   // Compute per-feature path strings via d3-geo's equal-earth projection
   // (same as WorldProgressMap so the two maps look like the same world).
-  const { renderedFeatures, spherePath, landPath } = useMemo(() => {
+  const { renderedFeatures, spherePath, settledLandPath, graticulePath } = useMemo(() => {
     if (!data || data.features.length === 0)
-      return { renderedFeatures: [], spherePath: null, landPath: null };
+      return { renderedFeatures: [], spherePath: null, settledLandPath: null, graticulePath: null };
     // Centre the projection on the user-chosen meridian. d3-geo's rotate
     // is [lambda, phi, gamma]; we only touch lambda. South-up is handled
     // separately as an SVG transform so the projection's geometry stays
@@ -479,9 +500,11 @@ export const HistoricalMap = memo(function HistoricalMap({
     // Fit to the sphere so the sphere outline exactly fills the viewBox —
     // fitting to the data geometry leaves the sphere wider than the viewBox,
     // causing SVG clipping at the left/right edges.
-    const projection = geoEqualEarth()
-      .rotate([-centerLongitude, 0])
-      .fitSize([WIDTH, HEIGHT], { type: "Sphere" } as never);
+    const projection = worldProjection(WIDTH, HEIGHT, {
+      globe,
+      longitude: settledLon,
+      latitude: settledLat,
+    });
     const pathFn = geoPath(projection);
     // `h` is the pattern tile height (the ring's bbox height). The tile WIDTH is
     // derived per-flag at render time from the flag's true aspect ratio
@@ -558,9 +581,32 @@ export const HistoricalMap = memo(function HistoricalMap({
     // Below them, the existing largest-first order still applies.
     features.sort((a, b) => (a.gapFill === b.gapFill ? b.area - a.area : a.gapFill ? -1 : 1));
     const spherePath = pathFn({ type: "Sphere" } as never) ?? null;
-    const landPath = land ? (pathFn(land as never) ?? null) : null;
-    return { renderedFeatures: features, spherePath, landPath };
-  }, [data, centerLongitude, land]);
+    const settledLandPath = land ? (pathFn(land as never) ?? null) : null;
+    const graticulePath = globe ? pathFn(geoGraticule10()) ?? null : null;
+    return { renderedFeatures: features, spherePath, settledLandPath, graticulePath };
+  }, [data, globe, settledLon, settledLat, land]);
+
+  const featureCaps = useMemo(
+    () => (globe && data ? data.features.map((f) => sphericalCap(f)) : null),
+    [globe, data],
+  );
+
+  // Outlines only, at the live drag position (globe only). Features wholly on
+  // the far side are skipped rather than projected.
+  const movingPaths = useMemo(() => {
+    if (!globeMoving || !data) return null;
+    const view = { globe: true, longitude: liveLon, latitude: liveLat };
+    const pathFn = geoPath(worldProjection(WIDTH, HEIGHT, view));
+    return {
+      byIdx: data.features.map((f, i) =>
+        capMayBeVisible(featureCaps?.[i] ?? null, view) ? pathFn(f as never) ?? null : null,
+      ),
+      landPath: land ? (pathFn(land as never) ?? null) : null,
+      graticulePath: pathFn(geoGraticule10()) ?? null,
+    };
+  }, [globeMoving, data, land, liveLon, liveLat, featureCaps]);
+  const landPath = movingPaths ? movingPaths.landPath : settledLandPath;
+  const shownGraticulePath = movingPaths ? movingPaths.graticulePath : graticulePath;
 
   // Upstream rates every feature's border accuracy 1 (roughest) to 3. For the older
   // eras it is 1 across the board — the authors telling us these lines are schematic.
@@ -646,14 +692,22 @@ export const HistoricalMap = memo(function HistoricalMap({
             // Drag-to-pan is enabled (effective only once zoomed in).
             // Wheel-zoom and double-click-reset stay off so the user
             // can still page-scroll over the map.
-            onPointerDown={zoom.svgHandlers.onPointerDown}
-            onPointerMove={zoom.svgHandlers.onPointerMove}
-            onPointerUp={zoom.svgHandlers.onPointerUp}
-            onPointerCancel={zoom.svgHandlers.onPointerCancel}
-            style={{
-              cursor: zoom.isZoomed ? "grab" : "default",
-              touchAction: zoom.isZoomed ? "none" : "auto",
-            }}
+            // On the globe a drag spins it instead of panning.
+            onPointerDown={globe ? globeDrag.handlers.onPointerDown : zoom.svgHandlers.onPointerDown}
+            onPointerMove={globe ? globeDrag.handlers.onPointerMove : zoom.svgHandlers.onPointerMove}
+            onPointerUp={globe ? globeDrag.handlers.onPointerUp : zoom.svgHandlers.onPointerUp}
+            onPointerCancel={globe ? globeDrag.handlers.onPointerCancel : zoom.svgHandlers.onPointerCancel}
+            style={
+              globe
+                ? {
+                    cursor: globeDrag.dragging ? "grabbing" : "grab",
+                    touchAction: zoom.isZoomed ? "none" : "pan-y",
+                  }
+                : {
+                    cursor: zoom.isZoomed ? "grab" : "default",
+                    touchAction: zoom.isZoomed ? "none" : "auto",
+                  }
+            }
           >
             {/* Flag pattern tiles at SVG root — same approach as
                 WorldProgressMap (see FlagDefs there). Each landmass ring is
@@ -689,7 +743,7 @@ export const HistoricalMap = memo(function HistoricalMap({
                 </clipPath>
               )}
             </defs>
-            {flagOverlay && (
+            {flagOverlay && !movingPaths && (
               <defs>
                 {renderedFeatures.map((f) => {
                   if (!f.name) return null;
@@ -740,6 +794,18 @@ export const HistoricalMap = memo(function HistoricalMap({
                 vectorEffect="non-scaling-stroke"
               />
             )}
+            {shownGraticulePath && (
+              <path
+                d={shownGraticulePath}
+                fill="none"
+                stroke={palette.stroke}
+                strokeWidth={0.5}
+                strokeOpacity={0.12}
+                vectorEffect="non-scaling-stroke"
+                pointerEvents="none"
+                aria-hidden="true"
+              />
+            )}
             {/* The coastline, under every polity. Land no polity of this era covers
                 stays visibly LAND (hatched "no data") instead of reading as ocean —
                 without this, an unclaimed Balkans made Greece look like an island in
@@ -764,7 +830,7 @@ export const HistoricalMap = memo(function HistoricalMap({
                 polity no longer wears a shadow of "unmapped land" along its coast,
                 while land that is genuinely unclaimed stays hatched. Decorative and
                 non-interactive, like the coastline it sits on. */}
-            {landPath && coveragePath && (
+            {landPath && coveragePath && !movingPaths && (
               <path
                 d={coveragePath}
                 fill={palette.land}
@@ -772,7 +838,7 @@ export const HistoricalMap = memo(function HistoricalMap({
                 pointerEvents="none"
               />
             )}
-            {landPath && highlightCoveragePath && (
+            {landPath && highlightCoveragePath && !movingPaths && (
               <path
                 d={highlightCoveragePath}
                 fill={palette.selected}
@@ -781,7 +847,8 @@ export const HistoricalMap = memo(function HistoricalMap({
               />
             )}
             {renderedFeatures.map((f) => {
-              if (!f.d) return null;
+              const d = movingPaths ? movingPaths.byIdx[f.idx] : f.d;
+              if (!d) return null;
               // Grouped, not a raw name match: a personal union spanning several
               // features (1600's Iberian Union) must highlight all of them at once.
               const highlighted = isHighlighted(f.name);
@@ -796,7 +863,7 @@ export const HistoricalMap = memo(function HistoricalMap({
               return (
                 <path
                   key={f.idx}
-                  d={f.d}
+                  d={d}
                   fill={fill}
                   stroke={stroke}
                   strokeWidth={highlighted ? 1.4 : 0.4}
@@ -824,7 +891,7 @@ export const HistoricalMap = memo(function HistoricalMap({
                 </path>
               );
             })}
-            {flagOverlay && (
+            {flagOverlay && !movingPaths && (
               // Clipped to the basemap's land: each ring is grown by the coastline
               // tolerance so a flag reaches the real coast instead of stopping at
               // the era outline, and the clip is what keeps that growth off the sea.

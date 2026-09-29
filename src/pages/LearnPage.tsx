@@ -8,7 +8,6 @@ import { ERA_EXTENT_CAVEATS } from "../data/polityExistence";
 import { WorldProgressMap } from "../components/WorldProgressMap";
 import { HistoricalMap } from "../components/HistoricalMap";
 import { EraPicker } from "../components/EraPicker";
-import { ToolbarOverflow } from "../components/ToolbarOverflow";
 import { SubdivisionDropdown } from "../components/SubdivisionDropdown";
 import { CountryDropdown } from "../components/CountryDropdown";
 import { SITE_TOPBAR_LEFT_SLOT_ID } from "../components/Topbar";
@@ -538,6 +537,16 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   }, [panelSelectionKey]);
   const panelCollapsed =
     isWideLayout && (panelSelectionKey == null || panelDismissed);
+  const hidePanelBtnRef = useRef<HTMLButtonElement>(null);
+  const showPanelBtnRef = useRef<HTMLButtonElement>(null);
+  // Hands focus to the opposite handle so keyboard users aren't left on a
+  // control that just disappeared.
+  const togglePanel = useCallback((dismiss: boolean) => {
+    setPanelDismissed(dismiss);
+    requestAnimationFrame(() =>
+      (dismiss ? showPanelBtnRef : hidePanelBtnRef).current?.focus(),
+    );
+  }, []);
   // The specific football crest clicked in the grid, when it is a card that is
   // NOT a plain country — a UK home nation, or a FIFA-member entity. Keyed with
   // its parent country so the panel shows that crest only while the parent stays
@@ -1709,20 +1718,14 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             onChange={handleDemocracyMapModeChange}
           />
         )}
-        {/* Rotation + globe (view-centre) are secondary — they collapse into the
-            kebab on narrow screens. */}
-        <ToolbarOverflow>
-          <button
-            type="button"
-            className="world-map__zoom-btn"
-            onClick={toggleRotation}
-            aria-label={isRotating ? "Pause rotation" : "Resume rotation"}
-            title={isRotating ? "Pause rotation" : "Resume rotation"}
-          >
-            <UiIcon name={isRotating ? "pause" : "play"} />
-          </button>
-          <MapViewControl view={mapView} onChange={setMapView} />
-        </ToolbarOverflow>
+        {/* Always visible on every screen size — never tucked behind an
+            overflow menu. Spin only moves the Today map. */}
+        <MapViewControl
+          view={mapView}
+          onChange={setMapView}
+          spinning={isRotating}
+          onToggleSpin={isModernEra ? toggleRotation : undefined}
+        />
         <hr className="world-map__zoom-divider world-map__zoom-divider--era" />
         <EraPicker currentEraId={eraId} onEraChange={setEraId} />
       </>
@@ -2419,6 +2422,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             centerLongitude={mapView.centerLongitude}
             rotationOffset={rotationOffset}
             southUp={mapView.southUp}
+            globe={mapView.globe}
             showSubnationalBorders={mapView.showSubnationalBorders}
             extraControls={mapExtraControls}
             flagOverlay={modernFlagOverlay}
@@ -2463,6 +2467,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             zoom={sharedZoom}
             centerLongitude={mapView.centerLongitude}
             southUp={mapView.southUp}
+            globe={mapView.globe}
             extraControls={mapExtraControls}
             onDataLoaded={handleHistoricalDataLoaded}
             flagOverlay={historicalFlagOverlay}
@@ -2546,19 +2551,24 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       </div>
 
       <div
+        id="learn-info-panel"
         className="learn-fs__panel-wrap"
         aria-hidden={panelCollapsed ? true : undefined}
       >
-        <button
-          type="button"
-          className="learn-fs__panel-drawer-btn learn-fs__panel-drawer-btn--hide"
-          onClick={() => setPanelDismissed(true)}
-          aria-label="Hide information panel"
-          title="Hide information panel"
-        >
-          <UiIcon name="next" />
-          <span className="learn-fs__panel-drawer-label">Hide</span>
-        </button>
+        <div className="learn-fs__panel-handle-rail learn-fs__panel-handle-rail--panel">
+          <button
+            ref={hidePanelBtnRef}
+            type="button"
+            className="learn-fs__panel-handle"
+            onClick={() => togglePanel(true)}
+            aria-label="Hide information panel"
+            aria-expanded={true}
+            aria-controls="learn-info-panel"
+            title="Hide information panel"
+          >
+            <UiIcon name="next" />
+          </button>
+        </div>
         <aside className="learn-fs__panel" aria-live="polite">
           <div className="learn-fs__detail">
             {isModernEra && (
@@ -3573,19 +3583,23 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         )}
       </div>
 
-      <button
-        type="button"
-        className="learn-fs__panel-drawer-btn learn-fs__panel-drawer-btn--show"
-        onClick={() => setPanelDismissed(false)}
-        aria-label="Show information panel"
-        title="Show information panel"
-        aria-hidden={!panelCollapsed ? true : undefined}
-        tabIndex={!panelCollapsed ? -1 : undefined}
-        disabled={panelSelectionKey == null}
-      >
-        <UiIcon name="previous" />
-        <span className="learn-fs__panel-drawer-label">Info</span>
-      </button>
+      <div className="learn-fs__panel-handle-rail learn-fs__panel-handle-rail--edge">
+        <button
+          ref={showPanelBtnRef}
+          type="button"
+          className="learn-fs__panel-handle learn-fs__panel-handle--show"
+          onClick={() => togglePanel(false)}
+          aria-label="Show information panel"
+          aria-expanded={false}
+          aria-controls="learn-info-panel"
+          title="Show information panel"
+          aria-hidden={!panelCollapsed ? true : undefined}
+          tabIndex={!panelCollapsed ? -1 : undefined}
+          disabled={panelSelectionKey == null}
+        >
+          <UiIcon name="previous" />
+        </button>
+      </div>
 
       {currentCountry && (
         <NationalAnthemPlayer

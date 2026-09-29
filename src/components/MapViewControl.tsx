@@ -11,7 +11,8 @@ import {
 /**
  * Popover-button control that lets the user pick the map's view centre
  * (Atlantic / Pacific / Americas / Africa / East Asia, or a custom
- * longitude via a slider) and toggle south-up.
+ * longitude via a slider), switch between the flat map and a globe, spin
+ * it, and toggle south-up.
  *
  * Designed to sit in the same column as the +/-/⟲ zoom buttons. Closed
  * state is a single globe-icon button; open state floats a popover with
@@ -21,9 +22,12 @@ import {
 export type MapViewControlProps = {
   view: MapViewSettings;
   onChange: (next: MapViewSettings) => void;
+  /** Whether the map is auto-spinning. Omit (with `onToggleSpin`) to hide the control. */
+  spinning?: boolean;
+  onToggleSpin?: () => void;
 };
 
-export function MapViewControl({ view, onChange }: MapViewControlProps) {
+export function MapViewControl({ view, onChange, spinning = false, onToggleSpin }: MapViewControlProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const popoverStyle = usePopoverBounds(open, ref, 256);
@@ -63,11 +67,11 @@ export function MapViewControl({ view, onChange }: MapViewControlProps) {
         className="world-map__zoom-btn map-view-control__trigger"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        aria-label="Change map view centre"
-        title="Change map view centre"
+        aria-label="Map view options"
+        title="Map view — globe, spin, south-up, centre"
       >
-        {/* Simple globe glyph — no external icon dependency. */}
-        <UiIcon name="globe" />
+        <UiIcon name="settings" />
+        <span className="map-view-control__trigger-label">View</span>
       </button>
 
       {open && (
@@ -106,6 +110,42 @@ export function MapViewControl({ view, onChange }: MapViewControlProps) {
             className="map-view-control__slider"
             aria-label="Map centre longitude"
           />
+
+          <p className="map-view-control__heading map-view-control__heading--sub" id="map-view-projection">
+            Projection
+          </p>
+          <div
+            className="map-view-control__presets"
+            role="radiogroup"
+            aria-labelledby="map-view-projection"
+          >
+            {([
+              { globe: false, label: "Map", title: "Flat Equal Earth map (default)" },
+              { globe: true, label: "Globe", title: "3-D globe — drag to spin it" },
+            ] as const).map((o) => {
+              const active = view.globe === o.globe;
+              return (
+                <button
+                  key={o.label}
+                  type="button"
+                  role="radio"
+                  aria-checked={active}
+                  className={`map-view-control__preset${active ? " map-view-control__preset--active" : ""}`}
+                  onClick={() => onChange({ ...view, globe: o.globe })}
+                  title={o.title}
+                >
+                  {o.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {onToggleSpin && (
+            <label className="map-view-control__check">
+              <input type="checkbox" checked={spinning} onChange={onToggleSpin} />
+              <span>Spin</span>
+            </label>
+          )}
 
           <label className="map-view-control__check">
             <input

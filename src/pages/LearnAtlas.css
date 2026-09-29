@@ -68,14 +68,19 @@ body:has(.learn-page--atlas) .bottom-nav {
   box-shadow: var(--shadow);
   padding: 1.25rem;
 }
-.learn-page--atlas .learn-fs__panel-drawer-btn {
-  border-width: 1px;
-  box-shadow: none;
-  border-radius: 999px;
+.learn-page--atlas .learn-fs { --panel-inset: 0px; }
+.learn-page--atlas .learn-fs__panel-handle {
+  border: 1px solid var(--atlas-border);
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  box-shadow: -4px 0 12px rgb(0 0 0 / 0.08);
+  color: var(--ink-soft);
 }
-.learn-page--atlas .learn-fs__panel-drawer-btn:active {
-  box-shadow: none;
-  transform: none;
+.learn-page--atlas .learn-fs__panel-handle:hover,
+.learn-page--atlas .learn-fs__panel-handle:focus-visible {
+  background: var(--atlas-tint);
+  color: var(--atlas-accent);
+  border-color: var(--atlas-accent);
 }
 .learn-page--atlas .learn-fs__map .world-map__zoom-controls {
   padding: .5rem;
