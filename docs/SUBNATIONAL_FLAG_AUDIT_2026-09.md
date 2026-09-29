@@ -571,7 +571,7 @@ Qom.
 
 ## Batch 7b — six more maps where polygons carried another region's code (2026-09-29)
 
-*Shipped in #1727.*
+*Shipped in #1727 (`8311a07`); live since 30 September 2026, 1:31 AM AEST.*
 
 **How they were found.** After Iran, a scan tested every map polygon in the app against Wikidata.
 For each ISO 3166-2 code, it checked whether the region's own coordinates (P625) and its capital's
@@ -638,7 +638,7 @@ population, capital and native name.
 
 ## Batch 7c — 64 quiz capitals now agree with the map (2026-09-29)
 
-*Shipped in #PRNUM.*
+*Shipped in #1728.*
 
 **What was wrong.** A capital-flag question uses the capital that Wikidata records (P36), while
 the Learn panel shows the capital from Natural Earth. The panel shows the capital's population and
