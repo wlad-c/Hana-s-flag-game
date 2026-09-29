@@ -1,9 +1,22 @@
 /**
  * Tab strip for the Learn-mode country information panel.
- * Single-line horizontal scroll with a trailing "…" when more tabs sit
- * off-screen to the right (and a leading "…" when scrolled away from the start).
+ *
+ * "Priority+" navigation: as many tabs as fit the panel width render inline;
+ * the rest move behind a "More ▾" button that opens a menu. The button is a
+ * real control, so every tab is reachable by mouse, touch and keyboard — a
+ * horizontally-scrolling strip is only scrollable by swipe (a mouse wheel
+ * scrolls the page, not the strip), which left desktop users stranded.
+ * When the active tab lives in the menu, the button takes its label and the
+ * active styling so the current tab is always visible.
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 import {
   LEARN_PANEL_TAB_IDS,
   LEARN_PANEL_TAB_LABELS,
@@ -20,69 +33,127 @@ export function LearnInfoTabs({
   /** Defaults to every panel tab; subdivision drill-in passes a smaller set. */
   tabs?: readonly LearnPanelTabId[];
 }) {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-  const [moreStart, setMoreStart] = useState(false);
-  const [moreEnd, setMoreEnd] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const measureRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const [visibleCount, setVisibleCount] = useState(tabs.length);
+  const [open, setOpen] = useState(false);
 
-  const updateOverflow = useCallback(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const { scrollLeft, scrollWidth, clientWidth } = el;
-    const epsilon = 2;
-    setMoreStart(scrollLeft > epsilon);
-    setMoreEnd(scrollLeft + clientWidth < scrollWidth - epsilon);
+  // Widths come from an invisible copy of the full strip (plus a sample
+  // "More" button), so the fit calculation never depends on what is
+  // currently collapsed.
+  const recompute = useCallback(() => {
+    const wrap = wrapRef.current;
+    const measure = measureRef.current;
+    if (!wrap || !measure) return;
+    const available = wrap.clientWidth;
+    const tabEls = Array.from(
+      measure.querySelectorAll<HTMLElement>("[data-measure-tab]"),
+    );
+    const moreEl = measure.querySelector<HTMLElement>("[data-measure-more]");
+    const gap = parseFloat(getComputedStyle(measure).columnGap) || 0;
+    const widths = tabEls.map((el) => el.getBoundingClientRect().width);
+    const total = widths.reduce((s, w) => s + w, 0) + gap * Math.max(0, widths.length - 1);
+    if (total <= available + 0.5) {
+      setVisibleCount(widths.length);
+      return;
+    }
+    const moreWidth = moreEl?.getBoundingClientRect().width ?? 0;
+    let used = moreWidth;
+    let count = 0;
+    for (const w of widths) {
+      if (used + gap + w > available) break;
+      used += gap + w;
+      count++;
+    }
+    setVisibleCount(Math.max(1, count));
   }, []);
 
-  useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    updateOverflow();
-    el.addEventListener("scroll", updateOverflow, { passive: true });
-    const ro = typeof ResizeObserver !== "undefined"
-      ? new ResizeObserver(updateOverflow)
-      : null;
-    ro?.observe(el);
-    return () => {
-      el.removeEventListener("scroll", updateOverflow);
-      ro?.disconnect();
-    };
-  }, [updateOverflow, tabs]);
+  useLayoutEffect(() => {
+    recompute();
+    const wrap = wrapRef.current;
+    if (!wrap || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(recompute);
+    ro.observe(wrap);
+    return () => ro.disconnect();
+  }, [recompute, tabs]);
 
-  // Keep the active tab visible when it changes (e.g. Show-dropdown sync).
+  // Web fonts can land after first layout and change every tab's width.
   useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const activeBtn = el.querySelector<HTMLElement>(
-      '[role="tab"][aria-selected="true"]',
+    const fonts = (document as Document & { fonts?: FontFaceSet }).fonts;
+    fonts?.ready.then(recompute).catch(() => {});
+  }, [recompute]);
+
+  const inline = tabs.slice(0, visibleCount);
+  const overflow = tabs.slice(visibleCount);
+  const activeInMenu = overflow.includes(active);
+
+  useEffect(() => {
+    if (overflow.length === 0) setOpen(false);
+  }, [overflow.length]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: PointerEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", onDoc);
+    const first =
+      menuRef.current?.querySelector<HTMLElement>('[aria-checked="true"]') ??
+      menuRef.current?.querySelector<HTMLElement>('[role="menuitemradio"]');
+    first?.focus();
+    return () => document.removeEventListener("pointerdown", onDoc);
+  }, [open]);
+
+  const select = (id: LearnPanelTabId) => {
+    onChange(id);
+    if (open) {
+      setOpen(false);
+      toggleRef.current?.focus();
+    }
+  };
+
+  const onMenuKeyDown = (e: ReactKeyboardEvent<HTMLDivElement>) => {
+    const items = Array.from(
+      menuRef.current?.querySelectorAll<HTMLElement>('[role="menuitemradio"]') ?? [],
     );
-    activeBtn?.scrollIntoView({
-      inline: "nearest",
-      block: "nearest",
-      behavior: "smooth",
-    });
-    // Re-measure after the scroll settles.
-    const t = window.setTimeout(updateOverflow, 320);
-    return () => window.clearTimeout(t);
-  }, [active, updateOverflow]);
+    const i = items.indexOf(document.activeElement as HTMLElement);
+    if (e.key === "Escape") {
+      e.preventDefault();
+      setOpen(false);
+      toggleRef.current?.focus();
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault();
+      items[(i + 1) % items.length]?.focus();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      items[(i - 1 + items.length) % items.length]?.focus();
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      items[0]?.focus();
+    } else if (e.key === "End") {
+      e.preventDefault();
+      items[items.length - 1]?.focus();
+    } else if (e.key === "Tab") {
+      setOpen(false);
+    }
+  };
+
+  const onToggleKeyDown = (e: ReactKeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      setOpen(true);
+    }
+  };
+
+  const tabClass = (selected: boolean) =>
+    `flag-tabs__tab${selected ? " flag-tabs__tab--active" : ""}`;
 
   return (
-    <div
-      className={`learn-panel-tabs-wrap${moreStart ? " learn-panel-tabs-wrap--more-start" : ""}${
-        moreEnd ? " learn-panel-tabs-wrap--more-end" : ""
-      }`}
-    >
-      {moreStart && (
-        <span className="learn-panel-tabs__more learn-panel-tabs__more--start" aria-hidden="true">
-          …
-        </span>
-      )}
-      <div
-        ref={scrollerRef}
-        className="flag-tabs learn-panel-tabs"
-        role="tablist"
-        aria-label="Country information"
-      >
-        {tabs.map((id) => {
+    <div className="learn-panel-tabs-wrap" ref={wrapRef}>
+      <div className="flag-tabs learn-panel-tabs" role="tablist" aria-label="Country information">
+        {inline.map((id) => {
           const selected = id === active;
           return (
             <button
@@ -90,19 +161,84 @@ export function LearnInfoTabs({
               type="button"
               role="tab"
               aria-selected={selected}
-              className={`flag-tabs__tab${selected ? " flag-tabs__tab--active" : ""}`}
-              onClick={() => onChange(id)}
+              className={tabClass(selected)}
+              onClick={() => select(id)}
             >
               {LEARN_PANEL_TAB_LABELS[id]}
             </button>
           );
         })}
       </div>
-      {moreEnd && (
-        <span className="learn-panel-tabs__more learn-panel-tabs__more--end" aria-hidden="true">
-          …
-        </span>
+      {overflow.length > 0 && (
+        <div className="learn-panel-tabs__more-wrap">
+          <button
+            ref={toggleRef}
+            type="button"
+            className={`${tabClass(activeInMenu)} learn-panel-tabs__more`}
+            aria-haspopup="menu"
+            aria-expanded={open}
+            aria-label={
+              activeInMenu
+                ? `${LEARN_PANEL_TAB_LABELS[active]} — more tabs`
+                : "More tabs"
+            }
+            onClick={() => setOpen((v) => !v)}
+            onKeyDown={onToggleKeyDown}
+          >
+            <span>{activeInMenu ? LEARN_PANEL_TAB_LABELS[active] : "More"}</span>
+            <span className="learn-panel-tabs__caret" aria-hidden="true">
+              ▾
+            </span>
+          </button>
+          {open && (
+            <div
+              ref={menuRef}
+              className="learn-panel-tabs__menu"
+              role="menu"
+              aria-label="More tabs"
+              onKeyDown={onMenuKeyDown}
+            >
+              {overflow.map((id) => {
+                const selected = id === active;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked={selected}
+                    tabIndex={-1}
+                    className={`learn-panel-tabs__menu-item${
+                      selected ? " learn-panel-tabs__menu-item--active" : ""
+                    }`}
+                    onClick={() => select(id)}
+                  >
+                    {LEARN_PANEL_TAB_LABELS[id]}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
       )}
+      <div className="flag-tabs learn-panel-tabs learn-panel-tabs__measure" ref={measureRef} aria-hidden="true">
+        {tabs.map((id) => (
+          <span key={id} data-measure-tab className={tabClass(id === active)}>
+            {LEARN_PANEL_TAB_LABELS[id]}
+          </span>
+        ))}
+        <span data-measure-more className={`${tabClass(true)} learn-panel-tabs__more`}>
+          <span>
+            {tabs.reduce(
+              (longest, id) =>
+                LEARN_PANEL_TAB_LABELS[id].length > longest.length
+                  ? LEARN_PANEL_TAB_LABELS[id]
+                  : longest,
+              "More",
+            )}
+          </span>
+          <span className="learn-panel-tabs__caret">▾</span>
+        </span>
+      </div>
     </div>
   );
 }
