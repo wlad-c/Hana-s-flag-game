@@ -1147,9 +1147,18 @@ export function WorldProgressMap({
           )}
           <g transform={zoom.transform}>
           {/* South-up flip happens inside the zoom group so flipping +
-              zooming compose correctly. See HistoricalMap for details. */}
+              zooming compose correctly. See HistoricalMap for details.
+              clipPath="url(#wm-sphere-clip)" is placed HERE (on the stable
+              south-up group, not on the rotating translation child) because
+              clipPathUnits="userSpaceOnUse" resolves clip coordinates in the
+              REFERENCING ELEMENT'S own coordinate space. The translation group
+              has transform="translate(flagTranslateX 0)", so any clipPath on it
+              would shift with the rotation — providing zero clipping. This
+              group's coordinate space is the fixed (0,0)–(960,500) projection
+              space, which always matches the sphere outline. */}
           <g
             transform={southUp ? `translate(0 ${HEIGHT}) scale(1 -1)` : undefined}
+            clipPath={spherePath ? "url(#wm-sphere-clip)" : undefined}
           >
           {spherePath && (
             <path
@@ -1178,12 +1187,7 @@ export function WorldProgressMap({
               Three copies at -WIDTH, 0, +WIDTH ensure the sphere is always
               fully covered regardless of rotation offset.
               will-change promotes this group to a GPU compositing layer so
-              only the transform changes, not the painted content.
-              clipPath="url(#wm-sphere-clip)" clips all landmasses to the
-              globe outline so countries elegantly disappear at the edges
-              instead of floating outside the globe boundary. The clip is
-              applied here (inside zoom + south-up transforms) so coordinates
-              match the sphere path's coordinate system. */}
+              only the transform changes, not the painted content. */}
           <g
             transform={
               flagTranslateX !== 0
@@ -1191,7 +1195,6 @@ export function WorldProgressMap({
                 : undefined
             }
             style={{ willChange: "transform" }}
-            clipPath={spherePath ? "url(#wm-sphere-clip)" : undefined}
           >
             {(globe ? ([0] as const) : ([-WIDTH, 0, WIDTH] as const)).map((offset) => (
               <g
