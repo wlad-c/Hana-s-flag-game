@@ -538,6 +538,16 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   }, [panelSelectionKey]);
   const panelCollapsed =
     isWideLayout && (panelSelectionKey == null || panelDismissed);
+  const hidePanelBtnRef = useRef<HTMLButtonElement>(null);
+  const showPanelBtnRef = useRef<HTMLButtonElement>(null);
+  // Hands focus to the opposite handle so keyboard users aren't left on a
+  // control that just disappeared.
+  const togglePanel = useCallback((dismiss: boolean) => {
+    setPanelDismissed(dismiss);
+    requestAnimationFrame(() =>
+      (dismiss ? showPanelBtnRef : hidePanelBtnRef).current?.focus(),
+    );
+  }, []);
   // The specific football crest clicked in the grid, when it is a card that is
   // NOT a plain country — a UK home nation, or a FIFA-member entity. Keyed with
   // its parent country so the panel shows that crest only while the parent stays
@@ -2546,19 +2556,24 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       </div>
 
       <div
+        id="learn-info-panel"
         className="learn-fs__panel-wrap"
         aria-hidden={panelCollapsed ? true : undefined}
       >
-        <button
-          type="button"
-          className="learn-fs__panel-drawer-btn learn-fs__panel-drawer-btn--hide"
-          onClick={() => setPanelDismissed(true)}
-          aria-label="Hide information panel"
-          title="Hide information panel"
-        >
-          <UiIcon name="next" />
-          <span className="learn-fs__panel-drawer-label">Hide</span>
-        </button>
+        <div className="learn-fs__panel-handle-rail learn-fs__panel-handle-rail--panel">
+          <button
+            ref={hidePanelBtnRef}
+            type="button"
+            className="learn-fs__panel-handle"
+            onClick={() => togglePanel(true)}
+            aria-label="Hide information panel"
+            aria-expanded={true}
+            aria-controls="learn-info-panel"
+            title="Hide information panel"
+          >
+            <UiIcon name="next" />
+          </button>
+        </div>
         <aside className="learn-fs__panel" aria-live="polite">
           <div className="learn-fs__detail">
             {isModernEra && (
@@ -3573,19 +3588,23 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         )}
       </div>
 
-      <button
-        type="button"
-        className="learn-fs__panel-drawer-btn learn-fs__panel-drawer-btn--show"
-        onClick={() => setPanelDismissed(false)}
-        aria-label="Show information panel"
-        title="Show information panel"
-        aria-hidden={!panelCollapsed ? true : undefined}
-        tabIndex={!panelCollapsed ? -1 : undefined}
-        disabled={panelSelectionKey == null}
-      >
-        <UiIcon name="previous" />
-        <span className="learn-fs__panel-drawer-label">Info</span>
-      </button>
+      <div className="learn-fs__panel-handle-rail learn-fs__panel-handle-rail--edge">
+        <button
+          ref={showPanelBtnRef}
+          type="button"
+          className="learn-fs__panel-handle learn-fs__panel-handle--show"
+          onClick={() => togglePanel(false)}
+          aria-label="Show information panel"
+          aria-expanded={false}
+          aria-controls="learn-info-panel"
+          title="Show information panel"
+          aria-hidden={!panelCollapsed ? true : undefined}
+          tabIndex={!panelCollapsed ? -1 : undefined}
+          disabled={panelSelectionKey == null}
+        >
+          <UiIcon name="previous" />
+        </button>
+      </div>
 
       {currentCountry && (
         <NationalAnthemPlayer
