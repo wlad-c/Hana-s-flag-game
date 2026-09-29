@@ -8,7 +8,6 @@ import { ERA_EXTENT_CAVEATS } from "../data/polityExistence";
 import { WorldProgressMap } from "../components/WorldProgressMap";
 import { HistoricalMap } from "../components/HistoricalMap";
 import { EraPicker } from "../components/EraPicker";
-import { ToolbarOverflow } from "../components/ToolbarOverflow";
 import { SubdivisionDropdown } from "../components/SubdivisionDropdown";
 import { CountryDropdown } from "../components/CountryDropdown";
 import { SITE_TOPBAR_LEFT_SLOT_ID } from "../components/Topbar";
@@ -1719,16 +1718,14 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             onChange={handleDemocracyMapModeChange}
           />
         )}
-        {/* View centre (projection, spin, south-up) is secondary — it collapses
-            into the kebab on narrow screens. Spin only moves the Today map. */}
-        <ToolbarOverflow>
-          <MapViewControl
-            view={mapView}
-            onChange={setMapView}
-            spinning={isRotating}
-            onToggleSpin={isModernEra ? toggleRotation : undefined}
-          />
-        </ToolbarOverflow>
+        {/* Always visible on every screen size — never tucked behind an
+            overflow menu. Spin only moves the Today map. */}
+        <MapViewControl
+          view={mapView}
+          onChange={setMapView}
+          spinning={isRotating}
+          onToggleSpin={isModernEra ? toggleRotation : undefined}
+        />
         <hr className="world-map__zoom-divider world-map__zoom-divider--era" />
         <EraPicker currentEraId={eraId} onEraChange={setEraId} />
       </>
