@@ -376,19 +376,23 @@
   /* Keep the ENTIRE world map above the fold. The SVG's natural size is its
      960:500 (=1.92) viewBox ratio, so at `width:100%` a wide or short viewport
      makes it taller than the screen and its lower edge drops below the fold.
-     Cap its height to the space left under the sticky site-topbar and the
-     map-controls toolbar, and derive max-width from that height (× 1.92) so the
-     map scales down PROPORTIONALLY — width-limited on tall viewports,
-     height-limited on wide/short ones — and is never letterboxed. Centre it in
-     the (full-width) map column when the height cap makes it narrower. */
+     Cap its height to the space left under the sticky site-topbar, the
+     map-controls toolbar, AND the fixed bottom-nav bar (build info + profile),
+     and derive max-width from that height (× 1.92) so the map scales down
+     PROPORTIONALLY — width-limited on tall viewports, height-limited on
+     wide/short ones — and is never letterboxed. Centre it in the
+     (full-width) map column when the height cap makes it narrower.
+     --learn-map-chrome covers top chrome; --learn-map-bottom covers the
+     fixed bottom nav so Antarctica is never hidden behind it. */
   --learn-map-chrome: calc(8.5rem + env(safe-area-inset-top));
+  --learn-map-bottom: calc(var(--bottom-nav-h, 3rem) + env(safe-area-inset-bottom));
   width: 100%;
   height: auto;
   /* vh fallback first, dvh (accounts for mobile browser chrome) overrides it. */
-  max-width: min(100%, calc((100vh - var(--learn-map-chrome)) * 1.92));
-  max-height: calc(100vh - var(--learn-map-chrome));
-  max-width: min(100%, calc((100dvh - var(--learn-map-chrome)) * 1.92));
-  max-height: calc(100dvh - var(--learn-map-chrome));
+  max-width: min(100%, calc((100vh - var(--learn-map-chrome) - var(--learn-map-bottom)) * 1.92));
+  max-height: calc(100vh - var(--learn-map-chrome) - var(--learn-map-bottom));
+  max-width: min(100%, calc((100dvh - var(--learn-map-chrome) - var(--learn-map-bottom)) * 1.92));
+  max-height: calc(100dvh - var(--learn-map-chrome) - var(--learn-map-bottom));
   margin-inline: auto;
 }
 
