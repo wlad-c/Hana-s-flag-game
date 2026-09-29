@@ -141,6 +141,25 @@ const CAPITAL_CITY_QIDS = {
   // P300 pass named it as North Sulawesi's capital and bundled Gorontalo City's
   // flag. Manado is its capital (en.wikipedia "Manado"). 2026-09 audit.
   "ID-SA": "Q15847", // North Sulawesi → Manado
+  // 2026-09 audit, batch 7d. Each item lists more than one P36, and the P300
+  // pass kept one that disagrees with the map. Where the subdivision genuinely
+  // has two seats, the pin names the SAME city as GAP_CAPITAL_CITY_QIDS in
+  // build-subdivision-capitals.mjs, so the map and the capital card agree.
+  // Wikidata also lists another place (en.wikipedia confirms the capital):
+  "ID-BA": "Q11506", // Bali → Denpasar (Singaraja was the colonial capital, 1849–1960)
+  "ID-SG": "Q15379", // Southeast Sulawesi → Kendari (Wikidata also lists Bau-Bau)
+  "ID-KT": "Q14409", // Central Kalimantan → Palangka Raya (Pahandut is a district of the city)
+  // Two seats: the seat of government where one is named, else the one the map shows.
+  "CH-AR": "Q63970", // Appenzell Ausserrhoden → Herisau, seat of government and parliament (Trogen: the courts)
+  "PT-20": "Q208149", // Azores → Ponta Delgada, seat of the Regional Government (Angra: judiciary; Horta: assembly)
+  "IT-PU": "Q13134", // Pesaro and Urbino → Pesaro, home of the provincial offices (2022 statute: both are capitals)
+  "IT-FC": "Q6662", // Forlì-Cesena → Cesena (both are capitals, decree-law 7/2024)
+  "IT-OT": "Q13630", // Olbia-Tempio → Olbia (both were capitals; province abolished 2016)
+  "IT-VS": "Q13656", // Medio Campidano → Sanluri (Sanluri and Villacidro were both capitals)
+  "IE-TA": "Q918372", // Tipperary → Nenagh (county towns Nenagh and Clonmel; the council meets in both)
+  // Ukraine moved these oblast administrations in 2014; the de jure centres are unchanged.
+  "UA-09": "Q134279", // Luhansk Oblast → Luhansk (not the temporary seat Sievierodonetsk)
+  "UA-14": "Q43070", // Donetsk Oblast → Donetsk (not the temporary seat Kramatorsk)
 };
 
 /**
@@ -239,6 +258,9 @@ const SUPPRESS_TERRITORY_DUPLICATE_FLAG = new Set(["GB-IO"]);
 const SEAT_DISTRICT_NOT_A_CAPITAL = {
   "KR-11": "Jung District — the district of Seoul where City Hall stands",
   "KR-26": "Yeonje District — the district of Busan where City Hall stands",
+  // Tokyo Metropolis: the app shows Tokyo as its own capital; Wikidata's P36 is
+  // Shinjuku, the special ward where the Metropolitan Government stands. (2026-09.)
+  "JP-13": "Shinjuku — the special ward where the Tokyo Metropolitan Government stands",
 };
 
 /**
@@ -267,6 +289,10 @@ const REJECTED_CAPITAL_FLAGS = JSON.parse(
  * missing figure (and would correct a stale one) and survives every regen.
  */
 const CAPITAL_POPULATION_OVERRIDES = {
+  // Nenagh (Tipperary) — CSO Census 2022, town of Nenagh, as cited by
+  // en.wikipedia "Nenagh". Wikidata has no population for Nenagh, and an earlier
+  // record gave it Clonmel's 18,369. (2026-09 audit, batch 7d.)
+  "IE-TA": { population: 9895, year: 2022, basis: "census", source: "CSO Census 2022, Towns: Nenagh" },
   // Manado (North Sulawesi) — BPS mid-2025 estimate, Kota Manado Dalam Angka 2026
   // (Katalog-BPS 1102001.7171), as cited by en.wikipedia "Manado"; the 2020
   // census gave 451,916. Wikidata's latest dated figure is 461,636 (2015).

@@ -63,5 +63,37 @@
   "SY-RD": {
     "file": "Flag of Damascus (until 2024).svg",
     "reason": "The same superseded Damascus Governorate flag, shown for Damascus as the capital of Rif Dimashq. Commons records it as used until 2024 and no later flag is documented."
+  },
+  "GQ-BN": {
+    "file": "Former Flag of Santa Isabella City.svg",
+    "reason": "Commons: \"Former flag of the Santa Isabella City, in the Spanish Guinea (nowadays Malabo)\" — a colonial-era flag, recorded as former, uploaded as own work with no source. It is not Malabo's current flag."
+  },
+  "ID-KT": {
+    "file": "Flag of Banjarmasin City.png",
+    "reason": "The flag of Banjarmasin (Commons: \"Flag of Banjarmasin City\", in \"Flags of cities of Indonesia\"), a city in South Kalimantan, shown as the flag of Central Kalimantan's capital. Central Kalimantan's capital is Palangka Raya (Wikidata Q14409), a different city in a different province."
+  },
+  "IE-TA": {
+    "file": "IRL Nenagh flag.svg",
+    "reason": "A plain blue and gold bicolour: Tipperary's GAA county colours. Commons files it in \"Flags of GAA organising bodies\" and \"Flags of counties of Ireland\", as own work with no source. It is not a flag of the town of Nenagh."
+  },
+  "RO-BN": {
+    "file": "Flag of Beszterce (1941).svg",
+    "reason": "Commons: \"Flag of Beszterce in 1941\" — a historical flag from the 1941 Hungarian book 'Városaink neve, címere és lobogója', sourced to FOTW ro-bistr.html#hist (its history section), from the WWII Hungarian annexation. It is not Bistrița's current flag."
+  },
+  "RO-MM": {
+    "file": "Flag of Nagybánya (1941).svg",
+    "reason": "Commons: \"Flag of Nagybánya in 1941\" — a historical flag from the 1941 Hungarian book 'Városaink neve, címere és lobogója', sourced to FOTW ro-baiam.html#hist. It is not Baia Mare's current flag."
+  },
+  "RO-SJ": {
+    "file": "Flag of Zilah (1941).svg",
+    "reason": "Commons: \"Flag of Zilah in 1941\" — a historical flag from the 1941 Hungarian book 'Városaink neve, címere és lobogója', sourced to FOTW ro-zalau.html#hist. It is not Zalău's current flag."
+  },
+  "RO-SM": {
+    "file": "Flag of Szatmárnémeti (1941).svg",
+    "reason": "Commons: \"Flag of Szatmárnémeti in 1941\" — a historical flag from the 1941 Hungarian book 'Városaink neve, címere és lobogója', sourced to FOTW ro-satum.html#hist. It is not Satu Mare's current flag."
+  },
+  "RS-05": {
+    "file": "Flag of Zombor (1941).svg",
+    "reason": "Commons: \"Flag of Zombor in 1941\" — a historical flag from the 1941 Hungarian book 'Városaink neve, címere és lobogója', sourced to FOTW rs-sombo.html#ffl (a former flag). It is not Sombor's current flag."
   }
 }

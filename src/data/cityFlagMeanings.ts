@@ -37,6 +37,35 @@ import type { FlagMeaning as FlagMeaningData } from "./flagMeanings";
 
 export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
   // ── Lisbon — capital of Portugal and of the Lisbon region ───────────────────
+  "CH-AR": {
+    description:
+      "Herisau’s flag shows its arms: a black bear striding upright on white, a golden log on its shoulder. " +
+      "Like many places in the region, it goes back to the legend of St Gall, first written down in 771: the " +
+      "saint told a bear to fetch wood for his fire, and it came back with a heavy log. The black bear became " +
+      "the emblem of the Abbey of St. Gall in the 14th century; the shouldered log first appears on Herisau’s " +
+      "seal of 1401, and Herisau kept it.",
+    sources: [
+      { title: "Das Herisauer Wappen — Gemeinde Herisau (2012)", url: "https://www.herisau.ch/_docn/4590223/Das_Herisauer_Wappen.pdf" },
+      { title: "Herisau (Switzerland) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ch-ar005.html" },
+    ],
+  },
+
+  "ID-BA": {
+    description:
+      "Denpasar’s yellow flag bears the city emblem, which the city explains: the pentagon stands for " +
+      "Pancasila; the golden Padmasana shrine of the Jagatnatha temple for the universe as a place of worship, " +
+      "and for Denpasar as the seat of government; the keris for a heroic spirit and a city of struggle; the " +
+      "split gate (candi bentar) for Denpasar’s own culture and as the gateway to Bali; and the three steps " +
+      "for the Tri Kaya Parisudha precept its development rests on. Its 27 grains of rice, 2 chain links and " +
+      "9 cotton flowers with 2 leaves spell out the city’s founding date, 27 February 1992.",
+    sources: [
+      {
+        title: "Profil Statistik Gender Kota Denpasar 2024, §3.3 Lambang Kota Denpasar dan Penjelasannya — Pemerintah Kota Denpasar",
+        url: "https://www.kb.denpasarkota.go.id/public/uploads/download/download_242210091042_statistik-gender-kota-denpasar-tahun-2024.pdf",
+      },
+    ],
+  },
+
   "PT-11": {
     description:
       "A field divided into eight alternating black and white triangles (gyronny), bearing in the " +
@@ -242,6 +271,19 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
   },
 
   // ── Stockholm — capital of Sweden ───────────────────────────────────────────
+  "PT-20": {
+    description:
+      "Ponta Delgada flies the typical Portuguese municipal flag: its arms on plain yellow, adopted in 1946. " +
+      "The seven golden arrows on red are the attributes of St Sebastian, the municipal patron — the city grew " +
+      "out of the village of São Sebastião. The goshawk (açor) holding a quina, the five-disc Portuguese " +
+      "shield, stands for the Azores, whose name it pictures, and appears in most Azorean municipal arms; the " +
+      "five-towered crown marks city rank.",
+    sources: [
+      { title: "Ponta Delgada (Portugal) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/pt-pdl.html" },
+      { title: "Azores: municipalities (goshawk symbolism) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/pt-a-.html" },
+    ],
+  },
+
   "SE-AB": {
     description:
       "A blue field bearing the golden, crowned head of Saint Erik — the arms of Stockholm. Erik IX, a " +
@@ -4600,17 +4642,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
-  "GQ-BN": {
-    description:
-      "Malabo’s flag bears the colonial-era arms of the city (then Santa Isabel): the Pico de Santa Isabel — the " +
-      "great volcanic peak of Bioko above the sea — with the crowned cipher of Queen Isabella II and the city’s " +
-      "port, within a border of the castles of Castile and lions of León. The arms were drawn up by the Spanish " +
-      "Real Academia de la Historia.",
-    sources: [
-      { title: "Las armas de la ciudad de Santa Isabel — Doce Linajes de Soria (Ceballos-Escalera)", url: "https://docelinajes.es/2016/05/de-la-heraldica-colonial-las-armas-de-la-ciudad-de-santa-isabel-en-la-guinea-espanola-por-el-dr-d-alfonso-de-ceballos-escalera-y-gila-vizconde-de-ayala/" },
-    ],
-  },
-
   "GW-GA": {
     description:
       "Gabú’s arms (under its colonial name Nova Lamego): on red, a silver antique sword with a gold hilt " +
@@ -6034,12 +6065,13 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
 
   "IT-PU": {
     description:
-      "Urbino’s arms are those of Duke Federico da Montefeltro: quartered, alternating Urbino’s own crowned eagle " +
-      "with wings spread and the Montefeltro bends of gold and blue with a small black eagle in the place of " +
-      "honour, the mark of their Ghibelline allegiance. The eagle also plays on Federico’s famous aquiline " +
-      "profile.",
+      "Pesaro’s flag carries the city’s arms: a golden oak on blue, crossed by two pairs of clasped hands and " +
+      "a scroll with the motto “Perpetua et firma fidelitas” (steadfast and lasting loyalty), above a base " +
+      "quartered white and red. Duke Guidobaldo II della Rovere gave the city his family’s oak — rovere — a " +
+      "few days before he died in Pesaro in 1574, asking for it to be set above the white-and-red quarters " +
+      "with the clasped hands and the motto, and to be named the city’s Lord and Father.",
     sources: [
-      { title: "Stemma di Urbino — Wikipedia (it)", url: "https://it.wikipedia.org/wiki/Stemma_di_Urbino" },
+      { title: "Pesaro § Simboli — Wikipedia (it)", url: "https://it.wikipedia.org/wiki/Pesaro#Simboli" },
     ],
   },
 
@@ -6484,16 +6516,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
       "the deified Pole Star and Big Dipper — and shared the moon-star crest as a mark of their unity.",
     sources: [
       { title: "千葉市のプロフィール — City of Chiba (official)", url: "https://www.city.chiba.jp/sogoseisaku/shichokoshitsu/kohokocho/prfindex.html" },
-    ],
-  },
-
-  "JP-13": {
-    description:
-      "The seat of the Tokyo Metropolitan Government is Shinjuku, whose ward emblem (adopted 1967) takes the " +
-      "lozenge — a shape traditionally denoting soundness and solidity — and writes the character 「新」 (shin) of " +
-      "Shinjuku across it in a single vigorous stroke, expressing the ward’s steady development into the future.",
-    sources: [
-      { title: "新宿区紋章 — Shinjuku City (official)", url: "https://www.city.shinjuku.lg.jp/kusei/soumu01_002070.html" },
     ],
   },
 
@@ -8617,18 +8639,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
   },
 
   // ── Bistrița — capital of Bistrița-Năsăud county, Romania ─────────────────
-  "RO-BN": {
-    description:
-      "Bistrița flies a silver ostrich head holding a golden horseshoe in its beak — arms granted to the town " +
-      "in the 14th century by King Louis of Anjou, whose crest bore just such an ostrich. The ostrich, thought " +
-      "the strongest of birds, stands for commerce and civic pride; the horseshoe for the medieval belief that " +
-      "it could digest iron, for the Anjou victory over the Hungarian nobility (whose emblem was a horse), and " +
-      "for good luck.",
-    sources: [
-      { title: "Stema municipiului Bistrița — Wikipedia (ro)", url: "https://ro.wikipedia.org/wiki/Stema_municipiului_Bistri%C8%9Ba" },
-    ],
-  },
-
   // ── Brașov — capital of Brașov county, Romania ────────────────────────────
   "RO-BV": {
     description:
@@ -10257,6 +10267,17 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
   },
 
   // ── Dnipro — capital of Dnipropetrovsk Oblast, Ukraine ────────────────────
+  "UA-09": {
+    description:
+      "Luhansk’s flag is light blue with the city’s arms at the centre. The arms, restored by the city council in " +
+      "1992 from the imperial-era design, show a black blast furnace with red flames between two black hammers " +
+      "on gold; the furnace stands for the metallurgy that shaped the city’s founding and growth.",
+    sources: [
+      { title: "Прапор Луганська — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/Прапор_Луганська" },
+      { title: "Герб Луганська — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/Герб_Луганська" },
+    ],
+  },
+
   "UA-12": {
     description:
       "Dnipro's arms are built around the seal of the Kodak Palanka, the Cossack administrative district whose " +
@@ -10268,6 +10289,18 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
   },
 
   // ── Zhytomyr — capital of Zhytomyr Oblast, Ukraine ────────────────────────
+  "UA-14": {
+    description:
+      "Donetsk’s flag is divided blue over black, the colours of the city’s shield, with its arms at the " +
+      "centre. The blue stands for the grandeur and beauty of the city’s architecture and greenery, the black " +
+      "for its rich coal reserves and their intensive mining. The arms, approved in 1995, keep the 1968 design " +
+      "of a golden hand holding a miner’s hammer.",
+    sources: [
+      { title: "Прапор Донецька — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/Прапор_Донецька" },
+      { title: "Герб Донецька — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/Герб_Донецька" },
+    ],
+  },
+
   "UA-18": {
     description:
       "Zhytomyr's arms show a white fortress — an open gate below three crenellated towers — on blue. The " +

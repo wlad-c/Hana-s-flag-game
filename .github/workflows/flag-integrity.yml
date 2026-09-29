@@ -63,6 +63,15 @@ on:
       - "scripts/check-capital-subdivision-collision.mjs"
       - "scripts/check-identical-subdivision-flags.mjs"
       - "src/data/identicalSubdivisionFlags.ts"
+      # A quiz capital must be the capital the Learn panel shows (either source can drift).
+      - "scripts/check-capital-name-agreement.mjs"
+      - "src/data/capitalDetails.ts"
+      - "src/data/cities.ts"
+      - "src/data/subdivisionCapitals.ts"
+      - "scripts/build-cities.mjs"
+      - "scripts/build-subdivision-capitals.mjs"
+      - "src/lib/capitalInfo.ts"
+      - "src/lib/playableSubdivisions.ts"
       - "src/hooks/useSubdivisionGame.ts"
       - "scripts/build-capital-details.mjs"
       - "scripts/check-hierarchy-type-colors.mjs"
@@ -367,6 +376,11 @@ jobs:
       # A quiz flag shared by two divisions must accept both answers.
       - name: Verify every near-identical pair of division flags is declared or reviewed
         run: node scripts/check-identical-subdivision-flags.mjs
+
+      # The quiz names a capital from Wikidata, the Learn panel from the map data;
+      # a disagreement means a wrong capital or another city's flag (batch 7, 2026-09).
+      - name: Verify every quiz capital is the capital the Learn panel shows
+        run: node scripts/check-capital-name-agreement.mjs
 
       # Needs sharp, so it lives here rather than in check-proportions.
       - name: Verify no raster flag has a transparent border
