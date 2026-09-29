@@ -2549,7 +2549,6 @@ export const SUBDIVISION_POPULATION: Record<string, SubdivisionPopulation> = {
   "IR-21": { population: 1138533, year: 2016, basis: "census" },
   "IR-19": { population: 1057461, year: 2016, basis: "census" },
   "IR-14": { population: 947763, year: 2016, basis: "census" },
-  "IR-31": { population: 863092, year: 2016, basis: "census" },
   "IR-28": { population: 863092, year: 2016, basis: "census" },
   "IR-29": { population: 768898, year: 2016, basis: "census" },
   "IR-17": { population: 713052, year: 2016, basis: "census" },

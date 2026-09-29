@@ -523,6 +523,52 @@ its map uses the old ones, so Hormozgan shows Tehran (SF-03). The quiz does not 
 capital-name check (SF-02). Taranto's city flag and about 80 other Italian capital flags are not
 yet checked against FOTW (SF-04).
 
+## Batch 7a — Iran: every province carried another province's data (2026-09-29)
+
+*Shipped in #1720.*
+
+**What was wrong.** The Iran map (`public/subdivisions/IR.json`) carried the ISO 3166-2:IR codes in
+force before the 2018 update. Every Wikidata-keyed dataset uses the current codes, and the two
+schemes reuse the same numbers for different provinces, so all 31 provinces showed another
+province's data:
+- Hormozgan (map code IR-23) showed Tehran Province's 13,267,637 people (2016 census) and Tehran as
+  its capital; the capital quiz used Tehran's flag for it. Hormozgan has 1,776,415 people.
+- Fars (IR-14) showed Chaharmahal and Bakhtiari's 947,763; Bushehr (IR-06) showed Khuzestan's
+  4,710,509; Qazvin (IR-28) showed North Khorasan's name in Persian. The same applied everywhere.
+- Tehran and Alborz had no code, so the app keyed them by name. Markazi, Fars and Razavi Khorasan
+  had no capital card, because their current codes (IR-00, IR-07, IR-09) did not exist on the
+  map. North Khorasan was patched through a one-off alias (IR-28 → IR-31).
+- The quiz asked Tabriz, Urmia, Tehran and Qom as the capitals of Ardabil, Isfahan, Hormozgan and
+  Yazd.
+
+**Fix.**
+- The 31 map features now carry the current codes. Each comes from Wikidata's P300 on the province
+  item, and all 31 match the ISO table in English Wikipedia's "ISO 3166-2:IR" (IR-00 Markazi …
+  IR-30 Alborz). The geometry is byte-for-byte unchanged, and the alias is removed.
+- Regenerated from their sources: the division list, the map's capital points (`cities.ts`, where
+  only Iran's lines changed) and the national-capital host (Tehran → IR-23).
+- Populations were already keyed by the current codes; the stray IR-31 duplicate is removed.
+- From a fresh Wikidata run, only Iran's lines were taken: capital details for Markazi (Arak,
+  520,944, 2016 census), Fars (Shiraz, 1,565,572, 2016 census), Razavi Khorasan (Mashhad,
+  3,208,000, 2020 estimate) and North Khorasan (Bojnord, 228,931, 2016 census), and the native
+  names of those provinces and capitals. The same run drifted 27 unrelated entries elsewhere;
+  those were left as they are.
+- Alborz had no capital on the map: Natural Earth predates the province (2010) and tags no capital
+  for it. Its capital, Karaj (Wikidata Q36529, the province's P36), now comes from the Wikidata
+  fallback layer (`subdivisionCapitals.ts`). Only that one line was taken from a fresh run of its
+  generator; the same run drifted 33 unrelated lines, which were left alone.
+- Three capitals showed no population, because Natural Earth spells them differently from the
+  Wikidata item the population comes from, and the panel only shows a figure when the names agree.
+  A new, cited table in `build-cities.mjs` (`SUBNATIONAL_NAME_ALIAS`) now gives each the Wikidata
+  English name: Bandar-e Bushehr → Bushehr (Q158928), Bandar-e-Abbas → Bandar Abbas (Q154814) and
+  Bojnurd → Bojnord (Q317946). Same city, same coordinates. Batch 7b uses the same table for the
+  other spelling mismatches.
+
+**Result.** All 31 provinces were checked in the running build. Each shows its own population,
+capital, capital population and native names, and there were no page errors. The quiz asks
+Tabriz, Urmia, Tehran and Qom as the capitals of East Azerbaijan, West Azerbaijan, Tehran and
+Qom.
+
 ## Follow-ups (later batches)
 
 ### Capital flags that match another place's flag (found in batch 5)
@@ -635,7 +681,8 @@ The 35 curated-override flags listed in §5.
   could be mentioned in the note.
 
 ### Structural data found in passing (not flag images)
-- **Iran**: IR-14/22/23 carry shifted ISO codes, so "Hormozgan" is keyed as Tehran.
+- ~~**Iran**: IR-14/22/23 carry shifted ISO codes, so "Hormozgan" is keyed as Tehran.~~ Fixed in
+  batch 7a: every province was affected, and the map now carries the current codes.
 - **Guyana**: GY-ES is mis-coded.
 - **Latvia**: divisions are pre-2021 municipalities, and many old codes are named "Valmiera".
 - **Vietnam**: provinces were merged in June 2025.

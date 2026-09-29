@@ -1527,13 +1527,16 @@ export const CAPITAL_DETAILS: Readonly<Record<string, CapitalDetail>> = {
   "IQ-WA": {"name":"Kut","population":377600,"year":2015,"basis":"estimate"},
 
   // ── IR ──
+  "IR-00": {"name":"Arak","population":520944,"year":2016,"basis":"census"},
   "IR-01": {"name":"Rasht","population":679995,"year":2016,"basis":"census"},
   "IR-02": {"name":"Sari","population":309820,"year":2016,"basis":"census"},
   "IR-03": {"name":"Tabriz","population":1558693,"year":2016,"basis":"census"},
   "IR-04": {"name":"Urmia","population":736224,"year":2016,"basis":"census"},
   "IR-05": {"name":"Kermanshah","population":946651,"year":2016,"basis":"census"},
   "IR-06": {"name":"Ahvaz","population":1184788,"year":2016,"basis":"census"},
+  "IR-07": {"name":"Shiraz","population":1565572,"year":2016,"basis":"census"},
   "IR-08": {"name":"Kerman","population":537718,"year":2016,"basis":"census"},
+  "IR-09": {"name":"Mashhad","population":3208000,"year":2020,"basis":"estimate"},
   "IR-10": {"name":"Isfahan","population":1961260,"year":2016,"basis":"census"},
   "IR-11": {"name":"Zahedan","population":587730,"year":2016,"basis":"census"},
   "IR-12": {"name":"Sanandaj","population":412767,"year":2016,"basis":"census"},
@@ -1552,9 +1555,9 @@ export const CAPITAL_DETAILS: Readonly<Record<string, CapitalDetail>> = {
   "IR-25": {"name":"Qom","population":1201158,"year":2016,"basis":"census"},
   "IR-26": {"name":"Qazvin","population":402748,"year":2016,"basis":"census"},
   "IR-27": {"name":"Gorgan","population":350676,"year":2016,"basis":"census"},
+  "IR-28": {"name":"Bojnord","population":228931,"year":2016,"basis":"census"},
   "IR-29": {"name":"Birjand","population":203636,"year":2016,"basis":"census"},
   "IR-30": {"name":"Karaj","population":1592492,"year":2016,"basis":"census"},
-  "IR-31": {"name":"Bojnord","population":228931,"year":2016,"basis":"census"},
 
   // ── IS ──
   "IS-1": {"name":"Reykjavík","population":138772,"year":2025,"basis":"estimate"},

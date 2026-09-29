@@ -95,8 +95,8 @@ export const CODE_ALIASES = {
   "IN-TS": "IN-TG", // Telangana
   // IQ
   "IQ-KI": "IQ-TS", // Kirkuk
-  // IR
-  "IR-28": "IR-31", // North Khorasan
+  // IR — no aliases: public/subdivisions/IR.json carries the current ISO 3166-2:IR
+  //   codes since the 2026-09 audit (batch 7a), the same codes Wikidata's P300 uses.
   // KZ
   "KZ-63": "KZ-VOS", // East Kazakhstan
   "KZ-31": "KZ-ZHA", // Jambyl

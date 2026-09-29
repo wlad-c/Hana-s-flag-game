@@ -597,6 +597,9 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "IN-HR": {"name":"Chandigarh","lon":76.7883,"lat":30.7364},
   "IN-PB": {"name":"Chandigarh","lon":76.7883,"lat":30.7364},
 
+  // ── IR ──
+  "IR-30": {"name":"Karaj","lon":50.9917,"lat":35.8328},
+
   // ── IS ──
   "IS-1": {"name":"Reykjavík","lon":-21.935,"lat":64.1475},
 

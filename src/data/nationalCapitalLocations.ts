@@ -92,7 +92,7 @@ export const NATIONAL_CAPITAL_SUBDIVISION: Record<string, string> = {
   "IL|Jerusalem": "IL-JM",
   "IN|New Delhi": "IN-DL",
   "IQ|Baghdad": "IQ-BG",
-  "IR|Tehran": "Tehran",
+  "IR|Tehran": "IR-23",
   "IS|Reykjavík": "IS-0",
   "IT|Rome": "IT-RM",
   "JM|Kingston": "JM-01",

@@ -168,6 +168,28 @@ const SUBNATIONAL_OVERRIDE = {
   "MY-10": { capital: "Shah Alam", largest: "Kelang" },
 };
 
+// Rename a Natural Earth SUBDIVISION-capital label to the English name Wikidata
+// gives the SAME city — the subdivision's own capital (P36), which is the item
+// CAPITAL_DETAILS and CAPITAL_FLAGS are sourced from. Same city, same NE
+// coordinates: NE simply romanises the name differently. It matters because the
+// Learn panel shows a capital's population and flag only when the two names agree
+// (sameCity() in src/lib/capitalInfo.ts), so a spelling variant silently hid them.
+// Keyed `${code}|${neName}`; each row cites the Wikidata item. Never use this to
+// swap in a DIFFERENT city — that is SUBNATIONAL_OVERRIDE's job, with a reason.
+const SUBNATIONAL_NAME_ALIAS = {
+  // Bushehr (IR-18) — capital Bushehr, Wikidata Q158928; NE adds "Bandar-e" (port).
+  "IR-18|Bandar-e Bushehr": "Bushehr",
+  // Hormozgan (IR-22) — capital Bandar Abbas, Wikidata Q154814.
+  "IR-22|Bandar-e-Abbas": "Bandar Abbas",
+  // North Khorasan (IR-28) — capital Bojnord, Wikidata Q317946.
+  "IR-28|Bojnurd": "Bojnord",
+};
+
+/** A subdivision city record, carrying its SUBNATIONAL_NAME_ALIAS spelling. */
+function subCityFrom(code, pl) {
+  return cityFrom(pl, undefined, pl ? SUBNATIONAL_NAME_ALIAS[`${code}|${pl.name}`] : undefined);
+}
+
 // --- Load Natural Earth extract ---------------------------------------------
 
 const fc = JSON.parse(readFileSync(NE, "utf8"));
@@ -367,8 +389,8 @@ for (const [code, arr] of placesByCode) {
     null;
   const largestPlace = [...arr].sort(byPop)[0] || null;
   const entry = {};
-  const cap = cityFrom(capPlace);
-  const lrg = cityFrom(largestPlace);
+  const cap = subCityFrom(code, capPlace);
+  const lrg = subCityFrom(code, largestPlace);
   if (cap) entry.capital = cap;
   if (lrg) entry.largest = lrg;
   if (entry.capital || entry.largest) subnational[code] = entry;
@@ -379,11 +401,11 @@ for (const [code, ov] of Object.entries(SUBNATIONAL_OVERRIDE)) {
   const iso = code.split("-")[0];
   const entry = subnational[code] ? { ...subnational[code] } : {};
   if (ov.capital) {
-    const c = cityFrom(findPlace(iso, ov.capital));
+    const c = subCityFrom(code, findPlace(iso, ov.capital));
     if (c) entry.capital = c;
   }
   if (ov.largest) {
-    const c = cityFrom(findPlace(iso, ov.largest));
+    const c = subCityFrom(code, findPlace(iso, ov.largest));
     if (c) entry.largest = c;
   }
   if (entry.capital || entry.largest) subnational[code] = entry;
