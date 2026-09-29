@@ -95,7 +95,11 @@ const SUBDIVISION_NAME_OVERRIDES_NEW = {
     "AR-C": "Autonomous City of Buenos Aires"
   },
   "BG": {
-    "BG-22": "Sofia (Capital)" // ISO 3166-2:BG official EN name "Sofia (stolitsa)" — the capital city-district
+    "BG-22": "Sofia (Capital)", // ISO 3166-2:BG official EN name "Sofia (stolitsa)" — the capital city-district
+    // ISO 3166-2:BG names the surrounding province plain "Sofia"; English
+    // Wikipedia's "Sofia Province" keeps it apart from the city (2026-09 audit:
+    // the quiz named both "Sofia" when accepting either as the capital).
+    "BG-23": "Sofia Province"
   },
   "HR": {
     "HR-01": "Zagreb County", // ISO 3166-2:HR official EN name
@@ -165,6 +169,18 @@ const SUBDIVISION_NAME_OVERRIDES_NEW = {
     // region is named after: Pilsen.
     "CZ-PL": "Pilsen"
   },
+  "IT": {
+    // Natural Earth's name_en for IT-GE is the region, "Liguria". The unit is
+    // the Metropolitan City of Genoa (ISO 3166-2:IT "Genova"); the app uses the
+    // English city name for every Italian province, as for Milan and Naples.
+    "IT-GE": "Genoa"
+  },
+  "BY": {
+    // Natural Earth names both Minsk units "Minsk". BY-MI is Minsk Region (the
+    // large polygon, with a hole for the city) and BY-HM is the city of Minsk
+    // (ISO 3166-2:BY: Minskaja voblasć / Horad Minsk). 2026-09 audit.
+    "BY-MI": "Minsk Region"
+  },
   "CO": {
     // Natural Earth's name_en for CO-SAP is "Archipelago of Saint Andréws", a
     // garbled translation. English Wikipedia names the department "San Andrés and
@@ -198,6 +214,13 @@ const SUBDIVISION_TYPE_OVERRIDES_NEW = {
     "KR-42": "Special Self-Governing Province", "KR-45": "Special Self-Governing Province",
     "KR-49": "Special Self-Governing Province",
     "KR-50": "Special Self-Governing City",
+  },
+  "BY": {
+    // Natural Earth swaps the two Minsk types: it calls the region (BY-MI, which
+    // surrounds the city) a "Municipality" and the city (BY-HM) a "Region".
+    // ISO 3166-2:BY: BY-MI is an oblast (region) like the other five, and BY-HM,
+    // Horad Minsk, is a city. 2026-09 audit.
+    "BY-MI": "Region", "BY-HM": "City",
   },
   "CO": {
     // Natural Earth keeps Colombia's pre-1991 statuses, misspelling one of them

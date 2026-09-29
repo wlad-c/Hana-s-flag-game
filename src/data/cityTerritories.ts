@@ -25,7 +25,7 @@ export const CITY_TERRITORY_CODES: ReadonlySet<string> = new Set([
   "MY-16", // Putrajaya — Malaysian Federal Territory, a planned city (federal admin capital)
   "ES-CE", // Ceuta — Spanish Autonomous City
   "US-DC", // Washington — Federal District coterminous with the city of Washington
-  "BY-MI", // Minsk — city with special administrative status (Horad Minsk), not Minsk Region
+  "BY-HM", // Minsk — Horad Minsk, the city with special status (ISO 3166-2:BY). BY-MI is Minsk Region, which surrounds it.
   "RS-00", // Belgrade — City of Belgrade (grad), the capital-city administrative unit
   "MD-CU", // Chișinău — Moldovan municipality (city)
   "MD-BA", // Bălți — Moldovan municipality (city)

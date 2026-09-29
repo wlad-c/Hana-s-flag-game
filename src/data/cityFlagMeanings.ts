@@ -4343,10 +4343,14 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
 
   "FR-38": {
     description:
-      "A red-and-yellow flag in the colours of Grenoble’s arms — gold with three red roses. The three roses " +
-      "stand for the three powers that governed the medieval city: the bishop, the Dauphin of Viennois, and the " +
-      "municipal consuls. The arms were registered in the Armorial général de France in 1698.",
+      "Grenoble’s flag is two vertical bands, red at the hoist and gold in the fly, in the colours of the city’s " +
+      "arms: gold with three red roses. The historian Auguste Bouchayer read the roses as the emblems of three " +
+      "martyr saints, standing for the three powers that governed the medieval city: the bishop, the Dauphin and " +
+      "the elected consuls. An older reading, by the Jesuit heraldist Ménestrier, linked them to the golden roses " +
+      "the Pope blessed in Lent. The arms appear on a 1575 engraving and were registered in the Armorial général " +
+      "de France on 13 June 1698.",
     sources: [
+      { title: "Les couleurs de Grenoble — Partir ici (Auvergne-Rhône-Alpes Tourisme)", url: "https://partir-ici.fr/les-couleurs-de-grenoble/" },
       { title: "Armoiries de Grenoble — Wikipédia (fr)", url: "https://fr.wikipedia.org/wiki/Armoiries_de_Grenoble" },
     ],
   },
@@ -5926,16 +5930,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
-  "IT-OR": {
-    description:
-      "Oristano’s arms bear an uprooted oak tree held by two lions — the “albero deradicato”, emblem of the " +
-      "medieval Giudicato of Arborea, of which Oristano was the capital. The oak is a canting sign for Arborea " +
-      "(from the Latin arbor, “tree”).",
-    sources: [
-      { title: "Bandiera arborense — Wikipedia (it)", url: "https://it.wikipedia.org/wiki/Bandiera_arborense" },
-    ],
-  },
-
   "IT-PA": {
     description:
       "Palermo’s flag is red (porpora) with a golden eagle, its wings spread, lettered “S.P.Q.P.” — Senatus " +
@@ -6109,16 +6103,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
-  "IT-RN": {
-    description:
-      "Rimini’s arms are party: the Arch of Augustus over the Bridge of Tiberius on a blue sea — the Roman " +
-      "monuments that still stand and its pride in its origin as Ariminum — beside a red cross bordered silver, " +
-      "for its part in the Lombard League of 1167 and a grant by Pope Julius II in 1509.",
-    sources: [
-      { title: "Lo stemma municipale di Rimini — Rimini.com", url: "https://www.rimini.com/storia/lo-stemma-municipale-di-rimini" },
-    ],
-  },
-
   "IT-RO": {
     description:
       "Rovigo’s arms bear the winged Lion of Saint Mark with an open book above a golden tower — the mark of the " +
@@ -6214,17 +6198,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
       "waters, and Taras is the mythical founder and eponym of the city.",
     sources: [
       { title: "Stemma di Taranto — Wikipedia (it)", url: "https://it.wikipedia.org/wiki/Taranto" },
-    ],
-  },
-
-  "IT-TE": {
-    description:
-      "Teramo’s municipal flag is a vertical bicolour of white and red — the city’s heraldic colours. Its arms are " +
-      "a red shield crossed by a silver band lettered TERAMUM in black, with a small silver trefoil cross above and " +
-      "below. The Latin name TERAMUM (from Interamnia, ‘between the rivers’) marks the city’s Roman origin between " +
-      "the Tordino and Vezzola.",
-    sources: [
-      { title: "Stemma di Teramo — Wikipedia (it)", url: "https://it.wikipedia.org/wiki/Teramo" },
     ],
   },
 
@@ -7529,17 +7502,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
       "industrious work. The arms were confirmed in 1938.",
     sources: [
       { title: "Viļānu ģerbonis — Wikipedia (lv)", url: "https://lv.wikipedia.org/wiki/Vi%C4%BC%C4%81nu_%C4%A3erbonis" },
-    ],
-  },
-
-  "MA-01": {
-    description:
-      "Tangier’s arms are parted per fess, blue over black, with a golden head in profile and two golden ears of " +
-      "wheat. The head recalls the city’s ancient name Tingis and its earliest settlers — read as a Phoenician, " +
-      "or as Hercules, who by legend fathered Sophax, the first king of Tingis — while the wheat speaks to the " +
-      "fertile country around the city.",
-    sources: [
-      { title: "Tanger province — Flags of the World (FOTW)", url: "https://www.crwflags.com/fotw/flags/ma-tng.html" },
     ],
   },
 

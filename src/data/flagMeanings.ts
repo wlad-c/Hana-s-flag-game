@@ -13924,32 +13924,12 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
 
-  "IT-TA": {
-    description:
-      "The province arms: on silver a black scorpion charged with three golden lilies and holding an antique " +
-      "golden crown in its claws. The scorpion carries the heritage of ancient Taras (Taranto) and was " +
-      "adopted as the provincial emblem in 1927.",
-    sources: [
-      { title: "Provincia di Taranto — Wikipedia (Italian)", url: "https://it.wikipedia.org/wiki/Provincia_di_Taranto" },
-    ],
-  },
   "IT-TN": {
     description:
       "The autonomous province’s emblem is the eagle of Saint Wenceslas, adopted from the seal granted to " +
       "Bishop Nicolò da Bruna in 1339 and still the symbol of Trentino today.",
     sources: [
       { title: "Provincia autonoma di Trento — Wikipedia (Italian)", url: "https://it.wikipedia.org/wiki/Provincia_autonoma_di_Trento" },
-    ],
-  },
-
-  "IT-TR": {
-    description:
-      "The province arms: on blue five wavy silver bars at the base surmounted by three golden bees (2 and " +
-      "1). The wavy bars are the province’s waters — the Tiber, the Nera–Velino and the Marmore falls — and " +
-      "recall Terni’s ancient name Interamna (“between rivers”); the three bees, from Napoleonic heraldry of " +
-      "the former Trasimeno department, stand for the people’s industriousness.",
-    sources: [
-      { title: "Provincia di Terni — Wikipedia (Italian)", url: "https://it.wikipedia.org/wiki/Provincia_di_Terni" },
     ],
   },
 
@@ -13982,15 +13962,6 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
 
-  "IT-UD": {
-    description:
-      "The arms (from the city of Udine): on silver a black chevron, ensigned with a ducal crown and a " +
-      "rising silver horse as crest. The arms derive from those of the Savorgnan, the city’s leading family " +
-      "under Venetian rule.",
-    sources: [
-      { title: "Udine — Wikipedia (Italian)", url: "https://it.wikipedia.org/wiki/Udine" },
-    ],
-  },
   "IT-VB": {
     description:
       "The province arms: per fess — above, on red a golden key palewise flanked by two silver three-peaked " +
