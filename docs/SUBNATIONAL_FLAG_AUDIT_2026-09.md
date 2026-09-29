@@ -571,7 +571,7 @@ Qom.
 
 ## Batch 7b — six more maps where polygons carried another region's code (2026-09-29)
 
-*Shipped in #PRNUM.*
+*Shipped in #1727.*
 
 **How they were found.** After Iran, a scan tested every map polygon in the app against Wikidata.
 For each ISO 3166-2 code, it checked whether the region's own coordinates (P625) and its capital's

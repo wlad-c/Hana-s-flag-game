@@ -196,7 +196,7 @@ provide Chromium at `/opt/pw-browsers/chromium`.
 | 6a | #1708 `e3c1a35` | North Sulawesi's capital is Manado; Schellenberg's is not Vaduz; the Wikidata-capital rejection list and its check |
 | 6b | #1717 `6d8406e` | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
 | 7a | #1720 `141cf7f` | Iran re-keyed to the current ISO codes: all 31 provinces had shown another province's population, capital and native name. Alborz gained its capital (Karaj); three capital spellings aligned so their populations show |
-| 7b | #PRNUM | Map polygons carrying another region's code: Ecuador (2), Eritrea (4), Guyana (8), Afghanistan (2), Latvia (2), Uganda (33, plus Kiruhura, which was drawn as a second Mbarara). Uganda's 23 "County" labels corrected to District, and Kampala to City |
+| 7b | #1727 | Map polygons carrying another region's code: Ecuador (2), Eritrea (4), Guyana (8), Afghanistan (2), Latvia (2), Uganda (33, plus Kiruhura, which was drawn as a second Mbarara). Uganda's 23 "County" labels corrected to District, and Kampala to City |
 
 The independent auditor in the shared log screened every image added through `e3c1a35`: 76
 subdivision flags and 2 capital flags. Its findings F84–F86 (Estonian explainers and SVG metadata)
