@@ -636,6 +636,81 @@ population, capital and native name.
 - Maps older than the current structure (SF-14): Uganda's 23 districts created in 2010–2020, and
   Kazakhstan's 2022 regions.
 
+## Batch 7c — 64 quiz capitals now agree with the map (2026-09-29)
+
+*Shipped in #PRNUM.*
+
+**What was wrong.** A capital-flag question uses the capital that Wikidata records (P36), while
+the Learn panel shows the capital from Natural Earth. The panel shows the capital's population and
+flag only when the two names agree (`sameCity()` in `src/lib/capitalInfo.ts`). After 7a and 7b,
+76 of the 1,255 quiz capitals still disagreed. Blindly dropping them would have removed correct
+questions. Instead, each was traced to whichever source was wrong.
+
+**Fix: map side, in `scripts/build-cities.mjs`.** Each row cites the capital's Wikidata item.
+- **Spelling and renamed cities, 43 rows in `SUBNATIONAL_NAME_ALIAS`.** Each is the same city at
+  the same coordinates, now carrying Wikidata's English name.
+  - Spellings: Gent → Ghent, Homyel → Gomel, Odessa → Odesa, St.  Paul → Saint Paul.
+  - Natural Earth typos: Pizen, Alba Lulia, Oostanay.
+  - Renamings: Kirovohrad → Kropyvnytskyi (2016); Nueva San Salvador → Santa Tecla (2003);
+    Qapshaghay → Qonayev (2022); Jalal-Abad → Manas (September 2025, per English Wikipedia's
+    "Jalal-Abad").
+  - Official names: Heroica Puebla de Zaragoza, Santiago de Querétaro, San Fernando del Valle
+    de Catamarca.
+  - Abkhazia's capital follows Wikidata's English label, Sokhumi.
+- **A different city that Natural Earth has, 13 rows in `SUBNATIONAL_OVERRIDE`:**
+  - Granma → Bayamo (not Manzanillo);
+  - Badajoz province → Badajoz (not Mérida);
+  - Oromia → Addis Ababa;
+  - Qaasuitsup → Ilulissat;
+  - Almaty Region → Qonayev (not Taldykorgan, since 2022);
+  - Turkistan Region → Turkistan (not Shymkent, since 2018);
+  - Akershus → Oslo;
+  - Hawke's Bay → Napier;
+  - Manawatū-Whanganui → Palmerston North;
+  - Lima Region → Huacho (not Huaura);
+  - Central Equatoria → Juba (not Yei);
+  - Maldonado → Maldonado (not Punta del Este);
+  - Capital District → Caracas (not Los Teques).
+- **A wrong capital where Natural Earth lacks the right city, 10 rows in a new
+  `NE_CAPITAL_BLOCK`.** The Natural Earth capital is dropped, so the Wikidata fallback layer
+  supplies the right city with its own coordinates:
+  - Pohnpei → Kolonia (not Palikir);
+  - Shida Kartli → Gori (not Tskhinvali);
+  - South Kalimantan → Banjarbaru (not Banjarmasin, since 2022);
+  - Northern District → Nof HaGalil (not Nazareth; English Wikipedia's infobox agrees);
+  - Østfold → Sarpsborg (not Moss);
+  - Benguet → La Trinidad (not Baguio);
+  - Central Department → Areguá (not Ypacaraí);
+  - Ingushetia → Magas (not Nazran);
+  - Harghita → Miercurea Ciuc (Natural Earth's point is 21 km off);
+  - Paktika → Sharana (Natural Earth's "Zareh Sharan" is 50 km away).
+
+**Fix: Wikidata side.** Laguna's item lists three capitals: Bay (until 1688), Pagsanjan (until
+1858) and Santa Cruz. The fallback kept Bay. `GAP_CAPITAL_CITY_QIDS` in
+`build-subdivision-capitals.mjs` now pins Santa Cruz (Q75938), as English Wikipedia's "Laguna
+(province)" gives it. Only the eleven affected rows were taken from a fresh run of that
+generator.
+
+**Map labels.** A capital marker can now belong to several territories (`ownerCodes` in
+`src/lib/cityRoles.ts`). Oslo is both Oslo's capital and Akershus's seat, and Addis Ababa both its
+own city-state's and Oromia's capital. Hovering either one reveals the name. Before, only the
+first claimant did. This was already a problem for Kyiv, Sofia and Minsk. The overlay stays
+`pointer-events: none`.
+
+**Result.** 76 → 12 quiz capitals disagree with the panel. In the other 64, the panel now shows
+the population and flag of the capital the quiz asks about.
+
+**The 12 left, for batch 7d.** Each needs a Wikidata-side decision, a new capital flag and an
+explainer:
+- Wikidata's pick is wrong or out of date: Bali (Singaraja → Denpasar), Southeast Sulawesi
+  (Bau-Bau → Kendari), Central Kalimantan (Pahandut, a district → Palangka Raya).
+- The region has two seats: Appenzell Ausserrhoden (Trogen/Herisau), the Azores
+  (Angra/Ponta Delgada), Tipperary (Nenagh/Clonmel), Forlì-Cesena, Pesaro and Urbino, and
+  Olbia-Tempio.
+- Tokyo: Shinjuku is the seat district, as with Seoul.
+- Luhansk and Donetsk oblasts: the quiz uses the seats Ukraine relocated in 2014
+  (Siverskodonetsk, Kramatorsk), while the map shows Luhansk and Donetsk.
+
 ## Follow-ups (later batches)
 
 ### Capital flags that match another place's flag (found in batch 5)

@@ -166,6 +166,40 @@ const SUBNATIONAL_OVERRIDE = {
   // administrative capital (and this app's own CAPITAL_DETAILS, which already
   // records Shah Alam). Largest city stays Klang (NE's highest-pop Selangor city).
   "MY-10": { capital: "Shah Alam", largest: "Kelang" },
+  // Natural Earth tags another city as the capital; the right one is in NE too.
+  // Each is the subdivision's Wikidata capital (P36), confirmed on its English
+  // Wikipedia article. (2026-09 audit, batch 7c.)
+  "CU-12": { capital: "Bayamo" }, // Granma — not Manzanillo; Q115382
+  "ES-BA": { capital: "Badajoz" }, // Province of Badajoz — Mérida is the capital of Extremadura; Q15679
+  "ET-OR": { capital: "Addis Ababa" }, // Oromia's capital (Finfinne), outside the region's polygon; Q3624
+  "GL-QA": { capital: "Ilulissat" }, // Qaasuitsup — not Qaanaaq; Q191047
+  "KZ-ALM": { capital: "Qapshaghay" }, // Almaty Region's capital since 2022, renamed Qonayev; Q1816833
+  "KZ-YUZ": { capital: "Turkistan" }, // Turkistan Region's capital since 2018, not Shymkent; Q848638
+  "NO-02": { capital: "Oslo" }, // Akershus's administrative centre is Oslo, outside the county; Q585
+  "NZ-HKB": { capital: "Napier" }, // Hawke's Bay Regional Council sits in Napier, not Hastings; Q203380
+  "NZ-MWT": { capital: "Palmerston North" }, // Horizons Regional Council, not Whanganui; Q212289
+  "PE-LIM": { capital: "Huacho" }, // Lima Region — not the neighbouring town of Huaura; Q1002052
+  "SS-EC": { capital: "Juba" }, // Central Equatoria — not Yei; Q1947
+  "UY-MA": { capital: "Maldonado" }, // Maldonado Department — not Punta del Este; Q16258
+  "VE-A": { capital: "Caracas" }, // Capital District — Los Teques is Miranda's capital; Q1533
+};
+
+// Subdivisions whose Natural Earth capital is WRONG and whose real capital is not
+// in the extract. The NE capital is dropped, so the Wikidata fallback layer
+// (src/data/subdivisionCapitals.ts, build-subdivision-capitals.mjs) supplies the
+// right city with its own coordinates. Each reason names what NE gets wrong and
+// cites the capital's Wikidata item. (2026-09 audit, batch 7c.)
+const NE_CAPITAL_BLOCK = {
+  "AF-PKA": "NE's \"Zareh Sharan\" point is 50 km from Paktika's capital Sharana (Q2615863)",
+  "FM-PNI": "Palikir is the national capital; Pohnpei State's capital is Kolonia (Q514165)",
+  "GE-SK": "Tskhinvali is not Shida Kartli's capital; Georgia seats the region in Gori (Q19583)",
+  "ID-KS": "Banjarmasin was South Kalimantan's capital until 2022; it is now Banjarbaru (Q14181)",
+  "IL-Z": "Nazareth is the Northern District's largest city; its capital is Nof HaGalil (Q167659)",
+  "NO-01": "Moss is not Østfold's administrative centre; it is Sarpsborg (Q108025)",
+  "PH-BEN": "Baguio is an independent city; Benguet's capital is La Trinidad (Q30351)",
+  "PY-11": "Ypacaraí is not Central Department's capital; it is Areguá (Q135975)",
+  "RO-HR": "NE's \"Miercurea Cuic\" (sic) lies 21 km west of Miercurea Ciuc (Q193420)",
+  "RU-IN": "Nazran was Ingushetia's capital until 2002; it is now Magas (Q5222)",
 };
 
 // Rename a Natural Earth SUBDIVISION-capital label to the English name Wikidata
@@ -179,12 +213,98 @@ const SUBNATIONAL_OVERRIDE = {
 const SUBNATIONAL_NAME_ALIAS = {
   // Paktia (AF-PIA) — capital Gardez, Wikidata Q467632; NE "Gardiz".
   "AF-PIA|Gardiz": "Gardez",
+  // Catamarca (AR-K) — San Fernando del Valle de Catamarca, Wikidata Q44162.
+  "AR-K|Catamarca": "San Fernando del Valle de Catamarca",
+  // East Flanders (BE-VOV) — Ghent, Wikidata Q1296.
+  "BE-VOV|Gent": "Ghent",
+  // West Flanders (BE-VWV) — Bruges, Wikidata Q12994.
+  "BE-VWV|Brugge": "Bruges",
+  // Gomel Region (BY-HO) — Gomel, Wikidata Q2678.
+  "BY-HO|Homyel": "Gomel",
+  // Vitebsk Region (BY-VI) — Vitebsk, Wikidata Q102217.
+  "BY-VI|Vitsyebsk": "Vitebsk",
+  // Cayo (BZ-CY) — San Ignacio, Wikidata Q724815; San Ignacio is also called Cayo.
+  "BZ-CY|El Cayo": "San Ignacio",
+  // St. Gallen (CH-SG) — St. Gallen, Wikidata Q25607.
+  "CH-SG|Saint Gallen": "St. Gallen",
+  // Aysén (CL-AI) — Coyhaique, Wikidata Q3810.
+  "CL-AI|Coihaique": "Coyhaique",
+  // Plzeň Region (CZ-PL) — Plzeň, Wikidata Q43453; NE misspells it.
+  "CZ-PL|Pizen": "Plzeň",
+  // Dakahlia (EG-DK) — Mansoura, Wikidata Q223587.
+  "EG-DK|El Mansura": "Mansoura",
+  // Minya (EG-MN) — Minya, Wikidata Q310117.
+  "EG-MN|El Minya": "Minya",
+  // Matrouh (EG-MT) — Marsa Matruh, Wikidata Q393829.
+  "EG-MT|Matruh": "Marsa Matruh",
+  // North Sinai (EG-SIN) — Arish, Wikidata Q238452.
+  "EG-SIN|El Arish": "Arish",
+  // Abkhazia (GE-AB) — Sokhumi, Wikidata Q40811; Wikidata's English label.
+  "GE-AB|Sukhumi": "Sokhumi",
+  // Bay Islands (HN-IB) — Coxen Hole, Wikidata Q2396956; the seat of Roatán municipality.
+  "HN-IB|Roatán": "Coxen Hole",
+  // Central Kalimantan (ID-KT) — Palangka Raya, Wikidata Q14409.
+  "ID-KT|Palangkaraya": "Palangka Raya",
+  // Southern District (IL-D) — Beersheba, Wikidata Q41843.
+  "IL-D|Beer Sheva": "Beersheba",
   // Bushehr (IR-18) — capital Bushehr, Wikidata Q158928; NE adds "Bandar-e" (port).
   "IR-18|Bandar-e Bushehr": "Bushehr",
   // Hormozgan (IR-22) — capital Bandar Abbas, Wikidata Q154814.
   "IR-22|Bandar-e-Abbas": "Bandar Abbas",
   // North Khorasan (IR-28) — capital Bojnord, Wikidata Q317946.
   "IR-28|Bojnurd": "Bojnord",
+  // Tafilah (JO-AT) — Tafilah, Wikidata Q2550996.
+  "JO-AT|At Tafilah": "Tafilah",
+  // Zarqa (JO-AZ) — Zarqa, Wikidata Q148062.
+  "JO-AZ|Az Zarqa": "Zarqa",
+  // Balqa (JO-BA) — Salt, Wikidata Q867586.
+  "JO-BA|As Salt": "Salt",
+  // Mafraq (JO-MA) — Mafraq, Wikidata Q276747.
+  "JO-MA|Al Mafraq": "Mafraq",
+  // Jalal-Abad Region (KG-J) — Manas, Wikidata Q487689; the city was renamed Manas in September 2025.
+  "KG-J|Jalal Abad": "Manas",
+  // Almaty Region (KZ-ALM) — Qonayev, Wikidata Q1816833; NE still has its old name, Qapshaghay (Kapchagay), renamed in 2022.
+  "KZ-ALM|Qapshaghay": "Qonayev",
+  // Kostanay Region (KZ-KUS) — Kostanay, Wikidata Q488990; NE misspells it.
+  "KZ-KUS|Oostanay": "Kostanay",
+  // Ömnögovi (MN-053) — Dalanzadgad, Wikidata Q822808.
+  "MN-053|Dalandzadgad": "Dalanzadgad",
+  // Puebla (MX-PUE) — Heroica Puebla de Zaragoza, Wikidata Q125293; the city's official name.
+  "MX-PUE|Puebla": "Heroica Puebla de Zaragoza",
+  // Querétaro (MX-QUE) — Santiago de Querétaro, Wikidata Q173121.
+  "MX-QUE|Querétaro": "Santiago de Querétaro",
+  // Alba (RO-AB) — Alba Iulia, Wikidata Q174665; NE misspells it.
+  "RO-AB|Alba Lulia": "Alba Iulia",
+  // Covasna (RO-CV) — Sfântu Gheorghe, Wikidata Q202362.
+  "RO-CV|Sfintu-Gheorghe": "Sfântu Gheorghe",
+  // Mureș (RO-MS) — Târgu Mureș, Wikidata Q186349.
+  "RO-MS|Tirgu Mures": "Târgu Mureș",
+  // Arkhangelsk Oblast (RU-ARK) — Arkhangelsk, Wikidata Q1851.
+  "RU-ARK|Archangel": "Arkhangelsk",
+  // Novgorod Oblast (RU-NGR) — Veliky Novgorod, Wikidata Q2235.
+  "RU-NGR|Velikiy Novgorod": "Veliky Novgorod",
+  // Oryol Oblast (RU-ORL) — Oryol, Wikidata Q3118.
+  "RU-ORL|Orel": "Oryol",
+  // Västra Götaland (SE-O) — Gothenburg, Wikidata Q25287.
+  "SE-O|Göteborg": "Gothenburg",
+  // La Libertad (SV-LI) — Santa Tecla, Wikidata Q723246; named Nueva San Salvador until 2003.
+  "SV-LI|Nueva San Salvador": "Santa Tecla",
+  // Vinnytsia Oblast (UA-05) — Vinnytsia, Wikidata Q157144.
+  "UA-05|Vinnytsya": "Vinnytsia",
+  // Zakarpattia Oblast (UA-21) — Uzhhorod, Wikidata Q156711.
+  "UA-21|Uzhgorod": "Uzhhorod",
+  // Zaporizhzhia Oblast (UA-23) — Zaporizhzhia, Wikidata Q157835.
+  "UA-23|Zaporizhzhya": "Zaporizhzhia",
+  // Kirovohrad Oblast (UA-35) — Kropyvnytskyi, Wikidata Q158292; renamed from Kirovohrad in 2016.
+  "UA-35|Kirovohrad": "Kropyvnytskyi",
+  // Mykolaiv Oblast (UA-48) — Mykolaiv, Wikidata Q41572.
+  "UA-48|Mykolayiv": "Mykolaiv",
+  // Odesa Oblast (UA-51) — Odesa, Wikidata Q1874.
+  "UA-51|Odessa": "Odesa",
+  // Khmelnytskyi Oblast (UA-68) — Khmelnytskyi, Wikidata Q156717.
+  "UA-68|Khmelnytskyy": "Khmelnytskyi",
+  // Minnesota (US-MN) — Saint Paul, Wikidata Q28848; NE's label has a double space.
+  "US-MN|St.  Paul": "Saint Paul",
 };
 
 /** A subdivision city record, carrying its SUBNATIONAL_NAME_ALIAS spelling. */
@@ -411,6 +531,14 @@ for (const [code, ov] of Object.entries(SUBNATIONAL_OVERRIDE)) {
     if (c) entry.largest = c;
   }
   if (entry.capital || entry.largest) subnational[code] = entry;
+}
+
+// Drop the Natural Earth capitals we know to be wrong (see NE_CAPITAL_BLOCK).
+for (const code of Object.keys(NE_CAPITAL_BLOCK)) {
+  const entry = subnational[code];
+  if (!entry?.capital) continue;
+  delete entry.capital;
+  if (!entry.largest) delete subnational[code];
 }
 
 // --- Emit --------------------------------------------------------------------
