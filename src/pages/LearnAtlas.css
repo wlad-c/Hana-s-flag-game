@@ -90,6 +90,8 @@ body:has(.learn-page--atlas) .bottom-nav {
   box-shadow: none;
 }
 .learn-page--atlas .learn-fs__map .map-with-zoom { gap: 1rem; }
+/* Match the bottom clearance gap to the 1rem toolbar-to-map gap used in atlas mode. */
+.learn-page--atlas .learn-fs__map .world-map { --learn-map-gap: 1rem; }
 .learn-page--atlas .learn-breadcrumb {
   padding: .85rem clamp(.75rem, 2vw, 2rem) 0;
   background: var(--cream);

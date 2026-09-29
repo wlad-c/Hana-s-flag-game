@@ -385,7 +385,12 @@
      --learn-map-chrome covers top chrome; --learn-map-bottom covers the
      fixed bottom nav so Antarctica is never hidden behind it. */
   --learn-map-chrome: calc(8.5rem + env(safe-area-inset-top));
-  --learn-map-bottom: calc(var(--bottom-nav-h, 3rem) + env(safe-area-inset-bottom));
+  /* Bottom clearance = fixed bottom-nav + safe-area + the same gap that sits
+     between the controls toolbar and the map above, so the map has equal
+     breathing room on both sides. The atlas override in LearnAtlas.css bumps
+     this gap to 1rem to match its own map-with-zoom gap value. */
+  --learn-map-gap: 0.4rem;
+  --learn-map-bottom: calc(var(--bottom-nav-h, 3rem) + env(safe-area-inset-bottom) + var(--learn-map-gap));
   width: 100%;
   height: auto;
   /* vh fallback first, dvh (accounts for mobile browser chrome) overrides it. */
