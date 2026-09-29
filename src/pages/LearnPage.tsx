@@ -2426,7 +2426,6 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             rotationOffset={rotationOffset}
             southUp={mapView.southUp}
             globe={mapView.globe}
-            rotating={isRotating}
             showSubnationalBorders={mapView.showSubnationalBorders}
             extraControls={mapExtraControls}
             flagOverlay={modernFlagOverlay}
