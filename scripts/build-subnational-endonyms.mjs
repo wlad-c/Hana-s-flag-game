@@ -75,10 +75,11 @@ for (const cc of countriesInApp) {
   const langs = countryLangs[cc];
   if (!langs || (langs.length === 1 && langs[0] === "en")) continue; // English-speaking → no endonym
   const langFilter = langs.map((l) => `"${l}"`).join(",");
-  const q = `SELECT ?code ?subLbl ?capLbl WHERE {
+  const q = `SELECT ?code ?subLbl ?capLbl ?capEn WHERE {
     ?sub wdt:P300 ?code . FILTER(STRSTARTS(?code, "${cc}-"))
     OPTIONAL { ?sub rdfs:label ?subLbl . FILTER(LANG(?subLbl) IN (${langFilter})) }
-    OPTIONAL { ?sub wdt:P36 ?cap . ?cap rdfs:label ?capLbl . FILTER(LANG(?capLbl) IN (${langFilter})) }
+    OPTIONAL { ?sub wdt:P36 ?cap . ?cap rdfs:label ?capLbl . FILTER(LANG(?capLbl) IN (${langFilter}))
+               OPTIONAL { ?cap rdfs:label ?capEn . FILTER(LANG(?capEn) = "en") } }
   }`;
   const rows = await sparql(q);
   if (!rows) { console.log(`  ${cc}: query failed`); continue; }
@@ -86,10 +87,18 @@ for (const cc of countriesInApp) {
     const code = b.code?.value; if (!code) continue;
     const sub = stripType(b.subLbl?.value?.trim());
     const cap = stripType(b.capLbl?.value?.trim());
+    // Only the capital the app names (capitalDetails.ts, which honours the pins in
+    // build-capital-details.mjs). An item that lists several capitals — former
+    // seats, co-capitals — must not lend the shown capital another city's native
+    // name: Kramatorsk's under Donetsk, Shinjuku's under Tokyo. (2026-09 audit.)
+    const capEn = b.capEn?.value?.trim();
+    const shown = capName[code];
+    const sameCapital = !!capEn && !!shown &&
+      (norm(capEn) === norm(shown) || norm(capEn).startsWith(norm(shown)) || norm(shown).startsWith(norm(capEn)));
     // Emit only where the cleaned native name genuinely differs from the English
     // exonym (not just a stripped type-word), and never overwrite.
     if (sub && metaName[code] && norm(sub) !== norm(metaName[code]) && !subEndo[code]) subEndo[code] = sub;
-    if (cap && capName[code] && norm(cap) !== norm(capName[code]) && !capEndo[code]) capEndo[code] = cap;
+    if (cap && sameCapital && norm(cap) !== norm(shown) && !capEndo[code]) capEndo[code] = cap;
   }
   await new Promise((x) => setTimeout(x, 250));
 }

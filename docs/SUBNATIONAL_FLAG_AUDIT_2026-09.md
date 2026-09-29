@@ -638,7 +638,7 @@ population, capital and native name.
 
 ## Batch 7c — 64 quiz capitals now agree with the map (2026-09-29)
 
-*Shipped in #1728.*
+*Shipped in #1728 (`67773b5`); live since 30 September 2026, 1:59 AM AEST.*
 
 **What was wrong.** A capital-flag question uses the capital that Wikidata records (P36), while
 the Learn panel shows the capital from Natural Earth. The panel shows the capital's population and
@@ -710,6 +710,69 @@ explainer:
 - Tokyo: Shinjuku is the seat district, as with Seoul.
 - Luhansk and Donetsk oblasts: the quiz uses the seats Ukraine relocated in 2014
   (Siverskodonetsk, Kramatorsk), while the map shows Luhansk and Donetsk.
+
+## Batch 7d — the last 12 quiz capitals, eight wrong-entity capital flags, and a gate (2026-09-30)
+
+*Shipped in #1730.*
+
+**The 12 from 7c, each fixed on the Wikidata side.** `CAPITAL_CITY_QIDS` in
+`scripts/build-capital-details.mjs` pins the capital where Wikidata's P36 is out of date or lists
+several seats. Each row names the city's own item and why:
+- **Out of date or not a city.** Bali → Denpasar (Singaraja was the colonial capital, 1849–1960).
+  Southeast Sulawesi → Kendari (Wikidata also lists Bau-Bau). Central Kalimantan → Palangka Raya
+  (Pahandut is a district of the city).
+- **Two or three seats; the one that houses the government.** Appenzell Ausserrhoden → Herisau
+  (government and parliament; Trogen keeps the courts). Azores → Ponta Delgada (the Regional
+  Government; Angra has the judiciary, Horta the assembly). Pesaro and Urbino → Pesaro (the
+  provincial offices). Forlì-Cesena → Cesena (both are capitals under decree-law 7/2024).
+  Olbia-Tempio → Olbia (both it and Tempio were capitals; abolished 2016). Medio Campidano →
+  Sanluri (Sanluri and Villacidro were both capitals). Tipperary → Nenagh (county towns Nenagh and Clonmel; the council meets in
+  both).
+- **Luhansk and Donetsk oblasts** keep their de jure centres, Luhansk and Donetsk, not the seats
+  relocated in 2014.
+- **Tokyo.** Shinjuku is the ward where the Metropolitan Government stands, not a capital; it joins
+  Seoul in `SEAT_DISTRICT_NOT_A_CAPITAL`, and its ward flag leaves the capital card.
+
+The map side needed three fallback pins (`GAP_CAPITAL_CITY_QIDS`: Cesena, Nenagh, Sanluri) and
+one population (Nenagh, 9,895, CSO Census 2022, in `CAPITAL_POPULATION_OVERRIDES`). The
+capital-endonym generator now takes a native name only when Wikidata's capital is the capital the
+app shows. Before, Central Kalimantan and Forlì-Cesena showed a native name for a different city.
+
+**Capital flags.** Four slots now hold the right city's flag. Two were the old seat's flag:
+Trogen's in Herisau's slot and Sievierodonetsk's in Luhansk's. Angra do Heroísmo's flag gives way
+to Ponta Delgada's. The Donetsk slot already held Commons' "Flag of Donetsk.svg" (same sha1),
+though the manifest named "Flag of Kramatorsk.svg", so the quiz had asked "Kramatorsk" beside
+Donetsk's flag. Herisau's and Luhansk's are PNG renders from Commons' own thumbnailer. The
+media server (upload.wikimedia.org) returned 429 to this environment for hours; the downloader
+uses the same route for oversized files.
+
+**Wrong-entity capital flags removed**, each with its evidence in
+`scripts/data/capital-flag-rejected.json`:
+- Bistrița, Baia Mare, Zalău, Satu Mare and Sombor showed their **1941** flags. Commons files
+  them as "Flag of Beszterce (1941)" and so on, from the Hungarian book of that year, during the
+  wartime annexation. FOTW keeps each in its history section. None is the city's flag today.
+- Malabo showed the "Former flag of Santa Isabel", the colonial name.
+- Central Kalimantan showed the flag of **Banjarmasin**, a city in another province.
+- Tipperary showed a blue-and-gold bicolour: the county's GAA colours, not Nenagh's flag.
+
+**Explainers.** New, from the sources named in each entry: Denpasar (the city's own emblem
+explanation, in its 2024 statistical profile), Herisau (the municipality's "Das Herisauer Wappen"
+and FOTW), Ponta Delgada (FOTW), Luhansk (uk.wikipedia; the 1992 decision recreating the imperial
+arms) and Donetsk (uk.wikipedia). Pesaro's was rewritten for Pesaro's own flag. Kendari, Olbia and
+Sanluri stay omitted: their sources give the blazon but no meaning (reasons logged with the FOTW
+pages checked).
+
+**The gate.** `scripts/check-capital-name-agreement.mjs` (in `flags:check` and the
+`flag-integrity` workflow) fails when a quiz capital is not the capital the Learn panel shows. It
+mirrors `sameCity()` and the quiz rule, and fails if either changes without it. 81 → 0.
+
+**Found while doing this, for later batches:**
+- 57 capital flags that the 7c and 7d name fixes made visible were still logged as "hidden by the
+  name guard", so they show with no explainer (batch 7e). Arkhangelsk is both explained in
+  `cityFlagMeanings.ts` and logged as omitted.
+- A wider class of wrong-entity capital flags (batch 7f): governorate flags in four Egyptian
+  capital slots, Guatemalan department flags in four, Irish county GAA colours in four, Pasco
+  Province's flag for Cerro de Pasco, and Savoy's flag for Timișoara.
 
 ## Follow-ups (later batches)
 

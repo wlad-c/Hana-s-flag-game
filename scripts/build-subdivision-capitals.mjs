@@ -229,6 +229,13 @@ const GAP_CAPITAL_CITY_QIDS = {
   // Laguna's item lists Bay (capital until 1688), Pagsanjan (until 1858) and
   // Santa Cruz, its capital since 1858 (en.wikipedia "Laguna (province)"). 2026-09 audit.
   "PH-LAG": "Q75938", // Santa Cruz, Laguna
+  // Two seats; the same city as CAPITAL_CITY_QIDS in build-capital-details.mjs,
+  // so the map and the capital card agree (2026-09 audit, batch 7d).
+  "IT-FC": "Q6662", // Forlì-Cesena → Cesena
+  "IT-PU": "Q13134", // Pesaro and Urbino → Pesaro
+  "IT-OT": "Q13630", // Olbia-Tempio → Olbia
+  "IT-VS": "Q13656", // Medio Campidano → Sanluri
+  "IE-TA": "Q918372", // Tipperary → Nenagh
 };
 
 /**
