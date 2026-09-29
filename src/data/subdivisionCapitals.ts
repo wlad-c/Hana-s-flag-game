@@ -29,6 +29,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   // ── AF ──
   "AF-KHO": {"name":"Khost","lon":69.9167,"lat":33.3333},
   "AF-NUR": {"name":"Parun","lon":70.9167,"lat":35.4167},
+  "AF-PKA": {"name":"Sharana","lon":68.7864,"lat":33.1719},
   "AF-SAR": {"name":"Sar-e Pol","lon":65.9278,"lat":36.2214},
 
   // ── AG ──
@@ -378,6 +379,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
 
   // ── FM ──
   "FM-KSA": {"name":"Tofol","lon":163.0086,"lat":5.3258},
+  "FM-PNI": {"name":"Kolonia","lon":158.2081,"lat":6.9639},
   "FM-TRK": {"name":"Weno","lon":151.8688,"lat":7.4402},
   "FM-YAP": {"name":"Colonia","lon":138.1333,"lat":9.5167},
 
@@ -501,6 +503,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "GE-MM": {"name":"Mtskheta","lon":44.7194,"lat":41.8431},
   "GE-RL": {"name":"Ambrolauri","lon":43.15,"lat":42.5194},
   "GE-SJ": {"name":"Akhaltsikhe","lon":42.9861,"lat":41.6389},
+  "GE-SK": {"name":"Gori","lon":44.1124,"lat":41.9817},
   "GE-SZ": {"name":"Zugdidi","lon":41.8725,"lat":42.5081},
 
   // ── GL ──
@@ -571,6 +574,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "ID-BT": {"name":"Serang","lon":106.1503,"lat":-6.12},
   "ID-GO": {"name":"Gorontalo","lon":123.0614,"lat":0.5422},
   "ID-KR": {"name":"Tanjungpinang","lon":104.4554,"lat":0.9188},
+  "ID-KS": {"name":"Banjarbaru","lon":114.8309,"lat":-3.4389},
   "ID-MU": {"name":"Sofifi","lon":127.5806,"lat":0.7244},
   "ID-PB": {"name":"Manokwari","lon":134.0833,"lat":-0.8667},
   "ID-SR": {"name":"Mamuju","lon":118.8933,"lat":-2.6786},
@@ -592,6 +596,9 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "IE-WH": {"name":"Mullingar","lon":-7.3378,"lat":53.5224},
   "IE-WW": {"name":"Wicklow","lon":-6.033,"lat":52.9779},
   "IE-WX": {"name":"Wexford","lon":-6.4617,"lat":52.3383},
+
+  // ── IL ──
+  "IL-Z": {"name":"Nof HaGalil","lon":35.3333,"lat":32.7167},
 
   // ── IN ──
   "IN-HR": {"name":"Chandigarh","lon":76.7883,"lat":30.7364},
@@ -1087,6 +1094,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "NL-SX": {"name":"Philipsburg","lon":-63.0433,"lat":18.0242},
 
   // ── NO ──
+  "NO-01": {"name":"Sarpsborg","lon":11.2028,"lat":59.2906},
   "NO-21": {"name":"Longyearbyen","lon":15.6333,"lat":78.2167},
   "NO-22": {"name":"Olonkinbyen","lon":-8.715,"lat":70.922},
 
@@ -1132,6 +1140,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "PH-AUR": {"name":"Baler","lon":121.5625,"lat":15.7583},
   "PH-BAN": {"name":"Balanga","lon":120.5333,"lat":14.6833},
   "PH-BAS": {"name":"Lamitan","lon":122.1457,"lat":6.6582},
+  "PH-BEN": {"name":"La Trinidad","lon":120.5877,"lat":16.4621},
   "PH-BIL": {"name":"Naval","lon":124.45,"lat":11.5833},
   "PH-BOH": {"name":"Tagbilaran","lon":123.85,"lat":9.65},
   "PH-BTG": {"name":"Batangas City","lon":121.05,"lat":13.75},
@@ -1155,7 +1164,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "PH-ILI": {"name":"Iloilo City","lon":122.5667,"lat":10.7},
   "PH-ILN": {"name":"Laoag","lon":120.5936,"lat":18.1978},
   "PH-KAL": {"name":"Tabuk","lon":121.4425,"lat":17.4069},
-  "PH-LAG": {"name":"Bay","lon":121.2833,"lat":14.1833},
+  "PH-LAG": {"name":"Santa Cruz","lon":121.4167,"lat":14.2833},
   "PH-LAN": {"name":"Tubod","lon":123.8,"lat":8.05},
   "PH-LAS": {"name":"Marawi","lon":124.285,"lat":8.0031},
   "PH-LEY": {"name":"Tacloban","lon":125.0039,"lat":11.2444},
@@ -1204,6 +1213,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "PW-370": {"name":"Dongosaru","lon":132.2199,"lat":5.326},
 
   // ── PY ──
+  "PY-11": {"name":"Areguá","lon":-57.4169,"lat":-25.3},
   "PY-14": {"name":"Saltos del Guairá","lon":-54.3089,"lat":-24.0639},
 
   // ── QA ──
@@ -1212,6 +1222,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "QA-US": {"name":"Umm Salal Mohammed","lon":51.4,"lat":25.4167},
 
   // ── RO ──
+  "RO-HR": {"name":"Miercurea Ciuc","lon":25.8039,"lat":46.3594},
   "RO-IF": {"name":"Bucharest","lon":26.0978,"lat":44.4134},
 
   // ── RS ──
@@ -1241,6 +1252,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "RS-KM~": {"name":"Pristina","lon":21.1667,"lat":42.6667},
 
   // ── RU ──
+  "RU-IN": {"name":"Magas","lon":44.8167,"lat":43.1667},
   "RU-KK": {"name":"Abakan","lon":91.4167,"lat":53.7167},
   "RU-LEN": {"name":"Gatchina","lon":30.1229,"lat":59.5684},
   "RU-MOS": {"name":"Krasnogorsk","lon":37.3386,"lat":55.8217},

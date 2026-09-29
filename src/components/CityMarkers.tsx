@@ -199,7 +199,7 @@ export const CityMarkers = memo(function CityMarkers({
         const selected = !!activeCityName && city.name === activeCityName;
         const show =
           selected ||
-          (!!activeCode && city.ownerCode === activeCode) ||
+          (!!activeCode && (city.ownerCode === activeCode || !!city.ownerCodes?.includes(activeCode))) ||
           (alwaysLabelNational && isNational(city.roles));
         return (
           <g key={city.id} transform={`translate(${x.toFixed(1)} ${y.toFixed(1)})`}>

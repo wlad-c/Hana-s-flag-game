@@ -38,6 +38,14 @@ export type PlacedCity = {
    * city is both a national and a subdivision capital.
    */
   ownerCode?: string;
+  /**
+   * EVERY territory this marker is the capital of (subdivision and country
+   * codes), for name-reveal. One city can serve several: Oslo is the capital of
+   * Oslo and the seat of Akershus; Addis Ababa of its own city-state and of
+   * Oromia. `ownerCode` keeps a single primary owner; match against this list so
+   * hovering any of them reveals the name.
+   */
+  ownerCodes?: string[];
   /** Sourced capital role note (e.g. "Executive capital"), if any. */
   note?: string;
   population?: number;
@@ -79,6 +87,8 @@ function add(acc: Map<string, PlacedCity>, c: City, role: number, ownerCode?: st
     // reveals a city that is both a national and a subdivision capital.
     if (ownerCode && (!existing.ownerCode || (isSubdivisionCode(ownerCode) && !isSubdivisionCode(existing.ownerCode))))
       existing.ownerCode = ownerCode;
+    if (ownerCode && !existing.ownerCodes?.includes(ownerCode))
+      existing.ownerCodes = [...(existing.ownerCodes ?? []), ownerCode];
     if (c.population != null && (existing.population == null || c.population > existing.population))
       existing.population = c.population;
     return;
@@ -91,6 +101,7 @@ function add(acc: Map<string, PlacedCity>, c: City, role: number, ownerCode?: st
     lat: c.lat,
     roles: role,
     ownerCode,
+    ownerCodes: ownerCode ? [ownerCode] : [],
     note: c.note,
     population: c.population,
   });

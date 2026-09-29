@@ -486,7 +486,7 @@ export function SubdivisionMap({
     if (unitPx > 0) {
       const { k: zk, tx: ztx, ty: zty } = zoom.view;
       for (const { city, bx, by } of cityBase) {
-        if (city.ownerCode !== resolvedCode) continue;
+        if (city.ownerCode !== resolvedCode && !city.ownerCodes?.includes(resolvedCode)) continue;
         const sy = (by * zk + zty) * unitPx;
         if (markerScreenY === null || sy < markerScreenY) {
           markerScreenY = sy;

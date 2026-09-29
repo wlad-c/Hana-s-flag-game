@@ -218,6 +218,20 @@ const DISPUTED_CAPITAL_CITY_QIDS = {
 };
 
 /**
+ * Subdivisions whose Wikidata item lists more than one current capital (P36),
+ * usually because former capitals were never given an end date. The P300 pass
+ * keeps whichever comes first, which can be a former capital. Keyed by the
+ * capital CITY's QID, and applied only where Natural Earth has no capital (a
+ * gap). Each must name the same city as CAPITAL_CITY_QIDS in
+ * build-capital-details.mjs where the code is pinned there too.
+ */
+const GAP_CAPITAL_CITY_QIDS = {
+  // Laguna's item lists Bay (capital until 1688), Pagsanjan (until 1858) and
+  // Santa Cruz, its capital since 1858 (en.wikipedia "Laguna (province)"). 2026-09 audit.
+  "PH-LAG": "Q75938", // Santa Cruz, Laguna
+};
+
+/**
  * Keep, per code, the current capital. `wdt:P36` returns only best-rank
  * (current) values, so former capitals with an end-date qualifier are already
  * excluded. If an item still lists more than one, the first is kept and a
@@ -395,6 +409,27 @@ async function main() {
       }
     } catch (e) {
       console.log(`  ${code} (${qid}) → FAILED (${e.message})`);
+    }
+    await sleep(1000);
+  }
+
+  console.log("\nFetching pinned capitals where Wikidata lists several (QID IS the city)...");
+  for (const [code, qid] of Object.entries(GAP_CAPITAL_CITY_QIDS)) {
+    const CODE = code.toUpperCase();
+    if (!gap(CODE)) {
+      console.log(`  ${code} (city ${qid}) → skipped (not a gap)`);
+      continue;
+    }
+    try {
+      const v = await fetchCityByQid(code, qid);
+      if (v) {
+        capitals.set(CODE, v);
+        console.log(`  ${code} (city ${qid}) → ${v.name} (${v.lon}, ${v.lat})`);
+      } else {
+        console.log(`  ${code} (city ${qid}) → no coordinates found`);
+      }
+    } catch (e) {
+      console.log(`  ${code} (city ${qid}) → FAILED (${e.message})`);
     }
     await sleep(1000);
   }
