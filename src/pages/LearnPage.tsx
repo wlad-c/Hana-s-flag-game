@@ -1719,19 +1719,15 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             onChange={handleDemocracyMapModeChange}
           />
         )}
-        {/* Rotation + globe (view-centre) are secondary — they collapse into the
-            kebab on narrow screens. */}
+        {/* View centre (projection, spin, south-up) is secondary — it collapses
+            into the kebab on narrow screens. Spin only moves the Today map. */}
         <ToolbarOverflow>
-          <button
-            type="button"
-            className="world-map__zoom-btn"
-            onClick={toggleRotation}
-            aria-label={isRotating ? "Pause rotation" : "Resume rotation"}
-            title={isRotating ? "Pause rotation" : "Resume rotation"}
-          >
-            <UiIcon name={isRotating ? "pause" : "play"} />
-          </button>
-          <MapViewControl view={mapView} onChange={setMapView} />
+          <MapViewControl
+            view={mapView}
+            onChange={setMapView}
+            spinning={isRotating}
+            onToggleSpin={isModernEra ? toggleRotation : undefined}
+          />
         </ToolbarOverflow>
         <hr className="world-map__zoom-divider world-map__zoom-divider--era" />
         <EraPicker currentEraId={eraId} onEraChange={setEraId} />
