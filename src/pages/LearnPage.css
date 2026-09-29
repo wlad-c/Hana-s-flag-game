@@ -2546,7 +2546,8 @@ body .searchable-select__option--selected:hover {
    (`align-items: center`), so without an explicit stretch a nowrap tab strip
    grows to the sum of its tabs and overflows the panel — the tabs then paint
    over the map to the left of the drawer (owner report, 2026-09). Stretch +
-   min-width:0 keeps them inside the bordered panel and lets overflow-x scroll. */
+   min-width:0 keeps them inside the bordered panel; LearnInfoTabs moves the
+   tabs that don't fit into its "More" menu. */
 .learn-panel-tabs-wrap {
   position: relative;
   display: flex;
@@ -2559,94 +2560,94 @@ body .searchable-select__option--selected:hover {
   margin: 0.35rem 0 0.85rem;
 }
 
-.learn-panel-tabs-wrap--more-start .learn-panel-tabs {
-  mask-image: linear-gradient(to right, transparent 0, #000 1.25rem, #000 100%);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 1.25rem,
-    #000 100%
-  );
-}
-
-.learn-panel-tabs-wrap--more-end .learn-panel-tabs {
-  mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 1.25rem), transparent 100%);
-  -webkit-mask-image: linear-gradient(
-    to right,
-    #000 0,
-    #000 calc(100% - 1.25rem),
-    transparent 100%
-  );
-}
-
-.learn-panel-tabs-wrap--more-start.learn-panel-tabs-wrap--more-end .learn-panel-tabs {
-  mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 1.25rem,
-    #000 calc(100% - 1.25rem),
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0,
-    #000 1.25rem,
-    #000 calc(100% - 1.25rem),
-    transparent 100%
-  );
-}
-
-.learn-panel-tabs__more {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-  flex: 0 0 auto;
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  color: var(--ink);
-  background: var(--paper);
-  padding: 0.15rem 0.2rem;
-  border-radius: 0.25rem;
-  pointer-events: none;
-  user-select: none;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 12%, transparent);
-}
-
-.learn-panel-tabs__more--start {
-  left: 0;
-}
-
-.learn-panel-tabs__more--end {
-  right: 0;
-}
-
 .learn-panel-tabs {
   display: flex;
   flex-wrap: nowrap;
   gap: 0.35rem;
   margin: 0;
   min-width: 0;
-  flex: 1 1 auto;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  overscroll-behavior-x: contain;
+  flex: 0 1 auto;
+  overflow: hidden;
+  /* Room for the tabs' drop shadow / hover lift inside the clip. */
+  padding: 0.2rem 0.15rem 0.35rem;
+  margin: -0.2rem -0.15rem -0.35rem;
 }
 
-.learn-panel-tabs::-webkit-scrollbar {
-  display: none;
-}
-
-.learn-panel-tabs .flag-tabs__tab {
+.learn-panel-tabs .flag-tabs__tab,
+.learn-panel-tabs__more-wrap .flag-tabs__tab {
   flex: 0 0 auto;
   font-size: 0.78rem;
   padding: 0.35rem 0.65rem;
   min-height: 2rem;
   white-space: nowrap;
+}
+
+/* "More ▾" — collapses the tabs that don't fit (priority+ pattern). A real
+   button, so the hidden tabs are reachable by mouse, touch and keyboard. */
+.learn-panel-tabs__more-wrap {
+  position: relative;
+  flex: 0 0 auto;
+  margin-left: 0.35rem;
+}
+
+.learn-panel-tabs__more {
+  gap: 0.3rem;
+}
+
+.learn-panel-tabs__caret {
+  font-size: 0.7em;
+  line-height: 1;
+}
+
+.learn-panel-tabs__menu {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 9rem;
+  padding: 0.3rem;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 0 3px 0 var(--ink);
+}
+
+.learn-panel-tabs__menu-item {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  min-height: 2.25rem;
+  cursor: pointer;
+}
+
+.learn-panel-tabs__menu-item:hover,
+.learn-panel-tabs__menu-item:focus-visible {
+  outline: none;
+  background: color-mix(in srgb, var(--sky) 45%, var(--paper));
+}
+
+.learn-panel-tabs__menu-item--active {
+  background: var(--sky);
+  color: var(--ink-fixed);
+}
+
+/* Invisible full-width copy of the strip used only to measure tab widths. */
+.learn-panel-tabs__measure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: visible;
 }
 
 .learn-panel-tabs__panel {
