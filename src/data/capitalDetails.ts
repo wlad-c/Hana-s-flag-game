@@ -3617,12 +3617,14 @@ export const CAPITAL_DETAILS: Readonly<Record<string, CapitalDetail>> = {
   "UG-415": {"name":"Kyenjojo"},
   "UG-416": {"name":"Buliisa"},
   "UG-417": {"name":"Ibanda"},
+  "UG-418": {"name":"Isingiro"},
   "UG-419": {"name":"Kiruhura"},
   "UG-420": {"name":"Buhweju"},
   "UG-421": {"name":"Kiryandongo"},
   "UG-422": {"name":"Kyegegwa"},
   "UG-423": {"name":"Mitooma"},
   "UG-425": {"name":"Rubirizi"},
+  "UG-426": {"name":"Kibingo"},
 
   // ── US ──
   "US-AK": {"name":"Juneau","population":32255,"year":2020,"basis":"census"},

@@ -525,7 +525,7 @@ yet checked against FOTW (SF-04).
 
 ## Batch 7a — Iran: every province carried another province's data (2026-09-29)
 
-*Shipped in #1720.*
+*Shipped in #1720 (`141cf7f`); live since 29 September 2026, 8:21 PM AEST.*
 
 **What was wrong.** The Iran map (`public/subdivisions/IR.json`) carried the ISO 3166-2:IR codes in
 force before the 2018 update. Every Wikidata-keyed dataset uses the current codes, and the two
@@ -568,6 +568,73 @@ province's data:
 capital, capital population and native names, and there were no page errors. The quiz asks
 Tabriz, Urmia, Tehran and Qom as the capitals of East Azerbaijan, West Azerbaijan, Tehran and
 Qom.
+
+## Batch 7b — six more maps where polygons carried another region's code (2026-09-29)
+
+*Shipped in #1727.*
+
+**How they were found.** After Iran, a scan tested every map polygon in the app against Wikidata.
+For each ISO 3166-2 code, it checked whether the region's own coordinates (P625) and its capital's
+coordinates (P36 → P625) fall inside the polygon carrying that code. When both points land in the
+same other polygon, and that polygon's points land back in the first, the map has the codes on the
+wrong outlines. English Wikipedia's ISO tables, Natural Earth's own towns and Flags of the World
+confirmed each case. The scan is now `scripts/flag-audit/geo-code-scan.mjs`.
+
+**What was wrong.** A polygon that carries another region's code shows that region's flag,
+population, capital and native name.
+- **Ecuador:** the Napo and Tungurahua outlines were swapped. The polygon around Ambato was
+  labelled Napo, so it showed Napo's flag, and Napo's capital was given as Ambato. That capital is
+  also in the quiz.
+- **Eritrea:** four of the six regions were rotated. Asmara sat in "Anseba", Keren in "Northern Red
+  Sea", Massawa in "Debub" and Mendefera in "Maekel".
+- **Guyana:** eight of the ten regions carried another region's name and code. For example,
+  Georgetown sat in "East Berbice-Corentyne". Essequibo Islands-West Demerara also carried the
+  English name "Mahaica-Berbice", so two regions had the same name.
+- **Afghanistan:** Paktia and Paktika had each other's codes.
+- **Latvia:** Sala and Salacgrīva had each other's codes.
+- **Uganda:** the map used the district numbering from before ISO's 2010 renumbering, so 33
+  districts had another district's code. Mityana showed Lyantonde's data, and so on. One polygon
+  labelled a second "Mbarara" is Kiruhura District: Wikidata's centre for Kiruhura (Q1318865)
+  lies inside it. In addition, 23 districts were typed "County", and Kampala "District". ISO lists
+  every one as a district, and Kampala as a city. Ugandan counties are units below the district.
+
+**Fix.**
+- In `public/subdivisions/{EC,ER,GY,AF,LV,UG}.json`, each region's properties now sit on its own
+  polygon. This was done with a string-level edit of the properties, and the geometry was checked
+  to be byte-for-byte unchanged.
+- The Ugandan codes follow the current ISO table matched by district name. Luwero, Kibaale and
+  Bukomansimbi keep their codes, because only their spelling differs from ISO's. Bukwa is Bukwo
+  (UG-220). Omoro (UG-331), created in 2016, has no polygon of its own.
+- Regenerated from these files:
+  - the division list and the map capitals, where only these six countries changed;
+  - the national-capital hosts: Asmara is now in Maekel, Georgetown in Demerara-Mahaica;
+  - the Wikidata fallback capitals, taking only these countries' lines. This adds New Amsterdam,
+    Lyantonde, Isingiro, Kibingo (Sheema), Nwoya and Buhweju.
+- Capital details for the two districts new to the map come from a fresh Wikidata run: Isingiro
+  (UG-418) and Sheema (UG-426, capital Kibingo). The same run drifted many unrelated entries,
+  which were left alone.
+- Paktia's capital is spelled Gardez (Wikidata Q467632; Natural Earth has "Gardiz"), using the
+  alias table from 7a.
+- The flags were already filed under the right ISO codes, so they now appear on the right
+  outlines. `EC-T.svg` is the Commons file "Bandera Provincia Tungurahua". `EC-N.svg` matches
+  the Napo image on FOTW (ec-n.html, reached from ec-.html): yellow over white, blue and red.
+
+**Checks.**
+- Capital agreement for the six countries: 251 before, 259 after. None of the codes that still
+  disagree shows a different capital than before on the same outline.
+- The scan now reports none of these countries. Its remaining swaps are Morocco (SF-03) and
+  Antigua. The Antigua pair are border villages on coarse outlines; the polygons' extents match
+  the parishes.
+- Quiz capitals that disagree with the panel: 77 → 76 (Napo's capital is Tena again).
+
+**Left for later, recorded in the handbook.**
+- Wrong Natural Earth capitals, the batch 7c class. Paktika shows "Zareh Sharan", 50 km from
+  its capital Sharana. Napak shows Moroto and Kiryandongo shows Masindi-Port, because the coarse
+  outlines put those towns on the wrong side of the line.
+- Sources disagree on Demerara-Mahaica's capital. English Wikipedia says Georgetown, and Wikidata
+  says Paradise. The map shows Georgetown.
+- Maps older than the current structure (SF-14): Uganda's 23 districts created in 2010–2020, and
+  Kazakhstan's 2022 regions.
 
 ## Follow-ups (later batches)
 
@@ -626,9 +693,9 @@ population and flag when the two capitals disagree, but the **local name** was n
 - **About 128 are different cities.** Some come from the ISO-code generation mix in Iran and
   Morocco. Others are seat districts (Beijing → Tongzhou, Taipei → Xinyi, Tokyo → Shinjuku). Others
   are Natural Earth putting the capital in the wrong city:
-  - Eritrea's four regions are shifted by one;
+  - ~~Eritrea's four regions are shifted by one;~~ the map outlines were rotated; fixed in 7b;
   - Greece: Kavala for Komotini, Chalkida for Lamia, Kalamata for Tripoli;
-  - Afghanistan: Paktia and Paktika are swapped;
+  - ~~Afghanistan: Paktia and Paktika are swapped;~~ the map codes were swapped; fixed in 7b;
   - Ethiopia: Dese for Bahir Dar, Jima for Addis Ababa;
   - A Coruña is given as Santiago;
   - Azerbaijan's Zangilan is given as Kapan, a town in Armenia.
@@ -683,7 +750,7 @@ The 35 curated-override flags listed in §5.
 ### Structural data found in passing (not flag images)
 - ~~**Iran**: IR-14/22/23 carry shifted ISO codes, so "Hormozgan" is keyed as Tehran.~~ Fixed in
   batch 7a: every province was affected, and the map now carries the current codes.
-- **Guyana**: GY-ES is mis-coded.
+- ~~**Guyana**: GY-ES is mis-coded.~~ Eight of the ten regions were; fixed in batch 7b.
 - **Latvia**: divisions are pre-2021 municipalities, and many old codes are named "Valmiera".
 - **Vietnam**: provinces were merged in June 2025.
 - **Indonesia**: six provinces created in 2022 are missing.

@@ -101,6 +101,7 @@ it. Filenames, hashes and pixel scores find candidates, but none of them decides
 | **Wrong capital** (Wikidata P36) | `scripts/data/wikidata-capital-rejected.json`, or pin the right city in `CAPITAL_CITY_QIDS` (`scripts/build-capital-details.mjs`); mirror the change in the generated files |
 | **Map capital spelled differently from its Wikidata item** (the panel hides the population and flag) | A row in `SUBNATIONAL_NAME_ALIAS` (`scripts/build-cities.mjs`), keyed `CODE|NE name` and citing the capital's QID; then `node scripts/build-cities.mjs`. For the same city only; a different city goes in `SUBNATIONAL_OVERRIDE` with a reason |
 | **Map capital missing** (Natural Earth tags none) | `node scripts/build-subdivision-capitals.mjs` into a scratch copy; take only the target country's lines into `src/data/subdivisionCapitals.ts` |
+| **Map polygon carries another region's code** | Confirm with `geo-code-scan.mjs` (centre and capital point to the same other polygon) and the ISO table. Move the properties in `public/subdivisions/CC.json` with a string-level edit so the geometry stays byte-identical, and check that it does. Then run `build-subdivision-meta.mjs`, `build-cities.mjs` and `build-national-capital-locations.mjs`; run the capital, capital-detail and native-name generators into scratch and take only that country's lines |
 | **Wrong name, type or code** | Override tables in `scripts/build-subdivision-meta.mjs`, then `node scripts/build-subdivision-meta.mjs`; a wrong code is fixed in `public/subdivisions/CC.json` |
 | **Two quiz answers, one flag** | A sourced group in `src/data/identicalSubdivisionFlags.ts` (an answer key is a division code or `capital:` plus the division's code); pairs checked and found different go in `REVIEWED_DISTINCT` in `scripts/check-identical-subdivision-flags.mjs` |
 
@@ -136,9 +137,13 @@ The same bug usually occurs in several countries, so check for each of these:
 - **A superseded flag**: Damascus, where the Commons file itself is named "until 2024".
 - **Wikidata errors**: P36 with two values (North Sulawesi); P36 naming the wrong place
   (Schellenberg → Vaduz); a city's P41 pointing at the national flag (Porto).
-- **ISO code drift**: Iran's map uses the old codes and its capitals the 2018 ones, so Hormozgan
-  shows Tehran; Morocco (2015 regions); Latvia (LV-085/086 swapped); Posavina carrying Republika
-  Srpska's code.
+- **A map polygon carrying another region's code** (so it shows that region's flag, population,
+  capital and native name). Three forms: old ISO numbering (Iran before 2018 and Uganda before
+  2010, fixed in 7a and 7b); codes swapped or offset between neighbours (Paktia/Paktika,
+  Sala/Salacgrīva, fixed in 7b); and names and codes attached to the wrong outlines (Ecuador's
+  Napo/Tungurahua, a four-way rotation in Eritrea, eight of Guyana's ten regions, fixed in 7b).
+  Also Posavina carrying Republika Srpska's code (batch 1). Still open: Morocco (2015 regions).
+  `scripts/flag-audit/geo-code-scan.mjs` finds these.
 - **A district's or chiefdom's flag given to a city**: Kuala Terengganu, Seremban.
 - **Same design, different places**: Italian civic colours, Warsaw and Łódź, Munich and
   Baden-Württemberg. **One city in two roles**: Kyiv, the Hungarian county seats.
@@ -170,6 +175,7 @@ The same bug usually occurs in several countries, so check for each of these:
 | `scripts/flag-audit/commons-file.sh "File.svg" [dir]` | Shows a Commons file page, then downloads the file, retrying on 429 and refusing HTML |
 | `scripts/flag-audit/montage.mjs list.json prefix` | Side-by-side contact sheets |
 | `scripts/flag-audit/learn-check.mjs CODE…` | In-app check: panels, painted images, explainers, capital card, screenshots |
+| `scripts/flag-audit/geo-code-scan.mjs [CC…]` | Finds map polygons carrying another region's code: each region's Wikidata centre and capital should fall inside its own polygon. Swaps and cycles where both agree are the signal; one-way hits are usually enclaves or border towns |
 
 **Network notes.** Wikimedia's `api.php` and upload.wikimedia.org answer 429 after bursts. In that
 case, read wikitext and file pages through `index.php?action=raw`, download through
@@ -189,7 +195,8 @@ provide Chromium at `/opt/pw-browsers/chromium`.
 | 5 | #1707 `9e8449e` | Slovak, Swiss, Liechtenstein, Limburg, Comoros, Saint Helena and Russian gaps; the quiz accepts identical division flags; new identical-flag gate |
 | 6a | #1708 `e3c1a35` | North Sulawesi's capital is Manado; Schellenberg's is not Vaduz; the Wikidata-capital rejection list and its check |
 | 6b | #1717 `6d8406e` | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
-| 7a | #1720 | Iran re-keyed to the current ISO codes: all 31 provinces had shown another province's population, capital and native name. Alborz gained its capital (Karaj); three capital spellings aligned so their populations show |
+| 7a | #1720 `141cf7f` | Iran re-keyed to the current ISO codes: all 31 provinces had shown another province's population, capital and native name. Alborz gained its capital (Karaj); three capital spellings aligned so their populations show |
+| 7b | #1727 | Map polygons carrying another region's code: Ecuador (2), Eritrea (4), Guyana (8), Afghanistan (2), Latvia (2), Uganda (33, plus Kiruhura, which was drawn as a second Mbarara). Uganda's 23 "County" labels corrected to District, and Kampala to City |
 
 The independent auditor in the shared log screened every image added through `e3c1a35`: 76
 subdivision flags and 2 capital flags. Its findings F84–F86 (Estonian explainers and SVG metadata)
@@ -212,8 +219,8 @@ The ledger's "Follow-ups" section has the detail behind each item.
 
 | ID | Work | Why it matters / first step | Main files | Owner |
 |---|---|---|---|---|
-| SF-02 | Reconcile the 81 quiz capitals whose name disagrees with the Learn panel, then make the quiz apply the same agreement check | Measured 29 Sep: 81 of 1,255 quiz capitals (77 after batch 7a fixed Iran) disagree with the capital the panel shows. Blindly filtering would drop correct questions: about half are spellings (Gent/Ghent, Odessa/Odesa), some are outdated map capitals where the quiz is right (Banjarbaru, Kropyvnytskyi, Magas), and some are wrong quiz capitals (Iran's code drift puts Tehran on Hormozgan; Singaraja for Bali). Fix each at its source, then add the check and a gate | `scripts/build-cities.mjs` (`SUBNATIONAL_OVERRIDE`), `src/lib/capitalInfo.ts`, `src/lib/playableSubdivisions.ts`, capital-rejection files | Claude Code (this session), batch 7 |
-| SF-03 | Reconcile capital names (255 mismatches) | About 127 are spellings (Gent/Ghent), which need an alias table; about 128 are different cities. Fix at the source: Morocco's 2015 regions, Latvia LV-085/086, the Eritrea shift, the Greek, Afghan and Ethiopian swaps, A Coruña, Zangilan; check whether RO-IF's seat is Buftea | `public/subdivisions/*.json`, `scripts/build-capital-details.mjs`, `src/lib/cityRoles.ts` | |
+| SF-02 | Reconcile the 81 quiz capitals whose name disagrees with the Learn panel, then make the quiz apply the same agreement check | Measured 29 Sep: 81 of 1,255 quiz capitals (77 after batch 7a fixed Iran, 76 after 7b fixed Ecuador) disagree with the capital the panel shows. Blindly filtering would drop correct questions: about half are spellings (Gent/Ghent, Odessa/Odesa), some are outdated map capitals where the quiz is right (Banjarbaru, Kropyvnytskyi, Magas), and some are wrong quiz capitals (Iran's code drift puts Tehran on Hormozgan; Singaraja for Bali). Fix each at its source, then add the check and a gate | `scripts/build-cities.mjs` (`SUBNATIONAL_OVERRIDE`), `src/lib/capitalInfo.ts`, `src/lib/playableSubdivisions.ts`, capital-rejection files | Claude Code (this session), batch 7 |
+| SF-03 | Reconcile capital names (255 mismatches) | About 127 are spellings (Gent/Ghent), which need an alias table; about 128 are different cities. Fix at the source: Morocco's 2015 regions, the Greek, Afghan and Ethiopian swaps, A Coruña, Zangilan (Latvia LV-085/086, Eritrea and Paktia/Paktika were map mis-codings, fixed in 7b); check whether RO-IF's seat is Buftea | `public/subdivisions/*.json`, `scripts/build-capital-details.mjs`, `src/lib/cityRoles.ts` | |
 | SF-04 | Italian capital flags, about 80 still unchecked | Check each against FOTW (via `it-muni.html`), it.wikipedia and the comune's statute; reject undocumented plain bicolours as in 6b | capital-flag files (section 3, step 4) | |
 | SF-05 | Italian province flags | Look for other plain fields missing their arms (the Terni/Udine pattern) and logo flags (IT-RN, IT-SR); fill real *bandiere* still missing (Aosta Valley, South Tyrol and about 12 more) | division-flag files | |
 | SF-06 | Gaps: real flags the app shows blank | Norway's 7 counties re-established in 2024, Malta's 10 local councils, Guatemala's 22 departments, about 80 North Macedonian municipalities, Moldova (Gagauzia, Chișinău, Bălți, raions) | division-flag files, explainers | |
@@ -224,7 +231,7 @@ The ledger's "Follow-ups" section has the detail behind each item.
 | SF-11 | Syria | Watch for a documented post-2024 Damascus flag; consider making SY-DI a city-territory so its card works like Kyiv's | `src/data/cityTerritories.ts` | |
 | SF-12 | Names | PE-CUS, IT-BZ, PH-SUN, MX-DIF | `scripts/build-subdivision-meta.mjs` | |
 | SF-13 | Turn `--same-city` into a gate | Keep a reviewed list of different cities that share a name (San Fernando), so a future county-seat capital flag cannot bring back an unaccepted twin | `scripts/check-identical-subdivision-flags.mjs` | |
-| SF-14 | **Needs the owner** — out-of-date subdivision structures | Vietnam (2025 merger), Indonesia (6 provinces created in 2022), Latvia (2021), Nepal zones (dissolved 2015), Kenya provinces (replaced 2013), Luxembourg districts (abolished 2015), Ethiopia (SNNPR split 2023), Norway (2024), Sardinia, Bosnia's canton codes, Guyana GY-ES. These need new geometry, not flag edits | `public/subdivisions/*.json` | |
+| SF-14 | **Needs the owner** — out-of-date subdivision structures | Vietnam (2025 merger), Indonesia (6 provinces created in 2022), Latvia (2021), Nepal zones (dissolved 2015), Kenya provinces (replaced 2013), Luxembourg districts (abolished 2015), Ethiopia (SNNPR split 2023), Norway (2024), Sardinia, Bosnia's canton codes, Uganda (the map has 112 of 135 districts: the 23 created 2010–2020 are missing), Kazakhstan (Abai, Jetisu and Ulytau, created 2022). These need new geometry, not flag edits | `public/subdivisions/*.json` | |
 | SF-15 | **Needs the owner** — judgement calls | French departments (no official flags; the app mixes logos, heraldic flags and proposals); Mexican states (arms on white, used de facto); Paraguay PY-1, PY-12, PY-16; El Salvador and Honduras departments that fly their capital's flag; GE-AB note | ledger "Judgement areas" | |
 | SF-16 | Saint Helena, Ascension and Tristan da Cunha | Their flags are bundled, but the sub-national view only opens for UN members, so no screen reaches them | Learn navigation | |
 
