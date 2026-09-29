@@ -23,6 +23,11 @@ export type MapViewSettings = {
    * clicks still select the country. Persisted with the other view settings.
    */
   showSubnationalBorders: boolean;
+  /**
+   * When true, the Learn map is drawn as a draggable orthographic globe
+   * instead of the canonical Equal Earth map. Opt-in; defaults to false.
+   */
+  globe: boolean;
 };
 
 export type MapViewPreset = {
@@ -47,6 +52,7 @@ export const DEFAULT_MAP_VIEW: MapViewSettings = {
   centerLongitude: 0,
   southUp: false,
   showSubnationalBorders: false,
+  globe: false,
 };
 
 const STORAGE_KEY = "hana-flag-game.map-view";
@@ -64,6 +70,7 @@ export function loadMapView(): MapViewSettings {
           : DEFAULT_MAP_VIEW.centerLongitude,
       southUp: !!parsed.southUp,
       showSubnationalBorders: !!parsed.showSubnationalBorders,
+      globe: !!parsed.globe,
     };
   } catch {
     return DEFAULT_MAP_VIEW;

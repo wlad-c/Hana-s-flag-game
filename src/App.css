@@ -2683,6 +2683,10 @@
   color: var(--ink-soft, rgba(0, 0, 0, 0.6));
 }
 
+.map-view-control__heading--sub {
+  margin-top: 0.15rem;
+}
+
 .map-view-control__presets {
   display: flex;
   flex-wrap: wrap;

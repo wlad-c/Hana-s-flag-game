@@ -11,7 +11,8 @@ import {
 /**
  * Popover-button control that lets the user pick the map's view centre
  * (Atlantic / Pacific / Americas / Africa / East Asia, or a custom
- * longitude via a slider) and toggle south-up.
+ * longitude via a slider), switch between the flat map and a globe, and
+ * toggle south-up.
  *
  * Designed to sit in the same column as the +/-/⟲ zoom buttons. Closed
  * state is a single globe-icon button; open state floats a popover with
@@ -106,6 +107,35 @@ export function MapViewControl({ view, onChange }: MapViewControlProps) {
             className="map-view-control__slider"
             aria-label="Map centre longitude"
           />
+
+          <p className="map-view-control__heading map-view-control__heading--sub" id="map-view-projection">
+            Projection
+          </p>
+          <div
+            className="map-view-control__presets"
+            role="radiogroup"
+            aria-labelledby="map-view-projection"
+          >
+            {([
+              { globe: false, label: "Map", title: "Flat Equal Earth map (default)" },
+              { globe: true, label: "Globe", title: "3-D globe — drag to spin it" },
+            ] as const).map((o) => {
+              const active = view.globe === o.globe;
+              return (
+                <button
+                  key={o.label}
+                  type="button"
+                  role="radio"
+                  aria-checked={active}
+                  className={`map-view-control__preset${active ? " map-view-control__preset--active" : ""}`}
+                  onClick={() => onChange({ ...view, globe: o.globe })}
+                  title={o.title}
+                >
+                  {o.label}
+                </button>
+              );
+            })}
+          </div>
 
           <label className="map-view-control__check">
             <input
