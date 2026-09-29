@@ -3,7 +3,7 @@ import { fetchMergedSubdivisionGeo } from "../api/subdivisions";
 import { SUBDIVISION_META } from "../lib/subdivisionMeta";
 import { DISPUTED_TERRITORY_HIERARCHY } from "../lib/disputedSubdivisions";
 import { CITY_TERRITORY_CODES } from "../data/cityTerritories";
-import { identicalFlagTwins } from "../data/identicalSubdivisionFlags";
+import { answerKey, identicalFlagTwins, parseAnswerKey } from "../data/identicalSubdivisionFlags";
 import {
   getPlayableCapitalSubdivisions,
   getPlayableSubdivisions,
@@ -256,16 +256,15 @@ export function useSubdivisionGame(
     // in the dropdown with a "(Type)" suffix. Correct means the picked ENTITY
     // matches (code + kind) — except when the division and its capital share
     // the exact same flag (owner rule): the flag on screen belongs to both, so
-    // either row is accepted. The same goes for two DIFFERENT divisions that fly
-    // an identical flag (Ajman and Dubai): each one's flag is the other's too.
+    // either row is accepted. The same goes for any two answers that fly an
+    // identical flag (Ajman and Dubai; Kyiv the city and Kyiv as the capital of
+    // Kyiv Oblast): each one's flag is the other's too.
     const selectedKind: SubdivQuestionKind =
       selected.answerKind === "capital" ? "capital" : "division";
-    const twinDivision =
-      current.kind === "division" &&
-      selectedKind === "division" &&
-      identicalFlagTwins(current.division.code).includes(selected.code);
+    const questionKey = answerKey(current.division.code, current.kind);
+    const selectedKey = answerKey(selected.code, selectedKind);
     const correct =
-      twinDivision ||
+      identicalFlagTwins(questionKey).includes(selectedKey) ||
       (selected.code === current.division.code &&
         (selectedKind === current.kind || sharedRef.current.has(current.division.code)));
     setWasCorrect(correct);
@@ -335,19 +334,35 @@ export function useSubdivisionGame(
       ? playableCapitalName(current.division.code)
       : current.division.name
     : null;
-  const twinNames = current && current.kind === "division"
-    ? identicalFlagTwins(current.division.code)
-        .map((code) => divisions.find((d) => d.code === code)?.name)
+  // Name every other answer in this deck that flies the same flag. A twin of
+  // the kind the deck leaves out is not an option, so it is not named.
+  const twinNames = current
+    ? identicalFlagTwins(answerKey(current.division.code, current.kind))
+        .map(parseAnswerKey)
+        .map(({ code, kind }) => {
+          if (kind === "capital") {
+            const cap = includeCapitals ? playableCapitalName(code) : null;
+            const of = SUBDIVISION_META[code.split("-")[0]]?.divisions.find((d) => d.code === code)?.name;
+            return cap && of ? `${cap} (capital of ${of})` : null;
+          }
+          return includeDivisions ? divisions.find((d) => d.code === code)?.name ?? null : null;
+        })
         .filter((name): name is string => !!name)
     : [];
+  const twinList = twinNames.length > 1
+    ? `${twinNames.slice(0, -1).join(", ")} and ${twinNames[twinNames.length - 1]}`
+    : twinNames[0];
+  const twinNote = twinNames.length > 0
+    ? twinNames.length > 1
+      ? `${twinList} fly the same flag — any of these answers counts`
+      : `${twinList} flies the same flag — either answer counts`
+    : null;
   const revealNote = current
     ? current.kind === "capital"
-      ? `capital of ${current.division.name}`
+      ? [`capital of ${current.division.name}`, twinNote].filter(Boolean).join("; ")
       : sharedRef.current.has(current.division.code)
       ? `also flown by its capital, ${playableCapitalName(current.division.code) ?? ""} — either answer counts`
-      : twinNames.length > 0
-      ? `${twinNames.join(" and ")} ${twinNames.length > 1 ? "fly" : "flies"} the same flag — either answer counts`
-      : null
+      : twinNote
     : null;
 
   return useMemo(() => ({

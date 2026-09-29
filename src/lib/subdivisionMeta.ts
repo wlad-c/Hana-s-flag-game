@@ -420,7 +420,7 @@ export const SUBDIVISION_META: Record<string, CountrySubdivisionMeta> = {
     { code: "BG-26", name: "Haskovo", typeLabel: "Province" },
     { code: "BG-05", name: "Vidin", typeLabel: "Province" },
     { code: "BG-14", name: "Pernik", typeLabel: "Province" },
-    { code: "BG-23", name: "Sofia", typeLabel: "Province" },
+    { code: "BG-23", name: "Sofia Province", typeLabel: "Province" },
     { code: "BG-12", name: "Montana", typeLabel: "Province" },
     { code: "BG-10", name: "Kyustendil", typeLabel: "Province" },
     { code: "BG-01", name: "Blagoevgrad", typeLabel: "Province" },
@@ -670,8 +670,8 @@ export const SUBDIVISION_META: Record<string, CountrySubdivisionMeta> = {
     { code: "BY-VI", name: "Vitebsk", typeLabel: "Region" },
     { code: "BY-HR", name: "Grodno", typeLabel: "Region" },
     { code: "BY-MA", name: "Mahilioŭ", typeLabel: "Region" },
-    { code: "BY-MI", name: "Minsk", typeLabel: "Municipality" },
-    { code: "BY-HM", name: "Minsk", typeLabel: "Region" }
+    { code: "BY-MI", name: "Minsk Region", typeLabel: "Region" },
+    { code: "BY-HM", name: "Minsk", typeLabel: "City" }
     ],
   },
   "BZ": {
@@ -2142,7 +2142,7 @@ export const SUBDIVISION_META: Record<string, CountrySubdivisionMeta> = {
     { code: "IT-LU", name: "Lucca", typeLabel: "Province" },
     { code: "IT-MS", name: "Massa-Carrara", typeLabel: "Province" },
     { code: "IT-SP", name: "La Spezia", typeLabel: "Province" },
-    { code: "IT-GE", name: "Liguria", typeLabel: "Province" },
+    { code: "IT-GE", name: "Genoa", typeLabel: "Province" },
     { code: "IT-SV", name: "Savona", typeLabel: "Province" },
     { code: "IT-TP", name: "Trapani", typeLabel: "Province" },
     { code: "IT-ME", name: "Messina", typeLabel: "Province" },

@@ -1,5 +1,5 @@
 {
-  "_comment": "Capital-city flag files VERIFIED NOT to be that capital city's own flag — a district's, a traditional chiefdom's or another neighbouring entity's flag that Wikidata P41, an infobox or an earlier manifest attached to the capital. build-capital-details.mjs drops these (so the P41 pass, a curated override or a preserved manifest entry can never re-add them), backfill-capital-flags.mjs never proposes them, and check-capital-flags.mjs fails the build if the manifest maps a code to one. Each entry cites the evidence. See docs/SUBNATIONAL_FLAG_AUDIT_2026-09.md.",
+  "_comment": "Capital-city flag files VERIFIED NOT to be that capital city's own flag — a district's, a traditional chiefdom's or another neighbouring entity's flag, a design no source documents for the city where the city's documented flag differs, or a flag recorded as superseded, that Wikidata P41, an infobox or an earlier manifest attached to the capital. build-capital-details.mjs drops these (so the P41 pass, a curated override or a preserved manifest entry can never re-add them), backfill-capital-flags.mjs never proposes them, and check-capital-flags.mjs fails the build if the manifest maps a code to one. Each entry cites the evidence. See docs/SUBNATIONAL_FLAG_AUDIT_2026-09.md.",
   "MY-05": {
     "file": "Flag of Sungei Ujong.svg",
     "reason": "Flag of the luak of Sungai Ujong, one of the nine traditional chiefdoms of Negeri Sembilan (FOTW my-n-su.html: 'Quartered black, yellow, white and green'), not of the city of Seremban. Seremban City Council's own flag is on FOTW my-05-se.html and is the MY-05 override."
@@ -19,5 +19,49 @@
   "ID-SA": {
     "file": "Flag of Gorontalo City.png",
     "reason": "Flag of Gorontalo City, the capital of Gorontalo province (ID-GO), which split from North Sulawesi in 2000. It reached North Sulawesi because Wikidata's North Sulawesi item (Q5068) also lists Gorontalo as a capital. North Sulawesi's capital is Manado, whose own flag (the city arms on white, FOTW id-sa-c.html) is the ID-SA override."
+  },
+  "MA-01": {
+    "file": "Wilaya de Tanger.gif",
+    "reason": "The flag of the Wilaya of Tangier (Commons: \"Drapeau du Wilaya de Tanger\"). FOTW's Moroccan subnational index (ma-.html) lists the wilaya flags created in 1976 separately from municipal flags, with Tanger among the wilayas; it is a province's flag, not the city's."
+  },
+  "MA-02": {
+    "file": "Flag of Kenitra province.svg",
+    "reason": "The flag of Kénitra Province (Commons: \"Flag of Kenitra Province in Morocco\", in \"Flags of provinces of Morocco\"). The app names MA-02's capital Oujda, a different city; Morocco's capital data mixes the 2015 region codes into the pre-2015 regions (see the audit ledger)."
+  },
+  "MA-03": {
+    "file": "Flag of Fes province.svg",
+    "reason": "The flag of Fes Province (Commons: \"Flag of Fes Province in Morocco\", in \"Flags of provinces of Morocco\"), shown as the flag of Taza. It is neither Taza's flag nor a city's."
+  },
+  "MA-05": {
+    "file": "Flag of Fes province.svg",
+    "reason": "The flag of Fes Province (Commons: \"Flag of Fes Province in Morocco\"), shown as the flag of Beni Mellal, a different city in a different region."
+  },
+  "MA-09": {
+    "file": "Flag of Settat province.svg",
+    "reason": "The flag of Settat Province (Commons: \"Flag of Settat Province in Morocco\", in \"Flags of provinces of Morocco\"), not of the city of Settat."
+  },
+  "MA-10": {
+    "file": "Flag of Sidi Bennour.png",
+    "reason": "The flag of Sidi Bennour, shown for Guelmim, which the app names as MA-10's capital. The two are different places."
+  },
+  "IT-OR": {
+    "file": "Flag of Oristano.svg",
+    "reason": "A plain white-and-red bicolour that no source documents for Oristano: the Commons file is a user's drawing made from the Flag of Cagliari file, with no source; FOTW has no page for the city and it.wikipedia describes no city flag. Oristano's documented symbol is the uprooted tree of Arborea."
+  },
+  "IT-RN": {
+    "file": "Flag of Rimini.svg",
+    "reason": "A plain white-and-red bicolour, drawn by a Commons user with no source. FOTW it-rn-rn.html reports Rimini's flag as white charged with the city arms (per flagsonline.it) and shows the city's gonfalone, which the comune describes as a drape in the colours of the arms, carrying them."
+  },
+  "IT-TE": {
+    "file": "Flag of Teramo.svg",
+    "reason": "A plain white-and-red bicolour with no source. Teramo's only granted symbol besides the arms is the gonfalone of DPR 11 September 2001, white with a red border and the arms (it.wikipedia Teramo); FOTW it-te-te.html shows that gonfalone and reports the older town flag as red and white with the red at the hoist, the reverse of this file."
+  },
+  "SY-DI": {
+    "file": "Flag of Damascus (until 2024).svg",
+    "reason": "Wikimedia Commons records this Damascus Governorate logo flag as used until 2024, before the change of government. No later Damascus flag is documented (Commons category Flags of Damascus; FOTW sy-di.html shows only an older design), so the city is left without one."
+  },
+  "SY-RD": {
+    "file": "Flag of Damascus (until 2024).svg",
+    "reason": "The same superseded Damascus Governorate flag, shown for Damascus as the capital of Rif Dimashq. Commons records it as used until 2024 and no later flag is documented."
   }
 }

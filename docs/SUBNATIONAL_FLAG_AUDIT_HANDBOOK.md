@@ -149,15 +149,15 @@ The same bug usually occurs in several countries, so check for each of these:
 - **Group consistency** uses step 96 and fails a declared group at 10%. That step ignores shade:
   Genoa against Padua scores 5.5%, and Kecskemét's two files, one with a border, score 8.7%.
   It also mistakes green for blue (Córdoba and Tunja), so look before grouping.
-- **Report modes** (arriving with batch 6b), which print and never gate:
-  `--scan [--max=0.012 --channel=96]` and `--same-city`. The second finds one city in two roles, including pairs the pixel scan misses.
+- **Report modes**, which print and never gate: `--scan [--max=0.012 --channel=96]` and
+  `--same-city`. The second finds one city in two roles, including pairs the pixel scan misses.
 
 ## 4. Tools
 
 | Command | Use |
 |---|---|
 | `npm run flags:check` | Runs every gate. It must pass before a push |
-| `node scripts/check-identical-subdivision-flags.mjs [--scan \| --same-city]` | Quiz twins: the gate, and (from batch 6b) the two report modes |
+| `node scripts/check-identical-subdivision-flags.mjs [--scan \| --same-city]` | Quiz twins: the gate and the two report modes |
 | `node scripts/subdiv-remaining.mjs [CC]` / `node scripts/capital-meaning-remaining.mjs [CC]` | Explainer coverage still missing |
 | `npm run subdiv:audit-omissions` / `npm run capitals:audit-omissions` | Omissions whose reasons cite too little, or cite a dead FOTW URL |
 | `node scripts/build-flag-aspect-ratios.mjs` | Regenerates the flag-ratio table after a flag changes |
@@ -186,26 +186,14 @@ provide Chromium at `/opt/pw-browsers/chromium`.
 | 4 Czechia, Poland, Estonia | #1706 `ab8cea4` | Czech, Polish and Estonian region flags shown under the app's codes, with sourced explainers |
 | 5 | #1707 `9e8449e` | Slovak, Swiss, Liechtenstein, Limburg, Comoros, Saint Helena and Russian gaps; the quiz accepts identical division flags; new identical-flag gate |
 | 6a | #1708 `e3c1a35` | North Sulawesi's capital is Manado; Schellenberg's is not Vaduz; the Wikidata-capital rejection list and its check |
-| **6b** | *in progress in this session* | See below |
+| 6b | #1717 | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
 
 The independent auditor in the shared log screened every image added through `e3c1a35`: 76
 subdivision flags and 2 capital flags. Its findings F84–F86 (Estonian explainers and SVG metadata)
 were fixed by the implementing agent in `f0c9407`.
 
-**Batch 6b** has been implemented on the audit branch and is being verified. It ships in the next PR:
-- **Quiz.** The quiz accepts identical capital flags. There are 47 sourced groups: one city in two
-  roles, or one design flown by two places.
-- **Removed capital flags.** Six Moroccan province and wilaya flags; Rimini, Teramo and Oristano
-  (plain bicolours that no source documents); Damascus (the Commons file is named "until 2024").
-- **Italian provinces.** Taranto, Terni and Udine are suppressed: each showed a plain field with no
-  documented source, and the real Terni and Udine flags carry their arms. Ferrara was checked and
-  is right.
-- **Belarus.** Minsk Region's name and type are corrected, and the city-territory entry moves from
-  the region (BY-MI) to the city (BY-HM).
-- **Names.** BG-23 becomes "Sofia Province" and IT-GE "Genoa".
-- **Explainer.** Grenoble's explainer was rewritten.
-
-The ledger's Batch 6b section gives the evidence for each change.
+The ledger's Batch 6b section gives the evidence for each change, including the Italian city and
+province flags that turned out to be undocumented and Damascus's superseded flag.
 
 **Coverage at this checkpoint:**
 - About 2,100 subdivision flag files and 1,350 capital flags are bundled.
@@ -221,7 +209,6 @@ The ledger's "Follow-ups" section has the detail behind each item.
 
 | ID | Work | Why it matters / first step | Main files | Owner |
 |---|---|---|---|---|
-| SF-01 | Finish and ship batch 6b | Section 5 | — | this session |
 | SF-02 | Make the capital quiz apply the Learn panel's capital-name check | Right now the quiz can show Tehran's flag as "the capital of Hormozgan". Filter `getPlayableCapitalSubdivisions()` with the same `sameCity` test the panel uses, and add a check | `src/lib/playableSubdivisions.ts`, `src/lib/capitalInfo.ts` | |
 | SF-03 | Reconcile capital names (255 mismatches) | About 127 are spellings (Gent/Ghent), which need an alias table; about 128 are different cities. Fix at the source: Iran's code drift, Morocco's 2015 regions, Latvia LV-085/086, the Eritrea shift, the Greek, Afghan and Ethiopian swaps, A Coruña, Zangilan; check whether RO-IF's seat is Buftea | `public/subdivisions/*.json`, `scripts/build-capital-details.mjs`, `src/lib/cityRoles.ts` | |
 | SF-04 | Italian capital flags, about 80 still unchecked | Check each against FOTW (via `it-muni.html`), it.wikipedia and the comune's statute; reject undocumented plain bicolours as in 6b | capital-flag files (section 3, step 4) | |

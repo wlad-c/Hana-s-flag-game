@@ -354,6 +354,11 @@ const SUPPRESSED_SUBDIVISION_FLAGS: ReadonlySet<string> = new Set([
   //   Bergamo, Messina; the provinces have only a gonfalone or no clean flag image
   "IT-AG", "IT-MC", "IT-AP", "IT-VI", // arms-on-white images; the provinces have only
   //   a gonfalone (it.wikipedia), not a flag
+  "IT-TR", "IT-UD", // plain yellow/blue and blue/yellow fields: the documented flags carry the
+  //   province arms at the centre (it.wikipedia Terni; FOTW/CISV Udine), and no free image of
+  //   either exists. 2026-09 audit, batch 6b.
+  "IT-TA", // a plain red/blue field in the city's colours; the province has arms and a
+  //   gonfalone but no documented flag (FOTW it-ta, it.wikipedia). Batch 6b.
   //
   // No documented flag at all (FOTW: "There is no known flag for the province",
   // or no record anywhere):

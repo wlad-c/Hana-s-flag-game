@@ -717,7 +717,6 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "IT-NA": "capital-flags/it-na.svg",
   "IT-NO": "capital-flags/it-no.svg",
   "IT-NU": "capital-flags/it-nu.svg",
-  "IT-OR": "capital-flags/it-or.svg",
   "IT-OT": "capital-flags/it-ot.png",
   "IT-PA": "capital-flags/it-pa.svg",
   "IT-PC": "capital-flags/it-pc.svg",
@@ -737,7 +736,6 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "IT-RE": "capital-flags/it-re.svg",
   "IT-RI": "capital-flags/it-ri.svg",
   "IT-RM": "capital-flags/it-rm.svg",
-  "IT-RN": "capital-flags/it-rn.svg",
   "IT-RO": "capital-flags/it-ro.svg",
   "IT-SA": "capital-flags/it-sa.svg",
   "IT-SI": "capital-flags/it-si.svg",
@@ -747,7 +745,6 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "IT-SS": "capital-flags/it-ss.svg",
   "IT-SV": "capital-flags/it-sv.svg",
   "IT-TA": "capital-flags/it-ta.png",
-  "IT-TE": "capital-flags/it-te.svg",
   "IT-TN": "capital-flags/it-tn.svg",
   "IT-TO": "capital-flags/it-to.png",
   "IT-TP": "capital-flags/it-tp.svg",
@@ -923,12 +920,6 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "LV-109": "capital-flags/lv-109.png",
 
   // ── MA ──
-  "MA-01": "capital-flags/ma-01.gif",
-  "MA-02": "capital-flags/ma-02.svg",
-  "MA-03": "capital-flags/ma-03.svg",
-  "MA-05": "capital-flags/ma-05.svg",
-  "MA-09": "capital-flags/ma-09.svg",
-  "MA-10": "capital-flags/ma-10.png",
 
   // ── MD ──
   "MD-AN": "capital-flags/md-an.svg",
@@ -1478,9 +1469,7 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "SV-UN": "capital-flags/sv-un.jpg",
 
   // ── SY ──
-  "SY-DI": "capital-flags/sy-di.svg",
   "SY-HL": "capital-flags/sy-hl.png",
-  "SY-RD": "capital-flags/sy-rd.svg",
 
   // ── TH ──
   "TH-21": "capital-flags/th-21.png",
