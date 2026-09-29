@@ -12,7 +12,7 @@ import {
  * Popover-button control that lets the user pick the map's view centre
  * (Atlantic / Pacific / Americas / Africa / East Asia, or a custom
  * longitude via a slider), switch between the flat map and a globe, spin
- * it, and toggle south-up.
+ * it, toggle south-up, and show capital markers.
  *
  * Designed to sit in the same column as the +/-/⟲ zoom buttons. Closed
  * state is a single globe-icon button; open state floats a popover with
@@ -25,9 +25,19 @@ export type MapViewControlProps = {
   /** Whether the map is auto-spinning. Omit (with `onToggleSpin`) to hide the control. */
   spinning?: boolean;
   onToggleSpin?: () => void;
+  /** Capital-city markers. Omit (with `onToggleCapitals`) to hide the control. */
+  showCapitals?: boolean;
+  onToggleCapitals?: () => void;
 };
 
-export function MapViewControl({ view, onChange, spinning = false, onToggleSpin }: MapViewControlProps) {
+export function MapViewControl({
+  view,
+  onChange,
+  spinning = false,
+  onToggleSpin,
+  showCapitals = false,
+  onToggleCapitals,
+}: MapViewControlProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const popoverStyle = usePopoverBounds(open, ref, 256);
@@ -68,7 +78,7 @@ export function MapViewControl({ view, onChange, spinning = false, onToggleSpin 
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-label="Map view options"
-        title="Map view — globe, spin, south-up, centre"
+        title="Map view — globe, spin, south-up, centre, capitals"
       >
         <UiIcon name="settings" />
         <span className="map-view-control__trigger-label">View</span>
@@ -164,6 +174,13 @@ export function MapViewControl({ view, onChange, spinning = false, onToggleSpin 
             />
             <span>Sub-national borders</span>
           </label>
+
+          {onToggleCapitals && (
+            <label className="map-view-control__check">
+              <input type="checkbox" checked={showCapitals} onChange={onToggleCapitals} />
+              <span>Capitals</span>
+            </label>
+          )}
         </div>
       )}
     </div>

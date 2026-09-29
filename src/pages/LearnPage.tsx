@@ -1666,9 +1666,8 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     () => (
       <>
         <hr className="world-map__zoom-divider" />
-        {/* Flag + capital layer toggles live in the main toolbar row (after the
-            zoom buttons, ahead of rotation/globe) — the most-used controls stay
-            one tap away instead of hiding in the kebab overflow. */}
+        {/* The flag layer toggle lives in the main toolbar row (after the zoom
+            buttons); capitals are a checkbox in the View menu. */}
         <button
           type="button"
           className={`world-map__zoom-btn world-map__zoom-btn--layer${showFlagMap ? " world-map__zoom-btn--active" : ""}`}
@@ -1693,18 +1692,6 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             suggestedCode={selectedModernCode}
           />
         )}
-        {CITIES_FEATURE_ENABLED && (
-          <button
-            type="button"
-            className={`world-map__zoom-btn world-map__zoom-btn--layer${showCities ? " world-map__zoom-btn--active" : ""}`}
-            onClick={toggleCities}
-            aria-pressed={showCities}
-            aria-label={showCities ? "Hide capitals on map" : "Show capitals on map"}
-            title={showCities ? "Hide capitals" : "Show capitals"}
-          >
-            <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="pin" /></span>
-          </button>
-        )}
         {isModernEra && (
           <DemocracyMapControl
             mode={democracyMapMode}
@@ -1718,6 +1705,8 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
           onChange={setMapView}
           spinning={isRotating}
           onToggleSpin={isModernEra ? toggleRotation : undefined}
+          showCapitals={CITIES_FEATURE_ENABLED ? showCities : undefined}
+          onToggleCapitals={CITIES_FEATURE_ENABLED ? toggleCities : undefined}
         />
         <hr className="world-map__zoom-divider world-map__zoom-divider--era" />
         <EraPicker currentEraId={eraId} onEraChange={setEraId} />
