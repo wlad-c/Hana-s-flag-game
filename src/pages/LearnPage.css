@@ -580,61 +580,79 @@
 
 /* === Information panel drawer (large screens only) =================
    Above 900px the panel can tuck away so the map/chart uses the full
-   row width. Below 900px the stacked layout is unchanged and these
-   controls stay hidden. */
-.learn-fs__panel-drawer-btn {
+   row width. The toggle is an edge tab fixed to the panel's left border
+   (chevron → hides); once collapsed the same tab sits on the right edge
+   of the screen (chevron ← brings it back). Each tab lives in a rail that
+   spans its column, and is sticky at mid-screen, so it stays in reach
+   however far the panel has been scrolled. Below 900px the stacked layout
+   is unchanged and the tabs stay hidden. */
+.learn-fs__panel-handle-rail {
   display: none;
 }
 
 @media (min-width: 901px) {
-  .learn-fs__panel-drawer-btn {
-    display: inline-flex;
+  .learn-fs {
+    --panel-handle-w: 24px;
+    --panel-handle-h: 56px;
+    /* Where the panel's outer left edge sits inside .learn-fs__panel-wrap. */
+    --panel-inset: 1.25rem;
+  }
+
+  .learn-fs__panel-handle-rail {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: var(--panel-handle-w);
+    pointer-events: none;
+  }
+
+  .learn-fs__panel-handle-rail--panel {
+    left: calc(var(--panel-inset) - var(--panel-handle-w));
+  }
+
+  .learn-fs__panel-handle-rail--edge {
+    right: 0;
+    z-index: 8;
+  }
+
+  /* `.learn-fs` prefix outranks the global 44px min-width on icon buttons;
+     the tab's 56px height already meets the touch-target size. */
+  .learn-fs .learn-fs__panel-handle {
+    min-width: 0;
+    position: sticky;
+    top: calc(50vh - var(--panel-handle-h) / 2);
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.3rem;
     box-sizing: border-box;
-    font-family: inherit;
-    font-size: 0.78rem;
-    font-weight: 700;
+    width: var(--panel-handle-w);
+    height: var(--panel-handle-h);
+    padding: 0;
     color: var(--ink);
     background: var(--paper);
     border: 3px solid var(--ink);
-    border-radius: 999px;
-    box-shadow: 0 2px 0 var(--ink);
+    border-right: 0;
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 2px 0 var(--ink);
     cursor: pointer;
-    padding: 0.35rem 0.7rem;
-    min-height: 2rem;
-    line-height: 1;
+    pointer-events: auto;
+    transition: background 120ms ease, color 120ms ease;
   }
 
-  .learn-fs__panel-drawer-btn:hover,
-  .learn-fs__panel-drawer-btn:focus-visible {
-    background: var(--cream, var(--paper));
+  .learn-fs__panel-handle:hover,
+  .learn-fs__panel-handle:focus-visible {
+    background: var(--sky);
+    color: var(--ink-fixed);
   }
 
-  .learn-fs__panel-drawer-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 0 var(--ink);
+  .learn-fs__panel-handle:active {
+    transform: scale(0.95);
   }
 
-  .learn-fs__panel-drawer-btn .ui-icon {
+  .learn-fs__panel-handle .ui-icon {
     width: 1rem;
     height: 1rem;
-  }
-
-  .learn-fs__panel-drawer-btn--hide {
-    align-self: flex-end;
-    margin: 0 0 0.35rem;
-  }
-
-  .learn-fs__panel-drawer-btn--show {
-    /* Only visible while the panel is collapsed — sits on the map's
-       right edge so the user can bring the drawer back. */
-    display: none;
-    position: absolute;
-    top: 0.85rem;
-    right: 0.75rem;
-    z-index: 8;
   }
 
   .learn-fs--panel-collapsed {
@@ -648,18 +666,32 @@
     display: none;
   }
 
-  .learn-fs--panel-collapsed .learn-fs__panel-drawer-btn--show {
-    display: inline-flex;
-  }
-
-  /* No firm selection yet — keep the map clean; Info only returns after Hide. */
-  .learn-fs--panel-collapsed .learn-fs__panel-drawer-btn--show:disabled {
+  .learn-fs:not(.learn-fs--panel-collapsed) .learn-fs__panel-handle-rail--edge,
+  .learn-fs__panel-handle--show:disabled {
+    /* No firm selection yet — keep the map clean. */
     display: none;
   }
 
-  .learn-fs:not(.learn-fs--panel-collapsed) .learn-fs__panel-drawer-btn--show {
-    display: none;
+  .learn-fs:not(.learn-fs--panel-collapsed) .learn-fs__panel {
+    animation: learn-panel-slide-in 180ms ease-out;
   }
+}
+
+/* Bigger target where the pointer is a finger. */
+@media (min-width: 901px) and (pointer: coarse) {
+  .learn-fs {
+    --panel-handle-w: 32px;
+    --panel-handle-h: 72px;
+  }
+}
+
+@keyframes learn-panel-slide-in {
+  from { opacity: 0; transform: translateX(1.5rem); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learn-fs__panel { animation: none !important; }
 }
 
 /* Clear the panel selection. In the modern era it sits at the right end of
