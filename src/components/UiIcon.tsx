@@ -26,8 +26,8 @@ const paths = {
   search: "M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0 m-2 5 6 6",
   settings: "m9 3-.6 2.3-2 .9-2.2-.6-2 3.4 1.6 1.7v2.6L2.2 15l2 3.4 2.2-.6 2 .9L9 21h4l.6-2.3 2-.9 2.2.6 2-3.4-1.6-1.7v-2.6L19.8 9l-2-3.4-2.2.6-2-.9L13 3Z M14 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0",
   democracy: "M3 21h18 M3 10h18 M5 10v8 M9 10v8 M13 10v8 M17 10v8 M12 3L2 8h20Z",
-  /** People moving toward a place — migrant-origins map control. */
-  migrate: "M16 3h5v5 M21 3l-7 7 M8 14l-5 5 M3 14v5h5 M14 8l2 2",
+  /** Travel & migration map control (visas, migrant intake, diaspora). */
+  plane: "M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z",
 } as const;
 
 /** Decorative UI artwork only. The parent control owns its accessible name. */
