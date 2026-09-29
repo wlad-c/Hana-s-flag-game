@@ -1,0 +1,2916 @@
+{
+  "applicationRevision": "11e30bb569b2e599a82ea5d51998a9998ed78acb",
+  "recheckedApplicationRevision": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "checkedAt": "2026-09-26",
+  "sources": [
+    {
+      "file": "etr2025-primary.pdf",
+      "url": "https://www.visionofhumanity.org/wp-content/uploads/2025/10/Ecological-Threat-Report-2025.pdf",
+      "bytes": 11472527,
+      "sha256": "12840755e9a945f16bd3065b02bed39f1cee0253c97bb2b3673d8a77be25f161",
+      "contentType": "application/pdf"
+    }
+  ],
+  "summary": {
+    "entries": 170,
+    "allFieldsMatch": 170,
+    "unchangedAtLatestSnapshot": 170
+  },
+  "methodologyAndLimits": [
+    "All 172 overall scores in Appendix B of the 2025 report (data year 2024).",
+    "Ranks are app-derived ascending competition ranks across the entire 172-unit source, not publisher official rank numbers.",
+    "Threat categories derived from source methodology thresholds; boundary policy must match the methodology."
+  ],
+  "rows": [
+    {
+      "code": "AE",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 67,
+        "score": 2.414
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.414,
+        "rank": 67,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AF",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 170,
+        "score": 4.228
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.228,
+        "rank": 170,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AL",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 50,
+        "score": 2.1
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.1,
+        "rank": 50,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AM",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 48,
+        "score": 2.076
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.076,
+        "rank": 48,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AO",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 142,
+        "score": 3.727
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.727,
+        "rank": 142,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AR",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 47,
+        "score": 2.053
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.053,
+        "rank": 47,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AT",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 4,
+        "score": 1.351
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.351,
+        "rank": 4,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AU",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 49,
+        "score": 2.097
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.097,
+        "rank": 49,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "AZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 76,
+        "score": 2.568
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.568,
+        "rank": 76,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BA",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 42,
+        "score": 1.954
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.954,
+        "rank": 42,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BD",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 114,
+        "score": 3.203
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.203,
+        "rank": 114,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BE",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 10,
+        "score": 1.481
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.481,
+        "rank": 10,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BF",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 157,
+        "score": 4.066
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.066,
+        "rank": 157,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BG",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 27,
+        "score": 1.728
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.728,
+        "rank": 27,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BH",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 103,
+        "score": 2.985
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.985,
+        "rank": 103,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BI",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 171,
+        "score": 4.271
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.271,
+        "rank": 171,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BJ",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 150,
+        "score": 3.894
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.894,
+        "rank": 150,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BN",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 54,
+        "score": 2.127
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.127,
+        "rank": 54,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BO",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 110,
+        "score": 3.126
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.126,
+        "rank": 110,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BR",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 87,
+        "score": 2.693
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.693,
+        "rank": 87,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BS",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 46,
+        "score": 2.022
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.022,
+        "rank": 46,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BT",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 84,
+        "score": 2.669
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.669,
+        "rank": 84,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BW",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 80,
+        "score": 2.602
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.602,
+        "rank": 80,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BY",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 37,
+        "score": 1.907
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.907,
+        "rank": 37,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "BZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 88,
+        "score": 2.694
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.694,
+        "rank": 88,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CA",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 33,
+        "score": 1.825
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.825,
+        "rank": 33,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CD",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 168,
+        "score": 4.211
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.211,
+        "rank": 168,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CF",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 146,
+        "score": 3.848
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.848,
+        "rank": 146,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CG",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 137,
+        "score": 3.662
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.662,
+        "rank": 137,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CH",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 6,
+        "score": 1.439
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.439,
+        "rank": 6,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CI",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 140,
+        "score": 3.69
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.69,
+        "rank": 140,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CL",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 34,
+        "score": 1.828
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.828,
+        "rank": 34,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CM",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 135,
+        "score": 3.631
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.631,
+        "rank": 135,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CN",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 60,
+        "score": 2.298
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.298,
+        "rank": 60,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CO",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 90,
+        "score": 2.735
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.735,
+        "rank": 90,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CR",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 51,
+        "score": 2.105
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.105,
+        "rank": 51,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CU",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 72,
+        "score": 2.493
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.493,
+        "rank": 72,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CY",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 43,
+        "score": 1.969
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.969,
+        "rank": 43,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "CZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 8,
+        "score": 1.469
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.469,
+        "rank": 8,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "DE",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 3,
+        "score": 1.347
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.347,
+        "rank": 3,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "DJ",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 129,
+        "score": 3.485
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.485,
+        "rank": 129,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "DK",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 9,
+        "score": 1.479
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.479,
+        "rank": 9,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "DO",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 98,
+        "score": 2.817
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.817,
+        "rank": 98,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "DZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 86,
+        "score": 2.677
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.677,
+        "rank": 86,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "EC",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 101,
+        "score": 2.896
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.896,
+        "rank": 101,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "EE",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 21,
+        "score": 1.644
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.644,
+        "rank": 21,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "EG",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 83,
+        "score": 2.649
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.649,
+        "rank": 83,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ER",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 149,
+        "score": 3.88
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.88,
+        "rank": 149,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ES",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 19,
+        "score": 1.621
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.621,
+        "rank": 19,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ET",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 167,
+        "score": 4.194
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.194,
+        "rank": 167,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "FI",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 7,
+        "score": 1.45
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.45,
+        "rank": 7,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "FJ",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 68,
+        "score": 2.449
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.449,
+        "rank": 68,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "FR",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 17,
+        "score": 1.587
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.587,
+        "rank": 17,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GA",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 116,
+        "score": 3.221
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.221,
+        "rank": 116,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GB",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 18,
+        "score": 1.611
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.611,
+        "rank": 18,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GE",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 58,
+        "score": 2.271
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.271,
+        "rank": 58,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GH",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 138,
+        "score": 3.677
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.677,
+        "rank": 138,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GM",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 154,
+        "score": 3.985
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.985,
+        "rank": 154,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GN",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 148,
+        "score": 3.865
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.865,
+        "rank": 148,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GQ",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 132,
+        "score": 3.553
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.553,
+        "rank": 132,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GR",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 24,
+        "score": 1.684
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.684,
+        "rank": 24,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GT",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 102,
+        "score": 2.965
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.965,
+        "rank": 102,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GW",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 152,
+        "score": 3.912
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.912,
+        "rank": 152,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "GY",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 65,
+        "score": 2.371
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.371,
+        "rank": 65,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "HN",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 107,
+        "score": 3.104
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.104,
+        "rank": 107,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "HR",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 15,
+        "score": 1.574
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.574,
+        "rank": 15,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "HT",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 156,
+        "score": 4.021
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.021,
+        "rank": 156,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "HU",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 16,
+        "score": 1.578
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.578,
+        "rank": 16,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ID",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 113,
+        "score": 3.167
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.167,
+        "rank": 113,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "IE",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 25,
+        "score": 1.695
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.695,
+        "rank": 25,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "IL",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 63,
+        "score": 2.349
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.349,
+        "rank": 63,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "IN",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 108,
+        "score": 3.109
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.109,
+        "rank": 108,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "IQ",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 128,
+        "score": 3.463
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.463,
+        "rank": 128,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "IR",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 77,
+        "score": 2.579
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.579,
+        "rank": 77,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "IS",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 38,
+        "score": 1.917
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.917,
+        "rank": 38,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "IT",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 5,
+        "score": 1.369
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.369,
+        "rank": 5,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "JM",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 95,
+        "score": 2.788
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.788,
+        "rank": 95,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "JO",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 99,
+        "score": 2.822
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.822,
+        "rank": 99,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "JP",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 13,
+        "score": 1.532
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.532,
+        "rank": 13,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KE",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 136,
+        "score": 3.648
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.648,
+        "rank": 136,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KG",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 91,
+        "score": 2.762
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.762,
+        "rank": 91,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KH",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 120,
+        "score": 3.262
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.262,
+        "rank": 120,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KM",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 122,
+        "score": 3.296
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.296,
+        "rank": 122,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KP",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 71,
+        "score": 2.481
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.481,
+        "rank": 71,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KR",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 11,
+        "score": 1.512
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.512,
+        "rank": 11,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KW",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 78,
+        "score": 2.581
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.581,
+        "rank": 78,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "KZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 64,
+        "score": 2.364
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.364,
+        "rank": 64,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LA",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 112,
+        "score": 3.158
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.158,
+        "rank": 112,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LB",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 55,
+        "score": 2.184
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.184,
+        "rank": 55,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LK",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 94,
+        "score": 2.783
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.783,
+        "rank": 94,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LR",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 164,
+        "score": 4.129
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.129,
+        "rank": 164,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LS",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 117,
+        "score": 3.223
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.223,
+        "rank": 117,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LT",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 53,
+        "score": 2.123
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.123,
+        "rank": 53,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LU",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 41,
+        "score": 1.939
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.939,
+        "rank": 41,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LV",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 35,
+        "score": 1.846
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.846,
+        "rank": 35,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "LY",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 75,
+        "score": 2.559
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.559,
+        "rank": 75,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MA",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 123,
+        "score": 3.308
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.308,
+        "rank": 123,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MD",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 82,
+        "score": 2.629
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.629,
+        "rank": 82,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ME",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 14,
+        "score": 1.559
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.559,
+        "rank": 14,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MG",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 159,
+        "score": 4.085
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.085,
+        "rank": 159,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MK",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 44,
+        "score": 2.008
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.008,
+        "rank": 44,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ML",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 165,
+        "score": 4.143
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.143,
+        "rank": 165,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MM",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 125,
+        "score": 3.346
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.346,
+        "rank": 125,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MN",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 111,
+        "score": 3.141
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.141,
+        "rank": 111,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MR",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 139,
+        "score": 3.688
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.688,
+        "rank": 139,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MU",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 100,
+        "score": 2.844
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.844,
+        "rank": 100,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MW",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 160,
+        "score": 4.089
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.089,
+        "rank": 160,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MX",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 68,
+        "score": 2.449
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.449,
+        "rank": 68,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MY",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 66,
+        "score": 2.379
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.379,
+        "rank": 66,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "MZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 145,
+        "score": 3.805
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.805,
+        "rank": 145,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NA",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 119,
+        "score": 3.261
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.261,
+        "rank": 119,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NE",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 172,
+        "score": 4.42
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.42,
+        "rank": 172,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NG",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 163,
+        "score": 4.112
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.112,
+        "rank": 163,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NI",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 124,
+        "score": 3.309
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.309,
+        "rank": 124,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NL",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 2,
+        "score": 1.312
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.312,
+        "rank": 2,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NO",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 32,
+        "score": 1.808
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.808,
+        "rank": 32,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NP",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 121,
+        "score": 3.266
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.266,
+        "rank": 121,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "NZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 28,
+        "score": 1.751
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.751,
+        "rank": 28,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "OM",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 72,
+        "score": 2.493
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.493,
+        "rank": 72,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PA",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 85,
+        "score": 2.67
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.67,
+        "rank": 85,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PE",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 106,
+        "score": 3.075
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.075,
+        "rank": 106,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PG",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 134,
+        "score": 3.601
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.601,
+        "rank": 134,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PH",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 109,
+        "score": 3.125
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.125,
+        "rank": 109,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PK",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 133,
+        "score": 3.57
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.57,
+        "rank": 133,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PL",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 29,
+        "score": 1.766
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.766,
+        "rank": 29,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PS",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 96,
+        "score": 2.791
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.791,
+        "rank": 96,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PT",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 20,
+        "score": 1.632
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.632,
+        "rank": 20,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "PY",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 70,
+        "score": 2.472
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.472,
+        "rank": 70,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "QA",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 62,
+        "score": 2.309
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.309,
+        "rank": 62,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "RO",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 23,
+        "score": 1.674
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.674,
+        "rank": 23,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "RS",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 40,
+        "score": 1.92
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.92,
+        "rank": 40,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "RU",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 52,
+        "score": 2.121
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.121,
+        "rank": 52,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "RW",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 161,
+        "score": 4.1
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.1,
+        "rank": 161,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SA",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 74,
+        "score": 2.556
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.556,
+        "rank": 74,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SB",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 127,
+        "score": 3.426
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.426,
+        "rank": 127,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SD",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 141,
+        "score": 3.724
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.724,
+        "rank": 141,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SE",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 30,
+        "score": 1.783
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.783,
+        "rank": 30,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SG",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 45,
+        "score": 2.01
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.01,
+        "rank": 45,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SI",
+      "claim": {
+        "year": 2024,
+        "rating": "Very Low",
+        "rank": 12,
+        "score": 1.526
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.526,
+        "rank": 12,
+        "rating": "Very Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SK",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 22,
+        "score": 1.658
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.658,
+        "rank": 22,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SL",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 162,
+        "score": 4.105
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.105,
+        "rank": 162,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SN",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 144,
+        "score": 3.771
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.771,
+        "rank": 144,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SO",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 166,
+        "score": 4.16
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.16,
+        "rank": 166,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SR",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 97,
+        "score": 2.795
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.795,
+        "rank": 97,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SS",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 155,
+        "score": 3.998
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.998,
+        "rank": 155,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SV",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 93,
+        "score": 2.78
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.78,
+        "rank": 93,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SY",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 118,
+        "score": 3.229
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.229,
+        "rank": 118,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "SZ",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 104,
+        "score": 3.046
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.046,
+        "rank": 104,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TD",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 147,
+        "score": 3.85
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.85,
+        "rank": 147,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TG",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 153,
+        "score": 3.946
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.946,
+        "rank": 153,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TH",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 56,
+        "score": 2.208
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.208,
+        "rank": 56,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TJ",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 126,
+        "score": 3.376
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.376,
+        "rank": 126,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TL",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 131,
+        "score": 3.539
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.539,
+        "rank": 131,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TM",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 61,
+        "score": 2.305
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.305,
+        "rank": 61,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TN",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 81,
+        "score": 2.604
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.604,
+        "rank": 81,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TR",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 36,
+        "score": 1.847
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.847,
+        "rank": 36,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TT",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 57,
+        "score": 2.232
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.232,
+        "rank": 57,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "TZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 151,
+        "score": 3.898
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.898,
+        "rank": 151,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "UA",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 59,
+        "score": 2.281
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.281,
+        "rank": 59,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "UG",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 169,
+        "score": 4.225
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.225,
+        "rank": 169,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "US",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 26,
+        "score": 1.726
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.726,
+        "rank": 26,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "UY",
+      "claim": {
+        "year": 2024,
+        "rating": "Low",
+        "rank": 31,
+        "score": 1.806
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 1.806,
+        "rank": 31,
+        "rating": "Low"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "UZ",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 79,
+        "score": 2.593
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.593,
+        "rank": 79,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "VE",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 115,
+        "score": 3.207
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.207,
+        "rank": 115,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "VN",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 89,
+        "score": 2.708
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.708,
+        "rank": 89,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "VU",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 105,
+        "score": 3.056
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.056,
+        "rank": 105,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "YE",
+      "claim": {
+        "year": 2024,
+        "rating": "Very High",
+        "rank": 158,
+        "score": 4.075
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 4.075,
+        "rank": 158,
+        "rating": "Very High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ZA",
+      "claim": {
+        "year": 2024,
+        "rating": "Medium",
+        "rank": 92,
+        "score": 2.775
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 2.775,
+        "rank": 92,
+        "rating": "Medium"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ZM",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 143,
+        "score": 3.765
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.765,
+        "rank": 143,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    },
+    {
+      "code": "ZW",
+      "claim": {
+        "year": 2024,
+        "rating": "High",
+        "rank": 130,
+        "score": 3.528
+      },
+      "comparison": {
+        "year": 2024,
+        "score": 3.528,
+        "rank": 130,
+        "rating": "High"
+      },
+      "differences": {},
+      "unchangedAtLatestSnapshot": true
+    }
+  ]
+}

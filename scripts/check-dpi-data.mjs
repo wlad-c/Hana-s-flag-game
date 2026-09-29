@@ -13,7 +13,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import assert from "node:assert/strict";
-import { DPI_2026_DATA, dpiTierFromScore } from "./data/dpi2026Data.mjs";
+import { DPI_2026_DATA, DPI_2026_NON_UN_SCORES, dpiTierFromScore } from "./data/dpi2026Data.mjs";
 import { DEMOCRACY_DATA } from "./data/democracyData.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -69,25 +69,18 @@ for (const [code, entry] of Object.entries(COUNTRY_FACTS)) {
   }
 }
 
-// Competition ranking on Index Score (higher score = better rank).
-const byScore = Object.entries(DPI_2026_DATA).sort((a, b) => {
-  if (b[1].score !== a[1].score) return b[1].score - a[1].score;
-  return a[0].localeCompare(b[0]);
-});
-let expectedRank = 1;
-let i = 0;
-while (i < byScore.length) {
-  const score = byScore[i][1].score;
-  let j = i;
-  while (j < byScore.length && byScore[j][1].score === score) j++;
-  for (let k = i; k < j; k++) {
-    const [code, row] = byScore[k];
-    if (row.rank !== expectedRank) {
-      fail(`${code}: rank ${row.rank} ≠ competition rank ${expectedRank} for score ${score}`);
-    }
+// Competition ranking on Index Score over all 98 published units (higher score =
+// better rank); Taiwan and Puerto Rico are not shown but still occupy ranks.
+const allScores = [
+  ...Object.values(DPI_2026_DATA).map((r) => r.score),
+  ...Object.values(DPI_2026_NON_UN_SCORES),
+];
+assert.equal(allScores.length, 98, "DPI 2026 ranks run over the 98 surveyed units");
+for (const [code, row] of Object.entries(DPI_2026_DATA)) {
+  const expectedRank = 1 + allScores.filter((s) => s > row.score).length;
+  if (row.rank !== expectedRank) {
+    fail(`${code}: rank ${row.rank} ≠ competition rank ${expectedRank} of 98 for score ${row.score}`);
   }
-  expectedRank += j - i;
-  i = j;
 }
 
 // Spot checks against the DPI 2026 Country Appendix / published highlights.
@@ -97,10 +90,10 @@ const SPOT = {
   IN: { score: 15, rating: "Very Positive", rank: 8 },
   CN: { score: 14, rating: "Positive", rank: 9 },
   US: { score: -1, rating: "Neutral", rank: 36 },
-  FR: { score: -20, rating: "Very Negative", rank: 83 },
-  KZ: { score: -31, rating: "Very Negative", rank: 96 },
-  CD: { score: -5, rating: "Neutral", rank: 49 },
-  PA: { score: -15, rating: "Very Negative", rank: 75 },
+  FR: { score: -20, rating: "Very Negative", rank: 85 },
+  KZ: { score: -31, rating: "Very Negative", rank: 98 },
+  CD: { score: -5, rating: "Neutral", rank: 50 },
+  PA: { score: -15, rating: "Negative", rank: 77 },
 };
 for (const [code, expect] of Object.entries(SPOT)) {
   const got = DPI_2026_DATA[code];

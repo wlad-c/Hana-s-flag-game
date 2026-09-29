@@ -14691,10 +14691,10 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     description:
       "Northern Samar's seal uses tangerine for the cheerfulness and optimism of its people, yellow for " +
       "golden harvests and abundant resources, and white for transparent governance. A torch stands for the " +
-      "provincial government's commitment to education, and a rope encircling the emblem represents equality " +
-      "before the law and unity for peace and development.",
+      "provincial government's commitment to education, and a rope encircling the emblem represents " +
+      "equality before the law and unity for peace and development.",
     sources: [
-      { title: "Northern Samar Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Northern_Samar_Province" },
+      { title: "Northern Samar — Official provincial seal, Wikipedia", url: "https://en.wikipedia.org/wiki/Northern_Samar#Official_provincial_seal" },
     ],
   },
   "PH-BAS": {
@@ -14708,12 +14708,13 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   },
   "PH-MSC": {
     description:
-      "Misamis Occidental's seal divides into four quadrants: a fort standing for Ozamiz City, the seat of " +
-      "the provincial government; the coconut industry; the province's fishing grounds across Panguil Bay, " +
-      "the Mindanao Sea and Iligan Bay; and rice fields set against Mount Malindang. Corn and banana trees " +
-      "along one edge stand for the province's other major crops.",
+      "Misamis Occidental's seal is divided by a diagonal band. Its upper-left portion stands for the seat " +
+      "of the provincial government; a coconut tree, nut and bolo mark the coconut as the province's " +
+      "primary product; rice fields in front of Mount Malindang show rice as its principal staple crop; and " +
+      "the sea with a sailboat tells of its rich fishing grounds in the Mindanao Sea, Iligan Bay and " +
+      "Panguil Bay. The diagonal band carries corn and banana, the province's other principal staple crops.",
     sources: [
-      { title: "Misamis Occidental Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Misamis_Occidental_Province" },
+      { title: "Symbols of the State, Republic of the Philippines — Bureau of Local Government (1975), Internet Archive", url: "https://archive.org/details/SymbolsOfTheStateRepublicOfThePhilippines" },
     ],
   },
 
@@ -14755,31 +14756,34 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   },
   "PH-QUE": {
     description:
-      "Quezon Province's seal bears a stylised bust of President Manuel L. Quezon, after whom it is named, " +
-      "flanked by two lion-headed dolphins — a device long used in Philippine heraldry. Below, a coconut palm " +
-      "represents the province's main industry, Mount Banahaw rises against the sky, and a rainbow above the " +
-      "palm stands for hope and aspiration for a better future.",
+      "Quezon Province's seal bears a bust of Manuel L. Quezon, the first president of the Philippine " +
+      "Commonwealth, after whom the province (formerly Tayabas) was renamed in 1946. The provincial " +
+      "government readopted this original design of the seal by Executive Order No. 6 of 2022.",
     sources: [
-      { title: "Quezon Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Quezon_Province" },
+      { title: "Seal of Quezon — Provincial Government of Quezon", url: "https://quezon.gov.ph/seal/" },
+      { title: "Quezon — Wikipedia", url: "https://en.wikipedia.org/wiki/Quezon_province" },
     ],
   },
   "PH-LAG": {
     description:
-      "Laguna's flag is a plain yellow field bearing the heater-shaped shield from the provincial seal, with " +
-      "four green-outlined stars beside it — one for each of the province's four congressional districts. " +
-      "The shield itself stands for service and justice, blue for peace and equality, and gold for integrity.",
+      "Laguna's flag is a yellow field bearing the provincial shield above four stars. On the provincial " +
+      "seal, the coconut trees stand for the province's main product — Laguna was then the second-largest " +
+      "coconut producer in the Philippines — and the waterfall for its foremost tourist attraction, the " +
+      "world-famous Pagsanjan Falls.",
     sources: [
-      { title: "Laguna Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Laguna_Province" },
+      { title: "Symbols of the State, Republic of the Philippines — Bureau of Local Government (1975), Internet Archive", url: "https://archive.org/details/SymbolsOfTheStateRepublicOfThePhilippines" },
+      { title: "Flags of the provinces of the Philippines — Wikipedia", url: "https://en.wikipedia.org/wiki/Flags_of_provinces_of_the_Philippines" },
     ],
   },
   "PH-ALB": {
     description:
-      "Albay's seal shows a rufous hornbill inside a triangle beside the active Mayon Volcano, with " +
-      "lightning bolts to the volcano's side — the hornbill a bird native to the province, the volcano its " +
-      "most famous landmark, and the lightning a reference to the typhoons the province regularly weathers " +
-      "because of its location.",
+      "Albay's seal shows a high-flying bird native to the province, standing for the hopes and aspirations " +
+      "of its people, in front of Mayon Volcano. The smoke rising from Mayon is a sign of life and the " +
+      "province's vibrant existence, and the streak of light on the volcano's shoulder stands for the " +
+      "artistry of the Albayanos, noted for their talents in the arts. The fields below depict the " +
+      "province's agricultural economy.",
     sources: [
-      { title: "Albay Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Albay_Province" },
+      { title: "Symbols of the State, Republic of the Philippines — Bureau of Local Government (1975), Internet Archive", url: "https://archive.org/details/SymbolsOfTheStateRepublicOfThePhilippines" },
     ],
   },
   "PH-BOH": {
@@ -14815,12 +14819,11 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   },
   "PH-SOR": {
     description:
-      "Sorsogon's seal shows Mount Bulusan, one of the country's active volcanoes, above the sea for the " +
-      "province's coast and marine resources, coconut and abaca for its main crops, a carabao for the " +
-      "hard work of its people, and a gear for progress and development. Sixteen sun rays represent the " +
-      "province's sixteen municipalities, and the date 1894 marks the year Sorsogon became a province.",
+      "The date 1894 on Sorsogon's seal is the year the province was separated from Albay and took the name " +
+      "Sorsogon. The present seal was published by the provincial government in 2019.",
     sources: [
-      { title: "Sorsogon Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Sorsogon_Province" },
+      { title: "Sorsogon — Wikipedia", url: "https://en.wikipedia.org/wiki/Sorsogon" },
+      { title: "File:Sorsogon Provincial Seal.png — Wikimedia Commons", url: "https://commons.wikimedia.org/wiki/File:Sorsogon_Provincial_Seal.png" },
     ],
   },
   "PH-ILN": {
@@ -14856,10 +14859,12 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   },
   "PH-MAD": {
     description:
-      "Marinduque's seal is heart-shaped, for the island's role as the geographical heart of the " +
-      "Philippines, with a six-pointed star for the province's municipalities.",
+      "Marinduque's seal sets an outline of the island inside a heart-shaped shield. The province calls " +
+      "itself “the Heart of the Philippines”: the island is heart-shaped and is considered the geographical " +
+      "centre of the Philippine archipelago.",
     sources: [
-      { title: "Marinduque — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Marinduque" },
+      { title: "Marinduque — Wikipedia", url: "https://en.wikipedia.org/wiki/Marinduque" },
+      { title: "Logo (Province and Centennial) — Province of Marinduque", url: "https://marinduque.gov.ph/logo-province-and-centennial/" },
     ],
   },
   "PH-MDC": {
@@ -14874,10 +14879,14 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   },
   "PH-MDR": {
     description:
-      "Oriental Mindoro's seal, like its western counterpart, centres a tamaraw — the endangered wild " +
-      "buffalo found only on Mindoro island — as the province's signature symbol.",
+      "Oriental Mindoro's seal centres a tamaraw, the rare wild buffalo found only on the island of " +
+      "Mindoro. Its fifteen stars represent the province's fifteen towns, and two dots the two provinces of " +
+      "the island, Oriental and Occidental Mindoro. Green stands for the province's verdant hills and " +
+      "mountains, red for the bravery of its people during the revolution against Spain, the " +
+      "Philippine–American War and the Japanese occupation, and golden yellow for gold deposits.",
     sources: [
-      { title: "Oriental Mindoro Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Oriental_Mindoro_Province" },
+      { title: "Official Logo — Provincial Planning and Development Office, Oriental Mindoro", url: "https://ppdo.ormindoro.gov.ph/official-logo/" },
+      { title: "Symbols of the State, Republic of the Philippines — Bureau of Local Government (1975), Internet Archive", url: "https://archive.org/details/SymbolsOfTheStateRepublicOfThePhilippines" },
     ],
   },
   "PH-QUI": {
@@ -14892,12 +14901,14 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   },
   "PH-ROM": {
     description:
-      "Romblon's seal shows a blue circular border for the seas that surround the archipelago, enclosing a " +
-      "white outline map of the province's three principal islands — Romblon, Tablas and Sibuyan. The white " +
-      "colouring stands for Romblon's renowned marble quarries, which have earned it the title Marble " +
-      "Capital of the Philippines.",
+      "Romblon's seal is a small blue circle, for the sea around the archipelago, inside a white band " +
+      "naming the province. At its centre, a white shield holds 17 green human figures linking arms for the " +
+      "province's 17 municipalities, their green for its ecological and agricultural resources. They " +
+      "surround a marble craftsman with a marble mortar and pestle, for the marble industry, a fish for " +
+      "fishing and a coconut for copra, before Mount Guiting-Guiting and a rising sun for the Divine " +
+      "Providence of abundant natural resources.",
     sources: [
-      { title: "Romblon Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Romblon_Province" },
+      { title: "Romblon — Provincial seal, Wikipedia", url: "https://en.wikipedia.org/wiki/Romblon#Provincial_seal" },
     ],
   },
   "PH-ISA": {
@@ -15014,20 +15025,23 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   },
   "PH-SCO": {
     description:
-      "South Cotabato's seal places a plow and draft animals at its base, standing for the agriculture and " +
-      "stock-raising that anchor the province's economy.",
+      "South Cotabato's shield-shaped seal — the shape of the seal of the Republic — shows Mount Matutum, " +
+      "the province's landmark; a factory for its industrial potential; rice, corn, pineapple, coconut and " +
+      "banana, its principal products; rice stacks for the individual farmer's main produce; a plow, the " +
+      "Filipino farmer's indispensable implement; and cattle for the province's vast pasture and grazing " +
+      "lands.",
     sources: [
-      { title: "South Cotabato Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/South_Cotabato_Province" },
+      { title: "Symbols of the State, Republic of the Philippines — Bureau of Local Government (1975), Internet Archive", url: "https://archive.org/details/SymbolsOfTheStateRepublicOfThePhilippines" },
     ],
   },
   "PH-SUK": {
     description:
-      "Sultan Kudarat's seal centres a light-green emblem combining the pre-Hispanic Baybayin syllables “su” " +
-      "and “ku” — for the province's name — flanked by a gold panicle of rice at the hoist side and an " +
-      "emerald frond of African oil palm at the fly, standing for the province's agricultural economy, which " +
-      "ranges from peanuts and potatoes to coconuts, oil palms and orchids.",
+      "Sultan Kudarat's flag carries its seal's central emblem, which combines the Baybayin syllables “su” " +
+      "and “ku” for the province's name, between a panicle of rice and a frond of African oil palm — two of " +
+      "the province's leading crops.",
     sources: [
-      { title: "Sultan Kudarat Province — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Sultan_Kudarat_Province" },
+      { title: "Flags of the provinces of the Philippines — Wikipedia", url: "https://en.wikipedia.org/wiki/Flags_of_provinces_of_the_Philippines" },
+      { title: "Sultan Kudarat — Economy, Wikipedia", url: "https://en.wikipedia.org/wiki/Sultan_Kudarat#Economy" },
     ],
   },
   "PH-PAM": {
@@ -15253,13 +15267,6 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       "Nakhon Ratchasima's provincial seal, on an orange field, shows the Thao Suranari Monument before the city's Chumphon Gate. The monument depicts Khun Ying Mo — later honoured with the royally-bestowed title Thao Suranari — commemorating her role rallying the city's people to defeat the invading army of Chao Anouvong of Vientiane in 1826; the Chumphon Gate behind her is a surviving gate of the old city wall, built in the reign of King Narai.",
     sources: [
       { title: "ตราสัญลักษณ์ จังหวัดนครราชสีมา — nakhonratchasima.go.th", url: "https://www2.nakhonratchasima.go.th/content/logo" },
-    ],
-  },
-  "VE-W": {
-    description:
-      "The Federal Dependencies' flag is a green-white-blue horizontal triband with a red fish on the white band. Green stands for the diversity of flora found across Venezuela's federally-administered islands, white for the peace, tranquility and hospitality of their inhabitants, and the red fish for the sea as the islands' economic base — the source of both their fishing livelihood and their tourism.",
-    sources: [
-      { title: "Federal Dependencies of Venezuela — Vexillology Wiki", url: "https://vexillology.fandom.com/wiki/Federal_Dependencies_of_Venezuela" },
     ],
   },
   "PH-ILI": {
@@ -15760,12 +15767,13 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       "Lääne County’s flag follows the common pattern of Estonia’s county flags, confirmed on 7 August " +
       "1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms " +
       "at the centre of the white stripe as its distinguishing mark. It was registered on 11 October " +
-      "1996. The arms, confirmed on 5 February 1937, show a silver hawk with raised wings, golden legs " +
-      "and a ring of gold around its head, on red. They are based on the arms of the Bishopric of " +
+      "1996. The arms, confirmed on 5 February 1937, show on red a silver eagle rising and looking " +
+      "back, with a golden halo around its head. They are based on the arms of the Bishopric of " +
       "Ösel–Wiek (Saare-Lääne).",
     sources: [
       { title: "Lääne maakonna lipp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Lääne_maakonna_lipp" },
       { title: "Lääne maakonna vapp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Lääne_maakonna_vapp" },
+      { title: "Lääne maakonna vapp, lipp ja teenetemärk — Riigikantselei", url: "https://www.riigikantselei.ee/laane-maakonna-vapp-lipp-ja-teenetemark" },
       { title: "Estonia: Subdivisions — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ee-sub.html" },
     ],
   },
@@ -15902,11 +15910,12 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       "1939: two equal horizontal stripes, white over green, in the ratio 7:11, with the county’s arms " +
       "at the centre of the white stripe as its distinguishing mark. It was registered on 12 December " +
       "1996. The arms show, on blue, a gold ring and the silver sword of Kalevipoeg with a golden hilt, " +
-      "pointing downwards. Blue stands for a hopeful future and Võrumaa’s blue sky; the gold ring " +
+      "set diagonally with its hilt at the lower left and its blade pointing to the upper right. Blue stands for a hopeful future and Võrumaa’s blue sky; the gold ring " +
       "(võru) names the county, and the sword stands for its readiness to defend itself.",
     sources: [
       { title: "Võru maakonna lipp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Võru_maakonna_lipp" },
       { title: "Võru maakonna vapp — Wikipedia (Estonian)", url: "https://et.wikipedia.org/wiki/Võru_maakonna_vapp" },
+      { title: "Võru maakonna vapp, lipp ja teenetemärk — Riigikantselei", url: "https://www.riigikantselei.ee/voru-maakonna-vapp-lipp-ja-teenetemark" },
       { title: "Estonia: Subdivisions — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ee-sub.html" },
     ],
   },

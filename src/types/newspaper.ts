@@ -21,8 +21,8 @@ export type Newspaper = {
     readonly original: string;
     readonly translation?: string;
   };
-  /** Year the newspaper was founded */
-  readonly founded: number;
+  /** Year the newspaper was founded — omitted when no source dates it */
+  readonly founded?: number;
   /** Frequency / distribution cycle (e.g. "Daily broadsheet newspaper") */
   readonly frequency: string;
   /** Output formats and print editions (e.g. Broadsheet, Tabloid, Berliner, Digital) */
@@ -38,8 +38,8 @@ export type Newspaper = {
   };
   /** Editorial stance and remit */
   readonly editorialStance: string;
-  /** Comparable circulation and digital reach metrics */
-  readonly readership: {
+  /** Comparable circulation and digital reach metrics — omitted when unsourced */
+  readonly readership?: {
     readonly metric: string;
     readonly source: string;
   };

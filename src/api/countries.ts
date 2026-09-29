@@ -2,6 +2,17 @@ import { UN_MEMBER_CODES } from "../lib/unMemberStates";
 import { ALL_COUNTRY_OPTIONS } from "../lib/countrySelection";
 import { CONTINENT_GROUPS, SUBREGION_GROUPS } from "../lib/continentGroups";
 import { COUNTRY_FACTS } from "../data/countryFacts";
+import countryFactCorrections from "../data/countryFactCorrections.json";
+
+type FactCorrection = Partial<Pick<Country, "nameOfficial" | "capital" | "languages" | "currencies">>;
+
+/**
+ * Sourced corrections (audit F39): they outrank BOTH the REST Countries values
+ * and the bundle, because the upstream aggregator is itself wrong for these
+ * fields. The fallback path already reads them through the regenerated bundle.
+ */
+const FACT_CORRECTIONS: Readonly<Record<string, FactCorrection>> =
+  countryFactCorrections.corrections as Record<string, FactCorrection>;
 import type { QuizSymbol, SymbolClue } from "../lib/quizSymbols";
 
 import type { DemocracyData } from "../data/countryFacts";
@@ -307,8 +318,10 @@ export async function fetchCountries(): Promise<Country[]> {
       : undefined;
     const tld = restTld && restTld.length > 0 ? restTld : facts?.tld || undefined;
 
+    const correction = FACT_CORRECTIONS[code];
+
     let finalName = name;
-    let finalNameOfficial = nameOfficial;
+    let finalNameOfficial = correction?.nameOfficial ?? nameOfficial;
     if (code === "TR") {
       finalName = "Türkiye";
       finalNameOfficial = "Republic of Türkiye";
@@ -338,10 +351,11 @@ export async function fetchCountries(): Promise<Country[]> {
       flagSvg: FLAG_OVERRIDES[code] ?? `${BASE}flags/${code.toLowerCase()}.svg`,
       continent: region,
       subregion,
-      capital,
+      capital: correction?.capital ?? capital,
       population,
-      languages,
-      currencies: currencies && currencies.length > 0 ? currencies : undefined,
+      languages: correction?.languages ?? languages,
+      currencies:
+        correction?.currencies ?? (currencies && currencies.length > 0 ? currencies : undefined),
       callingCode,
       tld: tld && tld.length > 0 ? tld : undefined,
       gdpUsd: facts?.gdpUsd,

@@ -37,6 +37,7 @@
 import { readFileSync, existsSync, statSync } from "node:fs";
 import { dirname, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = resolve(__dirname, "..", "src", "data", "nationalNewsAgencies.ts");
@@ -99,6 +100,7 @@ const failures = [];
 const seenIds = new Set();
 let totalAgencies = 0;
 
+const decodeQueue = [];
 for (const [countryKey, list] of Object.entries(agenciesByCountry)) {
   if (!Array.isArray(list)) {
     failures.push(`Country entry ${countryKey} must be an array of news agencies`);
@@ -217,6 +219,7 @@ for (const [countryKey, list] of Object.entries(agenciesByCountry)) {
 
     const buf = readFileSync(diskPath);
     const kind = sniffImageKind(buf);
+    decodeQueue.push({ ctx, file: diskPath });
 
     if (!kind) {
       failures.push(`${ctx}: file format could not be recognized as an image`);
@@ -276,6 +279,16 @@ for (const [countryKey, list] of Object.entries(agenciesByCountry)) {
 }
 
 console.log(`Audited ${totalAgencies} national news agencies across ${Object.keys(agenciesByCountry).length} countries.`);
+
+// Sniffing "<svg" is not decoding: an SVG that uses xlink:href without declaring
+// xmlns:xlink sniffs fine and then renders as a broken image (the Naoero Gazette).
+for (const { ctx, file } of decodeQueue) {
+  try {
+    await sharp(file).png().toBuffer();
+  } catch (err) {
+    failures.push(`${ctx}: logo does not decode as an image (${String(err.message).slice(0, 160)})`);
+  }
+}
 
 if (failures.length > 0) {
   console.error(`\n✗ National news agency check FAILED with ${failures.length} error(s):\n`);

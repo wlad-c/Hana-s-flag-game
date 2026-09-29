@@ -1,0 +1,76 @@
+{
+  "_about": "Sourced, dated corrections to the upstream mledoze/countries fields in COUNTRY_FACTS. Applied by scripts/build-country-facts.mjs when the bundle is regenerated AND by src/api/countries.ts after the live REST Countries merge, so a correction wins on every path (audit finding F39, docs/LEARN_CLAIM_VERIFICATION_2026-09-20.md). Every entry names the primary source that establishes the value and the audit finding it closes. `languages` is the country's official (or constitutionally recognised) languages, per the COUNTRY_FACTS contract.",
+  "corrections": {
+    "AT": {
+      "languages": ["German"],
+      "finding": "F41",
+      "source": "Austrian Federal Constitutional Law, Art. 8(1): German is the official language of the Republic — https://www.constituteproject.org/constitution/Austria_2013",
+      "asOf": "2026-09-27"
+    },
+    "AZ": {
+      "languages": ["Azerbaijani"],
+      "finding": "F31",
+      "source": "Constitution of Azerbaijan, Art. 21: the state language is the Azerbaijani language; other languages are protected, not designated — https://www.constituteproject.org/constitution/Azerbaijan_2016",
+      "asOf": "2026-09-27"
+    },
+    "BO": {
+      "languages": ["Spanish", "Aymara", "Araona", "Baure", "Bésiro", "Canichana", "Cavineño", "Cayubaba", "Chácobo", "Chimán", "Ese Ejja", "Guaraní", "Guarasu'we", "Guarayu", "Itonama", "Leco", "Machajuyai-Kallawaya", "Machineri", "Maropa", "Mojeño-Trinitario", "Mojeño-Ignaciano", "Moré", "Mosetén", "Movima", "Pacawara", "Puquina", "Quechua", "Sirionó", "Tacana", "Tapiete", "Toromona", "Uru-Chipaya", "Weenhayek", "Yaminawa", "Yuki", "Yuracaré", "Zamuco"],
+      "finding": "F33",
+      "source": "Political Constitution of Bolivia (2009), Art. 5(I): Spanish and the 36 languages of the indigenous nations and peoples are official — https://www.constituteproject.org/constitution/Bolivia_2009",
+      "asOf": "2026-09-27"
+    },
+    "CH": {
+      "languages": ["German", "French", "Italian", "Romansh"],
+      "finding": "F32",
+      "source": "Federal Constitution of the Swiss Confederation, Art. 4: the national languages are German, French, Italian and Romansh — https://www.constituteproject.org/constitution/Switzerland_2014",
+      "asOf": "2026-09-27"
+    },
+    "CU": {
+      "currencies": [{ "code": "CUP", "name": "Cuban peso", "symbol": "$" }],
+      "finding": "F42",
+      "source": "Decree-Law 37/2021, Art. 2 (Gaceta Oficial No. 51 Extraordinaria, 21 June 2021, p. 598) ended acceptance of the convertible peso (CUC) from 1 July 2021 — https://www.gacetaoficial.gob.cu/es/tasa-de-cambio",
+      "asOf": "2026-09-27"
+    },
+    "DZ": {
+      "languages": ["Arabic", "Tamazight"],
+      "finding": "F30",
+      "source": "Constitution of Algeria (2020), Art. 4: Tamazight is also a national and official language — https://www.constituteproject.org/constitution/Algeria_2020",
+      "asOf": "2026-09-27"
+    },
+    "NA": {
+      "languages": ["English"],
+      "finding": "F41",
+      "source": "Constitution of Namibia, Art. 3(1): the official language of Namibia shall be English (other languages may be used as provided by law) — https://www.constituteproject.org/constitution/Namibia_2014",
+      "asOf": "2026-09-27"
+    },
+    "RW": {
+      "languages": ["Kinyarwanda", "English", "French", "Swahili"],
+      "finding": "F41",
+      "source": "Government of Rwanda, About Rwanda: Kinyarwanda is the national language; other official languages are English, French and Kiswahili — https://www.gov.rw/about",
+      "asOf": "2026-09-27"
+    },
+    "ZA": {
+      "languages": ["Afrikaans", "English", "Southern Ndebele", "Northern Sotho", "Southern Sotho", "Swazi", "Tswana", "Tsonga", "Venda", "Xhosa", "Zulu", "South African Sign Language"],
+      "finding": "F29",
+      "source": "CRL Rights Commission, 20 July 2023: the President signed the Constitution Eighteenth Amendment making South African Sign Language the 12th official language — https://www.crlcommission.org.za/the-recognition-of-the-south-african-sign-language-as-the-countrys-12th-official-language/",
+      "asOf": "2026-09-27"
+    },
+    "ZW": {
+      "languages": ["Chewa", "Chibarwe", "English", "Kalanga", "Koisan", "Nambya", "Ndau", "Ndebele", "Shangani", "Shona", "Zimbabwean Sign Language", "Sotho", "Tonga", "Tswana", "Venda", "Xhosa"],
+      "currencies": [
+        { "code": "ZWG", "name": "Zimbabwe Gold (ZiG)", "symbol": "ZiG" },
+        { "code": "USD", "name": "United States dollar", "symbol": "$" },
+        { "code": "BWP", "name": "Botswana pula", "symbol": "P" },
+        { "code": "CNY", "name": "Chinese yuan", "symbol": "¥" },
+        { "code": "EUR", "name": "Euro", "symbol": "€" },
+        { "code": "GBP", "name": "British pound", "symbol": "£" },
+        { "code": "INR", "name": "Indian rupee", "symbol": "₹" },
+        { "code": "JPY", "name": "Japanese yen", "symbol": "¥" },
+        { "code": "ZAR", "name": "South African rand", "symbol": "R" }
+      ],
+      "finding": "F16, F41",
+      "source": "Constitution of Zimbabwe (2013), s. 6(1) lists the 16 officially recognised languages, including Nambya — https://www.constituteproject.org/constitution/Zimbabwe_2013 ; Reserve Bank of Zimbabwe, Monthly Economic Review April 2024: ZiG (ISO 4217 ZWG) introduced 5 April 2024, replacing Zimbabwe-dollar balances and bond notes — https://www.rbz.co.zw/documents/monthly_review/2024/Monthly_Economic_Review_April_2024_1.pdf",
+      "asOf": "2026-09-27"
+    }
+  }
+}

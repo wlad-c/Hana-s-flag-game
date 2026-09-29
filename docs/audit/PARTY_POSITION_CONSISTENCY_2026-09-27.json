@@ -1,0 +1,44 @@
+{
+  "recordsScanned": 842,
+  "mismatches": [
+    {
+      "id": "PL-PSL",
+      "country": "PL",
+      "positionRaw": "Right-wing",
+      "ideologyPosition": "centre-right"
+    },
+    {
+      "id": "MX-MORENA",
+      "country": "MX",
+      "positionRaw": "Centre-left",
+      "ideologyPosition": "left"
+    },
+    {
+      "id": "GH-NPP",
+      "country": "GH",
+      "positionRaw": "Centre-right",
+      "ideologyPosition": "right"
+    },
+    {
+      "id": "NZ-NAT",
+      "country": "NZ",
+      "positionRaw": "Centre-right",
+      "ideologyPosition": "right"
+    },
+    {
+      "id": "ZA-DA",
+      "country": "ZA",
+      "positionRaw": "Centre-right",
+      "ideologyPosition": "right"
+    },
+    {
+      "id": "ZA-EFF",
+      "country": "ZA",
+      "positionRaw": "Far-left",
+      "ideologyPosition": "left"
+    }
+  ],
+  "application_revision": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "audit_date": "2026-09-27",
+  "scope": "Exact singleton positionRaw labels compared to corresponding enum; ranges and complex labels excluded. Six contradictions are internal inconsistency findings, not independent ideology determinations."
+}

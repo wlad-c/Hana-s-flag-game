@@ -1,0 +1,825 @@
+{
+  "auditDate": "2026-09-27",
+  "base": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "head": "7c75c3182419e125b29cbde27e1d02935cbd6e22",
+  "totalCommits": 51,
+  "files": [
+    {
+      "path": ".github/workflows/flag-integrity.yml",
+      "status": "modified",
+      "sha": "a54eb9669e4d5a908196234b3c71e7d4b1f978d8",
+      "additions": 17,
+      "deletions": 0
+    },
+    {
+      "path": "docs/LEARN_CLAIM_VERIFICATION_2026-09-20.md",
+      "status": "modified",
+      "sha": "f6f209fd1b2326b0869c9c59ed1508334a7ad598",
+      "additions": 402,
+      "deletions": 3
+    },
+    {
+      "path": "docs/POLITICAL_PARTY_AUDIT_2026.md",
+      "status": "modified",
+      "sha": "fda47c48470aaf1bffc0f5977c0ca4c94992ccde",
+      "additions": 1,
+      "deletions": 1
+    },
+    {
+      "path": "docs/VISA_ACCESS_MAP.md",
+      "status": "added",
+      "sha": "d3b2f5ceb051b95d0575dd308cfc7905af7e8b97",
+      "additions": 89,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/CENTRAL_BANKS_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "d9dddcee31b82f55dbfc59485582fd2624ac861a",
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/DNR_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "38fa77d962906888419071957f9394bf441c2490",
+      "additions": 809,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/ESTONIA_COUNTY_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "8909f2fc1cf8f8bd63aca94f88092e6014551584",
+      "additions": 1803,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/ESTONIA_POPULATION_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "8a5fd337e4d81d6b7afd5e0433ccb6261bcf040e",
+      "additions": 1472,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/ETR_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "a447f53d96ff5728c1cd49e34ec923341ef81c41",
+      "additions": 2916,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/FREEDOM_HOUSE_2026_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "dfc62aab64f50ef56bf86d562819a90e2dde9339",
+      "additions": 3890,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/GDI_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "2d09235c7509d70b9f43c54f61cab289bfdaaa88",
+      "additions": 1113,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/GGGR_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "5e503916e2a1e1c5da0ccac3ba49e3350b0d417f",
+      "additions": 2777,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/GPI_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "d95221095641505dfc33f3a79379b839b92484f9",
+      "additions": 3076,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/GTI_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "596b6499b19a091e8ddcd83b54b9792b299bf33e",
+      "additions": 3086,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/HDI_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "c4cf90ef2a767d18f2ece70e83f7e8b78370e41b",
+      "additions": 3672,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/IMD_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "b09da4a7ec17bb18a539890f599bd38c730633d6",
+      "additions": 1274,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/LIVE_DEPLOYMENT_VERIFICATION_2026-09-27.json",
+      "status": "added",
+      "sha": "266bfcfc79e15d2d0ab85c4063741dc116aa1f5d",
+      "additions": 111,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/MEDIA_E3C1A35_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "b7e2f951d2b896a1db6cfe0d89f1ee7bbb77ac15",
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/NEW_ZEALAND_PARTIES_CLAIM_VERIFICATION_2026-09-27.json",
+      "status": "added",
+      "sha": "f72b833ee8ee4a057e3e5f01c8640a1658fe684c",
+      "additions": 1075,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/PARTY_POSITION_CONSISTENCY_2026-09-27.json",
+      "status": "added",
+      "sha": "2cb6d14617e5d7a62bf3edb5e87dec63f1429cc0",
+      "additions": 44,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/REVISION_E3C1A35_DELTA_2026-09-26.json",
+      "status": "added",
+      "sha": "f394a2d45266b35323451ee3c979d1d7e054e23c",
+      "additions": 1,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/SOFTPOWER_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "3de91d59723af7164fa20ac158a21cf9fc4a2ffd",
+      "additions": 3781,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/WHR_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "e517c08bf7ff1f58275c941181f214d74059599a",
+      "additions": 2762,
+      "deletions": 0
+    },
+    {
+      "path": "docs/audit/WJP_CLAIM_VERIFICATION_2026-09-26.json",
+      "status": "added",
+      "sha": "5dcdd3dbfc19cc836fcbaa0e699e9bd7b511e793",
+      "additions": 2710,
+      "deletions": 0
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "sha": "4671caee7c98665a46976c067eb57538662c141a",
+      "additions": 3,
+      "deletions": 2
+    },
+    {
+      "path": "public/flags/sub/EE/EE-37.svg",
+      "status": "modified",
+      "sha": "78ddb24dde7519faa19acfa372491c236881c60d",
+      "additions": 2,
+      "deletions": 2
+    },
+    {
+      "path": "public/flags/sub/EE/EE-51.svg",
+      "status": "modified",
+      "sha": "b6fe64d477b76ba8bcc1dfbb07cf92dc24b2422b",
+      "additions": 2,
+      "deletions": 2
+    },
+    {
+      "path": "public/newspaper-logos/al/panorama.svg",
+      "status": "removed",
+      "sha": "817a0721f730a90e2ca631b8ef05c596c89f1994",
+      "additions": 0,
+      "deletions": 157
+    },
+    {
+      "path": "public/newspaper-logos/ba/klix.jpg",
+      "status": "removed",
+      "sha": "b4bead5159b4378d0967b0e9a01b9e11f7c4f939",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/bg/trud.png",
+      "status": "removed",
+      "sha": "3dc2a7c561a51b25a295b5ff198de3ebed8707cc",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/bo/la-razon.svg",
+      "status": "removed",
+      "sha": "77857c50b020fd7e48af9bc57e7624381a35377e",
+      "additions": 0,
+      "deletions": 114
+    },
+    {
+      "path": "public/newspaper-logos/bs/tribune.jpg",
+      "status": "removed",
+      "sha": "34bfe36729cd0d339fcdf7f36ea7d43e06e62a95",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/bw/bopa.svg",
+      "status": "removed",
+      "sha": "57a01888460bf5c5353af1a78d0065c5e3d10680",
+      "additions": 0,
+      "deletions": 54
+    },
+    {
+      "path": "public/newspaper-logos/by/belta.svg",
+      "status": "removed",
+      "sha": "efea1fd6576e5428aa42947aea3a42c014daf09a",
+      "additions": 0,
+      "deletions": 83
+    },
+    {
+      "path": "public/newspaper-logos/ci/aip.png",
+      "status": "removed",
+      "sha": "caf750835585f16f76346342b7aa72c424a1f7cd",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/cm/le-messager.svg",
+      "status": "removed",
+      "sha": "3a8c50a3dc3b2239f9a871e7061d00c4a9f16c9a",
+      "additions": 0,
+      "deletions": 4
+    },
+    {
+      "path": "public/newspaper-logos/cv/a-semana.svg",
+      "status": "removed",
+      "sha": "277730bff595cc5285899cfb9d5889a110e28ed9",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/es/el-mundo.svg",
+      "status": "removed",
+      "sha": "8e24df327f5ee104ec4d6ffa57677942cc20d144",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/fi/aamulehti.svg",
+      "status": "removed",
+      "sha": "1f4297c7ca12b650691aa2eb3817b32f0c6e8609",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/gm/daily-observer-gambia.jpg",
+      "status": "removed",
+      "sha": "66ed868e6eb6c40f40d9d66b011aaaec156ac95f",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/hn/diario-tiempo.png",
+      "status": "removed",
+      "sha": "1d1e5d6a748e095acc3e62b7644df24784a1ebf6",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/hn/la-tribuna.jpg",
+      "status": "removed",
+      "sha": "ae06f6467a8ea3a231bd37d219a43d81a4ec3302",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/hu/blikk.svg",
+      "status": "removed",
+      "sha": "38001c4f061bb537ed6bfffc600333ea93426ae1",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/jo/al-ghad.svg",
+      "status": "removed",
+      "sha": "7b4a962bf0e542b1adb35a3484db6892636cd8c7",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/ke/kna.svg",
+      "status": "removed",
+      "sha": "59286668b9c688802cd2ee6ad6acc26bcff90a8e",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/mu/l-express.svg",
+      "status": "removed",
+      "sha": "c4d1e048f42aa3c12632f1a405533cf71aeddf7c",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/mv/avas.jpg",
+      "status": "removed",
+      "sha": "e6e7cb4e08284e712b7048221d8c36acf29dd136",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/mx/el-universal.svg",
+      "status": "removed",
+      "sha": "a671256b3a5603292474d87e3efd32aea444e93a",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/na/new-era.jpg",
+      "status": "removed",
+      "sha": "858cd3d0b1b5163fbebc8e77cc5f8ba3beb9bac7",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/ng/nan.png",
+      "status": "removed",
+      "sha": "bad1e7148de07df8e207e44dfa2b42b918e3e867",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/ng/the-punch.jpg",
+      "status": "removed",
+      "sha": "2d8129c892bb4c4f7dacbffc53b8f1e65260107b",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/ng/thisday.jpg",
+      "status": "removed",
+      "sha": "21e5c25b8b98fc0e2acf22c0e0f2018c258ab383",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/nr/naoero-gazette.svg",
+      "status": "removed",
+      "sha": "bcc608f1b49578aca64826cc48876b4df767ea86",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/nr/nauru-bulletin.svg",
+      "status": "removed",
+      "sha": "d665c132c3c6109b3f7587e6f925a04a50b66997",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/nr/nauru-gio.svg",
+      "status": "removed",
+      "sha": "ebf42350f119d0075ea912ceb81f36c2717dc2b5",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/nz/the-post.png",
+      "status": "removed",
+      "sha": "93f76f182b622d41fb7fa5bb40205f4700ce2bd9",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/pe/la-republica.jpg",
+      "status": "removed",
+      "sha": "56f237ae5e214d99add8ec247d7392a6f00a5d7f",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/pg/loop-png.png",
+      "status": "removed",
+      "sha": "94eb3afc8f20215827f95a0c7680f2ffc0349964",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/pt/expresso.png",
+      "status": "removed",
+      "sha": "5777255ba5a8c18659ddfdb90ea25edad3f804aa",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/py/abc-color.jpg",
+      "status": "removed",
+      "sha": "f6f5f97d5910037deebca5dce5616210c242ffcb",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/tn/assabah.jpg",
+      "status": "removed",
+      "sha": "6e801ebb8a1b3e930374cd4297f6d17a7fca8cb9",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/va/acta-apostolicae-sedis.svg",
+      "status": "removed",
+      "sha": "217e97d9ed616f9af4867628e202007e9fe52c56",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "public/newspaper-logos/va/vatican-news.png",
+      "status": "removed",
+      "sha": "4244d7edac01f08990bd43ef43210b5b68c14b5a",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/apply-agency-non-agency-cleanup.mjs",
+      "status": "modified",
+      "sha": "8bb979ef69884cb384d9d65bfe1f4a18fd460485",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/apply-newspaper-top5-batch2.mjs",
+      "status": "modified",
+      "sha": "fdad9633c1d5f1937d89c7fab502816e5f21d2be",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/apply-newspaper-top5.mjs",
+      "status": "modified",
+      "sha": "f286bda50fd1ddd33b74674cf3b83e20e3c80dd5",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/build-country-facts.mjs",
+      "status": "modified",
+      "sha": "4395f5c0f60da72410f5dfae21409635d2376212",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/build-passport-colors.mjs",
+      "status": "modified",
+      "sha": "25674d18dbfa7a91fe6f647f541675a3540d54d3",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/build-visa-access.mjs",
+      "status": "added",
+      "sha": "8150706137b46c66e098972b2164415fed74340f",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/check-dpi-data.mjs",
+      "status": "modified",
+      "sha": "6814dc4e912dcb1278628935a37b83a6b9c9f80b",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/check-gpi-data.mjs",
+      "status": "modified",
+      "sha": "9786d5ea128f0c931a50ba63b406d72cb7a79c31",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/check-national-news-agencies.mjs",
+      "status": "modified",
+      "sha": "9bb5e7bc0e100ece47f30db008d2b654e5489372",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/check-national-newspapers.mjs",
+      "status": "modified",
+      "sha": "0f0825904cf95e88a6cbb48d0556740386a7f2fe",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/check-political-parties.mjs",
+      "status": "modified",
+      "sha": "dc5608ee6968fe841cf6e9bd70c0d7f4a0af6964",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/check-soft-power-data.mjs",
+      "status": "modified",
+      "sha": "e35e8288adc817c191ff8928cd4a745df57f5eb9",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/check-visa-access.mjs",
+      "status": "added",
+      "sha": "84ecddc4d398ded00fb969da74a60dc429dbd46f",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/cpi2025Data.mjs",
+      "status": "modified",
+      "sha": "4b76ab9d4c877cdb3b5c4151f5d8434b9e9885fb",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/democracyData.mjs",
+      "status": "modified",
+      "sha": "fb24cc265ffbbfb8f9a7300981a20396fd79b003",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/dpi2026Data.mjs",
+      "status": "modified",
+      "sha": "2763bef49e29bfc0901c576e5ba00353d14de1a5",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/gpi-2026.csv",
+      "status": "modified",
+      "sha": "5d0aebfd726916d131f88a93baa80b49a03eacfb",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/gpi2026Data.mjs",
+      "status": "modified",
+      "sha": "b904ffb26f0216a95f99f91f0a992f7d028b0bb5",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/national-flag-sources.json",
+      "status": "modified",
+      "sha": "1be575b71bf2ae9744c3b777709e54d2ac6658a0",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/passport-index-tidy-iso2.csv",
+      "status": "added",
+      "sha": "c90054300eb2e0615ebf088412c3040d6958026f",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/soft-power-2026.csv",
+      "status": "modified",
+      "sha": "8404aaa536593da6a5e018be420c22ec0b691291",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/softPower2026Data.mjs",
+      "status": "modified",
+      "sha": "73e3f9f68a314a372c8f254ee3e78148359936a1",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/data/subdiv-meaning-omitted.txt",
+      "status": "modified",
+      "sha": "b9d139fceecb7ecdf4f7323faba49e30ff22bb8b",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/generate-island-logos.mjs",
+      "status": "removed",
+      "sha": "e33c1fc68990d90a7b6ef044bcae9b787c36b90d",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/purge-fabricated-agency-logos.mjs",
+      "status": "modified",
+      "sha": "226658f00b2a5bff29396a2ca636ccdc569370db",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "scripts/purge-fabricated-newspaper-logos.mjs",
+      "status": "modified",
+      "sha": "59ee74de3ddf6eea1108c3db04bd3991d60dae30",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/App.css",
+      "status": "modified",
+      "sha": "03d5132a18f049034bfee484e5bf822051478995",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/api/countries.ts",
+      "status": "modified",
+      "sha": "18c77a142bba1901d7ae7b114defd9ec71c570e1",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/components/EntitySummary.tsx",
+      "status": "modified",
+      "sha": "05d0573a93d3969e3ab00dc9661a63977d255cd9",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/components/NationalFlagGrid.tsx",
+      "status": "modified",
+      "sha": "d5bff2801966cba959b9e6cee951653353efa7a0",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/components/NewspaperDetails.tsx",
+      "status": "modified",
+      "sha": "afdef48ba50b31098eeccfab32a2f3be21ca5b8a",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/components/PassportMapControl.tsx",
+      "status": "added",
+      "sha": "602e8c811eb85e7841628bd5b11b9840997412a2",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/components/VisaAccessMapLegend.tsx",
+      "status": "added",
+      "sha": "b83198e819d79dc33084a99ebe62b4724e9a4d0c",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/countryFactCorrections.json",
+      "status": "added",
+      "sha": "30672c316439a4ddde973b3e752602b1ce834f29",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/countryFacts.ts",
+      "status": "modified",
+      "sha": "e4b41840c7417a6b8cdbf6959c14385ff4fcb644",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/flagMeanings.ts",
+      "status": "modified",
+      "sha": "3dd68625c61f6764d6f9eed780960da77cfb49ae",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/nationalFlags.ts",
+      "status": "modified",
+      "sha": "9fa391f5e328d37110830c7a5060ab950e59fc88",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/nationalNewsAgencies.ts",
+      "status": "modified",
+      "sha": "25386f33a1002db7e711494338478be8426850ac",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/nationalNewspapers.ts",
+      "status": "modified",
+      "sha": "c55efacde67824279bfd876d1bcc01c9043355b4",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/politicalParties.ts",
+      "status": "modified",
+      "sha": "b83937b54e1f374b5c8e64424d4808ab8fe4cf6d",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/publicBroadcasters.ts",
+      "status": "modified",
+      "sha": "7d565ac63338fbd6a0e5d3390c041407e238483f",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/tourismLogos.ts",
+      "status": "modified",
+      "sha": "c76b962f1e01db02ddfe67119bd61b8219528cd5",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/data/visaAccess.ts",
+      "status": "added",
+      "sha": "29f49f7c710b518ae1e8886346fe2e547a28cca7",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/lib/democracyColors.ts",
+      "status": "modified",
+      "sha": "fda607713d9552044f15f4b5f0d438397d286a92",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/lib/fifaAssociations.ts",
+      "status": "modified",
+      "sha": "476ab2424c9f822dfa9c37a7c1b1a2ba3ea47de4",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/lib/historicalEras.ts",
+      "status": "modified",
+      "sha": "1f340d56c3d028c3d2ecb5f0e9124de70695ee92",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/lib/iocAssociations.ts",
+      "status": "modified",
+      "sha": "6111f79763401aff8a83720a893124a5af7e4902",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/lib/visaAccessColors.ts",
+      "status": "added",
+      "sha": "461c01aee1f1d57b6294d53d5d64229f655d49fc",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/pages/LearnPage.tsx",
+      "status": "modified",
+      "sha": "04806602b9927fc26a517d743e63b290bc94c932",
+      "additions": 0,
+      "deletions": 0
+    },
+    {
+      "path": "src/types/newspaper.ts",
+      "status": "modified",
+      "sha": "7e8108a4c3a113424d5b3e89fe4efc84a1ae9458",
+      "additions": 0,
+      "deletions": 0
+    }
+  ],
+  "subsequentApplicationCommit": {
+    "sha": "1ee7c78515b494e25aa5e40b59fabd07af47a7d9",
+    "files": [
+      {
+        "path": "docs/VISA_ACCESS_MAP.md",
+        "status": "modified",
+        "sha": "0e785a9ad78d791ecbc35a9072bbcbbbf957a9ba"
+      },
+      {
+        "path": "scripts/check-visa-access.mjs",
+        "status": "modified",
+        "sha": "ce5727a6f9220cfa54540b7716be57a5ef5418b0"
+      },
+      {
+        "path": "src/components/VisaAccessMapLegend.tsx",
+        "status": "modified",
+        "sha": "84515cf7e7332d8e16309d0e334ae3cfe1ac880c"
+      },
+      {
+        "path": "src/lib/visaAccessColors.ts",
+        "status": "modified",
+        "sha": "12355adeead729f03f9d0c49b13ffc26a7024813"
+      }
+    ]
+  },
+  "limitation": "Change inventory only. Presence in this list does not mean independently factually verified."
+}

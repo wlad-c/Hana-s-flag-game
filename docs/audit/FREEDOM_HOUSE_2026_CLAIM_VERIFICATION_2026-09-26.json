@@ -1,0 +1,3890 @@
+{
+  "applicationRevision": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "checkedAt": "2026-09-26",
+  "source": "https://freedomhouse.org/country/scores",
+  "sha256": "2fff8c6d2d6147788e6fab6e4a6d12da665691bca358a8aeeaaeb45e736fb0b9",
+  "summary": {
+    "primaryRatedRows": 207,
+    "primaryCountries": 195,
+    "primaryTerritories": 12,
+    "committedSourceRows": 207,
+    "committedSourceDifferences": 0,
+    "appEntries": 193,
+    "allFieldsMatch": 193,
+    "sourceCountryStatusCounts": {
+      "Not Free": 59,
+      "Partly Free": 48,
+      "Free": 88
+    }
+  },
+  "sourceCsvDifferences": [],
+  "rows": [
+    {
+      "code": "AD",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 25,
+        "score": 93
+      },
+      "primary": {
+        "country": "Andorra",
+        "territory": false,
+        "score": 93,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 55,
+        "reportUrl": "https://freedomhouse.org/country/andorra/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 25,
+      "differences": {}
+    },
+    {
+      "code": "AE",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 161,
+        "score": 18
+      },
+      "primary": {
+        "country": "United Arab Emirates",
+        "territory": false,
+        "score": 18,
+        "status": "Not Free",
+        "political_rights": 5,
+        "civil_liberties": 13,
+        "reportUrl": "https://freedomhouse.org/country/united-arab-emirates/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 161,
+      "differences": {}
+    },
+    {
+      "code": "AF",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 183,
+        "score": 8
+      },
+      "primary": {
+        "country": "Afghanistan",
+        "territory": false,
+        "score": 8,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 7,
+        "reportUrl": "https://freedomhouse.org/country/afghanistan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 183,
+      "differences": {}
+    },
+    {
+      "code": "AG",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 57,
+        "score": 83
+      },
+      "primary": {
+        "country": "Antigua and Barbuda",
+        "territory": false,
+        "score": 83,
+        "status": "Free",
+        "political_rights": 32,
+        "civil_liberties": 51,
+        "reportUrl": "https://freedomhouse.org/country/antigua-and-barbuda/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 57,
+      "differences": {}
+    },
+    {
+      "code": "AL",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 84,
+        "score": 69
+      },
+      "primary": {
+        "country": "Albania",
+        "territory": false,
+        "score": 69,
+        "status": "Partly Free",
+        "political_rights": 28,
+        "civil_liberties": 41,
+        "reportUrl": "https://freedomhouse.org/country/albania/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 84,
+      "differences": {}
+    },
+    {
+      "code": "AM",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 109,
+        "score": 54
+      },
+      "primary": {
+        "country": "Armenia",
+        "territory": false,
+        "score": 54,
+        "status": "Partly Free",
+        "political_rights": 23,
+        "civil_liberties": 31,
+        "reportUrl": "https://freedomhouse.org/country/armenia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 109,
+      "differences": {}
+    },
+    {
+      "code": "AO",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 143,
+        "score": 28
+      },
+      "primary": {
+        "country": "Angola",
+        "territory": false,
+        "score": 28,
+        "status": "Not Free",
+        "political_rights": 10,
+        "civil_liberties": 18,
+        "reportUrl": "https://freedomhouse.org/country/angola/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 143,
+      "differences": {}
+    },
+    {
+      "code": "AR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 52,
+        "score": 85
+      },
+      "primary": {
+        "country": "Argentina",
+        "territory": false,
+        "score": 85,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 50,
+        "reportUrl": "https://freedomhouse.org/country/argentina/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 52,
+      "differences": {}
+    },
+    {
+      "code": "AT",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 22,
+        "score": 94
+      },
+      "primary": {
+        "country": "Austria",
+        "territory": false,
+        "score": 94,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 56,
+        "reportUrl": "https://freedomhouse.org/country/austria/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 22,
+      "differences": {}
+    },
+    {
+      "code": "AU",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 22,
+        "score": 94
+      },
+      "primary": {
+        "country": "Australia",
+        "territory": false,
+        "score": 94,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 55,
+        "reportUrl": "https://freedomhouse.org/country/australia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 22,
+      "differences": {}
+    },
+    {
+      "code": "AZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 186,
+        "score": 6
+      },
+      "primary": {
+        "country": "Azerbaijan",
+        "territory": false,
+        "score": 6,
+        "status": "Not Free",
+        "political_rights": 0,
+        "civil_liberties": 6,
+        "reportUrl": "https://freedomhouse.org/country/azerbaijan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 186,
+      "differences": {}
+    },
+    {
+      "code": "BA",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 109,
+        "score": 54
+      },
+      "primary": {
+        "country": "Bosnia and Herzegovina",
+        "territory": false,
+        "score": 54,
+        "status": "Partly Free",
+        "political_rights": 17,
+        "civil_liberties": 37,
+        "reportUrl": "https://freedomhouse.org/country/bosnia-and-herzegovina/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 109,
+      "differences": {}
+    },
+    {
+      "code": "BB",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 22,
+        "score": 94
+      },
+      "primary": {
+        "country": "Barbados",
+        "territory": false,
+        "score": 94,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/barbados/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 22,
+      "differences": {}
+    },
+    {
+      "code": "BD",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 123,
+        "score": 44
+      },
+      "primary": {
+        "country": "Bangladesh",
+        "territory": false,
+        "score": 44,
+        "status": "Partly Free",
+        "political_rights": 15,
+        "civil_liberties": 29,
+        "reportUrl": "https://freedomhouse.org/country/bangladesh/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 123,
+      "differences": {}
+    },
+    {
+      "code": "BE",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 17,
+        "score": 95
+      },
+      "primary": {
+        "country": "Belgium",
+        "territory": false,
+        "score": 95,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/belgium/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 17,
+      "differences": {}
+    },
+    {
+      "code": "BF",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 159,
+        "score": 20
+      },
+      "primary": {
+        "country": "Burkina Faso",
+        "territory": false,
+        "score": 20,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 18,
+        "reportUrl": "https://freedomhouse.org/country/burkina-faso/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 159,
+      "differences": {}
+    },
+    {
+      "code": "BG",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 75,
+        "score": 74
+      },
+      "primary": {
+        "country": "Bulgaria",
+        "territory": false,
+        "score": 74,
+        "status": "Free",
+        "political_rights": 30,
+        "civil_liberties": 44,
+        "reportUrl": "https://freedomhouse.org/country/bulgaria/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 75,
+      "differences": {}
+    },
+    {
+      "code": "BH",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 173,
+        "score": 12
+      },
+      "primary": {
+        "country": "Bahrain",
+        "territory": false,
+        "score": 12,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 10,
+        "reportUrl": "https://freedomhouse.org/country/bahrain/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 173,
+      "differences": {}
+    },
+    {
+      "code": "BI",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 170,
+        "score": 13
+      },
+      "primary": {
+        "country": "Burundi",
+        "territory": false,
+        "score": 13,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 11,
+        "reportUrl": "https://freedomhouse.org/country/burundi/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 170,
+      "differences": {}
+    },
+    {
+      "code": "BJ",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 100,
+        "score": 61
+      },
+      "primary": {
+        "country": "Benin",
+        "territory": false,
+        "score": 61,
+        "status": "Partly Free",
+        "political_rights": 19,
+        "civil_liberties": 42,
+        "reportUrl": "https://freedomhouse.org/country/benin/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 100,
+      "differences": {}
+    },
+    {
+      "code": "BN",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 146,
+        "score": 27
+      },
+      "primary": {
+        "country": "Brunei",
+        "territory": false,
+        "score": 27,
+        "status": "Not Free",
+        "political_rights": 7,
+        "civil_liberties": 20,
+        "reportUrl": "https://freedomhouse.org/country/brunei/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 146,
+      "differences": {}
+    },
+    {
+      "code": "BO",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 84,
+        "score": 69
+      },
+      "primary": {
+        "country": "Bolivia",
+        "territory": false,
+        "score": 69,
+        "status": "Free",
+        "political_rights": 30,
+        "civil_liberties": 39,
+        "reportUrl": "https://freedomhouse.org/country/bolivia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 84,
+      "differences": {}
+    },
+    {
+      "code": "BR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 78,
+        "score": 73
+      },
+      "primary": {
+        "country": "Brazil",
+        "territory": false,
+        "score": 73,
+        "status": "Free",
+        "political_rights": 30,
+        "civil_liberties": 43,
+        "reportUrl": "https://freedomhouse.org/country/brazil/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 78,
+      "differences": {}
+    },
+    {
+      "code": "BS",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 37,
+        "score": 90
+      },
+      "primary": {
+        "country": "The Bahamas",
+        "territory": false,
+        "score": 90,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 52,
+        "reportUrl": "https://freedomhouse.org/country/bahamas/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 37,
+      "differences": {}
+    },
+    {
+      "code": "BT",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 84,
+        "score": 69
+      },
+      "primary": {
+        "country": "Bhutan",
+        "territory": false,
+        "score": 69,
+        "status": "Free",
+        "political_rights": 33,
+        "civil_liberties": 36,
+        "reportUrl": "https://freedomhouse.org/country/bhutan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 84,
+      "differences": {}
+    },
+    {
+      "code": "BW",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 73,
+        "score": 75
+      },
+      "primary": {
+        "country": "Botswana",
+        "territory": false,
+        "score": 75,
+        "status": "Free",
+        "political_rights": 31,
+        "civil_liberties": 44,
+        "reportUrl": "https://freedomhouse.org/country/botswana/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 73,
+      "differences": {}
+    },
+    {
+      "code": "BY",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 185,
+        "score": 7
+      },
+      "primary": {
+        "country": "Belarus",
+        "territory": false,
+        "score": 7,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 6,
+        "reportUrl": "https://freedomhouse.org/country/belarus/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 185,
+      "differences": {}
+    },
+    {
+      "code": "BZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 49,
+        "score": 87
+      },
+      "primary": {
+        "country": "Belize",
+        "territory": false,
+        "score": 87,
+        "status": "Free",
+        "political_rights": 34,
+        "civil_liberties": 53,
+        "reportUrl": "https://freedomhouse.org/country/belize/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 49,
+      "differences": {}
+    },
+    {
+      "code": "CA",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 6,
+        "score": 97
+      },
+      "primary": {
+        "country": "Canada",
+        "territory": false,
+        "score": 97,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 58,
+        "reportUrl": "https://freedomhouse.org/country/canada/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 6,
+      "differences": {}
+    },
+    {
+      "code": "CD",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 161,
+        "score": 18
+      },
+      "primary": {
+        "country": "Democratic Republic of the Congo",
+        "territory": false,
+        "score": 18,
+        "status": "Not Free",
+        "political_rights": 4,
+        "civil_liberties": 14,
+        "reportUrl": "https://freedomhouse.org/country/democratic-republic-congo/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 161,
+      "differences": {}
+    },
+    {
+      "code": "CF",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 187,
+        "score": 5
+      },
+      "primary": {
+        "country": "Central African Republic",
+        "territory": false,
+        "score": 5,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 4,
+        "reportUrl": "https://freedomhouse.org/country/central-african-republic/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 187,
+      "differences": {}
+    },
+    {
+      "code": "CG",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 165,
+        "score": 17
+      },
+      "primary": {
+        "country": "Republic of the Congo",
+        "territory": false,
+        "score": 17,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 15,
+        "reportUrl": "https://freedomhouse.org/country/republic-congo/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 165,
+      "differences": {}
+    },
+    {
+      "code": "CH",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 13,
+        "score": 96
+      },
+      "primary": {
+        "country": "Switzerland",
+        "territory": false,
+        "score": 96,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/switzerland/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 13,
+      "differences": {}
+    },
+    {
+      "code": "CI",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 122,
+        "score": 46
+      },
+      "primary": {
+        "country": "Côte d'Ivoire",
+        "territory": false,
+        "score": 46,
+        "status": "Partly Free",
+        "political_rights": 17,
+        "civil_liberties": 29,
+        "reportUrl": "https://freedomhouse.org/country/cote-divoire/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 122,
+      "differences": {}
+    },
+    {
+      "code": "CL",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 17,
+        "score": 95
+      },
+      "primary": {
+        "country": "Chile",
+        "territory": false,
+        "score": 95,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/chile/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 17,
+      "differences": {}
+    },
+    {
+      "code": "CM",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 167,
+        "score": 15
+      },
+      "primary": {
+        "country": "Cameroon",
+        "territory": false,
+        "score": 15,
+        "status": "Not Free",
+        "political_rights": 6,
+        "civil_liberties": 9,
+        "reportUrl": "https://freedomhouse.org/country/cameroon/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 167,
+      "differences": {}
+    },
+    {
+      "code": "CN",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 180,
+        "score": 9
+      },
+      "primary": {
+        "country": "China",
+        "territory": false,
+        "score": 9,
+        "status": "Not Free",
+        "political_rights": -2,
+        "civil_liberties": 11,
+        "reportUrl": "https://freedomhouse.org/country/china/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 180,
+      "differences": {}
+    },
+    {
+      "code": "CO",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 84,
+        "score": 69
+      },
+      "primary": {
+        "country": "Colombia",
+        "territory": false,
+        "score": 69,
+        "status": "Free",
+        "political_rights": 31,
+        "civil_liberties": 38,
+        "reportUrl": "https://freedomhouse.org/country/colombia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 84,
+      "differences": {}
+    },
+    {
+      "code": "CR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 34,
+        "score": 91
+      },
+      "primary": {
+        "country": "Costa Rica",
+        "territory": false,
+        "score": 91,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 53,
+        "reportUrl": "https://freedomhouse.org/country/costa-rica/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 34,
+      "differences": {}
+    },
+    {
+      "code": "CU",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 180,
+        "score": 9
+      },
+      "primary": {
+        "country": "Cuba",
+        "territory": false,
+        "score": 9,
+        "status": "Not Free",
+        "political_rights": 0,
+        "civil_liberties": 9,
+        "reportUrl": "https://freedomhouse.org/country/cuba/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 180,
+      "differences": {}
+    },
+    {
+      "code": "CV",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 29,
+        "score": 92
+      },
+      "primary": {
+        "country": "Cabo Verde",
+        "territory": false,
+        "score": 92,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 54,
+        "reportUrl": "https://freedomhouse.org/country/cabo-verde/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 29,
+      "differences": {}
+    },
+    {
+      "code": "CY",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 37,
+        "score": 90
+      },
+      "primary": {
+        "country": "Cyprus",
+        "territory": false,
+        "score": 90,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 52,
+        "reportUrl": "https://freedomhouse.org/country/cyprus/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 37,
+      "differences": {}
+    },
+    {
+      "code": "CZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 17,
+        "score": 95
+      },
+      "primary": {
+        "country": "Czechia",
+        "territory": false,
+        "score": 95,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 58,
+        "reportUrl": "https://freedomhouse.org/country/czechia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 17,
+      "differences": {}
+    },
+    {
+      "code": "DE",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 17,
+        "score": 95
+      },
+      "primary": {
+        "country": "Germany",
+        "territory": false,
+        "score": 95,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 55,
+        "reportUrl": "https://freedomhouse.org/country/germany/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 17,
+      "differences": {}
+    },
+    {
+      "code": "DJ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 152,
+        "score": 24
+      },
+      "primary": {
+        "country": "Djibouti",
+        "territory": false,
+        "score": 24,
+        "status": "Not Free",
+        "political_rights": 5,
+        "civil_liberties": 19,
+        "reportUrl": "https://freedomhouse.org/country/djibouti/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 152,
+      "differences": {}
+    },
+    {
+      "code": "DK",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 6,
+        "score": 97
+      },
+      "primary": {
+        "country": "Denmark",
+        "territory": false,
+        "score": 97,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/denmark/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 6,
+      "differences": {}
+    },
+    {
+      "code": "DM",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 29,
+        "score": 92
+      },
+      "primary": {
+        "country": "Dominica",
+        "territory": false,
+        "score": 92,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 55,
+        "reportUrl": "https://freedomhouse.org/country/dominica/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 29,
+      "differences": {}
+    },
+    {
+      "code": "DO",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 90,
+        "score": 67
+      },
+      "primary": {
+        "country": "Dominican Republic",
+        "territory": false,
+        "score": 67,
+        "status": "Partly Free",
+        "political_rights": 27,
+        "civil_liberties": 40,
+        "reportUrl": "https://freedomhouse.org/country/dominican-republic/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 90,
+      "differences": {}
+    },
+    {
+      "code": "DZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 140,
+        "score": 31
+      },
+      "primary": {
+        "country": "Algeria",
+        "territory": false,
+        "score": 31,
+        "status": "Not Free",
+        "political_rights": 10,
+        "civil_liberties": 21,
+        "reportUrl": "https://freedomhouse.org/country/algeria/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 140,
+      "differences": {}
+    },
+    {
+      "code": "EC",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 96,
+        "score": 64
+      },
+      "primary": {
+        "country": "Ecuador",
+        "territory": false,
+        "score": 64,
+        "status": "Partly Free",
+        "political_rights": 27,
+        "civil_liberties": 37,
+        "reportUrl": "https://freedomhouse.org/country/ecuador/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 96,
+      "differences": {}
+    },
+    {
+      "code": "EE",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 13,
+        "score": 96
+      },
+      "primary": {
+        "country": "Estonia",
+        "territory": false,
+        "score": 96,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/estonia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 13,
+      "differences": {}
+    },
+    {
+      "code": "EG",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 161,
+        "score": 18
+      },
+      "primary": {
+        "country": "Egypt",
+        "territory": false,
+        "score": 18,
+        "status": "Not Free",
+        "political_rights": 6,
+        "civil_liberties": 12,
+        "reportUrl": "https://freedomhouse.org/country/egypt/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 161,
+      "differences": {}
+    },
+    {
+      "code": "ER",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 191,
+        "score": 3
+      },
+      "primary": {
+        "country": "Eritrea",
+        "territory": false,
+        "score": 3,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 2,
+        "reportUrl": "https://freedomhouse.org/country/eritrea/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 191,
+      "differences": {}
+    },
+    {
+      "code": "ES",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 34,
+        "score": 91
+      },
+      "primary": {
+        "country": "Spain",
+        "territory": false,
+        "score": 91,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 54,
+        "reportUrl": "https://freedomhouse.org/country/spain/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 34,
+      "differences": {}
+    },
+    {
+      "code": "ET",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 161,
+        "score": 18
+      },
+      "primary": {
+        "country": "Ethiopia",
+        "territory": false,
+        "score": 18,
+        "status": "Not Free",
+        "political_rights": 8,
+        "civil_liberties": 10,
+        "reportUrl": "https://freedomhouse.org/country/ethiopia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 161,
+      "differences": {}
+    },
+    {
+      "code": "FI",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 1,
+        "score": 100
+      },
+      "primary": {
+        "country": "Finland",
+        "territory": false,
+        "score": 100,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 60,
+        "reportUrl": "https://freedomhouse.org/country/finland/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 1,
+      "differences": {}
+    },
+    {
+      "code": "FJ",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 82,
+        "score": 72
+      },
+      "primary": {
+        "country": "Fiji",
+        "territory": false,
+        "score": 72,
+        "status": "Free",
+        "political_rights": 28,
+        "civil_liberties": 44,
+        "reportUrl": "https://freedomhouse.org/country/fiji/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 82,
+      "differences": {}
+    },
+    {
+      "code": "FM",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 29,
+        "score": 92
+      },
+      "primary": {
+        "country": "Micronesia",
+        "territory": false,
+        "score": 92,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 55,
+        "reportUrl": "https://freedomhouse.org/country/micronesia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 29,
+      "differences": {}
+    },
+    {
+      "code": "FR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 42,
+        "score": 89
+      },
+      "primary": {
+        "country": "France",
+        "territory": false,
+        "score": 89,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 51,
+        "reportUrl": "https://freedomhouse.org/country/france/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 42,
+      "differences": {}
+    },
+    {
+      "code": "GA",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 148,
+        "score": 25
+      },
+      "primary": {
+        "country": "Gabon",
+        "territory": false,
+        "score": 25,
+        "status": "Not Free",
+        "political_rights": 5,
+        "civil_liberties": 20,
+        "reportUrl": "https://freedomhouse.org/country/gabon/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 148,
+      "differences": {}
+    },
+    {
+      "code": "GB",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 29,
+        "score": 92
+      },
+      "primary": {
+        "country": "United Kingdom",
+        "territory": false,
+        "score": 92,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 53,
+        "reportUrl": "https://freedomhouse.org/country/united-kingdom/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 29,
+      "differences": {}
+    },
+    {
+      "code": "GD",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 42,
+        "score": 89
+      },
+      "primary": {
+        "country": "Grenada",
+        "territory": false,
+        "score": 89,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 52,
+        "reportUrl": "https://freedomhouse.org/country/grenada/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 42,
+      "differences": {}
+    },
+    {
+      "code": "GE",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 114,
+        "score": 51
+      },
+      "primary": {
+        "country": "Georgia",
+        "territory": false,
+        "score": 51,
+        "status": "Partly Free",
+        "political_rights": 19,
+        "civil_liberties": 32,
+        "reportUrl": "https://freedomhouse.org/country/georgia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 114,
+      "differences": {}
+    },
+    {
+      "code": "GH",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 71,
+        "score": 80
+      },
+      "primary": {
+        "country": "Ghana",
+        "territory": false,
+        "score": 80,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 45,
+        "reportUrl": "https://freedomhouse.org/country/ghana/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 71,
+      "differences": {}
+    },
+    {
+      "code": "GM",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 114,
+        "score": 51
+      },
+      "primary": {
+        "country": "The Gambia",
+        "territory": false,
+        "score": 51,
+        "status": "Partly Free",
+        "political_rights": 22,
+        "civil_liberties": 29,
+        "reportUrl": "https://freedomhouse.org/country/gambia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 114,
+      "differences": {}
+    },
+    {
+      "code": "GN",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 143,
+        "score": 28
+      },
+      "primary": {
+        "country": "Guinea",
+        "territory": false,
+        "score": 28,
+        "status": "Not Free",
+        "political_rights": 6,
+        "civil_liberties": 22,
+        "reportUrl": "https://freedomhouse.org/country/guinea/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 143,
+      "differences": {}
+    },
+    {
+      "code": "GQ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 187,
+        "score": 5
+      },
+      "primary": {
+        "country": "Equatorial Guinea",
+        "territory": false,
+        "score": 5,
+        "status": "Not Free",
+        "political_rights": 0,
+        "civil_liberties": 5,
+        "reportUrl": "https://freedomhouse.org/country/equatorial-guinea/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 187,
+      "differences": {}
+    },
+    {
+      "code": "GR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 52,
+        "score": 85
+      },
+      "primary": {
+        "country": "Greece",
+        "territory": false,
+        "score": 85,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 50,
+        "reportUrl": "https://freedomhouse.org/country/greece/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 52,
+      "differences": {}
+    },
+    {
+      "code": "GT",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 119,
+        "score": 48
+      },
+      "primary": {
+        "country": "Guatemala",
+        "territory": false,
+        "score": 48,
+        "status": "Partly Free",
+        "political_rights": 19,
+        "civil_liberties": 29,
+        "reportUrl": "https://freedomhouse.org/country/guatemala/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 119,
+      "differences": {}
+    },
+    {
+      "code": "GW",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 135,
+        "score": 33
+      },
+      "primary": {
+        "country": "Guinea-Bissau",
+        "territory": false,
+        "score": 33,
+        "status": "Partly Free",
+        "political_rights": 7,
+        "civil_liberties": 26,
+        "reportUrl": "https://freedomhouse.org/country/guinea-bissau/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 135,
+      "differences": {}
+    },
+    {
+      "code": "GY",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 75,
+        "score": 74
+      },
+      "primary": {
+        "country": "Guyana",
+        "territory": false,
+        "score": 74,
+        "status": "Free",
+        "political_rights": 29,
+        "civil_liberties": 45,
+        "reportUrl": "https://freedomhouse.org/country/guyana/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 75,
+      "differences": {}
+    },
+    {
+      "code": "HN",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 121,
+        "score": 47
+      },
+      "primary": {
+        "country": "Honduras",
+        "territory": false,
+        "score": 47,
+        "status": "Partly Free",
+        "political_rights": 21,
+        "civil_liberties": 26,
+        "reportUrl": "https://freedomhouse.org/country/honduras/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 121,
+      "differences": {}
+    },
+    {
+      "code": "HR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 61,
+        "score": 82
+      },
+      "primary": {
+        "country": "Croatia",
+        "territory": false,
+        "score": 82,
+        "status": "Free",
+        "political_rights": 34,
+        "civil_liberties": 48,
+        "reportUrl": "https://freedomhouse.org/country/croatia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 61,
+      "differences": {}
+    },
+    {
+      "code": "HT",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 155,
+        "score": 22
+      },
+      "primary": {
+        "country": "Haiti",
+        "territory": false,
+        "score": 22,
+        "status": "Not Free",
+        "political_rights": 5,
+        "civil_liberties": 17,
+        "reportUrl": "https://freedomhouse.org/country/haiti/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 155,
+      "differences": {}
+    },
+    {
+      "code": "HU",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 94,
+        "score": 65
+      },
+      "primary": {
+        "country": "Hungary",
+        "territory": false,
+        "score": 65,
+        "status": "Partly Free",
+        "political_rights": 24,
+        "civil_liberties": 41,
+        "reportUrl": "https://freedomhouse.org/country/hungary/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 94,
+      "differences": {}
+    },
+    {
+      "code": "ID",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 108,
+        "score": 56
+      },
+      "primary": {
+        "country": "Indonesia",
+        "territory": false,
+        "score": 56,
+        "status": "Partly Free",
+        "political_rights": 28,
+        "civil_liberties": 28,
+        "reportUrl": "https://freedomhouse.org/country/indonesia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 108,
+      "differences": {}
+    },
+    {
+      "code": "IE",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 5,
+        "score": 98
+      },
+      "primary": {
+        "country": "Ireland",
+        "territory": false,
+        "score": 98,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 58,
+        "reportUrl": "https://freedomhouse.org/country/ireland/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 5,
+      "differences": {}
+    },
+    {
+      "code": "IL",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 78,
+        "score": 73
+      },
+      "primary": {
+        "country": "Israel",
+        "territory": false,
+        "score": 73,
+        "status": "Free",
+        "political_rights": 34,
+        "civil_liberties": 39,
+        "reportUrl": "https://freedomhouse.org/country/israel/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 78,
+      "differences": {}
+    },
+    {
+      "code": "IN",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 99,
+        "score": 62
+      },
+      "primary": {
+        "country": "India",
+        "territory": false,
+        "score": 62,
+        "status": "Partly Free",
+        "political_rights": 31,
+        "civil_liberties": 31,
+        "reportUrl": "https://freedomhouse.org/country/india/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 99,
+      "differences": {}
+    },
+    {
+      "code": "IQ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 140,
+        "score": 31
+      },
+      "primary": {
+        "country": "Iraq",
+        "territory": false,
+        "score": 31,
+        "status": "Not Free",
+        "political_rights": 16,
+        "civil_liberties": 15,
+        "reportUrl": "https://freedomhouse.org/country/iraq/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 140,
+      "differences": {}
+    },
+    {
+      "code": "IR",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 176,
+        "score": 10
+      },
+      "primary": {
+        "country": "Iran",
+        "territory": false,
+        "score": 10,
+        "status": "Not Free",
+        "political_rights": 4,
+        "civil_liberties": 6,
+        "reportUrl": "https://freedomhouse.org/country/iran/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 176,
+      "differences": {}
+    },
+    {
+      "code": "IS",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 17,
+        "score": 95
+      },
+      "primary": {
+        "country": "Iceland",
+        "territory": false,
+        "score": 95,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/iceland/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 17,
+      "differences": {}
+    },
+    {
+      "code": "IT",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 49,
+        "score": 87
+      },
+      "primary": {
+        "country": "Italy",
+        "territory": false,
+        "score": 87,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 52,
+        "reportUrl": "https://freedomhouse.org/country/italy/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 49,
+      "differences": {}
+    },
+    {
+      "code": "JM",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 66,
+        "score": 81
+      },
+      "primary": {
+        "country": "Jamaica",
+        "territory": false,
+        "score": 81,
+        "status": "Free",
+        "political_rights": 34,
+        "civil_liberties": 47,
+        "reportUrl": "https://freedomhouse.org/country/jamaica/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 66,
+      "differences": {}
+    },
+    {
+      "code": "JO",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 134,
+        "score": 34
+      },
+      "primary": {
+        "country": "Jordan",
+        "territory": false,
+        "score": 34,
+        "status": "Partly Free",
+        "political_rights": 12,
+        "civil_liberties": 22,
+        "reportUrl": "https://freedomhouse.org/country/jordan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 134,
+      "differences": {}
+    },
+    {
+      "code": "JP",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 13,
+        "score": 96
+      },
+      "primary": {
+        "country": "Japan",
+        "territory": false,
+        "score": 96,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 56,
+        "reportUrl": "https://freedomhouse.org/country/japan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 13,
+      "differences": {}
+    },
+    {
+      "code": "KE",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 118,
+        "score": 49
+      },
+      "primary": {
+        "country": "Kenya",
+        "territory": false,
+        "score": 49,
+        "status": "Partly Free",
+        "political_rights": 21,
+        "civil_liberties": 28,
+        "reportUrl": "https://freedomhouse.org/country/kenya/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 118,
+      "differences": {}
+    },
+    {
+      "code": "KG",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 148,
+        "score": 25
+      },
+      "primary": {
+        "country": "Kyrgyzstan",
+        "territory": false,
+        "score": 25,
+        "status": "Not Free",
+        "political_rights": 4,
+        "civil_liberties": 21,
+        "reportUrl": "https://freedomhouse.org/country/kyrgyzstan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 148,
+      "differences": {}
+    },
+    {
+      "code": "KH",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 155,
+        "score": 22
+      },
+      "primary": {
+        "country": "Cambodia",
+        "territory": false,
+        "score": 22,
+        "status": "Not Free",
+        "political_rights": 4,
+        "civil_liberties": 18,
+        "reportUrl": "https://freedomhouse.org/country/cambodia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 155,
+      "differences": {}
+    },
+    {
+      "code": "KI",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 42,
+        "score": 89
+      },
+      "primary": {
+        "country": "Kiribati",
+        "territory": false,
+        "score": 89,
+        "status": "Free",
+        "political_rights": 36,
+        "civil_liberties": 53,
+        "reportUrl": "https://freedomhouse.org/country/kiribati/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 42,
+      "differences": {}
+    },
+    {
+      "code": "KM",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 128,
+        "score": 41
+      },
+      "primary": {
+        "country": "Comoros",
+        "territory": false,
+        "score": 41,
+        "status": "Partly Free",
+        "political_rights": 16,
+        "civil_liberties": 25,
+        "reportUrl": "https://freedomhouse.org/country/comoros/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 128,
+      "differences": {}
+    },
+    {
+      "code": "KN",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 42,
+        "score": 89
+      },
+      "primary": {
+        "country": "St. Kitts and Nevis",
+        "territory": false,
+        "score": 89,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 54,
+        "reportUrl": "https://freedomhouse.org/country/st-kitts-and-nevis/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 42,
+      "differences": {}
+    },
+    {
+      "code": "KP",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 191,
+        "score": 3
+      },
+      "primary": {
+        "country": "North Korea",
+        "territory": false,
+        "score": 3,
+        "status": "Not Free",
+        "political_rights": 0,
+        "civil_liberties": 3,
+        "reportUrl": "https://freedomhouse.org/country/north-korea/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 191,
+      "differences": {}
+    },
+    {
+      "code": "KR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 57,
+        "score": 83
+      },
+      "primary": {
+        "country": "South Korea",
+        "territory": false,
+        "score": 83,
+        "status": "Free",
+        "political_rights": 33,
+        "civil_liberties": 50,
+        "reportUrl": "https://freedomhouse.org/country/south-korea/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 57,
+      "differences": {}
+    },
+    {
+      "code": "KW",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 142,
+        "score": 30
+      },
+      "primary": {
+        "country": "Kuwait",
+        "territory": false,
+        "score": 30,
+        "status": "Not Free",
+        "political_rights": 7,
+        "civil_liberties": 23,
+        "reportUrl": "https://freedomhouse.org/country/kuwait/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 142,
+      "differences": {}
+    },
+    {
+      "code": "KZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 154,
+        "score": 23
+      },
+      "primary": {
+        "country": "Kazakhstan",
+        "territory": false,
+        "score": 23,
+        "status": "Not Free",
+        "political_rights": 5,
+        "civil_liberties": 18,
+        "reportUrl": "https://freedomhouse.org/country/kazakhstan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 154,
+      "differences": {}
+    },
+    {
+      "code": "LA",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 170,
+        "score": 13
+      },
+      "primary": {
+        "country": "Laos",
+        "territory": false,
+        "score": 13,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 11,
+        "reportUrl": "https://freedomhouse.org/country/laos/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 170,
+      "differences": {}
+    },
+    {
+      "code": "LB",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 128,
+        "score": 41
+      },
+      "primary": {
+        "country": "Lebanon",
+        "territory": false,
+        "score": 41,
+        "status": "Partly Free",
+        "political_rights": 15,
+        "civil_liberties": 26,
+        "reportUrl": "https://freedomhouse.org/country/lebanon/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 128,
+      "differences": {}
+    },
+    {
+      "code": "LC",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 34,
+        "score": 91
+      },
+      "primary": {
+        "country": "St. Lucia",
+        "territory": false,
+        "score": 91,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 53,
+        "reportUrl": "https://freedomhouse.org/country/st-lucia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 34,
+      "differences": {}
+    },
+    {
+      "code": "LI",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 37,
+        "score": 90
+      },
+      "primary": {
+        "country": "Liechtenstein",
+        "territory": false,
+        "score": 90,
+        "status": "Free",
+        "political_rights": 33,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/liechtenstein/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 37,
+      "differences": {}
+    },
+    {
+      "code": "LK",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 97,
+        "score": 63
+      },
+      "primary": {
+        "country": "Sri Lanka",
+        "territory": false,
+        "score": 63,
+        "status": "Partly Free",
+        "political_rights": 29,
+        "civil_liberties": 34,
+        "reportUrl": "https://freedomhouse.org/country/sri-lanka/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 97,
+      "differences": {}
+    },
+    {
+      "code": "LR",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 94,
+        "score": 65
+      },
+      "primary": {
+        "country": "Liberia",
+        "territory": false,
+        "score": 65,
+        "status": "Partly Free",
+        "political_rights": 31,
+        "civil_liberties": 34,
+        "reportUrl": "https://freedomhouse.org/country/liberia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 94,
+      "differences": {}
+    },
+    {
+      "code": "LS",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 90,
+        "score": 67
+      },
+      "primary": {
+        "country": "Lesotho",
+        "territory": false,
+        "score": 67,
+        "status": "Free",
+        "political_rights": 31,
+        "civil_liberties": 36,
+        "reportUrl": "https://freedomhouse.org/country/lesotho/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 90,
+      "differences": {}
+    },
+    {
+      "code": "LT",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 37,
+        "score": 90
+      },
+      "primary": {
+        "country": "Lithuania",
+        "territory": false,
+        "score": 90,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 52,
+        "reportUrl": "https://freedomhouse.org/country/lithuania/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 37,
+      "differences": {}
+    },
+    {
+      "code": "LU",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 6,
+        "score": 97
+      },
+      "primary": {
+        "country": "Luxembourg",
+        "territory": false,
+        "score": 97,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 59,
+        "reportUrl": "https://freedomhouse.org/country/luxembourg/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 6,
+      "differences": {}
+    },
+    {
+      "code": "LV",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 42,
+        "score": 89
+      },
+      "primary": {
+        "country": "Latvia",
+        "territory": false,
+        "score": 89,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 52,
+        "reportUrl": "https://freedomhouse.org/country/latvia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 42,
+      "differences": {}
+    },
+    {
+      "code": "LY",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 176,
+        "score": 10
+      },
+      "primary": {
+        "country": "Libya",
+        "territory": false,
+        "score": 10,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 8,
+        "reportUrl": "https://freedomhouse.org/country/libya/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 176,
+      "differences": {}
+    },
+    {
+      "code": "MA",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 132,
+        "score": 37
+      },
+      "primary": {
+        "country": "Morocco",
+        "territory": false,
+        "score": 37,
+        "status": "Partly Free",
+        "political_rights": 13,
+        "civil_liberties": 24,
+        "reportUrl": "https://freedomhouse.org/country/morocco/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 132,
+      "differences": {}
+    },
+    {
+      "code": "MC",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 61,
+        "score": 82
+      },
+      "primary": {
+        "country": "Monaco",
+        "territory": false,
+        "score": 82,
+        "status": "Free",
+        "political_rights": 25,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/monaco/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 61,
+      "differences": {}
+    },
+    {
+      "code": "MD",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 104,
+        "score": 60
+      },
+      "primary": {
+        "country": "Moldova",
+        "territory": false,
+        "score": 60,
+        "status": "Partly Free",
+        "political_rights": 25,
+        "civil_liberties": 35,
+        "reportUrl": "https://freedomhouse.org/country/moldova/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 104,
+      "differences": {}
+    },
+    {
+      "code": "ME",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 88,
+        "score": 68
+      },
+      "primary": {
+        "country": "Montenegro",
+        "territory": false,
+        "score": 68,
+        "status": "Partly Free",
+        "political_rights": 26,
+        "civil_liberties": 42,
+        "reportUrl": "https://freedomhouse.org/country/montenegro/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 88,
+      "differences": {}
+    },
+    {
+      "code": "MG",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 117,
+        "score": 50
+      },
+      "primary": {
+        "country": "Madagascar",
+        "territory": false,
+        "score": 50,
+        "status": "Partly Free",
+        "political_rights": 16,
+        "civil_liberties": 34,
+        "reportUrl": "https://freedomhouse.org/country/madagascar/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 117,
+      "differences": {}
+    },
+    {
+      "code": "MH",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 25,
+        "score": 93
+      },
+      "primary": {
+        "country": "Marshall Islands",
+        "territory": false,
+        "score": 93,
+        "status": "Free",
+        "political_rights": 38,
+        "civil_liberties": 55,
+        "reportUrl": "https://freedomhouse.org/country/marshall-islands/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 25,
+      "differences": {}
+    },
+    {
+      "code": "MK",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 90,
+        "score": 67
+      },
+      "primary": {
+        "country": "North Macedonia",
+        "territory": false,
+        "score": 67,
+        "status": "Partly Free",
+        "political_rights": 28,
+        "civil_liberties": 39,
+        "reportUrl": "https://freedomhouse.org/country/north-macedonia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 90,
+      "differences": {}
+    },
+    {
+      "code": "ML",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 157,
+        "score": 21
+      },
+      "primary": {
+        "country": "Mali",
+        "territory": false,
+        "score": 21,
+        "status": "Not Free",
+        "political_rights": 3,
+        "civil_liberties": 18,
+        "reportUrl": "https://freedomhouse.org/country/mali/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 157,
+      "differences": {}
+    },
+    {
+      "code": "MM",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 190,
+        "score": 4
+      },
+      "primary": {
+        "country": "Myanmar",
+        "territory": false,
+        "score": 4,
+        "status": "Not Free",
+        "political_rights": -2,
+        "civil_liberties": 6,
+        "reportUrl": "https://freedomhouse.org/country/myanmar/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 190,
+      "differences": {}
+    },
+    {
+      "code": "MN",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 54,
+        "score": 84
+      },
+      "primary": {
+        "country": "Mongolia",
+        "territory": false,
+        "score": 84,
+        "status": "Free",
+        "political_rights": 36,
+        "civil_liberties": 48,
+        "reportUrl": "https://freedomhouse.org/country/mongolia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 54,
+      "differences": {}
+    },
+    {
+      "code": "MR",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 131,
+        "score": 38
+      },
+      "primary": {
+        "country": "Mauritania",
+        "territory": false,
+        "score": 38,
+        "status": "Partly Free",
+        "political_rights": 15,
+        "civil_liberties": 23,
+        "reportUrl": "https://freedomhouse.org/country/mauritania/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 131,
+      "differences": {}
+    },
+    {
+      "code": "MT",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 47,
+        "score": 88
+      },
+      "primary": {
+        "country": "Malta",
+        "territory": false,
+        "score": 88,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 53,
+        "reportUrl": "https://freedomhouse.org/country/malta/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 47,
+      "differences": {}
+    },
+    {
+      "code": "MU",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 49,
+        "score": 87
+      },
+      "primary": {
+        "country": "Mauritius",
+        "territory": false,
+        "score": 87,
+        "status": "Free",
+        "political_rights": 36,
+        "civil_liberties": 51,
+        "reportUrl": "https://freedomhouse.org/country/mauritius/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 49,
+      "differences": {}
+    },
+    {
+      "code": "MV",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 128,
+        "score": 41
+      },
+      "primary": {
+        "country": "Maldives",
+        "territory": false,
+        "score": 41,
+        "status": "Partly Free",
+        "political_rights": 19,
+        "civil_liberties": 22,
+        "reportUrl": "https://freedomhouse.org/country/maldives/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 128,
+      "differences": {}
+    },
+    {
+      "code": "MW",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 88,
+        "score": 68
+      },
+      "primary": {
+        "country": "Malawi",
+        "territory": false,
+        "score": 68,
+        "status": "Free",
+        "political_rights": 30,
+        "civil_liberties": 38,
+        "reportUrl": "https://freedomhouse.org/country/malawi/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 88,
+      "differences": {}
+    },
+    {
+      "code": "MX",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 106,
+        "score": 58
+      },
+      "primary": {
+        "country": "Mexico",
+        "territory": false,
+        "score": 58,
+        "status": "Partly Free",
+        "political_rights": 26,
+        "civil_liberties": 32,
+        "reportUrl": "https://freedomhouse.org/country/mexico/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 106,
+      "differences": {}
+    },
+    {
+      "code": "MY",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 111,
+        "score": 53
+      },
+      "primary": {
+        "country": "Malaysia",
+        "territory": false,
+        "score": 53,
+        "status": "Partly Free",
+        "political_rights": 22,
+        "civil_liberties": 31,
+        "reportUrl": "https://freedomhouse.org/country/malaysia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 111,
+      "differences": {}
+    },
+    {
+      "code": "MZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 125,
+        "score": 42
+      },
+      "primary": {
+        "country": "Mozambique",
+        "territory": false,
+        "score": 42,
+        "status": "Partly Free",
+        "political_rights": 13,
+        "civil_liberties": 29,
+        "reportUrl": "https://freedomhouse.org/country/mozambique/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 125,
+      "differences": {}
+    },
+    {
+      "code": "NA",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 78,
+        "score": 73
+      },
+      "primary": {
+        "country": "Namibia",
+        "territory": false,
+        "score": 73,
+        "status": "Free",
+        "political_rights": 28,
+        "civil_liberties": 45,
+        "reportUrl": "https://freedomhouse.org/country/namibia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 78,
+      "differences": {}
+    },
+    {
+      "code": "NE",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 146,
+        "score": 27
+      },
+      "primary": {
+        "country": "Niger",
+        "territory": false,
+        "score": 27,
+        "status": "Not Free",
+        "political_rights": 3,
+        "civil_liberties": 24,
+        "reportUrl": "https://freedomhouse.org/country/niger/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 146,
+      "differences": {}
+    },
+    {
+      "code": "NG",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 123,
+        "score": 44
+      },
+      "primary": {
+        "country": "Nigeria",
+        "territory": false,
+        "score": 44,
+        "status": "Partly Free",
+        "political_rights": 20,
+        "civil_liberties": 24,
+        "reportUrl": "https://freedomhouse.org/country/nigeria/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 123,
+      "differences": {}
+    },
+    {
+      "code": "NI",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 169,
+        "score": 14
+      },
+      "primary": {
+        "country": "Nicaragua",
+        "territory": false,
+        "score": 14,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 12,
+        "reportUrl": "https://freedomhouse.org/country/nicaragua/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 169,
+      "differences": {}
+    },
+    {
+      "code": "NL",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 6,
+        "score": 97
+      },
+      "primary": {
+        "country": "Netherlands",
+        "territory": false,
+        "score": 97,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 58,
+        "reportUrl": "https://freedomhouse.org/country/netherlands/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 6,
+      "differences": {}
+    },
+    {
+      "code": "NO",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 2,
+        "score": 99
+      },
+      "primary": {
+        "country": "Norway",
+        "territory": false,
+        "score": 99,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 60,
+        "reportUrl": "https://freedomhouse.org/country/norway/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 2,
+      "differences": {}
+    },
+    {
+      "code": "NP",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 105,
+        "score": 59
+      },
+      "primary": {
+        "country": "Nepal",
+        "territory": false,
+        "score": 59,
+        "status": "Partly Free",
+        "political_rights": 27,
+        "civil_liberties": 32,
+        "reportUrl": "https://freedomhouse.org/country/nepal/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 105,
+      "differences": {}
+    },
+    {
+      "code": "NR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 73,
+        "score": 75
+      },
+      "primary": {
+        "country": "Nauru",
+        "territory": false,
+        "score": 75,
+        "status": "Free",
+        "political_rights": 32,
+        "civil_liberties": 43,
+        "reportUrl": "https://freedomhouse.org/country/nauru/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 73,
+      "differences": {}
+    },
+    {
+      "code": "NZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 2,
+        "score": 99
+      },
+      "primary": {
+        "country": "New Zealand",
+        "territory": false,
+        "score": 99,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 59,
+        "reportUrl": "https://freedomhouse.org/country/new-zealand/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 2,
+      "differences": {}
+    },
+    {
+      "code": "OM",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 152,
+        "score": 24
+      },
+      "primary": {
+        "country": "Oman",
+        "territory": false,
+        "score": 24,
+        "status": "Not Free",
+        "political_rights": 6,
+        "civil_liberties": 18,
+        "reportUrl": "https://freedomhouse.org/country/oman/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 152,
+      "differences": {}
+    },
+    {
+      "code": "PA",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 61,
+        "score": 82
+      },
+      "primary": {
+        "country": "Panama",
+        "territory": false,
+        "score": 82,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 47,
+        "reportUrl": "https://freedomhouse.org/country/panama/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 61,
+      "differences": {}
+    },
+    {
+      "code": "PE",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 93,
+        "score": 66
+      },
+      "primary": {
+        "country": "Peru",
+        "territory": false,
+        "score": 66,
+        "status": "Partly Free",
+        "political_rights": 27,
+        "civil_liberties": 39,
+        "reportUrl": "https://freedomhouse.org/country/peru/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 93,
+      "differences": {}
+    },
+    {
+      "code": "PG",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 100,
+        "score": 61
+      },
+      "primary": {
+        "country": "Papua New Guinea",
+        "territory": false,
+        "score": 61,
+        "status": "Partly Free",
+        "political_rights": 22,
+        "civil_liberties": 39,
+        "reportUrl": "https://freedomhouse.org/country/papua-new-guinea/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 100,
+      "differences": {}
+    },
+    {
+      "code": "PH",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 106,
+        "score": 58
+      },
+      "primary": {
+        "country": "Philippines",
+        "territory": false,
+        "score": 58,
+        "status": "Partly Free",
+        "political_rights": 25,
+        "civil_liberties": 33,
+        "reportUrl": "https://freedomhouse.org/country/philippines/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 106,
+      "differences": {}
+    },
+    {
+      "code": "PK",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 138,
+        "score": 32
+      },
+      "primary": {
+        "country": "Pakistan",
+        "territory": false,
+        "score": 32,
+        "status": "Partly Free",
+        "political_rights": 12,
+        "civil_liberties": 20,
+        "reportUrl": "https://freedomhouse.org/country/pakistan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 138,
+      "differences": {}
+    },
+    {
+      "code": "PL",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 61,
+        "score": 82
+      },
+      "primary": {
+        "country": "Poland",
+        "territory": false,
+        "score": 82,
+        "status": "Free",
+        "political_rights": 34,
+        "civil_liberties": 48,
+        "reportUrl": "https://freedomhouse.org/country/poland/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 61,
+      "differences": {}
+    },
+    {
+      "code": "PT",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 13,
+        "score": 96
+      },
+      "primary": {
+        "country": "Portugal",
+        "territory": false,
+        "score": 96,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/portugal/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 13,
+      "differences": {}
+    },
+    {
+      "code": "PW",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 29,
+        "score": 92
+      },
+      "primary": {
+        "country": "Palau",
+        "territory": false,
+        "score": 92,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 55,
+        "reportUrl": "https://freedomhouse.org/country/palau/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 29,
+      "differences": {}
+    },
+    {
+      "code": "PY",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 97,
+        "score": 63
+      },
+      "primary": {
+        "country": "Paraguay",
+        "territory": false,
+        "score": 63,
+        "status": "Partly Free",
+        "political_rights": 26,
+        "civil_liberties": 37,
+        "reportUrl": "https://freedomhouse.org/country/paraguay/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 97,
+      "differences": {}
+    },
+    {
+      "code": "QA",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 148,
+        "score": 25
+      },
+      "primary": {
+        "country": "Qatar",
+        "territory": false,
+        "score": 25,
+        "status": "Not Free",
+        "political_rights": 7,
+        "civil_liberties": 18,
+        "reportUrl": "https://freedomhouse.org/country/qatar/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 148,
+      "differences": {}
+    },
+    {
+      "code": "RO",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 57,
+        "score": 83
+      },
+      "primary": {
+        "country": "Romania",
+        "territory": false,
+        "score": 83,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 48,
+        "reportUrl": "https://freedomhouse.org/country/romania/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 57,
+      "differences": {}
+    },
+    {
+      "code": "RS",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 111,
+        "score": 53
+      },
+      "primary": {
+        "country": "Serbia",
+        "territory": false,
+        "score": 53,
+        "status": "Partly Free",
+        "political_rights": 18,
+        "civil_liberties": 35,
+        "reportUrl": "https://freedomhouse.org/country/serbia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 111,
+      "differences": {}
+    },
+    {
+      "code": "RU",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 173,
+        "score": 12
+      },
+      "primary": {
+        "country": "Russia",
+        "territory": false,
+        "score": 12,
+        "status": "Not Free",
+        "political_rights": 4,
+        "civil_liberties": 8,
+        "reportUrl": "https://freedomhouse.org/country/russia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 173,
+      "differences": {}
+    },
+    {
+      "code": "RW",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 157,
+        "score": 21
+      },
+      "primary": {
+        "country": "Rwanda",
+        "territory": false,
+        "score": 21,
+        "status": "Not Free",
+        "political_rights": 7,
+        "civil_liberties": 14,
+        "reportUrl": "https://freedomhouse.org/country/rwanda/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 157,
+      "differences": {}
+    },
+    {
+      "code": "SA",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 180,
+        "score": 9
+      },
+      "primary": {
+        "country": "Saudi Arabia",
+        "territory": false,
+        "score": 9,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 8,
+        "reportUrl": "https://freedomhouse.org/country/saudi-arabia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 180,
+      "differences": {}
+    },
+    {
+      "code": "SB",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 75,
+        "score": 74
+      },
+      "primary": {
+        "country": "Solomon Islands",
+        "territory": false,
+        "score": 74,
+        "status": "Free",
+        "political_rights": 27,
+        "civil_liberties": 47,
+        "reportUrl": "https://freedomhouse.org/country/solomon-islands/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 75,
+      "differences": {}
+    },
+    {
+      "code": "SC",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 66,
+        "score": 81
+      },
+      "primary": {
+        "country": "Seychelles",
+        "territory": false,
+        "score": 81,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 46,
+        "reportUrl": "https://freedomhouse.org/country/seychelles/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 66,
+      "differences": {}
+    },
+    {
+      "code": "SD",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 193,
+        "score": 1
+      },
+      "primary": {
+        "country": "Sudan",
+        "territory": false,
+        "score": 1,
+        "status": "Not Free",
+        "political_rights": -4,
+        "civil_liberties": 5,
+        "reportUrl": "https://freedomhouse.org/country/sudan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 193,
+      "differences": {}
+    },
+    {
+      "code": "SE",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 2,
+        "score": 99
+      },
+      "primary": {
+        "country": "Sweden",
+        "territory": false,
+        "score": 99,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 59,
+        "reportUrl": "https://freedomhouse.org/country/sweden/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 2,
+      "differences": {}
+    },
+    {
+      "code": "SG",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 119,
+        "score": 48
+      },
+      "primary": {
+        "country": "Singapore",
+        "territory": false,
+        "score": 48,
+        "status": "Partly Free",
+        "political_rights": 19,
+        "civil_liberties": 29,
+        "reportUrl": "https://freedomhouse.org/country/singapore/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 119,
+      "differences": {}
+    },
+    {
+      "code": "SI",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 6,
+        "score": 97
+      },
+      "primary": {
+        "country": "Slovenia",
+        "territory": false,
+        "score": 97,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 58,
+        "reportUrl": "https://freedomhouse.org/country/slovenia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 6,
+      "differences": {}
+    },
+    {
+      "code": "SK",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 47,
+        "score": 88
+      },
+      "primary": {
+        "country": "Slovakia",
+        "territory": false,
+        "score": 88,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 53,
+        "reportUrl": "https://freedomhouse.org/country/slovakia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 47,
+      "differences": {}
+    },
+    {
+      "code": "SL",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 100,
+        "score": 61
+      },
+      "primary": {
+        "country": "Sierra Leone",
+        "territory": false,
+        "score": 61,
+        "status": "Partly Free",
+        "political_rights": 23,
+        "civil_liberties": 38,
+        "reportUrl": "https://freedomhouse.org/country/sierra-leone/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 100,
+      "differences": {}
+    },
+    {
+      "code": "SM",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 6,
+        "score": 97
+      },
+      "primary": {
+        "country": "San Marino",
+        "territory": false,
+        "score": 97,
+        "status": "Free",
+        "political_rights": 39,
+        "civil_liberties": 58,
+        "reportUrl": "https://freedomhouse.org/country/san-marino/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 6,
+      "differences": {}
+    },
+    {
+      "code": "SN",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 83,
+        "score": 70
+      },
+      "primary": {
+        "country": "Senegal",
+        "territory": false,
+        "score": 70,
+        "status": "Free",
+        "political_rights": 30,
+        "civil_liberties": 40,
+        "reportUrl": "https://freedomhouse.org/country/senegal/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 83,
+      "differences": {}
+    },
+    {
+      "code": "SO",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 183,
+        "score": 8
+      },
+      "primary": {
+        "country": "Somalia",
+        "territory": false,
+        "score": 8,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 6,
+        "reportUrl": "https://freedomhouse.org/country/somalia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 183,
+      "differences": {}
+    },
+    {
+      "code": "SR",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 66,
+        "score": 81
+      },
+      "primary": {
+        "country": "Suriname",
+        "territory": false,
+        "score": 81,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 46,
+        "reportUrl": "https://freedomhouse.org/country/suriname/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 66,
+      "differences": {}
+    },
+    {
+      "code": "SS",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 195,
+        "score": 0
+      },
+      "primary": {
+        "country": "South Sudan",
+        "territory": false,
+        "score": 0,
+        "status": "Not Free",
+        "political_rights": -4,
+        "civil_liberties": 4,
+        "reportUrl": "https://freedomhouse.org/country/south-sudan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 195,
+      "differences": {}
+    },
+    {
+      "code": "ST",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 54,
+        "score": 84
+      },
+      "primary": {
+        "country": "São Tomé and Príncipe",
+        "territory": false,
+        "score": 84,
+        "status": "Free",
+        "political_rights": 35,
+        "civil_liberties": 49,
+        "reportUrl": "https://freedomhouse.org/country/sao-tome-and-principe/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 54,
+      "differences": {}
+    },
+    {
+      "code": "SV",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 125,
+        "score": 42
+      },
+      "primary": {
+        "country": "El Salvador",
+        "territory": false,
+        "score": 42,
+        "status": "Partly Free",
+        "political_rights": 15,
+        "civil_liberties": 27,
+        "reportUrl": "https://freedomhouse.org/country/el-salvador/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 125,
+      "differences": {}
+    },
+    {
+      "code": "SY",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 176,
+        "score": 10
+      },
+      "primary": {
+        "country": "Syria",
+        "territory": false,
+        "score": 10,
+        "status": "Not Free",
+        "political_rights": -2,
+        "civil_liberties": 12,
+        "reportUrl": "https://freedomhouse.org/country/syria/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 176,
+      "differences": {}
+    },
+    {
+      "code": "SZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 165,
+        "score": 17
+      },
+      "primary": {
+        "country": "Eswatini",
+        "territory": false,
+        "score": 17,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 16,
+        "reportUrl": "https://freedomhouse.org/country/eswatini/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 165,
+      "differences": {}
+    },
+    {
+      "code": "TD",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 167,
+        "score": 15
+      },
+      "primary": {
+        "country": "Chad",
+        "territory": false,
+        "score": 15,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 14,
+        "reportUrl": "https://freedomhouse.org/country/chad/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 167,
+      "differences": {}
+    },
+    {
+      "code": "TG",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 132,
+        "score": 37
+      },
+      "primary": {
+        "country": "Togo",
+        "territory": false,
+        "score": 37,
+        "status": "Partly Free",
+        "political_rights": 11,
+        "civil_liberties": 26,
+        "reportUrl": "https://freedomhouse.org/country/togo/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 132,
+      "differences": {}
+    },
+    {
+      "code": "TH",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 135,
+        "score": 33
+      },
+      "primary": {
+        "country": "Thailand",
+        "territory": false,
+        "score": 33,
+        "status": "Not Free",
+        "political_rights": 11,
+        "civil_liberties": 22,
+        "reportUrl": "https://freedomhouse.org/country/thailand/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 135,
+      "differences": {}
+    },
+    {
+      "code": "TJ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 187,
+        "score": 5
+      },
+      "primary": {
+        "country": "Tajikistan",
+        "territory": false,
+        "score": 5,
+        "status": "Not Free",
+        "political_rights": 0,
+        "civil_liberties": 5,
+        "reportUrl": "https://freedomhouse.org/country/tajikistan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 187,
+      "differences": {}
+    },
+    {
+      "code": "TL",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 78,
+        "score": 73
+      },
+      "primary": {
+        "country": "Timor-Leste",
+        "territory": false,
+        "score": 73,
+        "status": "Free",
+        "political_rights": 33,
+        "civil_liberties": 40,
+        "reportUrl": "https://freedomhouse.org/country/timor-leste/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 78,
+      "differences": {}
+    },
+    {
+      "code": "TM",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 193,
+        "score": 1
+      },
+      "primary": {
+        "country": "Turkmenistan",
+        "territory": false,
+        "score": 1,
+        "status": "Not Free",
+        "political_rights": 0,
+        "civil_liberties": 1,
+        "reportUrl": "https://freedomhouse.org/country/turkmenistan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 193,
+      "differences": {}
+    },
+    {
+      "code": "TN",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 125,
+        "score": 42
+      },
+      "primary": {
+        "country": "Tunisia",
+        "territory": false,
+        "score": 42,
+        "status": "Partly Free",
+        "political_rights": 11,
+        "civil_liberties": 31,
+        "reportUrl": "https://freedomhouse.org/country/tunisia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 125,
+      "differences": {}
+    },
+    {
+      "code": "TO",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 72,
+        "score": 79
+      },
+      "primary": {
+        "country": "Tonga",
+        "territory": false,
+        "score": 79,
+        "status": "Free",
+        "political_rights": 29,
+        "civil_liberties": 50,
+        "reportUrl": "https://freedomhouse.org/country/tonga/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 72,
+      "differences": {}
+    },
+    {
+      "code": "TR",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 138,
+        "score": 32
+      },
+      "primary": {
+        "country": "Turkey",
+        "territory": false,
+        "score": 32,
+        "status": "Not Free",
+        "political_rights": 16,
+        "civil_liberties": 16,
+        "reportUrl": "https://freedomhouse.org/country/turkey/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 138,
+      "differences": {}
+    },
+    {
+      "code": "TT",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 57,
+        "score": 83
+      },
+      "primary": {
+        "country": "Trinidad and Tobago",
+        "territory": false,
+        "score": 83,
+        "status": "Free",
+        "political_rights": 34,
+        "civil_liberties": 49,
+        "reportUrl": "https://freedomhouse.org/country/trinidad-and-tobago/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 57,
+      "differences": {}
+    },
+    {
+      "code": "TV",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 25,
+        "score": 93
+      },
+      "primary": {
+        "country": "Tuvalu",
+        "territory": false,
+        "score": 93,
+        "status": "Free",
+        "political_rights": 37,
+        "civil_liberties": 56,
+        "reportUrl": "https://freedomhouse.org/country/tuvalu/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 25,
+      "differences": {}
+    },
+    {
+      "code": "TZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 143,
+        "score": 28
+      },
+      "primary": {
+        "country": "Tanzania",
+        "territory": false,
+        "score": 28,
+        "status": "Not Free",
+        "political_rights": 6,
+        "civil_liberties": 22,
+        "reportUrl": "https://freedomhouse.org/country/tanzania/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 143,
+      "differences": {}
+    },
+    {
+      "code": "UA",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 114,
+        "score": 51
+      },
+      "primary": {
+        "country": "Ukraine",
+        "territory": false,
+        "score": 51,
+        "status": "Partly Free",
+        "political_rights": 22,
+        "civil_liberties": 29,
+        "reportUrl": "https://freedomhouse.org/country/ukraine/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 114,
+      "differences": {}
+    },
+    {
+      "code": "UG",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 135,
+        "score": 33
+      },
+      "primary": {
+        "country": "Uganda",
+        "territory": false,
+        "score": 33,
+        "status": "Not Free",
+        "political_rights": 10,
+        "civil_liberties": 23,
+        "reportUrl": "https://freedomhouse.org/country/uganda/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 135,
+      "differences": {}
+    },
+    {
+      "code": "US",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 66,
+        "score": 81
+      },
+      "primary": {
+        "country": "United States",
+        "territory": false,
+        "score": 81,
+        "status": "Free",
+        "political_rights": 32,
+        "civil_liberties": 49,
+        "reportUrl": "https://freedomhouse.org/country/united-states/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 66,
+      "differences": {}
+    },
+    {
+      "code": "UY",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 6,
+        "score": 97
+      },
+      "primary": {
+        "country": "Uruguay",
+        "territory": false,
+        "score": 97,
+        "status": "Free",
+        "political_rights": 40,
+        "civil_liberties": 57,
+        "reportUrl": "https://freedomhouse.org/country/uruguay/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 6,
+      "differences": {}
+    },
+    {
+      "code": "UZ",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 173,
+        "score": 12
+      },
+      "primary": {
+        "country": "Uzbekistan",
+        "territory": false,
+        "score": 12,
+        "status": "Not Free",
+        "political_rights": 2,
+        "civil_liberties": 10,
+        "reportUrl": "https://freedomhouse.org/country/uzbekistan/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 173,
+      "differences": {}
+    },
+    {
+      "code": "VC",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 37,
+        "score": 90
+      },
+      "primary": {
+        "country": "St. Vincent and the Grenadines",
+        "territory": false,
+        "score": 90,
+        "status": "Free",
+        "political_rights": 36,
+        "civil_liberties": 54,
+        "reportUrl": "https://freedomhouse.org/country/st-vincent-and-grenadines/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 37,
+      "differences": {}
+    },
+    {
+      "code": "VE",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 170,
+        "score": 13
+      },
+      "primary": {
+        "country": "Venezuela",
+        "territory": false,
+        "score": 13,
+        "status": "Not Free",
+        "political_rights": 0,
+        "civil_liberties": 13,
+        "reportUrl": "https://freedomhouse.org/country/venezuela/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 170,
+      "differences": {}
+    },
+    {
+      "code": "VN",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 159,
+        "score": 20
+      },
+      "primary": {
+        "country": "Vietnam",
+        "territory": false,
+        "score": 20,
+        "status": "Not Free",
+        "political_rights": 4,
+        "civil_liberties": 16,
+        "reportUrl": "https://freedomhouse.org/country/vietnam/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 159,
+      "differences": {}
+    },
+    {
+      "code": "VU",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 61,
+        "score": 82
+      },
+      "primary": {
+        "country": "Vanuatu",
+        "territory": false,
+        "score": 82,
+        "status": "Free",
+        "political_rights": 32,
+        "civil_liberties": 50,
+        "reportUrl": "https://freedomhouse.org/country/vanuatu/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 61,
+      "differences": {}
+    },
+    {
+      "code": "WS",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 54,
+        "score": 84
+      },
+      "primary": {
+        "country": "Samoa",
+        "territory": false,
+        "score": 84,
+        "status": "Free",
+        "political_rights": 32,
+        "civil_liberties": 52,
+        "reportUrl": "https://freedomhouse.org/country/samoa/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 54,
+      "differences": {}
+    },
+    {
+      "code": "YE",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 176,
+        "score": 10
+      },
+      "primary": {
+        "country": "Yemen",
+        "territory": false,
+        "score": 10,
+        "status": "Not Free",
+        "political_rights": 1,
+        "civil_liberties": 9,
+        "reportUrl": "https://freedomhouse.org/country/yemen/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 176,
+      "differences": {}
+    },
+    {
+      "code": "ZA",
+      "claim": {
+        "year": 2026,
+        "rating": "Free",
+        "rank": 66,
+        "score": 81
+      },
+      "primary": {
+        "country": "South Africa",
+        "territory": false,
+        "score": 81,
+        "status": "Free",
+        "political_rights": 34,
+        "civil_liberties": 47,
+        "reportUrl": "https://freedomhouse.org/country/south-africa/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 66,
+      "differences": {}
+    },
+    {
+      "code": "ZM",
+      "claim": {
+        "year": 2026,
+        "rating": "Partly Free",
+        "rank": 111,
+        "score": 53
+      },
+      "primary": {
+        "country": "Zambia",
+        "territory": false,
+        "score": 53,
+        "status": "Partly Free",
+        "political_rights": 22,
+        "civil_liberties": 31,
+        "reportUrl": "https://freedomhouse.org/country/zambia/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 111,
+      "differences": {}
+    },
+    {
+      "code": "ZW",
+      "claim": {
+        "year": 2026,
+        "rating": "Not Free",
+        "rank": 148,
+        "score": 25
+      },
+      "primary": {
+        "country": "Zimbabwe",
+        "territory": false,
+        "score": 25,
+        "status": "Not Free",
+        "political_rights": 8,
+        "civil_liberties": 17,
+        "reportUrl": "https://freedomhouse.org/country/zimbabwe/freedom-world/2026"
+      },
+      "derivedCountryCompetitionRank": 148,
+      "differences": {}
+    }
+  ],
+  "limits": [
+    "Source links explicitly identify Freedom in the World 2026; assessment chiefly calendar 2025.",
+    "Freedom House publishes scores and status, not these rank numbers. All app ranks match a competition ranking over 195 source COUNTRIES, including Kosovo and Taiwan, excluding territories.",
+    "No rankChange is present. This removes previously unsupported zero-change claims.",
+    "F46 score/status errors concerned the replaced 2024 dataset. Mark those data errors superseded in this snapshot; do not rewrite their historical evidence.",
+    "Numerical agreement does not validate all narrative statements in country reports or all app country geography."
+  ]
+}

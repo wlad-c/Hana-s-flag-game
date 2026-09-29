@@ -450,9 +450,11 @@ export function NationalFlagGrid({
                       </span>
                       <span className="flag-grid__name">
                         <AutoFitName className="flag-grid__name-text" text={paper.name} />
-                        <span className="flag-grid__flag-sub">
-                          Founded {paper.founded}
-                        </span>
+                        {paper.founded != null && (
+                          <span className="flag-grid__flag-sub">
+                            Founded {paper.founded}
+                          </span>
+                        )}
                       </span>
                     </button>
                   </li>

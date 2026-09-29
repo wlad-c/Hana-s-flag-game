@@ -87,10 +87,12 @@ export function NewspaperDetails({
             </dd>
           </div>
         )}
-        <div className="entity-summary__row">
-          <dt className="entity-summary__label">Founded</dt>
-          <dd className="entity-summary__value">{newspaper.founded}</dd>
-        </div>
+        {newspaper.founded != null && (
+          <div className="entity-summary__row">
+            <dt className="entity-summary__label">Founded</dt>
+            <dd className="entity-summary__value">{newspaper.founded}</dd>
+          </div>
+        )}
         <div className="entity-summary__row">
           <dt className="entity-summary__label">Format</dt>
           <dd className="entity-summary__value">{newspaper.format}</dd>
@@ -117,15 +119,17 @@ export function NewspaperDetails({
           <dt className="entity-summary__label">Editorial Remit</dt>
           <dd className="entity-summary__value">{newspaper.editorialStance}</dd>
         </div>
-        <div className="entity-summary__row">
-          <dt className="entity-summary__label">Readership & Reach</dt>
-          <dd className="entity-summary__value">
-            {newspaper.readership.metric}
-            <span className="learn-fs__sub-desc" style={{ display: "block", fontSize: "0.85em", color: "var(--text-muted)" }}>
-              Source: {newspaper.readership.source}
-            </span>
-          </dd>
-        </div>
+        {newspaper.readership && (
+          <div className="entity-summary__row">
+            <dt className="entity-summary__label">Readership & Reach</dt>
+            <dd className="entity-summary__value">
+              {newspaper.readership.metric}
+              <span className="learn-fs__sub-desc" style={{ display: "block", fontSize: "0.85em", color: "var(--text-muted)" }}>
+                Source: {newspaper.readership.source}
+              </span>
+            </dd>
+          </div>
+        )}
         {newspaper.annualPublicFunding && (
           <div className="entity-summary__row">
             <dt className="entity-summary__label">Public Funding</dt>

@@ -17,6 +17,13 @@ import { useZoomPan } from "../hooks/useZoomPan";
 import { MapViewControl } from "../components/MapViewControl";
 import { DemocracyMapControl } from "../components/DemocracyMapControl";
 import { DemocracyMapLegend } from "../components/DemocracyMapLegend";
+import { PassportMapControl } from "../components/PassportMapControl";
+import { VisaAccessMapLegend } from "../components/VisaAccessMapLegend";
+import { DiasporaMapControl } from "../components/DiasporaMapControl";
+import { DiasporaMapLegend } from "../components/DiasporaMapLegend";
+import { MigrantOriginsMapControl } from "../components/MigrantOriginsMapControl";
+import { MigrantOriginsMapLegend } from "../components/MigrantOriginsMapLegend";
+import { MigrantOriginsPanelRows } from "../components/MigrantOriginsPanelRows";
 import { DemocracyIndexChart } from "../components/DemocracyIndexChart";
 import type { ChartAxisSelection } from "../lib/chartAxes";
 import {
@@ -48,6 +55,30 @@ import {
 } from "../lib/nationalSymbolImages";
 import { NATIONAL_FLAG_MEANINGS } from "../data/nationalFlags";
 import { PASSPORT_COLORS } from "../data/passportColors";
+import {
+  getVisaAccessColorOverlay,
+  isPassportCoversMode,
+  isVisaPassportMode,
+  visaAccessCategoryFor,
+  visaAccessCategoryLabel,
+  VISA_ACCESS_COLORS,
+  type PassportMapMode,
+} from "../lib/visaAccessColors";
+import {
+  diasporaScale,
+  diasporaValueFor,
+  formatDiasporaNumber,
+  getDiasporaColorOverlay,
+  type DiasporaMapMode,
+} from "../lib/diasporaColors";
+import {
+  formatMigrantStock,
+  getMigrantOriginsColorOverlay,
+  isMigrantOriginsMode,
+  migrantStockFor,
+  MIGRANT_ORIGINS_SOURCE,
+  type MigrantOriginsMapMode,
+} from "../lib/migrantOriginsColors";
 import { meaningLabel, symbolNoun } from "../lib/nationalFlags";
 import { withFootballCrestStats } from "../lib/footballCrestStats";
 import {
@@ -310,11 +341,18 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   const [hovered, setHovered] = useState<Selection | null>(null);
   const [selected, setSelected] = useState<Selection | null>(null);
   const [showFlagMap, setShowFlagMap] = useState(false);
-  // "Colour countries by passport" layer for the world map (🛂 toggle). Fills
-  // each country with its passport cover's predominant colour. Mutually
-  // exclusive with the flag overlay (owner request) — turning one on turns the
-  // other off — since both are ways of colouring what a country is.
-  const [showPassportColors, setShowPassportColors] = useState(false);
+  // Passport map layer (🛂 control): either passport-cover colours, or visa
+  // access for holders of a chosen country's passport. Mutually exclusive with
+  // the flag overlay and the democracy/index layer (owner request).
+  const [passportMapMode, setPassportMapMode] = useState<PassportMapMode>(null);
+  // Diaspora heatmap (🌐 control): colour destinations by how many people born
+  // in a chosen country live there. Mutually exclusive with flag / passport /
+  // migrant-origins / democracy layers.
+  const [diasporaMapMode, setDiasporaMapMode] = useState<DiasporaMapMode>(null);
+  // Migrant origins (↕ control): colour origins by how many people born there
+  // live in a chosen destination. Inverse of diaspora; same mutual-exclusion set.
+  const [migrantOriginsMapMode, setMigrantOriginsMapMode] =
+    useState<MigrantOriginsMapMode>(null);
   // City overlay (capitals only: national on the world map, national +
   // subdivision on the subdivision map). Like the flag overlay, it is OFF by
   // default and shared across the world + subdivision maps, so toggling it on
@@ -660,29 +698,53 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   const toggleFlagMap = useCallback(() => {
     setShowFlagMap((prev) => {
       const next = !prev;
-      // Flag overlay, passport-colour, and democracy layers are mutually exclusive.
+      // Flag overlay, passport, diaspora, migrant-origins, and democracy layers are mutually exclusive.
       if (next) {
-        setShowPassportColors(false);
+        setPassportMapMode(null);
+        setDiasporaMapMode(null);
+        setMigrantOriginsMapMode(null);
         setDemocracyMapMode(null);
       }
       return next;
     });
   }, []);
-  const togglePassportColors = useCallback(() => {
-    setShowPassportColors((prev) => {
-      const next = !prev;
-      if (next) {
+  const handlePassportMapModeChange = useCallback((next: PassportMapMode) => {
+    setPassportMapMode(next);
+    if (next !== null) {
+      setShowFlagMap(false);
+      setDiasporaMapMode(null);
+      setMigrantOriginsMapMode(null);
+      setDemocracyMapMode(null);
+    }
+  }, []);
+  const handleDiasporaMapModeChange = useCallback((next: DiasporaMapMode) => {
+    setDiasporaMapMode(next);
+    if (next !== null) {
+      setShowFlagMap(false);
+      setPassportMapMode(null);
+      setMigrantOriginsMapMode(null);
+      setDemocracyMapMode(null);
+    }
+  }, []);
+  const handleMigrantOriginsMapModeChange = useCallback(
+    (next: MigrantOriginsMapMode) => {
+      setMigrantOriginsMapMode(next);
+      if (next !== null) {
         setShowFlagMap(false);
+        setPassportMapMode(null);
+        setDiasporaMapMode(null);
         setDemocracyMapMode(null);
       }
-      return next;
-    });
-  }, []);
+    },
+    [],
+  );
   const handleDemocracyMapModeChange = useCallback((next: DemocracyMapMode) => {
     setDemocracyMapMode(next);
     if (next !== null) {
       setShowFlagMap(false);
-      setShowPassportColors(false);
+      setPassportMapMode(null);
+      setDiasporaMapMode(null);
+      setMigrantOriginsMapMode(null);
     }
   }, []);
   const toggleCities = useCallback(() => {
@@ -1301,19 +1363,38 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isModernEra, showFlagMap, countries]);
 
-  // Passport-colour fill for the modern world map: maps alpha-2 code → the
-  // country's predominant passport-cover colour (src/data/passportColors.ts,
-  // generated from the bundled cover images). Countries with no bundled passport
-  // are absent, so the map leaves them the neutral land colour.
+  // Passport map fill for the modern world map: either each country's
+  // predominant passport-cover colour, or visa-access colours for holders of
+  // a selected passport (src/data/visaAccess.ts — Passport Index).
   const passportColorOverlay = useMemo(() => {
-    if (!isModernEra || !showPassportColors) return null;
-    const m = new Map<string, string>();
-    for (const c of countries) {
-      const hex = PASSPORT_COLORS[c.code];
-      if (hex) m.set(c.code, hex);
+    if (!isModernEra || !passportMapMode) return null;
+    if (isPassportCoversMode(passportMapMode)) {
+      const m = new Map<string, string>();
+      for (const c of countries) {
+        const hex = PASSPORT_COLORS[c.code];
+        if (hex) m.set(c.code, hex);
+      }
+      return m;
     }
-    return m;
-  }, [isModernEra, showPassportColors, countries]);
+    if (isVisaPassportMode(passportMapMode)) {
+      return getVisaAccessColorOverlay(passportMapMode.code);
+    }
+    return null;
+  }, [isModernEra, passportMapMode, countries]);
+
+  // Diaspora heatmap fill: destinations coloured by how many people born in
+  // the selected origin live there (src/data/diaspora.ts — World Bank stock /
+  // Abel & Cohen flows).
+  const diasporaColorOverlay = useMemo(() => {
+    if (!isModernEra || !diasporaMapMode) return null;
+    return getDiasporaColorOverlay(diasporaMapMode.kind, diasporaMapMode.code);
+  }, [isModernEra, diasporaMapMode]);
+
+  // Migrant origins into a chosen destination (UN DESA IMS 2024).
+  const migrantOriginsColorOverlay = useMemo(() => {
+    if (!isModernEra || !isMigrantOriginsMode(migrantOriginsMapMode)) return null;
+    return getMigrantOriginsColorOverlay(migrantOriginsMapMode.code);
+  }, [isModernEra, migrantOriginsMapMode]);
 
   // Flag overlay for historical eras: maps polity NAME → absolute flag URL.
   // Built from the same flagEntries used by FlagGrid so the URL resolution
@@ -1468,10 +1549,106 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   // paints with, so the swatch always matches the country's fill. Memoised so
   // WorldProgressMap only sees a new function when the colour mode changes.
   const mapDataTooltip = useMemo(() => {
-    if (!democracyMapMode) return null;
-    return (code: string) =>
-      getMapDataTooltip(democracyMapMode, code, democracyColorOverlay);
-  }, [democracyMapMode, democracyColorOverlay]);
+    if (democracyMapMode) {
+      return (code: string) =>
+        getMapDataTooltip(democracyMapMode, code, democracyColorOverlay);
+    }
+    if (isVisaPassportMode(passportMapMode)) {
+      const passportCode = passportMapMode.code;
+      const passportName =
+        countries.find((c) => c.code === passportCode)?.name ?? passportCode;
+      return (code: string) => {
+        const cat = visaAccessCategoryFor(passportCode, code);
+        const color = passportColorOverlay?.get(code) ?? (cat ? VISA_ACCESS_COLORS[cat] : null);
+        return {
+          measure: `Visa access (${passportName} passport)`,
+          value: cat ? visaAccessCategoryLabel(cat) : null,
+          category: null,
+          color,
+          year: null,
+        };
+      };
+    }
+    if (diasporaMapMode) {
+      const { kind, code: originCode } = diasporaMapMode;
+      const originName =
+        countries.find((c) => c.code === originCode)?.name ?? originCode;
+      const scale = diasporaScale(kind, originCode);
+      const measure =
+        kind === "flow"
+          ? `Moved from ${originName}, 2015–2020`
+          : `Born in ${originName}, living abroad`;
+      const year = 2020;
+      return (code: string) => {
+        const color = diasporaColorOverlay?.get(code) ?? null;
+        if (code === originCode) {
+          return {
+            measure,
+            value: "Origin country",
+            category: null,
+            color,
+            year,
+          };
+        }
+        const value = diasporaValueFor(kind, originCode, code);
+        return {
+          measure,
+          value:
+            value != null
+              ? kind === "flow"
+                ? `${formatDiasporaNumber(value)} movers`
+                : `${formatDiasporaNumber(value)} people`
+              : scale
+                ? kind === "flow"
+                  ? "No flow estimated"
+                  : "No stock reported"
+                : null,
+          category: null,
+          color,
+          year,
+        };
+      };
+    }
+    if (isMigrantOriginsMode(migrantOriginsMapMode)) {
+      const destCode = migrantOriginsMapMode.code;
+      const destName =
+        countries.find((c) => c.code === destCode)?.name ?? destCode;
+      return (code: string) => {
+        const color = migrantOriginsColorOverlay?.get(code) ?? null;
+        if (code === destCode) {
+          return {
+            measure: `Migrant origins into ${destName}`,
+            value: "Selected destination",
+            category: null,
+            color,
+            year: MIGRANT_ORIGINS_SOURCE.year,
+          };
+        }
+        const stock = migrantStockFor(destCode, code);
+        return {
+          measure: `Born here, living in ${destName}`,
+          value:
+            stock == null
+              ? null
+              : `${formatMigrantStock(stock)} people`,
+          category: null,
+          color,
+          year: MIGRANT_ORIGINS_SOURCE.year,
+        };
+      };
+    }
+    return null;
+  }, [
+    democracyMapMode,
+    democracyColorOverlay,
+    passportMapMode,
+    passportColorOverlay,
+    diasporaMapMode,
+    diasporaColorOverlay,
+    migrantOriginsMapMode,
+    migrantOriginsColorOverlay,
+    countries,
+  ]);
 
   // Rotation + view-centre controls shared by both WorldProgressMap and
   // HistoricalMap so the buttons are always present regardless of era.
@@ -1494,20 +1671,25 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         >
           <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="flag" /></span>
         </button>
-        {/* Colour countries by their passport cover's predominant colour. Modern
-            world map only (passports are a present-day thing), immediately after
-            the flag overlay, and mutually exclusive with it. */}
+        {/* Passport map: cover colours OR visa access for a chosen passport.
+            Modern world map only; mutually exclusive with the flag overlay. */}
         {isModernEra && (
-          <button
-            type="button"
-            className={`world-map__zoom-btn world-map__zoom-btn--layer${showPassportColors ? " world-map__zoom-btn--active" : ""}`}
-            onClick={togglePassportColors}
-            aria-pressed={showPassportColors}
-            aria-label={showPassportColors ? "Hide passport colours on map" : "Colour countries by passport"}
-            title={showPassportColors ? "Hide passport colours" : "Colour countries by passport"}
-          >
-            <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="passport" /></span>
-          </button>
+          <PassportMapControl
+            mode={passportMapMode}
+            onChange={handlePassportMapModeChange}
+          />
+        )}
+        {isModernEra && (
+          <DiasporaMapControl
+            mode={diasporaMapMode}
+            onChange={handleDiasporaMapModeChange}
+          />
+        )}
+        {isModernEra && (
+          <MigrantOriginsMapControl
+            mode={migrantOriginsMapMode}
+            onChange={handleMigrantOriginsMapModeChange}
+          />
         )}
         {CITIES_FEATURE_ENABLED && (
           <button
@@ -1546,7 +1728,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       </>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, showPassportColors, togglePassportColors, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
+    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, migrantOriginsMapMode, handleMigrantOriginsMapModeChange, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
   );
 
   // Leaner control set for the subdivision map: just the flag-overlay
@@ -2240,12 +2422,28 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
             showSubnationalBorders={mapView.showSubnationalBorders}
             extraControls={mapExtraControls}
             flagOverlay={modernFlagOverlay}
-            fillOverride={democracyColorOverlay ?? passportColorOverlay}
+            fillOverride={
+              democracyColorOverlay ??
+              passportColorOverlay ??
+              diasporaColorOverlay ??
+              migrantOriginsColorOverlay
+            }
             cityOverlay={worldCityOverlay}
             dataTooltip={isModernEra ? mapDataTooltip : null}
             belowMapNode={
               isModernEra && democracyMapMode ? (
                 <DemocracyMapLegend mode={democracyMapMode} />
+              ) : isModernEra && isVisaPassportMode(passportMapMode) ? (
+                <VisaAccessMapLegend passportCode={passportMapMode.code} />
+              ) : isModernEra && diasporaMapMode ? (
+                <DiasporaMapLegend
+                  kind={diasporaMapMode.kind}
+                  originCode={diasporaMapMode.code}
+                />
+              ) : isModernEra && isMigrantOriginsMode(migrantOriginsMapMode) ? (
+                <MigrantOriginsMapLegend
+                  destinationCode={migrantOriginsMapMode.code}
+                />
               ) : null
             }
           />
@@ -2515,6 +2713,12 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
                               </div>
                             }
                           />
+                          {isMigrantOriginsMode(migrantOriginsMapMode) && (
+                            <MigrantOriginsPanelRows
+                              destinationCode={migrantOriginsMapMode.code}
+                              originCode={display.country.code}
+                            />
+                          )}
                         </>
                       )}
                       {(subdivisionMode

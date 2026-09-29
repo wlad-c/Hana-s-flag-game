@@ -101,12 +101,12 @@ Visual comparison of the bundled files with `src/data/nationalFlags.ts` and `src
 | Record | Description | Bundled artwork |
 |---|---|---|
 | `gb-olympic-committee` | Union Flag on a shield | Stylised red/blue lion head; no flag-bearing shield |
-| `ke-olympic-committee` | Shield and crossed spears | Stylised bird in national colours; no shield/spears |
+| `ke-olympic-committee` | Shield and crossed spears | White human figure with raised arms over national-colour bands; no shield/spears. **27 Sep audit correction:** earlier identification as a bird withdrawn. |
 | `bm-olympic-committee` | Arms above BERMUDA and rings | Rings at top, BERMUDA in middle, arms below |
 | `fr-le-figaro` | Ornate gothic masthead | White slab-serif capitals on a blue rectangle, with a quill motif |
-| `fr-liberation` | White letters over red lozenge | Predominantly black letterforms with white edging over the red lozenge |
+| `fr-liberation` | White letters over red lozenge | White letter faces, black outlines and offset shadow over the red lozenge. **27 Sep: original audit colour allegation withdrawn; the stated white colour was correct.** |
 
-All 206 new Olympic image files were rendered and visually screened; these are specific observed discrepancies, not a claim that all remaining captions are authenticated. Match each explainer to its exact asset version, then verify the historical/symbolic interpretation separately. The Le Figaro and Libération discrepancies were introduced or retained by the latest replacement-explainer overrides in `scripts/purge-fabricated-newspaper-logos.mjs`.
+All 206 new Olympic image files were rendered and visually screened; these are specific observed discrepancies, not a claim that all remaining captions are authenticated. Match each explainer to its exact asset version, then verify the historical/symbolic interpretation separately. The Le Figaro discrepancy was introduced or retained by the replacement-explainer overrides in `scripts/purge-fabricated-newspaper-logos.mjs`. The original Libération colour allegation is withdrawn after independent re-rendering on 27 September 2026; the historical audit text is preserved in Git history. See the [shared report's correction and remaining minor caption issues](LEARN_CLAIM_VERIFICATION_2026-09-20.md#media-remediation-and-audit-corrections--27-september-2026) and [exact-asset ledger](audit/MEDIA_REMEDIATION_VERIFICATION_2026-09-27.json).
 
 ### F53 — Brazil's Olympic-logo explanation projects imperial dynasties into 1889 (P2)
 

@@ -1,0 +1,593 @@
+{
+  "auditDate": "2026-09-27",
+  "auditor": "Codex",
+  "reviewRevision": "1ee7c78515b494e25aa5e40b59fabd07af47a7d9",
+  "beforeRevision": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "scope": "Independent check of 31 logo quarantines and ten corrected captions; audit correction for Libération/Kenya.",
+  "findings": {
+    "F60_F64": {
+      "status": "quarantine-independently-verified",
+      "newspapers": [
+        {
+          "id": "al-panorama",
+          "oldLogo": "newspaper-logos/al/panorama.svg"
+        },
+        {
+          "id": "ba-klix",
+          "oldLogo": "newspaper-logos/ba/klix.jpg"
+        },
+        {
+          "id": "bg-trud",
+          "oldLogo": "newspaper-logos/bg/trud.png"
+        },
+        {
+          "id": "bo-la-razon",
+          "oldLogo": "newspaper-logos/bo/la-razon.svg"
+        },
+        {
+          "id": "bs-tribune",
+          "oldLogo": "newspaper-logos/bs/tribune.jpg"
+        },
+        {
+          "id": "cm-le-messager",
+          "oldLogo": "newspaper-logos/cm/le-messager.svg"
+        },
+        {
+          "id": "cv-a-semana",
+          "oldLogo": "newspaper-logos/cv/a-semana.svg"
+        },
+        {
+          "id": "es-el-mundo",
+          "oldLogo": "newspaper-logos/es/el-mundo.svg"
+        },
+        {
+          "id": "fi-aamulehti",
+          "oldLogo": "newspaper-logos/fi/aamulehti.svg"
+        },
+        {
+          "id": "gm-daily-observer-gambia",
+          "oldLogo": "newspaper-logos/gm/daily-observer-gambia.jpg"
+        },
+        {
+          "id": "hn-diario-tiempo",
+          "oldLogo": "newspaper-logos/hn/diario-tiempo.png"
+        },
+        {
+          "id": "hn-la-tribuna",
+          "oldLogo": "newspaper-logos/hn/la-tribuna.jpg"
+        },
+        {
+          "id": "hu-blikk",
+          "oldLogo": "newspaper-logos/hu/blikk.svg"
+        },
+        {
+          "id": "jo-al-ghad",
+          "oldLogo": "newspaper-logos/jo/al-ghad.svg"
+        },
+        {
+          "id": "mu-l-express",
+          "oldLogo": "newspaper-logos/mu/l-express.svg"
+        },
+        {
+          "id": "mv-avas",
+          "oldLogo": "newspaper-logos/mv/avas.jpg"
+        },
+        {
+          "id": "mx-el-universal",
+          "oldLogo": "newspaper-logos/mx/el-universal.svg"
+        },
+        {
+          "id": "na-new-era",
+          "oldLogo": "newspaper-logos/na/new-era.jpg"
+        },
+        {
+          "id": "ng-the-punch",
+          "oldLogo": "newspaper-logos/ng/the-punch.jpg"
+        },
+        {
+          "id": "ng-thisday",
+          "oldLogo": "newspaper-logos/ng/thisday.jpg"
+        },
+        {
+          "id": "nz-the-post",
+          "oldLogo": "newspaper-logos/nz/the-post.png"
+        },
+        {
+          "id": "pe-la-republica",
+          "oldLogo": "newspaper-logos/pe/la-republica.jpg"
+        },
+        {
+          "id": "pg-loop-png",
+          "oldLogo": "newspaper-logos/pg/loop-png.png"
+        },
+        {
+          "id": "pt-expresso",
+          "oldLogo": "newspaper-logos/pt/expresso.png"
+        },
+        {
+          "id": "py-abc-color",
+          "oldLogo": "newspaper-logos/py/abc-color.jpg"
+        },
+        {
+          "id": "tn-assabah",
+          "oldLogo": "newspaper-logos/tn/assabah.jpg"
+        }
+      ],
+      "newsAgencies": [
+        {
+          "id": "bw-bopa",
+          "oldLogo": "newspaper-logos/bw/bopa.svg",
+          "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency."
+        },
+        {
+          "id": "by-belta",
+          "oldLogo": "newspaper-logos/by/belta.svg",
+          "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency."
+        },
+        {
+          "id": "ci-aip",
+          "oldLogo": "newspaper-logos/ci/aip.png",
+          "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency."
+        },
+        {
+          "id": "ke-kna",
+          "oldLogo": "newspaper-logos/ke/kna.svg",
+          "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency."
+        },
+        {
+          "id": "ng-nan",
+          "oldLogo": "newspaper-logos/ng/nan.png",
+          "noImageReason": "No verified emblem image is available in the app for this agency yet. An earlier image turned out to be another organisation's logo, so it was removed rather than shown under this agency."
+        }
+      ],
+      "totalAssignmentsCleared": 31,
+      "metadata": "All 31 affected records lose logo, logoExplainer and licenceNote; each now carries an explicit no-image explanation. Removed assets absent from complete 10,743-entry Git tree.",
+      "limit": "Verified removal of wrong assignments; replacement artwork, broader entity data and universal logo provenance remain unverified."
+    },
+    "F51_F57": {
+      "status": "specific-file-removal-verified-only",
+      "files": [
+        "scripts/generate-island-logos.mjs",
+        "public/newspaper-logos/nr/naoero-gazette.svg",
+        "public/newspaper-logos/nr/nauru-bulletin.svg",
+        "public/newspaper-logos/nr/nauru-gio.svg",
+        "public/newspaper-logos/va/acta-apostolicae-sedis.svg"
+      ],
+      "note": "Deletion confirmed from repository delta/tree. Decode-gate implementation observed in source, but full latest asset-set gate was not rerun; no universal authenticity certification."
+    },
+    "F59": {
+      "status": "specific-newspaper-removal-verified",
+      "removedRecord": "va-vatican-news",
+      "note": "Record absent from current newspaper registry and PNG absent from tree. Classification elsewhere not re-audited."
+    },
+    "F52": {
+      "status": "partially-resolved-with-audit-correction",
+      "newspaperCaptions": [
+        {
+          "id": "ca-la-presse",
+          "before": "Bold wordmark for La Presse — the Montreal daily's 2012 digital-era title treatment.",
+          "after": "White bold sans-serif capitals 'LA PRESSE', stacked on two lines on a red square.",
+          "asset": {
+            "path": "public/newspaper-logos/ca/la-presse.svg",
+            "sha": "6d679242979f17ede16cc21547e013ce06fa299a",
+            "encoding": "utf-8",
+            "sha256": "cac99947cfad9d4bd37bd3b48160928415d313622d4774b50d09f3d9e4b781f6"
+          },
+          "status": "visual-description-verified",
+          "remaining": null
+        },
+        {
+          "id": "de-die-welt",
+          "before": "Wordmark for Die Welt — the Berlin daily's title treatment on white.",
+          "after": "Dark-grey sans-serif capitals 'DIE WELT' with a blue-and-white globe between the two words.",
+          "asset": {
+            "path": "public/newspaper-logos/de/die-welt.png",
+            "downloadUrl": "https://wladimirchagas.github.io/Hana-s-flag-game/newspaper-logos/de/die-welt.png",
+            "sha256": "75de7ed0f7a5361b6d230df8866d2a7175203cfc205cea4b8d7cd5e12bdf3f09",
+            "gitBlobCalculated": "9d4db3e87fdc97ceeffab0f6af61ffb4bcab951b",
+            "scope": "Public bytes independently match the exact pinned repository Git blob.",
+            "sha": "9d4db3e87fdc97ceeffab0f6af61ffb4bcab951b"
+          },
+          "status": "partially-corrected",
+          "remaining": "All-capitals description is imprecise: selected stylized wordmark has a lower-case-shaped e. Use stylized lettering rather than asserting all capitals."
+        },
+        {
+          "id": "fr-le-figaro",
+          "before": "Ornate gothic masthead spelling 'Le Figaro' — the historic Paris daily's nameplate.",
+          "after": "White serif capitals spelling 'LE FIGARO' on a blue rectangle, with a white quill feather set against the F.",
+          "asset": {
+            "path": "public/newspaper-logos/fr/le-figaro.svg",
+            "sha": "046b98f52b0eb3c305ae3b4f7255d7c026d9a791",
+            "encoding": "utf-8",
+            "sha256": "57a1dbc4e1270fb2a79f83fec04a2076905748221e1ba414864badee6c5f4165"
+          },
+          "status": "visual-description-verified",
+          "remaining": null
+        },
+        {
+          "id": "fr-liberation",
+          "before": "Condensed white sans-serif 'Libération' over a red lozenge with a black drop shadow — the paper's distinctive title treatment.",
+          "after": "Condensed white capitals spelling 'Libération', outlined in black with a heavy black offset shadow, laid across a red lozenge.",
+          "asset": {
+            "path": "public/newspaper-logos/fr/libération.svg",
+            "sha": "ed42da98688aa175f451e7af93d6dec29125e56c",
+            "sha256": "638baa200027b8481ebc20a52ef60f88b5f0b42a6af20414ab116eca3775480d"
+          },
+          "status": "partially-corrected",
+          "remaining": "Mixed-case Libération, not capitals. White letter faces with black outline/offset shadow are confirmed; Codex earlier contrary colour description withdrawn."
+        },
+        {
+          "id": "fr-ouest-france",
+          "before": "Wordmark for Ouest-France — Brittany's high-circulation regional daily title treatment.",
+          "after": "Red lower-case 'ouest france' stacked on two lines beside a red disc divided by white lines.",
+          "asset": {
+            "path": "public/newspaper-logos/fr/ouest-france.svg",
+            "sha": "8d32767b0d1cd63826db96ceae22b4fa91d07180",
+            "encoding": "utf-8",
+            "sha256": "d6a6cd42463d63accef5b90950fd055081dfcdd574f58a863ead57240f0a113a"
+          },
+          "status": "visual-description-verified",
+          "remaining": null
+        },
+        {
+          "id": "gb-the-guardian",
+          "before": "Stacked slab-serif wordmark 'The Guardian' in Guardian Egyptian — the post-2018 title treatment used across print and digital.",
+          "after": "Black high-contrast serif wordmark 'The Guardian', stacked on two lines.",
+          "asset": {
+            "path": "public/newspaper-logos/gb/the-guardian.svg",
+            "sha": "5a70b9f529a117c9666bb8f7bd727ea8b10e2f3a",
+            "encoding": "utf-8",
+            "sha256": "ab79a1d8163886080984dfed1e51050dc0271f021ce98f595c4fb0ee6bff4369"
+          },
+          "status": "visual-description-verified",
+          "remaining": null
+        },
+        {
+          "id": "us-usa-today",
+          "before": "Cyan-blue circular badge beside the bold sans-serif wordmark 'USA TODAY' — the 2020 identity combining the signature blue disc with the Futura-derived title.",
+          "after": "A cyan-blue disc beside the bold black sans-serif capitals 'USA TODAY'.",
+          "asset": {
+            "path": "public/newspaper-logos/us/usa-today.svg",
+            "sha": "38dc010df453b6ccf1bcae8029f7f8030d785c30",
+            "encoding": "utf-8",
+            "sha256": "95a39038f39fce4e9890c629c2c175e5aa3ff9a90fcde41ca51bca3036047129"
+          },
+          "status": "partially-corrected",
+          "remaining": "Letter paths use #33261c (dark brown), not literal black; circle #00abe6. Use dark lettering or exact fill, do not recolour asset."
+        }
+      ],
+      "olympicCaptions": [
+        {
+          "path": "public/national-flags/gb/gb-olympic-committee.svg",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3981d5daed7cebf14c4291fae03238206b56917e",
+          "size": 19831,
+          "url": "https://api.github.com/repos/wladimirchagas/Hana-s-flag-game/git/blobs/3981d5daed7cebf14c4291fae03238206b56917e",
+          "sha256": "9dd8caf20ad7247f303f374c1932f23093c2f5c8c02e63481ceeb6835e118f9f",
+          "matchesPinnedBlob": true,
+          "publicUrl": "https://wladimirchagas.github.io/Hana-s-flag-game/national-flags/gb/gb-olympic-committee.svg",
+          "record": {
+            "id": "gb-olympic-committee",
+            "category": "olympiccommittee",
+            "name": "Logo of the British Olympic Association",
+            "path": "national-flags/gb/gb-olympic-committee.svg",
+            "stats": [
+              {
+                "label": "NOC founded",
+                "value": "1905"
+              },
+              {
+                "label": "Summer Games participated",
+                "value": "30"
+              },
+              {
+                "label": "Winter Games participated",
+                "value": "25"
+              },
+              {
+                "label": "Summer Olympic medals (G–S–B)",
+                "value": "303–340–343 (986 total)"
+              },
+              {
+                "label": "Winter Olympic medals (G–S–B)",
+                "value": "15–6–18 (39 total)"
+              },
+              {
+                "label": "Athletes at Paris 2024 (Summer)",
+                "value": "327"
+              },
+              {
+                "label": "Athletes at Milano Cortina 2026 (Winter)",
+                "value": "53"
+              }
+            ],
+            "design": "The British Olympic Association's mark: a stylised lion's head drawn in sweeping red and blue strokes, above the words “BRITISH OLYMPIC ASSOCIATION” and the Olympic rings.",
+            "source": "https://en.wikipedia.org/wiki/British_Olympic_Association"
+          },
+          "status": "specific-layout-description-verified",
+          "scope": "Compared caption with exact selected artwork; medal counts, historical/current branding, symbolism provenance and usage rights not assessed here."
+        },
+        {
+          "path": "public/national-flags/ke/ke-olympic-committee.png",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4a3153f108345f16e952a88f29fbd600bcc1bda9",
+          "size": 62760,
+          "url": "https://api.github.com/repos/wladimirchagas/Hana-s-flag-game/git/blobs/4a3153f108345f16e952a88f29fbd600bcc1bda9",
+          "sha256": "4834d93318d8e88ea158bf9e6446cd6841c6c6bdc09eebe311dc409817ac619f",
+          "matchesPinnedBlob": true,
+          "publicUrl": "https://wladimirchagas.github.io/Hana-s-flag-game/national-flags/ke/ke-olympic-committee.png",
+          "record": {
+            "id": "ke-olympic-committee",
+            "category": "olympiccommittee",
+            "name": "Logo of the National Olympic Committee of Kenya",
+            "path": "national-flags/ke/ke-olympic-committee.png",
+            "stats": [
+              {
+                "label": "NOC founded",
+                "value": "1955"
+              },
+              {
+                "label": "Summer Games participated",
+                "value": "16"
+              },
+              {
+                "label": "Winter Games participated",
+                "value": "5"
+              },
+              {
+                "label": "Summer Olympic medals (G–S–B)",
+                "value": "39–45–40 (124 total)"
+              },
+              {
+                "label": "Winter Olympic medals (G–S–B)",
+                "value": "0–0–0 (none)"
+              },
+              {
+                "label": "Athletes at Paris 2024 (Summer)",
+                "value": "72"
+              },
+              {
+                "label": "Athletes at Milano Cortina 2026 (Winter)",
+                "value": "1"
+              }
+            ],
+            "design": "The National Olympic Committee of Kenya's mark: a white figure with arms raised against sweeping bands of black, red and green, above the words “KENYA NATIONAL OLYMPIC COMMITTEE” and the Olympic rings.",
+            "source": "https://en.wikipedia.org/wiki/National_Olympic_Committee_of_Kenya"
+          },
+          "status": "specific-layout-description-verified",
+          "scope": "Compared caption with exact selected artwork; medal counts, historical/current branding, symbolism provenance and usage rights not assessed here."
+        },
+        {
+          "path": "public/national-flags/bm/bm-olympic-committee.png",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "855f98da3acca751c6dac319692c96186541d02d",
+          "size": 76159,
+          "url": "https://api.github.com/repos/wladimirchagas/Hana-s-flag-game/git/blobs/855f98da3acca751c6dac319692c96186541d02d",
+          "sha256": "363068765a27fb5296c03edbb1d59fa7f954451a0a0e2fd30871e92c4df3ae4d",
+          "matchesPinnedBlob": true,
+          "publicUrl": "https://wladimirchagas.github.io/Hana-s-flag-game/national-flags/bm/bm-olympic-committee.png",
+          "record": {
+            "id": "bm-olympic-committee",
+            "category": "olympiccommittee",
+            "name": "Logo of the Bermuda Olympic Association",
+            "path": "national-flags/bm/bm-olympic-committee.png",
+            "stats": [
+              {
+                "label": "NOC founded",
+                "value": "1935"
+              },
+              {
+                "label": "Summer Games participated",
+                "value": "20"
+              },
+              {
+                "label": "Winter Games participated",
+                "value": "8"
+              },
+              {
+                "label": "Summer Olympic medals (G–S–B)",
+                "value": "1–0–1 (2 total)"
+              },
+              {
+                "label": "Winter Olympic medals (G–S–B)",
+                "value": "0–0–0 (none)"
+              },
+              {
+                "label": "Athletes at Paris 2024 (Summer)",
+                "value": "8"
+              },
+              {
+                "label": "Athletes at Milano Cortina 2026 (Winter)",
+                "value": "0 — did not compete"
+              }
+            ],
+            "design": "The Bermuda Olympic Association's mark: the Olympic rings above the word “BERMUDA”, and below them Bermuda's coat of arms — a red lion holding a shield depicting the wreck of the Sea Venture.",
+            "source": "https://en.wikipedia.org/wiki/Bermuda_Olympic_Association"
+          },
+          "status": "specific-layout-description-verified",
+          "scope": "Compared caption with exact selected artwork; medal counts, historical/current branding, symbolism provenance and usage rights not assessed here."
+        }
+      ],
+      "auditCorrections": [
+        "Withdraw prior characterization of Libération as predominantly black letterforms: selected artwork has white faces, black outlines/shadow, red lozenge.",
+        "Withdraw prior characterization of Kenya Olympic central white figure as a bird: selected artwork depicts a person with raised arms."
+      ],
+      "remaining": "Minor caption errors in Libération, Die Welt and USA Today; fix both runtime data and purge-fabricated-newspaper-logos.mjs overrides. Broader caption claims retain their own statuses."
+    },
+    "F61": {
+      "status": "not-reassessed-in-this-batch",
+      "note": "The ten F61 entries and version-specific artwork issues retain their previous statuses."
+    }
+  },
+  "registryCounts": {
+    "newspapersBefore": 937,
+    "newspapersAfter": 933,
+    "newsAgenciesBefore": 166,
+    "newsAgenciesAfter": 166
+  },
+  "allRemovedMediaAssets": [
+    {
+      "path": "public/newspaper-logos/al/panorama.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/ba/klix.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/bg/trud.png",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/bo/la-razon.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/bs/tribune.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/bw/bopa.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/by/belta.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/ci/aip.png",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/cm/le-messager.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/cv/a-semana.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/es/el-mundo.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/fi/aamulehti.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/gm/daily-observer-gambia.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/hn/diario-tiempo.png",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/hn/la-tribuna.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/hu/blikk.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/jo/al-ghad.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/ke/kna.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/mu/l-express.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/mv/avas.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/mx/el-universal.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/na/new-era.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/ng/nan.png",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/ng/the-punch.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/ng/thisday.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/nr/naoero-gazette.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/nr/nauru-bulletin.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/nr/nauru-gio.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/nz/the-post.png",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/pe/la-republica.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/pg/loop-png.png",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/pt/expresso.png",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/py/abc-color.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/tn/assabah.jpg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/va/acta-apostolicae-sedis.svg",
+      "absentAt1ee7": true
+    },
+    {
+      "path": "public/newspaper-logos/va/vatican-news.png",
+      "absentAt1ee7": true
+    }
+  ],
+  "renderEvidence": [
+    {
+      "filename": "liberation-recheck.png",
+      "sha256": "7f1aee9b94918aec1114a5ef2a6dce8e3987c45ddfa1ccce4d553c9c2c504894"
+    },
+    {
+      "filename": "media-captions-recheck.png",
+      "sha256": "296b3cd9a80e255506cd42ab1e90b6892d94a73dee6b223040df18f6886a7b8c"
+    },
+    {
+      "filename": "olympic-recheck.png",
+      "sha256": "4fa239c9ed93b9c5ea5794ae982cd285b977f12b5eac89722cba2e6ca2e6a533"
+    }
+  ],
+  "deploymentMethod": "Public bytes of Die Welt and three Olympic marks match pinned Git blobs; other caption assets retrieved from pinned repository. No new rendered browser UI check.",
+  "noApplicationEdits": true
+}

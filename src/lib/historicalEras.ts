@@ -123,7 +123,7 @@ export const ERAS: readonly Era[] = [
     label: "2000 BC",
     caption: "Bronze Age",
     year: "2000 BC",
-    summary: "Bronze Age — Egypt's Old Kingdom, Sumerian city-states, Indus Valley civilisation.",
+    summary: "Bronze Age — Middle Kingdom Egypt, Sumerian city-states, Indus Valley civilisation.",
     dataUrl: MAP("world_bc2000"),
   },
   {
@@ -155,7 +155,7 @@ export const ERAS: readonly Era[] = [
     label: "600 AD",
     caption: "Pre-Islamic",
     year: "600 AD",
-    summary: "Byzantine and Sassanid superpowers, Tang China, Maya classic — the Islamic conquests are about to begin.",
+    summary: "Byzantine and Sassanid superpowers, Sui China, Maya classic — the Islamic conquests are about to begin.",
     dataUrl: MAP("world_600"),
   },
   {
@@ -195,7 +195,7 @@ export const ERAS: readonly Era[] = [
     label: "1500",
     caption: "Age of Discovery",
     year: "1500 AD",
-    summary: "Ottoman expansion, Ming China, Aztec and Inca empires, the Mughal era begins, European explorers reach the Americas.",
+    summary: "Ottoman expansion, Ming China, Aztec and Inca empires, European explorers reach the Americas.",
     dataUrl: MAP("world_1500"),
   },
   {
@@ -257,7 +257,7 @@ export const ERAS: readonly Era[] = [
     label: "1920",
     caption: "After WWI",
     year: "1920",
-    summary: "Four empires gone — Habsburg, Ottoman, Russian and German. New states across Central Europe, and League of Nations mandates in the Middle East and Africa.",
+    summary: "Three empires gone — Habsburg, Russian and German — and the defeated Ottoman Empire being partitioned (its sultanate was abolished in 1922). New states across Central Europe, and League of Nations mandates in the Middle East and Africa.",
     dataUrl: MAP("world_1920"),
   },
   {
@@ -297,7 +297,7 @@ export const ERAS: readonly Era[] = [
     label: "Today",
     caption: `${new Date().getFullYear()} · Present day`,
     year: String(new Date().getFullYear()),
-    summary: `The modern world in ${new Date().getFullYear()}: 195 UN member states recognised by the United Nations.`,
+    summary: `The modern world in ${new Date().getFullYear()}: 195 countries — the 193 UN member states plus the two UN observer states, the Holy See and Palestine.`,
     // No dataUrl → falls back to world-atlas modern map.
   },
 ];
@@ -2154,38 +2154,16 @@ const ERA_OVERRIDES: ReadonlyMap<Era["id"], ReadonlyMap<string, PolityInfo>> = n
   // === 2000 BC (Bronze Age) overrides ========================================
   ["bc2000", new Map<string, PolityInfo>([
     ["Egyptian Middle Kingdom", { continent: "North Africa / Eastern Mediterranean", noFlag: true, note: "Egyptian Middle Kingdom — established dynasty controlling the Nile valley; Mentuhotep II reunified Egypt.", population: 3_000_000 }],
-    ["Hittite Empire", { continent: "Western Asia / Anatolia", noFlag: true, note: "Old Hittite Kingdom in Anatolia — early Indo-European empire; precursor to the later New Kingdom.", population: 1_500_000 }],
     ["Indus Valley Civilization", { continent: "South Asia", noFlag: true, note: "Indus Valley Civilization — sophisticated urban culture in the Indian subcontinent (Harappa, Mohenjo-daro).", population: 4_000_000 }],
-    ["Shang Dynasty", { continent: "East Asia", noFlag: true, note: "Shang Dynasty China — early Chinese civilization; developed writing system and bronze working.", population: 10_000_000 }],
     ["Akkadian Empire", { continent: "Western Asia", noFlag: true, note: "Post-Akkadian period in Mesopotamia — fragmented into city-states after Akkadian collapse; Ur-III city-states.", population: 2_000_000 }],
-    ["Amorite Kingdoms", { continent: "Western Asia", noFlag: true, note: "Amorite Kingdoms in Mesopotamia and the Levant — Indo-European nomadic peoples establishing kingdoms.", population: 1_000_000 }],
     ["Minoan Civilization", { continent: "Eastern Mediterranean", noFlag: true, note: "Minoan Civilization on Crete — Bronze Age maritime culture; palace centers at Knossos.", population: 500_000 }],
-    // Additional Egyptian Kingdoms
-    ["New Kingdom Egypt", { continent: "North Africa", noFlag: true, note: "New Kingdom Egypt (18th Dynasty) — rising imperial power; Ahmose and Thutmose I establishing Egyptian empire.", population: 4_000_000 }],
     ["Nubian Kingdom", { continent: "Northeast Africa", noFlag: true, note: "Nubian Kingdom (Kush) in 2000 BC — trading power; interactions with Egypt.", population: 1_000_000 }],
-    // Mesopotamian Powers
-    ["Babylonian Empire", { continent: "Western Asia", noFlag: true, note: "Old Babylonian Empire under Hammurabi — major Mesopotamian power; codified law system.", population: 2_500_000 }],
     ["Assyrian Kingdom", { continent: "Western Asia", noFlag: true, note: "Old Assyrian Kingdom — rising power in northern Mesopotamia.", population: 1_000_000 }],
-    ["Mitanni Kingdom", { continent: "Western Asia", noFlag: true, note: "Mitanni Kingdom — Indo-Aryan state controlling upper Mesopotamia and Syria.", population: 1_500_000 }],
     ["Kingdom of Ebla", { continent: "Western Asia", noFlag: true, note: "Kingdom of Ebla in Syria — city-state and trading power; early urban center.", population: 200_000 }],
     ["Mari", { continent: "Western Asia", noFlag: true, note: "Kingdom of Mari on the Euphrates — important city-state and trading center.", population: 300_000 }],
-    // Anatolia/Hittites
-    ["Hattusas", { continent: "Western Asia", noFlag: true, note: "Hattusas region in Anatolia — Hittite capital and power center.", population: 500_000 }],
-    ["Arzawa Kingdom", { continent: "Western Asia", noFlag: true, note: "Kingdom of Arzawa in western Anatolia — regional power competing with Hittites.", population: 400_000 }],
-    // Levantine States
-    ["Phoenician cities", { continent: "Western Asia / Eastern Mediterranean", noFlag: true, note: "Phoenician city-states in the Levant — maritime trading power; early alphabetic writing.", population: 500_000 }],
     ["Syria/Damascus", { continent: "Western Asia", noFlag: true, note: "Syria/Damascus region — various city-states competing for control.", population: 400_000 }],
     ["Kingdom of Ugarit", { continent: "Western Asia", noFlag: true, note: "Kingdom of Ugarit — major Levantine trading city-state.", population: 300_000 }],
-    // Arabian Peninsula
-    ["Sabean Kingdom", { continent: "Western Asia", noFlag: true, note: "Sabean Kingdom in Arabia (Yemen) — rising trading power.", population: 500_000 }],
-    // Indian Subcontinent
-    ["Vedic Kingdoms", { continent: "South Asia", noFlag: true, note: "Vedic period kingdoms in India — Aryan tribal confederations; pre-imperial India.", population: 3_000_000 }],
-    ["Gangetic Valley Powers", { continent: "South Asia", noFlag: true, note: "Gangetic Valley kingdoms — early northern Indian powers emerging.", population: 2_000_000 }],
-    // Chinese Dynasties/Regions
-    ["Early Zhou Dynasty", { continent: "East Asia", noFlag: true, note: "Early Zhou Dynasty in China — transitional period; established hierarchical feudal system.", population: 10_000_000 }],
     ["Xia Dynasty (traditional)", { continent: "East Asia", noFlag: true, note: "Xia Dynasty (traditional/legendary) in China — earliest Chinese dynasty in traditional history.", population: 5_000_000 }],
-    // Mediterranean
-    ["Mycenaean Greece", { continent: "Southern Europe", noFlag: true, note: "Mycenaean Greece — Bronze Age Greek civilization; palace centers at Mycenae and Tiryns.", population: 1_000_000 }],
     ["Troy", { continent: "Western Asia", noFlag: true, note: "Kingdom of Troy in Anatolia — city-state; later immortalized in Homer's epics.", population: 100_000 }],
   ])],
 
@@ -3550,7 +3528,7 @@ const ERA_OVERRIDES: ReadonlyMap<Era["id"], ReadonlyMap<string, PolityInfo>> = n
     ["Mongolia", { noFlag: true, noFlagReason: "No flag shown — Mongolia's autonomy was revoked on 1 January 1920 and the Republic of China's five-coloured flag was raised over Urga; the revolutionary government's own flag came in 1921.", continent: "East Asia", note: "Mongolian People's Republic (1921–1992) — established after the withdrawal of Chinese warlord forces, with the red field and golden Soyombo emblem.", population: 850_000 }],
     ["Tibet", { flag: "historical-flags/tibet.svg", continent: "East Asia", note: "Tibet under the Lhasa government (1913–1951), after the withdrawal of Chinese forces following the 1911 revolution. The snow lions and sun-with-rays flag represented the Tibetan administration.", population: 1_200_000 }],
     ["Afghanistan", { flag: "historical-flags/afghanistan-1919.svg", continent: "Central Asia", note: "Kingdom of Afghanistan under King Amanullah Khan (1919–1929), who declared independence from British influence on 8 August 1919. The black-red-green tricolour was the national flag from 1919 onwards.", population: 6_000_000 }],
-    ["Hejaz", { flag: "historical-flags/hejaz-1920.svg", continent: "Western Asia", note: "Kingdom of Hejaz (1916–1925) — Islamic kingdom containing the holy cities Mecca and Medina. Flew the green flag with a gold star and crescent. Absorbed into Saudi Arabia in 1925.", population: 400_000 }],
+    ["Hejaz", { flag: "historical-flags/hejaz-1920.svg", continent: "Western Asia", note: "Kingdom of Hejaz (1916–1925) — Hashemite kingdom containing the holy cities Mecca and Medina. Its flag of 1920–1926 carried black, white and green horizontal bands with a red triangle at the hoist, the colours of the Arab Revolt. The Sultanate of Nejd conquered it in 1925.", population: 400_000 }],
     ["Iraq", { continent: "Western Asia", note: "Iraq under British League of Nations Mandate (1920–1932). The flag shows the red-white-black tricolour which Iraq would retain as its kingdom flag through 1959.", population: 2_800_000 }],
     ["Tanzania, United Republic of", { modernName: "United Kingdom", continent: "East Africa", note: "Tanganyika — German East Africa until the war, now a British League of Nations mandate; the Tanzanian flag dates from 1964.", population: 4_100_000 }],
     ["Kenya", { modernName: "United Kingdom", continent: "East Africa", note: "Kenya Colony, proclaimed in 1920 out of the East Africa Protectorate; the Kenyan flag came with independence in 1963.", population: 2_900_000 }],
@@ -3618,7 +3596,6 @@ const ERA_OVERRIDES: ReadonlyMap<Era["id"], ReadonlyMap<string, PolityInfo>> = n
     ["Mongolia", { flag: "historical-flags/mongolia-1924.svg", continent: "East Asia", note: "Mongolian People's Republic — the red field with golden Soyombo (the flame/sun emblem with the three prongs) represented the Mongolian state from the 1920s through 1992.", population: 900_000 }],
     ["Tibet", { flag: "historical-flags/tibet.svg", continent: "East Asia", note: "Tibet in 1938 — the Tibetan snow lions and sun-with-rays flag on the blue field represented the Tibetan administration; Chinese occupation would not solidify until after 1951.", population: 1_400_000 }],
     ["Afghanistan", { flag: "historical-flags/afghanistan-1929.svg", continent: "Central Asia", note: "Kingdom of Afghanistan under King Mohammad Zahir Shah (1933–1973), the last Afghan king. The black-red-green tricolour was the national flag throughout his reign until the 1973 coup.", population: 8_500_000 }],
-    ["Hejaz", { flag: "historical-flags/hejaz-1920.svg", continent: "Western Asia", note: "Kingdom of Hejaz — the historical green flag with golden star and crescent represents Hejaz as it existed until its absorption into Saudi Arabia in 1925. The GeoJSON includes it for comparative historical reference.", population: 350_000 }],
     ["Iraq", { flag: "historical-flags/iraq-1924.svg", continent: "Western Asia", note: "Kingdom of Iraq (1932–1958) — independent nation after the British mandate ended. The red-white-black tricolour with stars was the national flag from 1924 through the 1958 revolution.", population: 3_200_000 }],
     ["Malaysia", { modernName: "United Kingdom", continent: "Southeast Asia", note: "Malaya and the British territories of Sarawak, Brunei and North Borneo — not yet federated as Malaysia, which formed in 1963.", population: 3_500_000 }],
     ["Siam", { modernName: "Thailand", continent: "Southeast Asia", note: "Kingdom of Siam, renamed Thailand in 1939 — the striped red-white-blue flag (chakri flag) has been the national flag since 1917.", population: 15_000_000 }],

@@ -1,0 +1,1075 @@
+{
+  "audit_date": "2026-09-27",
+  "application_revision": "e3c1a35e2d7930630c616be12c6510576ded0f6a",
+  "source_file": "src/data/politicalParties.ts",
+  "scope": "All four present New Zealand records, every populated top-level field. Field assessments can group multiple atomic claims; this is not full universal verification.",
+  "summary": {
+    "records": 4,
+    "field_checks": 82,
+    "status_counts": {
+      "internal_consistent": 8,
+      "editorial_label": 4,
+      "verified_entity_name": 8,
+      "verified_integrity": 4,
+      "unverified_provenance": 4,
+      "unverified_rights": 4,
+      "verified_visual_identity": 3,
+      "unverified_classification": 2,
+      "internally_consistent_unverified_classification": 6,
+      "verified_year": 4,
+      "verified": 14,
+      "incorrect": 2,
+      "incorrect_as_actual_total": 4,
+      "insufficient_granularity": 4,
+      "partially_verified": 3,
+      "internal_conflict": 2,
+      "verified_year_range": 2,
+      "corroborated_dated": 2,
+      "incorrect_current": 2
+    }
+  },
+  "sources": {
+    "register": "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties",
+    "register_pdf": "https://elections.nz/assets/pagecomponent-file-files/Register-of-Political-Parties-and-Logos-19-August-2026.pdf",
+    "election": "https://archive.electionresults.govt.nz/electionresults_2023/",
+    "hansard": "https://hansard.parliament.nz/hansard-transcript/2026-08-25?lang=en",
+    "parliament": "https://www3.parliament.nz/en/mps-and-electorates/political-parties/",
+    "green": "https://www.greens.org.nz/about",
+    "swarbrick": "https://www3.parliament.nz/en/mps-and-electorates/members-of-parliament/swarbrick-chloe/",
+    "hipkins": "https://www3.parliament.nz/mi/mps-and-electorates/members-of-parliament/hipkins-chris/",
+    "seymour": "https://www3.parliament.nz/mi/mps-and-electorates/members-of-parliament/seymour-david/",
+    "luxon": "https://www3.parliament.nz/en/mps-and-electorates/members-of-parliament/luxon-christopher/",
+    "coalition": "https://www.dpmc.govt.nz/publications/co-24-2-national-act-and-new-zealand-first-coalition-government-consultation-and-operating-arrangements",
+    "lab_history": "https://nzhistory.govt.nz/the-new-zealand-labour-party-is-formed",
+    "nat_history": "https://www.national.org.nz/news/260515-tomrutherford",
+    "act_history": "https://teara.govt.nz/en/political-parties/page-6",
+    "green_history": "https://collections.tepapa.govt.nz/object/2200273",
+    "nat_web": "https://www.national.org.nz/team",
+    "nat_image": "https://assets.national.org.nz/web/prod/national-logo-white.png?v=1763940436",
+    "act_image": "https://www3.parliament.nz/media/1315/the-act-party-logo-august-2019.EqPEvA.jpg",
+    "green_image": "https://www3.parliament.nz/media/1316/new-green-logo-green-web.DmxK7w.jpg",
+    "lab_image": "https://www3.parliament.nz/media/1318/logo-for-parliamentary-website.DmxK8A.jpg"
+  },
+  "records": [
+    {
+      "id": "NZ-LAB",
+      "repository_record": {
+        "id": "NZ-LAB",
+        "country": "NZ",
+        "shortName": "Lab",
+        "name": "New Zealand Labour Party",
+        "nameEn": "New Zealand Labour Party",
+        "logo": "party-logos/nz/lab.svg",
+        "sha256": "844122da88962f047b791bead705f1d661a33a03a4096d6cedaa733d1fdee93f",
+        "logoSourceUrl": "https://en.wikipedia.org/wiki/File:NZ_Labour_Party_logo.svg",
+        "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+        "ideology": [
+          "Social democracy",
+          "Centre-left",
+          "Progressivism"
+        ],
+        "ideologyPosition": "centre-left",
+        "positionRaw": "Centre-left",
+        "founded": 1916,
+        "leader": "Chris Hipkins",
+        "leaderTitle": "Party Leader",
+        "inPower": false,
+        "seats": 36,
+        "seatsTotal": 120,
+        "chamberName": "House of Representatives",
+        "sources": [
+          {
+            "title": "New Zealand Labour Party – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/New_Zealand_Labour_Party"
+          },
+          {
+            "title": "2023 New Zealand general election – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+          }
+        ]
+      },
+      "field_checks": [
+        {
+          "field": "id",
+          "value": "NZ-LAB",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "country",
+          "value": "NZ",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "shortName",
+          "value": "Lab",
+          "status": "editorial_label",
+          "assessment": "Short display label; not the registered ballot abbreviation.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "name",
+          "value": "New Zealand Labour Party",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "nameEn",
+          "value": "New Zealand Labour Party",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "sha256",
+          "value": "844122da88962f047b791bead705f1d661a33a03a4096d6cedaa733d1fdee93f",
+          "status": "verified_integrity",
+          "assessment": "Recomputed from the pinned local SVG; matches the declared SHA-256. Integrity does not prove authenticity.",
+          "sources": []
+        },
+        {
+          "field": "logoSourceUrl",
+          "value": "https://en.wikipedia.org/wiki/File:NZ_Labour_Party_logo.svg",
+          "status": "unverified_provenance",
+          "assessment": "Wikipedia file-page citation recorded; original file history/author/licensing and byte provenance not independently certified in this continuation.",
+          "sources": []
+        },
+        {
+          "field": "licenceNote",
+          "value": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+          "status": "unverified_rights",
+          "assessment": "Generic non-free identification rationale present. It is not independently verified permission, attribution or legal clearance.",
+          "sources": []
+        },
+        {
+          "field": "logo",
+          "value": "party-logos/nz/lab.svg",
+          "status": "verified_visual_identity",
+          "assessment": "Rendered bundled SVG compared with Parliament-hosted party image: same principal wordmark and symbol. Exact colour specifications, geometry, registration-version identity and rights remain unverified. Parliament image has a red fern on a white panel and a white outer border; repository uses white fern on red without that border. This verifies entity identity only, not identical artwork or current registered variant.",
+          "sources": [
+            "https://www3.parliament.nz/media/1318/logo-for-parliamentary-website.DmxK8A.jpg"
+          ]
+        },
+        {
+          "field": "ideology",
+          "value": [
+            "Social democracy",
+            "Centre-left",
+            "Progressivism"
+          ],
+          "status": "unverified_classification",
+          "assessment": "ACT libertarian-right characterization is corroborated by government-hosted Te Ara; Green environmental themes by its charter. Each full tag list and contemporary ideological placement still requires dated attributable sources; party self-description is not independent classification.",
+          "sources": []
+        },
+        {
+          "field": "ideologyPosition",
+          "value": "centre-left",
+          "status": "internally_consistent_unverified_classification",
+          "assessment": "Two position fields agree after exact-label normalization; agreement does not verify the political classification.",
+          "sources": []
+        },
+        {
+          "field": "positionRaw",
+          "value": "Centre-left",
+          "status": "internally_consistent_unverified_classification",
+          "assessment": "Two position fields agree after exact-label normalization; agreement does not verify the political classification.",
+          "sources": []
+        },
+        {
+          "field": "founded",
+          "value": 1916,
+          "status": "verified_year",
+          "assessment": "Founding year supported; electoral registration date is a separate event.",
+          "sources": [
+            "https://nzhistory.govt.nz/the-new-zealand-labour-party-is-formed"
+          ]
+        },
+        {
+          "field": "leader",
+          "value": "Chris Hipkins",
+          "status": "verified",
+          "assessment": "Named person and leadership role corroborated by parliamentary record.",
+          "sources": [
+            "https://www3.parliament.nz/mi/mps-and-electorates/members-of-parliament/hipkins-chris/"
+          ]
+        },
+        {
+          "field": "leaderTitle",
+          "value": "Party Leader",
+          "status": "verified",
+          "assessment": "Named person and leadership role corroborated by parliamentary record.",
+          "sources": [
+            "https://www3.parliament.nz/mi/mps-and-electorates/members-of-parliament/hipkins-chris/"
+          ]
+        },
+        {
+          "field": "inPower",
+          "value": false,
+          "status": "verified",
+          "assessment": "Government consists of National, ACT and NZ First; Labour and Green are outside it. Interpretation here is government participation, not single-party majority.",
+          "sources": [
+            "https://www.dpmc.govt.nz/publications/co-24-2-national-act-and-new-zealand-first-coalition-government-consultation-and-operating-arrangements"
+          ]
+        },
+        {
+          "field": "seats",
+          "value": 36,
+          "status": "incorrect",
+          "assessment": "Labour has 34, not 36; ACT has 11, not 8. Both official 2023 result and 2026 parliamentary evidence disagree with repository.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/",
+            "https://hansard.parliament.nz/hansard-transcript/2026-08-25?lang=en"
+          ]
+        },
+        {
+          "field": "seatsTotal",
+          "value": 120,
+          "status": "incorrect_as_actual_total",
+          "assessment": "120 is nominal size, not the actual 54th-Parliament allocation: official general-election result totals 122, subsequent Port Waikato seat produces 123. Vacancies and occupied seats require separate dated fields. Do not blindly replace all values with 123 as current occupied membership.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "chamberName",
+          "value": "House of Representatives",
+          "status": "verified",
+          "assessment": "Correct unicameral legislative chamber.",
+          "sources": [
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "sources",
+          "value": [
+            {
+              "title": "New Zealand Labour Party – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/New_Zealand_Labour_Party"
+            },
+            {
+              "title": "2023 New Zealand general election – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+            }
+          ],
+          "status": "insufficient_granularity",
+          "assessment": "Two Wikipedia pages are cited for the record; no claim-specific primary evidence or as-of date is stored. This ledger supplies evidence, not application changes.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "NZ-NAT",
+      "repository_record": {
+        "id": "NZ-NAT",
+        "country": "NZ",
+        "shortName": "Nat",
+        "name": "New Zealand National Party",
+        "nameEn": "New Zealand National Party",
+        "logo": "party-logos/nz/nat.svg",
+        "sha256": "4d05df78de46901a6cbb1ce24965bd3ae48410e315dabc99abaaac9eff7257b4",
+        "logoSourceUrl": "https://en.wikipedia.org/wiki/File:New_Zealand_National_Party_logo.svg",
+        "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+        "ideology": [
+          "Conservatism",
+          "Centre-right",
+          "Liberalism"
+        ],
+        "ideologyPosition": "right",
+        "positionRaw": "Centre-right",
+        "founded": 1936,
+        "leader": "Christopher Luxon",
+        "leaderTitle": "Party Leader (Prime Minister, 2023–present)",
+        "inPower": true,
+        "timeInPower": "2023-present",
+        "seats": 48,
+        "seatsTotal": 120,
+        "chamberName": "House of Representatives",
+        "sources": [
+          {
+            "title": "New Zealand National Party – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/New_Zealand_National_Party"
+          },
+          {
+            "title": "2023 New Zealand general election – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+          }
+        ]
+      },
+      "field_checks": [
+        {
+          "field": "id",
+          "value": "NZ-NAT",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "country",
+          "value": "NZ",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "shortName",
+          "value": "Nat",
+          "status": "editorial_label",
+          "assessment": "Short display label; not the registered ballot abbreviation.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "name",
+          "value": "New Zealand National Party",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "nameEn",
+          "value": "New Zealand National Party",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "sha256",
+          "value": "4d05df78de46901a6cbb1ce24965bd3ae48410e315dabc99abaaac9eff7257b4",
+          "status": "verified_integrity",
+          "assessment": "Recomputed from the pinned local SVG; matches the declared SHA-256. Integrity does not prove authenticity.",
+          "sources": []
+        },
+        {
+          "field": "logoSourceUrl",
+          "value": "https://en.wikipedia.org/wiki/File:New_Zealand_National_Party_logo.svg",
+          "status": "unverified_provenance",
+          "assessment": "Wikipedia file-page citation recorded; original file history/author/licensing and byte provenance not independently certified in this continuation.",
+          "sources": []
+        },
+        {
+          "field": "licenceNote",
+          "value": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+          "status": "unverified_rights",
+          "assessment": "Generic non-free identification rationale present. It is not independently verified permission, attribution or legal clearance.",
+          "sources": []
+        },
+        {
+          "field": "logo",
+          "value": "party-logos/nz/nat.svg",
+          "status": "partially_verified",
+          "assessment": "Party identity and major wordmark/stars corroborated by current party website. Repository N has fold shading absent from current flat website artwork. Exact comparison with 22 May 2026 registered artwork remains unresolved; do not label wrong entity.",
+          "sources": [
+            "https://www.national.org.nz/team",
+            "https://assets.national.org.nz/web/prod/national-logo-white.png?v=1763940436",
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties",
+            "https://elections.nz/assets/pagecomponent-file-files/Register-of-Political-Parties-and-Logos-19-August-2026.pdf"
+          ]
+        },
+        {
+          "field": "ideology",
+          "value": [
+            "Conservatism",
+            "Centre-right",
+            "Liberalism"
+          ],
+          "status": "unverified_classification",
+          "assessment": "ACT libertarian-right characterization is corroborated by government-hosted Te Ara; Green environmental themes by its charter. Each full tag list and contemporary ideological placement still requires dated attributable sources; party self-description is not independent classification.",
+          "sources": []
+        },
+        {
+          "field": "ideologyPosition",
+          "value": "right",
+          "status": "internal_conflict",
+          "assessment": "National is assigned right although its stored source label is Centre-right and the UI has a separate Centre-right group.",
+          "sources": []
+        },
+        {
+          "field": "positionRaw",
+          "value": "Centre-right",
+          "status": "internal_conflict",
+          "assessment": "National is assigned right although its stored source label is Centre-right and the UI has a separate Centre-right group.",
+          "sources": []
+        },
+        {
+          "field": "founded",
+          "value": 1936,
+          "status": "verified_year",
+          "assessment": "Founding year supported; electoral registration date is a separate event.",
+          "sources": [
+            "https://www.national.org.nz/news/260515-tomrutherford"
+          ]
+        },
+        {
+          "field": "leader",
+          "value": "Christopher Luxon",
+          "status": "verified",
+          "assessment": "Named person and leadership role corroborated by parliamentary record.",
+          "sources": [
+            "https://www3.parliament.nz/en/mps-and-electorates/members-of-parliament/luxon-christopher/"
+          ]
+        },
+        {
+          "field": "leaderTitle",
+          "value": "Party Leader (Prime Minister, 2023–present)",
+          "status": "verified",
+          "assessment": "Named person and leadership role corroborated by parliamentary record.",
+          "sources": [
+            "https://www3.parliament.nz/en/mps-and-electorates/members-of-parliament/luxon-christopher/"
+          ]
+        },
+        {
+          "field": "inPower",
+          "value": true,
+          "status": "verified",
+          "assessment": "Government consists of National, ACT and NZ First; Labour and Green are outside it. Interpretation here is government participation, not single-party majority.",
+          "sources": [
+            "https://www.dpmc.govt.nz/publications/co-24-2-national-act-and-new-zealand-first-coalition-government-consultation-and-operating-arrangements"
+          ]
+        },
+        {
+          "field": "timeInPower",
+          "value": "2023-present",
+          "status": "verified_year_range",
+          "assessment": "Current coalition administration began in 2023; field should also retain an as-of date.",
+          "sources": [
+            "https://www.dpmc.govt.nz/publications/co-24-2-national-act-and-new-zealand-first-coalition-government-consultation-and-operating-arrangements"
+          ]
+        },
+        {
+          "field": "seats",
+          "value": 48,
+          "status": "corroborated_dated",
+          "assessment": "Value agrees with 2023 result and 25 August 2026 Hansard party voting strength. Parliamentary overview has conflicting older numbers (National 49/Green 14). Do not overwrite with undated overview; current-at-retrieval census of membership remains to be reconciled.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://hansard.parliament.nz/hansard-transcript/2026-08-25?lang=en",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "seatsTotal",
+          "value": 120,
+          "status": "incorrect_as_actual_total",
+          "assessment": "120 is nominal size, not the actual 54th-Parliament allocation: official general-election result totals 122, subsequent Port Waikato seat produces 123. Vacancies and occupied seats require separate dated fields. Do not blindly replace all values with 123 as current occupied membership.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "chamberName",
+          "value": "House of Representatives",
+          "status": "verified",
+          "assessment": "Correct unicameral legislative chamber.",
+          "sources": [
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "sources",
+          "value": [
+            {
+              "title": "New Zealand National Party – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/New_Zealand_National_Party"
+            },
+            {
+              "title": "2023 New Zealand general election – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+            }
+          ],
+          "status": "insufficient_granularity",
+          "assessment": "Two Wikipedia pages are cited for the record; no claim-specific primary evidence or as-of date is stored. This ledger supplies evidence, not application changes.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "NZ-ACT",
+      "repository_record": {
+        "id": "NZ-ACT",
+        "country": "NZ",
+        "shortName": "Act",
+        "name": "ACT New Zealand",
+        "nameEn": "ACT New Zealand",
+        "logo": "party-logos/nz/act.svg",
+        "sha256": "d8b49e16e17efdee540e55580655b5440783c21243fb3adf59f6cff0f95a8e93",
+        "logoSourceUrl": "https://en.wikipedia.org/wiki/File:ACT_New_Zealand_logo.svg",
+        "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+        "ideology": [
+          "Libertarianism",
+          "Right-wing",
+          "Classical liberalism"
+        ],
+        "ideologyPosition": "right",
+        "positionRaw": "Right-wing",
+        "founded": 1994,
+        "leader": "David Seymour",
+        "leaderTitle": "Party Leader",
+        "inPower": true,
+        "timeInPower": "2023-present",
+        "seats": 8,
+        "seatsTotal": 120,
+        "chamberName": "House of Representatives",
+        "sources": [
+          {
+            "title": "ACT New Zealand – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/ACT_New_Zealand"
+          },
+          {
+            "title": "2023 New Zealand general election – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+          }
+        ]
+      },
+      "field_checks": [
+        {
+          "field": "id",
+          "value": "NZ-ACT",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "country",
+          "value": "NZ",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "shortName",
+          "value": "Act",
+          "status": "editorial_label",
+          "assessment": "Short display label; not the registered ballot abbreviation.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "name",
+          "value": "ACT New Zealand",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "nameEn",
+          "value": "ACT New Zealand",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "sha256",
+          "value": "d8b49e16e17efdee540e55580655b5440783c21243fb3adf59f6cff0f95a8e93",
+          "status": "verified_integrity",
+          "assessment": "Recomputed from the pinned local SVG; matches the declared SHA-256. Integrity does not prove authenticity.",
+          "sources": []
+        },
+        {
+          "field": "logoSourceUrl",
+          "value": "https://en.wikipedia.org/wiki/File:ACT_New_Zealand_logo.svg",
+          "status": "unverified_provenance",
+          "assessment": "Wikipedia file-page citation recorded; original file history/author/licensing and byte provenance not independently certified in this continuation.",
+          "sources": []
+        },
+        {
+          "field": "licenceNote",
+          "value": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+          "status": "unverified_rights",
+          "assessment": "Generic non-free identification rationale present. It is not independently verified permission, attribution or legal clearance.",
+          "sources": []
+        },
+        {
+          "field": "logo",
+          "value": "party-logos/nz/act.svg",
+          "status": "verified_visual_identity",
+          "assessment": "Rendered bundled SVG compared with Parliament-hosted party image: same principal wordmark and symbol. Exact colour specifications, geometry, registration-version identity and rights remain unverified.",
+          "sources": [
+            "https://www3.parliament.nz/media/1315/the-act-party-logo-august-2019.EqPEvA.jpg"
+          ]
+        },
+        {
+          "field": "ideology",
+          "value": [
+            "Libertarianism",
+            "Right-wing",
+            "Classical liberalism"
+          ],
+          "status": "partially_verified",
+          "assessment": "ACT libertarian-right characterization is corroborated by government-hosted Te Ara; Green environmental themes by its charter. Each full tag list and contemporary ideological placement still requires dated attributable sources; party self-description is not independent classification.",
+          "sources": [
+            "https://teara.govt.nz/en/political-parties/page-6"
+          ]
+        },
+        {
+          "field": "ideologyPosition",
+          "value": "right",
+          "status": "internally_consistent_unverified_classification",
+          "assessment": "Two position fields agree after exact-label normalization; agreement does not verify the political classification.",
+          "sources": []
+        },
+        {
+          "field": "positionRaw",
+          "value": "Right-wing",
+          "status": "internally_consistent_unverified_classification",
+          "assessment": "Two position fields agree after exact-label normalization; agreement does not verify the political classification.",
+          "sources": []
+        },
+        {
+          "field": "founded",
+          "value": 1994,
+          "status": "verified_year",
+          "assessment": "Founding year supported. ACT pressure group dates to 1993 but party proper to 1994; registration in 1995 is a separate event.",
+          "sources": [
+            "https://teara.govt.nz/en/political-parties/page-6"
+          ]
+        },
+        {
+          "field": "leader",
+          "value": "David Seymour",
+          "status": "verified",
+          "assessment": "Named person and leadership role corroborated by parliamentary record.",
+          "sources": [
+            "https://www3.parliament.nz/mi/mps-and-electorates/members-of-parliament/seymour-david/"
+          ]
+        },
+        {
+          "field": "leaderTitle",
+          "value": "Party Leader",
+          "status": "verified",
+          "assessment": "Named person and leadership role corroborated by parliamentary record.",
+          "sources": [
+            "https://www3.parliament.nz/mi/mps-and-electorates/members-of-parliament/seymour-david/"
+          ]
+        },
+        {
+          "field": "inPower",
+          "value": true,
+          "status": "verified",
+          "assessment": "Government consists of National, ACT and NZ First; Labour and Green are outside it. Interpretation here is government participation, not single-party majority.",
+          "sources": [
+            "https://www.dpmc.govt.nz/publications/co-24-2-national-act-and-new-zealand-first-coalition-government-consultation-and-operating-arrangements"
+          ]
+        },
+        {
+          "field": "timeInPower",
+          "value": "2023-present",
+          "status": "verified_year_range",
+          "assessment": "Current coalition administration began in 2023; field should also retain an as-of date.",
+          "sources": [
+            "https://www.dpmc.govt.nz/publications/co-24-2-national-act-and-new-zealand-first-coalition-government-consultation-and-operating-arrangements"
+          ]
+        },
+        {
+          "field": "seats",
+          "value": 8,
+          "status": "incorrect",
+          "assessment": "Labour has 34, not 36; ACT has 11, not 8. Both official 2023 result and 2026 parliamentary evidence disagree with repository.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/",
+            "https://hansard.parliament.nz/hansard-transcript/2026-08-25?lang=en"
+          ]
+        },
+        {
+          "field": "seatsTotal",
+          "value": 120,
+          "status": "incorrect_as_actual_total",
+          "assessment": "120 is nominal size, not the actual 54th-Parliament allocation: official general-election result totals 122, subsequent Port Waikato seat produces 123. Vacancies and occupied seats require separate dated fields. Do not blindly replace all values with 123 as current occupied membership.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "chamberName",
+          "value": "House of Representatives",
+          "status": "verified",
+          "assessment": "Correct unicameral legislative chamber.",
+          "sources": [
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "sources",
+          "value": [
+            {
+              "title": "ACT New Zealand – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/ACT_New_Zealand"
+            },
+            {
+              "title": "2023 New Zealand general election – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+            }
+          ],
+          "status": "insufficient_granularity",
+          "assessment": "Two Wikipedia pages are cited for the record; no claim-specific primary evidence or as-of date is stored. This ledger supplies evidence, not application changes.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "NZ-GRN",
+      "repository_record": {
+        "id": "NZ-GRN",
+        "country": "NZ",
+        "shortName": "Grn",
+        "name": "Green Party of Aotearoa New Zealand",
+        "nameEn": "Green Party of Aotearoa New Zealand",
+        "logo": "party-logos/nz/grn.svg",
+        "sha256": "cdaa24f55ae870fd1c52e63dc21398377889c3e5578c61cda7e1da2ed9b5f0c8",
+        "logoSourceUrl": "https://en.wikipedia.org/wiki/File:Green_Party_of_Aotearoa_New_Zealand_logo.svg",
+        "licenceNote": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+        "ideology": [
+          "Green politics",
+          "Environmentalism",
+          "Left-wing"
+        ],
+        "ideologyPosition": "left",
+        "positionRaw": "Left-wing",
+        "founded": 1990,
+        "leader": "James Shaw",
+        "leaderTitle": "Co-leader",
+        "inPower": false,
+        "seats": 15,
+        "seatsTotal": 120,
+        "chamberName": "House of Representatives",
+        "sources": [
+          {
+            "title": "Green Party of Aotearoa New Zealand – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Green_Party_of_Aotearoa_New_Zealand"
+          },
+          {
+            "title": "2023 New Zealand general election – Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+          }
+        ]
+      },
+      "field_checks": [
+        {
+          "field": "id",
+          "value": "NZ-GRN",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "country",
+          "value": "NZ",
+          "status": "internal_consistent",
+          "assessment": "Repository identifier/country assignment agrees with the party entity; not a claim of an official party identifier.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "shortName",
+          "value": "Grn",
+          "status": "editorial_label",
+          "assessment": "Short display label; not the registered ballot abbreviation.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "name",
+          "value": "Green Party of Aotearoa New Zealand",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "nameEn",
+          "value": "Green Party of Aotearoa New Zealand",
+          "status": "verified_entity_name",
+          "assessment": "Identifies the registered party. National and Green omit the initial The in the full registered legal name; not treated as a wrong-entity error.",
+          "sources": [
+            "https://elections.nz/democracy-in-nz/political-parties-in-new-zealand/register-of-political-parties"
+          ]
+        },
+        {
+          "field": "sha256",
+          "value": "cdaa24f55ae870fd1c52e63dc21398377889c3e5578c61cda7e1da2ed9b5f0c8",
+          "status": "verified_integrity",
+          "assessment": "Recomputed from the pinned local SVG; matches the declared SHA-256. Integrity does not prove authenticity.",
+          "sources": []
+        },
+        {
+          "field": "logoSourceUrl",
+          "value": "https://en.wikipedia.org/wiki/File:Green_Party_of_Aotearoa_New_Zealand_logo.svg",
+          "status": "unverified_provenance",
+          "assessment": "Wikipedia file-page citation recorded; original file history/author/licensing and byte provenance not independently certified in this continuation.",
+          "sources": []
+        },
+        {
+          "field": "licenceNote",
+          "value": "Non-free party logo used to identify the party; used here to identify the party, not to imply endorsement.",
+          "status": "unverified_rights",
+          "assessment": "Generic non-free identification rationale present. It is not independently verified permission, attribution or legal clearance.",
+          "sources": []
+        },
+        {
+          "field": "logo",
+          "value": "party-logos/nz/grn.svg",
+          "status": "verified_visual_identity",
+          "assessment": "Rendered bundled SVG compared with Parliament-hosted party image: same principal wordmark and symbol. Exact colour specifications, geometry, registration-version identity and rights remain unverified.",
+          "sources": [
+            "https://www3.parliament.nz/media/1316/new-green-logo-green-web.DmxK7w.jpg"
+          ]
+        },
+        {
+          "field": "ideology",
+          "value": [
+            "Green politics",
+            "Environmentalism",
+            "Left-wing"
+          ],
+          "status": "partially_verified",
+          "assessment": "ACT libertarian-right characterization is corroborated by government-hosted Te Ara; Green environmental themes by its charter. Each full tag list and contemporary ideological placement still requires dated attributable sources; party self-description is not independent classification.",
+          "sources": [
+            "https://www.greens.org.nz/about"
+          ]
+        },
+        {
+          "field": "ideologyPosition",
+          "value": "left",
+          "status": "internally_consistent_unverified_classification",
+          "assessment": "Two position fields agree after exact-label normalization; agreement does not verify the political classification.",
+          "sources": []
+        },
+        {
+          "field": "positionRaw",
+          "value": "Left-wing",
+          "status": "internally_consistent_unverified_classification",
+          "assessment": "Two position fields agree after exact-label normalization; agreement does not verify the political classification.",
+          "sources": []
+        },
+        {
+          "field": "founded",
+          "value": 1990,
+          "status": "verified_year",
+          "assessment": "Founding year supported; electoral registration date is a separate event.",
+          "sources": [
+            "https://collections.tepapa.govt.nz/object/2200273"
+          ]
+        },
+        {
+          "field": "leader",
+          "value": "James Shaw",
+          "status": "incorrect_current",
+          "assessment": "James Shaw is no longer a current co-leader. Current co-leaders are Marama Davidson and Chlöe Swarbrick; Swarbrick began 10 March 2024. Co-leadership requires a list or explicitly partial display.",
+          "sources": [
+            "https://www.greens.org.nz/about",
+            "https://www3.parliament.nz/en/mps-and-electorates/members-of-parliament/swarbrick-chloe/"
+          ]
+        },
+        {
+          "field": "leaderTitle",
+          "value": "Co-leader",
+          "status": "incorrect_current",
+          "assessment": "James Shaw is no longer a current co-leader. Current co-leaders are Marama Davidson and Chlöe Swarbrick; Swarbrick began 10 March 2024. Co-leadership requires a list or explicitly partial display.",
+          "sources": [
+            "https://www.greens.org.nz/about",
+            "https://www3.parliament.nz/en/mps-and-electorates/members-of-parliament/swarbrick-chloe/"
+          ]
+        },
+        {
+          "field": "inPower",
+          "value": false,
+          "status": "verified",
+          "assessment": "Government consists of National, ACT and NZ First; Labour and Green are outside it. Interpretation here is government participation, not single-party majority.",
+          "sources": [
+            "https://www.dpmc.govt.nz/publications/co-24-2-national-act-and-new-zealand-first-coalition-government-consultation-and-operating-arrangements"
+          ]
+        },
+        {
+          "field": "seats",
+          "value": 15,
+          "status": "corroborated_dated",
+          "assessment": "Value agrees with 2023 result and 25 August 2026 Hansard party voting strength. Parliamentary overview has conflicting older numbers (National 49/Green 14). Do not overwrite with undated overview; current-at-retrieval census of membership remains to be reconciled.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://hansard.parliament.nz/hansard-transcript/2026-08-25?lang=en",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/",
+            "https://www.greens.org.nz/about"
+          ]
+        },
+        {
+          "field": "seatsTotal",
+          "value": 120,
+          "status": "incorrect_as_actual_total",
+          "assessment": "120 is nominal size, not the actual 54th-Parliament allocation: official general-election result totals 122, subsequent Port Waikato seat produces 123. Vacancies and occupied seats require separate dated fields. Do not blindly replace all values with 123 as current occupied membership.",
+          "sources": [
+            "https://archive.electionresults.govt.nz/electionresults_2023/",
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "chamberName",
+          "value": "House of Representatives",
+          "status": "verified",
+          "assessment": "Correct unicameral legislative chamber.",
+          "sources": [
+            "https://www3.parliament.nz/en/mps-and-electorates/political-parties/"
+          ]
+        },
+        {
+          "field": "sources",
+          "value": [
+            {
+              "title": "Green Party of Aotearoa New Zealand – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/Green_Party_of_Aotearoa_New_Zealand"
+            },
+            {
+              "title": "2023 New Zealand general election – Wikipedia",
+              "url": "https://en.wikipedia.org/wiki/2023_New_Zealand_general_election"
+            }
+          ],
+          "status": "insufficient_granularity",
+          "assessment": "Two Wikipedia pages are cited for the record; no claim-specific primary evidence or as-of date is stored. This ledger supplies evidence, not application changes.",
+          "sources": []
+        }
+      ]
+    }
+  ],
+  "svg_metadata": [
+    {
+      "id": "lab",
+      "sha256": "844122da88962f047b791bead705f1d661a33a03a4096d6cedaa733d1fdee93f",
+      "attributes": {
+        "version": "1.1",
+        "id": "LabourLogo",
+        "x": "0",
+        "y": "0",
+        "width": "415.897",
+        "height": "111.3",
+        "viewBox": "0 0 415.897 111.3",
+        "{http://www.w3.org/XML/1998/namespace}space": "preserve"
+      },
+      "titles": [],
+      "embedded_metadata": []
+    },
+    {
+      "id": "nat",
+      "sha256": "4d05df78de46901a6cbb1ce24965bd3ae48410e315dabc99abaaac9eff7257b4",
+      "attributes": {
+        "width": "291.07712mm",
+        "height": "99.563499mm",
+        "viewBox": "0 0 291.07712 99.5635",
+        "version": "1.1",
+        "id": "svg1",
+        "{http://www.inkscape.org/namespaces/inkscape}version": "1.4 (86a8ad7, 2024-10-11)",
+        "{http://www.w3.org/XML/1998/namespace}space": "preserve",
+        "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "drawing.svg"
+      },
+      "titles": [],
+      "embedded_metadata": []
+    },
+    {
+      "id": "act",
+      "sha256": "d8b49e16e17efdee540e55580655b5440783c21243fb3adf59f6cff0f95a8e93",
+      "attributes": {
+        "version": "1.1",
+        "id": "Layer_1",
+        "x": "0px",
+        "y": "0px",
+        "viewBox": "0 0 127.1 48.82",
+        "{http://www.w3.org/XML/1998/namespace}space": "preserve",
+        "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "act_logo_colour.svg",
+        "width": "127.1",
+        "height": "48.82",
+        "{http://www.inkscape.org/namespaces/inkscape}version": "1.1.2 (b8e25be833, 2022-02-05)"
+      },
+      "titles": [],
+      "embedded_metadata": []
+    },
+    {
+      "id": "grn",
+      "sha256": "cdaa24f55ae870fd1c52e63dc21398377889c3e5578c61cda7e1da2ed9b5f0c8",
+      "attributes": {
+        "width": "2917.1208",
+        "height": "893.96655",
+        "viewBox": "0 0 771.82154 236.52866",
+        "version": "1.1",
+        "id": "svg5",
+        "{http://www.inkscape.org/namespaces/inkscape}version": "1.1.1 (3bf5ae0d25, 2021-09-20)",
+        "{http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd}docname": "greenlogo.svg"
+      },
+      "titles": [],
+      "embedded_metadata": []
+    }
+  ],
+  "primary_image_downloads": [
+    {
+      "url": "https://www3.parliament.nz/media/1315/the-act-party-logo-august-2019.EqPEvA.jpg",
+      "sha256": "2e38e52318fe0c66c78091faf62b983cc012c9ed09ea68f8557473976bb4cbf6",
+      "bytes": 12053
+    },
+    {
+      "url": "https://www3.parliament.nz/media/1316/new-green-logo-green-web.DmxK7w.jpg",
+      "sha256": "b2b9967ac07886907ac369fdc2232087ec1549c3bad9a0ef9ef054a8a28a5242",
+      "bytes": 46995
+    },
+    {
+      "url": "https://assets.national.org.nz/web/prod/national-logo-white.png?v=1763940436",
+      "sha256": "90b3aec4267e38d0ca2578e601574b8ae4bb64de49163a7dd1d785c3c1382f5d",
+      "bytes": 12725
+    },
+    {
+      "url": "https://www3.parliament.nz/media/1318/logo-for-parliamentary-website.DmxK8A.jpg",
+      "sha256": "7a49b0f110f4250520556334ba0545c6ff9f8dd4f4c04a04432b5c4ef5f98230",
+      "bytes": 120348
+    }
+  ],
+  "coverage_gaps": [
+    "NZ First and Te Pāti Māori are parliamentary parties missing from curated NZ set. This is a documented coverage gap, not fabricated data; dataset explicitly permits incremental coverage."
+  ],
+  "source_conflicts": [
+    "Parliament overview shows National 49 and Green 14; August 2026 Hansard corroborates National 48 and Green 15. A vote count alone is not a complete membership census.",
+    "Electoral Commission August PDF has some stale row metadata (e.g. Te Pāti Māori logo 2017 in row vs 2023 substitution in its change log and HTML). Preserve source/version distinctions."
+  ],
+  "unresolved": [
+    "Exact registered-logo visual comparison: Elections NZ images/PDF returned placeholders via search and 403 via direct download; browser timed out. Official Parliament and party images were used only for observed comparisons.",
+    "Ideology classifications, exact colour specifications, original artwork provenance and reuse rights are not universally certified.",
+    "Current deployment UI was not rechecked in this continuation."
+  ],
+  "application_modified": false
+}
