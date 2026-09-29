@@ -11,8 +11,8 @@ import {
 /**
  * Popover-button control that lets the user pick the map's view centre
  * (Atlantic / Pacific / Americas / Africa / East Asia, or a custom
- * longitude via a slider), switch between the flat map and a globe, and
- * toggle south-up.
+ * longitude via a slider), switch between the flat map and a globe, spin
+ * it, and toggle south-up.
  *
  * Designed to sit in the same column as the +/-/⟲ zoom buttons. Closed
  * state is a single globe-icon button; open state floats a popover with
@@ -22,9 +22,12 @@ import {
 export type MapViewControlProps = {
   view: MapViewSettings;
   onChange: (next: MapViewSettings) => void;
+  /** Whether the map is auto-spinning. Omit (with `onToggleSpin`) to hide the control. */
+  spinning?: boolean;
+  onToggleSpin?: () => void;
 };
 
-export function MapViewControl({ view, onChange }: MapViewControlProps) {
+export function MapViewControl({ view, onChange, spinning = false, onToggleSpin }: MapViewControlProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const popoverStyle = usePopoverBounds(open, ref, 256);
@@ -136,6 +139,13 @@ export function MapViewControl({ view, onChange }: MapViewControlProps) {
               );
             })}
           </div>
+
+          {onToggleSpin && (
+            <label className="map-view-control__check">
+              <input type="checkbox" checked={spinning} onChange={onToggleSpin} />
+              <span>Spin</span>
+            </label>
+          )}
 
           <label className="map-view-control__check">
             <input
