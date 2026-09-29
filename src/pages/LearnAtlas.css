@@ -288,6 +288,22 @@ body:has(.learn-page--atlas) :is(.dropdown-option:hover, .dropdown-option[aria-s
   background: var(--atlas-tint);
   color: var(--atlas-accent);
 }
+.learn-page--atlas .learn-panel-tabs-wrap { border-bottom: 1px solid var(--atlas-border); }
+.learn-page--atlas .learn-panel-tabs { border-bottom: 0; gap: .25rem 1rem; }
+.learn-page--atlas .learn-panel-tabs__more-wrap { margin-left: 1rem; }
+.learn-page--atlas .learn-panel-tabs__menu {
+  border: 1px solid var(--atlas-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+}
+.learn-page--atlas .learn-panel-tabs__menu-item { font-weight: 500; }
+.learn-page--atlas .learn-panel-tabs__menu-item:hover,
+.learn-page--atlas .learn-panel-tabs__menu-item:focus-visible { background: var(--cream-deep); }
+.learn-page--atlas .learn-panel-tabs__menu-item--active {
+  background: var(--atlas-tint);
+  color: var(--atlas-accent);
+  font-weight: 650;
+}
 .learn-page--atlas .hierarchy__node {
   border-width: 1px;
   border-color: var(--atlas-border);
