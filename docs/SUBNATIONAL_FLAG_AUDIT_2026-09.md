@@ -6,6 +6,9 @@ shows. It records what was wrong, what it is now, the source that proves it, and
 calls made, so a later reviewer can challenge any of them. Batches ship as separate PRs; each
 section below says which batch fixed it.
 
+**Joining the work?** Start with [the audit handbook](SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md). It has
+the goals, the method, the tools, the current status and the queue of open items to claim.
+
 ## Method
 
 Nothing was changed from memory. Every decision below rests on at least one of these sources,
@@ -426,6 +429,101 @@ red, white and red (1:1:2). The municipality's official page says the flag was g
 with the first arms and confirmed unchanged when new arms were granted in 1978. FOTW explains that
 the stripes follow the first arms' red field with its white bar. The explainer now says that.
 
+## Batch 6b — the quiz accepts identical capital flags; flags no source supports (2026-09-26 to 29)
+
+*Status: implemented on the audit branch and being verified; it ships in the batch 6b PR. The
+handbook's status section records when it is live.*
+
+**The quiz now accepts identical capital flags.** Batch 5 taught the Sub-national flags game to
+accept two divisions that fly the same flag. Capital cities were still left out. In a deck of
+divisions and capitals, Kyiv's flag asked as "the capital of Kyiv Oblast" marked the answer "Kyiv"
+(the city's own division) wrong. The game now marks answers by key: a division's code, or
+`capital:` and the code of the division it is the capital of. `identicalSubdivisionFlags.ts`
+groups keys, 47 groups in all, each with its own sources:
+- **One city in two roles (29 groups).** Kyiv; Minsk; Bogotá; Prague; Addis Ababa (the Oromia
+  government sits there, a claim the federal constitution does not recognise); Zagreb; Budapest and
+  18 other Hungarian county seats that are also cities with county rights; Bishkek; Oslo; Port
+  Moresby; Honiara; Sofia (the capital of both Sofia City and Sofia Province). Each capital is
+  sourced from the region's English Wikipedia infobox, or from the Counties of Hungary table.
+- **One design, two or more places (13 new groups).** Each place's own flag is documented with the same
+  colours in the same layout:
+
+  | Places | Design | Sources |
+  |---|---|---|
+  | Bolívar department, Ibagué | yellow, green, red stripes | es.wikipedia *Bandera de Bolívar*; FOTW co-tolib |
+  | Cesar department, Tunja | green, white, green stripes | es.wikipedia *Bandera de Cesar*; FOTW co-boytu |
+  | Arauca, Manizales | white, green, red stripes | FOTW co-araar (Acuerdo 018 of 2001); FOTW co-cal-m (quoting the Caldas government) |
+  | Prague, České Budějovice | yellow over red | cs.wikipedia *Vlajka Prahy*; cs.wikipedia *České Budějovice* |
+  | Baden-Württemberg, Munich | black over gold | de.wikipedia *Flagge Baden-Württembergs*; de.wikipedia *München* ("Die Münchner Stadtflagge zeigt diese beiden Farben längsgestreift") |
+  | Esmeraldas Province, Zamora canton | white over green | FOTW ec-e; zamora.gob.ec *Símbolos patrios* (FOTW's 2001 white over black for Zamora is outdated) |
+  | Grenoble, Lons-le-Saunier | red and gold, divided vertically | partir-ici.fr; FOTW fr-39-ls (2021 photo) |
+  | Warsaw, Łódź | gold over red | pl.wikipedia *Warszawa*; pl.wikipedia *Flaga Łodzi* |
+  | Alessandria, Bologna, Genoa, Milan, Padua, Varese | red cross on white | FOTW pages for each city (CISV images) |
+  | Ascoli Piceno, Bergamo, Naples, Ravenna | yellow and red, divided vertically | FOTW; it.wikipedia *Napoli* |
+  | Asti, Como, Novara, Pavia | white cross on red | FOTW (Asti, Novara); it.wikipedia (Como, Pavia) |
+  | Brescia, Isernia | white and blue, divided vertically | FOTW it-bs-bs; it.wikipedia *Isernia* |
+  | Caserta, Catania | red and blue, divided vertically | FOTW it-csrta, it-ct-ct |
+
+  The five groups that already existed (Ajman and Dubai, Ras Al Khaimah and Sharjah, Nariño and
+  Vichada, the two Corsican departments, Balzers and Gamprin) are unchanged.
+- **Checked and different.** Mantua's red cross carries Virgil in the upper hoist (FOTW it-mantu),
+  so it is not grouped with Alessandria. Córdoba's top stripe is blue, not Tunja's green. Navarre,
+  Tarragona and Cuenca carry different arms on red.
+- The answer reveal names every twin ("…fly the same flag — any of these answers counts").
+- `check-identical-subdivision-flags.mjs` now compares capital flags with the divisions and the
+  other capitals of the same country. It checks a group's consistency with a shade-tolerant step
+  (96, failing at 10%), requires a note and a source for every group, and gains two report modes,
+  `--scan` and `--same-city`.
+
+**Capital flags no source supports: 11 removed.** Each is recorded, with its evidence, in
+`scripts/data/capital-flag-rejected.json`, so a regeneration cannot restore it. The explainers
+that described these images are removed.
+
+| Code | Capital | What it showed | Evidence |
+|---|---|---|---|
+| IT-RN | Rimini | Plain white and red bicolour, drawn on Commons with no source | FOTW it-rn-rn: the flag is white with the city arms (flagsonline.it); the comune's gonfalone carries the arms |
+| IT-TE | Teramo | Plain white and red bicolour, no source | The gonfalone granted by DPR 11 September 2001 is white with a red border and the arms (it.wikipedia); FOTW it-te-te gives the older town flag as red and white with red at the hoist |
+| IT-OR | Oristano | Plain white and red bicolour, drawn from Cagliari's file | No flag documented: no FOTW page, and it.wikipedia describes none |
+| SY-DI, SY-RD | Damascus | Commons "Flag of Damascus (until 2024).svg", the governorate's logo flag | Commons records it as used until 2024. No later flag is documented (Commons category, FOTW sy-di) |
+| MA-01 | Tangier | The Wilaya of Tangier's flag | FOTW ma-: the wilaya flags of 1976 are listed apart from city flags |
+| MA-02, MA-03, MA-05, MA-09 | Oujda, Taza, Beni Mellal, Settat | Kénitra, Fès (twice) and Settat *province* flags | Commons "Flags of provinces of Morocco" |
+| MA-10 | Guelmim | Sidi Bennour's flag | A different place |
+
+**Italian province flags that were not the province's flag: 3 suppressed.** The documented flags
+exist, but no free image of them does.
+- **IT-TR Terni** showed a plain yellow and blue field. it.wikipedia describes the province's flag
+  as *"partito di giallo e di azzurro con lo stemma della provincia al centro"*, with the arms at the
+  centre. Commons' own-work file renders with its arms layer hidden. The only depiction (Araldica
+  Civica, via it.wikipedia) is licensed to Wikipedia alone.
+- **IT-UD Udine** showed the same kind of plain blue and yellow field, the Commons own-work file of
+  2012. FOTW/CISV and bandieredalvivo.com, which photographed the flag at the provincial seat in
+  2018, both show the provincial arms (a golden eagle) at the centre.
+- **IT-TA Taranto** showed a plain red and blue field, the city's colours. The province has arms and
+  a blue-and-red gonfalone (it.wikipedia; FOTW it-ta shows the arms only). Commons' "Flag of the
+  Province of Taranto.svg" is a 2022 own-work drawing with no source.
+- **IT-FE Ferrara was checked and is right.** Its plain white-over-light-blue flag is the CISV
+  description, and bandieredalvivo.com photographed it at the provincial offices in 2010.
+
+**Belarus.** Natural Earth swapped the two Minsk units' types and gave both the name "Minsk". BY-MI
+is now **Minsk Region** (Region) and BY-HM is **Minsk** (City), per ISO 3166-2:BY. The
+city-territory entry moves from the region to the city, so Minsk Region's capital card now shows
+Minsk and its flag.
+
+**Names.** BG-23 is now "Sofia Province" (en.wikipedia), so it no longer shares the name of Sofia
+City. IT-GE is now "Genoa": Natural Earth had given the region's name, "Liguria", to the
+metropolitan city.
+
+**Grenoble's explainer** is rewritten from partir-ici.fr (Auvergne-Rhône-Alpes Tourisme) and
+fr.wikipedia's *Armoiries de Grenoble*. The flag is red at the hoist and gold at the fly. The text
+gives both readings of the three roses, Bouchayer's and Ménestrier's, the 1575 engraving, and the
+registration in the Armorial général on 13 June 1698. FOTW's 2001 description of the flag as red and
+white is the outlier.
+
+**Found in passing, and queued in the handbook.** Iran's capital data uses the 2018 ISO codes while
+its map uses the old ones, so Hormozgan shows Tehran (SF-03). The quiz does not apply the panel's
+capital-name check (SF-02). Taranto's city flag and about 80 other Italian capital flags are not
+yet checked against FOTW (SF-04).
+
 ## Follow-ups (later batches)
 
 ### Capital flags that match another place's flag (found in batch 5)
@@ -445,6 +543,8 @@ country. It found 46 identical pairs, in three groups:
 - **Still to check.** Grenoble's red-and-yellow file on Commons has no source for its design, and
   FOTW (fr-38-gr, 2001) describes the flag as red and white. Also Caserta and Catania, Brescia and
   Isernia, Ibagué and Bolívar, and Zamora and Esmeraldas.
+- **Resolved in batch 6b** (see above): every pair is now either grouped with sources, recorded as
+  distinct, or removed because its flag was wrong.
 
 ### The quiz does not check capital names (found in batch 6a)
 The Learn panel shows a capital's flag only when the capital card and the map name the same city.
@@ -463,9 +563,6 @@ Mellal (for Fès-Boulemane), and so on. Every Moroccan capital flag is a *provin
 (Kénitra, Fès, Settat, …), not a city's. This needs one structural fix, not per-code patches.
 
 
-
-To reproduce the list, run the measurement in `check-identical-subdivision-flags.mjs` with each
-country's capital flags from `capitalFlags.ts` added to its set.
 
 ### City-territory capital cards (found in batch 4)
 The Learn panel's capital card for a city-territory shows the territory's own figure for Kuala
