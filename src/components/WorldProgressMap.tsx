@@ -1,7 +1,7 @@
 import { UiIcon } from "./UiIcon";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { geoPath, geoCentroid, geoArea, geoGraticule10 } from "d3-geo";
-import { capMayBeVisible, isPointVisible, sphericalCap, worldProjection } from "../lib/mapProjection";
+import { capMayBeVisible, isPointVisible, sphericalCap, worldProjection, type SphericalCap } from "../lib/mapProjection";
 import { useGlobeDrag } from "../hooks/useGlobeDrag";
 import { feature } from "topojson-client";
 import polygonClipping from "polygon-clipping";
@@ -157,12 +157,6 @@ type Props = {
    */
   globe?: boolean;
   /**
-   * True while the parent is auto-spinning the map. On the globe every frame
-   * re-projects the world, so the heavier decorative overlays are held back
-   * until the globe settles.
-   */
-  rotating?: boolean;
-  /**
    * When true, draw every country's bundled sub-national borders as a lighter
    * dashed overlay on top of the country fills. Decorative only
    * (`pointer-events: none`) — hover/click still select the country. Used by
@@ -243,6 +237,63 @@ const HEIGHT = 500;
 // flag's proportions and `preserveAspectRatio="…meet"` fills it with no
 // letterbox gap, letting the tiling cover the whole landmass.
 type FlagPoly = { path: string; x: number; y: number; h: number };
+const MIN_GLOBE_FLAG_RING_PX = 3;
+
+function polygonsOf(geo: GeoFeature): unknown[] {
+  const geom = geo.geometry as { type: string; coordinates: unknown } | null;
+  if (!geom) return [];
+  if (geom.type === "Polygon") return [geom.coordinates];
+  if (geom.type === "MultiPolygon") return geom.coordinates as unknown[];
+  return [];
+}
+
+/** [minX, minY, maxX, maxY] of a geoPath M/L/Z string, read without re-projecting. */
+function pathStringBounds(d: string): [number, number, number, number] | null {
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  let isY = false;
+  const n = d.length;
+  let i = 0;
+  while (i < n) {
+    let c = d.charCodeAt(i);
+    // Start of a number: digit, '-' or '.'.
+    if ((c < 48 || c > 57) && c !== 45 && c !== 46) {
+      i++;
+      continue;
+    }
+    let neg = false;
+    if (c === 45) {
+      neg = true;
+      c = d.charCodeAt(++i);
+    }
+    let v = 0;
+    while (c >= 48 && c <= 57) {
+      v = v * 10 + (c - 48);
+      c = d.charCodeAt(++i);
+    }
+    if (c === 46) {
+      let scale = 0.1;
+      c = d.charCodeAt(++i);
+      while (c >= 48 && c <= 57) {
+        v += (c - 48) * scale;
+        scale *= 0.1;
+        c = d.charCodeAt(++i);
+      }
+    }
+    // Exponent notation never comes out of geoPath's fixed-precision writer;
+    // bail out rather than misread one.
+    if (c === 101 || c === 69) return null;
+    if (neg) v = -v;
+    if (isY) {
+      if (v < y0) y0 = v;
+      if (v > y1) y1 = v;
+    } else {
+      if (v < x0) x0 = v;
+      if (v > x1) x1 = v;
+    }
+    isY = !isY;
+  }
+  return isFinite(x0) && isFinite(y0) ? [x0, y0, x1, y1] : null;
+}
 
 // Defined at module scope so React.memo() works — component type must be
 // stable across renders. Both components depend only on overlay/polygon data
@@ -442,7 +493,6 @@ export function WorldProgressMap({
   rotationOffset = 0,
   southUp = false,
   globe = false,
-  rotating = false,
   showSubnationalBorders = false,
   extraControls,
   flagOverlay = null,
@@ -493,13 +543,10 @@ export function WorldProgressMap({
   // O(1) translate). Globe: rotation and drag re-project, so they feed in.
   const projLon = globe ? centerLongitude + rotationOffset + globeDrag.lon : centerLongitude;
   const projLat = globe ? globeDrag.lat : 0;
-  const globeMoving = globe && (globeDrag.dragging || rotating);
-  // Overlays (flags, sub-national borders, cities) follow the last settled
-  // view and are hidden while the globe is moving.
-  const settledViewRef = useRef({ lon: projLon, lat: projLat });
-  if (!globeMoving) settledViewRef.current = { lon: projLon, lat: projLat };
-  const overlayLon = settledViewRef.current.lon;
-  const overlayLat = settledViewRef.current.lat;
+  // Overlays (flags, sub-national borders, cities) track the live globe view,
+  // so they stay on screen while it is dragged or spinning.
+  const overlayLon = projLon;
+  const overlayLat = projLat;
 
   useEffect(() => {
     let cancelled = false;
@@ -685,7 +732,16 @@ export function WorldProgressMap({
     () => (globe ? geographies.map((g) => sphericalCap(g)) : null),
     [globe, geographies],
   );
-  const { pathByIdx, spherePath, graticulePath, pxPerDegree } = useMemo(() => {
+  const hasFlagOverlay = !!flagOverlay;
+  // Per-polygon caps (globe only): an island on the far side is skipped even
+  // when its country's mainland faces the viewer.
+  const ringCaps = useMemo(() => {
+    if (!globe) return null;
+    return geographies.map((geo) => polygonsOf(geo).map((coords) =>
+      sphericalCap({ geometry: { type: "Polygon", coordinates: coords } }),
+    ));
+  }, [globe, geographies]);
+  const { pathByIdx, ringPathsByIdx, spherePath, graticulePath, pxPerDegree } = useMemo(() => {
     const mapPath = geoPath(projection);
     const spherePath = mapPath({ type: "Sphere" } as never) ?? null;
     const graticulePath = globe ? mapPath(geoGraticule10()) ?? null : null;
@@ -697,13 +753,35 @@ export function WorldProgressMap({
 
     const view = { globe, longitude: projLon, latitude: projLat };
     const pathByIdx = new Map<number, string>();
+    // Per-polygon paths, kept for the flag overlay so it never re-projects. A
+    // country's path is the concatenation of its polygons' paths — the same
+    // string geoPath emits for the whole MultiPolygon.
+    const ringPathsByIdx = hasFlagOverlay ? new Map<number, (string | null)[]>() : null;
     for (let i = 0; i < geographies.length; i++) {
       if (!capMayBeVisible(geoCaps?.[i] ?? null, view)) continue;
-      const path = mapPath(geographies[i] as never);
+      const geo = geographies[i];
+      const polygons = polygonsOf(geo);
+      if (polygons.length === 0 || (!ringPathsByIdx && !ringCaps && polygons.length === 1)) {
+        const path = mapPath(geo as never);
+        if (path) pathByIdx.set(i, path);
+        continue;
+      }
+      const ringPaths: (string | null)[] = [];
+      for (let ri = 0; ri < polygons.length; ri++) {
+        if (ringCaps && !capMayBeVisible(ringCaps[i]?.[ri] ?? null, view)) {
+          ringPaths.push(null);
+          continue;
+        }
+        ringPaths.push(
+          mapPath({ type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: polygons[ri] } } as never) || null,
+        );
+      }
+      const path = ringPaths.join("");
       if (path) pathByIdx.set(i, path);
+      ringPathsByIdx?.set(i, ringPaths);
     }
-    return { pathByIdx, spherePath, graticulePath, pxPerDegree };
-  }, [geographies, geoCaps, projection, globe, projLon, projLat]);
+    return { pathByIdx, ringPathsByIdx, spherePath, graticulePath, pxPerDegree };
+  }, [geographies, geoCaps, ringCaps, hasFlagOverlay, projection, globe, projLon, projLat]);
 
   // Only the selected country's centroid is ever needed (the pulse ring).
   const selCentroid = useMemo((): [number, number] | null => {
@@ -726,74 +804,94 @@ export function WorldProgressMap({
   // projection as the country layer. digits(1) keeps the SVG `d` under a
   // pixel at map scale while cutting path-string size ~25%. One path string
   // is reused by the centre rotation copy only (see render below).
+  // On the globe the mesh is split into its individual border lines, each with
+  // a bounding cap, so a moving frame projects only the lines facing the viewer.
+  const subnationalGlobeLines = useMemo(() => {
+    if (!globe || !subnationalFeatures) return null;
+    const lines: { coords: [number, number][]; cap: SphericalCap | null }[] = [];
+    for (const f of subnationalFeatures) {
+      const geom = f.geometry as { type: string; coordinates: unknown } | null;
+      if (!geom) continue;
+      const parts =
+        geom.type === "MultiLineString"
+          ? (geom.coordinates as [number, number][][])
+          : geom.type === "LineString"
+            ? [geom.coordinates as [number, number][]]
+            : [];
+      for (const coords of parts) {
+        lines.push({
+          coords,
+          cap: sphericalCap({ geometry: { type: "LineString", coordinates: coords } }),
+        });
+      }
+    }
+    return lines;
+  }, [globe, subnationalFeatures]);
   const subnationalPaths = useMemo(() => {
-    if (!subnationalFeatures || subnationalFeatures.length === 0) return [] as string[];
-    const projection = worldProjection(WIDTH, HEIGHT, {
-      globe,
-      longitude: overlayLon,
-      latitude: overlayLat,
-    });
-    const mapPath = geoPath(projection).digits(1);
+    if (!showSubnationalBorders || !subnationalFeatures || subnationalFeatures.length === 0) {
+      return [] as string[];
+    }
+    const view = { globe, longitude: overlayLon, latitude: overlayLat };
+    const mapPath = geoPath(worldProjection(WIDTH, HEIGHT, view)).digits(1);
+    if (subnationalGlobeLines) {
+      const visible: [number, number][][] = [];
+      for (const line of subnationalGlobeLines) {
+        if (capMayBeVisible(line.cap, view)) visible.push(line.coords);
+      }
+      const d = mapPath({ type: "MultiLineString", coordinates: visible } as never);
+      return d ? [d] : [];
+    }
     const paths: string[] = [];
     for (const f of subnationalFeatures) {
       const d = mapPath(f as never);
       if (d) paths.push(d);
     }
     return paths;
-  }, [subnationalFeatures, globe, overlayLon, overlayLat]);
+  }, [showSubnationalBorders, subnationalFeatures, subnationalGlobeLines, globe, overlayLon, overlayLat]);
 
   // O(1) hot path — no memo, no reprojection. Three copies of the country
   // paths (at -WIDTH, 0, +WIDTH) are all translated together by this amount,
   // creating seamless globe rotation without any per-frame geoPath calls.
   const flagTranslateX = !globe && rotationOffset !== 0 ? -(rotationOffset * pxPerDegree) : 0;
 
-  // Cold path — only reruns when geography data or center meridian changes.
-  // Uses geoCentroid for robust image positioning immune to sphere-cap distortion.
-  const hasFlagOverlay = !!flagOverlay;
+  const flagZoomK = globe ? zoom.view.k : 1;
+  // Reuses the country layer's per-polygon paths, so moving the globe costs no
+  // extra projection for the flags.
   const flagPolygonsById = useMemo(() => {
     const result = new Map<string, FlagPoly[]>();
-    if (geographies.length === 0 || !hasFlagOverlay) return result;
-    const projection = worldProjection(WIDTH, HEIGHT, {
-      globe,
-      longitude: overlayLon,
-      latitude: overlayLat,
-    });
-    const mapPath = geoPath(projection);
-
-    for (const geo of geographies) {
+    if (!ringPathsByIdx) return result;
+    for (const [gi, ringPaths] of ringPathsByIdx) {
+      const geo = geographies[gi];
       const alpha2 = toIsoAlpha2(geo.id);
       if (!alpha2) continue;
-      const geom = geo.geometry as { type: string; coordinates: unknown } | null;
-      if (!geom) continue;
-      const rings: unknown[] =
-        geom.type === "Polygon"
-          ? [geom.coordinates]
-          : geom.type === "MultiPolygon"
-            ? (geom.coordinates as unknown[])
-            : [];
+      const polygons = polygonsOf(geo);
       const polys: FlagPoly[] = [];
-      for (const coords of rings) {
-        const pf = { type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: coords } };
-        const pd = mapPath(pf as never);
+      for (let ri = 0; ri < ringPaths.length; ri++) {
+        const pd = ringPaths[ri];
         if (!pd) continue;
-        const b = mapPath.bounds(pf as never);
-        if (!b || !isFinite(b[0][0]) || !isFinite(b[1][0])) continue;
-        const bw = b[1][0] - b[0][0];
-        const bh = b[1][1] - b[0][1];
+        const b = pathStringBounds(pd);
+        if (!b) continue;
+        const bw = b[2] - b[0];
+        const bh = b[3] - b[1];
         if (bw <= 0 || bh <= 0) continue;
+        // On the globe every frame re-renders each tile, so rings too small to
+        // show a flag (a few screen pixels) keep just the country fill.
+        if (globe && bw * flagZoomK < MIN_GLOBE_FLAG_RING_PX && bh * flagZoomK < MIN_GLOBE_FLAG_RING_PX) continue;
         // Antimeridian-crossing tiny rings get a D3 sphere-cap closure
         // segment that is very wide but very short (bh < 2px in practice).
         // Russia's mainland has bw/bh ≈ 8.19, so guard on bh < 20 to avoid
         // falsely filtering large countries that are just wide and flat.
         if (bw / bh > 8 && bh < 20) continue;
-        const geoC = geoCentroid(pf as never);
-        const svgC = projection(geoC);
-        if (!svgC || !isFinite(svgC[0]) || !isFinite(svgC[1])) continue;
+        if (!globe) {
+          const pf = { type: "Feature", properties: {}, geometry: { type: "Polygon", coordinates: polygons[ri] } };
+          const svgC = projection(geoCentroid(pf as never));
+          if (!svgC || !isFinite(svgC[0]) || !isFinite(svgC[1])) continue;
+        }
         const imgH = Math.max(bh, 20);
         // Anchor at bbox top-left so the pattern tile aligns with the country's
         // top/bottom edges — all flag stripes are visible via tiling. The tile
         // width is derived from the flag's true ratio in FlagDefs (see above).
-        polys.push({ path: pd, x: b[0][0], y: b[0][1], h: imgH });
+        polys.push({ path: pd, x: b[0], y: b[1], h: imgH });
       }
       if (polys.length > 0) {
         const existing = result.get(alpha2);
@@ -801,7 +899,7 @@ export function WorldProgressMap({
       }
     }
     return result;
-  }, [geographies, hasFlagOverlay, globe, overlayLon, overlayLat]);
+  }, [ringPathsByIdx, geographies, projection, globe, flagZoomK]);
 
   // Cold path — project each city's lon/lat to the base (non-rotated) SVG
   // coordinates once. Rotation/zoom/south-up are applied per-frame in the
@@ -951,7 +1049,7 @@ export function WorldProgressMap({
   // + south-up transform the pulse indicator uses, so markers track the map but
   // stay a constant pixel size (never enlarged with zoom).
   const CITY_MARGIN = 40;
-  const cityScreen: ScreenCity[] = (globeMoving ? [] : cityBase)
+  const cityScreen: ScreenCity[] = cityBase
     .map(({ city, bx, by }) => {
       const baseX = bx + flagTranslateX;
       const wrappedX = baseX < 0 ? baseX + WIDTH : baseX >= WIDTH ? baseX - WIDTH : baseX;
@@ -1026,7 +1124,7 @@ export function WorldProgressMap({
               interpreted in the referencing element's coordinate system, so
               the paths align correctly even when the map is zoomed or
               flipped south-up. */}
-          {flagOverlay && !globeMoving && (
+          {flagOverlay && (
             <FlagDefs
               flagOverlay={flagOverlay}
               flagPolygonsById={flagPolygonsById}
@@ -1205,7 +1303,7 @@ export function WorldProgressMap({
                     </path>
                   );
                 })}
-                {flagOverlay && !globeMoving && (
+                {flagOverlay && (
                   <FlagImages
                     flagOverlay={flagOverlay}
                     flagPolygonsById={flagPolygonsById}
@@ -1226,7 +1324,6 @@ export function WorldProgressMap({
                     free-spinning. */}
                 {offset === 0 &&
                   showSubnationalBorders &&
-                  !globeMoving &&
                   subnationalPaths.length > 0 && (
                   <g
                     className="world-map__subnational-borders"
@@ -1252,7 +1349,6 @@ export function WorldProgressMap({
                     country borders stay visually distinct (solid, darker). */}
                 {offset === 0 &&
                   showSubnationalBorders &&
-                  !globeMoving &&
                   subnationalPaths.length > 0 && (
                   <g
                     className="world-map__national-border-restore"
