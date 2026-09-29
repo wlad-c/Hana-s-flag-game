@@ -713,7 +713,7 @@ explainer:
 
 ## Batch 7d — the last 12 quiz capitals, eight wrong-entity capital flags, and a gate (2026-09-30)
 
-*Shipped in #PRNUM.*
+*Shipped in #1730.*
 
 **The 12 from 7c, each fixed on the Wikidata side.** `CAPITAL_CITY_QIDS` in
 `scripts/build-capital-details.mjs` pins the capital where Wikidata's P36 is out of date or lists
