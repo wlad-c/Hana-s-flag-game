@@ -16,11 +16,9 @@ import { useZoomPan } from "../hooks/useZoomPan";
 import { MapViewControl } from "../components/MapViewControl";
 import { DemocracyMapControl } from "../components/DemocracyMapControl";
 import { DemocracyMapLegend } from "../components/DemocracyMapLegend";
-import { PassportMapControl } from "../components/PassportMapControl";
+import { TravelMigrationMapControl } from "../components/TravelMigrationMapControl";
 import { VisaAccessMapLegend } from "../components/VisaAccessMapLegend";
-import { DiasporaMapControl } from "../components/DiasporaMapControl";
 import { DiasporaMapLegend } from "../components/DiasporaMapLegend";
-import { MigrantOriginsMapControl } from "../components/MigrantOriginsMapControl";
 import { MigrantOriginsMapLegend } from "../components/MigrantOriginsMapLegend";
 import { MigrantOriginsPanelRows } from "../components/MigrantOriginsPanelRows";
 import { DemocracyIndexChart } from "../components/DemocracyIndexChart";
@@ -1663,54 +1661,24 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   // HistoricalMap so the buttons are always present regardless of era.
   // Memoised so that HistoricalMap’s React.memo() wrapper is not bypassed
   // by a new JSX reference on every rotation-driven render.
+  const selectedModernCode = selected?.kind === "modern" ? selected.country.code : null;
   const mapExtraControls = useMemo(
     () => (
       <>
         <hr className="world-map__zoom-divider" />
-        {/* Flag + capital layer toggles live in the main toolbar row (after the
-            zoom buttons, ahead of rotation/globe) — the most-used controls stay
-            one tap away instead of hiding in the kebab overflow. */}
-        <button
-          type="button"
-          className={`world-map__zoom-btn world-map__zoom-btn--layer${showFlagMap ? " world-map__zoom-btn--active" : ""}`}
-          onClick={toggleFlagMap}
-          aria-pressed={showFlagMap}
-          aria-label={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-          title={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-        >
-          <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="flag" /></span>
-        </button>
-        {/* Passport map: cover colours OR visa access for a chosen passport.
-            Modern world map only; mutually exclusive with the flag overlay. */}
+        {/* Travel & migration: one country picker with visa / migrant intake /
+            diaspora lenses, plus passport covers. Modern world map only;
+            mutually exclusive with the flag overlay and index colouring. */}
         {isModernEra && (
-          <PassportMapControl
-            mode={passportMapMode}
-            onChange={handlePassportMapModeChange}
+          <TravelMigrationMapControl
+            passportMode={passportMapMode}
+            onPassportChange={handlePassportMapModeChange}
+            diasporaMode={diasporaMapMode}
+            onDiasporaChange={handleDiasporaMapModeChange}
+            migrantOriginsMode={migrantOriginsMapMode}
+            onMigrantOriginsChange={handleMigrantOriginsMapModeChange}
+            suggestedCode={selectedModernCode}
           />
-        )}
-        {isModernEra && (
-          <DiasporaMapControl
-            mode={diasporaMapMode}
-            onChange={handleDiasporaMapModeChange}
-          />
-        )}
-        {isModernEra && (
-          <MigrantOriginsMapControl
-            mode={migrantOriginsMapMode}
-            onChange={handleMigrantOriginsMapModeChange}
-          />
-        )}
-        {CITIES_FEATURE_ENABLED && (
-          <button
-            type="button"
-            className={`world-map__zoom-btn world-map__zoom-btn--layer${showCities ? " world-map__zoom-btn--active" : ""}`}
-            onClick={toggleCities}
-            aria-pressed={showCities}
-            aria-label={showCities ? "Hide capitals on map" : "Show capitals on map"}
-            title={showCities ? "Hide capitals" : "Show capitals"}
-          >
-            <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="pin" /></span>
-          </button>
         )}
         {isModernEra && (
           <DemocracyMapControl
@@ -1725,47 +1693,33 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
           onChange={setMapView}
           spinning={isRotating}
           onToggleSpin={isModernEra ? toggleRotation : undefined}
+          showFlags={showFlagMap}
+          onToggleFlags={toggleFlagMap}
+          showCapitals={CITIES_FEATURE_ENABLED ? showCities : undefined}
+          onToggleCapitals={CITIES_FEATURE_ENABLED ? toggleCities : undefined}
         />
         <hr className="world-map__zoom-divider world-map__zoom-divider--era" />
         <EraPicker currentEraId={eraId} onEraChange={setEraId} />
       </>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, migrantOriginsMapMode, handleMigrantOriginsMapModeChange, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
+    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, migrantOriginsMapMode, handleMigrantOriginsMapModeChange, selectedModernCode, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
   );
 
-  // Leaner control set for the subdivision map: just the flag-overlay
-  // toggle, reusing the same showFlagMap state as the world map (so toggling
-  // it on the world map and then drilling into a country keeps it on, and
-  // vice versa). SubdivisionMap has no rotation/view-centre controls.
+  // Leaner View menu for the subdivision map: just the flag and capital
+  // layers, reusing the world map's state (so toggling flags on the world map
+  // and then drilling into a country keeps them on, and vice versa).
+  // SubdivisionMap has no rotation/view-centre controls.
   const subdivisionMapExtraControls = useMemo(
     () => (
       <>
         <hr className="world-map__zoom-divider" />
-        {/* Flag + capital toggles inline (after the zoom buttons) — the
-            subdivision map has no rotation/globe, so nothing needs a kebab. */}
-        <button
-          type="button"
-          className={`world-map__zoom-btn world-map__zoom-btn--layer${showFlagMap ? " world-map__zoom-btn--active" : ""}`}
-          onClick={toggleFlagMap}
-          aria-pressed={showFlagMap}
-          aria-label={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-          title={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-        >
-          <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="flag" /></span>
-        </button>
-        {CITIES_FEATURE_ENABLED && (
-          <button
-            type="button"
-            className={`world-map__zoom-btn world-map__zoom-btn--layer${showCities ? " world-map__zoom-btn--active" : ""}`}
-            onClick={toggleCities}
-            aria-pressed={showCities}
-            aria-label={showCities ? "Hide capitals on map" : "Show capitals on map"}
-            title={showCities ? "Hide capitals" : "Show capitals"}
-          >
-            <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="pin" /></span>
-          </button>
-        )}
+        <MapViewControl
+          showFlags={showFlagMap}
+          onToggleFlags={toggleFlagMap}
+          showCapitals={CITIES_FEATURE_ENABLED ? showCities : undefined}
+          onToggleCapitals={CITIES_FEATURE_ENABLED ? toggleCities : undefined}
+        />
       </>
     ),
     [showFlagMap, toggleFlagMap, showCities, toggleCities],

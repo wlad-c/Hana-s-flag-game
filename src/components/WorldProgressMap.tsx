@@ -1116,14 +1116,27 @@ export function WorldProgressMap({
                 }
           }
         >
-          {/* Flag clip paths live at SVG root — outside all transforms.
-              Safari has a bug where it applies parent group transforms to
-              <defs> content (clipPath / pattern) when <defs> is nested
-              inside a transformed <g>. Placing <defs> here avoids that.
-              clipPathUnits="userSpaceOnUse" means the clip coordinates are
-              interpreted in the referencing element's coordinate system, so
-              the paths align correctly even when the map is zoomed or
+          {/* Flag clip paths + sphere clip live at SVG root — outside all
+              transforms. Safari has a bug where it applies parent group
+              transforms to <defs> content (clipPath / pattern) when <defs>
+              is nested inside a transformed <g>. Placing <defs> here avoids
+              that. clipPathUnits="userSpaceOnUse" means the clip coordinates
+              are interpreted in the referencing element's coordinate system,
+              so the paths align correctly even when the map is zoomed or
               flipped south-up. */}
+          {spherePath && (
+            <defs>
+              {/* Sphere outline clip — applied to the three-copy rotation
+                  group (inside zoom + south-up transforms) so country
+                  landmasses that reach the globe edge are clipped elegantly
+                  instead of floating outside the outline. The clip path uses
+                  the sphere outline from the same Equal Earth projection as
+                  the country paths, so it matches exactly. */}
+              <clipPath id="wm-sphere-clip" clipPathUnits="userSpaceOnUse">
+                <path d={spherePath} />
+              </clipPath>
+            </defs>
+          )}
           {flagOverlay && (
             <FlagDefs
               flagOverlay={flagOverlay}
@@ -1134,9 +1147,18 @@ export function WorldProgressMap({
           )}
           <g transform={zoom.transform}>
           {/* South-up flip happens inside the zoom group so flipping +
-              zooming compose correctly. See HistoricalMap for details. */}
+              zooming compose correctly. See HistoricalMap for details.
+              clipPath="url(#wm-sphere-clip)" is placed HERE (on the stable
+              south-up group, not on the rotating translation child) because
+              clipPathUnits="userSpaceOnUse" resolves clip coordinates in the
+              REFERENCING ELEMENT'S own coordinate space. The translation group
+              has transform="translate(flagTranslateX 0)", so any clipPath on it
+              would shift with the rotation — providing zero clipping. This
+              group's coordinate space is the fixed (0,0)–(960,500) projection
+              space, which always matches the sphere outline. */}
           <g
             transform={southUp ? `translate(0 ${HEIGHT}) scale(1 -1)` : undefined}
+            clipPath={spherePath ? "url(#wm-sphere-clip)" : undefined}
           >
           {spherePath && (
             <path

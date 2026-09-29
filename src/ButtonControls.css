@@ -81,6 +81,18 @@ body .world-map__zoom-btn.map-view-control__trigger {
   gap: .4rem;
   font-size: .9rem;
   font-weight: 600;
+  position: relative;
+}
+/* A layer (flags / capitals) is on — visible while the menu is closed. */
+body .map-view-control__trigger--layers-on::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--atlas-accent);
 }
 body :is(.anthem-player__pause-icon, .anthem-player__play-icon,
   .anthem-player__skip-icon) { line-height: 1; }

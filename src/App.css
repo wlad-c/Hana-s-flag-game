@@ -407,6 +407,19 @@
   box-shadow: 0 8px 0 var(--ink), 0 14px 24px rgba(26, 34, 56, 0.18);
   max-height: 18rem;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
+.dropdown-list::-webkit-scrollbar {
+  width: 4px;
+}
+.dropdown-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 999px;
 }
 
 /* Default — opens downward below the input. */
@@ -597,6 +610,19 @@
   overflow-y: auto;
   flex: 1 1 auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
+.dropdown-modal__list::-webkit-scrollbar {
+  width: 4px;
+}
+.dropdown-modal__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown-modal__list::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 999px;
 }
 
 .dropdown-modal__option {
@@ -3098,6 +3124,32 @@
   max-height: min(70vh, 28rem);
 }
 
+.travel-map-control__row,
+.travel-map-control__lenses {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0.3rem;
+}
+
+.travel-map-control__row .map-view-control__preset,
+.travel-map-control__lenses .map-view-control__preset {
+  text-align: center;
+}
+
+.travel-map-control__note {
+  margin: 0.2rem 0 0.1rem;
+  padding: 0 0.1rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.travel-map-control__current {
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ink, #1f2937);
+}
+
 .passport-map-control__filter-label {
   position: absolute;
   width: 1px;
@@ -3139,6 +3191,19 @@
   max-height: min(40vh, 16rem);
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
+.passport-map-control__list::-webkit-scrollbar {
+  width: 4px;
+}
+.passport-map-control__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.passport-map-control__list::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 999px;
 }
 
 .passport-map-control__list .map-view-control__preset {
