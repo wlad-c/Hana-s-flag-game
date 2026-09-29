@@ -16,11 +16,9 @@ import { useZoomPan } from "../hooks/useZoomPan";
 import { MapViewControl } from "../components/MapViewControl";
 import { DemocracyMapControl } from "../components/DemocracyMapControl";
 import { DemocracyMapLegend } from "../components/DemocracyMapLegend";
-import { PassportMapControl } from "../components/PassportMapControl";
+import { TravelMigrationMapControl } from "../components/TravelMigrationMapControl";
 import { VisaAccessMapLegend } from "../components/VisaAccessMapLegend";
-import { DiasporaMapControl } from "../components/DiasporaMapControl";
 import { DiasporaMapLegend } from "../components/DiasporaMapLegend";
-import { MigrantOriginsMapControl } from "../components/MigrantOriginsMapControl";
 import { MigrantOriginsMapLegend } from "../components/MigrantOriginsMapLegend";
 import { MigrantOriginsPanelRows } from "../components/MigrantOriginsPanelRows";
 import { DemocracyIndexChart } from "../components/DemocracyIndexChart";
@@ -1663,6 +1661,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   // HistoricalMap so the buttons are always present regardless of era.
   // Memoised so that HistoricalMap’s React.memo() wrapper is not bypassed
   // by a new JSX reference on every rotation-driven render.
+  const selectedModernCode = selected?.kind === "modern" ? selected.country.code : null;
   const mapExtraControls = useMemo(
     () => (
       <>
@@ -1680,24 +1679,18 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         >
           <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="flag" /></span>
         </button>
-        {/* Passport map: cover colours OR visa access for a chosen passport.
-            Modern world map only; mutually exclusive with the flag overlay. */}
+        {/* Travel & migration: one country picker with visa / migrant intake /
+            diaspora lenses, plus passport covers. Modern world map only;
+            mutually exclusive with the flag overlay and index colouring. */}
         {isModernEra && (
-          <PassportMapControl
-            mode={passportMapMode}
-            onChange={handlePassportMapModeChange}
-          />
-        )}
-        {isModernEra && (
-          <DiasporaMapControl
-            mode={diasporaMapMode}
-            onChange={handleDiasporaMapModeChange}
-          />
-        )}
-        {isModernEra && (
-          <MigrantOriginsMapControl
-            mode={migrantOriginsMapMode}
-            onChange={handleMigrantOriginsMapModeChange}
+          <TravelMigrationMapControl
+            passportMode={passportMapMode}
+            onPassportChange={handlePassportMapModeChange}
+            diasporaMode={diasporaMapMode}
+            onDiasporaChange={handleDiasporaMapModeChange}
+            migrantOriginsMode={migrantOriginsMapMode}
+            onMigrantOriginsChange={handleMigrantOriginsMapModeChange}
+            suggestedCode={selectedModernCode}
           />
         )}
         {CITIES_FEATURE_ENABLED && (
@@ -1731,7 +1724,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       </>
     ),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, migrantOriginsMapMode, handleMigrantOriginsMapModeChange, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
+    [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, migrantOriginsMapMode, handleMigrantOriginsMapModeChange, selectedModernCode, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
   );
 
   // Leaner control set for the subdivision map: just the flag-overlay

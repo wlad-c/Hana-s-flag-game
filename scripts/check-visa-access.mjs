@@ -4,7 +4,7 @@
  * extract. Never invent a category — if the CSV and generated file drift,
  * fail the build.
  *
- * Also guards the Learn-mode UI wiring: PassportMapControl must exist, and
+ * Also guards the Learn-mode UI wiring: TravelMigrationMapControl must exist, and
  * LearnPage must call getVisaAccessColorOverlay / render the legend.
  *
  * Run: node scripts/check-visa-access.mjs
@@ -22,7 +22,7 @@ const CSV = R("data/passport-index-tidy-iso2.csv");
 const GENERATED = R("../src/data/visaAccess.ts");
 const UN_CODES_FILE = R("../src/lib/unMemberStates.ts");
 const LEARN = R("../src/pages/LearnPage.tsx");
-const CONTROL = R("../src/components/PassportMapControl.tsx");
+const CONTROL = R("../src/components/TravelMigrationMapControl.tsx");
 const LEGEND = R("../src/components/VisaAccessMapLegend.tsx");
 const LIB = R("../src/lib/visaAccessColors.ts");
 
@@ -138,11 +138,11 @@ const legend = readFileSync(LEGEND, "utf8");
 const lib = readFileSync(LIB, "utf8");
 
 for (const [label, src, needle] of [
-  ["LearnPage", learn, "PassportMapControl"],
+  ["LearnPage", learn, "TravelMigrationMapControl"],
   ["LearnPage", learn, "getVisaAccessColorOverlay"],
   ["LearnPage", learn, "VisaAccessMapLegend"],
-  ["PassportMapControl", control, "visa"],
-  ["PassportMapControl", control, "covers"],
+  ["TravelMigrationMapControl", control, "visa"],
+  ["TravelMigrationMapControl", control, "covers"],
   ["VisaAccessMapLegend", legend, "VISA_ACCESS_LEGEND"],
   ["VisaAccessMapLegend", legend, "VISA_ACCESS_COLORS"],
   ["VisaAccessMapLegend", legend, "formatVisaAccessCountLabel"],

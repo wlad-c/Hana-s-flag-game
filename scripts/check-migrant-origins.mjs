@@ -3,7 +3,7 @@
  * Validate bundled migrant-origin data against the committed UN DESA extract.
  * Never invent a stock figure — if the CSV and generated file drift, fail.
  *
- * Also guards Learn-mode UI wiring: MigrantOriginsMapControl must exist, and
+ * Also guards Learn-mode UI wiring: TravelMigrationMapControl must exist, and
  * LearnPage must call getMigrantOriginsColorOverlay / render the legend /
  * show sourced panel rows.
  *
@@ -22,7 +22,7 @@ const CSV = R("data/undesa-ims-2024-bilateral-iso2.csv");
 const GENERATED = R("../src/data/migrantOrigins.ts");
 const UN_CODES_FILE = R("../src/lib/unMemberStates.ts");
 const LEARN = R("../src/pages/LearnPage.tsx");
-const CONTROL = R("../src/components/MigrantOriginsMapControl.tsx");
+const CONTROL = R("../src/components/TravelMigrationMapControl.tsx");
 const LEGEND = R("../src/components/MigrantOriginsMapLegend.tsx");
 const LIB = R("../src/lib/migrantOriginsColors.ts");
 const PANEL = R("../src/components/MigrantOriginsPanelRows.tsx");
@@ -144,12 +144,12 @@ const lib = readFileSync(LIB, "utf8");
 const panel = readFileSync(PANEL, "utf8");
 
 for (const [label, src, needle] of [
-  ["LearnPage", learn, "MigrantOriginsMapControl"],
+  ["LearnPage", learn, "TravelMigrationMapControl"],
   ["LearnPage", learn, "getMigrantOriginsColorOverlay"],
   ["LearnPage", learn, "MigrantOriginsMapLegend"],
   ["LearnPage", learn, "MigrantOriginsPanelRows"],
-  ["MigrantOriginsMapControl", control, "Filter countries"],
-  ["MigrantOriginsMapControl", control, "kind: \"migrant-origins\""],
+  ["TravelMigrationMapControl", control, "Filter countries"],
+  ["TravelMigrationMapControl", control, "kind: \"migrant-origins\""],
   ["MigrantOriginsMapLegend", legend, "MIGRANT_ORIGINS_BLUE"],
   ["MigrantOriginsMapLegend", legend, "MIGRANT_ORIGINS_SOURCE"],
   ["migrantOriginsColors", lib, "getMigrantOriginsColorOverlay"],

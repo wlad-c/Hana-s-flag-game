@@ -3098,6 +3098,32 @@
   max-height: min(70vh, 28rem);
 }
 
+.travel-map-control__row,
+.travel-map-control__lenses {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 0.3rem;
+}
+
+.travel-map-control__row .map-view-control__preset,
+.travel-map-control__lenses .map-view-control__preset {
+  text-align: center;
+}
+
+.travel-map-control__note {
+  margin: 0.2rem 0 0.1rem;
+  padding: 0 0.1rem;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.travel-map-control__current {
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--ink, #1f2937);
+}
+
 .passport-map-control__filter-label {
   position: absolute;
   width: 1px;

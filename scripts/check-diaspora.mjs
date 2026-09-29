@@ -20,7 +20,7 @@ const FLOW_META = R("data/diaspora-migrant-flow-2015-2020.meta.json");
 const GENERATED = R("../src/data/diaspora.ts");
 const UN_CODES_FILE = R("../src/lib/unMemberStates.ts");
 const LEARN = R("../src/pages/LearnPage.tsx");
-const CONTROL = R("../src/components/DiasporaMapControl.tsx");
+const CONTROL = R("../src/components/TravelMigrationMapControl.tsx");
 const LEGEND = R("../src/components/DiasporaMapLegend.tsx");
 const LIB = R("../src/lib/diasporaColors.ts");
 
@@ -151,14 +151,14 @@ const legend = readFileSync(LEGEND, "utf8");
 const lib = readFileSync(LIB, "utf8");
 
 for (const [label, src, needle] of [
-  ["LearnPage", learn, "DiasporaMapControl"],
+  ["LearnPage", learn, "TravelMigrationMapControl"],
   ["LearnPage", learn, "getDiasporaColorOverlay"],
   ["LearnPage", learn, "DiasporaMapLegend"],
   ["LearnPage", learn, "diasporaMapMode.kind"],
-  ["DiasporaMapControl", control, "Living abroad now"],
-  ["DiasporaMapControl", control, "Moved 2015"],
-  ["DiasporaMapControl", control, "draftKind"],
-  ["DiasporaMapControl", control, "pickMeasure"],
+  ["TravelMigrationMapControl", control, "Living abroad now"],
+  ["TravelMigrationMapControl", control, "Moved 2015"],
+  ["TravelMigrationMapControl", control, "draftKind"],
+  ["TravelMigrationMapControl", control, "pickMeasure"],
   ["DiasporaMapLegend", legend, "DIASPORA_STOCK_SOURCE"],
   ["DiasporaMapLegend", legend, "DIASPORA_FLOW_SOURCE"],
   ["diasporaColors", lib, "getDiasporaColorOverlay"],
