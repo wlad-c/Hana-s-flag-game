@@ -1666,18 +1666,6 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     () => (
       <>
         <hr className="world-map__zoom-divider" />
-        {/* The flag layer toggle lives in the main toolbar row (after the zoom
-            buttons); capitals are a checkbox in the View menu. */}
-        <button
-          type="button"
-          className={`world-map__zoom-btn world-map__zoom-btn--layer${showFlagMap ? " world-map__zoom-btn--active" : ""}`}
-          onClick={toggleFlagMap}
-          aria-pressed={showFlagMap}
-          aria-label={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-          title={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-        >
-          <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="flag" /></span>
-        </button>
         {/* Travel & migration: one country picker with visa / migrant intake /
             diaspora lenses, plus passport covers. Modern world map only;
             mutually exclusive with the flag overlay and index colouring. */}
@@ -1705,6 +1693,8 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
           onChange={setMapView}
           spinning={isRotating}
           onToggleSpin={isModernEra ? toggleRotation : undefined}
+          showFlags={showFlagMap}
+          onToggleFlags={toggleFlagMap}
           showCapitals={CITIES_FEATURE_ENABLED ? showCities : undefined}
           onToggleCapitals={CITIES_FEATURE_ENABLED ? toggleCities : undefined}
         />
@@ -1716,38 +1706,20 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     [isRotating, mapView, toggleRotation, showFlagMap, toggleFlagMap, isModernEra, passportMapMode, handlePassportMapModeChange, diasporaMapMode, handleDiasporaMapModeChange, migrantOriginsMapMode, handleMigrantOriginsMapModeChange, selectedModernCode, showCities, toggleCities, democracyMapMode, handleDemocracyMapModeChange, eraId, setEraId],
   );
 
-  // Leaner control set for the subdivision map: just the flag-overlay
-  // toggle, reusing the same showFlagMap state as the world map (so toggling
-  // it on the world map and then drilling into a country keeps it on, and
-  // vice versa). SubdivisionMap has no rotation/view-centre controls.
+  // Leaner View menu for the subdivision map: just the flag and capital
+  // layers, reusing the world map's state (so toggling flags on the world map
+  // and then drilling into a country keeps them on, and vice versa).
+  // SubdivisionMap has no rotation/view-centre controls.
   const subdivisionMapExtraControls = useMemo(
     () => (
       <>
         <hr className="world-map__zoom-divider" />
-        {/* Flag + capital toggles inline (after the zoom buttons) — the
-            subdivision map has no rotation/globe, so nothing needs a kebab. */}
-        <button
-          type="button"
-          className={`world-map__zoom-btn world-map__zoom-btn--layer${showFlagMap ? " world-map__zoom-btn--active" : ""}`}
-          onClick={toggleFlagMap}
-          aria-pressed={showFlagMap}
-          aria-label={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-          title={showFlagMap ? "Hide flags on map" : "Show flags on map"}
-        >
-          <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="flag" /></span>
-        </button>
-        {CITIES_FEATURE_ENABLED && (
-          <button
-            type="button"
-            className={`world-map__zoom-btn world-map__zoom-btn--layer${showCities ? " world-map__zoom-btn--active" : ""}`}
-            onClick={toggleCities}
-            aria-pressed={showCities}
-            aria-label={showCities ? "Hide capitals on map" : "Show capitals on map"}
-            title={showCities ? "Hide capitals" : "Show capitals"}
-          >
-            <span className="world-map__zoom-icon" aria-hidden="true"><UiIcon name="pin" /></span>
-          </button>
-        )}
+        <MapViewControl
+          showFlags={showFlagMap}
+          onToggleFlags={toggleFlagMap}
+          showCapitals={CITIES_FEATURE_ENABLED ? showCities : undefined}
+          onToggleCapitals={CITIES_FEATURE_ENABLED ? toggleCities : undefined}
+        />
       </>
     ),
     [showFlagMap, toggleFlagMap, showCities, toggleCities],

@@ -118,10 +118,12 @@ export function TravelMigrationMapControl({
     setDraftLens(activeLens ?? "visa");
     setDraftKind(diasporaMode?.kind ?? "stock");
     setDraftCode(activeCode ?? suggestedCode ?? null);
+    // Scroll only the list — scrollIntoView would also scroll the popover
+    // and hide its heading.
     requestAnimationFrame(() => {
-      listRef.current
-        ?.querySelector<HTMLElement>('[aria-selected="true"]')
-        ?.scrollIntoView({ block: "nearest" });
+      const list = listRef.current;
+      const item = list?.querySelector<HTMLElement>('[aria-selected="true"]');
+      if (list && item) list.scrollTop = item.offsetTop - list.offsetTop - list.clientHeight / 2;
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
@@ -211,7 +213,7 @@ export function TravelMigrationMapControl({
         title={activeSummary ?? "Travel & migration — visas, migrant intake, diaspora"}
       >
         <span className="world-map__zoom-icon" aria-hidden="true">
-          <UiIcon name="migrate" />
+          <UiIcon name="plane" />
         </span>
       </button>
 
