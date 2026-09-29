@@ -177,6 +177,8 @@ const SUBNATIONAL_OVERRIDE = {
 // Keyed `${code}|${neName}`; each row cites the Wikidata item. Never use this to
 // swap in a DIFFERENT city — that is SUBNATIONAL_OVERRIDE's job, with a reason.
 const SUBNATIONAL_NAME_ALIAS = {
+  // Paktia (AF-PIA) — capital Gardez, Wikidata Q467632; NE "Gardiz".
+  "AF-PIA|Gardiz": "Gardez",
   // Bushehr (IR-18) — capital Bushehr, Wikidata Q158928; NE adds "Bandar-e" (port).
   "IR-18|Bandar-e Bushehr": "Bushehr",
   // Hormozgan (IR-22) — capital Bandar Abbas, Wikidata Q154814.
