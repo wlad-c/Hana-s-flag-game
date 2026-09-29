@@ -186,7 +186,7 @@ provide Chromium at `/opt/pw-browsers/chromium`.
 | 4 Czechia, Poland, Estonia | #1706 `ab8cea4` | Czech, Polish and Estonian region flags shown under the app's codes, with sourced explainers |
 | 5 | #1707 `9e8449e` | Slovak, Swiss, Liechtenstein, Limburg, Comoros, Saint Helena and Russian gaps; the quiz accepts identical division flags; new identical-flag gate |
 | 6a | #1708 `e3c1a35` | North Sulawesi's capital is Manado; Schellenberg's is not Vaduz; the Wikidata-capital rejection list and its check |
-| 6b | #PRNUM | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
+| 6b | #1717 | The quiz accepts identical capital flags (47 sourced groups); 11 capital flags and 3 Italian province flags that no source supports removed; Minsk Region, Sofia Province and Genoa named correctly; Grenoble's explainer rewritten |
 
 The independent auditor in the shared log screened every image added through `e3c1a35`: 76
 subdivision flags and 2 capital flags. Its findings F84–F86 (Estonian explainers and SVG metadata)

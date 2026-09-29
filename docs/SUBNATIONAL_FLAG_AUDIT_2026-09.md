@@ -431,7 +431,7 @@ the stripes follow the first arms' red field with its white bar. The explainer n
 
 ## Batch 6b — the quiz accepts identical capital flags; flags no source supports (2026-09-26 to 29)
 
-*Shipped in #PRNUM.*
+*Shipped in #1717.*
 
 **The quiz now accepts identical capital flags.** Batch 5 taught the Sub-national flags game to
 accept two divisions that fly the same flag. Capital cities were still left out. In a deck of
