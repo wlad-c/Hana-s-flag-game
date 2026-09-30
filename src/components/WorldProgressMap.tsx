@@ -1340,12 +1340,15 @@ export function WorldProgressMap({
                     lines are visible; pointer-events:none so hover/click still
                     hit the country underneath. A stroke-only national-border
                     pass follows so coastlines stay solid, not dashed.
-                    Only the centre rotation-copy renders the overlay: the
-                    ±WIDTH copies would triple a multi-MB path string in the
-                    DOM for a seam that only matters while the globe is
-                    free-spinning. */}
-                {offset === 0 &&
-                  showSubnationalBorders &&
+                    Rendered on ALL three rotation copies (not just offset=0):
+                    with the sphere clipPath in place the ±WIDTH copies are
+                    already clipped to the globe boundary so off-screen content
+                    is never painted. Restricting to offset=0 was a DOM-size
+                    optimisation that pre-dates the clip; keeping it caused
+                    subnational borders to disappear on countries that had
+                    rotated into a ±WIDTH copy, and made borders look heavier
+                    on the centre copy than the others (visible seam/gap). */}
+                {showSubnationalBorders &&
                   subnationalPaths.length > 0 && (
                   <g
                     className="world-map__subnational-borders"
@@ -1369,8 +1372,7 @@ export function WorldProgressMap({
                 )}
                 {/* Re-stroke national outlines on top of the dashed overlay so
                     country borders stay visually distinct (solid, darker). */}
-                {offset === 0 &&
-                  showSubnationalBorders &&
+                {showSubnationalBorders &&
                   subnationalPaths.length > 0 && (
                   <g
                     className="world-map__national-border-restore"
@@ -1416,6 +1418,7 @@ export function WorldProgressMap({
                   </g>
                 )}
               </g>
+
             ))}
           </g>
           </g>

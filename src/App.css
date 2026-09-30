@@ -3090,12 +3090,32 @@
   padding: 0.75rem;
   min-width: 280px;
   max-width: min(22rem, calc(100vw - 2rem));
+  /* Fill the maxHeight set by the hook so the options child can scroll. */
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .democracy-map-control__options {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  /* Thin scrollbar — matches .anthem-lyrics and the rest of the app. */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-faint) transparent;
+}
+
+.democracy-map-control__options::-webkit-scrollbar {
+  width: 4px;
+}
+.democracy-map-control__options::-webkit-scrollbar-track {
+  background: transparent;
+}
+.democracy-map-control__options::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 999px;
 }
 
 .democracy-map-control__group {
@@ -3188,22 +3208,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  max-height: min(40vh, 16rem);
-  overflow-y: auto;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--ink-faint) transparent;
-}
-
-.passport-map-control__list::-webkit-scrollbar {
-  width: 4px;
-}
-.passport-map-control__list::-webkit-scrollbar-track {
-  background: transparent;
-}
-.passport-map-control__list::-webkit-scrollbar-thumb {
-  background: var(--ink-faint);
-  border-radius: 999px;
 }
 
 .passport-map-control__list .map-view-control__preset {
