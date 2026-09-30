@@ -88,7 +88,6 @@ export function TravelMigrationMapControl({
   const [draftCode, setDraftCode] = useState<string | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const listRef = useRef<HTMLUListElement>(null);
   const popoverStyle = usePopoverBounds(open, ref, 460);
 
   useEffect(() => {
@@ -118,13 +117,6 @@ export function TravelMigrationMapControl({
     setDraftLens(activeLens ?? "visa");
     setDraftKind(diasporaMode?.kind ?? "stock");
     setDraftCode(activeCode ?? suggestedCode ?? null);
-    // Scroll only the list — scrollIntoView would also scroll the popover
-    // and hide its heading.
-    requestAnimationFrame(() => {
-      const list = listRef.current;
-      const item = list?.querySelector<HTMLElement>('[aria-selected="true"]');
-      if (list && item) list.scrollTop = item.offsetTop - list.offsetTop - list.clientHeight / 2;
-    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
@@ -323,7 +315,7 @@ export function TravelMigrationMapControl({
                 autoCorrect="off"
                 spellCheck={false}
               />
-              <ul ref={listRef} className="passport-map-control__list" role="listbox" aria-label="Countries">
+              <ul className="passport-map-control__list" role="listbox" aria-label="Countries">
                 {filteredCountries.length === 0 ? (
                   <li className="passport-map-control__empty">No matching countries</li>
                 ) : (
