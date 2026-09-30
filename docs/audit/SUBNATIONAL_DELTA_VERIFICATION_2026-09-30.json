@@ -1,0 +1,2718 @@
+{
+  "date": "2026-09-30",
+  "agent": "Codex",
+  "applicationEdits": false,
+  "baseRevision": "011e0065ad934d3ee36c815e542a66ab6771a8ba",
+  "inspectedApplicationRevision": "3528c20d1cd451b50770cf64bc7f0e61c0a1b9b5",
+  "scope": "23-commit, 127-file delta inventoried; selected primary factual checks, complete geometry-preservation comparison for seven changed country files, 37 newly added capital-explainer images screened. Not universal verification.",
+  "commits": [
+    "3528c20d1cd451b50770cf64bc7f0e61c0a1b9b5 fix: single thin scrollbar in Travel & Migration popover",
+    "f5c08de495977d5928e7f53d4af81c69c6dbdb08 fix: render subnational borders on all three rotation copies, not just offset=0",
+    "342a5e00c540f3192169711b4cb6b1487407bc03 Sub-national audit batch 7e: explain the 46 capital flags the name fixes made visible (#1733)",
+    "1a7c5fe7dbea4d632d0d0b7dae673f1365aaafa0 Sub-national audit batch 7f: remove 20 capital flags that belong to someone else, or to no one (#1732)",
+    "28316d557d1d6df960a90544e5eb3f3876394c46 Sub-national audit batch 7d: the last 12 quiz capitals, eight wrong-entity capital flags, and a gate (#1730)",
+    "e4e4bd524673aee3b0705b06b22f79c3eddde2ed fix: correct globe clip coordinate system — move clipPath to south-up group",
+    "bdfbf185886c27a23e3aa6ddb4fd58b3948c89d0 fix: add symmetric gap between map bottom and footnote bar",
+    "2a3ce6d5bbaf76ae98ea833b36033c64ae8d7711 fix: clip country landmasses to globe outline during rotation animation",
+    "16dd1339bdd16f080ef5ab0eecba21d311c76675 fix: keep full world map above the fold by accounting for bottom nav height",
+    "1e2c8ae2c8304261d493936427c4407edb9d2d44 Learn map: one Travel & migration button; flags and capitals move into View (#1729)",
+    "67773b5f317524b91b7da02376b1bf3cba195098 Sub-national audit batch 7c: 64 quiz capitals now agree with the map (#1728)",
+    "8311a075b0bba4360ac99f773f5c21850a162fda Sub-national audit batch 7b: six maps had polygons carrying another region's code (#1727)",
+    "0e8f3c33c47dac3b8334336116e4d7e171d8282b Always show the map View menu in the toolbar with its own gear + label (#1726)",
+    "04b866e0472e9ac1144b8f8ced39078e22d5cf7b Stop iOS input auto-zoom that left the page drifting sideways (#1725)",
+    "057229b8b485916a830ec81f4097b4d8723d46e3 Keep flag, capital and sub-national overlays on the globe while it spins or is dragged (#1724)",
+    "f5d21f515e6e5c8bc8fd1c7e689ba495c58548a3 Move map spin control into the View centre menu beside Map/Globe (#1723)",
+    "90a7cdd48dbb9b993695ed771cf39d7f2a43351f Learn map: add a Globe projection toggle under View centre (#1722)",
+    "2f1a3483c600bb8e87b77cbea7be4bc898359067 Learn info panel: edge-tab hide/show toggle attached to the panel (#1721)",
+    "141cf7fd9b2d364d799f2ae1c55ae2a7ab496ee6 Sub-national audit batch 7a: Iran's provinces showed each other's data (#1720)",
+    "8c6b88cbb9446ff5de4d14993dad768eb39eae58 Learn info panel: replace swipe-only tab strip with priority+ 'More' menu (#1719)",
+    "04ce7241ffd204cd4802d4b13c205e08ff012aa6 Sub-national flag audit: batch 6b is live; claim batch 7 (quiz capital names) (#1718)",
+    "6d8406e98a6502d2992f44269a73f9871a9dba61 Batch 6b: the sub-national quiz accepts identical capital flags; flags no source supports removed (#1717)",
+    "0593e272f796893c8497aa287862d3b88a1a956e Sub-national flag audit: handbook, open-work queue and shared tools for parallel work (#1716)"
+  ],
+  "changedFiles": [
+    "M\t.github/workflows/flag-integrity.yml",
+    "M\tCLAUDE.md",
+    "M\tdocs/LEARN_CLAIM_VERIFICATION_2026-09-20.md",
+    "M\tdocs/SUBNATIONAL_FLAG_AUDIT_2026-09.md",
+    "A\tdocs/SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md",
+    "M\tpackage.json",
+    "A\tpublic/capital-flags/ch-ar.png",
+    "D\tpublic/capital-flags/ch-ar.svg",
+    "D\tpublic/capital-flags/eg-dk.png",
+    "D\tpublic/capital-flags/eg-mn.jpg",
+    "D\tpublic/capital-flags/eg-mt.png",
+    "D\tpublic/capital-flags/eg-sin.png",
+    "D\tpublic/capital-flags/ge-ab.svg",
+    "D\tpublic/capital-flags/ge-sk.svg",
+    "D\tpublic/capital-flags/gq-bn.png",
+    "D\tpublic/capital-flags/gt-ja.gif",
+    "D\tpublic/capital-flags/gt-ju.png",
+    "D\tpublic/capital-flags/id-kt.png",
+    "D\tpublic/capital-flags/ie-co.svg",
+    "D\tpublic/capital-flags/ie-ld.svg",
+    "D\tpublic/capital-flags/ie-lk.svg",
+    "D\tpublic/capital-flags/ie-oy.svg",
+    "D\tpublic/capital-flags/ie-ta.svg",
+    "D\tpublic/capital-flags/ie-wd.svg",
+    "D\tpublic/capital-flags/it-or.svg",
+    "D\tpublic/capital-flags/it-rn.svg",
+    "D\tpublic/capital-flags/it-te.svg",
+    "D\tpublic/capital-flags/jp-13.svg",
+    "D\tpublic/capital-flags/lu-l.jpg",
+    "D\tpublic/capital-flags/ma-01.gif",
+    "D\tpublic/capital-flags/ma-02.svg",
+    "D\tpublic/capital-flags/ma-03.svg",
+    "D\tpublic/capital-flags/ma-05.svg",
+    "D\tpublic/capital-flags/ma-09.svg",
+    "D\tpublic/capital-flags/ma-10.png",
+    "D\tpublic/capital-flags/mx-que.svg",
+    "D\tpublic/capital-flags/ng-fc.svg",
+    "D\tpublic/capital-flags/ni-ca.svg",
+    "D\tpublic/capital-flags/ni-gr.png",
+    "D\tpublic/capital-flags/ni-sj.svg",
+    "D\tpublic/capital-flags/pe-lim.jpg",
+    "D\tpublic/capital-flags/pe-pas.png",
+    "M\tpublic/capital-flags/pt-20.png",
+    "D\tpublic/capital-flags/py-11.png",
+    "D\tpublic/capital-flags/ro-bn.svg",
+    "D\tpublic/capital-flags/ro-mm.svg",
+    "D\tpublic/capital-flags/ro-sj.svg",
+    "D\tpublic/capital-flags/ro-sm.svg",
+    "D\tpublic/capital-flags/ro-tm.svg",
+    "D\tpublic/capital-flags/rs-05.svg",
+    "D\tpublic/capital-flags/sy-di.svg",
+    "D\tpublic/capital-flags/sy-rd.svg",
+    "M\tpublic/capital-flags/ua-09.png",
+    "A\tpublic/capital-flags/ua-68.png",
+    "D\tpublic/capital-flags/ua-68.svg",
+    "D\tpublic/flags/sub/IT/IT-TA.svg",
+    "D\tpublic/flags/sub/IT/IT-TR.svg",
+    "D\tpublic/flags/sub/IT/IT-UD.svg",
+    "M\tpublic/subdivisions/AF.json",
+    "M\tpublic/subdivisions/EC.json",
+    "M\tpublic/subdivisions/ER.json",
+    "M\tpublic/subdivisions/GY.json",
+    "M\tpublic/subdivisions/IR.json",
+    "M\tpublic/subdivisions/LV.json",
+    "M\tpublic/subdivisions/UG.json",
+    "M\tscripts/build-capital-details.mjs",
+    "M\tscripts/build-cities.mjs",
+    "M\tscripts/build-subdivision-capitals.mjs",
+    "M\tscripts/build-subdivision-meta.mjs",
+    "M\tscripts/build-subnational-endonyms.mjs",
+    "A\tscripts/check-capital-name-agreement.mjs",
+    "M\tscripts/check-city-flag-meanings.mjs",
+    "M\tscripts/check-diaspora.mjs",
+    "M\tscripts/check-identical-subdivision-flags.mjs",
+    "M\tscripts/check-migrant-origins.mjs",
+    "M\tscripts/check-visa-access.mjs",
+    "M\tscripts/data/capital-flag-rejected.json",
+    "M\tscripts/data/capital-flag-sources.json",
+    "M\tscripts/data/capital-meaning-omitted.txt",
+    "M\tscripts/data/wikidata-subdivision-code-aliases.mjs",
+    "A\tscripts/flag-audit/commons-file.sh",
+    "A\tscripts/flag-audit/fotw-page.sh",
+    "A\tscripts/flag-audit/geo-code-scan.mjs",
+    "A\tscripts/flag-audit/learn-check.mjs",
+    "A\tscripts/flag-audit/montage.mjs",
+    "A\tscripts/flag-audit/wiki-raw.sh",
+    "A\tscripts/flag-audit/wikidata-subdivision.mjs",
+    "M\tsrc/App.css",
+    "M\tsrc/ButtonControls.css",
+    "M\tsrc/api/subdivisions.ts",
+    "M\tsrc/components/CityMarkers.tsx",
+    "D\tsrc/components/DiasporaMapControl.tsx",
+    "M\tsrc/components/HistoricalMap.tsx",
+    "M\tsrc/components/LearnInfoTabs.tsx",
+    "M\tsrc/components/MapViewControl.tsx",
+    "D\tsrc/components/MigrantOriginsMapControl.tsx",
+    "D\tsrc/components/PassportMapControl.tsx",
+    "M\tsrc/components/SubdivisionMap.tsx",
+    "D\tsrc/components/ToolbarOverflow.tsx",
+    "A\tsrc/components/TravelMigrationMapControl.tsx",
+    "M\tsrc/components/UiIcon.tsx",
+    "M\tsrc/components/WorldProgressMap.tsx",
+    "M\tsrc/data/capitalDetails.ts",
+    "M\tsrc/data/capitalEndonyms.ts",
+    "M\tsrc/data/capitalFlags.ts",
+    "M\tsrc/data/cities.ts",
+    "M\tsrc/data/cityFlagMeanings.ts",
+    "M\tsrc/data/cityTerritories.ts",
+    "M\tsrc/data/flagMeanings.ts",
+    "M\tsrc/data/flagOverlayAspectRatios.ts",
+    "M\tsrc/data/identicalSubdivisionFlags.ts",
+    "M\tsrc/data/nationalCapitalLocations.ts",
+    "M\tsrc/data/subdivisionCapitals.ts",
+    "M\tsrc/data/subdivisionEndonyms.ts",
+    "M\tsrc/data/subdivisionPopulation.ts",
+    "A\tsrc/hooks/useGlobeDrag.ts",
+    "M\tsrc/hooks/usePopoverBounds.ts",
+    "M\tsrc/hooks/useSubdivisionGame.ts",
+    "M\tsrc/index.css",
+    "M\tsrc/lib/cityRoles.ts",
+    "A\tsrc/lib/mapProjection.ts",
+    "M\tsrc/lib/mapView.ts",
+    "M\tsrc/lib/subdivisionFlagIndex.ts",
+    "M\tsrc/lib/subdivisionMeta.ts",
+    "M\tsrc/pages/LearnAtlas.css",
+    "M\tsrc/pages/LearnPage.css",
+    "M\tsrc/pages/LearnPage.tsx"
+  ],
+  "checks": {
+    "capitalNameAgreement": {
+      "command": "node scripts/check-capital-name-agreement.mjs --all",
+      "exitCode": 0,
+      "quizCapitals": 1223,
+      "nonQuizDisagreements": 261,
+      "output": "Capital cards (not quizzed) whose Wikidata capital differs: 261\n  AE-FU: capital card \"Al Fujayrah\", Wikidata capital \"Fujairah\"\n  AE-RK: capital card \"Ras al Khaymah\", Wikidata capital \"Ras al-Khaimah\"\n  AE-UQ: capital card \"Umm al Qaywayn\", Wikidata capital \"Umm Al Quwain\"\n  AF-BDS: capital card \"Feyzabad\", Wikidata capital \"Fayzabad\"\n  AF-KDZ: capital card \"Kondoz\", Wikidata capital \"Kunduz\"\n  AF-FYB: capital card \"Meymaneh\", Wikidata capital \"Maymana\"\n  AF-BDG: capital card \"Qala i Naw\", Wikidata capital \"Qala e Naw\"\n  AF-URU: capital card \"Tarin Kowt\", Wikidata capital \"Tarinkot\"\n  AF-LAG: capital card \"Mehtar Lam\", Wikidata capital \"Mihtarlam\"\n  AF-LOG: capital card \"Baraki Barak\", Wikidata capital \"Pol-e Alam\"\n  AF-KAP: capital card \"Mahmud-E Eraqi\", Wikidata capital \"Mahmude Raqi\"\n  AF-WAR: capital card \"Mayda Shahr\", Wikidata capital \"Maidan Shar\"\n  AF-BAM: capital card \"Bamian\", Wikidata capital \"Bamyan\"\n  AF-BGL: capital card \"Baghlan\", Wikidata capital \"Pul-e Khomri\"\n  AG-04: capital card \"Saint John's\", Wikidata capital \"St. John's\"\n  AL-09: capital card \"Burrel\", Wikidata capital \"Peshkopi\"\n  AO-ZAI: capital card \"Mbanza-Congo\", Wikidata capital \"M'banza-Kongo\"\n  AO-LNO: capital card \"Lucapa\", Wikidata capital \"Dundo\"\n  AO-BGO: capital card \"Caxito\", Wikidata capital \"Dande\"\n  AR-T: capital card \"Tucumán\", Wikidata capital \"San Miguel de Tucumán\"\n  AU-NF: capital card \"Kingston\", Wikidata capital \"Norfolk Island\"\n  AZ-ZAN: capital card \"Kapan\", Wikidata capital \"Zangilan\"\n  AZ-OGU: capital card \"Oğuz\", Wikidata capital \"Oghuz\"\n  AZ-NX: capital card \"Naxcivan\", Wikidata capital \"Nakhchivan\"\n  AZ-YEV: capital card \"Yevlax\", Wikidata capital \"Yevlakh\"\n  AZ-GOY: capital card \"Goycay\", Wikidata capital \"Goychay\"\n  BD-B: capital card \"Chattogram\", Wikidata capital \"Chittagong\"\n  BD-C: capital card \"Jamalpur\", Wikidata capital \"Dhaka\"\n  BF-GAN: capital card \"Zorgo\", Wikidata capital \"Zorgho\"\n  BG-26: capital card \"Khaskovo\", Wikidata capital \"Haskovo\"\n  BI-MW: capital card \"Gitega\", Wikidata capital \"Mwaro\"\n  BI-KR: capital card \"Karusi\", Wikidata capital \"Karuzi\"\n  BJ-OU: capital card \"Cotonou\", Wikidata capital \"Porto-Novo\"\n  BT-24: capital card \"Wangdue Prodrang\", Wikidata capital \"Wangdue Phodrang\"\n  CG-9: capital card \"Loubomo\", Wikidata capital \"Dolisie\"\n  CH-LU: capital card \"Luzern\", Wikidata capital \"Lucerne\"\n  CI-07: capital card \"Toumodi\", Wikidata capital \"Yamoussoukro\"\n  CN-LN: capital card \"Shenyeng\", Wikidata capital \"Shenyang\"\n  CN-SH: capital card \"Shanghai\", Wikidata capital \"Huangpu District\"\n  CN-TJ: capital card \"Tianjin\", Wikidata capital \"Hexi District\"\n  CN-BJ: capital card \"Beijing\", Wikidata capital \"Tongzhou District\"\n  CN-CQ: capital card \"Chongqing\", Wikidata capital \"Yuzhong District\"\n  CY-03: capital card \"Larnaka\", Wikidata capital \"Larnaca\"\n  CY-02: capital card \"Lemosos\", Wikidata capital \"Limassol Municipality\"\n  DJ-AS: capital card \"Ali Sabih\", Wikidata capital \"Ali Sabieh\"\n  DO-08: capital card \"El Seibo\", Wikidata capital \"Santa Cruz del Seibo\"\n  DO-04: capital card \"Barahona\", Wikidata capital \"Santa Cruz de Barahona\"\n  DZ-13: capital card \"Tlimcen\", Wikidata capital \"Tlemcen\"\n  DZ-14: capital card \"Tiarat\", Wikidata capital \"Tiaret\"\n  EG-JS: capital card \"El Tur\", Wikidata capital \"El-Tor\"\n  EG-PTS: capital card \"Bur Said\", Wikidata capital \"Port Said\"\n  EG-DT: capital card \"Dumyat\", Wikidata capital \"Damietta\"\n  EG-FYM: capital card \"El Faiyum\", Wikidata capital \"Faiyum\"\n  EG-MNF: capital card \"Shibin el Kom\", Wikidata capital \"Shibin Al Kawm\"\n  ES-C: capital card \"Santiago de Compostela\", Wikidata capital \"A Coruña\"\n  ET-SN: capital card \"Awasa\", Wikidata capital \"Hawaasa\"\n  ET-AF: capital card \"Semera\", Wikidata capital \"Asaita\"\n  ET-AM: capital card \"Dese\", Wikidata capital \"Bahir Dar\"\n  FI-09: capital card \"Kouvola\", Wikidata capital \"Kotka\"\n  FR-YT: capital card \"Dzaoudzi\", Wikidata capital \"Mamoudzou\"\n  FR-51: capital card \"Reims\", Wikidata capital \"Châlons-en-Champagne\"\n  FR-95: capital card \"Cergy\", Wikidata capital \"Pontoise\"\n  GA-1: capital card \"Libreville\", Wikidata capital \"Akanda\"\n  GD-03: capital card \"Saint George's\", Wikidata capital \"St. George's\"\n  GR-D: capital card \"Ioanina\", Wikidata capital \"Ioannina\"\n  GR-A: capital card \"Kavala\", Wikidata capital \"Komotini\"\n  GR-H: capital card \"Chalkida\", Wikidata capital \"Lamia\"\n  GR-J: capital card \"Kalamata\", Wikidata capital \"Tripoli\"\n  GR-M: capital card \"Iraklio\", Wikidata capital \"Heraklion\"\n  GR-L: capital card \"Rodos\", Wikidata capital \"Ermoupolis\"\n  GR-K: capital card \"Mitilini\", Wikidata capital \"Mytilene\"\n  GR-F: capital card \"Kerkira\", Wikidata capital \"Corfu\"\n  GT-PR: capital card \"El Progreso\", Wikidata capital \"Guastatoya\"\n  GW-QU: capital card \"Fulacunda\", Wikidata capital \"Buba\"\n  GY-DE: capital card \"Georgetown\", Wikidata capital \"Paradise\"\n  HN-OC: capital card \"Nueva Ocotepeque\", Wikidata capital \"Ocotepeque\"\n  IE-MN: capital card \"Muineachan\", Wikidata capital \"Monaghan\"\n  IE-RN: capital card \"Ros Comain\", Wikidata capital \"Roscommon\"\n  IN-LA: capital card \"Leh\", Wikidata capital \"Kargil\"\n  IN-HP: capital card \"Simla\", Wikidata capital \"Shimla\"\n  IN-PY: capital card \"Puducherry\", Wikidata capital \"Pondicherry\"\n  IN-AN: capital card \"Port Blair\", Wikidata capital \"Srivijayapuram\"\n  IQ-AR: capital card \"Irbil\", Wikidata capital \"Erbil\"\n  IQ-MU: capital card \"As Samawah\", Wikidata capital \"Samawah\"\n  IQ-SU: capital card \"As Sulaymaniyah\", Wikidata capital \"Sulaymaniyah\"\n  IQ-WA: capital card \"Al Kut\", Wikidata capital \"Kut\"\n  IQ-MA: capital card \"Al Amarah\", Wikidata capital \"Amarah\"\n  IQ-AN: capital card \"Ar Ramadi\", Wikidata capital \"Ramadi\"\n  IQ-SD: capital card \"Samarra\", Wikidata capital \"Tikrit\"\n  IQ-BB: capital card \"Al Hillah\", Wikidata capital \"Hillah\"\n  IQ-QA: capital card \"Ad Diwaniyah\", Wikidata capital \"Al Diwaniyah\"\n  IQ-DQ: capital card \"An Nasiriyah\", Wikidata capital \"Nasiriyah\"\n  IT-OG: capital card \"Tortolì\", Wikidata capital \"Lanusei\"\n  JM-03: capital card \"Port Morant\", Wikidata capital \"Morant Bay\"\n  JO-AQ: capital card \"Al Aqabah\", Wikidata capital \"Aqaba\"\n  KH-16: capital card \"Lumphat\", Wikidata capital \"Banlung\"\n  KH-10: capital card \"Kracheh\", Wikidata capital \"Kratié\"\n  KH-13: capital card \"Phnum Tbeng Meanchey\", Wikidata capital \"Phnom Tbeng Meanchey\"\n  KH-9: capital card \"Krong Koh Kong\", Wikidata capital \"Koh Kong\"\n  KH-19: capital card \"Stoeng Treng\", Wikidata capital \"Stung Treng\"\n  KH-4: capital card \"Kompong Chhnang\", Wikidata capital \"Kampong Chhnang\"\n  KH-6: capital card \"Kampong Thum\", Wikidata capital \"Kampong Thom\"\n  KH-5: capital card \"Kampong Spoe\", Wikidata capital \"Chbar Mon\"\n  KP-06: capital card \"Kaesong\", Wikidata capital \"Sariwon\"\n  KP-10: capital card \"Hyeson\", Wikidata capital \"Hyesan\"\n  KP-02: capital card \"Nampo\", Wikidata capital \"Pyongsong\"\n  KW-HA: capital card \"Hawalli\", Wikidata capital \"Hawally\"\n  KZ-MAN: capital card \"Mangyshlak\", Wikidata capital \"Aktau\"\n  KZ-KZY: capital card \"Qyzylorda\", Wikidata capital \"Kyzylorda\"\n  KZ-AKT: capital card \"Aqtobe\", Wikidata capital \"Aktobe\"\n  KZ-KAR: capital card \"Qaraghandy\", Wikidata capital \"Karaganda\"\n  LA-LM: capital card \"Louang Namtha\", Wikidata capital \"Lūang Namthā\"\n  LA-XA: capital card \"Xaignabouri\", Wikidata capital \"Sainyabūlī\"\n  LA-SL: capital card \"Saravan\", Wikidata capital \"Sālavan\"\n  LA-VI: capital card \"Vientiane\", Wikidata capital \"Phōnhōng\"\n  LA-CH: capital card \"Pakxe\", Wikidata capital \"Pāksē\"\n  LA-LP: capital card \"Louangphrabang\", Wikidata capital \"Luang Prabang\"\n  LA-HO: capital card \"Xam Nua\", Wikidata capital \"Xam Neua\"\n  LB-NA: capital card \"Nabatiye et Tahta\", Wikidata capital \"Nabatieh\"\n  LB-JA: capital card \"Saida\", Wikidata capital \"Sidon\"\n  LB-AS: capital card \"Ṭarābulus\", Wikidata capital \"Tripoli\"\n  LB-JL: capital card \"B'abda\", Wikidata capital \"Baabda\"\n  LK-62: capital card \"Puttalan\", Wikidata capital \"Puttalam\"\n  LS-E: capital card \"Mafetang\", Wikidata capital \"Mafeteng\"\n  LS-G: capital card \"Moyeni\", Wikidata capital \"Quthing\"\n  LV-080: capital card \"Ulbroka\", Wikidata capital \"Ropaži\"\n  LY-MQ: capital card \"Marzuq\", Wikidata capital \"Murzuk\"\n  LY-ZA: capital card \"Az Zawiyah\", Wikidata capital \"Zawiya\"\n  MA-14: capital card \"Goulimine\", Wikidata capital \"Guelmim\"\n  MA-16: capital card \"Ad Dakhla\", Wikidata capital \"Dakhla\"\n  MA-02: capital card \"Kenitra\", Wikidata capital \"Oujda\"\n  MA-07: capital card \"Rabat\", Wikidata capital \"Marrakech\"\n  MA-10: capital card \"Safi\", Wikidata capital \"Guelmim\"\n  MA-11: capital card \"Marrakesh\", Wikidata capital \"Marrakech\"\n  MA-05: capital card \"Fez\", Wikidata capital \"Beni Mellal\"\n  MA-12: capital card \"Dakhla\", Wikidata capital \"Beni Mellal\"\n  MD-BD: capital card \"Tiraspol\", Wikidata capital \"Bender\"\n  MM-13: capital card \"Pa-an\", Wikidata capital \"Hpa-An\"\n  MN-071: capital card \"Olgiy\", Wikidata capital \"Ölgii\"\n  MN-043: capital card \"Dund-Us\", Wikidata capital \"Khovd\"\n  MN-063: capital card \"Buyant-Uhaa\", Wikidata capital \"Sainshand\"\n  MN-067: capital card \"Bulgan\", Wikidata capital \"Selenge\"\n  MN-049: capital card \"Suchboatar\", Wikidata capital \"Sükhbaatar\"\n  MN-057: capital card \"Uliastay\", Wikidata capital \"Uliastai\"\n  MN-039: capital card \"Öndörkhaan\", Wikidata capital \"Chinggis City\"\n  MN-047: capital card \"Dzuunmod\", Wikidata capital \"Zuunmod\"\n  MR-11: capital card \"Fderik\", Wikidata capital \"Zouérat\"\n  MR-06: capital card \"Saint-Louis\", Wikidata capital \"Rosso\"\n  MR-09: capital card \"Tidjikdja\", Wikidata capital \"Tidjikja\"\n  MW-CT: capital card \"Karonga\", Wikidata capital \"Chitipa\"\n  MW-MZ: capital card \"Mzuzu\", Wikidata capital \"Mzimba\"\n  MX-CAM: capital card \"Campeche\", Wikidata capital \"San Francisco de Campeche\"\n  MX-DUR: capital card \"Durango\", Wikidata capital \"Victoria de Durango\"\n  MY-03: capital card \"Kota Baharu\", Wikidata capital \"Kota Bharu\"\n  MZ-I: capital card \"Maxixe\", Wikidata capital \"Inhambane\"\n  NA-KU: capital card \"Outjo\", Wikidata capital \"Opuwo\"\n  NA-HA: capital card \"Rehoboth\", Wikidata capital \"Mariental\"\n  NE-4: capital card \"Niamey\", Wikidata capital \"Maradi\"\n  NG-LA: capital card \"Lagos\", Wikidata capital \"Ikeja\"\n  NG-OS: capital card \"Oshogbo\", Wikidata capital \"Osogbo\"\n  NI-AN: capital card \"Bilwi\", Wikidata capital \"Puerto Cabezas\"\n  NO-14: capital card \"Leikanger\", Wikidata capital \"Hermansverk\"\n  NP-MA: capital card \"Dandeldhura\", Wikidata capital \"Bhimdatta\"\n  NP-SE: capital card \"Dhangarhi\", Wikidata capital \"Dipayal Silgadhi\"\n  NP-JA: capital card \"Ramechhap\", Wikidata capital \"Janakpurdham\"\n  NP-KO: capital card \"Biratnagar\", Wikidata capital \"Dharan\"\n  NP-NA: capital card \"Bhimphedi\", Wikidata capital \"Hetauda\"\n  NP-LU: capital card \"Bhairawa\", Wikidata capital \"Butwal\"\n  NP-RA: capital card \"Salyan\", Wikidata capital \"Tulsipur\"\n  NP-BH: capital card \"Nepalganj\", Wikidata capital \"Nepalgunj\"\n  NZ-TKI: capital card \"New Plymouth\", Wikidata capital \"Stratford\"\n  NZ-BOP: capital card \"Tauranga\", Wikidata capital \"Whakatāne\"\n  PG-NSB: capital card \"Arawa\", Wikidata capital \"Buka\"\n  PG-EBR: capital card \"Rabaul\", Wikidata capital \"Kokopo\"\n  PG-WHM: capital card \"Mt. Hagen\", Wikidata capital \"Mount Hagen\"\n  PY-19: capital card \"Mariscal Estigarribia\", Wikidata capital \"Filadelfia\"\n  PY-15: capital card \"Pozo Colorado\", Wikidata capital \"Villa Hayes\"\n  RO-VL: capital card \"Rimnicu Vilcea\", Wikidata capital \"Râmnicu Vâlcea\"\n  RW-02: capital card \"Kibungo\", Wikidata capital \"Rwamagana\"\n  RW-05: capital card \"Gitarama\", Wikidata capital \"Nyanza\"\n  RW-04: capital card \"Gisenyi\", Wikidata capital \"Kibuye\"\n  RW-03: capital card \"Ruhengeri\", Wikidata capital \"Byumba hospital\"\n  SD-GD: capital card \"Gedaref\", Wikidata capital \"Al Qadarif\"\n  SD-DN: capital card \"El Fasher\", Wikidata capital \"Al-Fashir\"\n  SD-NW: capital card \"Kosti\", Wikidata capital \"Rabak\"\n  SD-KS: capital card \"Kadugli\", Wikidata capital \"Kaduqli\"\n  SD-GZ: capital card \"Medani\", Wikidata capital \"Wad Madani\"\n  SD-KH: capital card \"Omdurman\", Wikidata capital \"Khartoum\"\n  SD-KN: capital card \"Al-Ubayyid\", Wikidata capital \"El-Obeid\"\n  SN-MT: capital card \"Kaédi\", Wikidata capital \"Matam\"\n  SN-LG: capital card \"Louga\", Wikidata capital \"Nguer Malal\"\n  SO-NU: capital card \"Garoowe\", Wikidata capital \"Garowe\"\n  SO-MU: capital card \"Gaalkacyo\", Wikidata capital \"Galkayo\"\n  SO-GA: capital card \"Dhuusa Mareeb\", Wikidata capital \"Dusmareb\"\n  SO-GE: capital card \"Garbahaarey\", Wikidata capital \"Garbahaareey\"\n  SO-BR: capital card \"Boosaaso\", Wikidata capital \"Bosaso\"\n  SO-JH: capital card \"Kismaayo\", Wikidata capital \"Kismayo\"\n  SO-JD: capital card \"Bu'aale\", Wikidata capital \"Bu'ale\"\n  SO-SH: capital card \"Marka\", Wikidata capital \"Merca\"\n  SO-SD: capital card \"Jawhar\", Wikidata capital \"Jowhar\"\n  SO-BY: capital card \"Baydhabo\", Wikidata capital \"Baidoa\"\n  SS-EE: capital card \"Kapoeta\", Wikidata capital \"Torit\"\n  SY-HA: capital card \"Al Hasakah\", Wikidata capital \"Hasakah\"\n  SY-RA: capital card \"Ar Raqqah\", Wikidata capital \"Raqqa\"\n  SY-SU: capital card \"As Suwayda\", Wikidata capital \"Suwayda\"\n  SY-DY: capital card \"Dayr az Zawr\", Wikidata capital \"Deir ez-Zor\"\n  SZ-HH: capital card \"Piggs Peak\", Wikidata capital \"Mbabane\"\n  SZ-SH: capital card \"Hlatikulu\", Wikidata capital \"Nhlangano\"\n  TD-LR: capital card \"Moundou\", Wikidata capital \"Doba\"\n  TG-K: capital card \"Bassar\", Wikidata capital \"Kara\"\n  TG-P: capital card \"Kpalimé\", Wikidata capital \"Atakpamé\"\n  TH-47: capital card \"Sakhon Nakhon\", Wikidata capital \"Sakon Nakhon\"\n  TH-72: capital card \"Supham Buri\", Wikidata capital \"Suphan Buri\"\n  TH-14: capital card \"Ayutthaya\", Wikidata capital \"Phra Nakhon Si Ayutthaya\"\n  TH-73: capital card \"Nakhon Pathom\", Wikidata capital \"Thanon Khat\"\n  TH-54: capital card \"Phrae\", Wikidata capital \"Mueang Phrae\"\n  TJ-KT: capital card \"Qurghonteppa\", Wikidata capital \"Bokhtar\"\n  TM-A: capital card \"Ashgabat\", Wikidata capital \"Anau\"\n  TN-14: capital card \"L'Ariana\", Wikidata capital \"Manouba\"\n  TN-43: capital card \"Sdid Bouzid\", Wikidata capital \"Sidi Bouzid\"\n  TN-41: capital card \"Qairouan\", Wikidata capital \"Kairouan\"\n  TR-54: capital card \"Sakarya\", Wikidata capital \"Adapazarı\"\n  TR-33: capital card \"Icel\", Wikidata capital \"Mersin\"\n  TW-TXG: capital card \"Taichung\", Wikidata capital \"Xitun District\"\n  TW-TNN: capital card \"Tainan\", Wikidata capital \"Sinying District\"\n  TW-TPQ: capital card \"New Taipei\", Wikidata capital \"Banqiao District\"\n  TW-KEE: capital card \"Keelung\", Wikidata capital \"Zhongzheng District\"\n  TW-TPE: capital card \"Taipei\", Wikidata capital \"Xinyi District\"\n  TZ-10: capital card \"Chake Chake\", Wikidata capital \"Mkoani\"\n  UG-229: capital card \"Iganga\", Wikidata capital \"Luuka Town\"\n  UG-104: capital card \"Bombo\", Wikidata capital \"Luweero\"\n  UG-113: capital card \"Entebbe\", Wikidata capital \"Wakiso Town\"\n  UG-407: capital card \"Kibale\", Wikidata capital \"Kibaale\"\n  UG-421: capital card \"Masindi-Port\", Wikidata capital \"Kiryandongo\"\n  UG-225: capital card \"Sironko\", Wikidata capital \"Bulambuli\"\n  UG-327: capital card \"Moroto\", Wikidata capital \"Napak\"\n  UZ-FA: capital card \"Fargona\", Wikidata capital \"Fergana\"\n  UZ-JI: capital card \"Jizzax\", Wikidata capital \"Jizzakh\"\n  UZ-SU: capital card \"Termiz\", Wikidata capital \"Termez\"\n  UZ-XO: capital card \"Urgentch\", Wikidata capital \"Urgench\"\n  VN-33: capital card \"Buon Me Thuot\", Wikidata capital \"Buôn Ma Thuột\"\n  VN-30: capital card \"Play Ku\", Wikidata capital \"Quy Nhon\"\n  VN-37: capital card \"Tây Ninh\", Wikidata capital \"Long An\"\n  VN-45: capital card \"Cao Lãnh\", Wikidata capital \"Sa Đéc\"\n  VN-71: capital card \"Luan Chau\", Wikidata capital \"Điện Biên Phủ\"\n  VN-25: capital card \"Quảng Trị\", Wikidata capital \"Đông Hà\"\n  VN-26: capital card \"Hue\", Wikidata capital \"Thuận Hóa\"\n  VN-02: capital card \"Lao Chi\", Wikidata capital \"Lào Cai\"\n  VN-13: capital card \"Hong Gai\", Wikidata capital \"Hạ Long\"\n  VN-SG: capital card \"Ho Chi Minh City\", Wikidata capital \"Saigon\"\n  VN-73: capital card \"Can Tho\", Wikidata capital \"Vị Thanh\"\n  VN-50: capital card \"Truc Giang\", Wikidata capital \"Bến Tre (city)\"\n  VN-31: capital card \"Qui Nhon\", Wikidata capital \"Quy Nhon\"\n  VN-18: capital card \"Ninh Bình\", Wikidata capital \"Hoa Lư\"\n  VN-HN: capital card \"Hanoi\", Wikidata capital \"Ba Đình District\"\n  VN-35: capital card \"Da Lat\", Wikidata capital \"Đà Lạt\"\n  WS-TU: capital card \"Apia\", Wikidata capital \"Afega\"\n  YE-HD: capital card \"Al Mukalla\", Wikidata capital \"Mukalla\"\n  YE-SD: capital card \"Sadah\", Wikidata capital \"Saada\"\n  YE-DH: capital card \"Dhamar\", Wikidata capital \"Sanaa\"\n  ZA-NW: capital card \"Mmabatho\", Wikidata capital \"Mahikeng\"\n✓ Capital-name agreement: all 1223 quiz capitals are the capital the Learn panel shows.\n",
+      "limitation": "Shared name/prefix test establishes internal consistency, not capital identity or completeness; disagreement can be a legitimate co-capital or role difference."
+    },
+    "geometry": {
+      "method": "Compare SHA-256 of JSON-stringified parsed geometry objects across base and inspected revision; match old/new properties by geometry hash. This is coordinate-geometry equality, not byte equality of whole source files or independent legal boundary verification.",
+      "features": 336,
+      "geometryMatches": 336,
+      "countries": [
+        {
+          "country": "IR",
+          "oldFeatures": 31,
+          "newFeatures": 31,
+          "geometryMatches": 31,
+          "changedProperties": [
+            {
+              "geometryHash": "53b0b975d75936fe1f29c49aff420b794dbe657aaa35e5c04c5663b7d3384201",
+              "oldName": "West Azarbaijan",
+              "newName": "West Azarbaijan",
+              "oldCode": "IR-02",
+              "newCode": "IR-04",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-02",
+                  "IR-04"
+                ]
+              }
+            },
+            {
+              "geometryHash": "609e1b5e0c83380f959bb0f7c40458a9ed3037b0fe8d024dee3dd1deb45d475b",
+              "oldName": "East Azarbaijan",
+              "newName": "East Azarbaijan",
+              "oldCode": "IR-01",
+              "newCode": "IR-03",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-01",
+                  "IR-03"
+                ]
+              }
+            },
+            {
+              "geometryHash": "e68b300b8a36ef16205870c2f10be145d7151390dad299f56a5aa7fa5a215753",
+              "oldName": "Ardebil",
+              "newName": "Ardebil",
+              "oldCode": "IR-03",
+              "newCode": "IR-24",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-03",
+                  "IR-24"
+                ]
+              }
+            },
+            {
+              "geometryHash": "3ec4acad4ecd2a42e1b51c2962cddde7fdd368242fb373b75176bd4603a8be9d",
+              "oldName": "Gilan",
+              "newName": "Gilan",
+              "oldCode": "IR-19",
+              "newCode": "IR-01",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-19",
+                  "IR-01"
+                ]
+              }
+            },
+            {
+              "geometryHash": "dd242c942a2971306e31d9e4ce00ea15584bf9e888878561e951df7c93198d28",
+              "oldName": "Kordestan",
+              "newName": "Kordestan",
+              "oldCode": "IR-16",
+              "newCode": "IR-12",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-16",
+                  "IR-12"
+                ]
+              }
+            },
+            {
+              "geometryHash": "fcfd44bd1358d7b457a381edeb692fd72180efad7a2ca483130484571c02d485",
+              "oldName": "Kermanshah",
+              "newName": "Kermanshah",
+              "oldCode": "IR-17",
+              "newCode": "IR-05",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-17",
+                  "IR-05"
+                ]
+              }
+            },
+            {
+              "geometryHash": "fc6cb3cd98865b150d76240698fcc305a7eca760259f194a520862140dce96fb",
+              "oldName": "Ilam",
+              "newName": "Ilam",
+              "oldCode": "IR-05",
+              "newCode": "IR-16",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-05",
+                  "IR-16"
+                ]
+              }
+            },
+            {
+              "geometryHash": "937dc9928fe2abfb23b21be457dac23b7b1f5a2d2c25bad70e9e445f3e93aa83",
+              "oldName": "Khuzestan",
+              "newName": "Khuzestan",
+              "oldCode": "IR-10",
+              "newCode": "IR-06",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-10",
+                  "IR-06"
+                ]
+              }
+            },
+            {
+              "geometryHash": "fe2c748fcc87903a4db41733308ada3f8b52e2ef176ef1170aece7a6dc173504",
+              "oldName": "North Khorasan",
+              "newName": "North Khorasan",
+              "oldCode": "IR-31",
+              "newCode": "IR-28",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-31",
+                  "IR-28"
+                ]
+              }
+            },
+            {
+              "geometryHash": "22ea40a13f00e0d7d5164f807be8e5a540898442fe068bc9ad87ff969d7ac4cb",
+              "oldName": "Razavi Khorasan",
+              "newName": "Razavi Khorasan",
+              "oldCode": "IR-30",
+              "newCode": "IR-09",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-30",
+                  "IR-09"
+                ]
+              }
+            },
+            {
+              "geometryHash": "25018b120866b23cf8542171ee8067fd736adcba252cff3f119707f536fe34e4",
+              "oldName": "Sistan and Baluchestan",
+              "newName": "Sistan and Baluchestan",
+              "oldCode": "IR-13",
+              "newCode": "IR-11",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-13",
+                  "IR-11"
+                ]
+              }
+            },
+            {
+              "geometryHash": "88e7936c6c238110552e6c2da0a9405e017d9b1688df9ec2c30da659edc91e9c",
+              "oldName": "Bushehr",
+              "newName": "Bushehr",
+              "oldCode": "IR-06",
+              "newCode": "IR-18",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-06",
+                  "IR-18"
+                ]
+              }
+            },
+            {
+              "geometryHash": "495a81b5b03a08363b7495dc95187f96c7925ad0690f5baf7d4028cbd7ef8821",
+              "oldName": "Hormozgan",
+              "newName": "Hormozgan",
+              "oldCode": "IR-23",
+              "newCode": "IR-22",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-23",
+                  "IR-22"
+                ]
+              }
+            },
+            {
+              "geometryHash": "ef01c05068b3bb8ada05ba10c2178442f46506b5446f1a85fa406b88b66bdbac",
+              "oldName": "Mazandaran",
+              "newName": "Mazandaran",
+              "oldCode": "IR-21",
+              "newCode": "IR-02",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-21",
+                  "IR-02"
+                ]
+              }
+            },
+            {
+              "geometryHash": "53dd97532d434e7136f679a2cd19710e87bad719d587371db27e82d3b992d2d5",
+              "oldName": "Semnan",
+              "newName": "Semnan",
+              "oldCode": "IR-12",
+              "newCode": "IR-20",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-12",
+                  "IR-20"
+                ]
+              }
+            },
+            {
+              "geometryHash": "7e25cf000c0c59deb14b97e4185e1a4527a3fc848581bb2d666a1fb52247d4df",
+              "oldName": "Zanjan",
+              "newName": "Zanjan",
+              "oldCode": "IR-11",
+              "newCode": "IR-19",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-11",
+                  "IR-19"
+                ]
+              }
+            },
+            {
+              "geometryHash": "201ed660960a6544895cb59ff487fb2958442ccac9dd4e272fc79dffb9a27dc2",
+              "oldName": "Qazvin",
+              "newName": "Qazvin",
+              "oldCode": "IR-28",
+              "newCode": "IR-26",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-28",
+                  "IR-26"
+                ]
+              }
+            },
+            {
+              "geometryHash": "94b591757335f87d5acb86c860460b9194a7f5973cccfd1b99625536d6ee284c",
+              "oldName": "Markazi",
+              "newName": "Markazi",
+              "oldCode": "IR-22",
+              "newCode": "IR-00",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-22",
+                  "IR-00"
+                ]
+              }
+            },
+            {
+              "geometryHash": "5a064e8820cf6e182058fd97a663a011601ab5868aada0fd2226db9c67067388",
+              "oldName": "Esfahan",
+              "newName": "Esfahan",
+              "oldCode": "IR-04",
+              "newCode": "IR-10",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-04",
+                  "IR-10"
+                ]
+              }
+            },
+            {
+              "geometryHash": "9329368f8f0993b2e81b7a5227a1e71cc24b53c2a0c043a45e4a298e9d213989",
+              "oldName": "Chahar Mahall and Bakhtiari",
+              "newName": "Chahar Mahall and Bakhtiari",
+              "oldCode": "IR-08",
+              "newCode": "IR-14",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-08",
+                  "IR-14"
+                ]
+              }
+            },
+            {
+              "geometryHash": "fc2d89dcf30909cc98d884306b8d60931372c64c420db2ec0dd7d5afad669fea",
+              "oldName": "Kohgiluyeh and Buyer Ahmad",
+              "newName": "Kohgiluyeh and Buyer Ahmad",
+              "oldCode": "IR-18",
+              "newCode": "IR-17",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-18",
+                  "IR-17"
+                ]
+              }
+            },
+            {
+              "geometryHash": "6b63f7b6ef9c09714e901b73e219735fb329f855e4ef1e5cee7a402de186c5c8",
+              "oldName": "Fars",
+              "newName": "Fars",
+              "oldCode": "IR-14",
+              "newCode": "IR-07",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-14",
+                  "IR-07"
+                ]
+              }
+            },
+            {
+              "geometryHash": "b5e5ad48541f1aeb96f961f676b648c655e35ea91db96a107dba97d4c39f5011",
+              "oldName": "Kerman",
+              "newName": "Kerman",
+              "oldCode": "IR-15",
+              "newCode": "IR-08",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-15",
+                  "IR-08"
+                ]
+              }
+            },
+            {
+              "geometryHash": "cb67ba59388327cd77a9fa1a8e3bc7b6445307b3bf48f1a4534e33a732b9a480",
+              "oldName": "Hamadan",
+              "newName": "Hamadan",
+              "oldCode": "IR-24",
+              "newCode": "IR-13",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-24",
+                  "IR-13"
+                ]
+              }
+            },
+            {
+              "geometryHash": "f040c9c0ae8a016f7af7c7ca76e81bc6c6d4aca56044ffb49b91e59159fcc0bd",
+              "oldName": "Lorestan",
+              "newName": "Lorestan",
+              "oldCode": "IR-20",
+              "newCode": "IR-15",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-20",
+                  "IR-15"
+                ]
+              }
+            },
+            {
+              "geometryHash": "f5a3c3e3a432bdd9955d42515ac81c0d661d79f0998a3eded0a70559b5375130",
+              "oldName": "Yazd",
+              "newName": "Yazd",
+              "oldCode": "IR-25",
+              "newCode": "IR-21",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-25",
+                  "IR-21"
+                ]
+              }
+            },
+            {
+              "geometryHash": "57c8788d8c9de420f75b9e8006c3be901fcd4a4ab0502ad9c3737972018ea9b3",
+              "oldName": "Qom",
+              "newName": "Qom",
+              "oldCode": "IR-26",
+              "newCode": "IR-25",
+              "delta": {
+                "iso_3166_2": [
+                  "IR-26",
+                  "IR-25"
+                ]
+              }
+            },
+            {
+              "geometryHash": "660faa40e0cfadcb4fdbe5afc9d7c0ec3ad49ddf7eed0c525a431511bcb8c8e4",
+              "oldName": "Tehran",
+              "newName": "Tehran",
+              "oldCode": null,
+              "newCode": "IR-23",
+              "delta": {
+                "iso_3166_2": [
+                  null,
+                  "IR-23"
+                ]
+              }
+            },
+            {
+              "geometryHash": "6d33d1343401b2435e9e300a026f086706200b649cc624362f31fc74af62a9a0",
+              "oldName": "Alborz",
+              "newName": "Alborz",
+              "oldCode": null,
+              "newCode": "IR-30",
+              "delta": {
+                "iso_3166_2": [
+                  null,
+                  "IR-30"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "country": "EC",
+          "oldFeatures": 24,
+          "newFeatures": 24,
+          "geometryMatches": 24,
+          "changedProperties": [
+            {
+              "geometryHash": "8c9eabcb2bead96e44ea3b8aab5ba8c8af4c76d1a911a030fecf53334144b022",
+              "oldName": "Napo",
+              "newName": "Tungurahua",
+              "oldCode": "EC-N",
+              "newCode": "EC-T",
+              "delta": {
+                "iso_3166_2": [
+                  "EC-N",
+                  "EC-T"
+                ],
+                "name": [
+                  "Napo",
+                  "Tungurahua"
+                ],
+                "name_en": [
+                  "Napo",
+                  "Tungurahua"
+                ]
+              }
+            },
+            {
+              "geometryHash": "e395a00f590fdb7a57038e9bfb0134d9dc72936647cab4d986fef107ad2403ab",
+              "oldName": "Tungurahua",
+              "newName": "Napo",
+              "oldCode": "EC-T",
+              "newCode": "EC-N",
+              "delta": {
+                "iso_3166_2": [
+                  "EC-T",
+                  "EC-N"
+                ],
+                "name": [
+                  "Tungurahua",
+                  "Napo"
+                ],
+                "name_en": [
+                  "Tungurahua",
+                  "Napo"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "country": "ER",
+          "oldFeatures": 6,
+          "newFeatures": 6,
+          "geometryMatches": 6,
+          "changedProperties": [
+            {
+              "geometryHash": "af913ab1f9a6c87b00a4fc9e922ea3df4dce0a4ad090796a3d7fd701635a9f4e",
+              "oldName": "Debub",
+              "newName": "Semenawi Keyih Bahri",
+              "oldCode": "ER-DU",
+              "newCode": "ER-SK",
+              "delta": {
+                "iso_3166_2": [
+                  "ER-DU",
+                  "ER-SK"
+                ],
+                "name": [
+                  "Debub",
+                  "Semenawi Keyih Bahri"
+                ],
+                "name_en": [
+                  "Debub",
+                  "Northern Red Sea"
+                ]
+              }
+            },
+            {
+              "geometryHash": "b35bc3309e3568f3349898b2324e08aed126e0a03fd30dd78e15da4f1b3c29ed",
+              "oldName": "Semenawi Keyih Bahri",
+              "newName": "Anseba",
+              "oldCode": "ER-SK",
+              "newCode": "ER-AN",
+              "delta": {
+                "iso_3166_2": [
+                  "ER-SK",
+                  "ER-AN"
+                ],
+                "name": [
+                  "Semenawi Keyih Bahri",
+                  "Anseba"
+                ],
+                "name_en": [
+                  "Northern Red Sea",
+                  "Anseba"
+                ]
+              }
+            },
+            {
+              "geometryHash": "ed650a1173dd24f72792c324174e48752bfe450f0dbef8a4940d4f9af7208000",
+              "oldName": "Maekel",
+              "newName": "Debub",
+              "oldCode": "ER-MA",
+              "newCode": "ER-DU",
+              "delta": {
+                "iso_3166_2": [
+                  "ER-MA",
+                  "ER-DU"
+                ],
+                "name": [
+                  "Maekel",
+                  "Debub"
+                ],
+                "name_en": [
+                  "Maekel",
+                  "Debub"
+                ]
+              }
+            },
+            {
+              "geometryHash": "8596962f0914993bcf9ce65feb3e903fe9f1248d315e84cb3e838428c31644ac",
+              "oldName": "Anseba",
+              "newName": "Maekel",
+              "oldCode": "ER-AN",
+              "newCode": "ER-MA",
+              "delta": {
+                "iso_3166_2": [
+                  "ER-AN",
+                  "ER-MA"
+                ],
+                "name": [
+                  "Anseba",
+                  "Maekel"
+                ],
+                "name_en": [
+                  "Anseba",
+                  "Maekel"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "country": "GY",
+          "oldFeatures": 10,
+          "newFeatures": 10,
+          "geometryMatches": 10,
+          "changedProperties": [
+            {
+              "geometryHash": "ef0aae44a1ecbbbcb38ad28f69807bec65cccae6b7b7fa5e9483313e20346356",
+              "oldName": "Mahaica-Berbice",
+              "newName": "East Berbice-Corentyne",
+              "oldCode": "GY-MA",
+              "newCode": "GY-EB",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-MA",
+                  "GY-EB"
+                ],
+                "name": [
+                  "Mahaica-Berbice",
+                  "East Berbice-Corentyne"
+                ],
+                "name_en": [
+                  "Mahaica-Berbice",
+                  "East Berbice-Corentyne"
+                ]
+              }
+            },
+            {
+              "geometryHash": "1c6711376232132d1e79579cb064c2c83e444d76ce1aa003e0b49513b65bed41",
+              "oldName": "Pomeroon-Supenaam",
+              "newName": "Cuyuni-Mazaruni",
+              "oldCode": "GY-PM",
+              "newCode": "GY-CU",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-PM",
+                  "GY-CU"
+                ],
+                "name": [
+                  "Pomeroon-Supenaam",
+                  "Cuyuni-Mazaruni"
+                ],
+                "name_en": [
+                  "Pomeroon-Supenaam",
+                  "Cuyuni-Mazaruni"
+                ]
+              }
+            },
+            {
+              "geometryHash": "dd3039b25767edbeb70b1b308f23ab7ee46c9c3731a0822985afcc0af7ad9ece",
+              "oldName": "Upper Demerara-Berbice",
+              "newName": "Upper Takutu-Upper Essequibo",
+              "oldCode": "GY-UD",
+              "newCode": "GY-UT",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-UD",
+                  "GY-UT"
+                ],
+                "name": [
+                  "Upper Demerara-Berbice",
+                  "Upper Takutu-Upper Essequibo"
+                ],
+                "name_en": [
+                  "Upper Demerara-Berbice",
+                  "Upper Takutu-Upper Essequibo"
+                ]
+              }
+            },
+            {
+              "geometryHash": "c9705aa77aa0cea8a0584ae1e619f1039460f44c71c94ae7b6e3849c289cfc79",
+              "oldName": "Demerara-Mahaica",
+              "newName": "Essequibo Islands-West Demerara",
+              "oldCode": "GY-DE",
+              "newCode": "GY-ES",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-DE",
+                  "GY-ES"
+                ],
+                "name": [
+                  "Demerara-Mahaica",
+                  "Essequibo Islands-West Demerara"
+                ],
+                "name_en": [
+                  "Demerara-Mahaica",
+                  "Essequibo Islands-West Demerara"
+                ]
+              }
+            },
+            {
+              "geometryHash": "dc8a704919ad9bd78fb8da7a25e97ae9d2de3ca5abe592cf784665d3f3529eb9",
+              "oldName": "Cuyuni-Mazaruni",
+              "newName": "Pomeroon-Supenaam",
+              "oldCode": "GY-CU",
+              "newCode": "GY-PM",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-CU",
+                  "GY-PM"
+                ],
+                "name": [
+                  "Cuyuni-Mazaruni",
+                  "Pomeroon-Supenaam"
+                ],
+                "name_en": [
+                  "Cuyuni-Mazaruni",
+                  "Pomeroon-Supenaam"
+                ]
+              }
+            },
+            {
+              "geometryHash": "4121dd491ff218e773f8fa25c16506036df8a9616ee2e50a2fb2c3929449ecf9",
+              "oldName": "Upper Takutu-Upper Essequibo",
+              "newName": "Upper Demerara-Berbice",
+              "oldCode": "GY-UT",
+              "newCode": "GY-UD",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-UT",
+                  "GY-UD"
+                ],
+                "name": [
+                  "Upper Takutu-Upper Essequibo",
+                  "Upper Demerara-Berbice"
+                ],
+                "name_en": [
+                  "Upper Takutu-Upper Essequibo",
+                  "Upper Demerara-Berbice"
+                ]
+              }
+            },
+            {
+              "geometryHash": "f17d7996336b0ff7edc68246966e94537c7a6a4900206fe4314727d7204d172d",
+              "oldName": "East Berbice-Corentyne",
+              "newName": "Demerara-Mahaica",
+              "oldCode": "GY-EB",
+              "newCode": "GY-DE",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-EB",
+                  "GY-DE"
+                ],
+                "name": [
+                  "East Berbice-Corentyne",
+                  "Demerara-Mahaica"
+                ],
+                "name_en": [
+                  "East Berbice-Corentyne",
+                  "Demerara-Mahaica"
+                ]
+              }
+            },
+            {
+              "geometryHash": "51a601567be9b2d68450f00853adc51fddc5a5165db1afc28c2cee2f341b7cd5",
+              "oldName": "Essequibo Islands-West Demerara",
+              "newName": "Mahaica-Berbice",
+              "oldCode": "GY-ES",
+              "newCode": "GY-MA",
+              "delta": {
+                "iso_3166_2": [
+                  "GY-ES",
+                  "GY-MA"
+                ],
+                "name": [
+                  "Essequibo Islands-West Demerara",
+                  "Mahaica-Berbice"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "country": "AF",
+          "oldFeatures": 34,
+          "newFeatures": 34,
+          "geometryMatches": 34,
+          "changedProperties": [
+            {
+              "geometryHash": "36d9dffb75360ba923caa4b1b9a60f5f404d4c637ea3841ab7444114108be76a",
+              "oldName": "Paktya",
+              "newName": "Paktya",
+              "oldCode": "AF-PKA",
+              "newCode": "AF-PIA",
+              "delta": {
+                "iso_3166_2": [
+                  "AF-PKA",
+                  "AF-PIA"
+                ]
+              }
+            },
+            {
+              "geometryHash": "1a49931f35c6a23b06da36dfdd0fb8389d73723cd5a84151b8a725becd6460fb",
+              "oldName": "Paktika",
+              "newName": "Paktika",
+              "oldCode": "AF-PIA",
+              "newCode": "AF-PKA",
+              "delta": {
+                "iso_3166_2": [
+                  "AF-PIA",
+                  "AF-PKA"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "country": "LV",
+          "oldFeatures": 119,
+          "newFeatures": 119,
+          "geometryMatches": 119,
+          "changedProperties": [
+            {
+              "geometryHash": "31f9552f46fb5c2e32d45655d5f4dbcac24362b4169d4c8074c0317dfec5bd2f",
+              "oldName": "Salacgrivas",
+              "newName": "Salacgrivas",
+              "oldCode": "LV-085",
+              "newCode": "LV-086",
+              "delta": {
+                "iso_3166_2": [
+                  "LV-085",
+                  "LV-086"
+                ]
+              }
+            },
+            {
+              "geometryHash": "9f6f2d9a3d5f7cd60fb1a2250b5863bba4b4a1d278eb82143350b5fbdd8e3c5b",
+              "oldName": "Salas",
+              "newName": "Salas",
+              "oldCode": "LV-086",
+              "newCode": "LV-085",
+              "delta": {
+                "iso_3166_2": [
+                  "LV-086",
+                  "LV-085"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "country": "UG",
+          "oldFeatures": 112,
+          "newFeatures": 112,
+          "geometryMatches": 112,
+          "changedProperties": [
+            {
+              "geometryHash": "118e36b65b645d54c41055077cd8fe6608fd3c2d6fda3eec665e6dd88f833a3a",
+              "oldName": "Isingiro",
+              "newName": "Isingiro",
+              "oldCode": "UG-417",
+              "newCode": "UG-418",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-417",
+                  "UG-418"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "56280d3ba0c1c915a362c0525a5c9f52b43bf03d0e8aeb9d6d1d2efa9aae9c56",
+              "oldName": "Kaabong",
+              "newName": "Kaabong",
+              "oldCode": "UG-315",
+              "newCode": "UG-318",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-315",
+                  "UG-318"
+                ]
+              }
+            },
+            {
+              "geometryHash": "b39843d250c971f44042aeceb2d69ceccc76e364486cd78731e909ff6ee11de4",
+              "oldName": "Lamwo",
+              "newName": "Lamwo",
+              "oldCode": "UG-327",
+              "newCode": "UG-326",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-327",
+                  "UG-326"
+                ]
+              }
+            },
+            {
+              "geometryHash": "17875bdb8071f7f1503621ff8df52679ac9db6ccc0221815f698ae6b4995a922",
+              "oldName": "Amuru",
+              "newName": "Amuru",
+              "oldCode": "UG-319",
+              "newCode": "UG-316",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-319",
+                  "UG-316"
+                ]
+              }
+            },
+            {
+              "geometryHash": "55fd606eb976407b942a59e3b548d1b220e9e4350a0a5b2bdeec9f464fc781c8",
+              "oldName": "Koboko",
+              "newName": "Koboko",
+              "oldCode": "UG-316",
+              "newCode": "UG-319",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-316",
+                  "UG-319"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "0a1f62a4c0c3360f7ba0ad8f077d97f288e14670ed16238e8c900c507e199e09",
+              "oldName": "Bukwa",
+              "newName": "Bukwa",
+              "oldCode": "UG-218",
+              "newCode": "UG-220",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-218",
+                  "UG-220"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "ae549a359b71c4e7f02c6a0531b6dd2be73a37f923082db20e639a4788778a7f",
+              "oldName": "Manafwa",
+              "newName": "Manafwa",
+              "oldCode": "UG-221",
+              "newCode": "UG-223",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-221",
+                  "UG-223"
+                ]
+              }
+            },
+            {
+              "geometryHash": "09550a7f8bfc0d17a6a46603524b1eb0521877f64dd1de5edbf7b93d6f649b3e",
+              "oldName": "Bududa",
+              "newName": "Bududa",
+              "oldCode": "UG-223",
+              "newCode": "UG-218",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-223",
+                  "UG-218"
+                ]
+              }
+            },
+            {
+              "geometryHash": "288f7efbc29c3050d3057a89f6949e7a1f5d1891dc39b21b43758c0f67ceff0a",
+              "oldName": "Arua",
+              "newName": "Arua",
+              "oldCode": "UG-303",
+              "newCode": "UG-303",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "f760654083962ad7b0f9fd17236bca5eb8fd8d6b60eba6ff35714e57c2043d21",
+              "oldName": "Zombo",
+              "newName": "Zombo",
+              "oldCode": "UG-331",
+              "newCode": "UG-330",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-331",
+                  "UG-330"
+                ]
+              }
+            },
+            {
+              "geometryHash": "8fc51a5e4eb77fedea0a4d5ef3bb516df91a5f1f772e56bd7c1ba51935232454",
+              "oldName": "Buliisa",
+              "newName": "Buliisa",
+              "oldCode": "UG-419",
+              "newCode": "UG-416",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-419",
+                  "UG-416"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "79c20857b58c8d2c1a38a7ff1c96b3179af5550bf46e9b2ac55dca0c499b8c3d",
+              "oldName": "Ntoroko",
+              "newName": "Ntoroko",
+              "oldCode": "UG-423",
+              "newCode": "UG-424",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-423",
+                  "UG-424"
+                ]
+              }
+            },
+            {
+              "geometryHash": "b6c94726f6748f40106491b3ed418ca543a48ba138bcb873b3d36fe38a5f1b1d",
+              "oldName": "Rubirizi",
+              "newName": "Rubirizi",
+              "oldCode": "UG-424",
+              "newCode": "UG-425",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-424",
+                  "UG-425"
+                ]
+              }
+            },
+            {
+              "geometryHash": "70ecf8dbba720025996b743cf2c258ce1cc9cd97ff81dd05d9a378accc6edd2a",
+              "oldName": "Luweero",
+              "newName": "Luweero",
+              "oldCode": "UG-104",
+              "newCode": "UG-104",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "27bd762b10461073b4197feeaff8ccad91f9dae357c8edbbed1a451400afcf17",
+              "oldName": "Amolatar",
+              "newName": "Amolatar",
+              "oldCode": "UG-314",
+              "newCode": "UG-315",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-314",
+                  "UG-315"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "a9831dc5b81e5d3fbcc391ebf0cc6c1cc8fcc2210b3d0e7d53b652cd2aa90067",
+              "oldName": "Mityana",
+              "newName": "Mityana",
+              "oldCode": "UG-114",
+              "newCode": "UG-115",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-114",
+                  "UG-115"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "bdd47eefa62d2595a080e5c387a973dc2e040eac4e17bb206b4d5ed239b78fae",
+              "oldName": "Nakaseke",
+              "newName": "Nakaseke",
+              "oldCode": "UG-115",
+              "newCode": "UG-116",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-115",
+                  "UG-116"
+                ]
+              }
+            },
+            {
+              "geometryHash": "0a36a2ee0db4a1acd9a8ed80c2c5a9ed817c011ae89d0bc5afbcdadb65786a0d",
+              "oldName": "Dokolo",
+              "newName": "Dokolo",
+              "oldCode": "UG-318",
+              "newCode": "UG-317",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-318",
+                  "UG-317"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "986d02b577ec6c527e01959fbb2f05035e04442cd49aa30897b5ba0edeb3236e",
+              "oldName": "Kyegegwa",
+              "newName": "Kyegegwa",
+              "oldCode": "UG-421",
+              "newCode": "UG-422",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-421",
+                  "UG-422"
+                ]
+              }
+            },
+            {
+              "geometryHash": "8a61fc8243ead1238267a1fc65372f6553a586edc2eb56f315127ce93f3f214d",
+              "oldName": "Oyam",
+              "newName": "Oyam",
+              "oldCode": "UG-321",
+              "newCode": "UG-321",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "3028e21f8889bf3624d9939811e3da2294588fecd0428910157ae5396e570f0b",
+              "oldName": "Kole",
+              "newName": "Kole",
+              "oldCode": "UG-326",
+              "newCode": "UG-325",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-326",
+                  "UG-325"
+                ]
+              }
+            },
+            {
+              "geometryHash": "6ba0ccec0b73f84693f0de83f8aa0970f56d8bf40db8276b5b514f7f4a48164b",
+              "oldName": "Ibanda",
+              "newName": "Ibanda",
+              "oldCode": "UG-416",
+              "newCode": "UG-417",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-416",
+                  "UG-417"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "cf8c9ceae3a79b7e5bcadfb59881f52dd298304a2e13788460a4f1d9a9a99410",
+              "oldName": "Gulu",
+              "newName": "Gulu",
+              "oldCode": "UG-304",
+              "newCode": "UG-304",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "8722be5b1c6cbf7621e374f897f745c6e9833cdad57fd675cd1a2e2202774202",
+              "oldName": "Kiryandongo",
+              "newName": "Kiryandongo",
+              "oldCode": "UG-420",
+              "newCode": "UG-421",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-420",
+                  "UG-421"
+                ]
+              }
+            },
+            {
+              "geometryHash": "90527762cbb47a5a5da4ff629e493a93d1ef007c7ec7049856dd7480a79c9932",
+              "oldName": "Kampala",
+              "newName": "Kampala",
+              "oldCode": "UG-102",
+              "newCode": "UG-102",
+              "delta": {
+                "type_en": [
+                  "District",
+                  "City"
+                ],
+                "type": [
+                  "District",
+                  "City"
+                ]
+              }
+            },
+            {
+              "geometryHash": "c2046174b6bf127bc81e3d2a59b9920375f1cfc5b963da527aea3ed0f5bfa04c",
+              "oldName": "Kaliro",
+              "newName": "Kaliro",
+              "oldCode": "UG-220",
+              "newCode": "UG-222",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-220",
+                  "UG-222"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "58a684df00b4809932e46ebbf87efaced660ce2737f0c4a0281fe0a5f23c1e6c",
+              "oldName": "Kotido",
+              "newName": "Kotido",
+              "oldCode": "UG-306",
+              "newCode": "UG-306",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "4bb6c18d3c412f0924165609f789eb3ad83ce221f2bc304782d59d5f2061a260",
+              "oldName": "Abim",
+              "newName": "Abim",
+              "oldCode": "UG-317",
+              "newCode": "UG-314",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-317",
+                  "UG-314"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "b54cd39308a84b0473178a1b7a4d81fdd956f4fe76884a9d3513ce77b43bd2fe",
+              "oldName": "Otuke",
+              "newName": "Otuke",
+              "oldCode": "UG-330",
+              "newCode": "UG-329",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-330",
+                  "UG-329"
+                ]
+              }
+            },
+            {
+              "geometryHash": "dea2ece20e877ba8c6d6ce3c09f64f4cc1c9cb4cac502ff7f59d92ecc0fb30ca",
+              "oldName": "Katakwi",
+              "newName": "Katakwi",
+              "oldCode": "UG-207",
+              "newCode": "UG-207",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "8364ea0cac8d2973923195c4df02e1edd3b7c97fb1b057a2e6cf12dd3e22664c",
+              "oldName": "Mbarara",
+              "newName": "Kiruhura",
+              "oldCode": "UG-410",
+              "newCode": "UG-419",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-410",
+                  "UG-419"
+                ],
+                "name": [
+                  "Mbarara",
+                  "Kiruhura"
+                ],
+                "name_en": [
+                  "Mbarara",
+                  "Kiruhura"
+                ]
+              }
+            },
+            {
+              "geometryHash": "372784c85dc784a3520686195e7aa50fd08b80cec6ffc3c1871197a78a92f92a",
+              "oldName": "Lyantonde",
+              "newName": "Lyantonde",
+              "oldCode": "UG-116",
+              "newCode": "UG-114",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-116",
+                  "UG-114"
+                ]
+              }
+            },
+            {
+              "geometryHash": "20dcd18f1c3fbcdc2496f06c67c7e48340dd7e3f69d6120d9a9388790715d844",
+              "oldName": "Buhweju",
+              "newName": "Buhweju",
+              "oldCode": "UG-325",
+              "newCode": "UG-420",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-325",
+                  "UG-420"
+                ]
+              }
+            },
+            {
+              "geometryHash": "b3df266b21fe8f1220a6d6a6c78b610fffd5f2b4fc6d30ddee029ebce78ff9ad",
+              "oldName": "Sheema",
+              "newName": "Sheema",
+              "oldCode": "UG-425",
+              "newCode": "UG-426",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-425",
+                  "UG-426"
+                ]
+              }
+            },
+            {
+              "geometryHash": "4c92a87e8ddbc02a2cd424a29e1e38c0148ffc95179dfe4d863c62947c19d8d7",
+              "oldName": "Mitooma",
+              "newName": "Mitooma",
+              "oldCode": "UG-422",
+              "newCode": "UG-423",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-422",
+                  "UG-423"
+                ]
+              }
+            },
+            {
+              "geometryHash": "9beb16bca78295976bcb03de861279f144576baec802cca8e41911b085140a36",
+              "oldName": "Bulambuli",
+              "newName": "Bulambuli",
+              "oldCode": "UG-225",
+              "newCode": "UG-225",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "d9030c4cb610dd82d1646e4e897eb62a60332f62ee49125732d9e4ce77853cc5",
+              "oldName": "Sironko",
+              "newName": "Sironko",
+              "oldCode": "UG-215",
+              "newCode": "UG-215",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "d18bd0c1f41409d32146b6b2420a82f63b07a4254ed0d7d9631b188e233c5f94",
+              "oldName": "Nwoya",
+              "newName": "Nwoya",
+              "oldCode": "UG-329",
+              "newCode": "UG-328",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-329",
+                  "UG-328"
+                ]
+              }
+            },
+            {
+              "geometryHash": "76787943f0f7471f8f1f7f8e19d2390f357fcb3d04842e5df1770471d6a5d763",
+              "oldName": "Mbale",
+              "newName": "Mbale",
+              "oldCode": "UG-209",
+              "newCode": "UG-209",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "7ec55dc13b3b090efa14d5c3d47877c7be96675adbfaf37e8da92eed378d3503",
+              "oldName": "Budaka",
+              "newName": "Budaka",
+              "oldCode": "UG-217",
+              "newCode": "UG-217",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "b175e7afb6ae96954f3d8389515477b317c3cca095752797300ffd295609b288",
+              "oldName": "Butaleja",
+              "newName": "Butaleja",
+              "oldCode": "UG-219",
+              "newCode": "UG-221",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-219",
+                  "UG-221"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "2842d92b37071a8d78694de4cf4c6d2fe30ad5e1884beb366c72de04af1f68ee",
+              "oldName": "Kibuku",
+              "newName": "Kibuku",
+              "oldCode": "UG-227",
+              "newCode": "UG-227",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            },
+            {
+              "geometryHash": "e2b6d43ff195cf8032ed4be4429b0e79c07be5955a6ea6f82f796dd7223c2d09",
+              "oldName": "Napak",
+              "newName": "Napak",
+              "oldCode": "UG-328",
+              "newCode": "UG-327",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-328",
+                  "UG-327"
+                ]
+              }
+            },
+            {
+              "geometryHash": "c9dc9980caa3304809ff675913b804923c8a0a90011fd567622c347df652924b",
+              "oldName": "Bukedea",
+              "newName": "Bukedea",
+              "oldCode": "UG-224",
+              "newCode": "UG-219",
+              "delta": {
+                "iso_3166_2": [
+                  "UG-224",
+                  "UG-219"
+                ]
+              }
+            },
+            {
+              "geometryHash": "93a50b1bc770fb7382981e2b07270ddc9920f6fe76a88f2e50aa4cbbd342011f",
+              "oldName": "Namutumba",
+              "newName": "Namutumba",
+              "oldCode": "UG-222",
+              "newCode": "UG-224",
+              "delta": {
+                "type_en": [
+                  "County",
+                  "District"
+                ],
+                "iso_3166_2": [
+                  "UG-222",
+                  "UG-224"
+                ],
+                "type": [
+                  "County",
+                  "District"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "guyanaRegionalCentreComparison": {
+    "source": "https://education.gov.gy/web2/index.php/ngsa-2022/4596-social-studies-made-easy-revised-edition/file",
+    "locator": "Social Studies Made Easy, Levels 5 & 6, revised edition; printed page 53, PDF page index 64, Regional Democratic Center table",
+    "namesAgree": 8,
+    "records": [
+      {
+        "code": "GY-BA",
+        "regionNumber": 1,
+        "primaryRegionalCentre": "Mabaruma",
+        "mapCapital": {
+          "name": "Mabaruma",
+          "lon": -59.7833,
+          "lat": 8.2
+        },
+        "capitalDetails": {
+          "name": "Mabaruma"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      },
+      {
+        "code": "GY-PM",
+        "regionNumber": 2,
+        "primaryRegionalCentre": "Anna Regina",
+        "mapCapital": {
+          "name": "Anna Regina",
+          "lon": -58.5167,
+          "lat": 7.25
+        },
+        "capitalDetails": {
+          "name": "Anna Regina",
+          "population": 12448,
+          "year": 2002,
+          "basis": "estimate"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      },
+      {
+        "code": "GY-ES",
+        "regionNumber": 3,
+        "primaryRegionalCentre": "Vreed-en-Hoop",
+        "mapCapital": {
+          "name": "Vreed en Hoop",
+          "lon": -58.1833,
+          "lat": 6.8
+        },
+        "capitalDetails": {
+          "name": "Vreed en Hoop"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      },
+      {
+        "code": "GY-DE",
+        "regionNumber": 4,
+        "primaryRegionalCentre": "Triumph",
+        "mapCapital": {
+          "name": "Georgetown",
+          "lon": -58.167,
+          "lat": 6.802,
+          "population": 264350
+        },
+        "capitalDetails": {
+          "name": "Paradise"
+        },
+        "status": "confirmed_error_or_omission",
+        "finding": "F105"
+      },
+      {
+        "code": "GY-MA",
+        "regionNumber": 5,
+        "primaryRegionalCentre": "Fort Wellington",
+        "mapCapital": null,
+        "capitalDetails": null,
+        "status": "confirmed_error_or_omission",
+        "finding": "F105"
+      },
+      {
+        "code": "GY-EB",
+        "regionNumber": 6,
+        "primaryRegionalCentre": "New Amsterdam",
+        "mapCapital": {
+          "name": "New Amsterdam",
+          "lon": -57.5167,
+          "lat": 6.25
+        },
+        "capitalDetails": {
+          "name": "New Amsterdam"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      },
+      {
+        "code": "GY-CU",
+        "regionNumber": 7,
+        "primaryRegionalCentre": "Bartica",
+        "mapCapital": {
+          "name": "Bartica",
+          "lon": -58.6167,
+          "lat": 6.4
+        },
+        "capitalDetails": {
+          "name": "Bartica"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      },
+      {
+        "code": "GY-PT",
+        "regionNumber": 8,
+        "primaryRegionalCentre": "Mahdia",
+        "mapCapital": {
+          "name": "Mahdia",
+          "lon": -59.15,
+          "lat": 5.2825
+        },
+        "capitalDetails": {
+          "name": "Mahdia"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      },
+      {
+        "code": "GY-UT",
+        "regionNumber": 9,
+        "primaryRegionalCentre": "Lethem",
+        "mapCapital": {
+          "name": "Lethem",
+          "lon": -59.8,
+          "lat": 3.3833
+        },
+        "capitalDetails": {
+          "name": "Lethem",
+          "population": 3000,
+          "year": 2002,
+          "basis": "estimate"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      },
+      {
+        "code": "GY-UD",
+        "regionNumber": 10,
+        "primaryRegionalCentre": "Linden",
+        "mapCapital": {
+          "name": "Linden",
+          "lon": -58.3,
+          "lat": 6
+        },
+        "capitalDetails": {
+          "name": "Linden",
+          "population": 28674,
+          "year": 2012,
+          "basis": "census"
+        },
+        "status": "name_agrees_allowing_punctuation",
+        "finding": null
+      }
+    ],
+    "corroboration": "https://dpi.gov.gy/substantial-upgrades-slated-for-region-four-roads-bridges/"
+  },
+  "capitalModel": {
+    "finding": "F104",
+    "records": [
+      {
+        "code": "IT-FC",
+        "shown": "Cesena",
+        "omitted": "Forli",
+        "source": "https://www.provincia.fc.it/it/news/121361/da-oggi-martedi-30-gennaio-la-citta-di-cesena-e-ufficialmente-co-capoluogo-della-provincia-forli-cesena",
+        "observation": "Province announcement 30 January 2024 expressly retains both cities as capitals; legal offices remain in Forli."
+      },
+      {
+        "code": "IT-PU",
+        "shown": "Pesaro",
+        "omitted": "Urbino",
+        "source": "https://www.provincia.pu.it/fileadmin/grpmnt/1057/SegretarioGenerale/STATUTO_COORDINATO_-_ULTIMA_MODIFICA_2025.pdf",
+        "observation": "Article 4 paragraph 1, printed page 5/PDF index 4: both co-capitals, provincial seat in Pesaro. Current consolidated statute effective 14 February 2026; this paragraph originated in 2022 amendment."
+      },
+      {
+        "code": "PT-20",
+        "shown": "Ponta Delgada",
+        "source": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1980-34507075",
+        "observation": "Art25 legislature in Horta; Art76 regional presidency and secretariats distributed across Angra do Heroismo, Horta and Ponta Delgada. Use role-aware seats; this source does not establish a simple exclusive executive/judicial/legislative three-way split."
+      }
+    ]
+  },
+  "captionImageScreen": [
+    {
+      "code": "CH-AR",
+      "path": "public/capital-flags/ch-ar.png",
+      "width": 1000,
+      "height": 1000,
+      "meaning": {
+        "description": "Herisau’s flag shows its arms: a black bear striding upright on white, a golden log on its shoulder. Like many places in the region, it goes back to the legend of St Gall, first written down in 771: the saint told a bear to fetch wood for his fire, and it came back with a heavy log. The black bear became the emblem of the Abbey of St. Gall in the 14th century; the shouldered log first appears on Herisau’s seal of 1401, and Herisau kept it.",
+        "sources": [
+          {
+            "title": "Das Herisauer Wappen — Gemeinde Herisau (2012)",
+            "url": "https://www.herisau.ch/_docn/4590223/Das_Herisauer_Wappen.pdf"
+          },
+          {
+            "title": "Herisau (Switzerland) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ch-ar005.html"
+          }
+        ]
+      },
+      "sha256": "04cd0ffeae56872f49e15833aeb1b7e13e83e791ed7e45110e4682991f69d6a8",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "ID-BA",
+      "path": "public/capital-flags/id-ba.png",
+      "width": 1280,
+      "height": 853,
+      "meaning": {
+        "description": "Denpasar’s yellow flag bears the city emblem, which the city explains: the pentagon stands for Pancasila; the golden Padmasana shrine of the Jagatnatha temple for the universe as a place of worship, and for Denpasar as the seat of government; the keris for a heroic spirit and a city of struggle; the split gate (candi bentar) for Denpasar’s own culture and as the gateway to Bali; and the three steps for the Tri Kaya Parisudha precept its development rests on. Its 27 grains of rice, 2 chain links and 9 cotton flowers with 2 leaves spell out the city’s founding date, 27 February 1992.",
+        "sources": [
+          {
+            "title": "Profil Statistik Gender Kota Denpasar 2024, §3.3 Lambang Kota Denpasar dan Penjelasannya — Pemerintah Kota Denpasar",
+            "url": "https://www.kb.denpasarkota.go.id/public/uploads/download/download_242210091042_statistik-gender-kota-denpasar-tahun-2024.pdf"
+          }
+        ]
+      },
+      "sha256": "1ed0ce86d0fcb55f5c1f6ea1d2d4d4f11ec87dd2b64c41483eb0759e12fbd012",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "PT-20",
+      "path": "public/capital-flags/pt-20.png",
+      "width": 261,
+      "height": 347,
+      "meaning": {
+        "description": "Ponta Delgada flies the typical Portuguese municipal flag: its arms on plain yellow, adopted in 1946. The seven golden arrows on red are the attributes of St Sebastian, the municipal patron — the city grew out of the village of São Sebastião. The goshawk (açor) holding a quina, the five-disc Portuguese shield, stands for the Azores, whose name it pictures, and appears in most Azorean municipal arms; the five-towered crown marks city rank.",
+        "sources": [
+          {
+            "title": "Ponta Delgada (Portugal) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/pt-pdl.html"
+          },
+          {
+            "title": "Azores: municipalities (goshawk symbolism) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/pt-a-.html"
+          }
+        ]
+      },
+      "sha256": "8930711e54ca888b4a35851639281ee1e2579cc3f5b8bcee6822ef6b361e1d41",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-09",
+      "path": "public/capital-flags/ua-09.png",
+      "width": 1000,
+      "height": 667,
+      "meaning": {
+        "description": "Luhansk’s flag is light blue with the city’s arms at the centre. The arms, restored by the city council in 1992 from the imperial-era design, show a black blast furnace with red flames between two black hammers on gold; the furnace stands for the metallurgy that shaped the city’s founding and growth.",
+        "sources": [
+          {
+            "title": "Прапор Луганська — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/Прапор_Луганська"
+          },
+          {
+            "title": "Герб Луганська — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/Герб_Луганська"
+          }
+        ]
+      },
+      "sha256": "5e3d016cefbe4aa9280bd5dba4e73c0434a2be67a64e9a4925f312bbce5a7c20",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-14",
+      "path": "public/capital-flags/ua-14.svg",
+      "width": 750,
+      "height": 600,
+      "meaning": {
+        "description": "Donetsk’s flag is divided blue over black, the colours of the city’s shield, with its arms at the centre. The blue stands for the grandeur and beauty of the city’s architecture and greenery, the black for its rich coal reserves and their intensive mining. The arms, approved in 1995, keep the 1968 design of a golden hand holding a miner’s hammer.",
+        "sources": [
+          {
+            "title": "Прапор Донецька — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/Прапор_Донецька"
+          },
+          {
+            "title": "Герб Донецька — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/Герб_Донецька"
+          }
+        ]
+      },
+      "sha256": "4844418dbbffb0cc0419e27dcc6c89fb5c4b33cd637a7481db320d8a30d53c9c",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "BE-VOV",
+      "path": "public/capital-flags/be-vov.svg",
+      "width": 689,
+      "height": 464,
+      "meaning": {
+        "description": "Ghent’s flag, adopted by the city council on 23 April 1990, is a banner of its arms: a white lion on black, red-tongued, with gold claws, crown and collar, and a small gold cross hanging from the collar. The arms most likely come from those of the Counts of Flanders, who bore the reverse, a black lion on gold; a lion on a shield already appears on the city’s oldest known seal, of 1276.",
+        "sources": [
+          {
+            "title": "Vlag van Gent — Wikipedia (nl)",
+            "url": "https://nl.wikipedia.org/wiki/Vlag_van_Gent"
+          },
+          {
+            "title": "Wapen van Gent — Wikipedia (nl)",
+            "url": "https://nl.wikipedia.org/wiki/Wapen_van_Gent"
+          },
+          {
+            "title": "Ghent (Municipality, Province of East Flanders, Belgium) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/be-vovge.html"
+          }
+        ]
+      },
+      "sha256": "8578851f08e01680b2b8cf3851778fbd3b48d71083cff8428562cd13e6ab18d1",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "BE-VWV",
+      "path": "public/capital-flags/be-vwv.svg",
+      "width": 595,
+      "height": 397,
+      "meaning": {
+        "description": "Bruges flies a banner of its arms: eight white and red stripes with a blue lion wearing a gold crown and a gold cross on a chain. The lion is most likely the lion of Flanders, shown in blue instead of black. The stripes appear on the city’s seal from the late 13th century, six at first and eight from 1289, and their meaning is not known. The Count of Flanders first granted the arms in 1304; the flag was adopted in 1982.",
+        "sources": [
+          {
+            "title": "Bruges (Municipality, Province of West Flanders, Belgium) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/be-vwvbr.html"
+          }
+        ]
+      },
+      "sha256": "e48a713e26f923dc4fa00cc2d40cdda712331fd1fe3d696d5159d9ff4d127fdb",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "BZ-CY",
+      "path": "public/capital-flags/bz-cy.svg",
+      "width": 540,
+      "height": 324,
+      "meaning": {
+        "description": "San Ignacio’s flag, as recorded since 2018, shows a suspension bridge in a white oval on a tan field with a green border. San Ignacio and its sister town Santa Elena are joined by the only suspension bridge in Belize, the one-lane Hawkesworth Bridge across the Macal River.",
+        "sources": [
+          {
+            "title": "San Ignacio (Belize) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/bz-ca-ie.html"
+          },
+          {
+            "title": "San Ignacio, Belize — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/San_Ignacio,_Belize"
+          }
+        ]
+      },
+      "sha256": "413d95c4704ec361e3412a9f039992f90d06ad1889004a4305c0a7b28502ff1d",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "CH-SG",
+      "path": "public/capital-flags/ch-sg.svg",
+      "width": 512,
+      "height": 512,
+      "meaning": {
+        "description": "St. Gallen’s flag shows its arms: a black bear rising on white, with a red tongue, gold claws and a gold collar. Early in the 14th century the city took the arms of the Abbey of St. Gall, whose bear recalls the legend of the bear and the saint; Emperor Frederick III granted the gold claws and collar in 1475. The city council confirmed the traditional arms in 1943.",
+        "sources": [
+          {
+            "title": "St. Gallen (Switzerland) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ch-sg045.html"
+          }
+        ]
+      },
+      "sha256": "910282c360a5badb0caf6c99630b8ee8da5b95133b09d06e5900855043c6364c",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "CZ-PL",
+      "path": "public/capital-flags/cz-pl.svg",
+      "width": 600,
+      "height": 400,
+      "meaning": {
+        "description": "Plzeň’s flag is quartered white, yellow, green and red with no charge: the field colours of the four quarters of the city’s arms. Those quarters tell its history. The city’s first arms, a silver greyhound on red, were taken by its burghers during the Hussite wars to show their loyalty; a golden camel on green was granted by Sigismund of Luxembourg in 1434 for the city’s stand in the last Hussite siege; and Pope Paul II added the keys on silver and the armoured man holding half an eagle on gold in 1466.",
+        "sources": [
+          {
+            "title": "Plzeň (Czech Republic) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/cz-pm-pm.html"
+          }
+        ]
+      },
+      "sha256": "480b87c9c09276a374651586be555400cd08f25048031063eebccf30f4e7df76",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "MX-PUE",
+      "path": "public/capital-flags/mx-pue.svg",
+      "width": 1920,
+      "height": 1097,
+      "meaning": {
+        "description": "Puebla’s municipal flag is white with the city’s arms. The arms were granted by a royal decree of 20 July 1538 and refer to the legend of the city’s founding, that angels laid it out: two angels dressed in white stand either side of a city with five gold towers on a green field. Above it, a K and a V stand for Karlos Quinto, the Emperor Charles V, and the red border carries, in gold letters, a Latin verse meaning “God commanded his angels to guard you in all your ways”.",
+        "sources": [
+          {
+            "title": "Puebla de Zaragoza, Puebla (Mexico) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/mx-pu-pu.html"
+          },
+          {
+            "title": "Escudo de Puebla: elementos y significado — El Universal Puebla",
+            "url": "https://www.eluniversalpuebla.com.mx/estado/escudo-de-puebla-elementos-y-significado/"
+          }
+        ]
+      },
+      "sha256": "89091804700545ee4b33d4d74aeaa570d68585f651e5725a39b6751a8334ebca",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "NI-BO",
+      "path": "public/capital-flags/ni-bo.svg",
+      "width": 360,
+      "height": 216,
+      "meaning": {
+        "description": "Boaco’s flag sets yellow, blue and white stripes inside a green V. The town’s own explanation: yellow is for religion, green for the mountains around this hill town, blue for the sky and white for purity.",
+        "sources": [
+          {
+            "title": "Boaco (Boaco, Nicaragua) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ni-bo-bo.html"
+          }
+        ]
+      },
+      "sha256": "e60a9b0f656543705d01d15f79a29d636060a98b6ea017928aa300930083b0e3",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "NI-CO",
+      "path": "public/capital-flags/ni-co.png",
+      "width": 1280,
+      "height": 854,
+      "meaning": {
+        "description": "Juigalpa’s green flag, designed by the poet Guillermo Rothschuh Tablada, carries four small black snails joined in a rhomb. The snails come from the town’s name, Juigalpán, “rich in small black snails”; they move east, towards the light, and the rhomb links them to the four cardinal points as energy, life and hope. The green stands first of all for the pastures of Chontales on which its economy rests.",
+        "sources": [
+          {
+            "title": "Juigalpa (Chontales, Nicaragua) — Flags of the World (translating the town hall’s text)",
+            "url": "https://www.crwflags.com/fotw/flags/ni-ct-ju.html"
+          }
+        ]
+      },
+      "sha256": "4ad1a054d0af92ccb8b49f7427d305c1a5e9035a215f9066fdd5ced0198a122c",
+      "check": "Unresolved variant/caption caveat: black line-drawn snails in white roundels; avoid declaring false solely because prose calls them black. Town etymology has competing explanations. Exact official artwork not certified."
+    },
+    {
+      "code": "NI-MT",
+      "path": "public/capital-flags/ni-mt.svg",
+      "width": 800,
+      "height": 533,
+      "meaning": {
+        "description": "Matagalpa’s flag, as the town explains it: blue for the colours of Nicaragua’s flag, green for the Matagalpa mountains and white for peace, with a yellow triangle for a Catholic city. The white stripe carries the outline of the department with maize and coffee, its main products. On the shield, the balls are the town’s first ten houses and the loom is where the Indigenous people made their clothes; the motto calls Matagalpa “La Perla del Septentrión”, the pearl of the north.",
+        "sources": [
+          {
+            "title": "Matagalpa (Matagalpa, Nicaragua) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ni-mt-mt.html"
+          }
+        ]
+      },
+      "sha256": "8aa31573c0876836e70c25e21ddfee9d35353d7fcb7f04009831bb40d3995a23",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "NO-01",
+      "path": "public/capital-flags/no-01.gif",
+      "width": 297,
+      "height": 216,
+      "meaning": {
+        "description": "Sarpsborg’s flag is a banner of its arms: a black bear walking above a black castle on gold, approved in 1966. The bear goes back to the town’s oldest surviving seal, of 1556, and is said to recall the arms of Alv Erlingsson, lord of Sarpsborg in the late 13th century; the castle’s two towers stand for the two gates in the medieval town walls.",
+        "sources": [
+          {
+            "title": "Sarpsborg (Østfold, Norway) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/no-01-05.html"
+          }
+        ]
+      },
+      "sha256": "8596c6664f79c90caefb5fff955090b8a83755f02c6b2be77350f0102f5b2f3e",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "NO-02",
+      "path": "public/capital-flags/no-02.svg",
+      "width": 1100,
+      "height": 800,
+      "meaning": {
+        "description": "Oslo has flown its city seal on blue since the city council chose this flag in 2000, in place of the blue and white striped flag of 1924. The seal shows the city’s patron saint, St Hallvard, on a throne decorated with lions, as in the seals of Norwegian kings, holding his attributes, the arrows and the millstone. On the oldest seal, of about 1300, the figure at his feet was one of the men who killed Hallvard; worn and misread, it became the woman he had tried to defend, and the present design of 1924 keeps her. Around it runs the city’s motto, Unanimiter et constanter, “united and constant”.",
+        "sources": [
+          {
+            "title": "Coat of arms of Oslo — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Oslo"
+          },
+          {
+            "title": "Oslo (Norway) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/no-03-01.html"
+          }
+        ]
+      },
+      "sha256": "eafc08e198876c6f6d002f9ea9472ac12028e1e3f3c96b373a5b1508144f026f",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "NZ-MWT",
+      "path": "public/capital-flags/nz-mwt.png",
+      "width": 1280,
+      "height": 640,
+      "meaning": {
+        "description": "Palmerston North’s flag is white with the city’s coat of arms in the centre, the city’s name above it and “New Zealand” below, in black. The arms carry the city’s Latin motto, Palman qui meruit ferat, “let whoever earns the palm bear it”.",
+        "sources": [
+          {
+            "title": "Manawatu-Wanganui region: Palmerston North — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/nz-mwt.html"
+          },
+          {
+            "title": "Palmerston North Coat of Arms — Manawatū Heritage (Palmerston North City Council)",
+            "url": "https://manawatuheritage.pncc.govt.nz/item/a213cee0-3333-43ad-9ed0-517d97b628c0"
+          }
+        ]
+      },
+      "sha256": "ad04a93305071d53bbb7df288edf3a5c99db06d63ea035ea00da2fcafcec49de",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "PH-BEN",
+      "path": "public/capital-flags/ph-ben.png",
+      "width": 1200,
+      "height": 700,
+      "meaning": {
+        "description": "La Trinidad’s flag carries the municipal seal on green. The seal, approved in 1994, shows a kayabang, the traditional basket the townspeople carry on their backs; fields and mountains for agriculture, one of their main livelihoods; a wheel and anvil for trade and industry, the wheel’s sixteen cogs standing for the town’s sixteen barangays; houses and a highway for its development; and a torch over an open book for education. The red, white and blue circle recalls the Philippine flag, 1950 is the year the town was founded, and the ribbon carries its motto: Pagkakaisa, Kasaganaan, Matatag.",
+        "sources": [
+          {
+            "title": "Municipality of La Trinidad, Province of Benguet — NHCP Heraldry",
+            "url": "https://nhcpheraldry.blogspot.com/2021/03/municipality-of-la-trinidad-province-of.html"
+          }
+        ]
+      },
+      "sha256": "647ed2fd897d7c4ef140c492bdc71b2bfc281fb52ffb72f8316d0dd8188c958c",
+      "check": "1950 caption imprecisely calls municipal conversion the founding of the town. RA 531 sections 1-2 describe an existing municipal district and continuing officials.",
+      "finding": "F107"
+    },
+    {
+      "code": "PH-LAG",
+      "path": "public/capital-flags/ph-lag.png",
+      "width": 1200,
+      "height": 700,
+      "meaning": {
+        "description": "Santa Cruz’s flag carries the municipal seal on white. The seal, approved in 1996, takes its shield from the provincial seal of Laguna. The cross stands for the townspeople’s faith, and the sun for strength and prosperity and for Santa Cruz’s part when Laguna and seven other provinces revolted against Spain. The farmer with his carabao and rice fields, the coconut worker and the fisherman stand for the town’s farming, coconut and fishing industries, and the white cheese, kesong puti, made from carabao’s milk, for its most famous product. The date 1602 is the year the town was founded.",
+        "sources": [
+          {
+            "title": "Municipality of Santa Cruz, Province of Laguna — NHCP Heraldry",
+            "url": "https://nhcpheraldry.blogspot.com/2021/02/municipality-of-santa-cruz-province-of.html"
+          }
+        ]
+      },
+      "sha256": "0e61c3a2cd6075110a67fc7b0876de7245bcfbd8b858af4e5117a74fcc9e7439",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "RO-AB",
+      "path": "public/capital-flags/ro-ab.png",
+      "width": 324,
+      "height": 216,
+      "meaning": {
+        "description": "Alba Iulia’s municipal flag, as shown on the city’s website and confirmed by its administration, is white with the city’s arms in the middle and a blue field of two merged triangles along the fly. The arms are divided into three triangles in the blue, yellow and red of Romania’s flag; the eagle on blue and the aurochs on red repeat the arms of Wallachia and Moldavia from the national coat of arms. The ermine chief with a royal crown may recall a coronation robe: Ferdinand I was crowned King of Romania in Alba Iulia in 1922, in the city where the union of Transylvania with Romania had been decided in 1918.",
+        "sources": [
+          {
+            "title": "Alba Iulia (Romania, Alba) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ro-albai.html"
+          }
+        ]
+      },
+      "sha256": "0b422fd0c85ca65c8e7c3dfcbfd2095fae666aa1b0e95fc294c3d01a633c331d",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "RO-CV",
+      "path": "public/capital-flags/ro-cv.png",
+      "width": 960,
+      "height": 540,
+      "meaning": {
+        "description": "Sfântu Gheorghe’s flag, adopted by the city council on 28 January 2010, has gold and blue stripes with the city’s arms in the middle: a fortified church on blue under a gold sun and a silver moon, and before it, on three green fields, St George, the city’s patron, slaying the dragon. The Romanian government approved it as the official city flag in 2021, but on 22 February 2023 the High Court of Cassation and Justice annulled that approval, after a challenge by the Civic Forum of Romanians of Covasna, Harghita and Mureș, which argued that the flag represented only the city’s Hungarian community. The mayor said the city would restart the approval procedure.",
+        "sources": [
+          {
+            "title": "Municipiul Sfântu Gheorghe are steag oficial — Sfântu Gheorghe city portal",
+            "url": "https://www.sfantugheorgheinfo.ro/stiri/municipiul-sfantu-gheorghe-are-steag-oficial"
+          },
+          {
+            "title": "Decizie ICCJ: steagul secuiesc nu poate fi drapelul oficial al orașului Sfântu Gheorghe — Radio România Actualități (22 February 2023)",
+            "url": "https://www.rador.ro/2023/02/22/decizie-iccj-steagul-secuiesc-nu-poate-fi-drapelul-oficial-al-orasului-sfantu-gheorghe/"
+          },
+          {
+            "title": "Primarul Antal Árpád, după decizia Înaltei Curți: vom relua procedura — G4Media",
+            "url": "https://www.g4media.ro/primarul-antal-arpad-dupa-decizia-inaltei-curti-am-respectat-intocmai-legea-asa-ca-vom-relua-procedura-pentru-aprobarea-steagului-municipiului-sfantu-gheorghe.html"
+          }
+        ]
+      },
+      "sha256": "b68df87d474607cbdce16ad822b9211175660b017c0971101a7835e57a072654",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "RO-MS",
+      "path": "public/capital-flags/ro-ms.gif",
+      "width": 216,
+      "height": 432,
+      "meaning": {
+        "description": "Târgu Mureș’s flag, recorded flying on the city hall in 2002, is blue, white and blue with the city’s arms in the middle. The arms, approved by the Romanian government in 2000, set on blue an armoured arm driving a silver sword through a bear’s head, for the struggle for defence, heroism, bravery and sacrifice for a noble cause; gold scales in balance, for the part the town’s institutions played in the judicial system of Transylvania; and a silver mural crown of seven towers, for its rank as a municipality.",
+        "sources": [
+          {
+            "title": "Targu Mures (Romania, Mures) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ro-tgmur.html"
+          },
+          {
+            "title": "Stema municipiului Târgu Mureș, Hotărârea Guvernului nr. 486/2000 — Lege5",
+            "url": "https://lege5.ro/gratuit/hezdqmrv/stema-municipiului-targu-mures-judetul-mures-hotarare-486-2000?dp=ge4diojzgi4tc"
+          }
+        ]
+      },
+      "sha256": "529cd8ba241a7864051f9ddeb7a79f710e54a0d19727156cdffe26f96a9434e2",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "RU-MOS",
+      "path": "public/capital-flags/ru-mos.svg",
+      "width": 1200,
+      "height": 800,
+      "meaning": {
+        "description": "Krasnogorsk flies the flag of Krasnogorsk urban okrug, the municipality that includes the city, set by its council on 26 October 2017 to repeat its arms. The red triple mound is canting: the name comes from the village of Krasnaya Gorka, “red hill”. The silver column recalls the manor ensembles of the 17th and 18th centuries that survive in the okrug, among them Arkhangelskoye and Ilyinskoye, and the two lenses refracting rays of light stand for the Zverev Krasnogorsk plant, one of Russia’s leading makers of cameras, optical sights and precision optics. The green of the trees is given as the colour of nature, abundance and life.",
+        "sources": [
+          {
+            "title": "Символика — Krasnogorsk urban okrug administration",
+            "url": "https://krasnogorsk-adm.ru/ist/simvolika/"
+          },
+          {
+            "title": "Красногорск (городской округ) — Wikipedia (ru)",
+            "url": "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3)"
+          }
+        ]
+      },
+      "sha256": "07925d67be4f3215c2f7d51d18e165ae07cf343eb1ca6bcbba20c47f1eeb7ddb",
+      "check": "Bounded positive: official Krasnogorsk page supports 26 October 2017 urban-okrug flag, lenses, column, canting red hill and green nature. Not verification of all related historical variants."
+    },
+    {
+      "code": "RU-NGR",
+      "path": "public/capital-flags/ru-ngr.svg",
+      "width": 1635,
+      "height": 981,
+      "meaning": {
+        "description": "Veliky Novgorod’s flag, approved on 24 November 2010, is white over blue with the figures of the city’s arms: a gold throne with a red cushion bearing a sceptre and a cross, a three-branched candlestick above it, two black bears on either side, and two pairs of silver fish on the blue. The arms go back to a seal made in 1565 on Ivan the Terrible’s orders for the letters Novgorod’s governors sent to the King of Sweden, which showed a seat with a staff between a bear and a lynx, with a fish below. By the Tsar’s Titulary of 1672 the animals had become two bears and the seat a throne, and Catherine II confirmed the arms in 1781. Historians still dispute what the seat, the lynx and the other figures stood for.",
+        "sources": [
+          {
+            "title": "Флаг Великого Новгорода — Wikipedia (ru)",
+            "url": "https://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B0%D0%B3_%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B3%D0%BE_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0"
+          },
+          {
+            "title": "Герб Великого Новгорода — Wikipedia (ru)",
+            "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1_%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B3%D0%BE_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0"
+          },
+          {
+            "title": "Veliky Novgorod (Russia) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ru-53-vn.html"
+          }
+        ]
+      },
+      "sha256": "16a115fa337a76ecdc7d36ea6667bcfe0d82de806f85f83e3d2833e872e2c42d",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "RU-ORL",
+      "path": "public/capital-flags/ru-orl.svg",
+      "width": 600,
+      "height": 360,
+      "meaning": {
+        "description": "Oryol’s flag, set by the city council on 29 January 1998, is red with a narrow blue stripe at the hoist, a gold hammer and sickle under the outline of a gold star in the upper hoist, and the city’s arms in the middle. The arms are the historic arms of 1781: a white town on blue with a black one-headed eagle on its gates (oryol is the Russian word for eagle). The Heraldic Council under the President of Russia found the arms and flag out of line with the rules of Russian heraldry, but new designs drawn up in 2010 and 2014 were never adopted, and the 1998 flag remains in use.",
+        "sources": [
+          {
+            "title": "Орёл (город), section Символика — Wikipedia (ru)",
+            "url": "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D1%91%D0%BB_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4)"
+          }
+        ]
+      },
+      "sha256": "97f4037e94982879f14551e5ac0b576afd25f249e4c8313be8470b10265ed5e6",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "SE-O",
+      "path": "public/capital-flags/se-o.svg",
+      "width": 1500,
+      "height": 1500,
+      "meaning": {
+        "description": "Gothenburg’s flag is a banner of its arms: a crowned gold lion holding a sword and a blue shield with three gold crowns, over three silver wavy bands on blue. The charges come from Sweden’s great arms and were meant to show the city as Sweden’s bulwark to the west: the lion of the House of Bjälbo (the Folkungs), held in the 17th century to be the arms of Götaland, holds the three crowns of Sweden and defends them with a sword. The city’s magistrates described the wavy bands in 1737 as three white streams. The arms were given when the city was founded in 1621, and a royal grant confirmed their modern form in 1952.",
+        "sources": [
+          {
+            "title": "Gothenburg (Sweden) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/se-14-80.html"
+          },
+          {
+            "title": "Göteborgs stadsvapen — Wikipedia (sv)",
+            "url": "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_stadsvapen"
+          }
+        ]
+      },
+      "sha256": "d92be0bb69c1171ecd5b23f8342d1a263848fa3bcb514c47f3ebf609e902d6ed",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-05",
+      "path": "public/capital-flags/ua-05.jpg",
+      "width": 1280,
+      "height": 853,
+      "meaning": {
+        "description": "Vinnytsia’s flag is red with the city’s arms, bordered with white triangles on the three sides away from the staff. It was approved on 16 May 1993 to a design by the historian and heraldist Yurii Legun; the community statute of 22 August 2025 set its proportions at 2:3. Red stands for the bravery, courage and fearlessness of the city’s people in fighting invaders, and white for the purity of their thoughts. In the arms, the crossed sabres go back to the arms granted with the city’s Magdeburg rights in 1640, recorded as given to it “as a border town”; the cross whose foot splits into two hooks was used on the town’s seals for some 300 years.",
+        "sources": [
+          {
+            "title": "Прапор Вінниці — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%92%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%96"
+          },
+          {
+            "title": "Vynnytsia (Ukraine) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ua-vin.html"
+          },
+          {
+            "title": "Історики пояснили, що зображено на гербі Вінниці — 20minut.ua",
+            "url": "https://vn.20minut.ua/Podii/istoriki-poyasnili-scho-zobrazheno-na-gerbi-vinnitsi-11677692.html"
+          }
+        ]
+      },
+      "sha256": "c3b89228cadb6df0d17b46f3aa5426ecc86feb2453f8f8e5fbd64967a76fd3fa",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-21",
+      "path": "public/capital-flags/ua-21.svg",
+      "width": 800,
+      "height": 400,
+      "meaning": {
+        "description": "Uzhhorod’s flag, approved by the city council on 14 June 1990, is blue over gold, with the city’s arms outlined in gold in the upper hoist: a vine growing from the ground. The vine goes back to the seal the town was given in 1635, which showed a vine with bunches of grapes.",
+        "sources": [
+          {
+            "title": "Uzhhorod (Ukraine) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ua-zk-uz.html"
+          },
+          {
+            "title": "Прапор Ужгорода — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0"
+          }
+        ]
+      },
+      "sha256": "2a437f378b766a6f968a501db45a37f9e90793fc14ed2518f2b7f0514fb59ec5",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-23",
+      "path": "public/capital-flags/ua-23.svg",
+      "width": 1200,
+      "height": 800,
+      "meaning": {
+        "description": "Zaporizhzhia’s flag, adopted with the city’s arms on 31 January 2003, is crimson with the arms at the centre. The arms follow the town’s first arms of 1811, when it was called Oleksandrivsk: two crossed guns on green, and a black bow with three arrows pointing down on crimson, which the 1811 description said stood for the strength of “our arms” and the weakness of the Tatars. In 2003 the guns became Cossack muskets, and the shield was crowned with the Dnipro hydroelectric station. The city gives green as hope, abundance, freedom and joy, gold as generosity, strength and prosperity, and crimson as the colour of Cossack valour and of the blood shed for Ukraine’s freedom and independence.",
+        "sources": [
+          {
+            "title": "Герб Запоріжжя — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1_%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D1%96%D0%B6%D0%B6%D1%8F"
+          },
+          {
+            "title": "Zaporizhzhia (Ukraine) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ua-zp-zp.html"
+          }
+        ]
+      },
+      "sha256": "ffc05163ffacf9b602afef1d7e32827988eb3080b405e7c7f1b1ddbf3d3ebfcf",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-35",
+      "path": "public/capital-flags/ua-35.svg",
+      "width": 800,
+      "height": 800,
+      "meaning": {
+        "description": "Kropyvnytskyi’s flag, approved by the city council on 28 February 1996, repeats the division and colours of the city’s arms: a blue fork splits it into two gold fields and a red triangle at the hoist, which bears a gold monogram, “СЄ”. The monogram goes back to the arms of 1845, when the city was Yelysavethrad: it was the cipher of the Russian Empress Elizabeth Petrovna, set inside the earthen Fortress of St. Elizabeth, founded in 1754 as a Russian military outpost. The 1996 council redefined it as the monogram of Saint Elizabeth. In February 2025 Ukraine’s Institute of National Memory recommended removing it as a symbol of Russian imperial rule, and the city council has begun creating a new coat of arms and flag.",
+        "sources": [
+          {
+            "title": "Kirovohrad (Ukraine) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ua-krv.html"
+          },
+          {
+            "title": "Герб та прапор Кропивницького — Ukrainian Institute of National Memory",
+            "url": "https://uinp.gov.ua/dekomunizaciya-ta-reabilitaciya/ekspertna-komisiya-uinp/fahovi-vysnovky-ekspertnoyi-komisiyi/gerb-ta-prapor-kropyvnyckogo"
+          },
+          {
+            "title": "Кропивницькому рекомендують змінити прапор і герб — hromadske (10 February 2025)",
+            "url": "https://hromadske.ua/suspilstvo/239411-kropyvnytskomu-rekomenduiut-zminyty-prapor-i-herb-uinp-vkazav-na-rosiysku-symvoliku"
+          },
+          {
+            "title": "Новий герб та прапор Кропивницького створить топонімічна комісія — CBN (12 June 2025)",
+            "url": "https://cbn.com.ua/news/novij-gerb-ta-prapor-kropivnitskogo-stvorit-toponimichna-komisiya-foto"
+          }
+        ]
+      },
+      "sha256": "e0d3357be17f9911731a451c816740aea0ea49a275d537f73da5747f8b82c5ba",
+      "check": "Council June 2025 primary account corroborates redesign process and failed competition; no later adoption established in this pass. Pending-current-status caveat retained."
+    },
+    {
+      "code": "UA-48",
+      "path": "public/capital-flags/ua-48.png",
+      "width": 1280,
+      "height": 854,
+      "meaning": {
+        "description": "Mykolaiv’s flag, adopted on 2 July 1999 and based on the city’s pre-revolutionary flag, is white with two azure wavy lines and the city’s arms at the centre. The wavy lines are the Southern Bug and the Inhul, at whose confluence the city was founded; the white stands for the peace and well-being of its people and the purity of their thoughts. The arms, confirmed in 1997 from the design of 1883, show a ship with black oars for the city’s shipbuilding and fleet; the bishop’s mitre and crossed croziers are for St Nicholas the Wonderworker, patron of sailors, after whom the shipbuilders’ city was named; and the gold anchors mark it as a port.",
+        "sources": [
+          {
+            "title": "Міська атрибутика Миколаєва — Mykolaiv City Council",
+            "url": "https://mkrada.gov.ua/content/miska-atributika.html"
+          },
+          {
+            "title": "Представницькі символи Миколаєва: герб міста — Mykolaiv City Council",
+            "url": "https://mkrada.gov.ua/content/predstavnicki-simvoli-mikolaeva-gerb-mista.html"
+          },
+          {
+            "title": "Mykolaiv (Ukraine) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ua-mi-mi.html"
+          }
+        ]
+      },
+      "sha256": "44313dec29ad1ec97560d44a1c3bdc06bbc728afcc5edbf460fd7c01e7a2d011",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-51",
+      "path": "public/capital-flags/ua-51.svg",
+      "width": 2340,
+      "height": 1560,
+      "meaning": {
+        "description": "Odesa’s flag, in its present form since 29 April 2011, is red, white and golden yellow in vertical thirds, with the city’s arms on the white. Its colours are taken from the arms, and its authors explain them as the city’s heroic spirit (red), pure soul (white) and wealth and prosperity (gold). The silver anchor on red has been Odesa’s emblem since 1798: a galley anchor, it marks the city’s birth as a port and base of the Black Sea rowing fleet in the 1790s, and in heraldry an anchor is also a symbol of hope and salvation.",
+        "sources": [
+          {
+            "title": "Odesa (Ukraine) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ua-od-od.html"
+          },
+          {
+            "title": "Прапор Одеси — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%9E%D0%B4%D0%B5%D1%81%D0%B8"
+          }
+        ]
+      },
+      "sha256": "f6d5c2faf85d07ec2139ff7ca3648a5a0a0c85f6b792b92d949bbcd375f06c45",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UA-68",
+      "path": "public/capital-flags/ua-68.png",
+      "width": 1200,
+      "height": 800,
+      "meaning": {
+        "description": "Khmelnytskyi’s flag, set by the city council on 22 March 2017, is azure with the main charge of the city’s arms, three crossed gold arrows, inside a sun of sixteen gold rays: a stylised sun, the ancient symbol of Podillia, the region at whose centre the city lies. The arrows are the arms of Proskuriv, as the city was called until 1954, which the council revived in 1990; three crossed arrows were the arms of the Zamoyski family, who held the town from 1550 into the 18th century. The square version with a gold border, the city flag from 1997, is now the mayor’s standard.",
+        "sources": [
+          {
+            "title": "Символи міста — Khmelnytskyi City Council",
+            "url": "https://www.khm.gov.ua/uk/pro-hromadu/symvoly"
+          },
+          {
+            "title": "Khmel’nyts’kiy (Ukraine) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ua-khm.html"
+          },
+          {
+            "title": "Прапор Хмельницького — Wikipedia (uk)",
+            "url": "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%A5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE"
+          }
+        ]
+      },
+      "sha256": "29ba93401311a492332c1cbf73b555b83a9b11ad9f21e999952cc021be9b3976",
+      "check": "Confirmed 12-ray bundled image versus 16-ray official specification and official council raster; live card caption says sixteen and loads the same asset path.",
+      "finding": "F106"
+    },
+    {
+      "code": "US-MN",
+      "path": "public/capital-flags/us-mn.svg",
+      "width": 650,
+      "height": 488,
+      "meaning": {
+        "description": "Saint Paul’s flag was adopted on 22 November 1932 after a city-wide contest; it was designed by Gladys Mittle, an art student at the College of St. Catherine. As the St. Paul Junior Chamber of Commerce explained it, the blue middle stripe is the Mississippi River; the log cabin is Father Lucien Galtier’s chapel of 1841, called St. Paul’s, which gave the city its name; the dome is Minnesota’s Capitol, since St. Paul is the state capital; the winged wheel marks the city as a transportation hub; the star is the star of the north, a symbol of Minnesota; the red shield stands for the progress and spirit of the city, and the gold stripes for the future.",
+        "sources": [
+          {
+            "title": "Saint Paul, Minnesota (U.S.) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/us-mnspl.html"
+          }
+        ]
+      },
+      "sha256": "d9821a6bc6be87cfdeddaa5c670d670745a5d839f091e15a6aa470420783ce78",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "UY-MA",
+      "path": "public/capital-flags/uy-ma.svg",
+      "width": 600,
+      "height": 333,
+      "meaning": {
+        "description": "Maldonado’s flag was chosen in a public contest the municipality held in 2007, from 41 proposals; its designer, Carlos Premazzi Rivero, descends from one of the town’s first settlers. The dark blue lower stripe is the sea, the Río de la Plata, and the light blue upper stripe is the sky. On them stands the Watch Tower over the sun, between laurel and olive branches for glory and triumph. The 17-metre tower was built in 1799-1800 on the orders of the Viceroy of the Río de la Plata to keep watch over the sea, and from its top a Spanish officer signalled the movements of the English fleet.",
+        "sources": [
+          {
+            "title": "Municipalities of Maldonado (Uruguay): Maldonado — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/uy-ma-.html"
+          }
+        ]
+      },
+      "sha256": "1ba0fc47c225726f07bf62baa6c92e32662af0dcd0400f170d79f111b21ca69f",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "VE-A",
+      "path": "public/capital-flags/ve-a.svg",
+      "width": 900,
+      "height": 600,
+      "meaning": {
+        "description": "Caracas’s flag was adopted by the municipal council of Libertador on 13 April 2022, with a new coat of arms and anthem, replacing a flag that bore the city’s historic arms of the lion and the cross of St James. It is red, cut by a light blue triangle holding the green silhouette of the Waraira Repano (El Ávila) mountain and a white star, and was designed by Carolina Jiménez and Víctor Rodríguez Durán. The change was made on the 20th anniversary of the failed 2002 coup against Hugo Chávez, and no official explanation of what the flag’s elements represent was given when it was adopted.",
+        "sources": [
+          {
+            "title": "Caracas - Capital District (Venezuela) — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/ve-a.html"
+          },
+          {
+            "title": "¿Cuáles son los nuevos símbolos de Caracas decretados por el Concejo Municipal? — El Diario",
+            "url": "https://eldiario.com/2022/04/13/nuevos-simbolos-de-caracas-concejo-municipal/"
+          }
+        ]
+      },
+      "sha256": "f3c3cde171bfe4ab34a485b93625e6bd63c6be1cccba022e81167b1c5728c1a0",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    },
+    {
+      "code": "ID-KS",
+      "path": "public/capital-flags/id-ks.png",
+      "width": 630,
+      "height": 420,
+      "meaning": {
+        "description": "Banjarbaru’s flag is green with the city’s arms, as Flags of the World recorded it in 2023 from a photograph of a ceremony at the city government. The ribbon on the arms carries the city’s motto, Gawi sabarataan, Banjar for “working together”.",
+        "sources": [
+          {
+            "title": "South Kalimantan city flags: Banjarbaru — Flags of the World",
+            "url": "https://www.crwflags.com/fotw/flags/id-ks-c.html"
+          },
+          {
+            "title": "Kota Banjarbaru — Wikipedia (id)",
+            "url": "https://id.wikipedia.org/wiki/Kota_Banjarbaru"
+          }
+        ]
+      },
+      "sha256": "71ef0827a9de1af75a88f0662d24601644b8b13bf1a9f93698933526025f020b",
+      "check": "Bundled artwork rendered and visually screened; full caption authenticity, chronology and meaning not certified."
+    }
+  ],
+  "khmelnytskyiPrimary": {
+    "finding": "F106",
+    "specification": "https://www.khm.gov.ua/uk/pro-hromadu/symvoly",
+    "decision": "https://www.khm.gov.ua/index.php/uk/content/pro-zatverdzhennya-polozhennya-pro-gerb-mista-hmelnyckogo-polozhennya-pro-prapor-mista",
+    "officialImage": "https://www.khm.gov.ua/sites/default/files/flag_0.png",
+    "officialImageSha256": "fee6fad8c229c2bb2ca4e8bdbd9cd5b7995528160fae0186aa051e74f6ec7cff",
+    "officialRays": 16,
+    "bundledRays": 12,
+    "method": "Manual count on enlarged exact bundled PNG and council raster; official Ukrainian text independently specifies sixteen equal acute triangles. Official artwork viewed, not inferred from filename. 2017 flag versus mayor-standard role correction itself is supported."
+  },
+  "laTrinidadPrimaryText": {
+    "finding": "F107",
+    "source": "https://lawphil.net/statutes/repacts/ra1950/ra_531_1950.html",
+    "primaryAct": "Republic Act 531, approved 16 June 1950, sections 1-2",
+    "officialCatalogue": "https://issuances-library.senate.gov.ph/legislative-issuance/republic-act-no-531",
+    "accessCaveat": "Full act read from Lawphil reproduction. Senate direct fetch 403; NHCP cited blog and municipal history PDF not successfully retrieved, so no full seal-symbolism certification."
+  },
+  "positiveSourceChecks": [
+    {
+      "code": "RU-MOS",
+      "source": "https://krasnogorsk-adm.ru/ist/simvolika/",
+      "scope": "2017 urban-okrug flag date and symbolism in new caption"
+    },
+    {
+      "code": "ID-KS",
+      "source": "https://bapperida.banjarbarukota.go.id/undang-undang-nomor-8-tahun-2022/",
+      "scope": "Banjarbaru as South Kalimantan capital under Law 8/2022"
+    },
+    {
+      "code": "KZ-ALM",
+      "source": "https://www.gov.kz/memleket/entities/almobl/press/news/details/1013465",
+      "scope": "Qonayev as Almaty regional administrative centre from June 2022"
+    },
+    {
+      "code": "UA-35",
+      "source": "https://kr-rada.gov.ua/news/novi-gerb-i-prapor-kropivnitskogo-simvoliku-mista-stvoryuvatime-toponimichna-komisiya_12-06-2025.html",
+      "scope": "June 2025 redesign process, not proof of current adoption/non-adoption in September 2026"
+    }
+  ],
+  "liveObservations": [
+    {
+      "build": "3528c20",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/learn/?country=IT&subdivisions=1&sub=IT-FC",
+      "finding": "F104",
+      "observation": "Division panel Capital Cesena and Capital of Forli-Cesena card Cesena; no co-capital role note observed."
+    },
+    {
+      "build": "3528c20",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/learn/?country=GY&subdivisions=1&sub=GY-DE",
+      "finding": "F105",
+      "observation": "Division Capital Georgetown."
+    },
+    {
+      "build": "3528c20",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/learn/?country=GY&subdivisions=1&sub=GY-MA",
+      "finding": "F105",
+      "observation": "Division panel only Type Region and Population 57,667 (2022 census); no Capital field."
+    },
+    {
+      "build": "42eeeea",
+      "url": "https://wladimirchagas.github.io/Hana-s-flag-game/learn/?country=UA&subdivisions=1&sub=UA-68",
+      "finding": "F106",
+      "observation": "Expanded capital flag meaning says sixteen gold rays; visible DOM image currentSrc ends /capital-flags/ua-68.png, naturalWidth1200 naturalHeight800. Local exact asset opened and ray count compared to official image; no screenshot pixel/hash equality claimed."
+    },
+    {
+      "build": "42eeeea",
+      "finding": "F93",
+      "observation": "Travel & migration > Diaspora with Ukraine selected visibly says Living abroad now and Where people born in Ukraine live today, while legend gives 2020 and 5,977,083. Old finding persists in new component."
+    }
+  ],
+  "liveBuildVerification": {
+    "applicationBaseline": "3528c20d1cd451b50770cf64bc7f0e61c0a1b9b5",
+    "laterBuild": "42eeeeaaee489885a5f959795bd1572e65ea4118",
+    "buildTimestamp": "2026-09-30T13:24:54.501Z",
+    "result": "Contains inspected application revision. First checker run treated unavailable local commit as site-behind; git fetch followed by ancestry check passed (F98 reproduced). Browser first loaded3528c20, later navigation loaded42eeeea."
+  },
+  "openWork": [
+    "Primary verification of the remaining new capital flag captions and removed assets is not complete.",
+    "Remaining 261 non-quiz name mismatches require identity/role/source adjudication, not automatic replacement.",
+    "SF14 boundary vintages remain unchanged; coordinate equality is not currency certification.",
+    "F93-F103 remain open unless separately verified; F93 and F98 re-observed this pass.",
+    "No UN/flow source matrix comparison or broad globe animation/mobile visual certification in this pass."
+  ]
+}
