@@ -21,7 +21,7 @@ export function usePopoverBounds(open: boolean, anchor: RefObject<HTMLDivElement
       const usableBottom = footer && footer.height > 0 && footer.top > top
         ? Math.min(bottom, footer.top) : bottom;
       setBounds({ position: "fixed", right: "auto", bottom: "auto", margin: 0,
-        boxSizing: "border-box", overflowY: "auto", zIndex: 70,
+        boxSizing: "border-box", overflowY: "hidden", zIndex: 70,
         ...popoverBounds(trigger.getBoundingClientRect(), {
           left, top, width: viewportWidth, height: usableBottom - top,
         }, width),
