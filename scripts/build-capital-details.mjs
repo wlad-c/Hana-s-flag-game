@@ -224,6 +224,7 @@ const CAPITAL_FLAG_SOURCE_OVERRIDES = {
   "MY-14": "Flag of Kuala Lumpur, Malaysia.svg", // Kuala Lumpur (Federal Territory) — official DBKL city flag adopted 14 May 1990 (blue central band with a yellow crescent + 14-pointed star, red/white stripes on white above and below). NOT the national flag (blue is the dominant field). Ref: en.wikipedia.org/wiki/Flag_and_coat_of_arms_of_Kuala_Lumpur.
   "MY-16": "Flag of Putrajaya.svg", // Putrajaya (Federal Territory) — official city flag: three vertical bands blue/yellow(double-width)/blue with the Malaysian coat of arms in the yellow band. Ref: en.wikipedia.org/wiki/Flag_of_the_Federal_Territories.
   "DK-FO": "Flag of Tórshavn, Faroe Islands.svg", // Tórshavn (Faroe Islands) — the municipality's own flag, per its en.wikipedia infobox (`image_flag`); Tórshavn has no P41 statement on Wikidata.
+  "UA-68": "Flag of Khmelnytskyi (3-2).svg", // Khmelnytskyi — the city flag set by council decision No. 13 of 22 March 2017 (2:3 azure, the arms' three arrows in a sun of sixteen gold rays; khm.gov.ua "Символи міста"). Wikidata's P41 is the square 1997 flag, which that decision made the MAYOR's standard — see capital-flag-rejected.json.
 };
 
 /**

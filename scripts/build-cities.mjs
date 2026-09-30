@@ -303,8 +303,8 @@ const SUBNATIONAL_NAME_ALIAS = {
   "UA-51|Odessa": "Odesa",
   // Khmelnytskyi Oblast (UA-68) — Khmelnytskyi, Wikidata Q156717.
   "UA-68|Khmelnytskyy": "Khmelnytskyi",
-  // Minnesota (US-MN) — Saint Paul, Wikidata Q28848; NE's label has a double space.
-  "US-MN|St.  Paul": "Saint Paul",
+  // Minnesota (US-MN) — Saint Paul, Wikidata Q28848; NE's label is "St.  Paul" (double space, collapsed by cleanName).
+  "US-MN|St. Paul": "Saint Paul",
 };
 
 /** A subdivision city record, carrying its SUBNATIONAL_NAME_ALIAS spelling. */
@@ -327,11 +327,24 @@ function norm(s) {
     .trim();
 }
 
+/**
+ * A place name as it is shown: NE carries invisible bidi / zero-width marks
+ * ("Granada‎") and doubled spaces ("Washington,  D.C.", "St.  Petersburg")
+ * in a few names. They print as-is in the capital panel and can defeat name
+ * matching, so strip the marks and collapse the spaces. Spelling is untouched.
+ */
+function cleanName(s) {
+  return String(s || "")
+    .replace(/[​-‏‪-‮⁦-⁩﻿]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 /** All NE places, normalised to a small record. */
 const places = fc.features.map((f) => {
   const p = f.properties;
   return {
-    name: p.name,
+    name: cleanName(p.name),
     iso: p.iso_a2,
     adm1: p.adm1name,
     adm0cap: Number(p.adm0cap) === 1,

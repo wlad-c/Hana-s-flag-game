@@ -36,7 +36,6 @@
 import type { FlagMeaning as FlagMeaningData } from "./flagMeanings";
 
 export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
-  // ── Lisbon — capital of Portugal and of the Lisbon region ───────────────────
   "CH-AR": {
     description:
       "Herisau’s flag shows its arms: a black bear striding upright on white, a golden log on its shoulder. " +
@@ -66,6 +65,7 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
+  // ── Lisbon — capital of Portugal and of the Lisbon region ───────────────────
   "PT-11": {
     description:
       "A field divided into eight alternating black and white triangles (gyronny), bearing in the " +
@@ -12121,4 +12121,428 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
+  "BE-VOV": {
+    description:
+      "Ghent’s flag, adopted by the city council on 23 April 1990, is a banner of its arms: a white lion on " +
+      "black, red-tongued, with gold claws, crown and collar, and a small gold cross hanging from the collar. " +
+      "The arms most likely come from those of the Counts of Flanders, who bore the reverse, a black lion on " +
+      "gold; a lion on a shield already appears on the city’s oldest known seal, of 1276.",
+    sources: [
+      { title: "Vlag van Gent — Wikipedia (nl)", url: "https://nl.wikipedia.org/wiki/Vlag_van_Gent" },
+      { title: "Wapen van Gent — Wikipedia (nl)", url: "https://nl.wikipedia.org/wiki/Wapen_van_Gent" },
+      { title: "Ghent (Municipality, Province of East Flanders, Belgium) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/be-vovge.html" },
+    ],
+  },
+
+  "BE-VWV": {
+    description:
+      "Bruges flies a banner of its arms: eight white and red stripes with a blue lion wearing a gold crown and " +
+      "a gold cross on a chain. The lion is most likely the lion of Flanders, shown in blue instead of black. " +
+      "The stripes appear on the city’s seal from the late 13th century, six at first and eight from 1289, and " +
+      "their meaning is not known. The Count of Flanders first granted the arms in 1304; the flag was adopted " +
+      "in 1982.",
+    sources: [
+      { title: "Bruges (Municipality, Province of West Flanders, Belgium) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/be-vwvbr.html" },
+    ],
+  },
+
+  "BZ-CY": {
+    description:
+      "San Ignacio’s flag, as recorded since 2018, shows a suspension bridge in a white oval on a tan field " +
+      "with a green border. San Ignacio and its sister town Santa Elena are joined by the only suspension " +
+      "bridge in Belize, the one-lane Hawkesworth Bridge across the Macal River.",
+    sources: [
+      { title: "San Ignacio (Belize) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/bz-ca-ie.html" },
+      { title: "San Ignacio, Belize — Wikipedia", url: "https://en.wikipedia.org/wiki/San_Ignacio,_Belize" },
+    ],
+  },
+
+  "CH-SG": {
+    description:
+      "St. Gallen’s flag shows its arms: a black bear rising on white, with a red tongue, gold claws and a gold " +
+      "collar. Early in the 14th century the city took the arms of the Abbey of St. Gall, whose bear recalls " +
+      "the legend of the bear and the saint; Emperor Frederick III granted the gold claws and collar in 1475. " +
+      "The city council confirmed the traditional arms in 1943.",
+    sources: [
+      { title: "St. Gallen (Switzerland) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ch-sg045.html" },
+    ],
+  },
+
+  "CZ-PL": {
+    description:
+      "Plzeň’s flag is quartered white, yellow, green and red with no charge: the field colours of the four " +
+      "quarters of the city’s arms. Those quarters tell its history. The city’s first arms, a silver greyhound " +
+      "on red, were taken by its burghers during the Hussite wars to show their loyalty; a golden camel on " +
+      "green was granted by Sigismund of Luxembourg in 1434 for the city’s stand in the last Hussite siege; and " +
+      "Pope Paul II added the keys on silver and the armoured man holding half an eagle on gold in 1466.",
+    sources: [
+      { title: "Plzeň (Czech Republic) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/cz-pm-pm.html" },
+    ],
+  },
+
+  "MX-PUE": {
+    description:
+      "Puebla’s municipal flag is white with the city’s arms. The arms were granted by a royal decree of 20 " +
+      "July 1538 and refer to the legend of the city’s founding, that angels laid it out: two angels dressed in " +
+      "white stand either side of a city with five gold towers on a green field. Above it, a K and a V stand " +
+      "for Karlos Quinto, the Emperor Charles V, and the red border carries, in gold letters, a Latin verse " +
+      "meaning “God commanded his angels to guard you in all your ways”.",
+    sources: [
+      { title: "Puebla de Zaragoza, Puebla (Mexico) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/mx-pu-pu.html" },
+      { title: "Escudo de Puebla: elementos y significado — El Universal Puebla", url: "https://www.eluniversalpuebla.com.mx/estado/escudo-de-puebla-elementos-y-significado/" },
+    ],
+  },
+
+  "NI-BO": {
+    description:
+      "Boaco’s flag sets yellow, blue and white stripes inside a green V. The town’s own explanation: yellow is " +
+      "for religion, green for the mountains around this hill town, blue for the sky and white for purity.",
+    sources: [
+      { title: "Boaco (Boaco, Nicaragua) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ni-bo-bo.html" },
+    ],
+  },
+
+  "NI-CO": {
+    description:
+      "Juigalpa’s green flag, designed by the poet Guillermo Rothschuh Tablada, carries four small black snails " +
+      "joined in a rhomb. The snails come from the town’s name, Juigalpán, “rich in small black snails”; they " +
+      "move east, towards the light, and the rhomb links them to the four cardinal points as energy, life and " +
+      "hope. The green stands first of all for the pastures of Chontales on which its economy rests.",
+    sources: [
+      { title: "Juigalpa (Chontales, Nicaragua) — Flags of the World (translating the town hall’s text)", url: "https://www.crwflags.com/fotw/flags/ni-ct-ju.html" },
+    ],
+  },
+
+  "NI-MT": {
+    description:
+      "Matagalpa’s flag, as the town explains it: blue for the colours of Nicaragua’s flag, green for the " +
+      "Matagalpa mountains and white for peace, with a yellow triangle for a Catholic city. The white stripe " +
+      "carries the outline of the department with maize and coffee, its main products. On the shield, the balls " +
+      "are the town’s first ten houses and the loom is where the Indigenous people made their clothes; the " +
+      "motto calls Matagalpa “La Perla del Septentrión”, the pearl of the north.",
+    sources: [
+      { title: "Matagalpa (Matagalpa, Nicaragua) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ni-mt-mt.html" },
+    ],
+  },
+
+  "NO-01": {
+    description:
+      "Sarpsborg’s flag is a banner of its arms: a black bear walking above a black castle on gold, approved in " +
+      "1966. The bear goes back to the town’s oldest surviving seal, of 1556, and is said to recall the arms of " +
+      "Alv Erlingsson, lord of Sarpsborg in the late 13th century; the castle’s two towers stand for the two " +
+      "gates in the medieval town walls.",
+    sources: [
+      { title: "Sarpsborg (Østfold, Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-01-05.html" },
+    ],
+  },
+
+  "NO-02": {
+    description:
+      "Oslo has flown its city seal on blue since the city council chose this flag in 2000, in place of the " +
+      "blue and white striped flag of 1924. The seal shows the city’s patron saint, St Hallvard, on a throne " +
+      "decorated with lions, as in the seals of Norwegian kings, holding his attributes, the arrows and the " +
+      "millstone. On the oldest seal, of about 1300, the figure at his feet was one of the men who killed " +
+      "Hallvard; worn and misread, it became the woman he had tried to defend, and the present design of 1924 " +
+      "keeps her. Around it runs the city’s motto, Unanimiter et constanter, “united and constant”.",
+    sources: [
+      { title: "Coat of arms of Oslo — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Oslo" },
+      { title: "Oslo (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-03-01.html" },
+    ],
+  },
+
+  "NZ-MWT": {
+    description:
+      "Palmerston North’s flag is white with the city’s coat of arms in the centre, the city’s name above it " +
+      "and “New Zealand” below, in black. The arms carry the city’s Latin motto, Palman qui meruit ferat, “let " +
+      "whoever earns the palm bear it”.",
+    sources: [
+      { title: "Manawatu-Wanganui region: Palmerston North — Flags of the World", url: "https://www.crwflags.com/fotw/flags/nz-mwt.html" },
+      { title: "Palmerston North Coat of Arms — Manawatū Heritage (Palmerston North City Council)", url: "https://manawatuheritage.pncc.govt.nz/item/a213cee0-3333-43ad-9ed0-517d97b628c0" },
+    ],
+  },
+
+  "PH-BEN": {
+    description:
+      "La Trinidad’s flag carries the municipal seal on green. The seal, approved in 1994, shows a kayabang, " +
+      "the traditional basket the townspeople carry on their backs; fields and mountains for agriculture, one " +
+      "of their main livelihoods; a wheel and anvil for trade and industry, the wheel’s sixteen cogs standing " +
+      "for the town’s sixteen barangays; houses and a highway for its development; and a torch over an open " +
+      "book for education. The red, white and blue circle recalls the Philippine flag, 1950 is the year the " +
+      "town was founded, and the ribbon carries its motto: Pagkakaisa, Kasaganaan, Matatag.",
+    sources: [
+      { title: "Municipality of La Trinidad, Province of Benguet — NHCP Heraldry", url: "https://nhcpheraldry.blogspot.com/2021/03/municipality-of-la-trinidad-province-of.html" },
+    ],
+  },
+
+  "PH-LAG": {
+    description:
+      "Santa Cruz’s flag carries the municipal seal on white. The seal, approved in 1996, takes its shield from " +
+      "the provincial seal of Laguna. The cross stands for the townspeople’s faith, and the sun for strength " +
+      "and prosperity and for Santa Cruz’s part when Laguna and seven other provinces revolted against Spain. " +
+      "The farmer with his carabao and rice fields, the coconut worker and the fisherman stand for the town’s " +
+      "farming, coconut and fishing industries, and the white cheese, kesong puti, made from carabao’s milk, " +
+      "for its most famous product. The date 1602 is the year the town was founded.",
+    sources: [
+      { title: "Municipality of Santa Cruz, Province of Laguna — NHCP Heraldry", url: "https://nhcpheraldry.blogspot.com/2021/02/municipality-of-santa-cruz-province-of.html" },
+    ],
+  },
+
+  "RO-AB": {
+    description:
+      "Alba Iulia’s municipal flag, as shown on the city’s website and confirmed by its administration, is " +
+      "white with the city’s arms in the middle and a blue field of two merged triangles along the fly. The " +
+      "arms are divided into three triangles in the blue, yellow and red of Romania’s flag; the eagle on blue " +
+      "and the aurochs on red repeat the arms of Wallachia and Moldavia from the national coat of arms. The " +
+      "ermine chief with a royal crown may recall a coronation robe: Ferdinand I was crowned King of Romania in " +
+      "Alba Iulia in 1922, in the city where the union of Transylvania with Romania had been decided in 1918.",
+    sources: [
+      { title: "Alba Iulia (Romania, Alba) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ro-albai.html" },
+    ],
+  },
+
+  "RO-CV": {
+    description:
+      "Sfântu Gheorghe’s flag, adopted by the city council on 28 January 2010, has gold and blue stripes with " +
+      "the city’s arms in the middle: a fortified church on blue under a gold sun and a silver moon, and before " +
+      "it, on three green fields, St George, the city’s patron, slaying the dragon. The Romanian government " +
+      "approved it as the official city flag in 2021, but on 22 February 2023 the High Court of Cassation and " +
+      "Justice annulled that approval, after a challenge by the Civic Forum of Romanians of Covasna, Harghita " +
+      "and Mureș, which argued that the flag represented only the city’s Hungarian community. The mayor said " +
+      "the city would restart the approval procedure.",
+    sources: [
+      { title: "Municipiul Sfântu Gheorghe are steag oficial — Sfântu Gheorghe city portal", url: "https://www.sfantugheorgheinfo.ro/stiri/municipiul-sfantu-gheorghe-are-steag-oficial" },
+      { title: "Decizie ICCJ: steagul secuiesc nu poate fi drapelul oficial al orașului Sfântu Gheorghe — Radio România Actualități (22 February 2023)", url: "https://www.rador.ro/2023/02/22/decizie-iccj-steagul-secuiesc-nu-poate-fi-drapelul-oficial-al-orasului-sfantu-gheorghe/" },
+      { title: "Primarul Antal Árpád, după decizia Înaltei Curți: vom relua procedura — G4Media", url: "https://www.g4media.ro/primarul-antal-arpad-dupa-decizia-inaltei-curti-am-respectat-intocmai-legea-asa-ca-vom-relua-procedura-pentru-aprobarea-steagului-municipiului-sfantu-gheorghe.html" },
+    ],
+  },
+
+  "RO-MS": {
+    description:
+      "Târgu Mureș’s flag, recorded flying on the city hall in 2002, is blue, white and blue with the city’s " +
+      "arms in the middle. The arms, approved by the Romanian government in 2000, set on blue an armoured arm " +
+      "driving a silver sword through a bear’s head, for the struggle for defence, heroism, bravery and " +
+      "sacrifice for a noble cause; gold scales in balance, for the part the town’s institutions played in the " +
+      "judicial system of Transylvania; and a silver mural crown of seven towers, for its rank as a " +
+      "municipality.",
+    sources: [
+      { title: "Targu Mures (Romania, Mures) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ro-tgmur.html" },
+      { title: "Stema municipiului Târgu Mureș, Hotărârea Guvernului nr. 486/2000 — Lege5", url: "https://lege5.ro/gratuit/hezdqmrv/stema-municipiului-targu-mures-judetul-mures-hotarare-486-2000?dp=ge4diojzgi4tc" },
+    ],
+  },
+
+  "RU-MOS": {
+    description:
+      "Krasnogorsk flies the flag of Krasnogorsk urban okrug, the municipality that includes the city, set by " +
+      "its council on 26 October 2017 to repeat its arms. The red triple mound is canting: the name comes from " +
+      "the village of Krasnaya Gorka, “red hill”. The silver column recalls the manor ensembles of the 17th and " +
+      "18th centuries that survive in the okrug, among them Arkhangelskoye and Ilyinskoye, and the two lenses " +
+      "refracting rays of light stand for the Zverev Krasnogorsk plant, one of Russia’s leading makers of " +
+      "cameras, optical sights and precision optics. The green of the trees is given as the colour of nature, " +
+      "abundance and life.",
+    sources: [
+      { title: "Символика — Krasnogorsk urban okrug administration", url: "https://krasnogorsk-adm.ru/ist/simvolika/" },
+      { title: "Красногорск (городской округ) — Wikipedia (ru)", url: "https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3)" },
+    ],
+  },
+
+  "RU-NGR": {
+    description:
+      "Veliky Novgorod’s flag, approved on 24 November 2010, is white over blue with the figures of the city’s " +
+      "arms: a gold throne with a red cushion bearing a sceptre and a cross, a three-branched candlestick above " +
+      "it, two black bears on either side, and two pairs of silver fish on the blue. The arms go back to a seal " +
+      "made in 1565 on Ivan the Terrible’s orders for the letters Novgorod’s governors sent to the King of " +
+      "Sweden, which showed a seat with a staff between a bear and a lynx, with a fish below. By the Tsar’s " +
+      "Titulary of 1672 the animals had become two bears and the seat a throne, and Catherine II confirmed the " +
+      "arms in 1781. Historians still dispute what the seat, the lynx and the other figures stood for.",
+    sources: [
+      { title: "Флаг Великого Новгорода — Wikipedia (ru)", url: "https://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B0%D0%B3_%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B3%D0%BE_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0" },
+      { title: "Герб Великого Новгорода — Wikipedia (ru)", url: "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1_%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B3%D0%BE_%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0" },
+      { title: "Veliky Novgorod (Russia) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ru-53-vn.html" },
+    ],
+  },
+
+  "RU-ORL": {
+    description:
+      "Oryol’s flag, set by the city council on 29 January 1998, is red with a narrow blue stripe at the hoist, " +
+      "a gold hammer and sickle under the outline of a gold star in the upper hoist, and the city’s arms in the " +
+      "middle. The arms are the historic arms of 1781: a white town on blue with a black one-headed eagle on " +
+      "its gates (oryol is the Russian word for eagle). The Heraldic Council under the President of Russia " +
+      "found the arms and flag out of line with the rules of Russian heraldry, but new designs drawn up in 2010 " +
+      "and 2014 were never adopted, and the 1998 flag remains in use.",
+    sources: [
+      { title: "Орёл (город), section Символика — Wikipedia (ru)", url: "https://ru.wikipedia.org/wiki/%D0%9E%D1%80%D1%91%D0%BB_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4)" },
+    ],
+  },
+
+  "SE-O": {
+    description:
+      "Gothenburg’s flag is a banner of its arms: a crowned gold lion holding a sword and a blue shield with " +
+      "three gold crowns, over three silver wavy bands on blue. The charges come from Sweden’s great arms and " +
+      "were meant to show the city as Sweden’s bulwark to the west: the lion of the House of Bjälbo (the " +
+      "Folkungs), held in the 17th century to be the arms of Götaland, holds the three crowns of Sweden and " +
+      "defends them with a sword. The city’s magistrates described the wavy bands in 1737 as three white " +
+      "streams. The arms were given when the city was founded in 1621, and a royal grant confirmed their modern " +
+      "form in 1952.",
+    sources: [
+      { title: "Gothenburg (Sweden) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/se-14-80.html" },
+      { title: "Göteborgs stadsvapen — Wikipedia (sv)", url: "https://sv.wikipedia.org/wiki/G%C3%B6teborgs_stadsvapen" },
+    ],
+  },
+
+  "UA-05": {
+    description:
+      "Vinnytsia’s flag is red with the city’s arms, bordered with white triangles on the three sides away from " +
+      "the staff. It was approved on 16 May 1993 to a design by the historian and heraldist Yurii Legun; the " +
+      "community statute of 22 August 2025 set its proportions at 2:3. Red stands for the bravery, courage and " +
+      "fearlessness of the city’s people in fighting invaders, and white for the purity of their thoughts. In " +
+      "the arms, the crossed sabres go back to the arms granted with the city’s Magdeburg rights in 1640, " +
+      "recorded as given to it “as a border town”; the cross whose foot splits into two hooks was used on the " +
+      "town’s seals for some 300 years.",
+    sources: [
+      { title: "Прапор Вінниці — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%92%D1%96%D0%BD%D0%BD%D0%B8%D1%86%D1%96" },
+      { title: "Vynnytsia (Ukraine) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ua-vin.html" },
+      { title: "Історики пояснили, що зображено на гербі Вінниці — 20minut.ua", url: "https://vn.20minut.ua/Podii/istoriki-poyasnili-scho-zobrazheno-na-gerbi-vinnitsi-11677692.html" },
+    ],
+  },
+
+  "UA-21": {
+    description:
+      "Uzhhorod’s flag, approved by the city council on 14 June 1990, is blue over gold, with the city’s arms " +
+      "outlined in gold in the upper hoist: a vine growing from the ground. The vine goes back to the seal the " +
+      "town was given in 1635, which showed a vine with bunches of grapes.",
+    sources: [
+      { title: "Uzhhorod (Ukraine) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ua-zk-uz.html" },
+      { title: "Прапор Ужгорода — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%A3%D0%B6%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0" },
+    ],
+  },
+
+  "UA-23": {
+    description:
+      "Zaporizhzhia’s flag, adopted with the city’s arms on 31 January 2003, is crimson with the arms at the " +
+      "centre. The arms follow the town’s first arms of 1811, when it was called Oleksandrivsk: two crossed " +
+      "guns on green, and a black bow with three arrows pointing down on crimson, which the 1811 description " +
+      "said stood for the strength of “our arms” and the weakness of the Tatars. In 2003 the guns became " +
+      "Cossack muskets, and the shield was crowned with the Dnipro hydroelectric station. The city gives green " +
+      "as hope, abundance, freedom and joy, gold as generosity, strength and prosperity, and crimson as the " +
+      "colour of Cossack valour and of the blood shed for Ukraine’s freedom and independence.",
+    sources: [
+      { title: "Герб Запоріжжя — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/%D0%93%D0%B5%D1%80%D0%B1_%D0%97%D0%B0%D0%BF%D0%BE%D1%80%D1%96%D0%B6%D0%B6%D1%8F" },
+      { title: "Zaporizhzhia (Ukraine) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ua-zp-zp.html" },
+    ],
+  },
+
+  "UA-35": {
+    description:
+      "Kropyvnytskyi’s flag, approved by the city council on 28 February 1996, repeats the division and colours " +
+      "of the city’s arms: a blue fork splits it into two gold fields and a red triangle at the hoist, which " +
+      "bears a gold monogram, “СЄ”. The monogram goes back to the arms of 1845, when the city was " +
+      "Yelysavethrad: it was the cipher of the Russian Empress Elizabeth Petrovna, set inside the earthen " +
+      "Fortress of St. Elizabeth, founded in 1754 as a Russian military outpost. The 1996 council redefined it " +
+      "as the monogram of Saint Elizabeth. In February 2025 Ukraine’s Institute of National Memory recommended " +
+      "removing it as a symbol of Russian imperial rule, and the city council has begun creating a new coat of " +
+      "arms and flag.",
+    sources: [
+      { title: "Kirovohrad (Ukraine) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ua-krv.html" },
+      { title: "Герб та прапор Кропивницького — Ukrainian Institute of National Memory", url: "https://uinp.gov.ua/dekomunizaciya-ta-reabilitaciya/ekspertna-komisiya-uinp/fahovi-vysnovky-ekspertnoyi-komisiyi/gerb-ta-prapor-kropyvnyckogo" },
+      { title: "Кропивницькому рекомендують змінити прапор і герб — hromadske (10 February 2025)", url: "https://hromadske.ua/suspilstvo/239411-kropyvnytskomu-rekomenduiut-zminyty-prapor-i-herb-uinp-vkazav-na-rosiysku-symvoliku" },
+      { title: "Новий герб та прапор Кропивницького створить топонімічна комісія — CBN (12 June 2025)", url: "https://cbn.com.ua/news/novij-gerb-ta-prapor-kropivnitskogo-stvorit-toponimichna-komisiya-foto" },
+    ],
+  },
+
+  "UA-48": {
+    description:
+      "Mykolaiv’s flag, adopted on 2 July 1999 and based on the city’s pre-revolutionary flag, is white with " +
+      "two azure wavy lines and the city’s arms at the centre. The wavy lines are the Southern Bug and the " +
+      "Inhul, at whose confluence the city was founded; the white stands for the peace and well-being of its " +
+      "people and the purity of their thoughts. The arms, confirmed in 1997 from the design of 1883, show a " +
+      "ship with black oars for the city’s shipbuilding and fleet; the bishop’s mitre and crossed croziers are " +
+      "for St Nicholas the Wonderworker, patron of sailors, after whom the shipbuilders’ city was named; and " +
+      "the gold anchors mark it as a port.",
+    sources: [
+      { title: "Міська атрибутика Миколаєва — Mykolaiv City Council", url: "https://mkrada.gov.ua/content/miska-atributika.html" },
+      { title: "Представницькі символи Миколаєва: герб міста — Mykolaiv City Council", url: "https://mkrada.gov.ua/content/predstavnicki-simvoli-mikolaeva-gerb-mista.html" },
+      { title: "Mykolaiv (Ukraine) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ua-mi-mi.html" },
+    ],
+  },
+
+  "UA-51": {
+    description:
+      "Odesa’s flag, in its present form since 29 April 2011, is red, white and golden yellow in vertical " +
+      "thirds, with the city’s arms on the white. Its colours are taken from the arms, and its authors explain " +
+      "them as the city’s heroic spirit (red), pure soul (white) and wealth and prosperity (gold). The silver " +
+      "anchor on red has been Odesa’s emblem since 1798: a galley anchor, it marks the city’s birth as a port " +
+      "and base of the Black Sea rowing fleet in the 1790s, and in heraldry an anchor is also a symbol of hope " +
+      "and salvation.",
+    sources: [
+      { title: "Odesa (Ukraine) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ua-od-od.html" },
+      { title: "Прапор Одеси — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%9E%D0%B4%D0%B5%D1%81%D0%B8" },
+    ],
+  },
+
+  "UA-68": {
+    description:
+      "Khmelnytskyi’s flag, set by the city council on 22 March 2017, is azure with the main charge of the " +
+      "city’s arms, three crossed gold arrows, inside a sun of sixteen gold rays: a stylised sun, the ancient " +
+      "symbol of Podillia, the region at whose centre the city lies. The arrows are the arms of Proskuriv, as " +
+      "the city was called until 1954, which the council revived in 1990; three crossed arrows were the arms of " +
+      "the Zamoyski family, who held the town from 1550 into the 18th century. The square version with a gold " +
+      "border, the city flag from 1997, is now the mayor’s standard.",
+    sources: [
+      { title: "Символи міста — Khmelnytskyi City Council", url: "https://www.khm.gov.ua/uk/pro-hromadu/symvoly" },
+      { title: "Khmel’nyts’kiy (Ukraine) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ua-khm.html" },
+      { title: "Прапор Хмельницького — Wikipedia (uk)", url: "https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B0%D0%BF%D0%BE%D1%80_%D0%A5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE" },
+    ],
+  },
+
+  "US-MN": {
+    description:
+      "Saint Paul’s flag was adopted on 22 November 1932 after a city-wide contest; it was designed by Gladys " +
+      "Mittle, an art student at the College of St. Catherine. As the St. Paul Junior Chamber of Commerce " +
+      "explained it, the blue middle stripe is the Mississippi River; the log cabin is Father Lucien Galtier’s " +
+      "chapel of 1841, called St. Paul’s, which gave the city its name; the dome is Minnesota’s Capitol, since " +
+      "St. Paul is the state capital; the winged wheel marks the city as a transportation hub; the star is the " +
+      "star of the north, a symbol of Minnesota; the red shield stands for the progress and spirit of the city, " +
+      "and the gold stripes for the future.",
+    sources: [
+      { title: "Saint Paul, Minnesota (U.S.) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/us-mnspl.html" },
+    ],
+  },
+
+  "UY-MA": {
+    description:
+      "Maldonado’s flag was chosen in a public contest the municipality held in 2007, from 41 proposals; its " +
+      "designer, Carlos Premazzi Rivero, descends from one of the town’s first settlers. The dark blue lower " +
+      "stripe is the sea, the Río de la Plata, and the light blue upper stripe is the sky. On them stands the " +
+      "Watch Tower over the sun, between laurel and olive branches for glory and triumph. The 17-metre tower " +
+      "was built in 1799-1800 on the orders of the Viceroy of the Río de la Plata to keep watch over the sea, " +
+      "and from its top a Spanish officer signalled the movements of the English fleet.",
+    sources: [
+      { title: "Municipalities of Maldonado (Uruguay): Maldonado — Flags of the World", url: "https://www.crwflags.com/fotw/flags/uy-ma-.html" },
+    ],
+  },
+
+  "VE-A": {
+    description:
+      "Caracas’s flag was adopted by the municipal council of Libertador on 13 April 2022, with a new coat of " +
+      "arms and anthem, replacing a flag that bore the city’s historic arms of the lion and the cross of St " +
+      "James. It is red, cut by a light blue triangle holding the green silhouette of the Waraira Repano (El " +
+      "Ávila) mountain and a white star, and was designed by Carolina Jiménez and Víctor Rodríguez Durán. The " +
+      "change was made on the 20th anniversary of the failed 2002 coup against Hugo Chávez, and no official " +
+      "explanation of what the flag’s elements represent was given when it was adopted.",
+    sources: [
+      { title: "Caracas - Capital District (Venezuela) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ve-a.html" },
+      { title: "¿Cuáles son los nuevos símbolos de Caracas decretados por el Concejo Municipal? — El Diario", url: "https://eldiario.com/2022/04/13/nuevos-simbolos-de-caracas-concejo-municipal/" },
+    ],
+  },
+
+  "ID-KS": {
+    description:
+      "Banjarbaru’s flag is green with the city’s arms, as Flags of the World recorded it in 2023 from a " +
+      "photograph of a ceremony at the city government. The ribbon on the arms carries the city’s motto, " +
+      "Gawi sabarataan, Banjar for “working together”.",
+    sources: [
+      { title: "South Kalimantan city flags: Banjarbaru — Flags of the World", url: "https://www.crwflags.com/fotw/flags/id-ks-c.html" },
+      { title: "Kota Banjarbaru — Wikipedia (id)", url: "https://id.wikipedia.org/wiki/Kota_Banjarbaru" },
+    ],
+  },
 };

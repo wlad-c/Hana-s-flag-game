@@ -776,7 +776,7 @@ mirrors `sameCity()` and the quiz rule, and fails if either changes without it. 
 
 ## Batch 7f — 20 capital flags that belong to someone else, or to no one (2026-09-30)
 
-*Shipped in #1732.*
+*Shipped in #1732 (`1a7c5fe`); live since 30 September 2026, 7:49 PM AEST.*
 
 **How they were found.** A scan of every capital flag's Commons filename for the word for a
 province, department, governorate, county, region or district, in a dozen languages. A scan of
@@ -857,6 +857,98 @@ Also checked and kept:
   Puntarenas; Esmeraldas and Tungurahua; Mandalay and Yangon; Colón; Salto and Rivera; the El
   Salvador departments; and Madre de Dios. They show nowhere today, but would reappear if the
   division flag changes, as Minya's did.
+
+## Batch 7e — the capital flags the name fixes made visible (2026-09-30)
+
+*Shipped in #PRNUM.*
+
+**What was wrong.** Batches 7c and 7d made every quiz capital the capital the Learn panel shows.
+That made 46 more capital flags render. Their omission lines still said "structurally unreachable,
+name-guard mismatch", so they showed with no explainer, and the stale reasons kept them out of the
+sweep. Arkhangelsk was both explained and logged as omitted. Each flag was researched from scratch,
+starting with FOTW and then the local-language Wikipedia, official pages and heraldic sources.
+
+**Explainers added (32), each read from its cited source:**
+- Belgium, Switzerland, Czechia: Ghent, Bruges, St. Gallen, Plzeň.
+- Norway and Sweden: Sarpsborg, Oslo (St Hallvard's seal; en.wikipedia "Coat of arms of Oslo"),
+  Gothenburg (sv.wikipedia "Göteborgs stadsvapen").
+- Nicaragua: Boaco, Juigalpa, Matagalpa.
+- Ukraine: Vinnytsia, Uzhhorod, Zaporizhzhia, Kropyvnytskyi, Mykolaiv, Odesa, Khmelnytskyi.
+  Sources: uk.wikipedia and the city councils' own symbols pages (Mykolaiv, Khmelnytskyi).
+- Romania: Alba Iulia, Sfântu Gheorghe, Târgu Mureș (HG 486/2000, via Lege5).
+- Russia: Krasnogorsk (the urban okrug's own symbolism page), Veliky Novgorod, Oryol.
+- Americas: Saint Paul, San Ignacio, Puebla (El Universal Puebla, citing INAH), Caracas,
+  Maldonado (FOTW uy-ma-).
+- Asia-Pacific: Palmerston North (council heritage archive), La Trinidad and Santa Cruz (NHCP
+  heraldry pages for the seals), Banjarbaru.
+
+**Judgement calls, stated in the explainers rather than hidden:**
+- Kropyvnytskyi's 1996 flag carries the monogram of Empress Elizabeth. In February 2025 the
+  Ukrainian Institute of National Memory recommended removing it. The council's toponymic
+  commission is designing new symbols; no new flag had been adopted when this was checked
+  (September 2026).
+- Sfântu Gheorghe's flag was adopted by the city council in 2010. The government approved it in
+  2021, but on 22 February 2023 the High Court annulled that approval, after a challenge by the
+  Civic Forum of Romanians of Covasna, Harghita and Mureș. The flag and its status are stated
+  neutrally.
+- Caracas's 2022 flag: El Diario reports that no official explanation of its elements was given,
+  and the explainer says so instead of supplying one.
+- Veliky Novgorod: ru.wikipedia notes that historians dispute what the arms' figures stood for.
+- Oryol's 1998 flag has a hammer and sickle. The Heraldic Council under the President found it
+  non-conforming, but the replacement designs of 2010 and 2014 were never adopted.
+
+**Replaced (1).** Khmelnytskyi's capital flag was the square blue flag with a gold border. Council
+decision No. 13 of 22 March 2017 made that the mayor's standard, and set a 2:3 city flag without
+the border (khm.gov.ua, "Символи міста"). The current flag is now bundled as a Commons render,
+pinned in `CAPITAL_FLAG_SOURCE_OVERRIDES`, and the old file is rejected with the decision as
+evidence.
+
+**Removed (3)**, with evidence in `capital-flag-rejected.json`:
+- **Granada (Nicaragua)** showed Granada **department's previous flag**, the one replaced in 2019
+  (FOTW ni-gr). The city's own flag is white with the arms (FOTW ni-gr-gr); no free file of it yet.
+- **Huacho** and **Areguá**: own-work Commons uploads with no source. No other source documents a
+  flag. Huacho has only its 1964 arms (es.wikipedia "Símbolos de Huacho"). FOTW lists Areguá
+  District with no flag (py-11-).
+
+**Rejected, then kept (2).** The first pass rejected Banjarbaru and Juba. That rested on a miss in
+FOTW's keyword index, a stale id.wikipedia note and Juba's fan-wiki source. The regional pages
+document both flags from photographs: FOTW id-ks-c#bjb (2023) and ss-juba (2019); batch 7f had
+already recorded the second. **FOTW's keyword index is incomplete. Before concluding FOTW has no
+page, follow the country's own index pages.** This is the "a guessed 404 is never proof of
+absence" rule in another form.
+
+**Omission lines rewritten with the real reason (11).** Chinandega, León, Somoto, Masaya, Ocotal,
+Kolonia, Coxen Hole (Roatán), Santa Tecla, Addis Ababa and Juba name the FOTW page checked.
+Estelí is logged as an evidence conflict. FOTW shows the plain red-white-green tricolour of 2004
+from personal observation. La Prensa's report of the adoption says the town emblem, El Brujito,
+would be placed on the white stripe; its page sits behind a JavaScript challenge and was read only
+through search extracts. It needs a photo or the ordinance.
+
+**New gate.** `scripts/check-city-flag-meanings.mjs` (already in `flags:check` and CI) now also
+fails on:
+- a code that is both explained and omitted;
+- an explainer or omission line with no bundled capital flag;
+- an omission line that says the flag cannot be shown while it is bundled and not suppressed.
+
+Before the fix it reported exactly the 46 stale lines and Arkhangelsk. A first version matched a
+bare "unreachable", which also caught reasons about council websites being unreachable. It now
+matches only claims about display.
+
+**Also.** `build-cities.mjs` strips invisible bidi marks ("Granada\u200e") and collapses doubled
+spaces ("Washington,  D.C.", "St.  Petersburg") in Natural Earth names before they reach the
+capital panel. One alias was keyed on the double-spaced form ("US-MN|St.  Paul" → Saint Paul) and is re-keyed, so Saint Paul keeps its name. The misplaced "Lisbon" comment above the 7d entries in `cityFlagMeanings.ts` is
+back above Lisbon.
+
+**For later:**
+- RU-MO (Saransk): the capital flag is a UTF-16 SVG that the rasteriser cannot read, so
+  `check-capital-flags.mjs` skips it and the national-flag guard is blind to it. Re-encode it as
+  UTF-8, a byte-level change with no change to the content.
+- Granada city's white flag with the arms, when a free file exists.
+- Settle Estelí's flag from a photo or the ordinance.
+- Venezuela's VE-A is named "Capital" in `SUBDIVISION_META` (the map calls it "Distrito Capital"), so
+  its capital card reads "Capital of Capital". Rename it Capital District in the meta generator.
+- The NHCP heraldry pages give official meanings for Philippine municipal seals. Use them for the
+  remaining Philippine capital seals.
 
 ## Follow-ups (later batches)
 
