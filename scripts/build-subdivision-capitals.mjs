@@ -236,6 +236,10 @@ const GAP_CAPITAL_CITY_QIDS = {
   "IT-OT": "Q13630", // Olbia-Tempio → Olbia
   "IT-VS": "Q13656", // Medio Campidano → Sanluri
   "IE-TA": "Q918372", // Tipperary → Nenagh
+  // Guyana: the regional centres, the same cities as CAPITAL_CITY_QIDS in build-capital-details.mjs.
+  // GY-DE is a gap because build-cities.mjs blocks NE's Georgetown (NE_CAPITAL_BLOCK). Codex F105.
+  "GY-DE": "Q6152928", // Demerara-Mahaica → Triumph (preferred P625 6.80873, -58.05654)
+  "GY-MA": "Q2332581", // Mahaica-Berbice → Fort Wellington
 };
 
 /**

@@ -1158,7 +1158,7 @@ export const SUBNATIONAL_CITIES: Readonly<Record<string, SubnationalCities>> = {
   "GW-TO": {"capital":{"name":"Catió","lon":-15.1667,"lat":11.2167,"population":9898},"largest":{"name":"Catió","lon":-15.1667,"lat":11.2167,"population":9898}},
   "GY-BA": {"largest":{"name":"Mabaruma","lon":-59.78,"lat":8.2,"population":2972}},
   "GY-CU": {"largest":{"name":"Bartica","lon":-58.63,"lat":6.4104,"population":11524}},
-  "GY-DE": {"capital":{"name":"Georgetown","lon":-58.167,"lat":6.802,"population":264350},"largest":{"name":"Georgetown","lon":-58.167,"lat":6.802,"population":264350}},
+  "GY-DE": {"largest":{"name":"Georgetown","lon":-58.167,"lat":6.802,"population":264350}},
   "GY-EB": {"largest":{"name":"Corriverton","lon":-57.17,"lat":5.9,"population":12000}},
   "GY-MA": {"largest":{"name":"New Amsterdam","lon":-57.53,"lat":6.25,"population":46874}},
   "GY-PM": {"largest":{"name":"Anna Regina","lon":-58.5001,"lat":7.2704,"population":3113}},
