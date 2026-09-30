@@ -175,5 +175,21 @@
   "MX-QUE": {
     "file": "Bandera del Municipio de Querétaro.svg",
     "reason": "A PROPOSAL, not the flag: Commons describes the file as \"Propuesta de Bandera del Municipio de Querétaro\" (a 2022 own-work drawing) and tags it {{fictitious flag}}. FOTW mx-qt-qt.html reports a white desk flag with the municipal arms seen in a 2024 council photo, but no documented municipal flag this file reproduces."
+  },
+  "UA-68": {
+    "file": "Flag of Khmelnytskyi.svg",
+    "reason": "The square blue flag with a gold border is Khmelnytskyi's 1997 city flag, which council decision No. 13 of 22 March 2017 made the flag (standard) of the city MAYOR. The city flag since then is 2:3 without the border (khm.gov.ua, \"Символи міста\"; uk.wikipedia \"Прапор Хмельницького\"). Replaced by \"Flag of Khmelnytskyi (3-2).svg\"."
+  },
+  "NI-GR": {
+    "file": "Flag of Granada, Nicaragua.svg",
+    "reason": "Granada DEPARTMENT's previous flag (blue, white, yellow, white and red stripes with the arms), not Granada city's: Commons files it under \"Flags of departments of Nicaragua\", and FOTW ni-gr.html shows it as the department's previous flag, replaced in 2019 by a white flag with the arms. FOTW's page for the city (ni-gr-gr.html) shows the city flag as white with the city arms."
+  },
+  "PE-LIM": {
+    "file": "Bandera de Huacho.jpg",
+    "reason": "Not a documented flag. The Commons file (\"Bandera de Huacho\") is an undated own-work upload with no source; es.wikipedia's Huacho article documents only the 1964 coat of arms (section \"Símbolos de Huacho\"), FOTW has no page for Huacho or Huaura, and a web search found no municipal source for a flag."
+  },
+  "PY-11": {
+    "file": "Bandera Municipalidad de Areguá.PNG",
+    "reason": "Not a documented flag. The Commons file (\"Bandera Municipalidad de Areguá\") is a 2012 own-work upload with no source; FOTW's list of Central department subdivisions (py-11-.html) names Areguá District with no flag, es.wikipedia's Areguá article shows it in the infobox only, and a web search found no municipal source."
   }
 }
