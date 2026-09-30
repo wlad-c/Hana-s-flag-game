@@ -12,6 +12,13 @@
 //   B. No `sources` at all (must have ≥1 authoritative citation).
 //   C. A source with an empty title, or a url that is not a real http(s) URL.
 //   D. A malformed myth: missing/empty `claim` or `reality`.
+//   E. A sub-national key that is not a code the app shows (SUBDIVISION_META).
+//   F. A sub-national key whose subdivision has no bundled flag, or a suppressed one.
+//
+// Why E–F exist (2026-09 audit, batch 8a): FlagMeaning looks an explainer up by the code the
+// app shows, with no alias. Mexico City's sat under ISO's MX-CMX while the app uses Natural
+// Earth's MX-DIF, so it never rendered. An explainer for a subdivision with no flag renders
+// beside no flag, which the subdivision-flag rule forbids (suppression deletes the explainer).
 //
 // Run: node scripts/check-flag-meanings.mjs   (also part of `npm run flags:check`)
 
@@ -102,6 +109,37 @@ for (const [code, m] of Object.entries(meanings)) {
         }
       });
     }
+  }
+}
+
+// ── E–F: every sub-national explainer must be reachable and beside a flag ──
+const root = resolve(__dirname, "..");
+const read = (...p) => readFileSync(resolve(root, ...p), "utf8");
+const between = (text, start, end) => {
+  const i = text.indexOf(start);
+  if (i < 0) throw new Error(`Could not locate ${start}`);
+  const j = text.indexOf(end, i);
+  return text.slice(i, j < 0 ? undefined : j);
+};
+const metaCodes = new Set([...read("src", "lib", "subdivisionMeta.ts").matchAll(/code: "([^"]+)"/g)].map((m) => m[1]));
+const indexed = new Set(
+  [...between(read("src", "lib", "subdivisionFlagIndex.ts"), "const FLAG_CODES", "]);").matchAll(/"([A-Z]{2}-[A-Z0-9~]+)"/g)].map(
+    (m) => m[1],
+  ),
+);
+const api = read("src", "api", "subdivisions.ts");
+const overridden = new Set(
+  [...between(api, "const LOCAL_FLAG_OVERRIDES", "const SUPPRESSED_SUBDIVISION_FLAGS").matchAll(/^\s*"([A-Z]{2}-[A-Z0-9~]+)":/gm)].map((m) => m[1]),
+);
+const suppressed = new Set(
+  [...between(api, "const SUPPRESSED_SUBDIVISION_FLAGS", "]);").matchAll(/"([A-Z]{2}-[A-Z0-9~]+)"/g)].map((m) => m[1]),
+);
+for (const code of Object.keys(meanings)) {
+  if (!code.includes("-")) continue; // national keys (ISO alpha-2)
+  if (!metaCodes.has(code)) {
+    record(code, "E:unreachable", "not a SUBDIVISION_META code, so the panel never looks it up; key it by the code the app shows");
+  } else if (suppressed.has(code) || (!indexed.has(code) && !overridden.has(code))) {
+    record(code, "F:no-flag", "its subdivision shows no flag; delete the explainer with the flag (or bundle the flag)");
   }
 }
 

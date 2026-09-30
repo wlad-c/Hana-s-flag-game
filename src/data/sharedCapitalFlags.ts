@@ -55,6 +55,9 @@ export const SHARED_CAPITAL_FLAGS: ReadonlySet<string> = new Set([
   "ES-OR", // curated (audit): Ourense province ≡ city (blue field, arms + star border)
   "ET-HA", // byte-identical
   "GB-GI", // perceptual distance 0
+  "GT-ES", // byte-identical
+  "GT-HU", // byte-identical
+  "GT-QZ", // byte-identical
   "HN-FM", // curated (audit): Francisco Morazán ≡ Tegucigalpa (navy/gold + arms)
   "HN-OC", // curated (audit): Ocotepeque dept ≡ capital (red/white/green triband)
   "HN-SB", // byte-identical

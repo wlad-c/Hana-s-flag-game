@@ -191,5 +191,21 @@
   "PY-11": {
     "file": "Bandera Municipalidad de Areguá.PNG",
     "reason": "Not a documented flag. The Commons file (\"Bandera Municipalidad de Areguá\") is a 2012 own-work upload with no source; FOTW's list of Central department subdivisions (py-11-.html) names Areguá District with no flag, es.wikipedia's Areguá article shows it in the infobox only, and a web search found no municipal source."
+  },
+  "GT-PE": {
+    "file": "Bandera del municipio Flores, Guatemala.png",
+    "reason": "Own work (Commons, 2006) with no source. FOTW's Flores page (gt-pe-fl.html) shows only the town's arms and no flag, and no other source documents one. The file's green, white and sky-blue field is Petén DEPARTMENT's tricolour (Agreement 3-98 of 1998) with the old Flores arms in place of the departmental map emblem."
+  },
+  "GT-SM": {
+    "file": "Bandera San Marcos.svg",
+    "reason": "Own work (Commons, 2015, PD-shape): a plain vertical green-yellow-red triband. FOTW's San Marcos page (gt-sm-sm.html, 2011) gives the city's flag as vertical red-yellow-green with the lion's head and the city's name on the yellow, so the file lacks the emblem and reverses the colours."
+  },
+  "GT-HU": {
+    "file": "Bandera Municipal de Huehuetenago.svg",
+    "reason": "The white flag with red and yellow rectangles that Flagmaster 45 (1984) reported as Huehuetenango's (FOTW gt-hu.html). Since 1987 the 1955 Mackepeace flag, green and yellow with a hoist triangle and the Zaculeu ruins, has been the official symbol of both the municipality and the department (mihuehue.com; FOTW gt-hu-hu.html, from Prensa Libre, 31 December 2006). The GT-HU override is that flag."
+  },
+  "GT-QZ": {
+    "file": "Bandera de Quetzaltenango.svg",
+    "reason": "Own work (Commons, 2012) with no source: a plain blue-white-red horizontal tricolour. FOTW's Quetzaltenango city page (gt-qz-qz.html) says the city uses the same symbols as the department, whose flag carries the arms on the white (gt-qz.html). The GT-QZ override is the department's flag."
   }
 }

@@ -512,12 +512,10 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "GT-CQ": "capital-flags/gt-cq.png",
   "GT-ES": "capital-flags/gt-es.svg",
   "GT-GU": "capital-flags/gt-gu.svg",
-  "GT-HU": "capital-flags/gt-hu.svg",
+  "GT-HU": "capital-flags/gt-hu.png",
   "GT-IZ": "capital-flags/gt-iz.png",
-  "GT-PE": "capital-flags/gt-pe.png",
-  "GT-QZ": "capital-flags/gt-qz.svg",
+  "GT-QZ": "capital-flags/gt-qz.png",
   "GT-SA": "capital-flags/gt-sa.svg",
-  "GT-SM": "capital-flags/gt-sm.svg",
   "GT-SO": "capital-flags/gt-so.svg",
 
   // ── GW ──

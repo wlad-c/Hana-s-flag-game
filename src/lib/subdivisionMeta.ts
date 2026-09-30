@@ -3268,7 +3268,7 @@ export const SUBDIVISION_META: Record<string, CountrySubdivisionMeta> = {
     { code: "MX-AGU", name: "Aguascalientes", typeLabel: "State" },
     { code: "MX-DUR", name: "Durango", typeLabel: "State" },
     { code: "MX-TLA", name: "Tlaxcala", typeLabel: "State" },
-    { code: "MX-DIF", name: "Mexico", typeLabel: "Federal District" }
+    { code: "MX-DIF", name: "Mexico City", typeLabel: "Federal Entity" }
     ],
   },
   "MY": {
@@ -5221,7 +5221,7 @@ export const SUBDIVISION_META: Record<string, CountrySubdivisionMeta> = {
     { code: "VE-W", name: "Federal Dependencies", typeLabel: "Federal Dependency" },
     { code: "VE-J", name: "Guárico State", typeLabel: "State" },
     { code: "VE-H", name: "Cojedes", typeLabel: "State" },
-    { code: "VE-A", name: "Capital", typeLabel: "Capital District" },
+    { code: "VE-A", name: "Capital District", typeLabel: "Capital District" },
     { code: "VE-E", name: "Barinas", typeLabel: "State" },
     { code: "VE-K", name: "Lara", typeLabel: "State" },
     { code: "VE-P", name: "Portuguesa", typeLabel: "State" }

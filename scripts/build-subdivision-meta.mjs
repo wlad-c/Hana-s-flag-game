@@ -105,6 +105,19 @@ const SUBDIVISION_NAME_OVERRIDES_NEW = {
     "HR-01": "Zagreb County", // ISO 3166-2:HR official EN name
     "HR-21": "Zagreb City" // ISO 3166-2:HR official EN name
   },
+  "MX": {
+    // Natural Earth's name_en for the capital is just "Mexico", the name of the country and
+    // (near enough) of the surrounding State of Mexico (MX-MEX). The 2016 constitutional reform
+    // (decree of 29 January 2016) turned the Distrito Federal into Ciudad de México, and ISO
+    // 3166-2:MX recoded it MX-CMX, "Mexico City (Ciudad de México)". The app keeps Natural
+    // Earth's MX-DIF code. 2026-09 audit.
+    "MX-DIF": "Mexico City"
+  },
+  "VE": {
+    // Natural Earth's name_en is just "Capital", so the capital card read "Capital of Capital".
+    // ISO 3166-2:VE: VE-A "Distrito Capital"; en.wikipedia "Capital District (Venezuela)". 2026-09 audit.
+    "VE-A": "Capital District"
+  },
   "RU": {
     "UA-43": "Republic of Crimea",
     "UA-40": "Sevastopol",
@@ -221,6 +234,12 @@ const SUBDIVISION_TYPE_OVERRIDES_NEW = {
     // ISO 3166-2:BY: BY-MI is an oblast (region) like the other five, and BY-HM,
     // Horad Minsk, is a city. 2026-09 audit.
     "BY-MI": "Region", "BY-HM": "City",
+  },
+  "MX": {
+    // The Distrito Federal ended with the 2016 reform: Mexico City is a federal entity with a
+    // status equal to a state's, and ISO 3166-2:MX lists it as "federal entity" beside the 31
+    // states. 2026-09 audit.
+    "MX-DIF": "Federal Entity",
   },
   "CO": {
     // Natural Earth keeps Colombia's pre-1991 statuses, misspelling one of them
