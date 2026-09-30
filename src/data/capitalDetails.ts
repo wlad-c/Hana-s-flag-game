@@ -1316,9 +1316,10 @@ export const CAPITAL_DETAILS: Readonly<Record<string, CapitalDetail>> = {
   // ── GY ──
   "GY-BA": {"name":"Mabaruma"},
   "GY-CU": {"name":"Bartica"},
-  "GY-DE": {"name":"Paradise"},
+  "GY-DE": {"name":"Triumph","population":3788,"year":2012,"basis":"census"},
   "GY-EB": {"name":"New Amsterdam"},
   "GY-ES": {"name":"Vreed en Hoop"},
+  "GY-MA": {"name":"Fort Wellington","population":33,"year":2012,"basis":"census"},
   "GY-PM": {"name":"Anna Regina","population":12448,"year":2002,"basis":"estimate"},
   "GY-PT": {"name":"Mahdia"},
   "GY-UD": {"name":"Linden","population":28674,"year":2012,"basis":"census"},

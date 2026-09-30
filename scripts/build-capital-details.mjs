@@ -160,6 +160,14 @@ const CAPITAL_CITY_QIDS = {
   // Ukraine moved these oblast administrations in 2014; the de jure centres are unchanged.
   "UA-09": "Q134279", // Luhansk Oblast → Luhansk (not the temporary seat Sievierodonetsk)
   "UA-14": "Q43070", // Donetsk Oblast → Donetsk (not the temporary seat Kramatorsk)
+  // Guyana. Region 4's Regional Democratic Council sits at Triumph, East Coast Demerara (DPI Guyana,
+  // "Substantial upgrades slated for Region Four roads, bridges"; the Ministry of Education's
+  // Social Studies Made Easy gives Triumph as its regional democratic centre). Wikidata's P36 for
+  // the region is the neighbouring village of Paradise, and the map showed Georgetown, the
+  // national capital. Region 5's item has no P36; its centre is Fort Wellington (same sources,
+  // en.wikipedia "Mahaica-Berbice"). Codex F105, 2026-09-30.
+  "GY-DE": "Q6152928", // Demerara-Mahaica → Triumph
+  "GY-MA": "Q2332581", // Mahaica-Berbice → Fort Wellington
 };
 
 /**
@@ -224,7 +232,7 @@ const CAPITAL_FLAG_SOURCE_OVERRIDES = {
   "MY-14": "Flag of Kuala Lumpur, Malaysia.svg", // Kuala Lumpur (Federal Territory) — official DBKL city flag adopted 14 May 1990 (blue central band with a yellow crescent + 14-pointed star, red/white stripes on white above and below). NOT the national flag (blue is the dominant field). Ref: en.wikipedia.org/wiki/Flag_and_coat_of_arms_of_Kuala_Lumpur.
   "MY-16": "Flag of Putrajaya.svg", // Putrajaya (Federal Territory) — official city flag: three vertical bands blue/yellow(double-width)/blue with the Malaysian coat of arms in the yellow band. Ref: en.wikipedia.org/wiki/Flag_of_the_Federal_Territories.
   "DK-FO": "Flag of Tórshavn, Faroe Islands.svg", // Tórshavn (Faroe Islands) — the municipality's own flag, per its en.wikipedia infobox (`image_flag`); Tórshavn has no P41 statement on Wikidata.
-  "UA-68": "Flag of Khmelnytskyi (3-2).svg", // Khmelnytskyi — the city flag set by council decision No. 13 of 22 March 2017 (2:3 azure, the arms' three arrows in a sun of sixteen gold rays; khm.gov.ua "Символи міста"). Wikidata's P41 is the square 1997 flag, which that decision made the MAYOR's standard — see capital-flag-rejected.json.
+  "UA-68": "Прапор Хмельницького.png", // Khmelnytskyi — the city flag set by council decision No. 13 of 22 March 2017: azure, the arms' three crossed arrows in a sun of SIXTEEN gold rays (khm.gov.ua "Символи міста"). This Commons file is the council's own artwork, byte-identical to khm.gov.ua/sites/default/files/flag_0.png. "Flag of Khmelnytskyi (3-2).svg" is a redraw with twelve rays (Codex F106, 2026-09-30), so it is not used. Wikidata's P41 is the square 1997 flag, which that decision made the MAYOR's standard — see capital-flag-rejected.json.
   "GT-HU": "Flag of Huehuetenango Department.svg", // Huehuetenango — the 1955 Mackepeace flag, official for both the municipality and the department since 1987 (mihuehue.com; FOTW gt-hu-hu.html). It duplicates the department flag, so SHARED_CAPITAL_FLAGS suppresses it; the old P41 file is in capital-flag-rejected.json.
   "GT-QZ": "Flag of Quetzaltenango Department.svg", // Quetzaltenango — FOTW gt-qz-qz.html: the city uses the same symbols as the department. Shared, like GT-HU; the plain tricolour is rejected.
 };
@@ -300,6 +308,12 @@ const CAPITAL_POPULATION_OVERRIDES = {
   // (Katalog-BPS 1102001.7171), as cited by en.wikipedia "Manado"; the 2020
   // census gave 451,916. Wikidata's latest dated figure is 461,636 (2015).
   "ID-SA": { population: 462658, year: 2025, basis: "estimate", source: "BPS, Kota Manado Dalam Angka 2026 (mid-2025 estimate)" }, // Manado
+  // Triumph and Fort Wellington — Statistics Guyana, 2012 Population and Housing Census,
+  // "Population by Sex" by village (Region 4 p.14: Triumph 1,865 + 1,923; Region 5 p.19: Fort
+  // Wellington 17 + 16). The latest village-level count published. en.wikipedia's 118 for Fort
+  // Wellington adds the neighbouring Catherina's Lust (85). Codex F105, 2026-09-30.
+  "GY-DE": { population: 3788, year: 2012, basis: "census", source: "Statistics Guyana, Census 2012, Population by Sex (village): Triumph" },
+  "GY-MA": { population: 33, year: 2012, basis: "census", source: "Statistics Guyana, Census 2012, Population by Sex (village): Fort Wellington" },
   // Shah Alam (Selangor / MBSA) — DOSM 2020 Census, local-authority total. Its
   // Wikidata population statement is undated, so the dated-only pass drops it.
   // Same lineage as George Town (MY-07, 794,313 / 2020 census), which the

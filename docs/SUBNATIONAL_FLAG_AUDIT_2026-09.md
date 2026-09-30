@@ -952,6 +952,8 @@ back above Lisbon.
 
 ## Batch 8a — Guatemala's 22 department flags, Mexico City, and an explainer-key gate (2026-09-30)
 
+*Shipped in #1734 (`bdf5026`); live since 1 October 2026, 3:35 AM AEST.*
+
 **What was wrong.** The app showed no flag for any of Guatemala's 22 departments. Nine flag files
 were bundled, but under the numeric codes of ISO's November 2021 change (GT-01 … GT-22), while the
 map and every other dataset use the alpha codes (GT-AV … GT-ZA). Nothing looked those files up.
@@ -1042,6 +1044,48 @@ Both branches were exercised: the old MX-CMX key fails E, and dropping GT-PE fro
 - Chiquimula city: the arms in the app's file differ from FOTW's 2008 drawing (gt-cq-cq). The
   layout matches.
 - Baja Verapaz and Quiché, when a free file of the current flag exists.
+
+## Batch 8b — findings from Codex's independent review of 30 September (F104–F106)
+
+Codex reviewed the 23 commits since `011e0065` and recorded its evidence in
+`docs/audit/SUBNATIONAL_DELTA_VERIFICATION_2026-09-30.json`. Three findings concern this audit.
+
+**F106 — Khmelnytskyi's capital flag had the wrong number of rays.** Batch 7e pinned "Flag of
+Khmelnytskyi (3-2).svg", whose sun has 12 rays. The council's specification (decision No. 13 of 22
+March 2017, khm.gov.ua "Символи міста") gives sixteen, and so did the explainer. Commons also holds
+"Прапор Хмельницького.png", the council's own artwork: 180×120 and byte-identical to
+khm.gov.ua/sites/default/files/flag_0.png (SHA-1 `c9795f19…`, the image Codex compared). That file
+is now the capital flag. It is small, but it is the design the council adopted.
+
+**F105 — Guyana's regional centres.**
+- Region 4, Demerara-Mahaica: the map marked Georgetown, the national capital and a municipality of
+  its own, and the capital card said Paradise (Wikidata's P36). Its Regional Democratic Council sits
+  at Triumph:
+  - DPI Guyana, "Substantial upgrades slated for Region Four roads, bridges": "The Region 4 RDC
+    building in Triumph Housing Scheme, East Coast Demerara";
+  - the Ministry of Education's *Social Studies Made Easy* table of regional democratic centres;
+  - en.wikipedia's Triumph article, "Village and regional capital".
+- Region 5, Mahaica-Berbice, showed no capital. Its centre is Fort Wellington (the same sources, and
+  en.wikipedia "Mahaica-Berbice").
+
+Both are pinned by Wikidata QID in both capital generators (Triumph Q6152928, at its preferred
+P625; Fort Wellington Q2332581). NE's Georgetown is blocked as Region 4's capital; it is still the
+region's largest city and the national capital. Populations are from Statistics Guyana's 2012
+census, "Population by Sex" by village: Triumph 3,788 (Region 4, page 14), Fort Wellington 33
+(Region 5, page 19). en.wikipedia's 118 for Fort Wellington includes the neighbouring Catherina's
+Lust (85). The 2012 census is the latest village-level count found. Neither village has a flag.
+
+**F104 — co-capitals, queued as SF-17.** Forlì-Cesena has had two capitals since decree-law 7 of
+29 January 2024 (the province's own announcement; its legal offices stay in Forlì). Pesaro and
+Urbino, the Azores, Appenzell Ausserrhoden and Tipperary have the same problem in other forms.
+Batch 7d pinned one seat each so the map and the card agree. Showing every seat with its role needs
+a list-valued subdivision capital, as national capitals already have.
+
+F107, La Trinidad, is a caveat rather than an error. Codex read Republic Act 531 of 1950 but could
+not open the NHCP heraldry page the explainer cites. Re-read on 1 October 2026: it is the blog the
+National Historical Commission calls the "temporary home of NHCP's Philippine Government Seals",
+and it gives every element the explainer states, including the kayabang basket and the sixteen
+cogs for the sixteen barangays. The explainer stands.
 
 ## Follow-ups (later batches)
 

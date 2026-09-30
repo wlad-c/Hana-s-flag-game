@@ -524,8 +524,10 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   // ── GY ──
   "GY-BA": {"name":"Mabaruma","lon":-59.7833,"lat":8.2},
   "GY-CU": {"name":"Bartica","lon":-58.6167,"lat":6.4},
+  "GY-DE": {"name":"Triumph","lon":-58.0565,"lat":6.8087},
   "GY-EB": {"name":"New Amsterdam","lon":-57.5167,"lat":6.25},
   "GY-ES": {"name":"Vreed en Hoop","lon":-58.1833,"lat":6.8},
+  "GY-MA": {"name":"Fort Wellington","lon":-57.6,"lat":6.4},
   "GY-PM": {"name":"Anna Regina","lon":-58.5167,"lat":7.25},
   "GY-PT": {"name":"Mahdia","lon":-59.15,"lat":5.2825},
   "GY-UD": {"name":"Linden","lon":-58.3,"lat":6},

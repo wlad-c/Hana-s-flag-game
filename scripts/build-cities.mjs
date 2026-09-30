@@ -193,6 +193,7 @@ const NE_CAPITAL_BLOCK = {
   "AF-PKA": "NE's \"Zareh Sharan\" point is 50 km from Paktika's capital Sharana (Q2615863)",
   "FM-PNI": "Palikir is the national capital; Pohnpei State's capital is Kolonia (Q514165)",
   "GE-SK": "Tskhinvali is not Shida Kartli's capital; Georgia seats the region in Gori (Q19583)",
+  "GY-DE": "Georgetown is the national capital, a municipality of its own; Region 4's Regional Democratic Council sits at Triumph (Q6152928)",
   "ID-KS": "Banjarmasin was South Kalimantan's capital until 2022; it is now Banjarbaru (Q14181)",
   "IL-Z": "Nazareth is the Northern District's largest city; its capital is Nof HaGalil (Q167659)",
   "NO-01": "Moss is not Østfold's administrative centre; it is Sarpsborg (Q108025)",
