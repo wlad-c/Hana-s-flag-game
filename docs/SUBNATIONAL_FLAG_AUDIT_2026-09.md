@@ -776,7 +776,7 @@ mirrors `sameCity()` and the quiz rule, and fails if either changes without it. 
 
 ## Batch 7f — 20 capital flags that belong to someone else, or to no one (2026-09-30)
 
-*Shipped in #PRNUM.*
+*Shipped in #1732.*
 
 **How they were found.** A scan of every capital flag's Commons filename for the word for a
 province, department, governorate, county, region or district, in a dozen languages. A scan of
