@@ -860,7 +860,7 @@ Also checked and kept:
 
 ## Batch 7e — the capital flags the name fixes made visible (2026-09-30)
 
-*Shipped in #PRNUM.*
+*Shipped in #1733.*
 
 **What was wrong.** Batches 7c and 7d made every quiz capital the capital the Learn panel shows.
 That made 46 more capital flags render. Their omission lines still said "structurally unreachable,
