@@ -95,5 +95,85 @@
   "RS-05": {
     "file": "Flag of Zombor (1941).svg",
     "reason": "Commons: \"Flag of Zombor in 1941\" — a historical flag from the 1941 Hungarian book 'Városaink neve, címere és lobogója', sourced to FOTW rs-sombo.html#ffl (a former flag). It is not Sombor's current flag."
+  },
+  "EG-DK": {
+    "file": "Governadorat de Daqahliya.png",
+    "reason": "Dakahlia GOVERNORATE's 2006 flag (a white cogwheel in a yellow circle with red papyrus on green), not Mansoura's: FOTW eg-g-daq.html (\"2006 flag\"; capital al-Mansura). Commons names it for the governorate (\"Governadorat de Daqahliya\")."
+  },
+  "EG-MN": {
+    "file": "Flag of Minya Governorate.jpg",
+    "reason": "Minya GOVERNORATE's flag (the bust of Nefertiti, found in the governorate), not the city of Minya's: FOTW eg-g-mny.html; the Commons title names the governorate."
+  },
+  "EG-MT": {
+    "file": "Governadorat de Matruh.png",
+    "reason": "Matrouh GOVERNORATE's first (2006) flag, a white gazelle leaping on blue with a yellow trapezoid: FOTW eg-g-mat.html (\"First flag\"; capital Marsa Matruh). Commons names it for the governorate. Not Marsa Matruh's flag."
+  },
+  "EG-SIN": {
+    "file": "Governadorat de Sinai-Sinai del nord.png",
+    "reason": "North Sinai GOVERNORATE's earlier (2006) flag, a white cogwheel quarter in ochre with a blue fish over water: FOTW eg-g-nsi.html (\"Earlier flag\"; main city al-Arish). Commons names it for the governorate. Not Arish's flag."
+  },
+  "GT-JA": {
+    "file": "Flag of Jalapa Department.gif",
+    "reason": "Not Jalapa city's flag. FOTW's page for the city (gt-ja-ja.html) shows its flag as a plain red, yellow and green horizontal tricolour; this file, filed on Commons as the flag of Jalapa DEPARTMENT, puts the department arms in the centre, and the department page (gt-ja.html) itself records a previously reported wrong version."
+  },
+  "GT-JU": {
+    "file": "Flag of Jutiapa Department.svg",
+    "reason": "Not Jutiapa city's flag, and not a flag at all: the department arms in a laurel wreath with no field, filed on Commons as the flag of Jutiapa DEPARTMENT. FOTW's page for the city (gt-ju-ju.html) shows its flag as green-white-green with the arms (2014), and the department's (gt-ju.html) as white with the arms and the name."
+  },
+  "PE-PAS": {
+    "file": "Bandera Provincia de Pasco.png",
+    "reason": "The flag of Pasco PROVINCE (Commons: \"Bandera Provincia de Pasco\"), shown as the flag of the city of Cerro de Pasco. The city spans three districts (Chaupimarca, Yanacancha, Simón Bolívar) of a larger province; es.wikipedia's Cerro de Pasco article only reuses the province flag and the regional arms in its infobox and documents no city flag. A province's flag is not its capital city's (CLAUDE.md capital-flag rule 3a)."
+  },
+  "IE-CO": {
+    "file": "Colours of Cork.svg",
+    "reason": "County Cork's GAA county colours (red and white). FOTW ie-col.html: county flags in popular use are based on the colours of the county sports teams and represent the county. Not a flag of Cork city, whose council flag is a different design (FOTW ie-cork.html)."
+  },
+  "IE-LD": {
+    "file": "Flag of Longford, Tipperary & Roscommon County.svg",
+    "reason": "A blue and gold county-colours flag that Commons files for three counties at once (Longford, Tipperary, Roscommon): the GAA county colours (FOTW ie-col.html). Not a flag of the town of Longford."
+  },
+  "IE-LK": {
+    "file": "Flag of the counties of Fermanagh and Limerick.svg",
+    "reason": "A green and white county-colours flag that Commons files for two counties (Fermanagh and Limerick): the GAA county colours (FOTW ie-col.html). Not a flag of Limerick city, whose council flag is a different design (FOTW ie-lim.html#limerick)."
+  },
+  "IE-WD": {
+    "file": "Flag of County Waterford.svg",
+    "reason": "County Waterford's white and blue GAA county colours (FOTW ie-col.html: county colours come from the county sports teams). Not a flag of Waterford city."
+  },
+  "NG-FC": {
+    "file": "Flag of Abuja.svg",
+    "reason": "The Abuja city logo (\"ABUJA · The Heart of Nigeria\") on a white field. FOTW ng-abuja.html documents Abuja's flag as a GREEN field bearing the logo with the name and motto in white. The white-field logo is not the documented flag."
+  },
+  "NI-SJ": {
+    "file": "Flag of San Carlos, Nicaragua.svg",
+    "reason": "The town hall's logo (\"ALCALDIA San Carlos\") on white. FOTW ni-rs-sc.html shows San Carlos's municipal flag as blue over green with the municipal arms. The logo is not the flag."
+  },
+  "RO-TM": {
+    "file": "Drapeau de la Savoie.svg",
+    "reason": "The Commons file is the flag of Savoy. Its design, red with a white cross throughout, is also the HISTORICAL flag of Temesvár recorded in the 1941 Hungarian book 'Városaink neve, címere és lobogója' (FOTW ro-timis.html#hist), and the small banner on the tower in the city's arms (ro.wikipedia \"Stema municipiului Timișoara\"). No source documents it as Timișoara's flag today; the same case as the other 1941 flags removed in batch 7d."
+  },
+  "LU-L": {
+    "file": "Befändelt Märei-102.jpg",
+    "reason": "A photograph of three flags hanging from a building, not a flag image."
+  },
+  "IE-OY": {
+    "file": "Tullamoreflag.svg",
+    "reason": "A plain blue and white bicolour, described on Commons only as \"the flag of Tullamore Co. Offaly\": a 2011 own-work upload with no source (the SVG is derived from it). FOTW's list of Irish county and town council flags (ie-coco.html) has none for Tullamore, and Offaly's county colours are green, white and gold (FOTW ie-lein.html). No source documents this flag."
+  },
+  "GE-SK": {
+    "file": "Flag of Gori, Georgia.svg",
+    "reason": "Not the documented flag of Gori. FOTW ge-gori.html gives Gori's flag as prescribed by Municipal Council Decree No. 29 of 18 August 2010: quartered red and blue by a red cross fimbriated white, skewed to the hoist. This file (a blue hoist triangle with a gold key) is a 2016 own-work Commons upload with no source."
+  },
+  "GE-AB": {
+    "file": "Flag of Sukhumi.svg",
+    "reason": "Not a documented flag. The Commons file is a November 2025 own-work drawing derived from a coat-of-arms image, and Commons itself tags it {{factual accuracy}}. FOTW has no page for a flag of Sukhumi/Sokhumi. A capital in a disputed territory needs a documented flag, not a construction."
+  },
+  "NI-CA": {
+    "file": "Flag of Jinotepe.svg",
+    "reason": "A plain purple, yellow and blue tricolour: Jinotepe's flag without its arms. FOTW ni-cr-ji.html (with photos of the flag in use) gives the flag as horizontally divided purple-yellow-blue with the municipal coat of arms in the centre. A plain field missing its arms is not the documented flag (the Terni and Udine precedent, batch 6b)."
+  },
+  "MX-QUE": {
+    "file": "Bandera del Municipio de Querétaro.svg",
+    "reason": "A PROPOSAL, not the flag: Commons describes the file as \"Propuesta de Bandera del Municipio de Querétaro\" (a 2022 own-work drawing) and tags it {{fictitious flag}}. FOTW mx-qt-qt.html reports a white desk flag with the municipal arms seen in a 2024 council photo, but no documented municipal flag this file reproduces."
   }
 }

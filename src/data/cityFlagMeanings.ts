@@ -4716,28 +4716,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
-  "GT-JA": {
-    description:
-      "Jalapa’s flag: red, yellow and green, with the arms at the centre. Red recalls the Santa Marta earthquake, " +
-      "yellow the department’s volcanoes, green its forests. The arms show a green mountain (the volcanoes), a " +
-      "ploughed field for its farming, a hoe with laurel for triumph and olive branches for peace, and seven " +
-      "golden stars for the seven municipalities.",
-    sources: [
-      { title: "Bandera y escudo de Jalapa — Mundo Chapín", url: "https://mundochapin.com/2019/01/bandera-y-escudo-del-departamento-de-jalapa/88983/" },
-    ],
-  },
-
-  "GT-JU": {
-    description:
-      "Jutiapa’s flag: a white field with the arms at the centre. White stands for the department’s history and " +
-      "its Maya, Garífuna and Xinca peoples. The arms show the Cerro de la Cruz above a green valley of crops for " +
-      "its fertile fields, with books and a horn of plenty and a rising sun for its steady development, ringed by " +
-      "laurel for triumph.",
-    sources: [
-      { title: "Bandera y escudo de Jutiapa — Mundo Chapín", url: "https://mundochapin.com/2019/04/bandera-y-escudo-de-jutiapa/88989/" },
-    ],
-  },
-
   "GT-PE": {
     description:
       "Petén’s flag (its capital, Flores, sits on an island in Lake Petén Itzá): green, white and sky-blue. Green " +
@@ -8065,16 +8043,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
   },
 
   // ── Cerro de Pasco — capital of Pasco, Peru ───────────────────────────────
-  "PE-PAS": {
-    description:
-      "Cerro de Pasco's flag bears the arms of the “Ciudad Real de Minas” (Royal City of Mines), the " +
-      "title the Spanish Crown granted the settlement in 1639 in recognition of its extraordinary mineral " +
-      "wealth. The city is still known as the mining capital of Peru, and its arms stand for that long " +
-      "silver-, copper- and zinc-mining heritage.",
-    sources: [
-      { title: "Cerro de Pasco (Símbolos) — Wikipedia (es)", url: "https://es.wikipedia.org/wiki/Cerro_de_Pasco" },
-    ],
-  },
 
   // ── Pucallpa — capital of Ucayali, Peru ───────────────────────────────────
   "PE-UCA": {
@@ -8751,16 +8719,6 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
   },
 
   // ── Timișoara — capital of Timiș county, Romania ──────────────────────────
-  "RO-TM": {
-    description:
-      "Timișoara's red flag bears a silver cross — the banner flown from the water-tower in the city's coat of " +
-      "arms, which recalls that Timișoara was the first city in Europe with a centralised drinking-water " +
-      "supply. The fuller arms also carry the golden lion and bridge of Oltenia, tying this Banat city to the " +
-      "Romanian lands, and a tricolour for the anti-communist Revolution that began here in December 1989.",
-    sources: [
-      { title: "Stema municipiului Timișoara — Wikipedia (ro)", url: "https://ro.wikipedia.org/wiki/Stema_municipiului_Timi%C8%99oara" },
-    ],
-  },
 
   // ── Subotica — capital of North Bačka district, Serbia ────────────────────
   "RS-01": {

@@ -713,7 +713,7 @@ explainer:
 
 ## Batch 7d — the last 12 quiz capitals, eight wrong-entity capital flags, and a gate (2026-09-30)
 
-*Shipped in #1730.*
+*Shipped in #1730 (`28316d5`); live since 30 September 2026, 9:25 AM AEST.*
 
 **The 12 from 7c, each fixed on the Wikidata side.** `CAPITAL_CITY_QIDS` in
 `scripts/build-capital-details.mjs` pins the capital where Wikidata's P36 is out of date or lists
@@ -773,6 +773,90 @@ mirrors `sameCity()` and the quiz rule, and fails if either changes without it. 
 - A wider class of wrong-entity capital flags (batch 7f): governorate flags in four Egyptian
   capital slots, Guatemalan department flags in four, Irish county GAA colours in four, Pasco
   Province's flag for Cerro de Pasco, and Savoy's flag for Timișoara.
+
+## Batch 7f — 20 capital flags that belong to someone else, or to no one (2026-09-30)
+
+*Shipped in #PRNUM.*
+
+**How they were found.** A scan of every capital flag's Commons filename for the word for a
+province, department, governorate, county, region or district, in a dozen languages. A scan of
+the 57 capital flags the 7c/7d name fixes made visible. And the flags deferred from earlier
+batches. Each candidate was then checked against FOTW and, where FOTW was silent, the
+local-language Wikipedia and the Commons file page. Evidence for each is in
+`scripts/data/capital-flag-rejected.json`.
+
+**Removed:**
+- **A governorate's flag in the city's slot (Egypt).** Mansoura, Marsa Matruh and Arish showed the
+  2006 flags of Dakahlia, Matrouh and North Sinai governorates; Minya showed the Minya
+  governorate's Nefertiti flag (FOTW eg-g-daq, eg-g-mat, eg-g-nsi, eg-g-mny).
+- **A department's flag, or a variant of it, that is not the city's (Guatemala).** Jalapa's city
+  flag is a plain red, yellow and green tricolour; Jutiapa's is green-white-green with the arms
+  (FOTW gt-ja-ja, gt-ju-ju). The slots held a department variant and the bare department arms in
+  a wreath.
+- **A province's flag (Peru).** Cerro de Pasco showed Pasco Province's flag. The city spans
+  three districts of that province; es.wikipedia only reuses the province flag in its infobox.
+- **County GAA colours (Ireland).** Cork, Limerick, Longford and Waterford showed their county's
+  sporting colours. FOTW ie-col: county colours come from the county teams and stand for the
+  county. Tullamore's blue and white bicolour is an unsourced 2011 upload, not Offaly's colours
+  (green, white and gold), and FOTW lists no Tullamore flag.
+- **Logos, a photograph, and unsourced drawings.** Abuja showed its logo on white (FOTW: the flag
+  is green). San Carlos showed its town hall's logo (FOTW: blue over green with the arms).
+  Luxembourg City showed a photograph of flags on a building. Sokhumi showed a 2025 own-work
+  drawing that Commons tags `{{factual accuracy}}`. Gori showed a 2016 own-work key flag, while
+  FOTW gives the flag the Municipal Council decreed in 2010: quartered red and blue by a red cross.
+- **A proposal.** Querétaro's file is "Propuesta de Bandera del Municipio de Querétaro", a 2022
+  proposal that Commons tags `{{fictitious flag}}`.
+- **A plain field missing its arms.** Jinotepe's flag carries the municipal arms on its
+  purple-yellow-blue stripes (FOTW ni-cr-ji, with photos); the file had none.
+- **Timișoara.** The file is the flag of Savoy. Its design is also the 1941 Hungarian-era flag of
+  Temesvár (FOTW ro-timis#hist) and the banner on the tower in the city's arms, but no source
+  documents it as the city's flag today. This is the same case as the five 1941 flags in 7d.
+
+**Kept, after checking.** Three filenames looked wrong, but the design is the city's documented flag:
+- Gap: the file is Beaugency's, but FOTW fr-05-ga documents Gap's flag as the same blue and yellow
+  vertical bicolour.
+- Escuintla: FOTW gt-es-es says the city flag is the same as the department's.
+- Antigua Guatemala: FOTW gt-sa-an shows the city flag as green-white-green with its arms, the
+  design the "Sacatepéquez Department" file shows.
+
+Also checked and kept:
+- Addis Ababa: the city emblem on white, FOTW et-aa.
+- Juba: orange, with the "Juba City Council" scroll, FOTW ss-juba.
+- Palmerston North: white, with the arms and names, FOTW nz-mwt.
+- Ocotal: the seal on white, FOTW ni-ns-oc.
+- Somoto: blue-white-red, FOTW ni-md-so.
+- Toulouse: the Cross of Toulouse, FOTW fr-31-tl.
+- Nice: the greater arms on white, FOTW fr-06-ni.
+- Palma: Mallorca's flag, by the 2006 capital law, FOTW es-pm-pm.
+- Port Moresby: the NCDC flag, FOTW pg-nc.
+- Cagayan de Oro: the seal on red, FOTW ph-x.
+- Foix: the county's banner of arms, FOTW fr-09-fx.
+- Krasnogorsk: the urban okrug's flag, per ru.wikipedia.
+- Oslo: FOTW no-03-01 says the St Hallvard flag on blue has been the city's flag in use since 2002,
+  though never approved by royal resolution. The Commons note that it "is not approved by the
+  Norwegian government" is true, and not a reason to drop it.
+- Bruges: Commons calls the file "an unofficial version", meaning an unofficial drawing; it matches
+  FOTW's official flag.
+- Juba: the Commons drawing was traced from an alternate-history wiki, but it matches FOTW's
+  independent 2019 drawing. Its orange is paler, so swap it when a better drawing can be fetched.
+- Dubrovnik: the St Blaise flag. The bundled drawing adds a gold border that the statute flag
+  lacks, so swap it for a borderless drawing when one can be fetched.
+
+**For later:**
+- These are the departments' and governorates' own flags, which the division cards do not show.
+  They belong with SF-06: Guatemala's department flags, with Mundo Chapín's explainers for Jalapa
+  and Jutiapa, and the Minya governorate's Nefertiti flag.
+- Real city flags to bundle when Commons downloads work again:
+  - Cork and Limerick city councils (FOTW ie-cork, ie-lim);
+  - Abuja's green flag;
+  - San Carlos's blue and green flag;
+  - Gori's 2010 flag;
+  - Jalapa's and Jutiapa's city flags.
+- Governorate and province flags still sit in capital slots that `SHARED_CAPITAL_FLAGS` hides.
+  They are Aswan, Damietta, Giza, Qalyubia, Kafr El-Sheikh and Sohag (Egypt); Alajuela and
+  Puntarenas; Esmeraldas and Tungurahua; Mandalay and Yangon; Colón; Salto and Rivera; the El
+  Salvador departments; and Madre de Dios. They show nowhere today, but would reappear if the
+  division flag changes, as Minya's did.
 
 ## Follow-ups (later batches)
 
