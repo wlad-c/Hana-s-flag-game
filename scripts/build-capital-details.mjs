@@ -225,6 +225,8 @@ const CAPITAL_FLAG_SOURCE_OVERRIDES = {
   "MY-16": "Flag of Putrajaya.svg", // Putrajaya (Federal Territory) — official city flag: three vertical bands blue/yellow(double-width)/blue with the Malaysian coat of arms in the yellow band. Ref: en.wikipedia.org/wiki/Flag_of_the_Federal_Territories.
   "DK-FO": "Flag of Tórshavn, Faroe Islands.svg", // Tórshavn (Faroe Islands) — the municipality's own flag, per its en.wikipedia infobox (`image_flag`); Tórshavn has no P41 statement on Wikidata.
   "UA-68": "Flag of Khmelnytskyi (3-2).svg", // Khmelnytskyi — the city flag set by council decision No. 13 of 22 March 2017 (2:3 azure, the arms' three arrows in a sun of sixteen gold rays; khm.gov.ua "Символи міста"). Wikidata's P41 is the square 1997 flag, which that decision made the MAYOR's standard — see capital-flag-rejected.json.
+  "GT-HU": "Flag of Huehuetenango Department.svg", // Huehuetenango — the 1955 Mackepeace flag, official for both the municipality and the department since 1987 (mihuehue.com; FOTW gt-hu-hu.html). It duplicates the department flag, so SHARED_CAPITAL_FLAGS suppresses it; the old P41 file is in capital-flag-rejected.json.
+  "GT-QZ": "Flag of Quetzaltenango Department.svg", // Quetzaltenango — FOTW gt-qz-qz.html: the city uses the same symbols as the department. Shared, like GT-HU; the plain tricolour is rejected.
 };
 
 /**

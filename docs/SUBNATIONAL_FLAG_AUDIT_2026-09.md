@@ -860,7 +860,7 @@ Also checked and kept:
 
 ## Batch 7e — the capital flags the name fixes made visible (2026-09-30)
 
-*Shipped in #1733.*
+*Shipped in #1733 (`342a5e0`); live since 30 September 2026, 8:48 PM AEST.*
 
 **What was wrong.** Batches 7c and 7d made every quiz capital the capital the Learn panel shows.
 That made 46 more capital flags render. Their omission lines still said "structurally unreachable,
@@ -949,6 +949,99 @@ back above Lisbon.
   its capital card reads "Capital of Capital". Rename it Capital District in the meta generator.
 - The NHCP heraldry pages give official meanings for Philippine municipal seals. Use them for the
   remaining Philippine capital seals.
+
+## Batch 8a — Guatemala's 22 department flags, Mexico City, and an explainer-key gate (2026-09-30)
+
+**What was wrong.** The app showed no flag for any of Guatemala's 22 departments. Nine flag files
+were bundled, but under the numeric codes of ISO's November 2021 change (GT-01 … GT-22), while the
+map and every other dataset use the alpha codes (GT-AV … GT-ZA). Nothing looked those files up.
+Checked against FOTW, four of the nine were not the department's flag anyway:
+- GT-01: an undocumented striped design, not Guatemala Department's.
+- GT-03: Antigua's city flag, not Sacatepéquez's.
+- GT-14: Santa Cruz del Quiché's city flag, not Quiché's.
+- GT-19: an undocumented Zacapa design.
+
+**Department flags now shown (17).** Each was compared with the department's FOTW page
+(https://www.crwflags.com/fotw/flags/gt-.html, then gt-av.html … gt-za.html). Where FOTW was unsure
+or wrong, the decision rests on a stronger source:
+- Alta Verapaz, Chimaltenango, Chiquimula, El Progreso, Escuintla, Izabal, Jalapa, Jutiapa,
+  Retalhuleu, Santa Rosa, Suchitepéquez, Totonicapán, Quetzaltenango, San Marcos and Sacatepéquez
+  match FOTW's image. San Marcos's emblem is drawn differently from FOTW's but has the same volcano,
+  lion and book.
+- **Petén.** FOTW's image (blue-white-green, with Flores's arms) is wrong. Agreement No. 3-98 of the
+  Departmental Government, 14 September 1998, created the flag: green, white and sky blue, with a
+  map of the department holding the Tikal temple, a tree, xate, an oil derrick and two hands. The
+  only online copy of the agreement is a transcription by the Flores historian Luis José Hernández
+  González (elchilamitza.blogspot.com). It is cited as the act, not as a blog opinion. es.wikipedia
+  and the Commons file show the same design.
+- **Huehuetenango.** FOTW's department page shows a white flag with red and yellow rectangles, from
+  Flagmaster 45 (1984). FOTW's city page (gt-hu-hu.html, from Prensa Libre, 31 December 2006) and
+  mihuehue.com say the 1955 Mackepeace flag, green and yellow with a hoist triangle and the Zaculeu
+  ruins, has been official for both the municipality and the department since 1987. That flag is
+  shown.
+
+Files come from Commons: Commons PNG renders of the SVGs (upload.wikimedia.org answered 429 with a
+10-minute retry-after), Alta Verapaz's and Jalapa's already-bundled SVGs (identical artwork),
+Escuintla's original SVG (already bundled as its capital flag), and Sacatepéquez's 360×216 FOTW GIF,
+converted pixel-for-pixel to PNG so the collision and ratio tools read it.
+
+**Not shown (5), with the reason:**
+- Baja Verapaz: the current flag is white with a brown two-headed eagle (FOTW gt-bv, 2014). The
+  only free file is FOTW's "previously reported" bird design.
+- Guatemala: FOTW's department image is the city's flag, and FOTW notes its source does not say the
+  department uses it (gt-gu-gu). The striped Commons design is undocumented.
+- Quiché: the department's flag is white with the 1972 "Q" badge (FOTW gt-qc, with a 2009 photo).
+  The only free file is Santa Cruz del Quiché's yellow-white-yellow city flag (gt-qc-qc).
+- Sololá: FOTW documents a green-yellow-green flag with the capital's seal, but the only depicted
+  version is the municipality's own flag (gt-so, 2014 note). The Commons file with a departmental
+  seal has no source.
+- Zacapa: FOTW records designs changing with governors; the Commons red-disc design is undocumented.
+
+**Explainers.** Seven were written, all read from their sources: Alta Verapaz, Chimaltenango,
+Jutiapa and Retalhuleu from FOTW (the last three quote governors' 1997–98 communications),
+Chiquimula (FOTW, citing Mi Chiquimula, 11 September 2012), Huehuetenango (FOTW gt-hu-hu and
+mihuehue.com; only the colour meanings both sources agree on) and Petén (Agreement 3-98). The other
+ten are logged in `subdiv-meaning-omitted.txt`. FOTW gives no symbolism for them, and guatemala.com's
+"Aprende" page is not used: it describes Chiquimula's and Izabal's city flags as the departments'.
+
+**Capital flags.**
+- Removed with evidence in `capital-flag-rejected.json`:
+  - Flores: own work, no source; FOTW gt-pe-fl shows only arms. The file is Petén's tricolour with
+    the old arms.
+  - San Marcos: a plain triband with the colours reversed; FOTW gt-sm-sm gives red-yellow-green
+    with the lion's head.
+- Replaced by the department's flag, which the city shares, and so suppressed as shared:
+  - Huehuetenango: the 1984 design was superseded in 1987.
+  - Quetzaltenango: a plain tricolour; FOTW gt-qz-qz says the city uses the department's symbols.
+- Escuintla's capital flag, the department's own, is now shared too.
+- Capital explainers:
+  - Removed for Petén, San Marcos, Huehuetenango, Quetzaltenango and Escuintla. Some described
+    the replaced flags. Some cited Mundo Chapín, which is now offline; its Quetzaltenango and San
+    Marcos pages were never archived.
+  - Rewritten to match the flag shown and live sources:
+    - Chiquimula: the unsupported colour meanings were removed.
+    - Puerto Barrios: it had called the city flag "Izabal's flag".
+    - Sololá: it quoted a ring text from a different emblem; its cited site no longer resolves.
+
+**Mexico City.** Its flag explainer was keyed under ISO's post-2016 code MX-CMX, while the app
+uses Natural Earth's MX-DIF, so it never rendered. The entity was also named "Mexico", the country's
+name, with the abolished type "Federal District". It is now "Mexico City", a Federal Entity, per
+ISO 3166-2:MX and the 2016 reform. Venezuela's VE-A, named "Capital" (its card read "Capital of
+Capital"), is now "Capital District" (ISO 3166-2:VE "Distrito Capital").
+
+**New gate.** `check-flag-meanings.mjs` now fails on:
+- a sub-national explainer whose code is not a `SUBDIVISION_META` code (E), which is how Mexico
+  City's was lost;
+- an explainer beside no flag (F): not indexed and not overridden, or suppressed.
+
+Both branches were exercised: the old MX-CMX key fails E, and dropping GT-PE from the index fails F.
+
+**For later:**
+- Puerto Barrios: FOTW draws the stripes blue-white-green (gt-iz-pb), but the app and guatemala.com
+  have green-white-blue. Settle the order from a photo or the municipality.
+- Chiquimula city: the arms in the app's file differ from FOTW's 2008 drawing (gt-cq-cq). The
+  layout matches.
+- Baja Verapaz and Quiché, when a free file of the current flag exists.
 
 ## Follow-ups (later batches)
 

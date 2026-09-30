@@ -7826,7 +7826,7 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
 
-  "MX-CMX": {
+  "MX-DIF": {
     description:
       "The city's coat of arms on a plain field (the state has no separate legislated flag). The arms, " +
       "granted by royal decree in 1523, show a blue shield for the lake on which the city was founded, a " +
@@ -16171,6 +16171,114 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       { title: "Флаг Орловской области — Wikipedia (Russian)", url: "https://ru.wikipedia.org/wiki/Флаг_Орловской_области" },
       { title: "Герб Орловской области — Wikipedia (Russian)", url: "https://ru.wikipedia.org/wiki/Герб_Орловской_области" },
       { title: "Oryol Oblast (Russia) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/ru-57.html" },
+    ],
+  },
+
+  // ── Guatemala departments ────────────────────────────────────────────────────
+  // FOTW documents a flag for all 22 departments; seven carry sourced symbolism, mostly from
+  // the governors' own 1997–98 communications. Petén's comes from the 1998 agreement that
+  // created its flag. The other ten shown are logged in subdiv-meaning-omitted.txt.
+
+  "GT-AV": {
+    description:
+      "Alta Verapaz’s flag is white, with the departmental arms at the centre between two leafy branches. " +
+      "The white stands for the peace and brotherhood of its people, who have lived in harmony, work and " +
+      "unity since the department was created. The shield has two fields within a gold border. The upper, " +
+      "fuchsia field holds a rainbow. The lower, purple field holds the Earth, showing the Americas, with a " +
+      "white dove of peace above it. Across the middle runs the motto “Yo pondré mi arco” (“I will set my " +
+      "bow”), from the Book of Genesis, where the rainbow is the sign of God’s covenant with the Earth. The " +
+      "branches around the shield stand for the department’s nature.",
+    sources: [
+      { title: "Alta Verapaz Department (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-av.html" },
+    ],
+  },
+
+  "GT-CM": {
+    description:
+      "Chimaltenango’s flag, described by the departmental governor in September 1998, is dark green with a " +
+      "gold fringe. It carries the departmental arms in a white disc, ringed by the words “Departamento de " +
+      "Chimaltenango”. The green stands for a people living in democracy, faith and hope, and the white for " +
+      "purity, calm, honesty, peace, integrity and firmness. In the arms, blue stands for justice, loyalty, " +
+      "truth and strength, for the summer sky and for the seas around Guatemala, and the national flag at " +
+      "the top for the country. The lyre honours Rafael Álvarez Ovalle, who composed the music of the " +
+      "national anthem, and the department’s musicians and marimba players. The colonial fountain of " +
+      "Chimaltenango’s central park drains to both oceans, one channel to the Pacific and one to the " +
+      "Atlantic. The swans are those of the Los Aposentos resort, and wheat, maize and coffee are the " +
+      "department’s crops. Two circles show the ruins of Iximché at Tecpán, the first capital of the " +
+      "Kaqchikel Maya, and the volcanoes of Acatenango, which with the nearby mountains shelter the " +
+      "surrounding towns from hurricane winds.",
+    sources: [
+      { title: "Chimaltenango Department (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-cm.html" },
+    ],
+  },
+
+  "GT-CQ": {
+    description:
+      "Chiquimula’s flag, sky blue, white and yellow with the departmental arms on the white, was " +
+      "inaugurated on 11 September 2012. Its designer, Carlos Humberto Guerra Pinto of Ipala, won a public " +
+      "contest run by the cable television programme “Chiquimula De Visión”. In the arms, the column stands " +
+      "for the arts and the flame for Chiquimula as a source of enlightenment. The mountain recalls the " +
+      "town’s title, Chiquimula de la Sierra, and the rivers stand for the department’s water. The two " +
+      "birds recall the meaning of the name, “land of birds”, and the gold its mining, traditions and " +
+      "culture. The eleven white stars are its eleven municipalities, which its promoters said made it the " +
+      "first department with a flag representing all of them.",
+    sources: [
+      { title: "Chiquimula Department (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-cq.html" },
+    ],
+  },
+
+  "GT-HU": {
+    description:
+      "Huehuetenango’s flag was designed by José Osberto Mackepeace Palacios, then a teenager, and " +
+      "presented on 2 July 1955, during the town’s patron-saint festival. Since 1987 it has been the " +
+      "official symbol of both the municipality and the department. Green edges frame a light-yellow " +
+      "centre, with a deep-yellow triangle at the hoist. The designer drew its colours from Maya culture " +
+      "and the Popol Vuh: deep yellow is the colour of divinity and green the colour of hope. The emblem " +
+      "shows the ruins of Zaculeu, a shrine of the pre-Columbian Mam, recalling the people’s Maya lineage. " +
+      "They stand before a sun, within a ring of stars, one for each municipality.",
+    sources: [
+      { title: "Huehuetenango (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-hu-hu.html" },
+      { title: "La Bandera de Huehuetenango — Centro Internacional de Comercio Electrónico de Huehuetenango", url: "http://mihuehue.com/ecommhuehue/banderahuehue.html" },
+    ],
+  },
+
+  "GT-JU": {
+    description:
+      "Jutiapa’s flag, described by the departmental governor in August 1998, is mainly white, with the " +
+      "departmental arms between two laurel branches. The branches stand for the daily triumphs of the " +
+      "people of Jutiapa. In the arms, a cornucopia marks Jutiapa as the granary of the east, supplying " +
+      "most of the grain the country eats. A horse and a cow stand for cattle raising, and the books for " +
+      "education and culture. Behind them rises Cerro La Cruz, guardian of the departmental capital, under " +
+      "the clouds, sky and sun that earn Jutiapa its name, “the City of the Sun”.",
+    sources: [
+      { title: "Jutiapa Department (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-ju.html" },
+    ],
+  },
+
+  "GT-PE": {
+    description:
+      "Petén’s flag was created by Agreement No. 3-98 of the Departmental Government of Petén, signed by " +
+      "Governor Macario Efraín Oliva Muralles on 14 September 1998. Its three vertical stripes are green at " +
+      "the hoist, for hope and the department’s forests; white in the centre, for purity and peace; and sky " +
+      "blue at the fly, for its lakes, justice and loyalty. On the white is the departmental emblem, a map " +
+      "of Petén containing the Temple of the Great Jaguar at Tikal, a tree, a branch of xate palm, an oil " +
+      "derrick and two hands. The agreement says these identify the cultural and commercial activity of its " +
+      "people.",
+    sources: [
+      { title: "Acuerdo No. 3-98 de la Gobernación Departamental de Petén (1998), transcribed by the Flores historian Luis José Hernández González", url: "http://elchilamitza.blogspot.com/2010/10/acuerdo-gobernacion-deptal-3-98-bandera.html" },
+    ],
+  },
+
+  "GT-RE": {
+    description:
+      "Retalhuleu’s flag is green, white and green, with the departmental arms on the white, as the " +
+      "departmental governor described it in April 1997. The green stands for the lush vegetation and the " +
+      "white for the foam of the waves on the department’s coast. In the arms, the palm is the department’s " +
+      "symbol. Nine stars stand for its municipalities, the larger one for the capital, Retalhuleu. The " +
+      "national flag, laid diagonally, marks its allegiance to Guatemala, and five volcanoes lit by a " +
+      "bright sun stand for Central American unity.",
+    sources: [
+      { title: "Retalhuleu Department (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-re.html" },
     ],
   },
 

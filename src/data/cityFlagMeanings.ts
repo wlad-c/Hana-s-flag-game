@@ -4665,22 +4665,12 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
 
   "GT-CQ": {
     description:
-      "Chiquimula’s flag: white and green, with the departmental arms on the white. White stands for the " +
-      "indigenous peoples and the Spanish settlers who shaped its traditions; green for the fertile soils, hills " +
-      "and mineral wealth. The arms show the Volcán Ipala with an open book above it — the inhabitants’ openness " +
-      "to learning.",
+      "Chiquimula’s municipal flag is white, cut diagonally by a green triangle, with the municipal arms in the " +
+      "upper hoist. In the arms, a mountain landscape stands for the Ipala volcano, and an open book above it " +
+      "for the people’s commitment to constant learning.",
     sources: [
-      { title: "Banderas y escudos del oriente — Aprende Guatemala", url: "https://aprende.guatemala.com/cultura-guatemalteca/banderas-de-los-departamentos-del-oriente-de-guatemala/" },
-    ],
-  },
-
-  "GT-ES": {
-    description:
-      "Escuintla’s flag: green and white, bearing the city arms. Green stands for the department’s nature — its " +
-      "rivers, beaches and wildlife — and white for its people. The arms show a palm tree (Escuintla is “the city " +
-      "of palms”), a sixteen-rayed sun for its hot climate, and the Nahuatl name “Izcuintlán” on a green ribbon.",
-    sources: [
-      { title: "Bandera y escudo de Escuintla — Mundo Chapín", url: "https://mundochapin.com/2018/04/bandera-y-escudo-del-departamento-de-escuintla/66522/" },
+      { title: "Chiquimula (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-cq-cq.html" },
+      { title: "Banderas y escudos de los departamentos del oriente — Aprende Guatemala", url: "https://www.guatemala.com/aprende/cultura-guatemalteca/banderas-de-los-departamentos-del-oriente-de-guatemala/" },
     ],
   },
 
@@ -4695,46 +4685,15 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
-  "GT-HU": {
-    description:
-      "Huehuetenango’s flag: alternating red and yellow stripes with a stepped pyramid at the centre. The red and " +
-      "yellow recall the Guatemalan national flags of 1851–71; the pyramid is the ruins of Zaculeu, the shrine " +
-      "and capital of the pre-Columbian Mam Maya kingdom that stood here.",
-    sources: [
-      { title: "Huehuetenango Department (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-hu.html" },
-    ],
-  },
-
   "GT-IZ": {
     description:
-      "Izabal’s flag (its capital is Puerto Barrios): green, white and blue, with the arms on the white. Green is " +
-      "for the fertile, mineral-rich land, white for peace, and blue for the department’s waters — Lake Izabal " +
-      "and its rivers. The arms are shaped like a ship’s wheel for the region’s ports, enclosing a ship, an " +
-      "aeroplane, a lorry and the interoceanic railway that linked Puerto Barrios to the Pacific.",
+      "Puerto Barrios’s flag has three vertical stripes, green, white and blue, with the municipal arms on the " +
+      "white. The arms are shaped like a ship’s wheel, standing for the department’s ports, and are inscribed " +
+      "“Municipalidad de Puerto Barrios, Izabal, Guatemala”. Inside the wheel are a ship, a train, a lorry and " +
+      "an aeroplane.",
     sources: [
-      { title: "Bandera y escudo de Izabal — Mundo Chapín", url: "https://mundochapin.com/2018/06/bandera-y-escudo-del-departamento-de-izabal/75658/" },
-    ],
-  },
-
-  "GT-PE": {
-    description:
-      "Petén’s flag (its capital, Flores, sits on an island in Lake Petén Itzá): green, white and sky-blue. Green " +
-      "is hope and the forest, white purity and peace, sky-blue the lakes, justice and loyalty. The arms show a " +
-      "Maya pyramid for the ruins of Tikal and El Mirador, Lake Petén Itzá, and coffee and palm plants for the " +
-      "land’s fertility. Adopted 1998.",
-    sources: [
-      { title: "Símbolos Patrios de Petén — simbolospatrios.org", url: "https://simbolospatrios.org/guatemala/peten/" },
-    ],
-  },
-
-  "GT-QZ": {
-    description:
-      "Quetzaltenango’s flag: blue, white and red. Blue stands for the department’s springs, lagoons and rivers " +
-      "and for freedom; white for its K’iche’ and Mam peoples and for peace; red for valour. The flag recalls the " +
-      "short-lived State of Los Altos, of which Quetzaltenango was the capital until 1840; its arms bear the " +
-      "Quetzal and the Santa María volcano.",
-    sources: [
-      { title: "Bandera y escudo de Quetzaltenango — Mundo Chapín", url: "https://mundochapin.com/2019/03/bandera-y-escudo-de-quetzaltenango/88995/" },
+      { title: "Puerto Barrios (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-iz-pb.html" },
+      { title: "Banderas y escudos de los departamentos del oriente — Aprende Guatemala", url: "https://www.guatemala.com/aprende/cultura-guatemalteca/banderas-de-los-departamentos-del-oriente-de-guatemala/" },
     ],
   },
 
@@ -4749,25 +4708,16 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
-  "GT-SM": {
-    description:
-      "San Marcos’s flag: green, yellow and red, with the arms on the yellow. Green stands for its ecosystems and " +
-      "the volcanoes Tajumulco and Tacaná, yellow for its mineral soils, tropical coast and beaches, and red for " +
-      "the labour of the ancestors who founded its settlements. The arms show a green volcano on a sky-blue field " +
-      "for those two peaks.",
-    sources: [
-      { title: "Bandera y escudo de San Marcos — Mundo Chapín", url: "https://mundochapin.com/2019/02/bandera-y-escudo-de-san-marcos/89012/" },
-    ],
-  },
-
   "GT-SO": {
     description:
-      "Sololá’s flag: green and yellow, with the arms on the yellow. Green stands for the department’s diverse " +
-      "nature and yellow for its riches and its indigenous traditions. The arms picture Lake Atitlán with its " +
-      "volcanoes (Tolimán, Atitlán and San Pedro), a green valley, a village and a figure of its people, ringed " +
-      "with the words “Sololá, tierra del paisaje” (“Sololá, land of the landscape”).",
+      "Sololá’s municipal flag is green, yellow and green, unusually long at about 8:21, with the municipal " +
+      "seal on the yellow. The seal is ringed with “Municipalidad de Sololá, Guatemala C.A.” and the town’s " +
+      "motto, “Ciudad del Paisaje” (“city of the landscape”). It shows a mountain above a lake, then broad " +
+      "fields with vegetation and small houses, and in the foreground a Guatemalan peasant woman on cultivated " +
+      "land.",
     sources: [
-      { title: "Símbolos Patrios de Sololá — simbolospatrios.org", url: "https://simbolospatrios.org/guatemala/solola/" },
+      { title: "Sololá (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-so-so.html" },
+      { title: "Sololá Department (Guatemala) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/gt-so.html" },
     ],
   },
 

@@ -18,7 +18,7 @@ US-UM
 MT-01 MT-02 MT-04 MT-07 MT-08 MT-11 MT-12 MT-13 MT-15 MT-16 MT-17 MT-18 MT-19 MT-33 MT-34 MT-35 MT-36 MT-37 MT-38 MT-44 MT-46 MT-48 MT-54 MT-55 MT-59 MT-60 MT-67 MT-68
 # MX states — RE-VERIFIED against Flags of the World 2026-07 (crwflags.com/fotw/flags/mx-XX.html).
 #   Most Mexican states use the coat of arms on a plain white field as a de-facto flag. FOTW
-#   documents per-element arms symbolism for Mexico City (MX-CMX), Colima (MX-COL), Hidalgo (MX-HID),
+#   documents per-element arms symbolism for Mexico City (MX-DIF), Colima (MX-COL), Hidalgo (MX-HID),
 #   State of Mexico (MX-MEX), Michoacán (MX-MIC), Nuevo León (MX-NLE), Puebla (MX-PUE), San Luis Potosí
 #   (MX-SLP), Sonora (MX-SON) and Tamaulipas (MX-TAM) — all now sourced in flagMeanings.ts. The states
 #   below have a FOTW page that only shows/blazons the arms with NO stated per-element meaning — walls.
@@ -265,3 +265,12 @@ IT-LU  # Lucca province arms — no blasonatura on it.wiki (province or city art
 PL-LD  # Łódzkie: five vertical red and gold stripes (resolution XLIV/514/2002, designer Marek Adamczewski). FOTW https://www.crwflags.com/fotw/flags/pl-ld.html, pl.wikipedia "Flaga województwa łódzkiego" and the voivodeship's page lodzkie.pl/wojewodztwo/herb give the design, date and designer only — no meaning for the colours or stripes.
 PL-OP  # Opolskie: gold over sky blue, 2:1 (resolution XXIX/254/2004 of 21 Dec 2004, designer Michał Marciniak-Kożuchowski). FOTW https://www.crwflags.com/fotw/flags/pl-op.html, pl.wikipedia "Flaga województwa opolskiego" and the resolution's text and justification on opolskie.pl describe the design only — no symbolism.
 VE-W  # Federal Dependencies: green-white-blue triband with a red fish. Explainer removed 2026-09-27 (Learn audit F38) because its only citation was the Fandom vexillology wiki. Re-verified against FOTW https://www.crwflags.com/fotw/flags/ve-w.html (lists the islands only, no flag description or symbolism), en.wikipedia "Federal Dependencies of Venezuela" and es.wikipedia "Dependencias Federales de Venezuela" (no flag section) — no authoritative source for the meaning.
+# GT departments — RE-VERIFIED against Flags of the World 2026-09 (crwflags.com/fotw/flags/gt-.html and each
+#   department page: https://www.crwflags.com/fotw/flags/gt-es.html, gt-iz.html, gt-ja.html, gt-pr.html,
+#   gt-qz.html, gt-sa.html, gt-sm.html, gt-sr.html, gt-su.html, gt-to.html). Each page shows or describes the
+#   flag with NO stated symbolism: Santa Rosa's gives only the department's history, and Quetzaltenango's only
+#   its resemblance to the Los Altos flag, with the layout disputed. The Spanish-language Wikipedia department
+#   articles carry no flag symbolism. The meanings on guatemala.com's "Aprende" pages are unattributed, and the
+#   same page describes Chiquimula's and Izabal's CITY flags as the departments', so it is not used. Mundo
+#   Chapín is offline and simbolospatrios.org no longer resolves.
+GT-ES GT-IZ GT-JA GT-PR GT-QZ GT-SA GT-SM GT-SR GT-SU GT-TO
