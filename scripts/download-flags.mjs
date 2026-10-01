@@ -430,7 +430,7 @@ const SUB_CODES = [
   "NI-MN","NI-MS","NI-MT","NI-NS","NI-RI","NI-SJ",
   "NL-AW","NL-BQ1","NL-BQ2","NL-BQ3","NL-CW","NL-DR","NL-FL","NL-FR","NL-GE","NL-GR",
   "NL-NB","NL-NH","NL-OV","NL-SX","NL-UT","NL-ZE","NL-ZH",
-  "NO-03","NO-11","NO-15","NO-18","NO-34","NO-38","NO-42","NO-46","NO-50","NO-54",
+  "NO-03","NO-15","NO-18",
   "PA-1","PA-10","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-9","PA-EM","PA-KY",
   "PA-NB","PA-NT","PALAU","PATILLAS",
   "PE-AMA","PE-ANC","PE-APU","PE-ARE","PE-AYA","PE-CAJ","PE-CAL","PE-CUS","PE-HUC",

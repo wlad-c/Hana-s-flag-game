@@ -810,6 +810,24 @@ const MANUAL_VERIFIED_POPULATION = {
   // rule, a subdivision's population follows its parent country's own administrative
   // count, not a total that includes the Russian-administered Barentsburg/Pyramiden.
   "NO-21": { population: 2512, year: 2026, basis: "estimate" }, // Svalbard
+  // Statistics Norway (SSB), table 07459, population 1 January 2026 (published
+  // 25 Feb 2026), for the 15 counties in force since 1 January 2024. The 15 sum
+  // exactly to SSB's national total of 5,627,400 (batch 8d).
+  "NO-32": { population: 749207, year: 2026, basis: "estimate" }, // Akershus
+  "NO-03": { population: 728714, year: 2026, basis: "estimate" }, // Oslo
+  "NO-46": { population: 658342, year: 2026, basis: "estimate" }, // Vestland
+  "NO-11": { population: 508922, year: 2026, basis: "estimate" }, // Rogaland
+  "NO-50": { population: 489166, year: 2026, basis: "estimate" }, // Trøndelag
+  "NO-34": { population: 379488, year: 2026, basis: "estimate" }, // Innlandet
+  "NO-42": { population: 323930, year: 2026, basis: "estimate" }, // Agder
+  "NO-31": { population: 316448, year: 2026, basis: "estimate" }, // Østfold
+  "NO-15": { population: 273169, year: 2026, basis: "estimate" }, // Møre og Romsdal
+  "NO-33": { population: 272981, year: 2026, basis: "estimate" }, // Buskerud
+  "NO-39": { population: 259332, year: 2026, basis: "estimate" }, // Vestfold
+  "NO-18": { population: 243272, year: 2026, basis: "estimate" }, // Nordland
+  "NO-40": { population: 177923, year: 2026, basis: "estimate" }, // Telemark
+  "NO-55": { population: 171218, year: 2026, basis: "estimate" }, // Troms
+  "NO-56": { population: 75288, year: 2026, basis: "estimate" }, // Finnmark
   // Central Statistics Office (CSO) Ireland, Census of Population 2022 (3 Apr 2022)
   "IE-DL": { population: 167084, year: 2022, basis: "census" }, // Donegal
   // Statistical Office in Katowice / GUS (Statistics Poland), end-2024 estimate.

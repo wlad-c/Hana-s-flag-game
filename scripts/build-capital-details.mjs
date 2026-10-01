@@ -141,6 +141,10 @@ const CAPITAL_CITY_QIDS = {
   // P300 pass named it as North Sulawesi's capital and bundled Gorontalo City's
   // flag. Manado is its capital (en.wikipedia "Manado"). 2026-09 audit.
   "ID-SA": "Q15847", // North Sulawesi → Manado
+  // Norway, batch 8d: Agder's and Trøndelag's items list two P36 values each; the
+  // pin matches SUBNATIONAL_OVERRIDE in build-cities.mjs (the county municipality's seat).
+  "NO-42": "Q26772254", // Agder → Kristiansand (county hall); the county governor sits in Arendal
+  "NO-50": "Q7606901", // Trøndelag → Steinkjer (administrative centre); Trondheim hosts the county mayor
   // 2026-09 audit, batch 7d. Each item lists more than one P36, and the P300
   // pass kept one that disagrees with the map. Where the subdivision genuinely
   // has two seats, the pin names the SAME city as GAP_CAPITAL_CITY_QIDS in
@@ -300,6 +304,25 @@ const REJECTED_CAPITAL_FLAGS = JSON.parse(
  * missing figure (and would correct a stale one) and survives every regen.
  */
 const CAPITAL_POPULATION_OVERRIDES = {
+  // Norway's county capitals — SSB table 07459, population 1 January 2026, of the
+  // capital's MUNICIPALITY (the local authority, the unit CLAUDE.md prescribes).
+  // Wikidata's town items carry urban-settlement (tettsted) counts instead, some
+  // stale (Stavanger 2015, Tromsø 2017), so the figures disagreed in unit and date.
+  // Oslo is Akershus's capital; Oslo municipality is also Oslo county. Batch 8d.
+  "NO-11": { population: 151669, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Stavanger municipality (1103)" },
+  "NO-15": { population: 33291, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Molde municipality (1506)" },
+  "NO-18": { population: 53638, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Bodø municipality (1804)" },
+  "NO-31": { population: 60614, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Sarpsborg municipality (3105)" },
+  "NO-32": { population: 728714, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Oslo municipality (0301)" },
+  "NO-33": { population: 106013, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Drammen municipality (3301)" },
+  "NO-34": { population: 33817, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Hamar municipality (3403)" },
+  "NO-39": { population: 60246, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Tønsberg municipality (3905)" },
+  "NO-40": { population: 56906, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Skien municipality (4003)" },
+  "NO-42": { population: 119287, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Kristiansand municipality (4204)" },
+  "NO-46": { population: 294860, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Bergen municipality (4601)" },
+  "NO-50": { population: 24007, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Steinkjer municipality (5006)" },
+  "NO-55": { population: 79943, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Tromsø municipality (5501)" },
+  "NO-56": { population: 5808, year: 2026, basis: "estimate", source: "SSB table 07459, 1 January 2026: Vadsø municipality (5607)" },
   // Nenagh (Tipperary) — CSO Census 2022, town of Nenagh, as cited by
   // en.wikipedia "Nenagh". Wikidata has no population for Nenagh, and an earlier
   // record gave it Clonmel's 18,369. (2026-09 audit, batch 7d.)

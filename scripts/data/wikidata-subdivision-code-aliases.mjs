@@ -191,14 +191,8 @@ export const CODE_ALIASES = {
   "MK-409": "MK-64", // Radoviš
   "MK-404": "MK-11", // Vasilevo
   "MK-407": "MK-41", // Konče
-  // NO
-  "NO-55": "NO-19", // Troms
-  "NO-32": "NO-02", // Akershus
-  "NO-31": "NO-01", // Østfold
-  "NO-56": "NO-20", // Finnmark
-  "NO-33": "NO-06", // Buskerud
-  "NO-39": "NO-07", // Vestfold
-  "NO-40": "NO-08", // Telemark
+  // NO: none since batch 8d — NO.json now carries Norway's 2024 county codes
+  // (NO-31 … NO-56), the same codes Wikidata's P300 uses.
   // PL
   "PL-12": "PL-MA", // Lesser Poland Voivodeship
   "PL-18": "PL-PK", // Podkarpackie Voivodeship

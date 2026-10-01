@@ -363,6 +363,14 @@ const SUPPRESSED_SUBDIVISION_FLAGS: ReadonlySet<string> = new Set([
   // No documented flag at all (FOTW: "There is no known flag for the province",
   // or no record anywhere):
   "DO-10", "DO-09", "DO-32", "DO-15", "DO-13", "DO-24",
+  // Norway's 2024 counties (batch 8d). Each has a documented flag that no free
+  // file depicts, or none at all; the files Wikidata points to show something else.
+  // Innlandet flies its green arms shield on a dark green field (FOTW no-inn,
+  // the county's 2022 design manual); Commons only has an undocumented banner of the
+  // arms. Telemark's 2024 flag is its redrawn round-bottomed arms on yellow (county
+  // design manual, "Fylkesflagg"); Commons only has the 1970-2019 banner. Vestland
+  // has no county flag (FOTW no-vest, November 2024; the county's arms page).
+  "NO-34", "NO-40", "NO-46",
 ]);
 
 // Cache so we only fetch each country once per session.

@@ -940,9 +940,9 @@ capital panel. One alias was keyed on the double-spaced form ("US-MN|St.  Paul" 
 back above Lisbon.
 
 **For later:**
-- RU-MO (Saransk): the capital flag is a UTF-16 SVG that the rasteriser cannot read, so
-  `check-capital-flags.mjs` skips it and the national-flag guard is blind to it. Re-encode it as
-  UTF-8, a byte-level change with no change to the content.
+- ~~RU-MO (Saransk): the capital flag is a UTF-16 SVG that the rasteriser cannot read, so
+  `check-capital-flags.mjs` skips it and the national-flag guard is blind to it.~~ Re-encoded as
+  UTF-8 in batch 8d.
 - Granada city's white flag with the arms, when a free file exists.
 - Settle Estelí's flag from a photo or the ordinance.
 - Venezuela's VE-A is named "Capital" in `SUBDIVISION_META` (the map calls it "Distrito Capital"), so
@@ -1091,6 +1091,8 @@ cogs for the sixteen barangays. The explainer stands.
 
 ## Batch 8c — the last 30 flags without an explainer: territories, de facto states, three cities
 
+*Shipped in #1736 (`e095aa4`); live since 1 October 2026, 10:42 AM AEST.*
+
 **What was wrong.** `subdiv-remaining.mjs` listed 30 shown subdivision flags with neither an
 explainer nor a logged omission. Most were territories that the app shows under their sovereign or
 claimant, using the territory's own flag. They include the British overseas territories and Crown
@@ -1125,6 +1127,106 @@ Taiwan has no Learn country panel. SF-16 now covers Taiwan as well as Saint Hele
 **For later:** the United Kingdom and Mauritius agreed in 2025 to transfer the Chagos Archipelago.
 Once that transfer takes effect, re-check the British Indian Ocean Territory (GB-IO) under the
 subdivision-research rule.
+
+## Batch 8d — Norway's 2024 counties (2026-10-01)
+
+**What was wrong.** The app's map of Norway still showed the 19 counties abolished in 2020. Eight of
+them (Hedmark, Oppland, Aust-Agder, Vest-Agder, Hordaland, Sogn og Fjordane, Nord- and
+Sør-Trøndelag) no longer exist. Seven others (Østfold, Akershus, Buskerud, Vestfold, Telemark, Troms
+and Finnmark) were merged in 2020 and re-established on 1 January 2024, with new ISO codes (NO-31 to
+NO-56) and changed borders.
+
+The effect on flags:
+- Only four county flags showed: Oslo, Rogaland, Møre og Romsdal and Nordland.
+- Five more were bundled under the new codes, but nothing looked them up.
+- Two of those five belonged to counties abolished in 2024: Vestfold og Telemark and Troms og
+  Finnmark.
+
+**The map.** `public/subdivisions/NO.json` now holds the 15 counties in force since 2024:
+- **Source:** Kartverket's county boundaries clipped to the coastline, from robhop/fylker-og-kommuner
+  (`Fylker-S.geojson`, "Oppdatert 2024", CC BY 4.0). The detail is about the same as before (16,529
+  points against 15,871).
+- **Carried over unchanged:** Svalbard and the Bouvet placeholder.
+- **Format:** coordinates are rounded to 6 decimals and rings wound the way d3 expects, as in the
+  app's other maps.
+
+The geometry was checked against Kartverket's own API (`ws.geonorge.no/kommuneinfo`):
+- **Counties:** every county lies inside its official county area. The parts outside are border
+  slivers of 0.03–0.38% (Oslo, which is small, 1.24%).
+- **Municipalities:** none of the 275 municipality reference points on land falls in the wrong county.
+  The other 82 lie at sea, inside the municipality's legal area.
+- **One wrong assumption caught:** Jevnaker joined Akershus, not Buskerud.
+
+**Data re-keyed to the new counties:**
+- **Meta:** regenerated.
+- **Capitals:** `cities.ts` regenerated. Pinned:
+  - Akershus → Oslo (outside the county);
+  - Innlandet → Hamar;
+  - Agder → Kristiansand;
+  - Trøndelag → Steinkjer.
+
+  Østfold → Sarpsborg, through the Wikidata fallback; Moss stays blocked.
+- **Co-capitals (added to SF-17):** Agder's and Trøndelag's Wikidata items list two capitals each.
+  - **Agder:** Kristiansand has the county hall (Fylkeshuset). Arendal has the state county governor
+    and the county's postal address.
+  - **Trøndelag:** the county's own site says "Administrasjonssenteret er Steinkjer". Trondheim hosts
+    the county mayor.
+- **County populations:** SSB table 07459, 1 January 2026. The 15 counties add up exactly to the
+  national 5,627,400. Norway is added to `check-population-freshness.mjs`, both to the freshness floor
+  and to the sum check.
+- **Capital populations:** each capital's municipality, from SSB for 1 January 2026, which is the
+  local-authority unit CLAUDE.md asks for. Wikidata's town items carried urban-settlement counts
+  instead, some stale: Stavanger's from 2015, Tromsø's from 2017.
+- **Removed:** the old-code aliases in `wikidata-subdivision-code-aliases.mjs`.
+- **Capital flags:** re-keyed for Sarpsborg (NO-31), Oslo (NO-32) and Bergen (NO-46). Trondheim's is
+  dropped, because Trøndelag's seat is Steinkjer. The Oslo quiz-twin group is re-keyed too.
+- **Regenerated:** the world sub-national borders mesh.
+
+**County flags: 12 of 15 shown.**
+
+| County | Decision | Evidence |
+|---|---|---|
+| Oslo (NO-03) | Kept | Unchanged |
+| Rogaland (NO-11) | Replaced | Commons redraw of the approved drawing, at FOTW's 4:5. The bundled file was 8:5 |
+| Møre og Romsdal (NO-15) | Kept; open question | FOTW: the arms were never approved, and the flag "is said to be" the shield on white. No current source says which flag is flown |
+| Nordland (NO-18) | Kept | The 1965 regulation gives the flag the same design as the arms |
+| Østfold (NO-31), Akershus (NO-32), Buskerud (NO-33) | New | Readopted in 2024 (FOTW `no-viken`, `no-01`, `no-02`, `no-06`). The Commons files are redraws of the National Archives' approved drawings and cite Lovdata. Akershus's regulation reads "I blått en hvit trappegavl" |
+| Vestfold (NO-39) | New | The same blazon, readopted and redrawn in 2024 (no.wikipedia, FOTW `no-07`). The image is the 1970 drawing |
+| Agder (NO-42) | New | A banner of the 2018 arms, using the same tree drawing as the official arms file. FOTW `no-agder`; a Lindesnes Avis screenshot credited to Agder county |
+| Trøndelag (NO-50) | Replaced | The bundled file had no white field. Steinkjerleksikonet: "Gult kors mot hvit bakgrunn er Trøndelag sitt fylkesvåpen og -flagg" |
+| Troms (NO-55), Finnmark (NO-56) | New | Readopted in 2024 (FOTW `no-19`, `no-20`; no.wikipedia, "Finnmark beholder fylkesvåpenet") |
+| Innlandet (NO-34) | Withheld | The flag is the arms shield on dark green (FOTW `no-inn`, the 2022 design manual). The only free file is an undocumented banner of the arms |
+| Telemark (NO-40) | Withheld | The 2024 flag is the redrawn, round-bottomed arms on yellow (county design manual: "Fylkesflagget består av fylkesvåpenet på gul bakgrunn"). Commons has only the 1970–2019 banner |
+| Vestland (NO-46) | Withheld | No county flag (FOTW `no-vest`, November 2024; the county's arms page). Wikidata's flag is a 2025 Commons upload copied from vexilla-mundi, which documents nothing |
+
+**How the files were bundled:**
+- **Format:** Commons PNG renders through `thumb.php`, at each original's exact ratio.
+  upload.wikimedia.org answered 429 with a 10-minute retry-after.
+- **Removed or replaced:** the SVGs for NO-34, NO-38, NO-46 and NO-54 were removed; NO-11 and NO-50
+  were replaced.
+- **Drift job:** the download script no longer lists the replaced codes, so the weekly drift job
+  cannot bring them back.
+- **Suppressed:** NO-34, NO-40 and NO-46 are in `SUPPRESSED_SUBDIVISION_FLAGS`, with the reasons above.
+
+**Explainers.**
+- **Eight new:** Østfold, Akershus, Buskerud, Vestfold, Agder, Trøndelag, Troms and Finnmark. They
+  come from no.wikipedia's county-arms articles, FOTW and Steinkjerleksikonet.
+- **Nordland, corrected:** "midnight-sun summers" was not in the source, which says the gold refers to
+  the sun.
+- **Møre og Romsdal, corrected:** "granted 1978" now reads that the county council adopted the arms in
+  1978 and they were never formally approved.
+
+**Also in this batch.** Saransk's capital flag (RU-MO) is re-encoded from UTF-16 to UTF-8. This is a
+byte-level change; the image is the same. `check-capital-flags.mjs` can now read the file, so it is
+no longer skipped.
+
+**For later:**
+- **Batch 8e, Norway's county-seat capital flags.** Ten seats have municipal flags on their
+  municipality items in Wikidata (P41): Stavanger, Molde, Bodø, Drammen, Hamar, Skien, Kristiansand,
+  Steinkjer, Tromsø and Vadsø. The town items, which the capital pipeline reads, carry none.
+  Tønsberg's municipality item carries no flag either.
+- **Møre og Romsdal:** find out which flag the county actually flies.
+- **Innlandet and Telemark:** show their flags once a free file of the documented design exists.
 
 ## Follow-ups (later batches)
 
@@ -1210,7 +1312,7 @@ nothing. Mostly this is an ISO-code mismatch between the flag data and the app's
 | Saint Helena, Ascension and Tristan da Cunha | ~~Ascension, Tristan da Cunha~~ | Bundled in batch 5, though no screen opens this territory's parts yet; Saint Helena stays blank |
 | Comoros | ~~Anjouan, Mohéli, Grande Comore~~ | Done in batch 5 |
 | Russia | ~~Moscow, Moscow Oblast, Oryol~~ | Done in batch 5 |
-| Norway | the 7 counties re-established in 2024 | Østfold, Akershus, Buskerud, Vestfold, Telemark, Troms, Finnmark |
+| Norway | ~~the 7 counties re-established in 2024~~ | Done in batch 8d: the map now has the 15 counties of 2024; 12 flags shown, 3 withheld |
 | Malta | 10 local councils | |
 | Guatemala | 22 departments | |
 | North Macedonia | ~80 municipalities | |
@@ -1244,7 +1346,7 @@ The 35 curated-override flags listed in §5.
 - **Latvia**: divisions are pre-2021 municipalities, and many old codes are named "Valmiera".
 - **Vietnam**: provinces were merged in June 2025.
 - **Indonesia**: six provinces created in 2022 are missing.
-- **Norway**: counties changed in 2024.
+- ~~**Norway**: counties changed in 2024.~~ Fixed in batch 8d.
 - **Nepal**: the zones were dissolved in 2015.
 - **Kenya**: pre-2013 provinces.
 - **Luxembourg**: districts were abolished in 2015.

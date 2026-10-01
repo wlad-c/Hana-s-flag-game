@@ -61,6 +61,9 @@ const LATEST_ENUMERATION_YEAR = {
   // GUS Narodowy Spis Powszechny 2021 (NSP 2021) — supersedes the 2011 census
   // and interim estimates. Keyed to the ISO letter codes the app uses.
   PL: { year: 2021, source: "Poland GUS Narodowy Spis Powszechny 2021 (NSP 2021)" },
+  // SSB table 07459, population 1 January 2026, for the 15 counties in force since
+  // 2024 (Svalbard from SSB's Svalbard register, same date). Batch 8d.
+  NO: { year: 2026, source: "Statistics Norway (SSB) table 07459, population 1 January 2026" },
 };
 
 /**
@@ -73,7 +76,7 @@ const LATEST_ENUMERATION_YEAR = {
 // MX is deliberately excluded: it carries the legacy MX-DIF code (pre-2016 name
 // for Mexico City) as a duplicate of MX-CMX, which double-counts ~9.2M in a naive
 // subdivision sum. Its freshness floor still applies.
-const SUM_CHECK = new Set(["MY", "MN", "PL"]);
+const SUM_CHECK = new Set(["MY", "MN", "PL", "NO"]);
 const SUM_TOLERANCE = 1.1; // allow 10% for mixed reference years / rounding
 
 function parseSubdivisions(text) {

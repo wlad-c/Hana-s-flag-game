@@ -1096,9 +1096,9 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "NL-SX": {"name":"Philipsburg","lon":-63.0433,"lat":18.0242},
 
   // ── NO ──
-  "NO-01": {"name":"Sarpsborg","lon":11.2028,"lat":59.2906},
   "NO-21": {"name":"Longyearbyen","lon":15.6333,"lat":78.2167},
   "NO-22": {"name":"Olonkinbyen","lon":-8.715,"lat":70.922},
+  "NO-31": {"name":"Sarpsborg","lon":11.2028,"lat":59.2906},
 
   // ── NR ──
   "NR-02": {"name":"Anabar","lon":166.9533,"lat":-0.5084},

@@ -372,7 +372,7 @@ export const IDENTICAL_SUBDIVISION_FLAG_GROUPS: readonly IdenticalFlagGroup[] = 
     ],
   },
   {
-    codes: ["NO-03", "capital:NO-02"],
+    codes: ["NO-03", "capital:NO-32"],
     note: "Oslo is a county of its own and the administrative centre of Akershus.",
     sources: [
       "https://en.wikipedia.org/wiki/Akershus",
