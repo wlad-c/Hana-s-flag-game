@@ -16,7 +16,7 @@ This document is the shared audit and implementation record. The detailed JSON f
 
 | Agent | Assigned or observed role | Last documented state | Scope / handoff |
 |---|---|---|---|
-| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F93–F103 recorded; F61 rechecked and Japan Times audit error withdrawn; NZ national-symbol evidence saved. UN/flow primary comparison and browser visuals blocked. | Latest application baseline `044711a5`; public build `71e380b` verified. Audit-only edits. Opus remediation milestones remain separately recorded. |
+| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F104–F107 narrative recovered; F105 names and F106 exact public asset verified; F108 open. All 29 new Norway population values match SSB. | Latest application baseline `081f2dea`; observed public build `38b87bc`. F104/SF-17, F107 wording dispute and broader unchecked coverage remain open; preserve other agents' implementation records. |
 | Opus 5.5 (Cursor cloud agent) | Implement findings and continue audit; see detailed remediation log | Corrections are now on `main`, as documented in Opus's log and observed through `7c75c318`; earlier PR #1709 branch-only state is superseded. | R01, R02, … remain Opus finding IDs. Independent verification and deployment are recorded separately per finding; do not treat merged as verified. |
 | Claude Code, sub-national flag audit (branch `claude/subnational-flags-audit-pc1zvz`) | Audits and fixes sub-national and capital-city flags, their explainers, the capitals behind them and the Sub-national flags quiz; ships by PR, each confirmed live | Batches 1–6a live (#1703–#1708); batch 6b live (#1717, `6d8406e`); batch 7 claimed | Method, status and the claimable SF-01…SF-16 queue: [`SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md`](SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md). Evidence per decision: [`SUBNATIONAL_FLAG_AUDIT_2026-09.md`](SUBNATIONAL_FLAG_AUDIT_2026-09.md). Any agent may claim an SF item there and here. |
 
@@ -40,6 +40,8 @@ Preserve existing finding IDs and dated evidence. Mark a finding's resolution al
 | Updated (timezone stated) | Agent | Finding / bounded scope | Status | Action and reason | Commit / validation / remaining work |
 |---|---|---|---|---|---|
 | 2026-10-01 22:30 Melbourne / 12:30 UTC | Claude Code (sub-national flag audit) | Batch 8f: Malta's local councils without a flag (SF-06) | Verified in the running app: the 9 new council flags paint, and Birżebbuġa, Marsaskala, Mdina (with its myth-versus-fact section) and Mellieħa render their explainers; Kalkara, Marsaxlokk and Paola show no flag and no explainer; no page errors, no remote flag requests. `flags:check` and `npm run build` pass; merge pending | 12 of Malta's 68 councils had never had a flag bundled. 9 now show the Commons banner of arms, each compared with FOTW's image of the flag (Strickland, on FOTW: a council's flag is a banner of its arms); 4 sourced explainers (Birżebbuġa, Marsaskala, Mdina with the Count Roger myth separated, Mellieħa); 5 bare-blazon flags logged as omissions after English and Maltese Wikipedia were checked. Kalkara and Paola withheld (no free file of the current flag); Marsaxlokk withheld (the only file draws the azure saltire violet). | PR pending; evidence in the ledger's Batch 8f section. |
+| 2026-10-01, Melbourne | Codex | F105/F106 independent remediation checks; new F108; Norway population comparison | Independently verified — bounded checks; F108 open | Restored missing F104–F107 narrative (`38b87bc`); exact corrected Khmelnytskyi asset publicly served; Guyana names corrected; all 29 Norwegian county/municipal values match SSB. BIOT still serves the pre-October-2025 artwork beside the new Tudor Crown caption. | Evidence `15c5fa2`; application `081f2dea`, public `38b87bc`. No application edits. F104/SF-17 and F107 wording disagreement remain open; broader audit incomplete. |
+| 2026-10-01 22:13 Melbourne / 12:13 UTC (request time) | Codex | Restore September 30 F104–F107 narrative; independently review fixes and batches 8a–8e through `081f2dea` | Investigating | Recovered evidence `c95ff6f`; preserve subsequent implementation entries. F107 legal-event wording remains disputed, F104 queued as SF-17. | Audit/documentation only. No application edits. |
 | 2026-10-01 12:45 Melbourne / 02:45 UTC | Claude Code (sub-national flag audit) | Batch 8e: capital flags for Norway's county seats (SF-18) | Verified in the running app: the capital cards for Stavanger, Bodø, Drammen, Hamar, Steinkjer, Tromsø and Vadsø paint their flags with sourced explainers and 2026 populations; Molde, Kristiansand, Skien and Tønsberg show none; no page errors or remote requests. Capital-flag, collision, name-agreement, transparency and ratio checks pass. Live (`081f2de`, 1:03 PM AEST 1 October 2026) | Only Sarpsborg, Oslo and Bergen had capital flags: the pipeline reads Norwegian town items, which carry no P41. Seven municipal flags added, each checked against FOTW and Lovdata or the National Archives (Steinkjer flies Verran's flag since the 2020 merger); four withheld because no source documents the flag flown today. | #1738 `081f2de`; evidence in the ledger's Batch 8e section. |
 | 2026-10-01 11:45 Melbourne / 01:45 UTC | Claude Code (sub-national flag audit) | Batch 8d: Norway's 2024 counties | Verified in the running app: the sub-national grid lists the 15 counties of 2024 (no 2019 county names), 12 county flags paint (Akershus at its portrait ratio, Trøndelag with its white field), Innlandet, Telemark and Vestland show none; 15 panels probed with their explainers, 2026 populations and capitals (Sarpsborg, Oslo and Bergen with their flags); no page errors, no remote requests. `flags:check` and `npm run build` pass. Live (`438923f`, 11:58 AM AEST 1 October 2026) | Norway's map still showed the 19 counties abolished in 2020. It now has the 15 counties of 2024 from Kartverket's boundaries (checked against Kartverket's API), with re-keyed meta, capitals, SSB 1 January 2026 populations (summing to the national total) and capital flags. 7 county flags added and 2 corrected; 3 withheld with reasons; 8 explainers added and 2 corrected. Saransk's capital flag re-encoded to UTF-8 so the capital-flag checks read it. | #1737 `438923f`; evidence in the ledger's Batch 8d section. |
 | 2026-10-01 03:53 Melbourne / 17:53 UTC | Claude Code (sub-national flag audit) | Batch 8c: explainers for the last 30 shown sub-national flags | Live (`e095aa4`, 10:42 AM AEST 1 October 2026); verified in the running app (16 views probed: 15 render the new explainer beside a painted flag; New Taipei's view does not open because Taiwan has no country panel, logged under SF-16) | 30 sourced explainers for British, Australian and New Zealand territories, the Faroes, Åland, Taiwan and Tibet (under China), Kosovo, Western Sahara, Northern Cyprus, Paris, Érd and New Taipei; myth-versus-fact for Kosovo's stars and Northern Cyprus's stripes. `subdiv-remaining` reads 0 and the omission audit is clean. | #1736 `e095aa4`; evidence in the ledger's Batch 8c section. |
@@ -154,6 +156,87 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
 - The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
 - Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
+
+## Independent verification and territorial-flag follow-up — 1 October 2026
+
+**Codex; inspected application `081f2dea16cda54ede57414379bd53b6ed4bdc37`.** Five new application batches (#1734–#1738) plus two audit commits since `3528c20d`: seven commits / 91 changed files inventoried. Supporting evidence: [INDEPENDENT_DELTA_VERIFICATION_2026-10-01.json](audit/INDEPENDENT_DELTA_VERIFICATION_2026-10-01.json), commit `15c5fa2`. No application changes by Codex.
+
+### F108 — BIOT's new Tudor Crown caption accompanies the superseded flag artwork (P2)
+
+**Confirmed repository and publicly served asset mismatch.** The new `FLAG_MEANINGS["GB-IO"]` in `src/data/flagMeanings.ts` describes a Tudor Crown. However, `src/api/subdivisions.ts` maps GB-IO to `public/flags/io.svg`, which still shows the earlier St Edward's Crown with red lining and coloured jewels.
+
+The [BIOT administration's current flag page](https://www.biot.gov.io/governance/flag-and-crest/) explicitly dates the formal update to **October 2025** and specifies a simple gold Tudor Crown without red velvet or jewels. Its [current official artwork](https://www.biot.gov.io/wp-content/uploads/BIOT-Flag-Tudor-Crown.jpg) was downloaded and visually compared with the exact bundled SVG.
+
+The public `/flags/io.svg` is byte-identical to the old repository image: SHA-256 `aeb872cb50192585fee2f29a9bf4c6fb81605ccd110386136c2f08ed8437a1a1`. Thus the stale design is still available to users; this check did not inspect the rendered live GB-IO panel.
+
+**Recommendation:** replace the current-use asset with a faithful, provenance-bound rendition of the October 2025 design. Keep the older flag only with an explicit historical date range. Distinguish the original 1990 grant from the later design change, and check every shared IO/GB-IO image reference. This finding concerns artwork/version accuracy; it makes no determination about treaty commencement or sovereignty.
+
+**Status: open, implementation unclaimed.** Coordinate with the subdivision/territorial flag agent before modifying shared assets.
+
+### Independent remediation results
+
+| Item | Independently observed result | Remaining limit |
+|---|---|---|
+| F106 — Khmelnytskyi | **Exact artwork correction verified.** Current repository PNG and publicly served PNG both match the previously independently viewed council raster: SHA-256 `fee6fad8c229c2bb2ca4e8bdbd9cd5b7995528160fae0186aa051e74f6ec7cff`. Re-rendered image has 16 rays. | Public asset verified by HTTP; no fresh browser screenshot pass. |
+| F105 — Guyana centres | Both capital generator/data paths now select **Triumph** and **Fort Wellington**. Georgetown remains the national capital. Names agree with prior primary-source evidence. | New 2012 populations (3,788 and 33) and coordinates not independently certified here. Primary village ZIP located, contents not read. |
+| F104 — co-capitals | Implementation remains queued as **SF-17**; Norway adds Agder/Trøndelag role cases in the implementing agent's ledger. | Open; a passing name-agreement gate does not resolve this. |
+| F107 — La Trinidad | Law independently re-read; it converts an existing municipal district into a regular municipality. Other agent reports NHCP wording supports the caption. | Wording qualification/disagreement retained. Do not represent it as a wrong year or wholly fabricated seal explanation. |
+| Capital-name gate | Pass: **1,224 quiz capitals**; **259 non-quiz disagreements** remain. | Internal name/prefix consistency, not universal factual identity. |
+
+### Norway population comparison — positive primary verification
+
+Independently queried Statistics Norway's [table 07459](https://www.ssb.no/en/statbank1/table/07459/) via its [official API](https://data.ssb.no/api/v0/en/table/07459/), selecting 2026 and summing both sexes and all 106 age categories. **All 29 values agree:** the 15 county populations in `subdivisionPopulation.ts` and 14 capital municipalities in the generator overrides. The 14 generated capital-card population values also agree. The 15 counties sum exactly to the source's national **5,627,400**.
+
+The evidence JSON preserves the request, response SHA-256 and every app/source comparison. This verifies **1 January 2026 municipal/county counts**; it does not establish urban-settlement populations, current-quarter totals, complete capital roles, legal boundary geometry or flag authenticity. Oslo's national-capital data is outside the 14 capital-override comparisons.
+
+### Source conflicts and unfinished checks retained
+
+- **Norfolk Island (AU-NF):** the new caption's 6 June 1979 “adopted” date needs an event qualifier. [PM&C](https://www.pmc.gov.au/resources/australian-symbols-booklet/state-and-territory-symbols/symbols-norfolk-island) gives proclamation on 11 January 1980; the [Act's commencement table](https://www.legislation.gov.au/C2015Q00187/asmade/2015-06-18/text/original/pdf) gives 17 January 1980. Council approval, proclamation and statutory commencement are distinct. Do not silently substitute one unqualified date for another; original council/proclamation records still need reconciliation.
+- **Tokelau (NZ-TK):** [government documentation](https://www.tokelau.org.nz/About%2BUs/Government/Tokelau%2BFlag%2Band%2BNational%2BSymbol.html) confirms the 2009 royal licence and canoe/navigation meanings. The caption's “in place of New Zealand's” wording needs a protocol/status check. The indexed official yearbook says the flags fly alongside each other, but its full PDF exceeded the web reader's limit; no new definitive finding allocated.
+- **Møre og Romsdal (NO-15):** the bundled image is a blue banner of the three ships. The implementing agent already records an older FOTW report of a white flag bearing a shield. No primary current flown-flag evidence obtained here; neither version is universally certified.
+- Guatemala's full artwork/source set, all territorial caption claims, Norway geometry and remaining flag versions still require independent verification. The 91-file inventory is not a 91-file factual clearance.
+
+**Deployment observation:** `check-live-build.mjs --print` reported public build `38b87bc`, timestamp `2026-10-01T12:15:39.800Z`, bundle `assets/index-DmxWmwLE.js`. Exact public asset checks are recorded separately above. The comprehensive audit remains incomplete; retain all earlier unresolved findings and ownership records.
+
+
+## Recovered September 30 findings and October 1 continuation
+
+**Codex checkpoint, 1 October 2026, 22:13 Melbourne / 12:13 UTC (request time).** The September 30 evidence was successfully committed as `c95ff6f`, but the accompanying Markdown update was not executed because automatic approval review hit a usage limit. This section restores the missing narrative, preserving the subsequent Claude Code implementation entries above.
+
+The [September 30 evidence ledger](audit/SUBNATIONAL_DELTA_VERIFICATION_2026-09-30.json) records application revision `3528c20d`, a 23-commit / 127-file inventory, 336/336 unchanged parsed geometries across seven changed country files, 37 new-caption image screens, and all ten Guyana regional-centre name comparisons. The capital-name gate passed for 1,223 quiz capitals but reported 261 non-quiz disagreements. These are bounded checks, not universal factual certification. Browser checks then observed builds `3528c20` and `42eeeea`.
+
+### F104 — Single-capital pins omit co-capitals and distributed seats (P2)
+
+At the inspected revision, Learn displayed Cesena alone for Forlì-Cesena, Pesaro alone for Pesaro e Urbino, and Ponta Delgada alone for the Azores. Cesena and Pesaro are valid capitals; the defect is omission of other legitimate capitals/roles.
+
+The [province's January 2024 announcement](https://www.provincia.fc.it/it/news/121361/da-oggi-martedi-30-gennaio-la-citta-di-cesena-e-ufficialmente-co-capoluogo-della-provincia-forli-cesena) expressly retains Forlì alongside Cesena. The [current Pesaro e Urbino statute](https://www.provincia.pu.it/fileadmin/grpmnt/1057/SegretarioGenerale/STATUTO_COORDINATO_-_ULTIMA_MODIFICA_2025.pdf), Art. 4(1), printed p. 5, names both cities as co-capitals while locating the provincial seat in Pesaro. The [Azores statute](https://diariodarepublica.pt/dr/legislacao-consolidada/lei/1980-34507075), Arts. 25/76, seats the legislature in Horta and distributes regional government departments across Angra do Heroísmo, Horta and Ponta Delgada.
+
+Use sourced lists of city identities, roles and validity dates in the generators, data, cards and markers. A representative flag card must retain its city's identity without implying exclusivity. String agreement alone cannot establish capital correctness. **October 1 status:** Claude Code has queued the model change as SF-17; still open.
+
+### F105 — Guyana Region 4's capital was wrong and Region 5's was missing (P2)
+
+At `3528c20d`, GY-DE displayed Georgetown while its capital-details record said Paradise; GY-MA had no displayed capital. The [Ministry of Education table](https://education.gov.gy/web2/index.php/ngsa-2022/4596-social-studies-made-easy-revised-edition/file), printed p. 53/PDF index 64, gives **Triumph** and **Fort Wellington** as the regional centres. Eight other regional centre names agree with the app. [Government reporting](https://dpi.gov.gy/substantial-upgrades-slated-for-region-four-roads-bridges/) corroborates the RDC at Triumph. Both failures were observed in the live panels.
+
+**October 1 status:** implemented by Claude Code in #1735/`43d1594`, with 2012 village census populations added. Independent verification of the implementation is being performed below. Name, coordinate, population and deployment verification are separate; the original audit did not certify new population values.
+
+### F106 — Khmelnytskyi replacement artwork had 12 rays instead of 16 (P2)
+
+The `ua-68.png` introduced in #1733 showed twelve triangular rays, despite its caption saying sixteen. The [council's specification](https://www.khm.gov.ua/uk/pro-hromadu/symvoly) and independently viewed [official image](https://www.khm.gov.ua/sites/default/files/flag_0.png) specify/show sixteen. The live capital card loaded the affected image. The 2017 distinction between city flag and mayor's standard was supported; the replacement drawing was not faithful.
+
+**October 1 status:** Claude Code replaced it with the council raster in #1735/`43d1594`. Independently verify the asset hash against the previously captured official SHA-256 `fee6fad8c229c2bb2ca4e8bdbd9cd5b7995528160fae0186aa051e74f6ec7cff`. Do not change the correct sixteen-ray caption to accommodate incorrect artwork.
+
+### F107 — La Trinidad's municipal conversion is described as the town's founding (P3; wording disagreement open)
+
+The new PH-BEN caption says the town was founded in 1950. [Republic Act 531, 16 June 1950](https://lawphil.net/statutes/repacts/ra1950/ra_531_1950.html), sections 1–2, converts an existing municipal district into a regular municipality and continues its officials. “Became a regular municipality in 1950” precisely identifies that event.
+
+**October 1 reconciliation:** Claude Code reports that the NHCP seal description supports the existing wording. This supports attribution of the seal explanation, but does not remove the legal distinction between municipal conversion and settlement origin. Codex re-read the act; NHCP direct retrieval remains unavailable to this auditor. Keep the finding as a historical-wording qualification/disagreement, not a claim that 1950 is the wrong year or that the entire seal explainer is fabricated.
+
+### Recurring findings and current scope
+
+F93 persisted in the redesigned live Travel & migration control: “Living abroad now” and “live today” appeared beside a 2020 legend. Update `TravelMigrationMapControl.tsx`, not merely its removed predecessor. F98 was reproduced when an unavailable local deployed commit caused a false “behind” conclusion; fetching it resolved the ancestry test, with no deployment repair required.
+
+**Current claim:** Codex is independently reviewing corrections F105/F106 and new batches 8a–8e through `081f2dea` (Guatemala, territorial explainers, Norway counties/capital flags), audit/documentation only. Preserve Claude Code and Opus implementation ownership. Previous unchecked claims, administrative vintages, remaining caption/source verification and UN/flow matrix comparisons remain open.
+
 
 ## New Zealand national-symbol verification — 28 September 2026
 

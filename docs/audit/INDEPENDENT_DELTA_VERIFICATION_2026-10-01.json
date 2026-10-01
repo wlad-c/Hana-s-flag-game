@@ -1,0 +1,605 @@
+{
+  "date": "2026-10-01",
+  "agent": "Codex",
+  "revision": "081f2dea16cda54ede57414379bd53b6ed4bdc37",
+  "applicationEdits": false,
+  "deltaBase": "3528c20d1cd451b50770cf64bc7f0e61c0a1b9b5",
+  "changedFiles": [
+    "M\tdocs/LEARN_CLAIM_VERIFICATION_2026-09-20.md",
+    "M\tdocs/SUBNATIONAL_FLAG_AUDIT_2026-09.md",
+    "M\tdocs/SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md",
+    "A\tdocs/audit/SUBNATIONAL_DELTA_VERIFICATION_2026-09-30.json",
+    "A\tpublic/capital-flags/gt-hu.png",
+    "D\tpublic/capital-flags/gt-hu.svg",
+    "D\tpublic/capital-flags/gt-pe.png",
+    "A\tpublic/capital-flags/gt-qz.png",
+    "D\tpublic/capital-flags/gt-qz.svg",
+    "D\tpublic/capital-flags/gt-sm.svg",
+    "A\tpublic/capital-flags/no-11.gif",
+    "D\tpublic/capital-flags/no-16.svg",
+    "A\tpublic/capital-flags/no-18.png",
+    "R100\tpublic/capital-flags/no-01.gif\tpublic/capital-flags/no-31.gif",
+    "R100\tpublic/capital-flags/no-02.svg\tpublic/capital-flags/no-32.svg",
+    "A\tpublic/capital-flags/no-33.png",
+    "A\tpublic/capital-flags/no-34.png",
+    "R100\tpublic/capital-flags/no-12.svg\tpublic/capital-flags/no-46.svg",
+    "A\tpublic/capital-flags/no-50.gif",
+    "A\tpublic/capital-flags/no-55.png",
+    "A\tpublic/capital-flags/no-56.png",
+    "M\tpublic/capital-flags/ru-mo.svg",
+    "M\tpublic/capital-flags/ua-68.png",
+    "M\tpublic/flags/sources.json",
+    "D\tpublic/flags/sub/GT/GT-01.svg",
+    "D\tpublic/flags/sub/GT/GT-02.jpg",
+    "D\tpublic/flags/sub/GT/GT-03.svg",
+    "D\tpublic/flags/sub/GT/GT-14.png",
+    "D\tpublic/flags/sub/GT/GT-15.png",
+    "D\tpublic/flags/sub/GT/GT-17.png",
+    "D\tpublic/flags/sub/GT/GT-19.png",
+    "R100\tpublic/flags/sub/GT/GT-16.svg\tpublic/flags/sub/GT/GT-AV.svg",
+    "A\tpublic/flags/sub/GT/GT-CM.png",
+    "A\tpublic/flags/sub/GT/GT-CQ.png",
+    "A\tpublic/flags/sub/GT/GT-ES.svg",
+    "A\tpublic/flags/sub/GT/GT-HU.png",
+    "A\tpublic/flags/sub/GT/GT-IZ.png",
+    "R100\tpublic/flags/sub/GT/GT-21.svg\tpublic/flags/sub/GT/GT-JA.svg",
+    "A\tpublic/flags/sub/GT/GT-JU.png",
+    "A\tpublic/flags/sub/GT/GT-PE.png",
+    "A\tpublic/flags/sub/GT/GT-PR.png",
+    "A\tpublic/flags/sub/GT/GT-QZ.png",
+    "A\tpublic/flags/sub/GT/GT-RE.png",
+    "A\tpublic/flags/sub/GT/GT-SA.png",
+    "A\tpublic/flags/sub/GT/GT-SM.png",
+    "A\tpublic/flags/sub/GT/GT-SR.png",
+    "A\tpublic/flags/sub/GT/GT-SU.png",
+    "A\tpublic/flags/sub/GT/GT-TO.png",
+    "A\tpublic/flags/sub/NO/NO-11.png",
+    "D\tpublic/flags/sub/NO/NO-11.svg",
+    "A\tpublic/flags/sub/NO/NO-31.png",
+    "A\tpublic/flags/sub/NO/NO-32.png",
+    "A\tpublic/flags/sub/NO/NO-33.png",
+    "D\tpublic/flags/sub/NO/NO-34.svg",
+    "D\tpublic/flags/sub/NO/NO-38.svg",
+    "A\tpublic/flags/sub/NO/NO-39.png",
+    "A\tpublic/flags/sub/NO/NO-42.png",
+    "D\tpublic/flags/sub/NO/NO-46.svg",
+    "A\tpublic/flags/sub/NO/NO-50.png",
+    "D\tpublic/flags/sub/NO/NO-50.svg",
+    "D\tpublic/flags/sub/NO/NO-54.svg",
+    "A\tpublic/flags/sub/NO/NO-55.png",
+    "A\tpublic/flags/sub/NO/NO-56.png",
+    "M\tpublic/subdivisions/NO.json",
+    "M\tpublic/world-subnational-borders.json",
+    "M\tscripts/build-capital-details.mjs",
+    "M\tscripts/build-cities.mjs",
+    "M\tscripts/build-subdivision-capitals.mjs",
+    "M\tscripts/build-subdivision-meta.mjs",
+    "M\tscripts/build-subdivision-population.mjs",
+    "M\tscripts/check-flag-meanings.mjs",
+    "M\tscripts/check-population-freshness.mjs",
+    "M\tscripts/data/capital-flag-rejected.json",
+    "M\tscripts/data/capital-flag-sources.json",
+    "M\tscripts/data/capital-meaning-omitted.txt",
+    "M\tscripts/data/subdiv-meaning-omitted.txt",
+    "M\tscripts/data/wikidata-subdivision-code-aliases.mjs",
+    "M\tscripts/download-flags.mjs",
+    "M\tsrc/api/subdivisions.ts",
+    "M\tsrc/data/capitalDetails.ts",
+    "M\tsrc/data/capitalFlags.ts",
+    "M\tsrc/data/cities.ts",
+    "M\tsrc/data/cityFlagMeanings.ts",
+    "M\tsrc/data/flagMeanings.ts",
+    "M\tsrc/data/flagOverlayAspectRatios.ts",
+    "M\tsrc/data/identicalSubdivisionFlags.ts",
+    "M\tsrc/data/sharedCapitalFlags.ts",
+    "M\tsrc/data/subdivisionCapitals.ts",
+    "M\tsrc/data/subdivisionPopulation.ts",
+    "M\tsrc/lib/subdivisionFlagIndex.ts",
+    "M\tsrc/lib/subdivisionMeta.ts"
+  ],
+  "commits": [
+    "081f2dea16cda54ede57414379bd53b6ed4bdc37 Subnational flag audit batch 8e: capital flags for Norway's county seats (#1738)",
+    "438923fb766987b47892b7c5bebb1a4ad179175c Sub-national audit batch 8d: Norway's 15 counties of 2024 (#1737)",
+    "e095aa4016c6ef2422dba53acb617236f0da2349 Sub-national audit batch 8c: explain the last 30 shown sub-national flags (#1736)",
+    "43d1594a439d6c3cdc11db09a3864ab140a79036 Sub-national audit batch 8b: Khmelnytskyi's flag and Guyana's regional capitals (#1735)",
+    "bdf50260140b1f5fe694aac6395e94f6642d4aba Sub-national audit batch 8a: Guatemala's department flags, Mexico City, explainer-key gate (#1734)",
+    "c95ff6f7068d609bddbd336fa02f70f7324a0333 docs: preserve independent September 30 geography and artwork audit evidence",
+    "42eeeeaaee489885a5f959795bd1572e65ea4118 docs: claim independent review of September 30 geography delta"
+  ],
+  "scope": "Independent verification of selected remediation and new territorial captions; primary Norway population comparison. Complete inventory is not complete factual certification.",
+  "F105": {
+    "status": "capital identity correction independently verified in repository; new population figures and coordinates not independently certified",
+    "mapBlock": "Georgetown blocked as GY-DE regional capital; remains national capital",
+    "correctedNames": {
+      "GY-DE": "Triumph",
+      "GY-MA": "Fort Wellington"
+    },
+    "populationCaveat": "2012 values 3788 and 33 are documented by implementer. Primary village ZIP located but contents not read in this pass.",
+    "sourceCatalogue": "https://statisticsguyana.gov.gy/subjects/demography-vital-and-social-statistics/"
+  },
+  "F106": {
+    "status": "independently verified exact asset correction; public asset verified by HTTP, not browser rendering",
+    "localSha256": "fee6fad8c229c2bb2ca4e8bdbd9cd5b7995528160fae0186aa051e74f6ec7cff",
+    "liveSha256": "fee6fad8c229c2bb2ca4e8bdbd9cd5b7995528160fae0186aa051e74f6ec7cff",
+    "previouslyVerifiedOfficialSha256": "fee6fad8c229c2bb2ca4e8bdbd9cd5b7995528160fae0186aa051e74f6ec7cff",
+    "source": "https://www.khm.gov.ua/sites/default/files/flag_0.png",
+    "method": "Hash equality with the independently viewed official image captured September30; current bundled image rendered again and sixteen rays observed."
+  },
+  "F107": {
+    "status": "historical wording disagreement remains open",
+    "law": "https://lawphil.net/statutes/repacts/ra1950/ra_531_1950.html",
+    "observation": "Sections1-2 convert an existing municipal district into a regular municipality and continue officials. NHCP seal page supports wording according to implementer, but direct access again failed for Codex. Do not imply all seal symbolism false."
+  },
+  "F108": {
+    "status": "confirmed artwork-version/caption mismatch",
+    "code": "GB-IO",
+    "captionFile": "src/data/flagMeanings.ts",
+    "asset": "public/flags/io.svg",
+    "mapping": "src/api/subdivisions.ts maps GB-IO to flags/io.svg",
+    "localSha256": "aeb872cb50192585fee2f29a9bf4c6fb81605ccd110386136c2f08ed8437a1a1",
+    "liveSha256": "aeb872cb50192585fee2f29a9bf4c6fb81605ccd110386136c2f08ed8437a1a1",
+    "officialImageSha256": "e25a50cfb2fd33abfaac02594dc79eaffbbeab381b4cdb5b7727701e78bb5d76",
+    "primaryPage": "https://www.biot.gov.io/governance/flag-and-crest/",
+    "primaryImage": "https://www.biot.gov.io/wp-content/uploads/BIOT-Flag-Tudor-Crown.jpg",
+    "observation": "New caption names Tudor Crown. Bundled and publicly served SVG still contains red velvet and jewelled St Edwards crown. Primary administration states October2025 update to simple gold Tudor Crown without red velvet/jewels. Both images downloaded and viewed.",
+    "recommendation": "Replace current-use asset and pin provenance; retain former image only as explicitly dated historical variant. Record October2025 design update, distinct from original1990 grant. Recheck all reused IO/GB-IO appearances.",
+    "limitation": "No sovereignty or treaty commencement judgment; no rendered live panel check this pass."
+  },
+  "NorwayPopulation": {
+    "endpoint": "https://data.ssb.no/api/v0/en/table/07459/",
+    "query": {
+      "query": [
+        {
+          "code": "Region",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "0",
+              "32",
+              "03",
+              "46",
+              "11",
+              "50",
+              "34",
+              "42",
+              "31",
+              "15",
+              "33",
+              "39",
+              "18",
+              "40",
+              "55",
+              "56",
+              "1103",
+              "1506",
+              "1804",
+              "3105",
+              "0301",
+              "3301",
+              "3403",
+              "3905",
+              "4003",
+              "4204",
+              "4601",
+              "5006",
+              "5501",
+              "5607"
+            ]
+          }
+        },
+        {
+          "code": "Kjonn",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "2",
+              "1"
+            ]
+          }
+        },
+        {
+          "code": "Alder",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "000",
+              "001",
+              "002",
+              "003",
+              "004",
+              "005",
+              "006",
+              "007",
+              "008",
+              "009",
+              "010",
+              "011",
+              "012",
+              "013",
+              "014",
+              "015",
+              "016",
+              "017",
+              "018",
+              "019",
+              "020",
+              "021",
+              "022",
+              "023",
+              "024",
+              "025",
+              "026",
+              "027",
+              "028",
+              "029",
+              "030",
+              "031",
+              "032",
+              "033",
+              "034",
+              "035",
+              "036",
+              "037",
+              "038",
+              "039",
+              "040",
+              "041",
+              "042",
+              "043",
+              "044",
+              "045",
+              "046",
+              "047",
+              "048",
+              "049",
+              "050",
+              "051",
+              "052",
+              "053",
+              "054",
+              "055",
+              "056",
+              "057",
+              "058",
+              "059",
+              "060",
+              "061",
+              "062",
+              "063",
+              "064",
+              "065",
+              "066",
+              "067",
+              "068",
+              "069",
+              "070",
+              "071",
+              "072",
+              "073",
+              "074",
+              "075",
+              "076",
+              "077",
+              "078",
+              "079",
+              "080",
+              "081",
+              "082",
+              "083",
+              "084",
+              "085",
+              "086",
+              "087",
+              "088",
+              "089",
+              "090",
+              "091",
+              "092",
+              "093",
+              "094",
+              "095",
+              "096",
+              "097",
+              "098",
+              "099",
+              "100",
+              "101",
+              "102",
+              "103",
+              "104",
+              "105+"
+            ]
+          }
+        },
+        {
+          "code": "ContentsCode",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "Personer1"
+            ]
+          }
+        },
+        {
+          "code": "Tid",
+          "selection": {
+            "filter": "item",
+            "values": [
+              "2026"
+            ]
+          }
+        }
+      ],
+      "response": {
+        "format": "json"
+      }
+    },
+    "responseSha256": "4b993eeeb06249648fbf17cf340ee487eed4c55806c1893b4a222dd933c90fac",
+    "nationalTotal": 5627400,
+    "countySum": 5627400,
+    "checks": [
+      {
+        "region": "32",
+        "app": 749207,
+        "ssb": 749207,
+        "matches": true
+      },
+      {
+        "region": "03",
+        "app": 728714,
+        "ssb": 728714,
+        "matches": true
+      },
+      {
+        "region": "46",
+        "app": 658342,
+        "ssb": 658342,
+        "matches": true
+      },
+      {
+        "region": "11",
+        "app": 508922,
+        "ssb": 508922,
+        "matches": true
+      },
+      {
+        "region": "50",
+        "app": 489166,
+        "ssb": 489166,
+        "matches": true
+      },
+      {
+        "region": "34",
+        "app": 379488,
+        "ssb": 379488,
+        "matches": true
+      },
+      {
+        "region": "42",
+        "app": 323930,
+        "ssb": 323930,
+        "matches": true
+      },
+      {
+        "region": "31",
+        "app": 316448,
+        "ssb": 316448,
+        "matches": true
+      },
+      {
+        "region": "15",
+        "app": 273169,
+        "ssb": 273169,
+        "matches": true
+      },
+      {
+        "region": "33",
+        "app": 272981,
+        "ssb": 272981,
+        "matches": true
+      },
+      {
+        "region": "39",
+        "app": 259332,
+        "ssb": 259332,
+        "matches": true
+      },
+      {
+        "region": "18",
+        "app": 243272,
+        "ssb": 243272,
+        "matches": true
+      },
+      {
+        "region": "40",
+        "app": 177923,
+        "ssb": 177923,
+        "matches": true
+      },
+      {
+        "region": "55",
+        "app": 171218,
+        "ssb": 171218,
+        "matches": true
+      },
+      {
+        "region": "56",
+        "app": 75288,
+        "ssb": 75288,
+        "matches": true
+      },
+      {
+        "region": "1103",
+        "capitalCode": "NO-11",
+        "app": 151669,
+        "ssb": 151669,
+        "matches": true,
+        "generatedPopulation": 151669,
+        "generatedMatches": true
+      },
+      {
+        "region": "1506",
+        "capitalCode": "NO-15",
+        "app": 33291,
+        "ssb": 33291,
+        "matches": true,
+        "generatedPopulation": 33291,
+        "generatedMatches": true
+      },
+      {
+        "region": "1804",
+        "capitalCode": "NO-18",
+        "app": 53638,
+        "ssb": 53638,
+        "matches": true,
+        "generatedPopulation": 53638,
+        "generatedMatches": true
+      },
+      {
+        "region": "3105",
+        "capitalCode": "NO-31",
+        "app": 60614,
+        "ssb": 60614,
+        "matches": true,
+        "generatedPopulation": 60614,
+        "generatedMatches": true
+      },
+      {
+        "region": "0301",
+        "capitalCode": "NO-32",
+        "app": 728714,
+        "ssb": 728714,
+        "matches": true,
+        "generatedPopulation": 728714,
+        "generatedMatches": true
+      },
+      {
+        "region": "3301",
+        "capitalCode": "NO-33",
+        "app": 106013,
+        "ssb": 106013,
+        "matches": true,
+        "generatedPopulation": 106013,
+        "generatedMatches": true
+      },
+      {
+        "region": "3403",
+        "capitalCode": "NO-34",
+        "app": 33817,
+        "ssb": 33817,
+        "matches": true,
+        "generatedPopulation": 33817,
+        "generatedMatches": true
+      },
+      {
+        "region": "3905",
+        "capitalCode": "NO-39",
+        "app": 60246,
+        "ssb": 60246,
+        "matches": true,
+        "generatedPopulation": 60246,
+        "generatedMatches": true
+      },
+      {
+        "region": "4003",
+        "capitalCode": "NO-40",
+        "app": 56906,
+        "ssb": 56906,
+        "matches": true,
+        "generatedPopulation": 56906,
+        "generatedMatches": true
+      },
+      {
+        "region": "4204",
+        "capitalCode": "NO-42",
+        "app": 119287,
+        "ssb": 119287,
+        "matches": true,
+        "generatedPopulation": 119287,
+        "generatedMatches": true
+      },
+      {
+        "region": "4601",
+        "capitalCode": "NO-46",
+        "app": 294860,
+        "ssb": 294860,
+        "matches": true,
+        "generatedPopulation": 294860,
+        "generatedMatches": true
+      },
+      {
+        "region": "5006",
+        "capitalCode": "NO-50",
+        "app": 24007,
+        "ssb": 24007,
+        "matches": true,
+        "generatedPopulation": 24007,
+        "generatedMatches": true
+      },
+      {
+        "region": "5501",
+        "capitalCode": "NO-55",
+        "app": 79943,
+        "ssb": 79943,
+        "matches": true,
+        "generatedPopulation": 79943,
+        "generatedMatches": true
+      },
+      {
+        "region": "5607",
+        "capitalCode": "NO-56",
+        "app": 5808,
+        "ssb": 5808,
+        "matches": true,
+        "generatedPopulation": 5808,
+        "generatedMatches": true
+      }
+    ]
+  },
+  "capitalNameGate": {
+    "quizCapitals": 1224,
+    "nonQuizMismatches": 259,
+    "exitCode": 0,
+    "output": "Capital cards (not quizzed) whose Wikidata capital differs: 259\n  AE-FU: capital card \"Al Fujayrah\", Wikidata capital \"Fujairah\"\n  AE-RK: capital card \"Ras al Khaymah\", Wikidata capital \"Ras al-Khaimah\"\n  AE-UQ: capital card \"Umm al Qaywayn\", Wikidata capital \"Umm Al Quwain\"\n  AF-BDS: capital card \"Feyzabad\", Wikidata capital \"Fayzabad\"\n  AF-KDZ: capital card \"Kondoz\", Wikidata capital \"Kunduz\"\n  AF-FYB: capital card \"Meymaneh\", Wikidata capital \"Maymana\"\n  AF-BDG: capital card \"Qala i Naw\", Wikidata capital \"Qala e Naw\"\n  AF-URU: capital card \"Tarin Kowt\", Wikidata capital \"Tarinkot\"\n  AF-LAG: capital card \"Mehtar Lam\", Wikidata capital \"Mihtarlam\"\n  AF-LOG: capital card \"Baraki Barak\", Wikidata capital \"Pol-e Alam\"\n  AF-KAP: capital card \"Mahmud-E Eraqi\", Wikidata capital \"Mahmude Raqi\"\n  AF-WAR: capital card \"Mayda Shahr\", Wikidata capital \"Maidan Shar\"\n  AF-BAM: capital card \"Bamian\", Wikidata capital \"Bamyan\"\n  AF-BGL: capital card \"Baghlan\", Wikidata capital \"Pul-e Khomri\"\n  AG-04: capital card \"Saint John's\", Wikidata capital \"St. John's\"\n  AL-09: capital card \"Burrel\", Wikidata capital \"Peshkopi\"\n  AO-ZAI: capital card \"Mbanza-Congo\", Wikidata capital \"M'banza-Kongo\"\n  AO-LNO: capital card \"Lucapa\", Wikidata capital \"Dundo\"\n  AO-BGO: capital card \"Caxito\", Wikidata capital \"Dande\"\n  AR-T: capital card \"Tucumán\", Wikidata capital \"San Miguel de Tucumán\"\n  AU-NF: capital card \"Kingston\", Wikidata capital \"Norfolk Island\"\n  AZ-ZAN: capital card \"Kapan\", Wikidata capital \"Zangilan\"\n  AZ-OGU: capital card \"Oğuz\", Wikidata capital \"Oghuz\"\n  AZ-NX: capital card \"Naxcivan\", Wikidata capital \"Nakhchivan\"\n  AZ-YEV: capital card \"Yevlax\", Wikidata capital \"Yevlakh\"\n  AZ-GOY: capital card \"Goycay\", Wikidata capital \"Goychay\"\n  BD-B: capital card \"Chattogram\", Wikidata capital \"Chittagong\"\n  BD-C: capital card \"Jamalpur\", Wikidata capital \"Dhaka\"\n  BF-GAN: capital card \"Zorgo\", Wikidata capital \"Zorgho\"\n  BG-26: capital card \"Khaskovo\", Wikidata capital \"Haskovo\"\n  BI-MW: capital card \"Gitega\", Wikidata capital \"Mwaro\"\n  BI-KR: capital card \"Karusi\", Wikidata capital \"Karuzi\"\n  BJ-OU: capital card \"Cotonou\", Wikidata capital \"Porto-Novo\"\n  BT-24: capital card \"Wangdue Prodrang\", Wikidata capital \"Wangdue Phodrang\"\n  CG-9: capital card \"Loubomo\", Wikidata capital \"Dolisie\"\n  CH-LU: capital card \"Luzern\", Wikidata capital \"Lucerne\"\n  CI-07: capital card \"Toumodi\", Wikidata capital \"Yamoussoukro\"\n  CN-LN: capital card \"Shenyeng\", Wikidata capital \"Shenyang\"\n  CN-SH: capital card \"Shanghai\", Wikidata capital \"Huangpu District\"\n  CN-TJ: capital card \"Tianjin\", Wikidata capital \"Hexi District\"\n  CN-BJ: capital card \"Beijing\", Wikidata capital \"Tongzhou District\"\n  CN-CQ: capital card \"Chongqing\", Wikidata capital \"Yuzhong District\"\n  CY-03: capital card \"Larnaka\", Wikidata capital \"Larnaca\"\n  CY-02: capital card \"Lemosos\", Wikidata capital \"Limassol Municipality\"\n  DJ-AS: capital card \"Ali Sabih\", Wikidata capital \"Ali Sabieh\"\n  DO-08: capital card \"El Seibo\", Wikidata capital \"Santa Cruz del Seibo\"\n  DO-04: capital card \"Barahona\", Wikidata capital \"Santa Cruz de Barahona\"\n  DZ-13: capital card \"Tlimcen\", Wikidata capital \"Tlemcen\"\n  DZ-14: capital card \"Tiarat\", Wikidata capital \"Tiaret\"\n  EG-JS: capital card \"El Tur\", Wikidata capital \"El-Tor\"\n  EG-PTS: capital card \"Bur Said\", Wikidata capital \"Port Said\"\n  EG-DT: capital card \"Dumyat\", Wikidata capital \"Damietta\"\n  EG-FYM: capital card \"El Faiyum\", Wikidata capital \"Faiyum\"\n  EG-MNF: capital card \"Shibin el Kom\", Wikidata capital \"Shibin Al Kawm\"\n  ES-C: capital card \"Santiago de Compostela\", Wikidata capital \"A Coruña\"\n  ET-SN: capital card \"Awasa\", Wikidata capital \"Hawaasa\"\n  ET-AF: capital card \"Semera\", Wikidata capital \"Asaita\"\n  ET-AM: capital card \"Dese\", Wikidata capital \"Bahir Dar\"\n  FI-09: capital card \"Kouvola\", Wikidata capital \"Kotka\"\n  FR-YT: capital card \"Dzaoudzi\", Wikidata capital \"Mamoudzou\"\n  FR-51: capital card \"Reims\", Wikidata capital \"Châlons-en-Champagne\"\n  FR-95: capital card \"Cergy\", Wikidata capital \"Pontoise\"\n  GA-1: capital card \"Libreville\", Wikidata capital \"Akanda\"\n  GD-03: capital card \"Saint George's\", Wikidata capital \"St. George's\"\n  GR-D: capital card \"Ioanina\", Wikidata capital \"Ioannina\"\n  GR-A: capital card \"Kavala\", Wikidata capital \"Komotini\"\n  GR-H: capital card \"Chalkida\", Wikidata capital \"Lamia\"\n  GR-J: capital card \"Kalamata\", Wikidata capital \"Tripoli\"\n  GR-M: capital card \"Iraklio\", Wikidata capital \"Heraklion\"\n  GR-L: capital card \"Rodos\", Wikidata capital \"Ermoupolis\"\n  GR-K: capital card \"Mitilini\", Wikidata capital \"Mytilene\"\n  GR-F: capital card \"Kerkira\", Wikidata capital \"Corfu\"\n  GT-PR: capital card \"El Progreso\", Wikidata capital \"Guastatoya\"\n  GW-QU: capital card \"Fulacunda\", Wikidata capital \"Buba\"\n  HN-OC: capital card \"Nueva Ocotepeque\", Wikidata capital \"Ocotepeque\"\n  IE-MN: capital card \"Muineachan\", Wikidata capital \"Monaghan\"\n  IE-RN: capital card \"Ros Comain\", Wikidata capital \"Roscommon\"\n  IN-LA: capital card \"Leh\", Wikidata capital \"Kargil\"\n  IN-HP: capital card \"Simla\", Wikidata capital \"Shimla\"\n  IN-PY: capital card \"Puducherry\", Wikidata capital \"Pondicherry\"\n  IN-AN: capital card \"Port Blair\", Wikidata capital \"Srivijayapuram\"\n  IQ-AR: capital card \"Irbil\", Wikidata capital \"Erbil\"\n  IQ-MU: capital card \"As Samawah\", Wikidata capital \"Samawah\"\n  IQ-SU: capital card \"As Sulaymaniyah\", Wikidata capital \"Sulaymaniyah\"\n  IQ-WA: capital card \"Al Kut\", Wikidata capital \"Kut\"\n  IQ-MA: capital card \"Al Amarah\", Wikidata capital \"Amarah\"\n  IQ-AN: capital card \"Ar Ramadi\", Wikidata capital \"Ramadi\"\n  IQ-SD: capital card \"Samarra\", Wikidata capital \"Tikrit\"\n  IQ-BB: capital card \"Al Hillah\", Wikidata capital \"Hillah\"\n  IQ-QA: capital card \"Ad Diwaniyah\", Wikidata capital \"Al Diwaniyah\"\n  IQ-DQ: capital card \"An Nasiriyah\", Wikidata capital \"Nasiriyah\"\n  IT-OG: capital card \"Tortolì\", Wikidata capital \"Lanusei\"\n  JM-03: capital card \"Port Morant\", Wikidata capital \"Morant Bay\"\n  JO-AQ: capital card \"Al Aqabah\", Wikidata capital \"Aqaba\"\n  KH-16: capital card \"Lumphat\", Wikidata capital \"Banlung\"\n  KH-10: capital card \"Kracheh\", Wikidata capital \"Kratié\"\n  KH-13: capital card \"Phnum Tbeng Meanchey\", Wikidata capital \"Phnom Tbeng Meanchey\"\n  KH-9: capital card \"Krong Koh Kong\", Wikidata capital \"Koh Kong\"\n  KH-19: capital card \"Stoeng Treng\", Wikidata capital \"Stung Treng\"\n  KH-4: capital card \"Kompong Chhnang\", Wikidata capital \"Kampong Chhnang\"\n  KH-6: capital card \"Kampong Thum\", Wikidata capital \"Kampong Thom\"\n  KH-5: capital card \"Kampong Spoe\", Wikidata capital \"Chbar Mon\"\n  KP-06: capital card \"Kaesong\", Wikidata capital \"Sariwon\"\n  KP-10: capital card \"Hyeson\", Wikidata capital \"Hyesan\"\n  KP-02: capital card \"Nampo\", Wikidata capital \"Pyongsong\"\n  KW-HA: capital card \"Hawalli\", Wikidata capital \"Hawally\"\n  KZ-MAN: capital card \"Mangyshlak\", Wikidata capital \"Aktau\"\n  KZ-KZY: capital card \"Qyzylorda\", Wikidata capital \"Kyzylorda\"\n  KZ-AKT: capital card \"Aqtobe\", Wikidata capital \"Aktobe\"\n  KZ-KAR: capital card \"Qaraghandy\", Wikidata capital \"Karaganda\"\n  LA-LM: capital card \"Louang Namtha\", Wikidata capital \"Lūang Namthā\"\n  LA-XA: capital card \"Xaignabouri\", Wikidata capital \"Sainyabūlī\"\n  LA-SL: capital card \"Saravan\", Wikidata capital \"Sālavan\"\n  LA-VI: capital card \"Vientiane\", Wikidata capital \"Phōnhōng\"\n  LA-CH: capital card \"Pakxe\", Wikidata capital \"Pāksē\"\n  LA-LP: capital card \"Louangphrabang\", Wikidata capital \"Luang Prabang\"\n  LA-HO: capital card \"Xam Nua\", Wikidata capital \"Xam Neua\"\n  LB-NA: capital card \"Nabatiye et Tahta\", Wikidata capital \"Nabatieh\"\n  LB-JA: capital card \"Saida\", Wikidata capital \"Sidon\"\n  LB-AS: capital card \"Ṭarābulus\", Wikidata capital \"Tripoli\"\n  LB-JL: capital card \"B'abda\", Wikidata capital \"Baabda\"\n  LK-62: capital card \"Puttalan\", Wikidata capital \"Puttalam\"\n  LS-E: capital card \"Mafetang\", Wikidata capital \"Mafeteng\"\n  LS-G: capital card \"Moyeni\", Wikidata capital \"Quthing\"\n  LV-080: capital card \"Ulbroka\", Wikidata capital \"Ropaži\"\n  LY-MQ: capital card \"Marzuq\", Wikidata capital \"Murzuk\"\n  LY-ZA: capital card \"Az Zawiyah\", Wikidata capital \"Zawiya\"\n  MA-14: capital card \"Goulimine\", Wikidata capital \"Guelmim\"\n  MA-16: capital card \"Ad Dakhla\", Wikidata capital \"Dakhla\"\n  MA-02: capital card \"Kenitra\", Wikidata capital \"Oujda\"\n  MA-07: capital card \"Rabat\", Wikidata capital \"Marrakech\"\n  MA-10: capital card \"Safi\", Wikidata capital \"Guelmim\"\n  MA-11: capital card \"Marrakesh\", Wikidata capital \"Marrakech\"\n  MA-05: capital card \"Fez\", Wikidata capital \"Beni Mellal\"\n  MA-12: capital card \"Dakhla\", Wikidata capital \"Beni Mellal\"\n  MD-BD: capital card \"Tiraspol\", Wikidata capital \"Bender\"\n  MM-13: capital card \"Pa-an\", Wikidata capital \"Hpa-An\"\n  MN-071: capital card \"Olgiy\", Wikidata capital \"Ölgii\"\n  MN-043: capital card \"Dund-Us\", Wikidata capital \"Khovd\"\n  MN-063: capital card \"Buyant-Uhaa\", Wikidata capital \"Sainshand\"\n  MN-067: capital card \"Bulgan\", Wikidata capital \"Selenge\"\n  MN-049: capital card \"Suchboatar\", Wikidata capital \"Sükhbaatar\"\n  MN-057: capital card \"Uliastay\", Wikidata capital \"Uliastai\"\n  MN-039: capital card \"Öndörkhaan\", Wikidata capital \"Chinggis City\"\n  MN-047: capital card \"Dzuunmod\", Wikidata capital \"Zuunmod\"\n  MR-11: capital card \"Fderik\", Wikidata capital \"Zouérat\"\n  MR-06: capital card \"Saint-Louis\", Wikidata capital \"Rosso\"\n  MR-09: capital card \"Tidjikdja\", Wikidata capital \"Tidjikja\"\n  MW-CT: capital card \"Karonga\", Wikidata capital \"Chitipa\"\n  MW-MZ: capital card \"Mzuzu\", Wikidata capital \"Mzimba\"\n  MX-CAM: capital card \"Campeche\", Wikidata capital \"San Francisco de Campeche\"\n  MX-DUR: capital card \"Durango\", Wikidata capital \"Victoria de Durango\"\n  MY-03: capital card \"Kota Baharu\", Wikidata capital \"Kota Bharu\"\n  MZ-I: capital card \"Maxixe\", Wikidata capital \"Inhambane\"\n  NA-KU: capital card \"Outjo\", Wikidata capital \"Opuwo\"\n  NA-HA: capital card \"Rehoboth\", Wikidata capital \"Mariental\"\n  NE-4: capital card \"Niamey\", Wikidata capital \"Maradi\"\n  NG-LA: capital card \"Lagos\", Wikidata capital \"Ikeja\"\n  NG-OS: capital card \"Oshogbo\", Wikidata capital \"Osogbo\"\n  NI-AN: capital card \"Bilwi\", Wikidata capital \"Puerto Cabezas\"\n  NP-MA: capital card \"Dandeldhura\", Wikidata capital \"Bhimdatta\"\n  NP-SE: capital card \"Dhangarhi\", Wikidata capital \"Dipayal Silgadhi\"\n  NP-JA: capital card \"Ramechhap\", Wikidata capital \"Janakpurdham\"\n  NP-KO: capital card \"Biratnagar\", Wikidata capital \"Dharan\"\n  NP-NA: capital card \"Bhimphedi\", Wikidata capital \"Hetauda\"\n  NP-LU: capital card \"Bhairawa\", Wikidata capital \"Butwal\"\n  NP-RA: capital card \"Salyan\", Wikidata capital \"Tulsipur\"\n  NP-BH: capital card \"Nepalganj\", Wikidata capital \"Nepalgunj\"\n  NZ-TKI: capital card \"New Plymouth\", Wikidata capital \"Stratford\"\n  NZ-BOP: capital card \"Tauranga\", Wikidata capital \"Whakatāne\"\n  PG-NSB: capital card \"Arawa\", Wikidata capital \"Buka\"\n  PG-EBR: capital card \"Rabaul\", Wikidata capital \"Kokopo\"\n  PG-WHM: capital card \"Mt. Hagen\", Wikidata capital \"Mount Hagen\"\n  PY-19: capital card \"Mariscal Estigarribia\", Wikidata capital \"Filadelfia\"\n  PY-15: capital card \"Pozo Colorado\", Wikidata capital \"Villa Hayes\"\n  RO-VL: capital card \"Rimnicu Vilcea\", Wikidata capital \"Râmnicu Vâlcea\"\n  RW-02: capital card \"Kibungo\", Wikidata capital \"Rwamagana\"\n  RW-05: capital card \"Gitarama\", Wikidata capital \"Nyanza\"\n  RW-04: capital card \"Gisenyi\", Wikidata capital \"Kibuye\"\n  RW-03: capital card \"Ruhengeri\", Wikidata capital \"Byumba hospital\"\n  SD-GD: capital card \"Gedaref\", Wikidata capital \"Al Qadarif\"\n  SD-DN: capital card \"El Fasher\", Wikidata capital \"Al-Fashir\"\n  SD-NW: capital card \"Kosti\", Wikidata capital \"Rabak\"\n  SD-KS: capital card \"Kadugli\", Wikidata capital \"Kaduqli\"\n  SD-GZ: capital card \"Medani\", Wikidata capital \"Wad Madani\"\n  SD-KH: capital card \"Omdurman\", Wikidata capital \"Khartoum\"\n  SD-KN: capital card \"Al-Ubayyid\", Wikidata capital \"El-Obeid\"\n  SN-MT: capital card \"Kaédi\", Wikidata capital \"Matam\"\n  SN-LG: capital card \"Louga\", Wikidata capital \"Nguer Malal\"\n  SO-NU: capital card \"Garoowe\", Wikidata capital \"Garowe\"\n  SO-MU: capital card \"Gaalkacyo\", Wikidata capital \"Galkayo\"\n  SO-GA: capital card \"Dhuusa Mareeb\", Wikidata capital \"Dusmareb\"\n  SO-GE: capital card \"Garbahaarey\", Wikidata capital \"Garbahaareey\"\n  SO-BR: capital card \"Boosaaso\", Wikidata capital \"Bosaso\"\n  SO-JH: capital card \"Kismaayo\", Wikidata capital \"Kismayo\"\n  SO-JD: capital card \"Bu'aale\", Wikidata capital \"Bu'ale\"\n  SO-SH: capital card \"Marka\", Wikidata capital \"Merca\"\n  SO-SD: capital card \"Jawhar\", Wikidata capital \"Jowhar\"\n  SO-BY: capital card \"Baydhabo\", Wikidata capital \"Baidoa\"\n  SS-EE: capital card \"Kapoeta\", Wikidata capital \"Torit\"\n  SY-HA: capital card \"Al Hasakah\", Wikidata capital \"Hasakah\"\n  SY-RA: capital card \"Ar Raqqah\", Wikidata capital \"Raqqa\"\n  SY-SU: capital card \"As Suwayda\", Wikidata capital \"Suwayda\"\n  SY-DY: capital card \"Dayr az Zawr\", Wikidata capital \"Deir ez-Zor\"\n  SZ-HH: capital card \"Piggs Peak\", Wikidata capital \"Mbabane\"\n  SZ-SH: capital card \"Hlatikulu\", Wikidata capital \"Nhlangano\"\n  TD-LR: capital card \"Moundou\", Wikidata capital \"Doba\"\n  TG-K: capital card \"Bassar\", Wikidata capital \"Kara\"\n  TG-P: capital card \"Kpalimé\", Wikidata capital \"Atakpamé\"\n  TH-47: capital card \"Sakhon Nakhon\", Wikidata capital \"Sakon Nakhon\"\n  TH-72: capital card \"Supham Buri\", Wikidata capital \"Suphan Buri\"\n  TH-14: capital card \"Ayutthaya\", Wikidata capital \"Phra Nakhon Si Ayutthaya\"\n  TH-73: capital card \"Nakhon Pathom\", Wikidata capital \"Thanon Khat\"\n  TH-54: capital card \"Phrae\", Wikidata capital \"Mueang Phrae\"\n  TJ-KT: capital card \"Qurghonteppa\", Wikidata capital \"Bokhtar\"\n  TM-A: capital card \"Ashgabat\", Wikidata capital \"Anau\"\n  TN-14: capital card \"L'Ariana\", Wikidata capital \"Manouba\"\n  TN-43: capital card \"Sdid Bouzid\", Wikidata capital \"Sidi Bouzid\"\n  TN-41: capital card \"Qairouan\", Wikidata capital \"Kairouan\"\n  TR-54: capital card \"Sakarya\", Wikidata capital \"Adapazarı\"\n  TR-33: capital card \"Icel\", Wikidata capital \"Mersin\"\n  TW-TXG: capital card \"Taichung\", Wikidata capital \"Xitun District\"\n  TW-TNN: capital card \"Tainan\", Wikidata capital \"Sinying District\"\n  TW-TPQ: capital card \"New Taipei\", Wikidata capital \"Banqiao District\"\n  TW-KEE: capital card \"Keelung\", Wikidata capital \"Zhongzheng District\"\n  TW-TPE: capital card \"Taipei\", Wikidata capital \"Xinyi District\"\n  TZ-10: capital card \"Chake Chake\", Wikidata capital \"Mkoani\"\n  UG-229: capital card \"Iganga\", Wikidata capital \"Luuka Town\"\n  UG-104: capital card \"Bombo\", Wikidata capital \"Luweero\"\n  UG-113: capital card \"Entebbe\", Wikidata capital \"Wakiso Town\"\n  UG-407: capital card \"Kibale\", Wikidata capital \"Kibaale\"\n  UG-421: capital card \"Masindi-Port\", Wikidata capital \"Kiryandongo\"\n  UG-225: capital card \"Sironko\", Wikidata capital \"Bulambuli\"\n  UG-327: capital card \"Moroto\", Wikidata capital \"Napak\"\n  UZ-FA: capital card \"Fargona\", Wikidata capital \"Fergana\"\n  UZ-JI: capital card \"Jizzax\", Wikidata capital \"Jizzakh\"\n  UZ-SU: capital card \"Termiz\", Wikidata capital \"Termez\"\n  UZ-XO: capital card \"Urgentch\", Wikidata capital \"Urgench\"\n  VN-33: capital card \"Buon Me Thuot\", Wikidata capital \"Buôn Ma Thuột\"\n  VN-30: capital card \"Play Ku\", Wikidata capital \"Quy Nhon\"\n  VN-37: capital card \"Tây Ninh\", Wikidata capital \"Long An\"\n  VN-45: capital card \"Cao Lãnh\", Wikidata capital \"Sa Đéc\"\n  VN-71: capital card \"Luan Chau\", Wikidata capital \"Điện Biên Phủ\"\n  VN-25: capital card \"Quảng Trị\", Wikidata capital \"Đông Hà\"\n  VN-26: capital card \"Hue\", Wikidata capital \"Thuận Hóa\"\n  VN-02: capital card \"Lao Chi\", Wikidata capital \"Lào Cai\"\n  VN-13: capital card \"Hong Gai\", Wikidata capital \"Hạ Long\"\n  VN-SG: capital card \"Ho Chi Minh City\", Wikidata capital \"Saigon\"\n  VN-73: capital card \"Can Tho\", Wikidata capital \"Vị Thanh\"\n  VN-50: capital card \"Truc Giang\", Wikidata capital \"Bến Tre (city)\"\n  VN-31: capital card \"Qui Nhon\", Wikidata capital \"Quy Nhon\"\n  VN-18: capital card \"Ninh Bình\", Wikidata capital \"Hoa Lư\"\n  VN-HN: capital card \"Hanoi\", Wikidata capital \"Ba Đình District\"\n  VN-35: capital card \"Da Lat\", Wikidata capital \"Đà Lạt\"\n  WS-TU: capital card \"Apia\", Wikidata capital \"Afega\"\n  YE-HD: capital card \"Al Mukalla\", Wikidata capital \"Mukalla\"\n  YE-SD: capital card \"Sadah\", Wikidata capital \"Saada\"\n  YE-DH: capital card \"Dhamar\", Wikidata capital \"Sanaa\"\n  ZA-NW: capital card \"Mmabatho\", Wikidata capital \"Mahikeng\"\n✓ Capital-name agreement: all 1224 quiz capitals are the capital the Learn panel shows.\n",
+    "limitation": "Internal string/prefix agreement only, not factual identity or co-capital completeness."
+  },
+  "qualifiedFollowups": [
+    {
+      "code": "AU-NF",
+      "claim": "adopted6June1979",
+      "status": "Chronology qualification required before adjudicating an exact replacement date",
+      "sources": [
+        "https://www.pmc.gov.au/resources/australian-symbols-booklet/state-and-territory-symbols/symbols-norfolk-island",
+        "https://www.legislation.gov.au/C2015Q00187/asmade/2015-06-18/text/original/pdf"
+      ],
+      "observation": "PM&C gives proclamation11January1980; Act commencement table17January1980. Council design approval6June1979 is separately reported. Distinguish events; do not silently replace one ambiguous adoption date with another."
+    },
+    {
+      "code": "NZ-TK",
+      "claim": "in place of New Zealands flag",
+      "status": "Potential overstatement; not newly numbered as confirmed error this pass",
+      "sources": [
+        "https://www.tokelau.org.nz/About%2BUs/Government/Tokelau%2BFlag%2Band%2BNational%2BSymbol.html",
+        "https://www3.stats.govt.nz/new_zealand_official_yearbooks/nz_official_yrbk_2010.pdf.pdf"
+      ],
+      "observation": "Tokelau primary page confirms2009 royal licence and canoe/navigation meanings. Indexed official yearbook says alongside New Zealand flag; fullPDF retrieval too large for web reader. Complete protocol/status check pending."
+    },
+    {
+      "code": "NO-15",
+      "status": "Existing implementer caveat retained",
+      "observation": "Bundled image is blue banner of three gold ships. FOTW1995 reports white flag with shield. No primary current flown-flag authentication obtained; cannot certify either as sole current version."
+    }
+  ],
+  "openWork": [
+    "F104/SF17 co-capital model remains open.",
+    "Remaining Guatemala and territorial captions, Norwegian artwork/geometry and historical variants not fully certified.",
+    "259 non-quiz name disagreements require adjudication.",
+    "Earlier unresolved population, historical, passport, party and UN/flow findings remain open."
+  ],
+  "deployment": {
+    "bundle": "assets/index-DmxWmwLE.js",
+    "build": "38b87bc",
+    "timestamp": "2026-10-01T12:15:39.800Z",
+    "method": "check-live-build --print; public asset hashes; no new browser rendering certification"
+  }
+}
