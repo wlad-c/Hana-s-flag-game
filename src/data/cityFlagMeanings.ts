@@ -11187,6 +11187,92 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
+  // ── Stavanger — capital of Rogaland, Norway ─────────────────────────────────
+  "NO-11": {
+    description:
+      "Stavanger flies a banner of its arms: a gold vine branch with leaves and tendrils, lying on blue. " +
+      "Hallvard Trætteberg drew it from the city's oldest seal, of 1591, and arms and flag were approved in " +
+      "1939. The blue and gold come from the stripes of the oldest surviving city flag, of about 1660. What " +
+      "the vine stands for is not known: the standard reference gives several theories, none conclusive. The " +
+      "city kept its symbols when it merged with Finnøy and Rennesøy in 2020.",
+    sources: [
+      { title: "Stavanger (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-11-03.html" },
+    ],
+  },
+
+  // ── Bodø — capital of Nordland, Norway ──────────────────────────────────────
+  "NO-18": {
+    description:
+      "Bodø flies a banner of its arms: a gold sun on red, for the midnight sun, since Bodø is the first " +
+      "Norwegian city north of the Arctic Circle. Hallvard Trætteberg took the sun from the arms Bodø had used " +
+      "since 1889, which also showed a boat at sea before a range of mountains. Arms and flag were approved " +
+      "in 1959.",
+    sources: [
+      { title: "Bodø (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-18-04.html" },
+    ],
+  },
+
+  // ── Drammen — capital of Buskerud, Norway ───────────────────────────────────
+  "NO-33": {
+    description:
+      "Drammen's city flag is a wavy white stripe on blue, for the river Drammenselva that runs through the " +
+      "city. The city government adopted it on 9 July 1930. Unlike most Norwegian municipal flags it is not a " +
+      "banner of the arms, which show a column with a sword and a key. The municipality kept its symbols when " +
+      "it merged with Nedre Eiker and Svelvik in 2020.",
+    sources: [
+      { title: "Drammen (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-06-02.html" },
+      { title: "Glemte det blå og hvite byflagget — Drammens Tidende", url: "https://www.dt.no/glemte-det-bla-og-hvite-byflagget/s/5-57-1264961" },
+    ],
+  },
+
+  // ── Hamar — capital of Innlandet, Norway ────────────────────────────────────
+  "NO-34": {
+    description:
+      "Hamar flies a banner of its arms: a black grouse with spread wings at the top of a green pine, on " +
+      "white. The town took the design on 2 June 1896, from a drawing by Andreas Bloch, to mark fifty years " +
+      "as a market town; it was redrawn in 1962, and arms and flag were approved by royal resolution in 1993.",
+    sources: [
+      { title: "Hamar (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-04-03.html" },
+    ],
+  },
+
+  // ── Steinkjer — capital of Trøndelag, Norway ────────────────────────────────
+  "NO-50": {
+    description:
+      "Since Steinkjer merged with Verran in 2020, the new municipality has used Verran's arms and flag: a " +
+      "white boat with square sail and topsail on blue. The boat is a Verranjekt, a type built in Verran for " +
+      "centuries; the arms date from 1987, after a drawing by Rolf Tidemann. Steinkjer's own flag, a white " +
+      "six-pointed star on blue, went out of use with the merger.",
+    sources: [
+      { title: "Steinkjer (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-17-02.html" },
+      { title: "Verran (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-17-24.html" },
+    ],
+  },
+
+  // ── Tromsø — capital of Troms, Norway ───────────────────────────────────────
+  "NO-55": {
+    description:
+      "Tromsø flies a banner of its arms: a white reindeer walking on blue. Reindeer played little part in " +
+      "the town itself; it was chosen because Tromsø was the administrative centre of northern Norway's vast " +
+      "reindeer-herding lands. A. T. Kaltenborn proposed the idea in 1855 and it was first used in 1870; " +
+      "Hallvard Trætteberg drew the present version, approved in 1983.",
+    sources: [
+      { title: "Tromsø (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-19-02.html" },
+    ],
+  },
+
+  // ── Vadsø — capital of Finnmark, Norway ─────────────────────────────────────
+  "NO-56": {
+    description:
+      "Vadsø flies a banner of its arms: a white reindeer's head on red. Vadsø is the seat of Finnmark's " +
+      "county administration, so the reindeer — central to Sámi reindeer herding — was chosen to represent the " +
+      "county; the town's arms of 1893 already had one. The reindeer also stands for freedom, strength and " +
+      "endurance. Arms and flag were approved in 1976.",
+    sources: [
+      { title: "Vadsø (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-20-03.html" },
+    ],
+  },
+
   // ── Assen — capital of Drenthe, Netherlands ────────────────────────────────
   "NL-DR": {
     description:
