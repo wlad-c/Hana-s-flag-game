@@ -1130,6 +1130,8 @@ subdivision-research rule.
 
 ## Batch 8d — Norway's 2024 counties (2026-10-01)
 
+*Shipped in #1737 (`438923f`); live since 1 October 2026, 11:58 AM AEST.*
+
 **What was wrong.** The app's map of Norway still showed the 19 counties abolished in 2020. Eight of
 them (Hedmark, Oppland, Aust-Agder, Vest-Agder, Hordaland, Sogn og Fjordane, Nord- and
 Sør-Trøndelag) no longer exist. Seven others (Østfold, Akershus, Buskerud, Vestfold, Telemark, Troms
@@ -1227,6 +1229,41 @@ no longer skipped.
   Tønsberg's municipality item carries no flag either.
 - **Møre og Romsdal:** find out which flag the county actually flies.
 - **Innlandet and Telemark:** show their flags once a free file of the documented design exists.
+
+## Batch 8e — capital flags for Norway's county seats (SF-18, 2026-10-01)
+
+**What was wrong.** Only three Norwegian county capitals showed a flag: Sarpsborg, Oslo and Bergen.
+The capital pipeline reads each capital's town item on Wikidata, and the Norwegian town items carry
+no flag (P41). The flags belong to the municipality items. Batch 8d's research found them.
+
+**Added (7), each checked against FOTW and a primary record:**
+- **Stavanger:** a gold vine on blue. Arms and flag were approved by royal resolution in 1939, and the
+  merged municipality kept its symbols in 2020 (FOTW `no-11-03`).
+- **Bodø:** a gold sun on red, for the midnight sun. Arms and flag date from 1959 (Lovdata
+  1959-07-24-1; the Commons file is redrawn from the National Archives' approved drawing).
+- **Drammen:** the city flag adopted on 9 July 1930, a wavy white stripe on blue for the river (FOTW
+  `no-06-02`). Drammens Tidende reported in 2019 that the merger committee had overlooked the flag.
+  FOTW records (December 2024) that the merged municipality kept its symbols.
+- **Hamar:** a black grouse on a pine, on white. The design dates from 1896, and arms and flag were
+  approved in 1993 (Lovdata 1993-07-09-648).
+- **Steinkjer:** since the 2020 merger the new municipality uses Verran's arms and flag, a white boat
+  on blue (FOTW `no-17-02`, `no-17-24`). Steinkjer's own six-pointed star is retired.
+- **Tromsø:** a white reindeer on blue. Arms and flag date from 1983 (Lovdata 1983-07-22-1290).
+- **Vadsø:** a white reindeer's head on red. Arms and flag date from 1976 (FOTW `no-20-03`).
+
+All seven are Commons originals, verified against their SHA-1, and pinned in
+`CAPITAL_FLAG_SOURCE_OVERRIDES` with these reasons. Each has a sourced explainer. For Stavanger, the
+explainer says that what the vine means is not known.
+
+**Not shown (4):**
+- **Molde:** FOTW is unsure what the town flies (the arms on white, perhaps). The only file is a 2026
+  own work with no source.
+- **Skien:** FOTW's only image is a municipal logo flag from a 2011 profile guide, and FOTW itself
+  doubts the source. A logo is not a city flag.
+- **Kristiansand:** the only Commons file is the 17th-century flag, which the file itself calls no
+  longer in use. FOTW pairs it with the city, but no source documents the flag flown today.
+- **Tønsberg:** the municipality took new arms when it merged with Re in 2020. No current flag is
+  documented, and Commons has no file.
 
 ## Follow-ups (later batches)
 

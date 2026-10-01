@@ -238,6 +238,16 @@ const CAPITAL_FLAG_SOURCE_OVERRIDES = {
   "DK-FO": "Flag of Tórshavn, Faroe Islands.svg", // Tórshavn (Faroe Islands) — the municipality's own flag, per its en.wikipedia infobox (`image_flag`); Tórshavn has no P41 statement on Wikidata.
   "UA-68": "Прапор Хмельницького.png", // Khmelnytskyi — the city flag set by council decision No. 13 of 22 March 2017: azure, the arms' three crossed arrows in a sun of SIXTEEN gold rays (khm.gov.ua "Символи міста"). This Commons file is the council's own artwork, byte-identical to khm.gov.ua/sites/default/files/flag_0.png. "Flag of Khmelnytskyi (3-2).svg" is a redraw with twelve rays (Codex F106, 2026-09-30), so it is not used. Wikidata's P41 is the square 1997 flag, which that decision made the MAYOR's standard — see capital-flag-rejected.json.
   "GT-HU": "Flag of Huehuetenango Department.svg", // Huehuetenango — the 1955 Mackepeace flag, official for both the municipality and the department since 1987 (mihuehue.com; FOTW gt-hu-hu.html). It duplicates the department flag, so SHARED_CAPITAL_FLAGS suppresses it; the old P41 file is in capital-flag-rejected.json.
+  // Norway's county seats (batch 8e, SF-18). The capital pipeline reads the TOWN items,
+  // which carry no P41; the flags belong to the municipality items. Each checked against
+  // FOTW (no-11-03, no-18-04, no-06-02, no-04-03, no-19-02, no-20-03, no-17-02/no-17-24).
+  "NO-11": "Flag of Stavanger.gif", // Stavanger — gold vine branch on blue; arms and flag by royal resolution of 11 August 1939; kept by the merged municipality of 2020 (FOTW)
+  "NO-18": "Flag of Bodø.svg", // Bodø — gold sun on red, the midnight sun; arms and flag of 24 July 1959 (Lovdata 1959-07-24-1; redrawn from the National Archives' approved drawing)
+  "NO-33": "Flag of Drammen.png", // Drammen — the 1930 city flag, a wavy white stripe on blue for the river; kept by the merged municipality of 2020 (FOTW, December 2024)
+  "NO-34": "Flag of Hamar.png", // Hamar — black grouse on a pine on white; arms and flag approved by royal resolution of 9 July 1993 (Lovdata 1993-07-09-648)
+  "NO-50": "Flag of Verran.gif", // Steinkjer — since the 2020 merger Steinkjer uses Verran's arms and flag: a white boat with square sail and topsail on blue (FOTW no-17-02, no-17-24); Steinkjer's old six-pointed-star flag is retired
+  "NO-55": "Flag of Tromsø.svg", // Tromsø — white reindeer on blue; arms and flag by royal resolution of 22 July 1983 (Lovdata 1983-07-22-1290)
+  "NO-56": "Flag of Vadsø.png", // Vadsø — white reindeer's head on red; arms and flag by royal resolution of 20 February 1976 (FOTW no-20-03)
   "GT-QZ": "Flag of Quetzaltenango Department.svg", // Quetzaltenango — FOTW gt-qz-qz.html: the city uses the same symbols as the department. Shared, like GT-HU; the plain tricolour is rejected.
 };
 
