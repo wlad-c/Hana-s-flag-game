@@ -1,0 +1,2009 @@
+{
+  "audit": "Independent Moldova and BIOT delta review; Malta follow-up",
+  "observed_at_utc": "2026-10-01T15:00:29.664146+00:00",
+  "agent": "Codex; audit/documentation only",
+  "application_commit": "e99f6ac157fd7e2dd9a482e9d97e8eddd5e3956e",
+  "reviewed_commits": [
+    "9bd66b65bc73183cc37a2d9bb14fe1025f29c7a0",
+    "eacf690c280a3c5025bfacda252fe2860eaf43a5",
+    "e99f6ac157fd7e2dd9a482e9d97e8eddd5e3956e"
+  ],
+  "public_build": {
+    "commit": "c97a92d",
+    "built_at": "2026-10-01T14:48:41.947Z",
+    "bundle": "assets/index-DtpW9M9_.js",
+    "method": "scripts/check-live-build.mjs --print; HTTP file comparisons; no independent browser walkthrough in this batch"
+  },
+  "public_assets": [
+    {
+      "path": "flags/io.svg",
+      "bytes": 89434,
+      "sha256": "92dfde33af9ab9597c325915d2c7f4265792142a56122b204679c013896b0e94",
+      "matches_repository": true
+    },
+    {
+      "path": "national-flags/io/io-1990.svg",
+      "bytes": 131854,
+      "sha256": "7c3b6a1b1551bed08f7862c2fbfff81b371533bee2c7a6d2b94f2834da176f36",
+      "matches_repository": true
+    },
+    {
+      "path": "flags/sub/MD/MD-DU.png",
+      "bytes": 14368,
+      "sha256": "3e6761b6be2abaa570623428a0097f3310b95d8175a00fca4f87f3a634c0e86a",
+      "matches_repository": true
+    },
+    {
+      "path": "subdivisions/MD.json",
+      "bytes": 298790,
+      "sha256": "294d4c6593bdcad09c5055a3b06bc2a0c977c62495cd41bdb1f9778e15420f52",
+      "matches_repository": true
+    }
+  ],
+  "census_source": {
+    "url": "https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/Ro/Anexa_Localitati_RPL2024.xlsx",
+    "sha256": "e29cde70af8c2807e6c702c750bea933c015343213041a30deebbd0541f257ed",
+    "bytes": 541766,
+    "release_date": "2026-03-26",
+    "reference_date": "2024-04-08",
+    "reference_unit": "usual resident population in enumerated territory",
+    "coverage_note": "Excludes 157 localities, including left-bank territorial units, Bender/Proteagailovca, Chitcani/Merenesti/Zahorna, Cremenciug, Gisca, Corjova/Mahala and Roghi. Preserve source territorial scope; Bender and Transnistria records not compared.",
+    "extraction": "Read-only ZIP/XML extraction of XLSX sharedStrings and worksheet cells. Joined subdivision names after Romanian diacritic normalization; source CUATM preserved. Capital name candidates checked against exact numeric source rows and adjacent subordinate settlement records. MD-CA source label explicitly matched Cahul, not the unsourced Gotești suffix."
+  },
+  "subdivision_comparison": [
+    {
+      "code": "MD-AN",
+      "name": "Anenii Noi",
+      "repository": {
+        "population": 57687,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D27",
+        "name": "Anenii Noi",
+        "cuatm": "1000000",
+        "population": 57687
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-BA",
+      "name": "Bălți",
+      "repository": {
+        "population": 94546,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D14",
+        "name": "Mun. Bălţi",
+        "cuatm": "0300000",
+        "population": 94546
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-BS",
+      "name": "Basarabeasca",
+      "repository": {
+        "population": 14914,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D41",
+        "name": "Basarabeasca",
+        "cuatm": "1200000",
+        "population": 14914
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-BR",
+      "name": "Briceni",
+      "repository": {
+        "population": 46894,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D15",
+        "name": "Briceni",
+        "cuatm": "1400000",
+        "population": 46894
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-CA",
+      "name": "Cahul",
+      "repository": {
+        "population": 72775,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D42",
+        "name": "Cahul",
+        "cuatm": "1700000",
+        "population": 72775
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-CL",
+      "name": "Călărași",
+      "repository": {
+        "population": 43864,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D28",
+        "name": "Călăraşi",
+        "cuatm": "2500000",
+        "population": 43864
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-CT",
+      "name": "Cantemir",
+      "repository": {
+        "population": 33181,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D43",
+        "name": "Cantemir",
+        "cuatm": "2100000",
+        "population": 33181
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-CS",
+      "name": "Căușeni",
+      "repository": {
+        "population": 57261,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D44",
+        "name": "Căuşeni",
+        "cuatm": "2700000",
+        "population": 57261
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-CU",
+      "name": "Chișinău",
+      "repository": {
+        "population": 720128,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D12",
+        "name": "Mun. Chişinău",
+        "cuatm": "100000",
+        "population": 720128
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-CM",
+      "name": "Cimișlia",
+      "repository": {
+        "population": 30986,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D45",
+        "name": "Cimişlia",
+        "cuatm": "2900000",
+        "population": 30986
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-CR",
+      "name": "Criuleni",
+      "repository": {
+        "population": 52926,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D29",
+        "name": "Criuleni",
+        "cuatm": "3100000",
+        "population": 52926
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-DO",
+      "name": "Dondușeni",
+      "repository": {
+        "population": 28108,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D16",
+        "name": "Donduşeni",
+        "cuatm": "3400000",
+        "population": 28108
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-DR",
+      "name": "Drochia",
+      "repository": {
+        "population": 53738,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D17",
+        "name": "Drochia",
+        "cuatm": "3600000",
+        "population": 53738
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-DU",
+      "name": "Dubăsari",
+      "repository": {
+        "population": 21781,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D30",
+        "name": "Dubăsari",
+        "cuatm": "3800000",
+        "population": 21781
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-ED",
+      "name": "Edineț",
+      "repository": {
+        "population": 50429,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D18",
+        "name": "Edineţ",
+        "cuatm": "4100000",
+        "population": 50429
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-FA",
+      "name": "Fălești",
+      "repository": {
+        "population": 56039,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D19",
+        "name": "Făleşti",
+        "cuatm": "4300000",
+        "population": 56039
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-FL",
+      "name": "Florești",
+      "repository": {
+        "population": 53264,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D20",
+        "name": "Floreşti",
+        "cuatm": "4500000",
+        "population": 53264
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-GL",
+      "name": "Glodeni",
+      "repository": {
+        "population": 35829,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D21",
+        "name": "Glodeni",
+        "cuatm": "4800000",
+        "population": 35829
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-HI",
+      "name": "Hîncești",
+      "repository": {
+        "population": 69462,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D31",
+        "name": "Hînceşti",
+        "cuatm": "5300000",
+        "population": 69462
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-IA",
+      "name": "Ialoveni",
+      "repository": {
+        "population": 74458,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D32",
+        "name": "Ialoveni",
+        "cuatm": "5500000",
+        "population": 74458
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-LE",
+      "name": "Leova",
+      "repository": {
+        "population": 28835,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D46",
+        "name": "Leova",
+        "cuatm": "5700000",
+        "population": 28835
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-NI",
+      "name": "Nisporeni",
+      "repository": {
+        "population": 36413,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D33",
+        "name": "Nisporeni",
+        "cuatm": "6000000",
+        "population": 36413
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-OC",
+      "name": "Ocnița",
+      "repository": {
+        "population": 31610,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D22",
+        "name": "Ocniţa",
+        "cuatm": "6200000",
+        "population": 31610
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-OR",
+      "name": "Orhei",
+      "repository": {
+        "population": 79242,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D34",
+        "name": "Orhei",
+        "cuatm": "6400000",
+        "population": 79242
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-RE",
+      "name": "Rezina",
+      "repository": {
+        "population": 30243,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D35",
+        "name": "Rezina",
+        "cuatm": "6700000",
+        "population": 30243
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-RI",
+      "name": "Rîșcani",
+      "repository": {
+        "population": 43652,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D23",
+        "name": "Rîşcani",
+        "cuatm": "7100000",
+        "population": 43652
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-SI",
+      "name": "Sîngerei",
+      "repository": {
+        "population": 55933,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D24",
+        "name": "Sîngerei",
+        "cuatm": "7400000",
+        "population": 55933
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-SD",
+      "name": "Șoldănești",
+      "repository": {
+        "population": 25394,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D37",
+        "name": "Şoldăneşti",
+        "cuatm": "8300000",
+        "population": 25394
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-SO",
+      "name": "Soroca",
+      "repository": {
+        "population": 58609,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D25",
+        "name": "Soroca",
+        "cuatm": "7800000",
+        "population": 58609
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-SV",
+      "name": "Ștefan Vodă",
+      "repository": {
+        "population": 42285,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D47",
+        "name": "Ştefan Vodă",
+        "cuatm": "8500000",
+        "population": 42285
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-ST",
+      "name": "Strășeni",
+      "repository": {
+        "population": 61362,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D36",
+        "name": "Străşeni",
+        "cuatm": "8000000",
+        "population": 61362
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-TA",
+      "name": "Taraclia",
+      "repository": {
+        "population": 26435,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D48",
+        "name": "Taraclia",
+        "cuatm": "8700000",
+        "population": 26435
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-TE",
+      "name": "Telenești",
+      "repository": {
+        "population": 41452,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D38",
+        "name": "Teleneşti",
+        "cuatm": "8900000",
+        "population": 41452
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-UN",
+      "name": "Ungheni",
+      "repository": {
+        "population": 75804,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D39",
+        "name": "Ungheni",
+        "cuatm": "9200000",
+        "population": 75804
+      },
+      "matches": true
+    },
+    {
+      "code": "MD-GA",
+      "name": "Găgăuzia",
+      "repository": {
+        "population": 103668,
+        "year": 2024,
+        "basis": "census"
+      },
+      "source": {
+        "sheet": "8.2",
+        "cell": "D49",
+        "name": "UTA Găgăuzia ",
+        "cuatm": "9600000",
+        "population": 103668
+      },
+      "matches": true
+    }
+  ],
+  "subdivision_summary": {
+    "compared": 35,
+    "matching": 35,
+    "sum": 2409207,
+    "source_national_cell": "8.2!D11",
+    "source_national_population": 2409207,
+    "excluded_codes": [
+      "MD-BD",
+      "MD-SN"
+    ]
+  },
+  "capital_comparison": [
+    {
+      "code": "MD-AN",
+      "repository": {
+        "name": "Anenii Noi",
+        "population": 8933,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B804": "1001000",
+          "C804": "Comune",
+          "D804": "or. Anenii Noi",
+          "E804": "8933",
+          "F804": "4139",
+          "G804": "4794",
+          "H804": "46.333818426060702",
+          "I804": "53.7"
+        }
+      ],
+      "source_children": [
+        {
+          "B805": "1001000",
+          "C805": "Localitati",
+          "D805": "Anenii Noi",
+          "E805": "6610",
+          "F805": "3065",
+          "G805": "3545",
+          "H805": "46.3691376701967",
+          "I805": "53.6"
+        },
+        {
+          "B806": "1001001",
+          "C806": "Localitati",
+          "D806": "Albiniţa",
+          "E806": "264",
+          "F806": "114",
+          "G806": "150",
+          "H806": "43.181818181818201",
+          "I806": "56.8"
+        },
+        {
+          "B807": "1001002",
+          "C807": "Localitati",
+          "D807": "Beriozchi",
+          "E807": "483",
+          "F807": "214",
+          "G807": "269",
+          "H807": "44.306418219461698",
+          "I807": "55.7"
+        },
+        {
+          "B808": "1001003",
+          "C808": "Localitati",
+          "D808": "Hîrbovăţul Nou",
+          "E808": "368",
+          "F808": "180",
+          "G808": "188",
+          "H808": "48.913043478260903",
+          "I808": "51.1"
+        },
+        {
+          "B809": "1001004",
+          "C809": "Localitati",
+          "D809": "Ruseni",
+          "E809": "888",
+          "F809": "411",
+          "G809": "477",
+          "H809": "46.283783783783797",
+          "I809": "53.7"
+        },
+        {
+          "B810": "1001005",
+          "C810": "Localitati",
+          "D810": "Socoleni",
+          "E810": "320",
+          "F810": "155",
+          "G810": "165",
+          "H810": "48.4375",
+          "I810": "51.6"
+        }
+      ]
+    },
+    {
+      "code": "MD-BA",
+      "repository": {
+        "name": "Bălți",
+        "population": 90954,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B64": "301000",
+          "C64": "Comune",
+          "D64": "Bălţi",
+          "E64": "90954",
+          "F64": "41060",
+          "G64": "49894",
+          "H64": "45.143699012687698",
+          "I64": "54.9"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-BR",
+      "repository": {
+        "name": "Briceni",
+        "population": 5785,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B68": "1401000",
+          "C68": "Comune",
+          "D68": "or. Briceni",
+          "E68": "5785",
+          "F68": "2587",
+          "G68": "3198",
+          "H68": "44.7191011235955",
+          "I68": "55.3"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-BS",
+      "repository": {
+        "name": "Basarabeasca",
+        "population": 6291,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1569": "1201000",
+          "C1569": "Comune",
+          "D1569": "or. Basarabeasca",
+          "E1569": "6291",
+          "F1569": "2898",
+          "G1569": "3393",
+          "H1569": "46.065808297567997",
+          "I1569": "53.9"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-CA",
+      "repository": {
+        "name": "Cahul, satul Gotești",
+        "population": 22223,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1581": "1701000",
+          "C1581": "Comune",
+          "D1581": "or. Cahul",
+          "E1581": "22223",
+          "F1581": "10157",
+          "G1581": "12066",
+          "H1581": "45.704900328488499",
+          "I1581": "54.3"
+        }
+      ],
+      "source_children": [
+        {
+          "B1582": "1701000",
+          "C1582": "Localitati",
+          "D1582": "Cahul",
+          "E1582": "21326",
+          "F1582": "9721",
+          "G1582": "11605",
+          "H1582": "45.5828566069586",
+          "I1582": "54.4"
+        },
+        {
+          "B1583": "1701001",
+          "C1583": "Localitati",
+          "D1583": "Cotihana",
+          "E1583": "897",
+          "F1583": "436",
+          "G1583": "461",
+          "H1583": "48.6064659977703",
+          "I1583": "51.4"
+        }
+      ]
+    },
+    {
+      "code": "MD-CL",
+      "repository": {
+        "name": "Călărași",
+        "population": 9469,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B862": "2501000",
+          "C862": "Comune",
+          "D862": "or. Călăraşi",
+          "E862": "9469",
+          "F862": "4452",
+          "G862": "5017",
+          "H862": "47.016580420318903",
+          "I862": "53"
+        }
+      ],
+      "source_children": [
+        {
+          "B863": "2501000",
+          "C863": "Localitati",
+          "D863": "Călăraşi",
+          "E863": "9413",
+          "F863": "4423",
+          "G863": "4990",
+          "H863": "46.988207797726602",
+          "I863": "53"
+        },
+        {
+          "B864": "2501001",
+          "C864": "Localitati",
+          "D864": "Oricova",
+          "E864": "56",
+          "F864": "29",
+          "G864": "27",
+          "H864": "51.785714285714299",
+          "I864": "48.2"
+        }
+      ]
+    },
+    {
+      "code": "MD-CM",
+      "repository": {
+        "name": "Cimișlia",
+        "population": 8765,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1773": "2901000",
+          "C1773": "Comune",
+          "D1773": "or. Cimişlia",
+          "E1773": "8765",
+          "F1773": "4105",
+          "G1773": "4660",
+          "H1773": "46.833998859098699",
+          "I1773": "53.2"
+        }
+      ],
+      "source_children": [
+        {
+          "B1774": "2901000",
+          "C1774": "Localitati",
+          "D1774": "Cimişlia",
+          "E1774": "7918",
+          "F1774": "3679",
+          "G1774": "4239",
+          "H1774": "46.463753473099302",
+          "I1774": "53.5"
+        },
+        {
+          "B1775": "2901001",
+          "C1775": "Localitati",
+          "D1775": "Bogdanovca Nouă",
+          "E1775": "103",
+          "F1775": "52",
+          "G1775": "51",
+          "H1775": "50.485436893203897",
+          "I1775": "49.5"
+        },
+        {
+          "B1776": "2901002",
+          "C1776": "Localitati",
+          "D1776": "Bogdanovca Veche",
+          "E1776": "612",
+          "F1776": "306",
+          "G1776": "306",
+          "H1776": "50",
+          "I1776": "50"
+        },
+        {
+          "B1777": "2901003",
+          "C1777": "Localitati",
+          "D1777": "Dimitrovca",
+          "E1777": "132",
+          "F1777": "68",
+          "G1777": "64",
+          "H1777": "51.515151515151501",
+          "I1777": "48.5"
+        }
+      ]
+    },
+    {
+      "code": "MD-CR",
+      "repository": {
+        "name": "Criuleni",
+        "population": 5844,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B918": "3101000",
+          "C918": "Comune",
+          "D918": "or. Criuleni",
+          "E918": "5844",
+          "F918": "2745",
+          "G918": "3099",
+          "H918": "46.971252566735103",
+          "I918": "53"
+        }
+      ],
+      "source_children": [
+        {
+          "B919": "3101000",
+          "C919": "Localitati",
+          "D919": "Criuleni",
+          "E919": "5044",
+          "F919": "2341",
+          "G919": "2703",
+          "H919": "46.411578112609",
+          "I919": "53.6"
+        },
+        {
+          "B920": "3101001",
+          "C920": "Localitati",
+          "D920": "Ohrincea",
+          "E920": "613",
+          "F920": "307",
+          "G920": "306",
+          "H920": "50.0815660685155",
+          "I920": "49.9"
+        },
+        {
+          "B921": "3101002",
+          "C921": "Localitati",
+          "D921": "Zolonceni",
+          "E921": "187",
+          "F921": "97",
+          "G921": "90",
+          "H921": "51.871657754010698",
+          "I921": "48.1"
+        }
+      ]
+    },
+    {
+      "code": "MD-CS",
+      "repository": {
+        "name": "Căușeni",
+        "population": 13458,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1718": "2701000",
+          "C1718": "Comune",
+          "D1718": "or. Căuşeni",
+          "E1718": "13458",
+          "F1718": "6282",
+          "G1718": "7176",
+          "H1718": "46.678555506018697",
+          "I1718": "53.3"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-CT",
+      "repository": {
+        "name": "Cantemir",
+        "population": 2655,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1651": "2101000",
+          "C1651": "Comune",
+          "D1651": "or. Cantemir",
+          "E1651": "2655",
+          "F1651": "1204",
+          "G1651": "1451",
+          "H1651": "45.348399246704297",
+          "I1651": "54.7"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-CU",
+      "repository": {
+        "name": "Chișinău",
+        "population": 567038,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B12": "101000",
+          "C12": "Comune",
+          "D12": "or. Chișinău, \ndin care pe sectoare³",
+          "E12": "567038",
+          "F12": "261122",
+          "G12": "305916",
+          "H12": "46.050176531378902",
+          "I12": "53.9"
+        }
+      ],
+      "source_children": [
+        {
+          "B13": "110000",
+          "C13": "Localitati",
+          "D13": "    Sectorul Botanica",
+          "E13": "144824",
+          "F13": "66049",
+          "G13": "78775",
+          "H13": "45.6063912058775",
+          "I13": "54.4"
+        },
+        {
+          "B14": "120000",
+          "C14": "Localitati",
+          "D14": "    Sectorul Buiucani",
+          "E14": "100985",
+          "F14": "46602",
+          "G14": "54383",
+          "H14": "46.147447640738697",
+          "I14": "53.9"
+        },
+        {
+          "B15": "130000",
+          "C15": "Localitati",
+          "D15": "    Sectorul Centru",
+          "E15": "87230",
+          "F15": "40519",
+          "G15": "46711",
+          "H15": "46.450762352401703",
+          "I15": "53.5"
+        },
+        {
+          "B16": "140000",
+          "C16": "Localitati",
+          "D16": "    Sectorul Ciocana",
+          "E16": "105680",
+          "F16": "48961",
+          "G16": "56719",
+          "H16": "46.329485238455703",
+          "I16": "53.7"
+        },
+        {
+          "B17": "150000",
+          "C17": "Localitati",
+          "D17": "    Sectorul Rîşcani",
+          "E17": "128319",
+          "F17": "58991",
+          "G17": "69328",
+          "H17": "45.9721475385563",
+          "I17": "54"
+        }
+      ]
+    },
+    {
+      "code": "MD-DO",
+      "repository": {
+        "name": "Dondușeni",
+        "population": 5987,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B117": "3401000",
+          "C117": "Comune",
+          "D117": "or. Donduşeni",
+          "E117": "5987",
+          "F117": "2626",
+          "G117": "3361",
+          "H117": "43.861700350760003",
+          "I117": "56.1"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-DR",
+      "repository": {
+        "name": "Drochia",
+        "population": 12939,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B154": "3601000",
+          "C154": "Comune",
+          "D154": "or. Drochia",
+          "E154": "12939",
+          "F154": "5862",
+          "G154": "7077",
+          "H154": "45.304892186413198",
+          "I154": "54.7"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-DU",
+      "repository": {
+        "name": "Cocieri",
+        "population": 2943,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B974": "3810000",
+          "C974": "Localitati",
+          "D974": "Cocieri",
+          "E974": "2943",
+          "F974": "1505",
+          "G974": "1438",
+          "H974": "51.138294257560297",
+          "I974": "48.9"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-ED",
+      "repository": {
+        "name": "Edineț",
+        "population": 12369,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B205": "4101000",
+          "C205": "Comune",
+          "D205": "or. Edineţ",
+          "E205": "12369",
+          "F205": "5546",
+          "G205": "6823",
+          "H205": "44.837901204624501",
+          "I205": "55.2"
+        }
+      ],
+      "source_children": [
+        {
+          "B206": "4101000",
+          "C206": "Localitati",
+          "D206": "Edineţ",
+          "E206": "11290",
+          "F206": "5053",
+          "G206": "6237",
+          "H206": "44.756421612046097",
+          "I206": "55.2"
+        },
+        {
+          "B207": "4101001",
+          "C207": "Localitati",
+          "D207": "Alexăndreni",
+          "E207": "819",
+          "F207": "368",
+          "G207": "451",
+          "H207": "44.932844932844901",
+          "I207": "55.1"
+        },
+        {
+          "B208": "4101002",
+          "C208": "Localitati",
+          "D208": "Gordineştii Noi",
+          "E208": "260",
+          "F208": "125",
+          "G208": "135",
+          "H208": "48.076923076923102",
+          "I208": "51.9"
+        }
+      ]
+    },
+    {
+      "code": "MD-FA",
+      "repository": {
+        "name": "Fălești",
+        "population": 11946,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B268": "4301000",
+          "C268": "Comune",
+          "D268": "or. Făleşti",
+          "E268": "11946",
+          "F268": "5484",
+          "G268": "6462",
+          "H268": "45.906579608237102",
+          "I268": "54.1"
+        }
+      ],
+      "source_children": [
+        {
+          "B269": "4301000",
+          "C269": "Localitati",
+          "D269": "Făleşti",
+          "E269": "11328",
+          "F269": "5199",
+          "G269": "6129",
+          "H269": "45.895127118644098",
+          "I269": "54.1"
+        },
+        {
+          "B270": "4301001",
+          "C270": "Localitati",
+          "D270": "Fabrica de Zahăr",
+          "E270": "618",
+          "F270": "285",
+          "G270": "333",
+          "H270": "46.116504854368898",
+          "I270": "53.9"
+        }
+      ]
+    },
+    {
+      "code": "MD-FL",
+      "repository": {
+        "name": "Florești",
+        "population": 10925,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B366": "4501000",
+          "C366": "Comune",
+          "D366": "or. Floreşti",
+          "E366": "10925",
+          "F366": "5107",
+          "G366": "5818",
+          "H366": "46.745995423341",
+          "I366": "53.3"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-GA",
+      "repository": {
+        "name": "Comrat",
+        "population": 19120,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1939": "9601000",
+          "C1939": "Comune",
+          "D1939": "or. Comrat",
+          "E1939": "19120",
+          "F1939": "8637",
+          "G1939": "10483",
+          "H1939": "45.172594142259399",
+          "I1939": "54.8"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-GL",
+      "repository": {
+        "name": "Glodeni",
+        "population": 7284,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B461": "4801000",
+          "C461": "Comune",
+          "D461": "or. Glodeni",
+          "E461": "7284",
+          "F461": "3314",
+          "G461": "3970",
+          "H461": "45.496979681493698",
+          "I461": "54.5"
+        }
+      ],
+      "source_children": [
+        {
+          "B462": "4801000",
+          "C462": "Localitati",
+          "D462": "Glodeni",
+          "E462": "7075",
+          "F462": "3221",
+          "G462": "3854",
+          "H462": "45.526501766784499",
+          "I462": "54.5"
+        },
+        {
+          "B463": "4801001",
+          "C463": "Localitati",
+          "D463": "Stîrcea",
+          "E463": "209",
+          "F463": "93",
+          "G463": "116",
+          "H463": "44.497607655502399",
+          "I463": "55.5"
+        }
+      ]
+    },
+    {
+      "code": "MD-HI",
+      "repository": {
+        "name": "Hîncești",
+        "population": 11391,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B988": "5301000",
+          "C988": "Comune",
+          "D988": "or. Hînceşti",
+          "E988": "11391",
+          "F988": "5338",
+          "G988": "6053",
+          "H988": "46.861557369853401",
+          "I988": "53.1"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-IA",
+      "repository": {
+        "name": "Ialoveni",
+        "population": 14665,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1069": "5501000",
+          "C1069": "Comune",
+          "D1069": "or. Ialoveni",
+          "E1069": "14665",
+          "F1069": "6996",
+          "G1069": "7669",
+          "H1069": "47.7054210705762",
+          "I1069": "52.3"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-LE",
+      "repository": {
+        "name": "Leova",
+        "population": 6394,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1823": "5701000",
+          "C1823": "Comune",
+          "D1823": "or. Leova",
+          "E1823": "6394",
+          "F1823": "3128",
+          "G1823": "3266",
+          "H1823": "48.920863309352498",
+          "I1823": "51.1"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-NI",
+      "repository": {
+        "name": "Nisporeni",
+        "population": 9140,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1110": "6001000",
+          "C1110": "Comune",
+          "D1110": "or. Nisporeni",
+          "E1110": "9140",
+          "F1110": "4372",
+          "G1110": "4768",
+          "H1110": "47.833698030634601",
+          "I1110": "52.2"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-OC",
+      "repository": {
+        "name": "Ocnița",
+        "population": 5187,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B504": "6201000",
+          "C504": "Comune",
+          "D504": "or. Ocniţa",
+          "E504": "5187",
+          "F504": "2310",
+          "G504": "2877",
+          "H504": "44.534412955465598",
+          "I504": "55.5"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-OR",
+      "repository": {
+        "name": "Orhei",
+        "population": 22183,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1161": "6401000",
+          "C1161": "Comune",
+          "D1161": "or. Orhei",
+          "E1161": "22183",
+          "F1161": "10095",
+          "G1161": "12088",
+          "H1161": "45.507821304602601",
+          "I1161": "54.5"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-RE",
+      "repository": {
+        "name": "Rezina",
+        "population": 9380,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1259": "6701000",
+          "C1259": "Comune",
+          "D1259": "or. Rezina",
+          "E1259": "9380",
+          "F1259": "4480",
+          "G1259": "4900",
+          "H1259": "47.761194029850699",
+          "I1259": "52.2"
+        }
+      ],
+      "source_children": [
+        {
+          "B1260": "6701000",
+          "C1260": "Localitati",
+          "D1260": "Rezina",
+          "E1260": "7586",
+          "F1260": "3522",
+          "G1260": "4064",
+          "H1260": "46.427629844450301",
+          "I1260": "53.6"
+        },
+        {
+          "B1261": "6701001",
+          "C1261": "Localitati",
+          "D1261": "Boşerniţa",
+          "E1261": "289",
+          "F1261": "141",
+          "G1261": "148",
+          "H1261": "48.788927335640103",
+          "I1261": "51.2"
+        },
+        {
+          "B1262": "6701002",
+          "C1262": "Localitati",
+          "D1262": "Ciorna",
+          "E1262": "816",
+          "F1262": "383",
+          "G1262": "433",
+          "H1262": "46.936274509803901",
+          "I1262": "53.1"
+        },
+        {
+          "B1263": "6701003",
+          "C1263": "Localitati",
+          "D1263": "Stohnaia",
+          "E1263": "689",
+          "F1263": "434",
+          "G1263": "255",
+          "H1263": "62.989840348330901",
+          "I1263": "37"
+        }
+      ]
+    },
+    {
+      "code": "MD-RI",
+      "repository": {
+        "name": "Rîșcani",
+        "population": 8622,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B548": "7101000",
+          "C548": "Comune",
+          "D548": "or. Rîşcani",
+          "E548": "8622",
+          "F548": "3884",
+          "G548": "4738",
+          "H548": "45.047552771978701",
+          "I548": "55"
+        }
+      ],
+      "source_children": [
+        {
+          "B549": "7101000",
+          "C549": "Localitati",
+          "D549": "Rîşcani",
+          "E549": "8054",
+          "F549": "3622",
+          "G549": "4432",
+          "H549": "44.971442761360798",
+          "I549": "55"
+        },
+        {
+          "B550": "7101001",
+          "C550": "Localitati",
+          "D550": "Balanul Nou",
+          "E550": "227",
+          "F550": "103",
+          "G550": "124",
+          "H550": "45.374449339207104",
+          "I550": "54.6"
+        },
+        {
+          "B551": "7101002",
+          "C551": "Localitati",
+          "D551": "Rămăzan",
+          "E551": "341",
+          "F551": "159",
+          "G551": "182",
+          "H551": "46.627565982404697",
+          "I551": "53.4"
+        }
+      ]
+    },
+    {
+      "code": "MD-SD",
+      "repository": {
+        "name": "Șoldănești",
+        "population": 4797,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1363": "8301000",
+          "C1363": "Comune",
+          "D1363": "or. Şoldăneşti",
+          "E1363": "4797",
+          "F1363": "2305",
+          "G1363": "2492",
+          "H1363": "48.050865124035901",
+          "I1363": "51.9"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-SI",
+      "repository": {
+        "name": "Sîngerei",
+        "population": 9954,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B617": "7401000",
+          "C617": "Comune",
+          "D617": "or. Sîngerei",
+          "E617": "9954",
+          "F617": "4630",
+          "G617": "5324",
+          "H617": "46.513964235483201",
+          "I617": "53.5"
+        }
+      ],
+      "source_children": [
+        {
+          "B618": "7401000",
+          "C618": "Localitati",
+          "D618": "Sîngerei",
+          "E618": "9550",
+          "F618": "4440",
+          "G618": "5110",
+          "H618": "46.492146596858603",
+          "I618": "53.5"
+        },
+        {
+          "B619": "7401001",
+          "C619": "Localitati",
+          "D619": "Vrăneşti",
+          "E619": "404",
+          "F619": "190",
+          "G619": "214",
+          "H619": "47.029702970297002",
+          "I619": "53"
+        }
+      ]
+    },
+    {
+      "code": "MD-SO",
+      "repository": {
+        "name": "Soroca",
+        "population": 21135,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B712": "7801000",
+          "C712": "Comune",
+          "D712": "or. Soroca",
+          "E712": "21135",
+          "F712": "9751",
+          "G712": "11384",
+          "H712": "46.1367400047315",
+          "I712": "53.9"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-ST",
+      "repository": {
+        "name": "Strășeni",
+        "population": 14497,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1312": "8001000",
+          "C1312": "Comune",
+          "D1312": "or. Străşeni",
+          "E1312": "14497",
+          "F1312": "6924",
+          "G1312": "7573",
+          "H1312": "47.761605849486102",
+          "I1312": "52.2"
+        }
+      ],
+      "source_children": [
+        {
+          "B1313": "8001000",
+          "C1313": "Localitati",
+          "D1313": "Străşeni",
+          "E1313": "13915",
+          "F1313": "6646",
+          "G1313": "7269",
+          "H1313": "47.761408551922401",
+          "I1313": "52.2"
+        },
+        {
+          "B1314": "8001001",
+          "C1314": "Localitati",
+          "D1314": "Făgureni",
+          "E1314": "582",
+          "F1314": "278",
+          "G1314": "304",
+          "H1314": "47.766323024054998",
+          "I1314": "52.2"
+        }
+      ]
+    },
+    {
+      "code": "MD-SV",
+      "repository": {
+        "name": "Ștefan Vodă",
+        "population": 5436,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1876": "8501000",
+          "C1876": "Comune",
+          "D1876": "or. Ştefan Vodă",
+          "E1876": "5436",
+          "F1876": "2443",
+          "G1876": "2993",
+          "H1876": "44.941133186166297",
+          "I1876": "55.1"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-TA",
+      "repository": {
+        "name": "Taraclia",
+        "population": 10021,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1906": "8701000",
+          "C1906": "Comune",
+          "D1906": "or. Taraclia",
+          "E1906": "10021",
+          "F1906": "4841",
+          "G1906": "5180",
+          "H1906": "48.308552040714503",
+          "I1906": "51.7"
+        }
+      ],
+      "source_children": []
+    },
+    {
+      "code": "MD-TE",
+      "repository": {
+        "name": "Telenești",
+        "population": 5670,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1404": "8901000",
+          "C1404": "Comune",
+          "D1404": "or. Teleneşti",
+          "E1404": "5670",
+          "F1404": "2694",
+          "G1404": "2976",
+          "H1404": "47.513227513227498",
+          "I1404": "52.5"
+        }
+      ],
+      "source_children": [
+        {
+          "B1405": "8901000",
+          "C1405": "Localitati",
+          "D1405": "Teleneşti",
+          "E1405": "4695",
+          "F1405": "2231",
+          "G1405": "2464",
+          "H1405": "47.518636847710297",
+          "I1405": "52.5"
+        },
+        {
+          "B1406": "8901001",
+          "C1406": "Localitati",
+          "D1406": "Mihălaşa",
+          "E1406": "718",
+          "F1406": "334",
+          "G1406": "384",
+          "H1406": "46.518105849582199",
+          "I1406": "53.5"
+        },
+        {
+          "B1407": "8901002",
+          "C1407": "Localitati",
+          "D1407": "Mihălaşa Nouă",
+          "E1407": "257",
+          "F1407": "129",
+          "G1407": "128",
+          "H1407": "50.1945525291829",
+          "I1407": "49.8"
+        }
+      ]
+    },
+    {
+      "code": "MD-UN",
+      "repository": {
+        "name": "Ungheni",
+        "population": 26457,
+        "year": 2024,
+        "basis": "census"
+      },
+      "matched_rows": [
+        {
+          "B1473": "9201000",
+          "C1473": "Comune",
+          "D1473": "or. Ungheni",
+          "E1473": "26457",
+          "F1473": "12297",
+          "G1473": "14160",
+          "H1473": "46.4791926522281",
+          "I1473": "53.5"
+        }
+      ],
+      "source_children": []
+    }
+  ],
+  "capital_summary": {
+    "compared": 35,
+    "matching_source_counts": 35,
+    "municipality_counts_with_subordinate_villages": 13,
+    "scope_findings": [
+      "MD-AN",
+      "MD-CA",
+      "MD-CL",
+      "MD-CM",
+      "MD-CR",
+      "MD-ED",
+      "MD-FA",
+      "MD-GL",
+      "MD-RE",
+      "MD-RI",
+      "MD-SI",
+      "MD-ST",
+      "MD-TE"
+    ],
+    "limitations": "Numeric matches are not verification of current capital roles. F109 applies to Cocieri selection. City/municipality scope is inconsistent. Bender 2018 and Tiraspol 2014 estimates excluded."
+  },
+  "geometry_check": {
+    "features": 37,
+    "distinct_iso_codes": 37,
+    "public_file_matches": true,
+    "legal_boundaries_and_control_lines": "not independently certified"
+  },
+  "findings": [
+    {
+      "id": "F109",
+      "priority": "P2",
+      "status": "open",
+      "claim": "MD-DU capital Cocieri",
+      "primary_sources": [
+        "https://dubasari.md/pagins/istoria-raionului",
+        "https://dubasari.md/",
+        "https://dedubasari.md/prezentarea-generala/"
+      ],
+      "conclusion": "Council explicitly identifies current seat as Cosnita. Correct name, sourced coordinates, population and regeneration input together. No transfer date inferred.",
+      "population_options": {
+        "village": {
+          "name": "Coșnița",
+          "population": 3977,
+          "cell": "8.3!E977"
+        },
+        "commune": {
+          "name": "Coșnița",
+          "population": 4481,
+          "cell": "8.3!E976"
+        }
+      }
+    },
+    {
+      "id": "F110",
+      "priority": "P2",
+      "status": "open",
+      "source": "https://dubasari.md/pagins/simbolica",
+      "official_height_to_width": "2:3",
+      "asset": "public/flags/sub/MD/MD-DU.png",
+      "image_dimensions": [
+        800,
+        500
+      ],
+      "bundled_height_to_width": "5:8",
+      "metadata_width_divided_by_height": 1.6,
+      "required_width_divided_by_height": 1.5,
+      "visual_review": "Flag field fills the image. No surrounding padding explains the ratio difference."
+    },
+    {
+      "id": "F111",
+      "priority": "P2",
+      "status": "open",
+      "record": "FLAG_MEANINGS.MD-SN",
+      "conclusion": "Distinguish flag adoption 2 September 1991 from later July 2000 symbols legislation. Qualify emblem-free variant as unavailable to state authorities. Recommend describing 2017 joint display rather than unspecified equal legal standing; full 2017 attachment retrieval failed.",
+      "primary_sources": [
+        "https://vspmr.org/about/verhovniy-sovet-istoriya-fakti-i-kommentarii/o-gosudarstvennoy-simvolike-pridnestrovjya.html",
+        "https://www.vspmr.org/news/supreme-council/denj-rojdeniya-respubliki2092023.html",
+        "https://president.gospmr.org/gos-flag-pmr/",
+        "https://novostipmr.com/ru/content/utverzhden-poryadok-ispolzovaniya-na-territorii-pridnestrovya-gosflaga"
+      ],
+      "source_scope": "De facto administration evidence for its own acts, not international recognition."
+    },
+    {
+      "id": "F112",
+      "priority": "P2",
+      "status": "open",
+      "conclusion": "Thirteen capital cards include subordinate villages without population-scope metadata; city-proper type comment is inaccurate for these records. Add source unit and identifier, or select settlement counts if city-proper is intended.",
+      "codes": [
+        "MD-AN",
+        "MD-CA",
+        "MD-CL",
+        "MD-CM",
+        "MD-CR",
+        "MD-ED",
+        "MD-FA",
+        "MD-GL",
+        "MD-RE",
+        "MD-RI",
+        "MD-SI",
+        "MD-ST",
+        "MD-TE"
+      ]
+    },
+    {
+      "id": "F108",
+      "status": "current flag independently verified; historical artwork/caption residual open",
+      "official_source": "https://www.biot.gov.io/governance/flag-and-crest/",
+      "official_image": "https://www.biot.gov.io/wp-content/uploads/BIOT-Flag-Tudor-Crown.jpg",
+      "official_image_sha256": "e25a50cfb2fd33abfaac02594dc79eaffbbeab381b4cdb5b7727701e78bb5d76",
+      "visual_review": "Rendered current, newly added historical, and former current SVGs. Current Tudor Crown matches administration design; newly added historical file lacks red lining and coloured jewel details promised by its caption. Former current rendering has these details.",
+      "former_current_sha256": "aeb872cb50192585fee2f29a9bf4c6fb81605ccd110386136c2f08ed8437a1a1"
+    }
+  ],
+  "malta": {
+    "batch": "8f",
+    "new_flag_assets": 9,
+    "new_meanings": 4,
+    "primary_authentication": "not complete for all 9",
+    "followup": {
+      "code": "MT-05",
+      "source": "https://birzebbugalc.gov.mt/en/homepage/geography-and-history/",
+      "observation": "Council provides competing place-name stories. Attribute traditional derivation; present economic importance of olive growing not independently supported by current primary economic evidence."
+    }
+  },
+  "limitations": [
+    "No application changes.",
+    "No whole-app or whole-world factual certification.",
+    "No new independent browser visual walkthrough; HTTP delivery and local SVG/PNG rendering explicitly distinguished.",
+    "Moldova control geometry and all legal administrative classifications not independently certified.",
+    "Capital numeric matches do not certify role or intended geographic scope.",
+    "MD-BD and MD-SN subdivision counts plus Bender/Tiraspol capital estimates remain outside census verification."
+  ]
+}
