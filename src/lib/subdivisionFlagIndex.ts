@@ -16,8 +16,12 @@
 
 // Non-SVG extension overrides (SVG is the default for unlisted codes)
 const NON_SVG_EXT: Record<string, string> = {
-  // Moldova, batch 8h: Commons PNG render (thumb.php) of the Dubăsari district flag.
-  "MD-DU":"png",
+  // Moldova, batches 8h–8i: Commons renders (thumb.php) of the district and municipality flags,
+  // each checked against FOTW (see the audit ledger).
+  "MD-AN":"png","MD-BA":"png","MD-BS":"png","MD-CA":"png","MD-CL":"png","MD-CM":"png","MD-CR":"png","MD-CS":"jpg",
+  "MD-CT":"png","MD-CU":"png","MD-DO":"png","MD-DR":"png","MD-DU":"png","MD-ED":"png","MD-FA":"png","MD-FL":"png",
+  "MD-IA":"png","MD-LE":"png","MD-NI":"png","MD-OR":"png","MD-RE":"png","MD-RI":"png",
+  "MD-SD":"png","MD-SI":"png","MD-SO":"png","MD-ST":"png","MD-SV":"png","MD-TA":"png","MD-TE":"png","MD-UN":"png",
   // Malta, batch 8f: Commons PNG renders (thumb.php) of the local-council banners of arms.
   "MT-05":"png","MT-22":"png","MT-23":"png","MT-24":"png","MT-25":"png","MT-26":"png","MT-27":"png","MT-29":"png","MT-30":"png",
   // Norway, batch 8d: Commons PNG renders (thumb.php) of the county flags.
@@ -164,7 +168,11 @@ const FLAG_CODES = new Set<string>([
   "LT-57","LT-58","LT-59","LT-AL","LT-KL","LT-KU","LT-MR","LT-PN","LT-SA","LT-TA","LT-TE","LT-UT","LT-VL",
   "LV-016","LV-022","LV-026","LV-033","LV-041","LV-042","LV-047","LV-050","LV-052","LV-054","LV-056","LV-058","LV-062",
   "LV-067","LV-068","LV-073","LV-077","LV-080","LV-087","LV-088","LV-089","LV-091","LV-094","LV-097","LV-099","LV-101",
-  "LV-102","LV-106","LV-113","LV-DGV","LV-JEL","LV-JUR","LV-LPX","LV-REZ","LV-RIX","LV-VEN","MD-DU","MD-GA","MD-SN","ME-06","ME-08","ME-11",
+  "LV-102","LV-106","LV-113","LV-DGV","LV-JEL","LV-JUR","LV-LPX","LV-REZ","LV-RIX","LV-VEN",
+  "MD-AN","MD-BA","MD-BS","MD-CA","MD-CL","MD-CM","MD-CR","MD-CS","MD-CT","MD-CU","MD-DO","MD-DR",
+  "MD-DU","MD-ED","MD-FA","MD-FL","MD-GA","MD-IA","MD-LE","MD-NI","MD-OR","MD-RE",
+  "MD-RI","MD-SD","MD-SI","MD-SN","MD-SO","MD-ST","MD-SV","MD-TA","MD-TE","MD-UN",
+  "ME-06","ME-08","ME-11",
   "ME-13","ME-14","ME-15","ME-16","ME-17","ME-18","ME-19","ME-20","ME-21","ME-22","ME-24","MH-ALK","MH-EBO",
   "MH-KWA","MH-MAJ","MH-NMK","MH-UJA","MH-UTI","MH-WTH","MK-101","MK-103","MK-104","MK-105","MK-106","MK-108","MK-109",
   "MK-201","MK-202","MK-203","MK-204","MK-205","MK-206","MK-207","MK-208","MK-209","MK-210","MK-211","MK-301","MK-303",

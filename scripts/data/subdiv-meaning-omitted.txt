@@ -21,6 +21,14 @@ US-UM
 #   Marsa (MT-26, mt-34.html). Their English and Maltese Wikipedia articles were also checked and show the
 #   arms with no stated meaning (Lija gives only the motto "Suavi Fructo Rubeo") — genuine walls.
 MT-01 MT-02 MT-04 MT-07 MT-08 MT-11 MT-12 MT-13 MT-15 MT-16 MT-17 MT-18 MT-19 MT-22 MT-23 MT-24 MT-25 MT-26 MT-33 MT-34 MT-35 MT-36 MT-37 MT-38 MT-44 MT-46 MT-48 MT-54 MT-55 MT-59 MT-60 MT-67 MT-68
+# MD districts (batch 8i, 2026-10) — RE-VERIFIED against Flags of the World through its Moldova subdivisions
+#   index https://www.crwflags.com/fotw/flags/md-sub.html (district pages md-an, md-bs, md-ch, md-cl, md-cm,
+#   md-cr, md-cs, md-ct, md-dn, md-dr, md-ed, md-fl, md-il, md-lv, md-ns, md-or, md-rs, md-rz, md-sd,
+#   md-sg, md-sr, md-sv, md-tl, md-tr, md-un): FOTW gives each district's adoption date, author or blazon, but no
+#   stated meaning. Each district's Romanian Wikipedia article ("Raionul X") was also read; all show the flag and
+#   arms with no explanation. Florești (MD-FL) and Strășeni (MD-ST), which FOTW does explain, and Chișinău and
+#   Bălți (municipal sources) are sourced in flagMeanings.ts.
+MD-AN MD-BS MD-CA MD-CL MD-CM MD-CR MD-CS MD-CT MD-DO MD-DR MD-ED MD-FA MD-IA MD-LE MD-NI MD-OR MD-RE MD-RI MD-SD MD-SI MD-SO MD-SV MD-TA MD-TE MD-UN
 # MX states — RE-VERIFIED against Flags of the World 2026-07 (crwflags.com/fotw/flags/mx-XX.html).
 #   Most Mexican states use the coat of arms on a plain white field as a de-facto flag. FOTW
 #   documents per-element arms symbolism for Mexico City (MX-DIF), Colima (MX-COL), Hidalgo (MX-HID),

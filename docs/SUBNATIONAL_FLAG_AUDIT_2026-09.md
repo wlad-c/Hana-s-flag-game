@@ -1382,6 +1382,8 @@ show the 2025 flag.
 
 ## Batch 8h — Moldova's 37 official units (SF-06, 2026-10-01)
 
+*Shipped in #1741 (`e99f6ac`); live since 1 October 2026, 11:31 PM AEST.*
+
 **What was wrong.** None of Moldova's divisions showed a flag, and the map behind them was wrong:
 - **Mis-coded units.** The file carried 40 Natural Earth features: two copies each of Transnistria
   (MD-SN) and Rezina, and Camenca (MD-CAM) and Grigoriopol (MD-GRI) as separate units, though
@@ -1458,6 +1460,80 @@ Cocieri has no flag on Wikidata, Commons or FOTW's Moldova index, so its capital
   367,776 (Wikidata, 2024), which includes Bender. MD-BD shows 98,726 labelled as the 2014 census,
   but Moldova's 2014 census did not enumerate Bender. Both need re-sourcing from the PMR statistics
   service with the unit's scope matched.
+
+## Batch 8i — Moldova's district and municipal flags (SF-06, 2026-10-01)
+
+**What was wrong.** After batch 8h only Transnistria, Gagauzia and Dubăsari district had flags. The
+other 31 districts and the municipalities of Chișinău and Bălți showed none, though FOTW documents a
+flag for nearly every one. Chișinău, Bălți and Bender showed no flag anywhere. They are city
+territories, so their capital cards hide the capital flag as a duplicate of the division's, and
+their division slot was empty.
+
+**Added (29).** Each is the Commons file named by the unit's own Wikidata item (P41), compared
+side by side with FOTW's image of the flag on that district's page (index `md-sub.html`):
+- **Districts:** Anenii Noi, Basarabeasca, Cahul, Călărași, Cantemir, Căușeni, Cimișlia, Criuleni,
+  Dondușeni, Drochia, Edineț, Fălești, Florești, Ialoveni, Leova, Nisporeni, Orhei, Rezina,
+  Rîșcani, Sîngerei, Soroca, Strășeni, Șoldănești, Ștefan Vodă, Taraclia, Telenești and Ungheni.
+- **Municipalities:**
+  - Chișinău, the design the city adopted in 2020: narrow yellow stripes, with the small arms
+    uncrowned. It replaced the 1998 flag with the twisted braid.
+  - Bălți, the flag of 2006.
+
+Where Commons and FOTW differ only in shade (Edineț, Ialoveni, Sîngerei, Taraclia), it is the same
+design drawn twice.
+
+**How they were bundled.** Each file is used at the size its Commons original was drawn. The Commons
+API answered 429, so sizes and SHA-1s came from the Toolforge Commons API:
+- **17 GIFs:** byte-identical originals (SHA-1 matched), fetched through `thumb.php` at their exact
+  width and converted losslessly to PNG. Most are 195–324 px wide, from 2010.
+- **6 PNG/JPG files:** Commons' render at the original's exact size, because the upload server
+  rate-limited every uncached file (Basarabeasca, Cimișlia, Drochia, Căușeni, Leova, Taraclia).
+- **Bălți:** rendered at 1,200 px from its 3,001 px original.
+- **5 drawn as SVGs:** 900 px renders (Cahul, Chișinău, Rezina, Soroca, Ungheni).
+
+A first attempt bundled every flag as a 900 px `thumb.php` render. `thumb.php` turned out to
+enlarge rasters (a 225×150 GIF came back at 600×400), so those blurry enlargements were replaced
+before commit.
+
+**Explainers (4):**
+- **Chișinău:** the city's own symbols page, which says the flag stands for the past, present and
+  future of the community.
+- **Bălți:** canting arms (*baltă*, a pond) and the archer of 1930 (FOTW and ro.wikipedia).
+- **Florești:** the canting flower, from FOTW, quoting Moldpres and Presidential Decree No. 1242 of
+  2019.
+- **Strășeni:** the 1826 oak and the wine barrels (FOTW, quoting the district council).
+
+The other districts are logged as omissions in `subdiv-meaning-omitted.txt`. FOTW gives each one's
+adoption date, author or blazon but no meaning. Every district's Romanian Wikipedia article was
+read, and all show the arms with no explanation.
+
+**Not shown:**
+- **Briceni:** FOTW `md-br`: "The District of Briceni doesn't have its own flag and is using the
+  flag of the Town of Briceni." The town's flag is already its capital flag.
+- **Glodeni:** new symbols were registered in 2016, after Moldova's heraldic commission objected
+  that the ox was too like the one on the national arms (FOTW `md-gl`). FOTW draws the current flag
+  with a gold aurochs head. The only Commons file has a brown head of a different shape, which
+  matches neither the 2016 drawing nor the 2014 one. Withheld until the file can be checked against
+  the 2016 decree.
+- **Hîncești:** the flag is verified: Commons' SVG matches FOTW `md-hn`, a gold bow, arrow and vine
+  leaves on red. But the SVG source could not be fetched (upload.wikimedia.org answered 429 for
+  every uncached file for over an hour), and the design is too sparse for the raster image-quality
+  gate (detail 4.3, minimum 5). It will be added as an SVG once the file can be fetched.
+- **Ocnița:** the only Commons file is a 225×150 GIF. The flag, a thin sword between ears of wheat
+  on red, is so sparse that at raster size the image-quality gate cannot tell it from a blank stub
+  (detail 4.9, minimum 5). Withheld until a vector file exists; the gate is not lowered.
+- **Bender:** the city's flag (yellow over black, with the eagle and the lion; FOTW `md-bend`) is
+  the design used by the Transnistrian-administered city council. It is bundled as Bender's capital
+  flag, but hidden like the other city territories'. Showing it as the division flag needs a
+  sourced decision on how to label it, as Transnistria's has. That is a follow-up.
+
+**Verified in the running app:**
+- All 32 Moldovan division flags in the grid paint (`img.complete && naturalWidth > 0`). Briceni,
+  Glodeni, Hîncești and Ocnița show none.
+- Chișinău and Bălți show their flag once, with the new explainers, and their capital cards add no
+  second copy.
+- Florești and Strășeni render their FOTW-sourced explainers.
+- No page errors and no remote flag requests. `flags:check` and `npm run build` pass.
 
 ## Follow-ups (later batches)
 

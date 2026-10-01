@@ -7209,6 +7209,53 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
 
+  "MD-CU": {
+    description:
+      "Chișinău’s flag, in the design the city adopted in 2020: white, with narrow yellow stripes across the " +
+      "middle and the city’s small arms in the centre — a golden eagle with lowered wings on blue, carrying the " +
+      "arms of Moldavia (an aurochs head with a star between its horns, a rose and a crescent). The city says the " +
+      "flag stands for the past, present and future of its community. It replaced the 1998 flag, whose gold " +
+      "stripes were a twisted braid.",
+    sources: [
+      { title: "Simbolurile orașului — Primăria municipiului Chișinău (official)", url: "https://www.chisinau.md/pageview.php?l=ro&idc=499&t=/Orasul/Simbolurile-orasului" },
+      { title: "Drapelul Chișinăului — Wikipedia (ro)", url: "https://ro.wikipedia.org/wiki/Drapelul_Chi%C8%99in%C4%83ului" },
+    ],
+  },
+
+  "MD-BA": {
+    description:
+      "Bălți’s flag, adopted with its arms on 22 May 2006: white over blue, with the city’s small arms in the " +
+      "centre. The shield is striped silver and blue, canting arms for Bălți, the plural of baltă, a shallow pond, " +
+      "since the town lies among such ponds; the archer on it is kept from the town’s first arms of 1930.",
+    sources: [
+      { title: "Bălţi (Moldova) — Flags of the World", url: "https://crwflags.com/fotw/flags/md-balt.html" },
+      { title: "Stema Bălțiului — Wikipedia (ro)", url: "https://ro.wikipedia.org/wiki/Stema_B%C4%83l%C8%9Biului" },
+    ],
+  },
+
+  "MD-FL": {
+    description:
+      "Red over gold, divided by a line that rises into a gold flower. The flower plays on the name Florești, from " +
+      "flori, ‘flowers’: the accepted etymology points to a hill called Rediul Florilor, the local one to the many " +
+      "flowers on the river bank where the town was built. The flag and arms were registered by Presidential " +
+      "Decree No. 1242 of 12 August 2019.",
+    sources: [
+      { title: "Florești district (Moldova) — Flags of the World", url: "https://crwflags.com/fotw/flags/md-fr.html" },
+    ],
+  },
+
+  "MD-ST": {
+    description:
+      "Divided vertically yellow and green, with an uprooted oak and two wine barrels in the opposite colours — a " +
+      "banner of the district’s arms. The oak comes from the 1826 arms of the old county the district’s land " +
+      "belonged to, and stands for its forests, the Codru reserve and the oak of Stephen the Great at Scoreni; " +
+      "the split recalls the two historical domains and the two banks of the Bîc. The barrels, lying corked and " +
+      "full, stand for wine-making, the district’s main source of income, and its coopers.",
+    sources: [
+      { title: "Strășeni district (Moldova) — Flags of the World", url: "https://crwflags.com/fotw/flags/md-st.html" },
+    ],
+  },
+
   "MD-DU": {
     description:
       "Blue, white and blue stripes (1:2:1) with a red boat in the centre: a dubas, the river boat from which " +
