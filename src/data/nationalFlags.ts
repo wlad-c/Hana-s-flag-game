@@ -1132,7 +1132,8 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
     { id: "in-olympic-committee", category: "olympiccommittee", name: "Logo of the Indian Olympic Association", path: "national-flags/in/in-olympic-committee.svg", stats: [{ label: "NOC founded", value: "1927" }, { label: "Summer Games participated", value: "26" }, { label: "Winter Games participated", value: "12" }, { label: "Summer Olympic medals (G–S–B)", value: "10–10–21 (41 total)" }, { label: "Winter Olympic medals (G–S–B)", value: "0–0–0 (none)" }, { label: "Athletes at Paris 2024 (Summer)", value: "110" }, { label: "Athletes at Milano Cortina 2026 (Winter)", value: "2" }], design: "The Indian Olympic Association's mark: a saffron, white and green swoosh — India's flag colours — above the word “INDIA” and the Olympic rings.", source: "https://en.wikipedia.org/wiki/Indian_Olympic_Association" },
   ],
   "IO": [
-    { id: "io-official-national", category: "official", name: "Flag of the British Indian Ocean Territory", from: 1990, to: 9999, path: "flags/io.svg", design: "White and blue wavy stripes for the Indian Ocean, the Union Flag in the canton, and a palm tree above a royal crown in the fly.", source: "https://en.wikipedia.org/wiki/Flag_of_the_British_Indian_Ocean_Territory" },
+    { id: "io-official-national", category: "official", name: "Flag of the British Indian Ocean Territory", from: 2025, to: 9999, path: "flags/io.svg", design: "White and blue wavy stripes for the Indian Ocean, the Union Flag in the canton, and a palm tree above King Charles III's Tudor Crown in the fly, plain gold since the October 2025 update.", source: "https://www.biot.gov.io/governance/flag-and-crest/" },
+    { id: "io-1990", category: "historical", name: "Flag of the British Indian Ocean Territory (1990–2025)", from: 1990, to: 2025, path: "national-flags/io/io-1990.svg", design: "The territory's flag as granted in 1990: the same wavy stripes, Union Flag and palm tree, with Queen Elizabeth II's St Edward's Crown, lined in red velvet and set with jewels.", source: "https://www.biot.gov.io/governance/flag-and-crest/" },
   ],
   "IQ": [
     { id: "iq-official-national", category: "official", name: "Flag of Iraq", from: 2008, to: 9999, primary: true, path: "flags/iq.svg", design: "The national flag of Iraq, in the form adopted in 2008.", source: "https://en.wikipedia.org/wiki/Flag_of_Iraq" },
@@ -6835,6 +6836,12 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     sources: [
       { title: "The new AIFF logo — Indian Football (official) via X/Twitter", url: "https://x.com/IndianFootball/status/781020193900339200" },
       { title: "AIFF gets a new logo — Business Standard", url: "https://www.business-standard.com/article/pti-stories/aiff-gets-a-new-logo-116092801000_1.html" },
+    ],
+  },
+  "io-official-national": {
+    description: "The flag was granted to the territory's Commissioner by Queen Elizabeth II on the territory's 25th anniversary, in 1990. The Union Flag in the canton marks the British territory, the blue and white wavy stripes stand for the Indian Ocean, and the palm tree and the crown are symbols of the territory. In October 2025, with the agreement of the College of Arms, Queen Elizabeth's St Edward's Crown was replaced by King Charles III's Tudor Crown, in plain gold without red velvet or jewels.",
+    sources: [
+      { title: "Flag and crest — British Indian Ocean Territory Administration", url: "https://www.biot.gov.io/governance/flag-and-crest/" },
     ],
   },
   "iq-1924": {

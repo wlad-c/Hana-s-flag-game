@@ -1277,6 +1277,8 @@ explainer. For Stavanger, the explainer says that what the vine means is not kno
 
 ## Batch 8f — Malta's local councils without a flag (SF-06, 2026-10-01)
 
+*Shipped in #1739 (`9bd66b6`); live since 1 October 2026, 10:55 PM AEST.*
+
 **What was wrong.** The app showed flags for 56 of Malta's 68 local councils. The other 12 had never
 been bundled, though most of them fly a banner of their arms.
 
@@ -1341,6 +1343,40 @@ three withheld councils show neither a flag nor an explainer. No page errors, an
 **For later:** show Kalkara, Marsaxlokk and Paola once free files of their current designs exist.
 Malta's councils, like 259 subdivisions in 28 countries, show the generic type "Division". This is logged as
 SF-19 in the handbook.
+
+## Batch 8g — the British Indian Ocean Territory's 2025 flag (Codex F108, 2026-10-01)
+
+**What was wrong.** Codex's finding F108: batch 8c's explainer for the British Indian Ocean Territory
+(GB-IO) described a Tudor Crown, but the bundled flag (`public/flags/io.svg`, from hampusborgos) still
+showed St Edward's Crown with red velvet and jewels. The BIOT administration's flag page
+(biot.gov.io/governance/flag-and-crest/) says the flag "was formally updated in October 2025 via
+submission to His Majesty, in agreement with the College of Arms". King Charles III's Tudor Crown,
+"simple gold, unadorned by red velvet or jewels", replaced Queen Elizabeth II's St Edward's Crown.
+hampusborgos still carries the 1990 crown.
+
+**What changed:**
+- **The current flag.** `public/flags/io.svg` is now the Commons file *Flag of the British Indian
+  Ocean Territory 2025.svg*. It is public domain, sourced to the UK government's flag guide and the
+  BIOT site, and the plain Commons filename now redirects to it. Compared side by side with the
+  administration's own artwork (`BIOT-Flag-Tudor-Crown.jpg`), it has the same plain gold Tudor
+  Crown, with no red velvet or jewels.
+- **The downloader.** `download-flags.mjs` pins that file, so a forced re-download cannot bring back
+  the old crown.
+- **National symbols.** The current flag is now dated from 2025, with the administration's page as
+  its source and a sourced explainer. The 1990–2025 flag is now a historical entry: Commons *Flag
+  of the British Indian Ocean Territory 1990.svg*, near-identical to the file it replaces (mean
+  pixel difference 1.3 of 255).
+- **The GB-IO explainer.** It now says the 1990 grant carried St Edward's Crown and that the Tudor
+  Crown came in 2025. It cites the administration's page.
+
+GB-IO shares `io.svg` with the IO world-map entity and the National symbols tab, so all three now
+show the 2025 flag.
+
+**Verified in the running app:**
+- The GB-IO panel paints the 2025 flag, gold Tudor Crown, with the corrected explainer.
+- The UK's sub-national National symbols tab lists the 2025 flag as current ("2025 – present") and
+  the 1990 flag under Historical flags. Both images paint.
+- No page errors and no remote flag requests.
 
 ## Follow-ups (later batches)
 

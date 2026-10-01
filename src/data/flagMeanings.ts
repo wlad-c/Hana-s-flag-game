@@ -16528,11 +16528,14 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
 
   "GB-IO": {
     description:
-      "The British Indian Ocean Territory’s flag was granted in 1990, the territory’s 25th anniversary. " +
+      "The British Indian Ocean Territory’s flag was granted to its Commissioner by Queen Elizabeth II in " +
+      "1990, the territory’s 25th anniversary, and has only semi-official status as a territorial flag. " +
       "Below the Union Flag in the canton, white and blue wavy lines stand for the waters of the Indian " +
-      "Ocean. A palm tree rises above the Tudor Crown, both symbols of the territory. It was made for the " +
-      "territory’s commissioner in London and has only semi-official status as a territorial flag.",
+      "Ocean, and the palm tree and the crown are symbols of the territory. In October 2025, with the " +
+      "agreement of the College of Arms, Queen Elizabeth’s St Edward’s Crown was replaced by King Charles " +
+      "III’s Tudor Crown, in plain gold without red velvet or jewels.",
     sources: [
+      { title: "Flag and crest — British Indian Ocean Territory Administration", url: "https://www.biot.gov.io/governance/flag-and-crest/" },
       { title: "Flag of the British Indian Ocean Territory — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_British_Indian_Ocean_Territory" },
     ],
   },

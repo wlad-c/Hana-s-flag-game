@@ -19942,12 +19942,34 @@
         {
           "id": "io-official-national",
           "category": "official",
-          "from": 1990,
+          "from": 2025,
           "to": 9999,
           "name": "Flag of the British Indian Ocean Territory",
           "reuse": "flags/io.svg",
-          "design": "White and blue wavy stripes for the Indian Ocean, the Union Flag in the canton, and a palm tree above a royal crown in the fly.",
-          "source": "https://en.wikipedia.org/wiki/Flag_of_the_British_Indian_Ocean_Territory"
+          "design": "White and blue wavy stripes for the Indian Ocean, the Union Flag in the canton, and a palm tree above King Charles III's Tudor Crown in the fly, plain gold since the October 2025 update.",
+          "source": "https://www.biot.gov.io/governance/flag-and-crest/",
+          "meaning": {
+            "description": "The flag was granted to the territory's Commissioner by Queen Elizabeth II on the territory's 25th anniversary, in 1990. The Union Flag in the canton marks the British territory, the blue and white wavy stripes stand for the Indian Ocean, and the palm tree and the crown are symbols of the territory. In October 2025, with the agreement of the College of Arms, Queen Elizabeth's St Edward's Crown was replaced by King Charles III's Tudor Crown, in plain gold without red velvet or jewels.",
+            "sources": [
+              {
+                "title": "Flag and crest — British Indian Ocean Territory Administration",
+                "url": "https://www.biot.gov.io/governance/flag-and-crest/"
+              }
+            ]
+          }
+        },
+        {
+          "id": "io-1990",
+          "category": "historical",
+          "name": "Flag of the British Indian Ocean Territory (1990–2025)",
+          "from": 1990,
+          "to": 2025,
+          "commons": "Flag of the British Indian Ocean Territory 1990.svg",
+          "file": "io/io-1990.svg",
+          "design": "The territory's flag as granted in 1990: the same wavy stripes, Union Flag and palm tree, with Queen Elizabeth II's St Edward's Crown, lined in red velvet and set with jewels.",
+          "source": "https://www.biot.gov.io/governance/flag-and-crest/",
+          "sha256": "7c3b6a1b1551bed08f7862c2fbfff81b371533bee2c7a6d2b94f2834da176f36",
+          "fetched": "2026-10-01"
         }
       ]
     },

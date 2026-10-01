@@ -70,7 +70,10 @@ const TERRITORY_FLAGS = {
   gs: `${GITHUB_FLAGS_BASE}/gs.svg`,   // South Georgia         (GB-GS)
   gu: `${GITHUB_FLAGS_BASE}/gu.svg`,   // Guam                  (US-GU)
   im: `${GITHUB_FLAGS_BASE}/im.svg`,   // Isle of Man           (GB-IM)
-  io: `${GITHUB_FLAGS_BASE}/io.svg`,   // British Indian Ocean  (GB-IO)
+  // BIOT: the flag was updated in October 2025 (King Charles III's Tudor Crown replaces St Edward's
+  // Crown — biot.gov.io/governance/flag-and-crest/). hampusborgos still carries the 1990 crown, so
+  // this pins the Commons redraw of the 2025 design (Codex F108, batch 8g).
+  io: "https://upload.wikimedia.org/wikipedia/commons/1/12/Flag_of_the_British_Indian_Ocean_Territory_2025.svg", // British Indian Ocean  (GB-IO)
   je: `${GITHUB_FLAGS_BASE}/je.svg`,   // Jersey                (GB-JE)
   ky: `${GITHUB_FLAGS_BASE}/ky.svg`,   // Cayman Islands        (GB-KY)
   mq: `${GITHUB_FLAGS_BASE}/mq.svg`,   // Martinique            (FR-MQ)
