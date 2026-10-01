@@ -175,7 +175,13 @@ const SUBNATIONAL_OVERRIDE = {
   "GL-QA": { capital: "Ilulissat" }, // Qaasuitsup — not Qaanaaq; Q191047
   "KZ-ALM": { capital: "Qapshaghay" }, // Almaty Region's capital since 2022, renamed Qonayev; Q1816833
   "KZ-YUZ": { capital: "Turkistan" }, // Turkistan Region's capital since 2018, not Shymkent; Q848638
-  "NO-02": { capital: "Oslo" }, // Akershus's administrative centre is Oslo, outside the county; Q585
+  "NO-32": { capital: "Oslo" }, // Akershus's administrative centre is Oslo, outside the county; Q585
+  // Norway's 2024 counties (batch 8d). Each is the county's Wikidata capital (P36).
+  // Agder and Trøndelag carry two P36 values; the pin is the elected county
+  // municipality's seat, as for the other co-capitals (SF-17).
+  "NO-34": { capital: "Hamar" }, // Innlandet — not Lillehammer (former Oppland); Q3738335
+  "NO-42": { capital: "Kristiansand" }, // Agder's county hall (Fylkeshuset); the state county governor sits in Arendal
+  "NO-50": { capital: "Steinkjer" }, // Trøndelag: "Administrasjonssenteret er Steinkjer" (trondelagfylke.no); Trondheim hosts the county mayor
   "NZ-HKB": { capital: "Napier" }, // Hawke's Bay Regional Council sits in Napier, not Hastings; Q203380
   "NZ-MWT": { capital: "Palmerston North" }, // Horizons Regional Council, not Whanganui; Q212289
   "PE-LIM": { capital: "Huacho" }, // Lima Region — not the neighbouring town of Huaura; Q1002052
@@ -196,7 +202,7 @@ const NE_CAPITAL_BLOCK = {
   "GY-DE": "Georgetown is the national capital, a municipality of its own; Region 4's Regional Democratic Council sits at Triumph (Q6152928)",
   "ID-KS": "Banjarmasin was South Kalimantan's capital until 2022; it is now Banjarbaru (Q14181)",
   "IL-Z": "Nazareth is the Northern District's largest city; its capital is Nof HaGalil (Q167659)",
-  "NO-01": "Moss is not Østfold's administrative centre; it is Sarpsborg (Q108025)",
+  "NO-31": "Moss is not Østfold's administrative centre; it is Sarpsborg (Q108025)",
   "PH-BEN": "Baguio is an independent city; Benguet's capital is La Trinidad (Q30351)",
   "PY-11": "Ypacaraí is not Central Department's capital; it is Areguá (Q135975)",
   "RO-HR": "NE's \"Miercurea Cuic\" (sic) lies 21 km west of Miercurea Ciuc (Q193420)",

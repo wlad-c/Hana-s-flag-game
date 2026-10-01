@@ -16,6 +16,8 @@
 
 // Non-SVG extension overrides (SVG is the default for unlisted codes)
 const NON_SVG_EXT: Record<string, string> = {
+  // Norway, batch 8d: Commons PNG renders (thumb.php) of the county flags.
+  "NO-11":"png","NO-31":"png","NO-32":"png","NO-33":"png","NO-39":"png","NO-42":"png","NO-50":"png","NO-55":"png","NO-56":"png",
   "AE-RK":"png","AL-04":"png","AL-05":"png","AL-08":"png","AL-09":"png","AL-10":"png","AZ-SM":"png",
   "AZ-YE":"jpg","CI-AB":"png","CV-RB":"png","DJ-DJ":"png","EE-205":"png","EE-441":"png","EE-486":"png",
   "EE-792":"png","EE-899":"png","EG-AST":"png","EG-BA":"png","EG-C":"png","EG-FYM":"png","EG-GH":"png",
@@ -180,8 +182,8 @@ const FLAG_CODES = new Set<string>([
   "MY-15","MY-16","MZ-MPM","NG-AK","NG-AN","NG-BE","NG-BY","NG-ED","NG-EN","NG-GO","NG-JI","NG-KN","NG-KO",
   "NG-KW","NG-LA","NG-NA","NG-NI","NG-OG","NG-ON","NG-OS","NG-OY","NG-PL","NG-RI","NG-SO","NG-YO","NG-ZA",
   "NI-AN","NI-AS","NL-AW","NL-BQ1","NL-BQ2","NL-BQ3","NL-CW","NL-DR","NL-FL","NL-FR","NL-GE","NL-GR","NL-LI",
-  "NL-NB","NL-NH","NL-OV","NL-SX","NL-UT","NL-ZE","NL-ZH","NO-03","NO-11","NO-15","NO-18","NO-34","NO-38",
-  "NO-46","NO-50","NO-54","PA-1","PA-10","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-9","PA-EM",
+  "NL-NB","NL-NH","NL-OV","NL-SX","NL-UT","NL-ZE","NL-ZH","NO-03","NO-11","NO-15","NO-18","NO-31","NO-32",
+  "NO-33","NO-39","NO-42","NO-50","NO-55","NO-56","PA-1","PA-10","PA-2","PA-3","PA-4","PA-5","PA-6","PA-7","PA-9","PA-EM",
   "PA-KY","PA-NB","PA-NT","PE-AMA","PE-ANC","PE-APU","PE-ARE","PE-AYA","PE-CAJ","PE-CAL","PE-CUS","PE-HUC","PE-HUV",
   "PE-ICA","PE-JUN","PE-LAL","PE-LAM","PE-LIM","PE-LMA","PE-LOR","PE-MDD","PE-MOQ","PE-PAS","PE-PIU","PE-PUN","PE-SAM",
   "PE-TAC","PE-TUM","PE-UCA","PG-CPK","PG-CPM","PG-EBR","PG-EHG","PG-EPW","PG-ESW","PG-GPK","PG-HLA","PG-JWK","PG-MBA",

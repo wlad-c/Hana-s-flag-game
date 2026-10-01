@@ -10937,10 +10937,11 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
   "NO-18": {
     description:
       "The county arms as a banner: on a gold field a black Nordland boat (nordlandsbåt) with mast and " +
-      "square sail — the traditional fishing craft of the coast. Its black is the protective tar, and " +
-      "the gold field is the sun of the region’s midnight-sun summers; granted 1965.",
+      "square sail — the traditional fishing craft of the coast. The black is the tar the boats were " +
+      "coated with, and the gold field refers to the sun. Arms, flag and seal were fixed in 1965.",
     sources: [
       { title: "Nordland — Wikipedia", url: "https://en.wikipedia.org/wiki/Nordland" },
+      { title: "Nordlands fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Nordlands_fylkesv%C3%A5pen" },
     ],
   },
 
@@ -10958,9 +10959,12 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     description:
       "The county arms as a banner: on a blue field three golden Viking ships, one for each of the " +
       "county’s districts — Sunnmøre, Romsdal and Nordmøre — for the region’s seafaring and " +
-      "shipbuilding; their masts form crosses for the county’s strong Christian tradition. Granted 1978.",
+      "shipbuilding; their masts form crosses for the county’s strong Christian tradition. The county " +
+      "council adopted the arms in 1978; they were never formally approved.",
     sources: [
       { title: "Møre og Romsdal — Wikipedia", url: "https://en.wikipedia.org/wiki/M%C3%B8re_og_Romsdal" },
+      { title: "Møre og Romsdals fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/M%C3%B8re_og_Romsdals_fylkesv%C3%A5pen" },
+      { title: "Møre og Romsdal — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-15.html" },
     ],
   },
 
@@ -10971,6 +10975,108 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       "died defending. He became the city’s patron under King Olaf III in the 11th century.",
     sources: [
       { title: "Oslo — Wikipedia", url: "https://en.wikipedia.org/wiki/Oslo" },
+    ],
+  },
+
+  // ── Østfold — county of Norway (batch 8d) ──
+  "NO-31": {
+    description:
+      "The county arms as a banner: three gold sunbeams rising diagonally on red. The sunrise stands for the " +
+      "county’s name and position — “øst” means east. FOTW notes the heraldic convention that straight rays " +
+      "stand for light and wavy ones for heat. Approved in 1958 and taken back into use when Østfold was " +
+      "re-established in 2024.",
+    sources: [
+      { title: "Østfolds fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/%C3%98stfolds_fylkesv%C3%A5pen" },
+      { title: "Østfold (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-01.html" },
+    ],
+  },
+
+  // ── Akershus — county of Norway (batch 8d) ──
+  "NO-32": {
+    description:
+      "The county arms as a banner: a white stepped gable on blue, the outline of Akershus Castle, which " +
+      "gave the county its name. Approved in 1987 and taken back into use when Akershus was re-established " +
+      "in 2024.",
+    sources: [
+      { title: "Akershus’ fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Akershus%E2%80%99_fylkesv%C3%A5pen" },
+      { title: "Akershus (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-02.html" },
+    ],
+  },
+
+  // ── Buskerud — county of Norway (batch 8d) ──
+  "NO-33": {
+    description:
+      "The county arms as a banner: a blue bear on silver (white), for the county’s forests. The colours " +
+      "recall two of its industries: the blue-colour works (Blaafarveverket) at Modum and the silver mines at " +
+      "Kongsberg. Drawn by Hallvard Trætteberg, approved in 1966 and taken back into use in 2024.",
+    sources: [
+      { title: "Buskeruds fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Buskeruds_fylkesv%C3%A5pen" },
+      { title: "Buskerud (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-06.html" },
+    ],
+  },
+
+  // ── Vestfold — county of Norway (batch 8d) ──
+  "NO-39": {
+    description:
+      "The county arms as a banner: a gold royal crown on red, for Vestfold’s link with Norway’s early royal " +
+      "line — in the 9th century Vestfold was a kingdom, and Harald Fairhair, from whom later kings claimed " +
+      "descent, came from its dynasty. Approved in 1970; the redrawn arms returned when Vestfold was " +
+      "re-established in 2024.",
+    sources: [
+      { title: "Vestfolds fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Vestfolds_fylkesv%C3%A5pen" },
+      { title: "Vestfold (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-07.html" },
+    ],
+  },
+
+  // ── Agder — county of Norway (batch 8d) ──
+  "NO-42": {
+    description:
+      "The county arms as a banner: a gold oak tree on red. When Aust-Agder and Vest-Agder merged in 2020, " +
+      "the new arms took Aust-Agder’s colours and Vest-Agder’s oak. The county says the oak has deep " +
+      "historical meaning for the region, was an important trade and export good, and was once a meeting " +
+      "place for decision-makers, so it stands for wisdom and solidity.",
+    sources: [
+      { title: "Agders fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Agders_fylkesv%C3%A5pen" },
+      { title: "Agder (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-agder.html" },
+    ],
+  },
+
+  // ── Trøndelag — county of Norway (batch 8d) ──
+  "NO-50": {
+    description:
+      "The county arms as a banner: a gold cross with flared arms on white, for Saint Olaf. The sagas say he " +
+      "carried a white shield “on which the holy cross was laid with gold” at the Battle of Stiklestad in " +
+      "1030 (Heimskringla). Drawn by Hallvard Trætteberg for Nord-Trøndelag in 1957, it became the arms of " +
+      "the merged Trøndelag county in 2018.",
+    sources: [
+      { title: "Trøndelags fylkesvåpen [Nord-Trøndelag fylkesvåpen] — Steinkjerleksikonet", url: "https://www.steinkjerleksikonet.no/trondelags_fylkesvapen_nord_trondelag_fylkesvapen" },
+      { title: "Trøndelags fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Tr%C3%B8ndelags_fylkesv%C3%A5pen" },
+    ],
+  },
+
+  // ── Troms — county of Norway (batch 8d) ──
+  "NO-55": {
+    description:
+      "The county arms as a banner: a gold griffin on red. The griffin was the emblem of the Bjarkøy family, " +
+      "who ruled in Troms in the Middle Ages; the earliest known seal behind the design is Bjarne " +
+      "Erlingsson’s of 1303. Drawn by Hallvard Trætteberg, approved in 1960 and taken back into use when " +
+      "Troms was re-established in 2024.",
+    sources: [
+      { title: "Troms’ fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Troms%E2%80%99_fylkesv%C3%A5pen" },
+      { title: "Troms (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-19.html" },
+    ],
+  },
+
+  // ── Finnmark — county of Norway (batch 8d) ──
+  "NO-56": {
+    description:
+      "The county arms as a banner: a gold castle on black, for Vardøhus Fortress and the defence of " +
+      "Norway’s eastern border. It was also read as a sign of Finnmark rising again after its destruction in " +
+      "the Second World War. Drawn by Hallvard Trætteberg, approved in 1967 and kept when Finnmark was " +
+      "re-established in 2024.",
+    sources: [
+      { title: "Finnmarks fylkesvåpen — Wikipedia (no)", url: "https://no.wikipedia.org/wiki/Finnmarks_fylkesv%C3%A5pen" },
+      { title: "Finnmark (Norway) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/no-20.html" },
     ],
   },
 
