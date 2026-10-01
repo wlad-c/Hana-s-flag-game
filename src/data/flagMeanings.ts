@@ -7192,6 +7192,18 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
 
+  "MT-05": {
+    description:
+      "A banner of the council’s arms: white, with a blue inverted chevron and a blue olive branch. The " +
+      "olive branch is there because olive growing is of great economic importance to the village, whose " +
+      "name, Birżebbuġa, means “well of olives” in Maltese. It replaced the council’s first flag, blue with " +
+      "a gold chain around the edge and two crossed gold keys.",
+    sources: [
+      { title: "Birżebbuġa (Malta) — Flags of the World", url: "https://crwflags.com/fotw/flags/mt-15.html" },
+      { title: "Birżebbuġa — Wikipedia", url: "https://en.wikipedia.org/wiki/Bir%C5%BCebbu%C4%A1a" },
+    ],
+  },
+
   "MT-06": {
     description:
       "A green cotton plant on gold — the arms of the Cotoner Grand Masters, who built the Cottonera Lines " +
@@ -7234,6 +7246,53 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
       "who founded and gave his name to the city of Senglea.",
     sources: [
       { title: "L-Isla / Senglea (Malta) — Flags of the World", url: "https://crwflags.com/fotw/flags/mt-04.html" },
+    ],
+  },
+
+  "MT-27": {
+    description:
+      "A banner of the council’s arms: green, with a white wedge pointing down from the top edge and three " +
+      "blue wavy lines across it. The wedge stands for Marsaskala’s bay, and the green on either side for the " +
+      "land that surrounds it.",
+    sources: [
+      { title: "Marsaskala (Malta) — Flags of the World", url: "https://crwflags.com/fotw/flags/mt-35.html" },
+    ],
+  },
+
+  "MT-29": {
+    description:
+      "A banner of the arms of Mdina, Malta’s old capital: white and red, divided vertically. These are " +
+      "Malta’s own colours: the plain white-and-red bicolour was the islands’ unofficial flag until the " +
+      "George Cross was added in 1943. Mdina may have linked its colours to Count Roger I of Sicily as early " +
+      "as the late Middle Ages.",
+    myths: [
+      {
+        claim:
+          "Count Roger I of Sicily gave Malta its red and white in 1091, tearing a piece off his chequered " +
+          "red-and-white banner so that he could tell the Maltese fighting for him from the Arab defenders.",
+        reality:
+          "The story is dismissed as a myth, probably of the 19th century, though perhaps older, because " +
+          "Mdina associated its colours with Roger’s in the late Middle Ages. The red flag with a white " +
+          "cross of the Knights of St John is a more likely source of the Maltese red and white.",
+      },
+    ],
+    sources: [
+      { title: "L-Imdina (Malta) — Flags of the World", url: "https://crwflags.com/fotw/flags/mt-02.html" },
+      { title: "Flag of Malta — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Malta" },
+      { title: "List of flags of Malta — Wikipedia", url: "https://en.wikipedia.org/wiki/List_of_flags_of_Malta" },
+    ],
+  },
+
+  "MT-30": {
+    description:
+      "A banner of the council’s arms: blue, with a gold chevron and a white six-pointed star above it. It " +
+      "keeps the pattern of the village’s historical arms (white, with a gold star and a red chevron, still " +
+      "used by the local football club) in new colours, after the heraldist Sir Adrian Strickland objected " +
+      "that the old version put two metals, gold and white, together. According to the council’s 1994 " +
+      "booklet on its arms, the star refers to King David, and the blue is the colour of the Virgin Mary " +
+      "and also stands for the sea.",
+    sources: [
+      { title: "Il-Mellieħa (Malta) — Flags of the World", url: "https://crwflags.com/fotw/flags/mt-37.html" },
     ],
   },
 

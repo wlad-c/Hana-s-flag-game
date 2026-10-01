@@ -1232,6 +1232,8 @@ no longer skipped.
 
 ## Batch 8e — capital flags for Norway's county seats (SF-18, 2026-10-01)
 
+*Shipped in #1738 (`081f2de`); live since 1 October 2026, 1:03 PM AEST.*
+
 **What was wrong.** Only three Norwegian county capitals showed a flag: Sarpsborg, Oslo and Bergen.
 The capital pipeline reads each capital's town item on Wikidata, and the Norwegian town items carry
 no flag (P41). The flags belong to the municipality items. Batch 8d's research found them.
@@ -1272,6 +1274,73 @@ explainer. For Stavanger, the explainer says that what the vine means is not kno
   longer in use. FOTW pairs it with the city, but no source documents the flag flown today.
 - **Tønsberg:** the municipality took new arms when it merged with Re in 2020. No current flag is
   documented, and Commons has no file.
+
+## Batch 8f — Malta's local councils without a flag (SF-06, 2026-10-01)
+
+**What was wrong.** The app showed flags for 56 of Malta's 68 local councils. The other 12 had never
+been bundled, though most of them fly a banner of their arms.
+
+**The standard.** Sir Adrian Strickland, quoted on FOTW's Malta page (`mt-.html`): each local council
+"has its own coat of arms and the flag of that Council is a banner of the arms, the dimensions of
+which vary". City coronets appear as finials, not on the banner. The other 56 are shown that way, and
+it is the test used here: a Commons file is used only when it draws the council's banner of arms as
+FOTW documents it. Each file keeps its drawn ratio, as the other 56 do. FOTW also quotes a local book
+giving 3:5 for these banners, but Strickland says the dimensions vary.
+
+**Added (9).** Each is the Commons banner of arms, compared with FOTW's image of the flag:
+- **Birżebbuġa (MT-05):** white, a blue inverted chevron and a blue olive branch (FOTW `mt-15`). This
+  is the council's second flag; the first was blue with a gold chain and two crossed keys. The
+  Commons file is a 2023 own work, and it matches FOTW's description, which comes from images in a
+  local book.
+- **Kerċem (MT-22):** a red fess with three gold rings, on white (FOTW `mt-30`).
+- **Kirkop (MT-23):** a red fess and pale, on white (FOTW `mt-31`).
+- **Lija (MT-24):** an orange branch with three oranges between a red and a blue canton (FOTW
+  `mt-32`). These are the current arms, not the older orange-tree drawing.
+- **Luqa (MT-25):** a red saltire on white (FOTW `mt-33`).
+- **Marsa (MT-26):** per pale, blue-and-white and red-and-white stripes, with a gold ship (FOTW
+  `mt-34`).
+- **Marsaskala (MT-27):** green, with a white wedge carrying blue wavy lines (FOTW `mt-35`; seen
+  flying at the bay in 2008).
+- **Mdina (MT-29):** white and red, divided vertically (FOTW `mt-02`; seen flying in 2000). Its
+  perceptual distance to Malta's national flag is 106; the parent-flag check fails below 12.
+- **Mellieħa (MT-30):** blue, a gold chevron and a white six-pointed star (FOTW `mt-37`; seen at the
+  town hall in 2008).
+
+**Explainers (4).**
+- **Birżebbuġa:** the olive branch, for the village's olive growing (Hartemink, quoted by FOTW), and
+  the name, "well of olives".
+- **Marsaskala:** the bay between green land (FOTW).
+- **Mdina:** Malta's white and red. The Count Roger story is shown as a myth, following Wikipedia's
+  *Flag of Malta*.
+- **Mellieħa:** King David's star and the Virgin Mary's blue, from the council's 1994 booklet on its
+  arms, as quoted by FOTW.
+
+Kerċem, Kirkop, Lija, Luqa and Marsa have only a bare blazon on FOTW. Their English and Maltese
+Wikipedia articles give no meaning either, so they are logged as omissions.
+
+**How the files were bundled.** These are Commons `thumb.php` PNG renders, because upload.wikimedia.org
+and the Commons API answered 429 throughout. Kerċem's file is drawn at 36:25 (720×500) and is kept so.
+Birżebbuġa is rendered at 1024×683, the size nearest its drawn ratio.
+
+**Not shown (3):**
+- **Kalkara (MT-21):** since 2009 the flag is yellow over blue, with a flame rising from the dividing
+  line and a green border (FOTW `mt-29`, from the council's notice). Commons holds the 1993–2009 flag,
+  plus a 2025 own work with no source that draws the shield on a green field, which is a different
+  design.
+- **Marsaxlokk (MT-28):** the only Commons file draws the saltire violet (`#5200FF`). The blazon is
+  *Argent, a saltire Azure*. FOTW's banner is blue, and the flag seen flying in 2008 had a light-blue
+  saltire. The Commons arms drawn from the government's images are blue as well. The saltire's colour
+  is all that tells this flag apart from Luqa's, so the violet file is withheld.
+- **Paola (MT-39):** the current flag, adopted on 20 July 1996, is white with a red chief carrying
+  three spirals, and three peacocks on sheaves below. It exists only as FOTW's image, which English
+  Wikipedia uses under fair use. Commons has only the 1994–1996 spiral flag.
+
+**Verified in the running app:** the 9 flags paint, the 4 explainers render (Mdina with its myth-versus-fact section), and the
+three withheld councils show neither a flag nor an explainer. No page errors, and no remote flag requests.
+
+**For later:** show Kalkara, Marsaxlokk and Paola once free files of their current designs exist.
+Malta's councils, like 259 subdivisions in 28 countries, show the generic type "Division". This is logged as
+SF-19 in the handbook.
 
 ## Follow-ups (later batches)
 

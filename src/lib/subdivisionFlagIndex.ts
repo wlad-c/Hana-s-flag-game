@@ -16,6 +16,8 @@
 
 // Non-SVG extension overrides (SVG is the default for unlisted codes)
 const NON_SVG_EXT: Record<string, string> = {
+  // Malta, batch 8f: Commons PNG renders (thumb.php) of the local-council banners of arms.
+  "MT-05":"png","MT-22":"png","MT-23":"png","MT-24":"png","MT-25":"png","MT-26":"png","MT-27":"png","MT-29":"png","MT-30":"png",
   // Norway, batch 8d: Commons PNG renders (thumb.php) of the county flags.
   "NO-11":"png","NO-31":"png","NO-32":"png","NO-33":"png","NO-39":"png","NO-42":"png","NO-50":"png","NO-55":"png","NO-56":"png",
   "AE-RK":"png","AL-04":"png","AL-05":"png","AL-08":"png","AL-09":"png","AL-10":"png","AZ-SM":"png",
@@ -171,8 +173,8 @@ const FLAG_CODES = new Set<string>([
   "MK-813","MK-815","MK-817","MM-01","MM-02","MM-03","MM-04","MM-06","MM-07","MM-11","MM-12","MM-13","MM-14",
   "MM-15","MM-16","MM-17","MM-18","MN-035","MN-037","MN-039","MN-041","MN-043","MN-046","MN-047","MN-049","MN-051",
   "MN-053","MN-055","MN-057","MN-059","MN-061","MN-063","MN-064","MN-065","MN-067","MN-069","MN-071","MN-073","MN-1",
-  "MT-01","MT-02","MT-03","MT-04","MT-06","MT-07","MT-08","MT-09","MT-10","MT-11","MT-12","MT-13","MT-14",
-  "MT-15","MT-16","MT-17","MT-18","MT-19","MT-20","MT-31","MT-32","MT-33","MT-34","MT-35","MT-36","MT-37",
+  "MT-01","MT-02","MT-03","MT-04","MT-05","MT-06","MT-07","MT-08","MT-09","MT-10","MT-11","MT-12","MT-13","MT-14",
+  "MT-15","MT-16","MT-17","MT-18","MT-19","MT-20","MT-22","MT-23","MT-24","MT-25","MT-26","MT-27","MT-29","MT-30","MT-31","MT-32","MT-33","MT-34","MT-35","MT-36","MT-37",
   "MT-38","MT-40","MT-41","MT-42","MT-43","MT-44","MT-45","MT-46","MT-47","MT-48","MT-49","MT-50","MT-51",
   "MT-52","MT-53","MT-54","MT-55","MT-56","MT-57","MT-58","MT-59","MT-60","MT-61","MT-62","MT-63","MT-64",
   "MT-65","MT-66","MT-67","MT-68","MU-PL","MU-RO","MX-AGU","MX-BCN","MX-BCS","MX-CAM","MX-CHH","MX-CHP","MX-CMX",
