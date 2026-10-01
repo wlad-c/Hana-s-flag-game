@@ -1346,6 +1346,8 @@ SF-19 in the handbook.
 
 ## Batch 8g — the British Indian Ocean Territory's 2025 flag (Codex F108, 2026-10-01)
 
+*Shipped in #1740 (`eacf690`); live since 1 October 2026, 11:10 PM AEST.*
+
 **What was wrong.** Codex's finding F108: batch 8c's explainer for the British Indian Ocean Territory
 (GB-IO) described a Tudor Crown, but the bundled flag (`public/flags/io.svg`, from hampusborgos) still
 showed St Edward's Crown with red velvet and jewels. The BIOT administration's flag page
@@ -1377,6 +1379,85 @@ show the 2025 flag.
 - The UK's sub-national National symbols tab lists the 2025 flag as current ("2025 – present") and
   the 1990 flag under Historical flags. Both images paint.
 - No page errors and no remote flag requests.
+
+## Batch 8h — Moldova's 37 official units (SF-06, 2026-10-01)
+
+**What was wrong.** None of Moldova's divisions showed a flag, and the map behind them was wrong:
+- **Mis-coded units.** The file carried 40 Natural Earth features: two copies each of Transnistria
+  (MD-SN) and Rezina, and Camenca (MD-CAM) and Grigoriopol (MD-GRI) as separate units, though
+  neither is an ISO 3166-2 division.
+- **A missing district.** Dubăsari district (MD-DU) was absent.
+- **A misnamed region.** Gagauzia (MD-GA) was called "Comrat", its capital, so its card read
+  "Capital of Comrat".
+- **Wrong capitals.** Transnistria's capital was Dubăsari. Bender's was Tiraspol, so Bender's
+  capital card showed no population.
+
+**The map.** `public/subdivisions/MD.json` is now the OCHA/UNHCR boundary set for Moldova
+(Humanitarian Data Exchange `cod-ab-mda`, ADM1, CC BY-IGO, valid from 10 May 2022, resource updated
+26 January 2026, zip SHA-256 `05446de3…63fc`). It has exactly the 37 ISO 3166-2:MD units:
+- 32 districts;
+- Chișinău, Bălți and Bender (ISO "city");
+- Gagauzia (autonomous territorial unit);
+- the left bank of the Dniester (territorial unit), shown as Transnistria.
+
+Coordinates are kept as published, rounded to 6 dp (the source carries float noise beyond that),
+and rings are rewound to d3's convention. Every unit's area is within 2% of the source's own
+`area_sqkm`. The meta is regenerated, and so is the world sub-national border mesh.
+
+**Capitals:**
+- **Transnistria → Tiraspol.** The Natural Earth point now falls in the right polygon. The
+  left-bank unit's Wikidata item has no capital, so `CAPITAL_CITY_QIDS` pins Tiraspol (Q132572).
+- **Bender → Bender.** This is Wikidata's capital of the Bender municipality item.
+- **Dubăsari → Cocieri.** Wikidata P36; English Wikipedia: "Administrative center … Cocieri". The
+  town of Dubăsari is held by the Transnistrian authorities.
+
+The two Wikidata-fallback rows (Bender, Cocieri) were added by hand. Re-running
+`build-subdivision-capitals.mjs` would also rewrite 17 other countries' rows from today's Wikidata,
+including a vandalised label that renames Algeria's Khenchela "tangier". That regeneration is left
+for a reviewed pass of its own.
+
+**Populations.** The 2024 census final results (NBS, published 26 March 2026,
+`Anexa_Localitati_RPL2024.xlsx`, table 8.2) match every district figure the app already carried.
+Dubăsari district is new at 21,781, replacing a 2014 figure under a code that had no map unit.
+Cocieri's capital card shows 2,943 (2024 census; table 8.3 and Wikidata agree). Tiraspol's shows
+133,807 (Wikidata's latest dated statement, 1 January 2014). The Camenca and Grigoriopol rows are
+removed.
+
+**Flags (new entities made complete):**
+- **Transnistria (MD-SN).** The state flag of the self-proclaimed Pridnestrovian Moldavian Republic
+  (Commons *Flag of Transnistria (state).svg*; public domain under the PMR's 1994 regulation),
+  checked against FOTW `md-dnies`. Under Moldova it is labelled "Flag not officially recognised by
+  Moldova", exactly as Abkhazia is under Georgia. It carries a neutral disputed note, sourced to
+  Wikipedia's *Political status of Transnistria*: recognised only by Abkhazia and South Ossetia,
+  and internationally recognised as part of Moldova. The explainer notes that the state flag law
+  gives the symbols no meaning.
+- **Gagauzia (MD-GA).** The flag set out in its 1995 law and Organic Law (Commons *Flag of
+  Gagauzia.svg*, PD-MD-exempt), checked against FOTW `md-gagau`. The explainer gives the
+  published interpretations as interpretations.
+- **Dubăsari district (MD-DU).** Blue-white-blue with a red *dubas* boat, approved in 2004 (FOTW
+  `md-db`; Commons *Dubăsari District flag.svg*, a thumb.php render at its own 8:5).
+- **Tiraspol (capital of MD-SN).** The 2002 city flag (Commons *Flag of Tiraspol.svg*, a render at
+  its drawn ratio), checked against FOTW `md-tira`. The explainer is from Russian Wikipedia's
+  *Флаг Тирасполя*.
+
+Cocieri has no flag on Wikidata, Commons or FOTW's Moldova index, so its capital card shows none.
+
+**Verified in the running app:**
+- The Moldova map draws 37 units; Camenca, Grigoriopol and "Comrat" are gone.
+- The grid groups 32 districts, 3 cities, Gagauzia and Transnistria. Transnistria is labelled
+  "Flag not officially recognised by Moldova".
+- Panels for Transnistria, Gagauzia, Dubăsari and Bender show their capitals with populations, and
+  the new flags and explainers paint.
+- No page errors and no remote flag requests.
+
+**For later (batch 8i and beyond):**
+- **District and city flags.** Moldova's 31 other district flags and the flags of Chișinău, Bălți
+  and Bender. FOTW has a page for every district (`md-sub.html`), and their capital-town flags are
+  already bundled.
+- **Transnistria's and Bender's populations.** MD-SN still shows the Pridnestrovian total of
+  367,776 (Wikidata, 2024), which includes Bender. MD-BD shows 98,726 labelled as the 2014 census,
+  but Moldova's 2014 census did not enumerate Bender. Both need re-sourcing from the PMR statistics
+  service with the unit's scope matched.
 
 ## Follow-ups (later batches)
 

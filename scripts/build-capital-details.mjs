@@ -145,6 +145,10 @@ const CAPITAL_CITY_QIDS = {
   // pin matches SUBNATIONAL_OVERRIDE in build-cities.mjs (the county municipality's seat).
   "NO-42": "Q26772254", // Agder → Kristiansand (county hall); the county governor sits in Arendal
   "NO-50": "Q7606901", // Trøndelag → Steinkjer (administrative centre); Trondheim hosts the county mayor
+  // Moldova, batch 8h: the left-bank territorial unit's item (Q648767, "Administrative-Territorial
+  // Units of the Left Bank of the Dniester") carries no P36. Tiraspol is the seat of the authorities
+  // that administer it, and the Transnistria item (Q907112) names it as capital.
+  "MD-SN": "Q132572", // Transnistria (Stînga Nistrului) → Tiraspol
   // 2026-09 audit, batch 7d. Each item lists more than one P36, and the P300
   // pass kept one that disagrees with the map. Where the subdivision genuinely
   // has two seats, the pin names the SAME city as GAP_CAPITAL_CITY_QIDS in

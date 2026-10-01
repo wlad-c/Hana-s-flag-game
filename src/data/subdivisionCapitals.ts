@@ -921,6 +921,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
 
   // ── MD ──
   "MD-AN": {"name":"Anenii Noi","lon":29.2308,"lat":46.8817},
+  "MD-BD": {"name":"Bender","lon":29.4833,"lat":46.8333},
   "MD-BR": {"name":"Briceni","lon":27.085,"lat":48.3628},
   "MD-BS": {"name":"Basarabeasca","lon":28.9614,"lat":46.3336},
   "MD-CL": {"name":"Călărași","lon":28.3081,"lat":47.2544},
@@ -930,6 +931,7 @@ export const SUBDIVISION_CAPITALS: Readonly<Record<string, City>> = {
   "MD-CT": {"name":"Cantemir","lon":28.2008,"lat":46.2781},
   "MD-DO": {"name":"Dondușeni","lon":27.5853,"lat":48.2244},
   "MD-DR": {"name":"Drochia","lon":27.8126,"lat":48.0308},
+  "MD-DU": {"name":"Cocieri","lon":29.1167,"lat":47.3},
   "MD-ED": {"name":"Edineț","lon":27.305,"lat":48.1681},
   "MD-FA": {"name":"Fălești","lon":27.7092,"lat":47.5736},
   "MD-FL": {"name":"Florești","lon":28.3014,"lat":47.8933},
