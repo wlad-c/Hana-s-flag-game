@@ -1042,9 +1042,16 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "NL-ZH": "capital-flags/nl-zh.svg",
 
   // ── NO ──
+  "NO-11": "capital-flags/no-11.gif",
+  "NO-18": "capital-flags/no-18.png",
   "NO-31": "capital-flags/no-31.gif",
   "NO-32": "capital-flags/no-32.svg",
+  "NO-33": "capital-flags/no-33.png",
+  "NO-34": "capital-flags/no-34.png",
   "NO-46": "capital-flags/no-46.svg",
+  "NO-50": "capital-flags/no-50.gif",
+  "NO-55": "capital-flags/no-55.png",
+  "NO-56": "capital-flags/no-56.png",
 
   // ── NP ──
   "NP-BA": "capital-flags/np-ba.svg",

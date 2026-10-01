@@ -1251,9 +1251,17 @@ no flag (P41). The flags belong to the municipality items. Batch 8d's research f
 - **Tromsø:** a white reindeer on blue. Arms and flag date from 1983 (Lovdata 1983-07-22-1290).
 - **Vadsø:** a white reindeer's head on red. Arms and flag date from 1976 (FOTW `no-20-03`).
 
-All seven are Commons originals, verified against their SHA-1, and pinned in
-`CAPITAL_FLAG_SOURCE_OVERRIDES` with these reasons. Each has a sourced explainer. For Stavanger, the
-explainer says that what the vine means is not known.
+Each is pinned in `CAPITAL_FLAG_SOURCE_OVERRIDES` with these reasons, and each has a sourced
+explainer. For Stavanger, the explainer says that what the vine means is not known.
+
+**How the files were bundled:**
+- **Stavanger:** the Commons original, verified against its SHA-1.
+- **The other six:** Commons `thumb.php` renders at the originals' exact ratios.
+  upload.wikimedia.org answered 429 for these rarely requested files for over half an hour, while
+  serving cached ones. Bodø and Tromsø are SVG renders; Drammen, Hamar and Vadsø are at half size;
+  Steinkjer (Verran's GIF) is at 215 pixels square.
+- **Tromsø:** the render's last row was translucent anti-aliasing from a fractional height. Trimming it
+  restores the exact 512:372 ratio.
 
 **Not shown (4):**
 - **Molde:** FOTW is unsure what the town flies (the arms on white, perhaps). The only file is a 2026
