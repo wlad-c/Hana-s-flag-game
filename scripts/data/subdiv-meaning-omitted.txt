@@ -15,7 +15,12 @@ US-UM
 #   Sliema (MT-56), Swieqi (MT-57), Ta' Xbiex (MT-58), Xagħra (MT-61), Xewkija (MT-62), Xgħajra (MT-63),
 #   Żabbar (MT-64), Żebbuġ (MT-65), Żebbuġ Gozo (MT-66) — all now sourced in flagMeanings.ts. The councils
 #   below have a FOTW page giving only a bare blazon with NO stated per-element meaning — genuine walls.
-MT-01 MT-02 MT-04 MT-07 MT-08 MT-11 MT-12 MT-13 MT-15 MT-16 MT-17 MT-18 MT-19 MT-33 MT-34 MT-35 MT-36 MT-37 MT-38 MT-44 MT-46 MT-48 MT-54 MT-55 MT-59 MT-60 MT-67 MT-68
+#   Batch 8f (2026-10) bundled flags for five more councils whose FOTW pages give only a bare blazon: Kerċem
+#   (MT-22, crwflags.com/fotw/flags/mt-30.html), Kirkop (MT-23, mt-31.html), Lija (MT-24, mt-32.html), Luqa
+#   (MT-25, mt-33.html — FOTW notes only that its arms match Grand Master del Ponte's, with no known link) and
+#   Marsa (MT-26, mt-34.html). Their English and Maltese Wikipedia articles were also checked and show the
+#   arms with no stated meaning (Lija gives only the motto "Suavi Fructo Rubeo") — genuine walls.
+MT-01 MT-02 MT-04 MT-07 MT-08 MT-11 MT-12 MT-13 MT-15 MT-16 MT-17 MT-18 MT-19 MT-22 MT-23 MT-24 MT-25 MT-26 MT-33 MT-34 MT-35 MT-36 MT-37 MT-38 MT-44 MT-46 MT-48 MT-54 MT-55 MT-59 MT-60 MT-67 MT-68
 # MX states — RE-VERIFIED against Flags of the World 2026-07 (crwflags.com/fotw/flags/mx-XX.html).
 #   Most Mexican states use the coat of arms on a plain white field as a de-facto flag. FOTW
 #   documents per-element arms symbolism for Mexico City (MX-DIF), Colima (MX-COL), Hidalgo (MX-HID),

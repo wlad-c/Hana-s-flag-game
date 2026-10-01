@@ -985,6 +985,7 @@ export const FLAG_OVERLAY_ASPECT_RATIOS: Readonly<Record<string, number>> = {
   "sub/MN/MN-1.svg": 2,
   "sub/MT/MT-17.svg": 1.6156,
   "sub/MT/MT-19.svg": 1.6667,
+  "sub/MT/MT-22.png": 1.44,
   "sub/MT/MT-32.svg": 1.6667,
   "sub/MT/MT-45.svg": 1.6667,
   "sub/MT/MT-62.svg": 1.6667,
