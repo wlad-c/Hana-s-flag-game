@@ -844,11 +844,12 @@ const MANUAL_VERIFIED_POPULATION = {
   // the territory-wide total, not the Kyrenia district figure.
   "CY-06~": { population: 69163, year: 2011, basis: "census" }, // Kyrenia/Girne district (Northern Cyprus)
   "TR-NC~": { population: 286257, year: 2011, basis: "census" }, // Turkish Republic of Northern Cyprus (whole territory)
-  // State Statistics Service of Pridnestrovie (PMR), 2015 census, via citypopulation.de.
-  // Transnistria is an unrecognised breakaway region of Moldova; no Moldovan
-  // government figure exists for these districts as actually administered.
-  "MD-CAM": { population: 20542, year: 2015, basis: "census" }, // Camenca (Transnistria)
-  "MD-GRI": { population: 39795, year: 2015, basis: "census" }, // Grigoriopol (Transnistria)
+  // Dubăsari district (MD-DU): Moldova's 2024 census, final results (NBS, published
+  // 26 March 2026, Anexa_Localitati_RPL2024.xlsx table 8.2). The census covers only the
+  // Moldovan-administered communes; Wikidata still carries the 2014 figure. (Batch 8h also
+  // removed the MD-CAM and MD-GRI rows: Camenca and Grigoriopol were Natural Earth pieces of
+  // Transnistria, not ISO 3166-2 units, and are now part of MD-SN.)
+  "MD-DU": { population: 21781, year: 2024, basis: "census" }, // Dubăsari district (2024 census)
 
   // Uninhabited — no permanent population (US Fish & Wildlife Service refuges)
   "UM-67": { population: 0, year: 2005, basis: "estimate" }, // Johnston Atoll (uninhabited since 2005; personnel withdrew May 2005)

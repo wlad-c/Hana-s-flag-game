@@ -44,6 +44,10 @@ export const UNOFFICIAL_SUBDIV_NOTES: Record<string, string> = {
   // (Abkhazia is also a disputed territory — see DISPUTED_SUBDIV_NOTES in disputedSubdivisions.ts.)
   "GE-AB": "The flag shown is that of the self-declared Republic of Abkhazia, not a flag recognised by Georgia (the ISO-administering state). Georgia has no separately designated flag for the region; it regards the Georgian national flag as the only official symbol.",
 
+  // Transnistria under Moldova — the flag of the self-proclaimed Pridnestrovian Moldavian Republic.
+  // (Also a disputed territory — see DISPUTED_SUBDIV_NOTES in disputedSubdivisions.ts.)
+  "MD-SN": "The flag shown is that of the self-proclaimed Pridnestrovian Moldavian Republic (Transnistria), not a flag recognised by Moldova. Moldova has no separately designated flag for the left bank of the Dniester, which it regards as part of its territory.",
+
   // Northern Cyprus under Cyprus — the TRNC flag is shown but is not recognised by Cyprus or the UN.
   // (Also a disputed territory — see DISPUTED_SUBDIV_NOTES in disputedSubdivisions.ts.)
   "CY-NC~": "The flag shown is that of the self-declared Turkish Republic of Northern Cyprus (TRNC). Cyprus and virtually all countries other than Türkiye do not recognise the TRNC or its flag; Cyprus regards Northern Cyprus as part of its own sovereign territory.",

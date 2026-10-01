@@ -7182,6 +7182,44 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
 
+  "MD-SN": {
+    description:
+      "The flag of the self-proclaimed Pridnestrovian Moldavian Republic, which controls Transnistria. Adopted in " +
+      "July 2000, it keeps the design of the flag of the Moldavian Soviet Socialist Republic: red, green and red " +
+      "stripes (3:2:3), with a gold hammer and sickle and a gold-edged red star in the canton. The state flag law " +
+      "gives its colours and symbols no meaning. A version without the emblem may be used, and since 2017 Russia’s " +
+      "flag has had equal legal standing with it.",
+    sources: [
+      { title: "Flag of Transnistria — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Transnistria" },
+      { title: "Dniestr Republic (Moldova) — Flags of the World", url: "https://crwflags.com/fotw/flags/md-dnies.html" },
+    ],
+  },
+
+  "MD-GA": {
+    description:
+      "Gagauzia’s flag was confirmed by the region’s National Assembly on 31 October 1995 and is set out in its " +
+      "Organic Law: a blue stripe taking 60% of the height over white and red stripes of 20% each, with three gold " +
+      "stars in a triangle on the blue. The law defines the design but gives it no meaning, and published readings " +
+      "differ. The three stars have been read as the past, present and future, or as Gagauzia’s three towns, Comrat, " +
+      "Ceadîr-Lunga and Vulcănești. The colours have been read as the Pechenegs, Kipchaks and Oghuz, peoples among " +
+      "the Gagauz’s ancestors.",
+    sources: [
+      { title: "Gagauzia (Moldova) — Flags of the World", url: "https://crwflags.com/fotw/flags/md-gagau.html" },
+      { title: "Flag of Gagauzia — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Gagauzia" },
+    ],
+  },
+
+  "MD-DU": {
+    description:
+      "Blue, white and blue stripes (1:2:1) with a red boat in the centre: a dubas, the river boat from which " +
+      "Dubăsari takes its name. The flag was approved by Moldova’s National Commission on Heraldry on 24 September " +
+      "2004 and by the district council on 24 October 2004.",
+    sources: [
+      { title: "Dubăsari district (Moldova) — Flags of the World", url: "https://crwflags.com/fotw/flags/md-db.html" },
+      { title: "Dubăsari District — Wikipedia", url: "https://en.wikipedia.org/wiki/Dub%C4%83sari_District" },
+    ],
+  },
+
   "MT-03": {
     description:
       "An armoured arm holding a sword for the victory over the Ottomans in the Great Siege of 1565, with " +

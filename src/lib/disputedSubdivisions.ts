@@ -19,6 +19,10 @@ export const DISPUTED_SUBDIV_NOTES: Record<string, string> = {
   // Abkhazia — de facto independent; Georgia claims it; Russia backs independence.
   "GE-AB": "Abkhazia has operated as a de facto independent state since the 1992–1993 war with Georgia. It is recognised as independent by only a handful of countries (Russia, Nicaragua, Venezuela, Nauru, and Syria); Georgia and most of the international community regard it as Georgian territory under occupation. It appears here under Georgia, which holds the internationally recognised claim. The flag shown is the Republic of Abkhazia's own flag; Georgia does not officially recognise it.",
 
+  // Transnistria — the left bank of the Dniester, controlled by the self-proclaimed
+  // Pridnestrovian Moldavian Republic since the 1992 war; Moldova claims it (MD-SN).
+  "MD-SN": "Transnistria, the strip of Moldova on the left bank of the Dniester, has been controlled since the 1992 war by the self-proclaimed Pridnestrovian Moldavian Republic, which governs from Tiraspol. No member of the United Nations recognises it. Moldova regards the territory as its own, as the administrative-territorial units of the left bank of the Dniester, with a special legal status under its 2005 law. The separatist authorities also control the city of Bender, on the right bank.",
+
   // Crimea & Sevastopol — Ukrainian ISO codes placed under Russia in the source data.
   // Shown under both Russia (administers) and Ukraine (internationally recognised claim).
   "UA-43": "The Autonomous Republic of Crimea (ISO 3166-2: UA-43) is internationally recognised as Ukrainian territory. Russia annexed it in February–March 2014 in a move rejected by Ukraine, the United Nations General Assembly (Resolution 68/262), and most countries. It is shown here under both Russia (which administers it) and Ukraine (which holds the internationally recognised claim).",
@@ -99,6 +103,7 @@ const COUNTRY_NAME: Record<string, string> = {
   FR: "France",
   GB: "the United Kingdom",
   GE: "Georgia",
+  MD: "Moldova",
   MA: "Morocco",
   RS: "Serbia",
   SO: "Somalia",
@@ -138,7 +143,7 @@ export function getSubdivisionDisputeLabel(
   // Flag is "unofficial" when displayed under a claimant that does not officially
   // recognise the territory's flag.
   const isUnofficial =
-    flagShown && !!parent && ["CN", "ES", "AR", "CY", "MA", "GE", "RS", "SO"].includes(parent);
+    flagShown && !!parent && ["CN", "ES", "AR", "CY", "MA", "GE", "MD", "RS", "SO"].includes(parent);
 
   if (isUnofficial) {
     return { text: unofficialText, isUnofficial: true };

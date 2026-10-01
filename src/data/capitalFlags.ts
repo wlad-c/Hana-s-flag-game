@@ -919,6 +919,7 @@ export const CAPITAL_FLAGS: Readonly<Record<string, string>> = {
   "MD-OR": "capital-flags/md-or.svg",
   "MD-RE": "capital-flags/md-re.svg",
   "MD-SI": "capital-flags/md-si.png",
+  "MD-SN": "capital-flags/md-sn.png",
   "MD-SO": "capital-flags/md-so.png",
   "MD-ST": "capital-flags/md-st.jpg",
   "MD-SV": "capital-flags/md-sv.jpg",

@@ -7659,6 +7659,18 @@ export const CITY_FLAG_MEANINGS: Record<string, FlagMeaningData> = {
     ],
   },
 
+  "MD-SN": {
+    description:
+      "Tiraspol’s flag, adopted on 14 October 2002: red over green, divided by a diagonal band of wavy blue, " +
+      "white and gold stripes. The blue band is the Dniester, on whose left bank the city stands. The red stands " +
+      "for confidence, energy and courage, the green for hope and growth, the white for trust and purity, and the " +
+      "gold for openness and prosperity.",
+    sources: [
+      { title: "Флаг Тирасполя — Wikipedia (ru)", url: "https://ru.wikipedia.org/wiki/%D0%A4%D0%BB%D0%B0%D0%B3_%D0%A2%D0%B8%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%BB%D1%8F" },
+      { title: "Tiraspol (Moldova) — Flags of the World", url: "https://crwflags.com/fotw/flags/md-tira.html" },
+    ],
+  },
+
   "MD-GA": {
     description:
       "Comrat — the seat of Gagauzia — bears a black horse on its arms, from which the town takes its name: Comrat " +
