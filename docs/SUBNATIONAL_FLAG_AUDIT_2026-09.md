@@ -1047,6 +1047,8 @@ Both branches were exercised: the old MX-CMX key fails E, and dropping GT-PE fro
 
 ## Batch 8b — findings from Codex's independent review of 30 September (F104–F106)
 
+*Shipped in #1735 (`43d1594`); live since 1 October 2026, 3:51 AM AEST.*
+
 Codex reviewed the 23 commits since `011e0065` and recorded its evidence in
 `docs/audit/SUBNATIONAL_DELTA_VERIFICATION_2026-09-30.json`. Three findings concern this audit.
 
@@ -1086,6 +1088,43 @@ not open the NHCP heraldry page the explainer cites. Re-read on 1 October 2026: 
 National Historical Commission calls the "temporary home of NHCP's Philippine Government Seals",
 and it gives every element the explainer states, including the kayabang basket and the sixteen
 cogs for the sixteen barangays. The explainer stands.
+
+## Batch 8c — the last 30 flags without an explainer: territories, de facto states, three cities
+
+**What was wrong.** `subdiv-remaining.mjs` listed 30 shown subdivision flags with neither an
+explainer nor a logged omission. Most were territories that the app shows under their sovereign or
+claimant, using the territory's own flag. They include the British overseas territories and Crown
+dependencies, Australia's and New Zealand's external territories, the Faroes, Åland, Taiwan and
+Tibet under China, Kosovo under Serbia, Western Sahara under Morocco, and Northern Cyprus under
+Cyprus and Türkiye. The Learn panel looks an explainer up by the subdivision code, so none rendered,
+even for Taiwan and Montserrat, which had explainers under their two-letter codes. Paris, Érd and
+New Taipei were the other three.
+
+**Added (30), each read from its source:**
+- The flags' own en.wikipedia articles, with FOTW for the Isle of Man's triskelion (Znamierowski).
+- The Falklands' coat-of-arms article, for what the ram and the Desire stand for.
+- Paris's coat-of-arms article, for the ship of the Marchands de l'eau.
+- For Érd, the Hungarian Wikipedia's arms section, which cites the city's own heraldry page. For New
+  Taipei, FOTW and the city government's logo page.
+- Taiwan and Montserrat reuse their national explainers verbatim.
+- Two myth-versus-fact entries. Kosovo's six stars are officially its six major ethnic groups; the
+  "Greater Albania" reading is unofficial. The 2019 claim that Northern Cyprus's stripes are the Nile
+  and the Euphrates is a debunked conspiracy theory; the flag law gives the stripes no meaning, and
+  the common reading is labelled as one.
+- Tibet's entry attributes the symbolism to the Central Tibetan Administration and states the flag's
+  status. The Cocos (Keeling) entry says the Australian Government has not formally recognised the
+  flag.
+
+`subdiv-remaining.mjs` now reads remaining:0, and `npm run subdiv:audit-omissions` is clean. That
+completes the sub-national flag-meaning sweep for the flags the app shows.
+
+**Verified in the running app:** 15 of the 16 views probed render the new explainer beside a painted
+flag, with myth-versus-fact blocks for Kosovo and Northern Cyprus. New Taipei's view does not open:
+Taiwan has no Learn country panel. SF-16 now covers Taiwan as well as Saint Helena.
+
+**For later:** the United Kingdom and Mauritius agreed in 2025 to transfer the Chagos Archipelago.
+Once that transfer takes effect, re-check the British Indian Ocean Territory (GB-IO) under the
+subdivision-research rule.
 
 ## Follow-ups (later batches)
 

@@ -16282,6 +16282,395 @@ export const FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
 
+  // ── Territories, de facto states and three municipal flags (2026-09 audit, batch 8c) ──
+  // Each subdivision view shows the territory's own flag, but the explainer is looked up by the
+  // subdivision code, so none rendered until now. Sources are the flags' own articles, FOTW and,
+  // for New Taipei, the city government.
+
+  "GB-AI": {
+    description:
+      "Anguilla’s flag is a British Blue Ensign with the territory’s arms in the fly. The arms show three " +
+      "orange dolphins in a circle, taken from the island’s earlier Dolphin flag, standing for unity, " +
+      "strength and endurance. The white of the shield stands for peace, and the light-blue base for the " +
+      "sea as well as faith, youth and hope.",
+    sources: [
+      { title: "Flag of Anguilla — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Anguilla" },
+    ],
+  },
+
+  "GB-FK": {
+    description:
+      "The Falkland Islands’ flag, in its present form since 25 January 1999, is a Blue Ensign with the " +
+      "islands’ arms in the fly. The arms, granted in 1948, show a ram on tussock grass above a Tudor ship " +
+      "on the waves. The ram stands for sheep farming, long the islands’ main industry. The ship is the " +
+      "Desire, in which the English navigator John Davis is reputed to have sighted the islands in 1592, " +
+      "and the motto below reads “Desire the Right”.",
+    sources: [
+      { title: "Flag of the Falkland Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Falkland_Islands" },
+      { title: "Coat of arms of the Falkland Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_the_Falkland_Islands" },
+    ],
+  },
+
+  "GB-GG": {
+    description:
+      "Guernsey’s flag, adopted in 1985, adds a gold Norman cross to the red cross of St George. Guernsey " +
+      "had flown England’s flag, and the confusion that caused at the 1982 Commonwealth Games prompted a " +
+      "flag of its own. The gold cross represents William, Duke of Normandy, later William I of England, " +
+      "who is said to have been given such a cross by Pope Alexander II and to have flown it at the Battle " +
+      "of Hastings.",
+    sources: [
+      { title: "Flag of Guernsey — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Guernsey" },
+    ],
+  },
+
+  "GB-GI": {
+    description:
+      "Gibraltar’s flag is a banner of the arms that Queen Isabella I of Castile granted on 10 July 1502: " +
+      "white over red, with a three-towered red castle on the white and a gold key hanging from its gate. " +
+      "The castle stands for the fortress of Gibraltar. The key stands for its place as the key to Spain " +
+      "for the Moors and the Spanish, and later as the key to the Mediterranean for the British. It is the " +
+      "only British Overseas Territory flag without the Union Flag.",
+    sources: [
+      { title: "Flag of Gibraltar — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Gibraltar" },
+    ],
+  },
+
+  "GB-GS": {
+    description:
+      "The flag of South Georgia and the South Sandwich Islands is a Blue Ensign with the territory’s arms, " +
+      "granted in 1992; the Queen approved the flag and it is recorded at the College of Arms. The motto " +
+      "reads Leo Terram Propriam Protegat, “let the lion protect its own land”. In Roman Klimes’s Symbols " +
+      "of Antarctica, the lion stands for Britain and the torch for exploration, while the reindeer, seal " +
+      "and penguin are animals of the islands.",
+    sources: [
+      { title: "Flag of South Georgia and the South Sandwich Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_South_Georgia_and_the_South_Sandwich_Islands" },
+    ],
+  },
+
+  "GB-IM": {
+    description:
+      "The Isle of Man’s flag, official since 1 December 1932, is red with a triskelion: three armoured " +
+      "legs with golden spurs, taken from the Manx arms of the 13th century. The triskelion, “three-legged” " +
+      "in Greek, is one of the oldest symbols known, found in prehistoric rock carvings and on Greek vases " +
+      "and coins. The Manx believe it came to them from Scandinavia, where in Norse mythology it stood for " +
+      "the movement of the sun through the heavens. Since 1968 the legs have run clockwise, with one " +
+      "planted at the bottom.",
+    sources: [
+      { title: "Flag of the Isle of Man — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Isle_of_Man" },
+      { title: "Isle of Man — Flags of the World", url: "https://www.crwflags.com/fotw/flags/im.html" },
+    ],
+  },
+
+  "GB-IO": {
+    description:
+      "The British Indian Ocean Territory’s flag was granted in 1990, the territory’s 25th anniversary. " +
+      "Below the Union Flag in the canton, white and blue wavy lines stand for the waters of the Indian " +
+      "Ocean. A palm tree rises above the Tudor Crown, both symbols of the territory. It was made for the " +
+      "territory’s commissioner in London and has only semi-official status as a territorial flag.",
+    sources: [
+      { title: "Flag of the British Indian Ocean Territory — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_British_Indian_Ocean_Territory" },
+    ],
+  },
+
+  "GB-JE": {
+    description:
+      "Jersey’s flag is a red saltire on white, flown unofficially since at least the 1830s. The States of " +
+      "Jersey adopted it in 1979 with the island’s badge added in the upper quarter, and it was first " +
+      "officially hoisted on 7 April 1981. The badge is the three leopards (lions passant guardant) of the " +
+      "island’s arms, under a gold Plantagenet crown. It was a compromise between keeping the traditional " +
+      "saltire, which could be mistaken for St Patrick’s cross or a maritime signal flag, and adopting a " +
+      "banner of the three leopards.",
+    sources: [
+      { title: "Flag of Jersey — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Jersey" },
+    ],
+  },
+
+  "GB-KY": {
+    description:
+      "The Cayman Islands’ flag, adopted in 1959, is a Blue Ensign with the territory’s arms, granted in " +
+      "1958. The blue and white waves stand for the Caribbean Sea, and the three green stars for Grand " +
+      "Cayman, Little Cayman and Cayman Brac. The gold lion on red is England’s, the islands’ mother " +
+      "country. The turtle recalls their first Spanish name, Las Tortugas, and their seafaring, and the " +
+      "pineapple their link with Jamaica, whose arms carry five. The motto, “He hath founded it upon the " +
+      "seas”, comes from Psalm 24.",
+    sources: [
+      { title: "Flag of the Cayman Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Cayman_Islands" },
+    ],
+  },
+
+  "GB-MS": {
+    description:
+      "A British Blue Ensign with Montserrat’s arms in the fly: a woman in green — Erin, the figure of " +
+      "Ireland — holding a golden harp and embracing a cross. The Irish symbols recall the island’s many " +
+      "settlers of Irish descent, which give it the name “the Emerald Isle of the Caribbean”.",
+    sources: [
+      { title: "Flag of Montserrat — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Montserrat" },
+    ],
+  },
+
+  "GB-PN": {
+    description:
+      "The Pitcairn Islands’ flag, adopted in 1984, is a Blue Ensign with the islands’ arms, granted in " +
+      "1969. The blue, yellow and green of the shield show Pitcairn rising from the Pacific. The anchor and " +
+      "the Bible stand for HMS Bounty, whose mutineers settled the island and from whom most islanders " +
+      "descend; the Bible also stands for the Christianity they brought. On the crest, the wheelbarrow and " +
+      "the slip of miro, a local tree, recall the farming that kept the settlers alive; miro is also the " +
+      "wood islanders carve into souvenirs.",
+    sources: [
+      { title: "Flag and coat of arms of the Pitcairn Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_and_coat_of_arms_of_the_Pitcairn_Islands" },
+    ],
+  },
+
+  "GB-TC": {
+    description:
+      "The Turks and Caicos Islands’ flag, adopted in 1968 and modified in 1999, is a Blue Ensign with the " +
+      "islands’ arms, granted in 1965. The gold shield bears a queen conch shell, a lobster and a Turk’s " +
+      "head cactus. The cactus, whose shape recalls a Turkish fez, gives the islands the first half of " +
+      "their name.",
+    sources: [
+      { title: "Flag of the Turks and Caicos Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Turks_and_Caicos_Islands" },
+    ],
+  },
+
+  "GB-VG": {
+    description:
+      "The British Virgin Islands’ flag, adopted by Royal Warrant on 15 November 1960, is a Blue Ensign " +
+      "with the territory’s arms. They show Saint Ursula holding a flaming gold lamp, surrounded by eleven " +
+      "more lamps for her 11,000 virgin followers. Christopher Columbus named the islands after them in " +
+      "1493, their number reminding him of the saint’s companions. The motto, Vigilate, means “be " +
+      "watchful”.",
+    sources: [
+      { title: "Flag of the British Virgin Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_British_Virgin_Islands" },
+    ],
+  },
+
+  "AU-CC": {
+    description:
+      "The Cocos (Keeling) Islands’ flag was designed by the teenager Mohammed Minkom in a 2003 competition " +
+      "and declared on 6 April 2004. It uses green and gold, Australia’s national colours. The palm tree on " +
+      "a gold disc stands for the islands’ tropical flora, and the crescent for Islam, the religion of the " +
+      "Cocos Malays who make up most of the population. The Southern Cross stands for Australia and the " +
+      "Southern Hemisphere. The Australian Government has not formally recognised the flag.",
+    sources: [
+      { title: "Flag of the Cocos (Keeling) Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Cocos_(Keeling)_Islands" },
+    ],
+  },
+
+  "AU-CX": {
+    description:
+      "Christmas Island’s flag, chosen in a 1986 competition and adopted on 26 January 2002, was designed " +
+      "by Tony Couch of Sydney. It is split diagonally into green for the land and blue for the sea. The " +
+      "Southern Cross echoes Australia’s flag, and the golden bosun bird, a white-tailed tropicbird, is the " +
+      "island’s symbol. The green map of the island sits on a gold disc, added to set the map off and since " +
+      "linked with the island’s mining.",
+    sources: [
+      { title: "Flag of Christmas Island — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Christmas_Island" },
+    ],
+  },
+
+  "AU-NF": {
+    description:
+      "Norfolk Island’s flag, adopted on 6 June 1979 when the island gained limited self-government, is a " +
+      "green-white-green triband with a green Norfolk Island pine in the centre. The green stands for the " +
+      "island’s plentiful vegetation and fertile land. The pine is native to the island and is its official " +
+      "tree.",
+    sources: [
+      { title: "Flag of Norfolk Island — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Norfolk_Island" },
+    ],
+  },
+
+  "NZ-CK": {
+    description:
+      "The Cook Islands’ flag, officially the Cook Islands Ensign, is a Blue Ensign with a ring of fifteen " +
+      "white stars in the fly. The Union Flag stands for the islands’ historic ties with the United Kingdom " +
+      "and the Commonwealth, and the fifteen stars for the fifteen islands. The blue stands for the ocean " +
+      "and the peaceful nature of the people.",
+    sources: [
+      { title: "Flag of the Cook Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Cook_Islands" },
+    ],
+  },
+
+  "NZ-NU": {
+    description:
+      "Niue’s flag, adopted on 15 October 1975, was designed by Patricia Rex, wife of the then premier. The " +
+      "Niue Flag Act explains it. The Union Flag stands for the protection the United Kingdom granted in " +
+      "1900 at the request of Niue’s kings and chiefs. The yellow is for the bright sunshine of Niue and " +
+      "its people’s warm feelings towards New Zealand, which took over Niue’s administration in 1901. The " +
+      "four small stars of the Southern Cross mark that link, and the larger star on a blue disc the deep " +
+      "blue sea around the self-governing island.",
+    sources: [
+      { title: "Flag of Niue — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Niue" },
+    ],
+  },
+
+  "NZ-TK": {
+    description:
+      "Tokelau’s flag, adopted in 2009 in place of New Zealand’s, shows a Tokelauan canoe sailing towards " +
+      "the Southern Cross on blue. According to Tokelau’s government, the canoe stands for the territory’s " +
+      "journey towards the best form of government for its people. The Southern Cross stands for a " +
+      "navigational aid on that journey.",
+    sources: [
+      { title: "Flag of Tokelau — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Tokelau" },
+    ],
+  },
+
+  "DK-FO": {
+    description:
+      "The Faroese flag, Merkið, is a white Nordic cross flag with a red cross edged in blue. Faroese " +
+      "students in Copenhagen led by Jens Oliver Lisberg designed it in 1919, and it was first hoisted at " +
+      "Fámjin on 22 June that year. The British authorities recognised it for Faroese ships on 25 April " +
+      "1940, a date kept as Flag Day. Like other Nordic crosses it is usually read as a Christian symbol. " +
+      "Its colours are often explained by Faroese nature and Nordic ties: white for sea foam and the bright " +
+      "sky, and red and blue from traditional Faroese dress and the other Nordic flags.",
+    sources: [
+      { title: "Flag of the Faroe Islands — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Faroe_Islands" },
+    ],
+  },
+
+  "FI-AX": {
+    description:
+      "Åland’s flag, adopted in 1954 and first hoisted in Mariehamn on 3 April that year, resembles " +
+      "Sweden’s flag with a red cross added for Finland. An earlier proposal with a blue cross, too close " +
+      "to Sweden’s flag, was rejected by President Paasikivi. A blue-yellow-blue flag used unofficially in " +
+      "the 1920s had been banned in 1935.",
+    sources: [
+      { title: "Flag of Åland — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_%C3%85land" },
+    ],
+  },
+
+  "CN-TW": {
+    description:
+      "A red field with a blue canton bearing a white sun of twelve rays — the “Blue Sky, White Sun.” The " +
+      "twelve rays stand for the twelve two-hour periods of the traditional day and the twelve months, a " +
+      "call to constant progress; the red field was added by Sun Yat-sen for the blood of the " +
+      "revolutionaries who overthrew the Qing dynasty. The three colours are also read for the Three " +
+      "Principles of the People — blue for nationalism and liberty, white for democracy and equality, red " +
+      "for the people's livelihood and fraternity.",
+    sources: [
+      { title: "Flag of the Republic of China — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China" },
+    ],
+  },
+
+  "CN-XZ": {
+    description:
+      "The Snow Lion Flag was adopted by the 13th Dalai Lama in 1916 and flown until 1959. It is now the " +
+      "flag of the Central Tibetan Administration in exile, and it is banned in the People’s Republic of " +
+      "China. According to the Central Tibetan Administration, the white triangle is a snow-clad mountain " +
+      "for the highlands, and the six red bands on the blue sky are the six ancestral tribes: Se, Mu, Dong, " +
+      "Tong, Dru and Ra. The yellow sun stands for freedom, spiritual and material happiness and prosperity " +
+      "for all beings in Tibet, and the two snow lions for a unified spiritual and secular life. The three " +
+      "jewels the lions hold are the Buddha, the Dharma and the Sangha, and the two-coloured swirling jewel " +
+      "is the people’s cherishing of ethical self-discipline. The yellow border stands for the flourishing " +
+      "of the Buddha’s teachings.",
+    sources: [
+      { title: "Flag of Tibet — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Tibet" },
+    ],
+  },
+
+  "RS-KM~": {
+    description:
+      "Kosovo’s flag was adopted by its Assembly straight after the declaration of independence on 17 " +
+      "February 2008. Muhamer Ibrahimi’s design won an international competition with almost a thousand " +
+      "entries. It shows a golden map of Kosovo under an arc of six white stars on blue. Officially the " +
+      "stars stand for Kosovo’s six major ethnic groups: Albanians, Serbs, Bosniaks, Turks, Romani (often " +
+      "grouped with the Ashkali and Egyptians) and Gorani.",
+    sources: [
+      { title: "Flag of Kosovo — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Kosovo" },
+    ],
+    myths: [
+      { claim: "The six stars stand for the six regions of a “Greater Albania”.", reality: "That is an unofficial nationalist reading. Officially the stars represent Kosovo’s six major ethnic groups." },
+    ],
+  },
+
+  "MA-EH~": {
+    description:
+      "The flag of the Sahrawi Arab Democratic Republic was adopted on 27 February 1976 and is said to have " +
+      "been designed by its first president, El Uali Mustafa Sayed. It combines the Pan-Arab colours of the " +
+      "Arab Revolt of 1916–1918 with the star and crescent of Islam. The green stands for the Sahrawi " +
+      "people’s hope of returning to their lands, the white for peace and purity, the black for grief for " +
+      "the martyrs and the red for the blood they shed. The star marks the SADR as an Arab republic, and " +
+      "the crescent as a Muslim country.",
+    sources: [
+      { title: "Flag of Western Sahara — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Western_Sahara" },
+    ],
+  },
+
+  "CY-NC~": {
+    description:
+      "The flag of the Turkish Republic of Northern Cyprus, drawn by the Turkish Cypriot artist Emin " +
+      "Çizenel and adopted in 1984, reverses the colours of Turkey’s flag: a red crescent and star on " +
+      "white, with a red stripe near the top and the bottom. The flag law defines the design but gives it " +
+      "no official meaning. A common reading takes the crescent and star for Turkishness, the red for the " +
+      "blood of Turkish Cypriots killed in the intercommunal violence, the white for peace, and the two " +
+      "stripes for Turkey and Northern Cyprus.",
+    sources: [
+      { title: "Flag of Northern Cyprus — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Northern_Cyprus" },
+    ],
+    myths: [
+      { claim: "The two stripes stand for the Nile and the Euphrates.", reality: "A conspiracy theory spread in 2019 claimed this; it is false. The law gives the stripes no meaning, and the flag was drawn by Emin Çizenel." },
+    ],
+  },
+
+  "TR-NC~": {
+    description:
+      "The flag of the Turkish Republic of Northern Cyprus, drawn by the Turkish Cypriot artist Emin " +
+      "Çizenel and adopted in 1984, reverses the colours of Turkey’s flag: a red crescent and star on " +
+      "white, with a red stripe near the top and the bottom. The flag law defines the design but gives it " +
+      "no official meaning. A common reading takes the crescent and star for Turkishness, the red for the " +
+      "blood of Turkish Cypriots killed in the intercommunal violence, the white for peace, and the two " +
+      "stripes for Turkey and Northern Cyprus.",
+    sources: [
+      { title: "Flag of Northern Cyprus — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Northern_Cyprus" },
+    ],
+    myths: [
+      { claim: "The two stripes stand for the Nile and the Euphrates.", reality: "A conspiracy theory spread in 2019 claimed this; it is false. The law gives the stripes no meaning, and the flag was drawn by Emin Çizenel." },
+    ],
+  },
+
+  "FR-75": {
+    description:
+      "Paris’s flag is divided blue and red, the city’s traditional colours, both taken from its arms: red " +
+      "is associated with Saint Denis, a martyr who shed his blood, and blue with Saint Martin, a bishop. " +
+      "The colours of Paris are the source of the blue and red in France’s tricolour. The version shown " +
+      "carries the city’s arms: a silver ship on the waves under a chief of royal fleurs-de-lis. The ship " +
+      "comes from the emblem of the Marchands de l’eau, the guild that from 1170 held the right to trade by " +
+      "boat on the Seine. The motto, Fluctuat nec mergitur, means “tossed by the waves but not sunk”.",
+    sources: [
+      { title: "Flag of Paris — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Paris" },
+      { title: "Coat of arms of Paris — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Paris" },
+    ],
+  },
+
+  "HU-ED": {
+    description:
+      "Érd’s flag, set by the town council in 1997 (Resolution 36/1997), is green, cut into a swallowtail " +
+      "at the fly, with the town’s arms near the hoist. In the arms, the green tree on gold recalls the " +
+      "medieval name Erdő (“forest”) and its royal foresters. The three points of the gold crown in its " +
+      "foliage stand for the Sárkány, Batthyány and Illésházy families, prominent in the town’s history, " +
+      "and its petals for Érd’s nine historic village centres. The blue base is the Danube, once far more " +
+      "important to the town for its ferry, port and water mills. The red dragon piercing its own throat " +
+      "with a cross formed by its tail recalls the Sárkány family, knights of the Order of the Dragon that " +
+      "King Sigismund founded to fight the Turks.",
+    sources: [
+      { title: "Érd (Hungary) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/hu-pe-er.html" },
+      { title: "Érd — Wikipedia (Hungarian)", url: "https://hu.wikipedia.org/wiki/%C3%89rd" },
+    ],
+  },
+
+  "TW-TPQ": {
+    description:
+      "New Taipei’s flag, first hoisted on 25 December 2010 when Taipei County became the special " +
+      "municipality of New Taipei, is white with the city logo above its name, 新北市. The logo bends the " +
+      "character 北 (“north”) out of four hearts, red, yellow, blue and green, turned inward. The city says " +
+      "they stand for its different communities joining together for New Taipei. A stem and leaves turn the " +
+      "hearts into a four-petalled lucky flower, marking the blossoming of the county’s 2007 upgrade to a " +
+      "quasi-special municipality. The logo is tilted fifteen degrees to look lively and approachable.",
+    sources: [
+      { title: "Hsin-pei (New Taipei) — Flags of the World", url: "https://www.crwflags.com/fotw/flags/tw-xbi.html" },
+      { title: "新北市標誌 — New Taipei City Government", url: "https://www.ntpc.gov.tw/ch/home.jsp?id=27739b44386e91a3" },
+    ],
+  },
+
 };
 
 /** True when a sourced flag-meaning explanation exists for the given code. */
