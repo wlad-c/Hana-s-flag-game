@@ -14,10 +14,10 @@
       content="Guess the Country Flag — quick rounds, world flags, and streaks."
     />
     <title>Guess the Country Flag</title>
-    <!-- Owner renamed GitHub → wlad-c. Old Pages host 404s for network
-         fetches, but an installed PWA / cached SW can still serve this
-         shell from the old origin — bounce those sessions to the live
-         site before the app boots. -->
+    <!-- Belt-and-braces only: a cached PWA on the old host. Fresh visits
+         to wladimirchagas.github.io 404 at GitHub's edge (Pages does not
+         redirect after a username rename) — reclaim that hostname via
+         legacy-pages-redirect/ + scripts/publish-legacy-pages-redirect.sh. -->
     <script>
       if (location.hostname === "wladimirchagas.github.io") {
         location.replace(
