@@ -20,7 +20,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const OUT = resolve(__dirname, "data/central-banks-harvest.json");
 const UA =
-  "HanaFlagGame/1.0 (central-banks harvest; https://github.com/wladimirchagas/hana-s-flag-game)";
+  "HanaFlagGame/1.0 (central-banks harvest; https://github.com/wlad-c/hana-s-flag-game)";
 
 /** Curated Wikidata QIDs for countries where automatic ranking is unsafe. */
 const QID_OVERRIDE = {

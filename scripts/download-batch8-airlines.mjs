@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 
 const headers = {
-  'User-Agent': 'HanaFlagGameBot/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game; educational-app)',
+  'User-Agent': 'HanaFlagGameBot/1.0 (https://github.com/wlad-c/Hana-s-flag-game; educational-app)',
   'Accept': '*/*',
 };
 

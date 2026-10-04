@@ -24,7 +24,7 @@ export function BuildFooter() {
 
   const commitHref =
     commit && commit !== "dev"
-      ? `https://github.com/wladimirchagas/Hana-s-flag-game/commit/${commit}`
+      ? `https://github.com/wlad-c/Hana-s-flag-game/commit/${commit}`
       : null;
 
   async function hardRefresh() {

@@ -48,7 +48,7 @@ const LICENSES_PATH = path.join(REPO_ROOT, "data", "anthems", "LICENSES.md");
 const ASSETS_DIR = path.join(REPO_ROOT, "assets", "anthems");
 const OFFICIAL_SOURCES_PATH = path.join(REPO_ROOT, "data", "anthems", "official_sources.json");
 
-const USER_AGENT = "HanaFlagGame/1.0 (+https://github.com/wladimirchagas/hana-s-flag-game; contact: rp6dc6kqtv@privaterelay.appleid.com)";
+const USER_AGENT = "HanaFlagGame/1.0 (+https://github.com/wlad-c/hana-s-flag-game; contact: rp6dc6kqtv@privaterelay.appleid.com)";
 
 const REQUIRED_BINS = [
   { bin: "curl", install: "apt-get install -y curl" },

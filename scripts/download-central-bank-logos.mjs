@@ -21,7 +21,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const HARVEST = resolve(__dirname, "data/central-banks-harvest.json");
 const OUT_DIR = resolve(__dirname, "../public/central-bank-logos");
 const UA =
-  "HanaFlagGame/1.0 (central-banks; https://github.com/wladimirchagas/hana-s-flag-game)";
+  "HanaFlagGame/1.0 (central-banks; https://github.com/wlad-c/hana-s-flag-game)";
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");

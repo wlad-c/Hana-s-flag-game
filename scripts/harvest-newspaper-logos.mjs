@@ -25,7 +25,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const OUT_DIR = resolve(ROOT, "tmp/logo-harvest");
 const UA =
-  "HanasFlagGameLogoHarvester/1.0 (+https://github.com/wladimirchagas/Hana-s-flag-game; educational)";
+  "HanasFlagGameLogoHarvester/1.0 (+https://github.com/wlad-c/Hana-s-flag-game; educational)";
 
 function loadConst(path, marker) {
   const src = readFileSync(path, "utf8");

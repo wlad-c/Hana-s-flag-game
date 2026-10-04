@@ -47,7 +47,7 @@ const FILE_HOSTS = [
   "https://en.wikipedia.org/wiki/Special:FilePath",
 ];
 const USER_AGENT =
-  "HanaFlagGame-capital-flags/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)";
+  "HanaFlagGame-capital-flags/1.0 (https://github.com/wlad-c/Hana-s-flag-game)";
 // Some authoritative city flags are extremely detailed heraldic vectors (Venice's
 // Lion of St Mark SVG is ~4.5 MB; Luxembourg's a 15 MB raster). Bundling those as
 // the original would bloat the app badly, so any file over this size is replaced

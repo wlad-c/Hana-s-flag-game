@@ -12,7 +12,7 @@
 set -euo pipefail
 name=$1; out=${2:-.}
 mkdir -p "$out"
-ua="HanaFlagGameAudit/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)"
+ua="HanaFlagGameAudit/1.0 (https://github.com/wlad-c/Hana-s-flag-game)"
 enc=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1].replace(" ","_")))' "$name")
 echo "── description ─────────────────────────────"
 curl -s --max-time 30 -A "$ua" "https://commons.wikimedia.org/w/index.php?title=File:$enc&action=raw" | head -40

@@ -35,7 +35,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const R = (p) => resolve(__dirname, p);
 const MANIFEST = R("data/national-flag-sources.json");
-const UA = "HanaFlagGame/1.0 (national-symbols baseline; https://github.com/wladimirchagas/hana-s-flag-game)";
+const UA = "HanaFlagGame/1.0 (national-symbols baseline; https://github.com/wlad-c/hana-s-flag-game)";
 const dryRun = process.argv.includes("--dry-run");
 
 // countrySelection.ts pulls in the app's runtime modules, which Node cannot resolve

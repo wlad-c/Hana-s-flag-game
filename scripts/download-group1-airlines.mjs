@@ -74,7 +74,7 @@ async function resolveLogoFile(page) {
   try {
     const url = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(page)}&prop=images&format=json`;
     const res = await fetch(url, {
-      headers: { "User-Agent": "HanaFlagGameBot/1.0 (https://github.com/wladimirchagas; contact@example.com)" },
+      headers: { "User-Agent": "HanaFlagGameBot/1.0 (https://github.com/wlad-c; contact@example.com)" },
     });
     const data = await res.json();
     const images = (data.parse?.images || []).filter(img => /logo/i.test(img) && (/\.svg$/i.test(img) || /\.png$/i.test(img)));
@@ -89,7 +89,7 @@ async function getFileDownloadUrl(filename) {
     try {
       const url = `https://${domain}/w/api.php?action=query&titles=File:${encodeURIComponent(filename)}&prop=imageinfo&iiprop=url&format=json`;
       const res = await fetch(url, {
-        headers: { "User-Agent": "HanaFlagGameBot/1.0 (https://github.com/wladimirchagas; contact@example.com)" },
+        headers: { "User-Agent": "HanaFlagGameBot/1.0 (https://github.com/wlad-c; contact@example.com)" },
       });
       const data = await res.json();
       const page = Object.values(data.query?.pages || {})[0];
@@ -135,7 +135,7 @@ async function main() {
     try {
       await sleep(800);
       const resp = await fetch(dlUrl, {
-        headers: { "User-Agent": "HanaFlagGameBot/1.0 (https://github.com/wladimirchagas; contact@example.com)" },
+        headers: { "User-Agent": "HanaFlagGameBot/1.0 (https://github.com/wlad-c; contact@example.com)" },
       });
       const buf = Buffer.from(await resp.arrayBuffer());
       fs.writeFileSync(finalPath, buf);

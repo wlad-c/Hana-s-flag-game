@@ -20,7 +20,7 @@
 
 import { execSync } from "node:child_process";
 
-const SITE = "https://wladimirchagas.github.io/Hana-s-flag-game/";
+const SITE = "https://wlad-c.github.io/Hana-s-flag-game/";
 const args = process.argv.slice(2);
 const printOnly = args.includes("--print");
 const wanted = args.find((a) => !a.startsWith("--"));

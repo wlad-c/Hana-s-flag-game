@@ -49,7 +49,7 @@ const OUTPUT = join(projectRoot, "src", "data", "subdivisionCapitals.ts");
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
 const USER_AGENT =
-  "HanaFlagGame-subdiv-cap/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)";
+  "HanaFlagGame-subdiv-cap/1.0 (https://github.com/wlad-c/Hana-s-flag-game)";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

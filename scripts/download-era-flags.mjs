@@ -24,7 +24,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const R = (p) => resolve(__dirname, p);
 const MANIFEST = R("data/era-flag-sources.json");
-const UA = "HanaFlagGame/1.0 (historical-era flag audit; https://github.com/wladimirchagas/hana-s-flag-game)";
+const UA = "HanaFlagGame/1.0 (historical-era flag audit; https://github.com/wlad-c/hana-s-flag-game)";
 
 const force = process.argv.includes("--force");
 const checkOnly = process.argv.includes("--check");

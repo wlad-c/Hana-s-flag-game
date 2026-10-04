@@ -43,7 +43,7 @@ const ROOT = join(__dirname, "..");
 const DETAILS = join(ROOT, "src/data/capitalDetails.ts");
 const MANIFEST = join(ROOT, "scripts/data/capital-flag-sources.json");
 const CAP_TS = join(ROOT, "src/data/capitalFlags.ts");
-const UA = "HanaFlagGame-capital-backfill/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)";
+const UA = "HanaFlagGame-capital-backfill/1.0 (https://github.com/wlad-c/Hana-s-flag-game)";
 const SPARQL = "https://query.wikidata.org/sparql";
 const HOSTS = ["https://commons.wikimedia.org/wiki/Special:FilePath", "https://en.wikipedia.org/wiki/Special:FilePath"];
 const MAX = 400_000, THUMB = 1000;

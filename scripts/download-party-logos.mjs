@@ -16,7 +16,7 @@ const R = (p) => resolve(__dirname, p);
 const PARTIES_FILE = R("../src/data/politicalParties.ts");
 const OUT_DIR = R("../public/party-logos");
 const UA =
-  "HanaFlagGame/1.0 (political-parties; https://github.com/wladimirchagas/hana-s-flag-game)";
+  "HanaFlagGame/1.0 (political-parties; https://github.com/wlad-c/hana-s-flag-game)";
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");

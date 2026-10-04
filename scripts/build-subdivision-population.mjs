@@ -34,7 +34,7 @@ const OUTPUT = join(projectRoot, "src", "data", "subdivisionPopulation.ts");
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
 const USER_AGENT =
-  "HanaFlagGame-subdiv-pop/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)";
+  "HanaFlagGame-subdiv-pop/1.0 (https://github.com/wlad-c/Hana-s-flag-game)";
 const CENSUS_QID = "Q39825"; // "census" (determination method)
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

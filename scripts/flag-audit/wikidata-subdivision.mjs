@@ -50,7 +50,7 @@ const query = `SELECT ?code ?item ?itemLabel ?flag ?rank ?cap ?capLabel ?capFlag
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,mul". }
 }`;
 const res = await fetch(`https://query.wikidata.org/sparql?query=${encodeURIComponent(query)}`, {
-  headers: { accept: "application/sparql-results+json", "user-agent": "HanaFlagGameAudit/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)" },
+  headers: { accept: "application/sparql-results+json", "user-agent": "HanaFlagGameAudit/1.0 (https://github.com/wlad-c/Hana-s-flag-game)" },
 });
 if (!res.ok) {
   console.error(`Wikidata answered ${res.status}`);

@@ -12,7 +12,7 @@ set -euo pipefail
 lang=$1; title=$2; depth=${3:-0}
 cache=${FLAG_AUDIT_CACHE:-${TMPDIR:-/tmp}/flag-audit-cache}/wiki
 mkdir -p "$cache"
-ua="HanaFlagGameAudit/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)"
+ua="HanaFlagGameAudit/1.0 (https://github.com/wlad-c/Hana-s-flag-game)"
 f="$cache/${lang}_$(printf %s "$title" | md5sum | cut -c1-12).txt"
 if [ ! -s "$f" ]; then
   enc=$(python3 -c 'import sys,urllib.parse;print(urllib.parse.quote(sys.argv[1].replace(" ","_")))' "$title")

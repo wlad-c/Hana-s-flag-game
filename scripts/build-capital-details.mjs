@@ -55,7 +55,7 @@ const FLAG_MANIFEST = join(__dirname, "data", "capital-flag-sources.json");
 
 const ENDPOINT = "https://query.wikidata.org/sparql";
 const USER_AGENT =
-  "HanaFlagGame-capital-details/1.0 (https://github.com/wladimirchagas/Hana-s-flag-game)";
+  "HanaFlagGame-capital-details/1.0 (https://github.com/wlad-c/Hana-s-flag-game)";
 const CENSUS_QID = "Q39825"; // "census" (determination method P459)
 const YEAR_FLOOR = 1970; // drop purely-historical city populations
 

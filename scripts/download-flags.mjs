@@ -554,7 +554,7 @@ const SUB_SOURCE_OVERRIDES = {
 
 async function fetchFlag(url) {
   const res = await fetch(url, {
-    headers: { "User-Agent": "hana-flag-game/flag-downloader (+github.com/wladimirchagas/hana-s-flag-game)" },
+    headers: { "User-Agent": "hana-flag-game/flag-downloader (+github.com/wlad-c/hana-s-flag-game)" },
     signal: AbortSignal.timeout(25_000),
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
