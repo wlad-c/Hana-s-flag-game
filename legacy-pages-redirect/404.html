@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Flag Game has moved</title>
     <link rel="canonical" href="https://wlad-c.github.io/Hana-s-flag-game/" />
-    <!-- Instant redirect: meta refresh covers no-JS; script preserves deep links. -->
     <meta
       http-equiv="refresh"
       content="0; url=https://wlad-c.github.io/Hana-s-flag-game/"
     />
     <script>
       (function () {
-        var dest =
-          "https://wlad-c.github.io" +
-          location.pathname +
-          location.search +
-          location.hash;
-        location.replace(dest);
+        var NEW_ORIGIN = "https://wlad-c.github.io";
+        var GAME = "/Hana-s-flag-game";
+        var path = location.pathname || "/";
+        var destPath =
+          path === "/" || path === ""
+            ? GAME + "/"
+            : path.indexOf(GAME) === 0
+              ? path
+              : GAME + (path.charAt(0) === "/" ? path : "/" + path);
+        location.replace(NEW_ORIGIN + destPath + location.search + location.hash);
       })();
     </script>
     <style>

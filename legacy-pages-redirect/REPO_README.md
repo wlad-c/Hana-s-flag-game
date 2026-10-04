@@ -1,7 +1,7 @@
-# Moved → [wlad-c/Hana-s-flag-game](https://github.com/wlad-c/Hana-s-flag-game)
+# Legacy Pages redirect
 
-This repository only keeps the old GitHub Pages URL alive:
+This org site keeps the old hostname working after the GitHub username rename:
 
 **https://wladimirchagas.github.io/Hana-s-flag-game/** → **https://wlad-c.github.io/Hana-s-flag-game/**
 
-Play the game / browse the code at the new home.
+The game itself lives at [wlad-c/Hana-s-flag-game](https://github.com/wlad-c/Hana-s-flag-game).
