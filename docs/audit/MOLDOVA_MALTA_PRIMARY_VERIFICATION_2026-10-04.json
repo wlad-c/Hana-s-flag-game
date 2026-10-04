@@ -1,0 +1,243 @@
+{
+  "observed_at_utc": "2026-10-04T01:06:03.004061+00:00",
+  "application_head": "e99f6ac157fd7e2dd9a482e9d97e8eddd5e3956e",
+  "public": {
+    "bundle": "assets/index-CRUWiiVZ.js",
+    "sha256": "4430e93c7e37e02fcfe6ddb7776cdd17c351639c28d1abcf93fd5a6123a4e89f",
+    "build_time": "2026-10-04T00:55:49.256Z",
+    "build_commit": "c635476"
+  },
+  "public_claim_presence": {
+    "98726": true,
+    "367776": true,
+    "had awarded that April": true,
+    "A George Cross within a red border on blue": true,
+    "palm branch for endurance": true,
+    "palm branch for victory and honour": true
+  },
+  "assets": [
+    {
+      "path": "public/national-flags/mt/malta-naval-jack.svg",
+      "bytes": 347045,
+      "sha256": "77714d13f420201534546bdf81bf272104847f140634d2bbec94ac3a0e293d0c",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/national-flags/mt/malta-president.svg",
+      "bytes": 450324,
+      "sha256": "7ecea7d115dc57a7928a04ebac864b0f952c47e4049894c4ed9faccab00e173c",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/national-flags/mt/malta-colonial.svg",
+      "bytes": 314866,
+      "sha256": "ecde3ca0c1d0c044cb2e9f4f218e3e56bc40919b013209d64b7f2ecf383e6dea",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/national-flags/mt/malta-arms.svg",
+      "bytes": 173090,
+      "sha256": "289f2e2dc81ae7fffcb3d8563ca7d53db5b2580c5d86f4db0f97dc8785a21e74",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-05.png",
+      "bytes": 51342,
+      "sha256": "a003d71c549c8aeba2be0f85295b81f89f20ffb41a70cdbb59a45e05df2b8f4f",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-22.png",
+      "bytes": 7194,
+      "sha256": "a436ca57c419cf12d65093beb7dbb1bc604fe122de536d3fab01eda5bfdb6ef0",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-23.png",
+      "bytes": 426,
+      "sha256": "58e5f969ae6adda5eb3ecd562765b398c3e0646d4468e05cc700e6ad10ef3c48",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-24.png",
+      "bytes": 60682,
+      "sha256": "347275008e45cc8bc23104376360bcf63acbad3d37637cb637b046c20e161c68",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-25.png",
+      "bytes": 2687,
+      "sha256": "47622d218462c2a093acc28a2e5eb131b89a8cfd766663e59e7a25158f6cfe58",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-26.png",
+      "bytes": 77376,
+      "sha256": "9e7886b583c4d6a48c95f60728e2fb363431a3328d98ab12733eb096b0c280eb",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-27.png",
+      "bytes": 7866,
+      "sha256": "8210e55f350668d22e9cc53cd064cae9b395df4a58a0c2c2e6e0962699136dc5",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-29.png",
+      "bytes": 435,
+      "sha256": "73c378170597eaa8ad0667c9ee41c57253476ff5ae0df0adaef6a0d6118bc896",
+      "public_bytes_equal": true
+    },
+    {
+      "path": "public/flags/sub/MT/MT-30.png",
+      "bytes": 15533,
+      "sha256": "0ff8462d17391aa5259bcdf3a2b1c43e17fa1f57b67848a328987cb8c60215b1",
+      "public_bytes_equal": true
+    }
+  ],
+  "primary_pdf_files": [
+    {
+      "source": "https://legislation.mt/eli/cap/363/mlt/pdf",
+      "local_name": "malta-local-government-mlt.pdf",
+      "bytes": 2990231,
+      "sha256": "ccea766144854689f2c0ac0d36339ba89777f25e45738b67a312d05dd5d4f47b"
+    },
+    {
+      "source": "https://legislation.mt/eli/cap/363/eng/pdf",
+      "local_name": "malta-local-government-eng.pdf",
+      "bytes": 1043644,
+      "sha256": "60eeec1c07b6cedebeba5b23ee38b1451a22fa9a3c4b53fac310554159505322"
+    },
+    {
+      "source": "https://legislation.mt/eli/cap/253/eng/pdf",
+      "local_name": "malta-emblem-law.pdf",
+      "bytes": 170143,
+      "sha256": "4445c9f0aa8ef38be613454385b6af79d40bc7df92898e18e127247bf258f9e5"
+    }
+  ],
+  "scope": "Independent audit by Codex; documentation only; no application edits. Public HTTP byte and bundle inspection, not a browser walkthrough.",
+  "repository_head_at_source_inspection": "7d3a01e055c1fef2d933cbf455c8da57250b0c77",
+  "findings": [
+    {
+      "id": "F113",
+      "status": "open",
+      "code": "MD-SN",
+      "problem": "367776 is a Moldova ASP State Population Register count as of 2024-03-31, misrepresented as an unqualified total resident-population estimate of MD-SN. MD-SN-only geographic allocation is not established by source.",
+      "source": "https://gov.md/ro/comunicate-de-presa-bpr/peste-358-mii-de-locuitori-din-regiunea-transnistreana-sunt-cetateni-ai",
+      "source_language": "ro",
+      "published": "2024-04-17",
+      "current": {
+        "population": 367776,
+        "year": 2024,
+        "basis": "estimate"
+      }
+    },
+    {
+      "id": "F114",
+      "status": "open; method error established, exact count provenance unresolved",
+      "code": "MD-BD",
+      "problem": "98726 is labelled a 2014 census count. Moldova NBS methodology excludes Bender from 2014; Bender administration describes previous de facto census as 2004 before next census. Secondary lead attributes number to 2014-01-01 estimate including subordinate settlements; original table not recovered.",
+      "sources": [
+        "https://statistica.gov.md/files/files/Recensamint/Recesamint_2024/Sedinte_CNRPL_2024/15_02_2024/2024/Anexa1_Metodologia_clasificatoare_Subiectul_2.pdf",
+        "https://bendery.gospmr.org/2266-v-pridnestrove-proydet-perepis-naseleniya.html"
+      ],
+      "current": {
+        "population": 98726,
+        "year": 2014,
+        "basis": "census"
+      }
+    },
+    {
+      "id": "F115",
+      "status": "open caption defect; principal artwork design verified",
+      "records": [
+        "mt-naval-jack"
+      ],
+      "problem": "Both design and description say blue. Bundled/public image has correct red surround, white central square and four corner white Maltese crosses.",
+      "source": "https://www.gov.mt/en/About%20Malta/Pages/Flags-Symbols-and-their-use.aspx"
+    },
+    {
+      "id": "F116",
+      "status": "open",
+      "records": [
+        "mt-arms",
+        "mt-president",
+        "mt-passport"
+      ],
+      "problem": "Palm assigned endurance or victory/honour, and mural crown assigned republic status. Statutory emblem description specifies both branches as symbols of peace and crown representing fortifications/City State, eight turrets five visible.",
+      "source": "https://legislation.mt/eli/cap/253/eng/pdf",
+      "locator": "Article 2(1), page 1; First Schedule page 3."
+    },
+    {
+      "id": "F117",
+      "status": "open",
+      "records": [
+        "mt-colonial"
+      ],
+      "problem": "Relative date 'that April' following December 1943 warrant implies award in April 1943; actual George Cross award 15 April 1942.",
+      "sources": [
+        "https://www.royal.uk/queen-awards-george-cross-uks-national-health-services",
+        "https://www.gov.mt/mt/About%20Malta/Pages/Flags-Symbols-and-their-use.aspx"
+      ]
+    }
+  ],
+  "malta_council_comparison": {
+    "source": "https://legislation.mt/eli/cap/363/mlt/pdf",
+    "comparison": "Principal shield charges and colour arrangements only; not certification of ministerial flag approval, flag ratios, exact shades or every historical claim.",
+    "records": [
+      {
+        "code": "MT-05",
+        "printed_page": 46,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-22",
+        "printed_page": 48,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-23",
+        "printed_page": 48,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-24",
+        "printed_page": 48,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-25",
+        "printed_page": 48,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-26",
+        "printed_page": 48,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-27",
+        "printed_page": 48,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-29",
+        "printed_page": 45,
+        "principal_elements_match": true
+      },
+      {
+        "code": "MT-30",
+        "printed_page": 49,
+        "principal_elements_match": true
+      }
+    ],
+    "legal_note": "Article 74(5) provides for a square flag showing the arms or another minister-approved design; current rectangular banner assets cannot be certified solely from coat-of-arms illustrations."
+  },
+  "remaining": [
+    "Original Bender 2013 report / 2014 estimate territorial composition; statistic cannot yet be certified for de jure MD-BD.",
+    "Malta council individual flag approvals, ratios, historical symbolism; withheld Kalkara and Paola artwork availability not solved.",
+    "Malta civil-ensign pre-1798 identity claim, naval-jack casualty/bombing statistics, passport uninterrupted post-1942 emblem continuity and quoted slogan, Mintoff anecdote not verified in this pass.",
+    "F109-F112 and F108 historical BIOT residual remain open; this pass made no application changes.",
+    "All-country and all-registry audit remains incomplete."
+  ]
+}
