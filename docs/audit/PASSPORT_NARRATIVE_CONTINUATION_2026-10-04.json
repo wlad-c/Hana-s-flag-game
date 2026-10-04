@@ -1,0 +1,427 @@
+{
+  "observed_at": "2026-10-04T07:12:31.926965+00:00",
+  "application_revision": "e99f6ac157fd7e2dd9a482e9d97e8eddd5e3956e",
+  "scope": "Record captions and bundled asset hashes; direct rendered comparison. No blanket factual approval. Public hashes for these new records not rechecked except overlaps with previous ledger.",
+  "records": [
+    {
+      "country": "AL",
+      "id": "al-passport",
+      "path": "public/national-flags/al/al-passport.webp",
+      "sha256": "ba517b9484eaa1ed1e82781008395cde2a9ef163f82cc1272b5e83287cf4562a",
+      "meaning": {
+        "description": "Albania's biometric passport, introduced in 2009, adopted a burgundy cover specifically to align with the European Union's own passport-colour guidelines — a deliberate signal of the country's EU-candidate status, worn on the cover even though Albania is not yet a member. The document is produced to ICAO standard by the French security firm Sagem Sécurité.",
+        "sources": [
+          {
+            "title": "Albanian passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Albanian_passport"
+          }
+        ]
+      },
+      "design": "The cover of the Albania passport.",
+      "source": "https://gicg.net/passport/al/"
+    },
+    {
+      "country": "AM",
+      "id": "am-passport",
+      "path": "public/national-flags/am/am-passport.webp",
+      "sha256": "da365aca62aa41acf3e816b8ec9b61ccb84fc553f7f428069d2b4b1e540b8cef",
+      "meaning": {
+        "description": "Armenia's passport was redesigned to a dark red cover from the previous blue, and — not being an EU member — carries no bloc heading, reading only \"Republic of Armenia\" in Armenian and English around the state coat of arms in gold. The redesign's interior pages carry an unusually explicit heritage brief: depictions of Hayk Nahapet, Armenia's legendary founding patriarch; petroglyphs from the Geghama Mountains and Ukhtasar; the cuneiform inscription marking Yerevan's founding; boundary stones from the ancient Artaxiad kingdom; the Mother See of Holy Etchmiadzin; and regional traditions such as lavash bread-baking and the deer of Jermuk — a passport designed as a compact tour of Armenian history and culture.",
+        "sources": [
+          {
+            "title": "Armenian passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Armenian_passport"
+          }
+        ]
+      },
+      "design": "The cover of the Armenia passport.",
+      "source": "https://gicg.net/passport/am/"
+    },
+    {
+      "country": "BF",
+      "id": "bf-passport",
+      "path": "public/national-flags/bf/bf-passport.webp",
+      "sha256": "e5244243113c7cb6a6340252a968026844be499b3b149044758b3e4a9547edb9",
+      "meaning": {
+        "description": "Burkina Faso's passport has changed its regional heading twice in quick succession, tracking the country's own shifting alliances: it formerly carried the ECOWAS (Economic Community of West African States) name and logo as a member state, then dropped that heading after withdrawing from ECOWAS alongside Mali and Niger, and a February 2025 redesign added the logo and name of the new bloc those three states formed instead — the Alliance of Sahel States (AES).",
+        "sources": [
+          {
+            "title": "Burkinabe passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Burkinabe_passport"
+          }
+        ]
+      },
+      "design": "The cover of the Burkina Faso passport.",
+      "source": "https://gicg.net/passport/bf/"
+    },
+    {
+      "country": "BH",
+      "id": "bh-passport",
+      "path": "public/national-flags/bh/bh-passport.webp",
+      "sha256": "1171489890742dbe089a4ea0b88199d1b5be3331ca0fd5eb664437eb68529ff1",
+      "meaning": {
+        "description": "Bahrain's green passport bears the national coat of arms, originally designed in 1932: a red shield topped by a white serrated band of five points, matching the toothed line that divides red and white on the national flag. Red recalls the blood of Bahrain's ancestors in their struggle for sovereignty, while white's five points are read as the Five Pillars of Islam. A palm tree, Bahrain's national tree, stands behind the shield, symbolising the prosperity date cultivation has brought to the arid archipelago.",
+        "sources": [
+          {
+            "title": "Coat of arms of Bahrain — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Bahrain"
+          }
+        ]
+      },
+      "design": "The cover of the Bahrain passport.",
+      "source": "https://gicg.net/passport/bh/"
+    },
+    {
+      "country": "BI",
+      "id": "bi-passport",
+      "path": "public/national-flags/bi/bi-passport.webp",
+      "sha256": "1cf76c4dad6f62c9073376c9f01104a22544dfc5639eb4a71a933992b9f204e4",
+      "meaning": {
+        "description": "Burundi's passport cover is blue, stamped in gold leaf with the state coat of arms, and printed with \"East African Community\" beneath the country's name — a regional heading rather than the ECOWAS/CEMAC bloc names used further west, since Burundi belongs to the East African Community instead. The interior's first page repeats the country's name in Kirundi, French and English alongside an outline map of Burundi.",
+        "sources": [
+          {
+            "title": "Burundian passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Burundian_passport"
+          }
+        ]
+      },
+      "design": "The cover of the Burundi passport.",
+      "source": "https://gicg.net/passport/bi/"
+    },
+    {
+      "country": "BR",
+      "id": "br-passport",
+      "path": "public/national-flags/br/brazil-passport.webp",
+      "sha256": "9fe22b1bd93a2adff1a892735ad41f7afbb8bba96a8850db4459e77556b887e2",
+      "meaning": {
+        "description": "The cover states two memberships at once. Above the country’s own name runs MERCOSUL/MERCOSUR, in Portuguese and Spanish, because Mercosur members adopted a common passport colour and heading — which is why Brazil’s passport is blue like Argentina’s and Uruguay’s rather than the green of its flag. Below the arms sits the state’s full name, and at the foot the chip symbol that marks it as an e-passport.",
+        "sources": [
+          {
+            "title": "Brazilian passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Brazilian_passport"
+          }
+        ]
+      },
+      "design": "A blue Mercosur cover: MERCOSUL/MERCOSUR across the top, REPÚBLICA FEDERATIVA DO BRASIL, the national arms in gold, and PASSAPORTE beneath.",
+      "source": "https://gicg.net/passport/br/"
+    },
+    {
+      "country": "CL",
+      "id": "cl-passport",
+      "path": "public/national-flags/cl/cl-passport.webp",
+      "sha256": "4fc9776996f4b6134ba55bdc0a6dcfe47026a986ebf2e5e531e82144e2e50601",
+      "meaning": {
+        "description": "Chile's current passport (launched December 2024) uses a royal-blue cover matching the national flag's own blue, with \"República de Chile\" in copper-coloured lettering above the national coat of arms. Though several of Chile's South American neighbours issue the shared Andean Community passport, Chile itself does not — it is only an associate member of the Andean Community, not a full one, so its passport remains its own distinct design rather than the bloc's common bordeaux format.",
+        "sources": [
+          {
+            "title": "Andean passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Andean_passport"
+          }
+        ]
+      },
+      "design": "The cover of the Chile passport.",
+      "source": "https://gicg.net/passport/cl/"
+    },
+    {
+      "country": "CM",
+      "id": "cm-passport",
+      "path": "public/national-flags/cm/cm-passport.webp",
+      "sha256": "d405bd1a4ae5a98e2ae1a81eea32ea9cf2c0801c17a9a2fbf4f7169f200ec479",
+      "meaning": {
+        "description": "Cameroon's passport bears the national coat of arms: a shield in the flag's own green, red and yellow, a gold star in the green field for unity, and an outline map of Cameroon in the red field bearing a golden scale of justice — the whole supported by two crossed fasces topped with axes, standing for the defence and authority of the state. Below runs the bilingual motto \"Paix – Travail – Patrie\" — \"Peace – Work – Fatherland\".",
+        "sources": [
+          {
+            "title": "Cameroon Coat of Arms: Symbolism and History — Kingsgate Lifestyle",
+            "url": "https://mykingsgate.co.za/info/code-of-arms-cameroon-26558/"
+          }
+        ]
+      },
+      "design": "The cover of the Cameroon passport.",
+      "source": "https://gicg.net/passport/cm/"
+    },
+    {
+      "country": "CO",
+      "id": "co-passport",
+      "path": "public/national-flags/co/co-passport.webp",
+      "sha256": "9c87fdb631bce4d5cd9382f3ce6962ed3f0d07059b77da10c69c7475ebd6a4c3",
+      "meaning": {
+        "description": "As a full Andean Community member, Colombia issues the bloc's shared bordeaux passport, reading \"COMUNIDAD ANDINA\" above the national coat of arms. That shield is divided into three: a pomegranate flanked by cornucopias of coins and tropical fruit at the top, recalling the colonial Viceroyalty of New Granada and its wealth; a Phrygian cap for liberty in the centre; and two ships below, representing the Isthmus of Panama (once part of Colombia) and, today, the country's coastlines on both the Atlantic and Pacific. An Andean condor perches above the shield holding an olive crown, beneath the motto \"Libertad y Orden\" — Liberty and Order.",
+        "sources": [
+          {
+            "title": "Andean passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Andean_passport"
+          },
+          {
+            "title": "Coat of arms of Colombia — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Colombia"
+          }
+        ]
+      },
+      "design": "The cover of the Colombia passport.",
+      "source": "https://gicg.net/passport/co/"
+    },
+    {
+      "country": "CU",
+      "id": "cu-passport",
+      "path": "public/national-flags/cu/cu-passport.webp",
+      "sha256": "3b40a2cd05ca6413f4c0dcd063c80cc844b461a2000922e0980690fe97d6f030",
+      "meaning": {
+        "description": "Cuba's passport bears the national coat of arms, adopted 24 April 1906: a golden key set across a blue sea between two coastal cliffs, representing Cuba's position between Florida and the Yucatán Peninsula as \"the key to the Gulf of Mexico\". The shield sits before a bundle of rods crossed with red rope, symbolising the union of all Cubans, crowned by a red Phrygian cap bearing a white star — the same liberty symbol used across Latin American independence movements — and flanked by an oak branch and a royal palm, the characteristic Cuban tree read as an emblem of the Cuban people's upright, unbending character.",
+        "sources": [
+          {
+            "title": "Coat of arms of Cuba — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Cuba"
+          }
+        ]
+      },
+      "design": "The cover of the Cuba passport.",
+      "source": "https://gicg.net/passport/cu/"
+    },
+    {
+      "country": "CV",
+      "id": "cv-passport",
+      "path": "public/national-flags/cv/cv-passport.webp",
+      "sha256": "a97975df433c688a9df821bc5112b980d7ae9cc2dd55c3d7b411847cc24db373",
+      "meaning": {
+        "description": "Cape Verde's passport bears the national emblem, adopted in 1992 alongside the current flag: a blue triangle within a circle of ten five-pointed stars — one for each of the country's main islands — flanked by a torch for liberty, a plumb line for moral uprightness and justice, and broken chain links for emancipation.",
+        "sources": [
+          {
+            "title": "National emblem of Cape Verde — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/National_emblem_of_Cape_Verde"
+          }
+        ]
+      },
+      "design": "The cover of the Cape Verde passport.",
+      "source": "https://gicg.net/passport/cv/"
+    },
+    {
+      "country": "DM",
+      "id": "dm-passport",
+      "path": "public/national-flags/dm/dm-passport.webp",
+      "sha256": "d1429d88f3e3dfe2da62f59fecbb50bb8350a1dbfe713759cd92e90b651061d4",
+      "meaning": {
+        "description": "Dominica's passport bears the national coat of arms, adopted 21 July 1961: two Sisserou parrots — Dominica's endangered national bird, found nowhere else on Earth — supporting a shield divided into a cross, referencing the island's own name (sighted and named for a Sunday landing). The quarters show the island's black volcanic soil bearing a coconut tree and a banana stem heavy with fruit, reflecting the agriculture-based economy, beneath the Creole motto \"Après Bondie C'est La Ter\" — \"After God, the Earth\".",
+        "sources": [
+          {
+            "title": "Coat of arms of Dominica — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Dominica"
+          }
+        ]
+      },
+      "design": "The cover of the Dominica passport.",
+      "source": "https://gicg.net/passport/dm/"
+    },
+    {
+      "country": "DO",
+      "id": "do-passport",
+      "path": "public/national-flags/do/do-passport.webp",
+      "sha256": "a71add7b6a5f589022279f01f947f4c7d6a54895e4273f9930d196f4569106ef",
+      "meaning": {
+        "description": "The Dominican Republic's passport bears the national coat of arms, adopted 6 November 1844: a Bible opened to John 8:31–32 (\"the truth shall make you free\"), topped with a small gold cross, symbolising faith, truth and freedom, at the centre of a shield in the flag's own blue, red and white. Laurel and palm branches frame the shield for immortality and liberty, bound by a ribbon reading the national motto \"Dios, Patria, Libertad\" — \"God, Homeland, Liberty\".",
+        "sources": [
+          {
+            "title": "Coat of arms of the Dominican Republic — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_the_Dominican_Republic"
+          }
+        ]
+      },
+      "design": "The cover of the the Dominican Republic passport.",
+      "source": "https://gicg.net/passport/do/"
+    },
+    {
+      "country": "DZ",
+      "id": "dz-passport",
+      "path": "public/national-flags/dz/dz-passport.webp",
+      "sha256": "ef78ae98d767125ca2ab0582d0fe091f9ec77532944d7312d2a8ba02c46c0c11",
+      "meaning": {
+        "description": "Algeria's passport bears the national emblem: a star and crescent for Islam, echoing the national flag, above the Hand of Fatima — a traditional North African protective symbol associated with the five pillars of Islam — grasping an olive branch for peace, set before the Atlas Mountains with a rising sun for a new era. An electoral urn crowned with corn cobs and oak leaves represents democracy and agriculture on one side; an olive branch, palm and industrial rooftops, chimneys and oil derricks represent Algeria's agricultural and industrial development on the other.",
+        "sources": [
+          {
+            "title": "Emblem of Algeria — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Emblem_of_Algeria"
+          }
+        ]
+      },
+      "design": "The cover of the Algeria passport.",
+      "source": "https://gicg.net/passport/dz/"
+    },
+    {
+      "country": "EC",
+      "id": "ec-passport",
+      "path": "public/national-flags/ec/ec-passport.webp",
+      "sha256": "dd9740b91d7b81201dffc1c9e47056aea63c17c6b3963f9e8f6f734162142847",
+      "meaning": {
+        "description": "As a full Andean Community member, Ecuador issues the bloc's shared bordeaux passport: \"COMUNIDAD ANDINA\" in gold above the national seal and the country's own name below. Ecuador's coat of arms itself carries a distinctly Andean design — a condor with wings spread above a sun bearing the zodiac signs of March through June (the months of the 1845 revolution), rising behind Mount Chimborazo, with a steamship in the foreground whose mast is topped by a caduceus, representing trade and navigation.",
+        "sources": [
+          {
+            "title": "Andean passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Andean_passport"
+          },
+          {
+            "title": "Coat of arms of Ecuador — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Ecuador"
+          }
+        ]
+      },
+      "design": "The cover of the Ecuador passport.",
+      "source": "https://gicg.net/passport/ec/"
+    },
+    {
+      "country": "FJ",
+      "id": "fj-passport",
+      "path": "public/national-flags/fj/fj-passport.webp",
+      "sha256": "976c8242308f2ece4abbb756a1f89c403f69bb41409664d37e82283f1e652a36",
+      "meaning": {
+        "description": "Fiji's passport bears the national coat of arms: a shield quartered by a red St George's Cross, topped with a golden lion holding a cocoa pod — both inherited from the arms of the United Kingdom, Fiji's former colonial ruler. Each quarter shows a crop central to the islands' economy — sugar cane, a coconut palm, bananas — and a white dove carrying an olive branch, a peace symbol already used on Fiji's flag under 19th-century King Cakobau. Two Fijian warriors flank the shield beneath the motto \"Rerevaka na Kalou ka Doka na Tui\" — \"Fear God and Honour the King\" (traditionally rendered \"Queen\" in the colonial-era arms).",
+        "sources": [
+          {
+            "title": "Coat of arms of Fiji — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Fiji"
+          }
+        ]
+      },
+      "design": "The cover of the Fiji passport.",
+      "source": "https://gicg.net/passport/fj/"
+    },
+    {
+      "country": "GH",
+      "id": "gh-passport",
+      "path": "public/national-flags/gh/gh-passport.webp",
+      "sha256": "4cb6b4255d82444a1d0e310fdd8a746ba34d8fa75b738782c74931db30be12e3",
+      "meaning": {
+        "description": "As an ECOWAS member, Ghana's passport carries the bloc's English and French headings — \"Economic Community of West African States (ECOWAS)\" and \"Communauté économique des États de l'Afrique de l'Ouest (CEDEAO)\" — above \"Republic of Ghana\" and the national coat of arms. That shield is quartered by a green St George's Cross bearing a gold lion (marking Ghana's continued Commonwealth ties), crested by a black star — the lodestar of African freedom — and supported by two eagles, each wearing a black star on a red-gold-green ribbon, standing watch over charges representing local government, national government, and the country's agricultural and mineral wealth.",
+        "sources": [
+          {
+            "title": "Coat of arms of Ghana — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Ghana"
+          },
+          {
+            "title": "Ghanaian passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Ghanaian_passport"
+          }
+        ]
+      },
+      "design": "The cover of the Ghana passport.",
+      "source": "https://gicg.net/passport/gh/"
+    },
+    {
+      "country": "GM",
+      "id": "gm-passport",
+      "path": "public/national-flags/gm/gm-passport.webp",
+      "sha256": "4b762da1158323fcefee1680851fc92512c6ee9eeee93509330cb3f7d2a5b468",
+      "meaning": {
+        "description": "The Gambia's biometric passport carries the ECOWAS emblem — a stylised drum and circle motif representing West African cultural heritage and regional unity — rather than the country's own coat of arms, which the earlier machine-readable passport had shown instead. The switch reflects The Gambia's membership of the Economic Community of West African States and its adoption of the bloc's shared passport symbol.",
+        "sources": [
+          {
+            "title": "ECOWAS passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/ECOWAS_passport"
+          }
+        ]
+      },
+      "design": "The cover of the the Gambia passport.",
+      "source": "https://gicg.net/passport/gm/"
+    },
+    {
+      "country": "GN",
+      "id": "gn-passport",
+      "path": "public/national-flags/gn/gn-passport.webp",
+      "sha256": "a948563e296aa314b9eaaabe7749ea330346d8ca1adbc1d6bc45de3b8986f89b",
+      "meaning": {
+        "description": "Guinea's passport bears the national coat of arms adopted in 1993: a white dove holding a golden olive branch, the classic symbols of peace, over a ribbon reading \"Travail, Justice, Solidarité\" — \"Work, Justice, Solidarity\". This peaceable design replaced an earlier arms bearing a rifle and sword, introduced after the death of Guinea's first president in 1984, which had itself replaced the country's original 1958 arms showing a yellow elephant.",
+        "sources": [
+          {
+            "title": "Coat of arms of Guinea — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Guinea"
+          }
+        ]
+      },
+      "design": "The cover of the Guinea passport.",
+      "source": "https://gicg.net/passport/gn/"
+    },
+    {
+      "country": "GW",
+      "id": "gw-passport",
+      "path": "public/national-flags/gw/gw-passport.webp",
+      "sha256": "14a182779830c04a083729a3f26d5be8bbd3da5e5f4d4e10c404a7803dd332e3",
+      "meaning": {
+        "description": "Guinea-Bissau's passport bears the national emblem, adopted shortly after independence from Portugal in 1973: a black star — the Black Star of Africa, a Pan-African symbol of unity and freedom — above a seashell marking the country's position on West Africa's Atlantic coast, flanked by olive branches for peace. The motto below, on a red banner, reads \"Unidade, Luta, Progresso\" — \"Unity, Struggle, Progress\".",
+        "sources": [
+          {
+            "title": "Emblem of Guinea-Bissau — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Emblem_of_Guinea-Bissau"
+          }
+        ]
+      },
+      "design": "The cover of the Guinea-Bissau passport.",
+      "source": "https://gicg.net/passport/gw/"
+    },
+    {
+      "country": "HK",
+      "id": "hk-passport",
+      "path": "public/national-flags/hk/hk-passport.svg",
+      "sha256": "dc0cb19b5ae3dbc4f89235eed936ff7cbea38e53be535ef29ce7a51cad227289",
+      "meaning": {
+        "description": "The Hong Kong SAR passport bears the bauhinia flower — the region's floral emblem, chosen by the Basic Law Drafting Committee to represent Hong Kong's local spirit — embossed in gold. On Hong Kong's own flag and emblem the flower's five petals each carry a red star echoing China's flag, expressing that Hong Kong is an inalienable part of China that retains its own identity under \"one country, two systems.\"",
+        "sources": [
+          {
+            "title": "Emblem of Hong Kong — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Emblem_of_Hong_Kong"
+          }
+        ]
+      },
+      "design": "The dark-blue cover of the Hong Kong Special Administrative Region passport.",
+      "source": "https://en.wikipedia.org/wiki/Hong_Kong_Special_Administrative_Region_passport"
+    },
+    {
+      "country": "HR",
+      "id": "hr-passport",
+      "path": "public/national-flags/hr/hr-passport.webp",
+      "sha256": "060f5991bbd964377abbfaa036d806315191394f666ba808d21c7eeb80dcad39",
+      "meaning": {
+        "description": "Croatia's burgundy EU passport bears the national coat of arms: the šahovnica, a 5×5 red-and-white checkerboard shield that has marked Croatian rulers since at least the 10th century, officially adopted at the 1527 election of a Habsburg king in Cetin. Above it sits a crown formed from five smaller shields representing Croatia's own historic regions — Croatia proper, Dubrovnik, Dalmatia, Istria and Slavonia — asserting the unity of lands with distinct histories under one coat of arms.",
+        "sources": [
+          {
+            "title": "Coat of arms of Croatia — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Croatia"
+          }
+        ]
+      },
+      "design": "The cover of the Croatia passport.",
+      "source": "https://gicg.net/passport/hr/"
+    },
+    {
+      "country": "VC",
+      "id": "vc-arms",
+      "path": "public/national-flags/vc/vc-arms.svg",
+      "sha256": "b907a0e44d0147dd830a80024d09cf26dffe21fdd1d853f057f683639fc7c0d6",
+      "meaning": {
+        "description": "Two women in classical Roman dress stand for the country's ideals — Peace, holding an olive branch, and Justice, kneeling with golden scales before an altar. The green shield between them bears a cotton plant, a mainstay of the old island economy. The motto reads Pax et Justitia — “Peace and Justice.”",
+        "sources": [
+          {
+            "title": "Coat of arms of Saint Vincent and the Grenadines — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines"
+          }
+        ]
+      },
+      "design": "Two women representing Peace and Justice before an altar, with a cotton plant.",
+      "source": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines"
+    },
+    {
+      "country": "VC",
+      "id": "vc-passport",
+      "path": "public/national-flags/vc/vc-passport.webp",
+      "sha256": "9dc48f34446a1acd3a5b12731242fc2046fbed03d8c150ca8c94c4dfc93cd01a",
+      "meaning": {
+        "description": "Saint Vincent and the Grenadines' passport bears the national coat of arms, adopted in 1979 and based on a colonial badge used since 1907: two women in classical dress flank a gold altar, one holding an olive branch for peace, the other kneeling with the scales of justice, beneath the Latin motto \"Pax et Justitia\" — \"Peace and Justice\". A cotton plant crowns the design, marking the crop that was once central to the islands' economy.",
+        "sources": [
+          {
+            "title": "Coat of arms of Saint Vincent and the Grenadines — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines"
+          }
+        ]
+      },
+      "design": "The cover of the Saint Vincent and the Grenadines passport.",
+      "source": "https://gicg.net/passport/vc/"
+    }
+  ]
+}
