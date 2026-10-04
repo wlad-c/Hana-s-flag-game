@@ -1,0 +1,401 @@
+{
+  "observed_at": "2026-10-04T06:58:15.380120+00:00",
+  "application_revision": "e99f6ac157fd7e2dd9a482e9d97e8eddd5e3956e",
+  "public_build_at_start": "7ddc3f3",
+  "records": [
+    {
+      "country": "BB",
+      "id": "bb-colonial",
+      "path": "public/national-flags/bb/barbados-colonial.svg",
+      "sha256": "19d7d057465e62ab46d83759bd95ece48a0c7b9c9a3de442c49b2d6da9166710",
+      "design": "A British Blue Ensign defaced with the colony's badge, Britannia in a chariot.",
+      "meaning": {
+        "description": "Flown from 1870 until independence in 1966, this Blue Ensign was defaced with Barbados's colonial badge: Britannia riding a conch-shell chariot drawn by sea horses, trident raised to signify British rule over the waves. The trident later resurfaced in Barbados's own coat of arms, broken into three pieces to represent the country's break from its colonial past.",
+        "sources": [
+          {
+            "title": "Flag of Barbados — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Flag_of_Barbados"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/List_of_Barbadian_flags",
+      "from": 1870,
+      "to": 1966
+    },
+    {
+      "country": "BS",
+      "id": "bs-civil-ensign",
+      "path": "public/national-flags/bs/bahamas-civil-ensign.svg",
+      "sha256": "7e7f1c8616a5d043cd3629d00a5c133e90ba32502531e219e0a284abee52f844",
+      "design": "A red ensign with the national flag in the canton.",
+      "meaning": {
+        "description": "The civil ensign of the Bahamas, adopted in 1973, is a red field with the national flag in the canton, following the British Ensign system introduced in 1864 in which the Red Ensign marked a merchant vessel, distinct from the White Ensign flown by warships and the Blue Ensign flown by government service ships. The Bahamas retained this colour-coded convention after independence, keeping its merchant fleet flying red while replacing the Union Flag in the canton with the national flag.",
+        "sources": [
+          {
+            "title": "Flags of the World — Bahamas: Ensigns",
+            "url": "https://www.crwflags.com/fotw/flags/bs~.html"
+          },
+          {
+            "title": "Wikipedia — Red Ensign",
+            "url": "https://en.wikipedia.org/wiki/Red_Ensign"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/List_of_Bahamian_flags",
+      "from": 1973,
+      "to": 9999
+    },
+    {
+      "country": "BS",
+      "id": "bs-arms",
+      "path": "public/national-flags/bs/bahamas-arms.svg",
+      "sha256": "116435acb656034ae66c54f0adcd71e0e6ec7f1f355561765ab97663f53736f2",
+      "design": "Columbus's ship the Santa María beneath a sun, on a shield held by a marlin and a flamingo, crested with a conch shell and palm fronds, over the motto Pirates Expelled, Commerce Restored.",
+      "meaning": {
+        "description": "The shield shows Columbus's flagship the Santa María sailing under a rising golden sun — the islands were his first American landfall in 1492, and the sun is their light and future. The supporters are the country's own creatures: a blue marlin and a flamingo, the national bird. The crest above is a conch shell before a spray of palm fronds — the conch a staple food of the islands. The motto beneath, EXPULSIS PIRATIS – RESTITUTA COMMERCIA, means \"Pirates Expelled, Commerce Restored\", recalling the early 18th century when the Bahamas were a pirate haven — the Flying Gang of Nassau — until the Crown drove them out.",
+        "sources": [
+          {
+            "title": "Coat of arms of the Bahamas — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_the_Bahamas"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Coat_of_arms_of_the_Bahamas",
+      "from": 1971,
+      "to": 9999
+    },
+    {
+      "country": "BS",
+      "id": "bs-passport",
+      "path": "public/national-flags/bs/bs-passport.webp",
+      "sha256": "41491650a947f14b458da1911bbac75194fadae692262e977df487dc139b5d20",
+      "design": "The cover of the Bahamas passport.",
+      "meaning": {
+        "description": "Unlike several of its CARICOM neighbours, the Bahamas does not use the shared CARICOM cover design: its navy-blue passport carries no CARICOM branding, reading instead \"COMMONWEALTH OF THE BAHAMAS\" above the national coat of arms, asserting the country's own Commonwealth-realm identity rather than the regional community's.",
+        "sources": [
+          {
+            "title": "Bahamian passport — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Bahamian_passport"
+          }
+        ]
+      },
+      "source": "https://gicg.net/passport/bs/",
+      "from": null,
+      "to": null
+    },
+    {
+      "country": "BW",
+      "id": "bw-passport",
+      "path": "public/national-flags/bw/bw-passport.webp",
+      "sha256": "439e997a93cf153c0cf78422d6cdb07136c315e7f312f8500cf574e1655882c5",
+      "design": "The cover of the Botswana passport.",
+      "meaning": {
+        "description": "Botswana's blue passport bears the national coat of arms, adopted in 1966: a shield flanked by two zebras — deliberately chosen because the animal belongs to no single tribe's totem, making it politically neutral, and because its black-and-white stripes were read as symbolising the unity of the country's people as one nation, an idea the national flag repeats. Three cogwheels above the shield represent industry, three wavy blue bands stand for water — echoing the national motto \"Pula\", meaning \"rain\" — and a bull's head marks the importance of cattle herding to Botswana's economy.",
+        "sources": [
+          {
+            "title": "Coat of arms of Botswana — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Botswana"
+          }
+        ]
+      },
+      "source": "https://gicg.net/passport/bw/",
+      "from": null,
+      "to": null
+    },
+    {
+      "country": "GD",
+      "id": "gd-arms",
+      "path": "public/national-flags/gd/gd-arms.svg",
+      "sha256": "0e88e9d9fe9c48b101d39c3bcd65f7846ee31ba7e87444ce77ee1d4284205ea5",
+      "design": "A cross of golden lions around Columbus's ship, held by an armadillo and a dove.",
+      "meaning": {
+        "description": "A cross divides the shield, a golden lion of England in each quarter, with the Santa María — the ship of Columbus, who sighted the island — at the centre. The crest is a garland of bougainvillea holding seven golden roses for the seven parishes. An armadillo with a nutmeg branch and a Grenada dove support the shield before Mount St Catherine, a lake and a banana tree. The motto reads “Ever Conscious of God We Aspire, Build and Advance as One People.”",
+        "sources": [
+          {
+            "title": "Coat of arms of Grenada — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Grenada"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Grenada",
+      "from": 1974,
+      "to": 9999
+    },
+    {
+      "country": "GD",
+      "id": "gd-passport",
+      "path": "public/national-flags/gd/gd-passport.webp",
+      "sha256": "7f794a1560acb406f3904f5c2b5e138fe6fea3d0a3357f8973fc48def88216fd",
+      "design": "The cover of the Grenada passport.",
+      "meaning": {
+        "description": "Grenada's CARICOM-format passport bears the national coat of arms: a shield divided by a gold cross, with Christopher Columbus's flagship the Santa María at the centre, since Columbus sighted Grenada on his third voyage in 1498. A British lion appears in two quarters and a crescent moon sprouting a lily — a mark of the island's historic dedication to the Virgin Mary — in the other two, surrounded by seven red roses for Grenada's six parishes plus the Southern Grenadines. An armadillo before a corn stalk and a Grenada dove before a banana plant — the dove found only on Grenada — support the shield on either side.",
+        "sources": [
+          {
+            "title": "Coat of arms of Grenada — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Grenada"
+          }
+        ]
+      },
+      "source": "https://gicg.net/passport/gd/",
+      "from": null,
+      "to": null
+    },
+    {
+      "country": "JM",
+      "id": "jm-governor-general",
+      "path": "public/national-flags/jm/jamaica-governor-general.svg",
+      "sha256": "66e548c3aa4a59890ea5834c5fa9665d57f8c20b112fa2f108758e6a2a232d00",
+      "design": "A blue field with the royal crest and the country's name.",
+      "meaning": {
+        "description": "A blue field bears the crest from Jamaica's coat of arms: a Jamaican crocodile — a species native to the island — mounted on the royal helmet of the British monarchy, above the country's name; the crocodile stands alongside the coat of arms' other native species, the pineapple, as a mark of Jamaica's indigenous flora and fauna, on a flag that identifies the monarch's own representative on the island.",
+        "sources": [
+          {
+            "title": "Coat of arms of Jamaica — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Jamaica"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/List_of_Jamaican_flags",
+      "from": 1962,
+      "to": 9999
+    },
+    {
+      "country": "LC",
+      "id": "lc-arms",
+      "path": "public/national-flags/lc/lc-arms.svg",
+      "sha256": "e2e15b9b240d909a7c1d9efff65cc1c440f4e578e09e8a38d50a6176a1ac383e",
+      "design": "A black shield with a rose, a fleur-de-lys and an African stool, held by two parrots.",
+      "meaning": {
+        "description": "On a black shield, two stalks of bamboo form a cross around a Tudor rose and a fleur-de-lys — the rose for Britain and the lily for France, the two powers that fought over the island — with an African stool at the centre for the islanders' heritage. Two Saint Lucia parrots, the national bird, support the shield, and a hand holding a torch crowns it. The motto reads “The Land, The People, The Light.”",
+        "sources": [
+          {
+            "title": "Coat of arms of Saint Lucia — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Lucia"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Lucia",
+      "from": 1967,
+      "to": 9999
+    },
+    {
+      "country": "LC",
+      "id": "lc-passport",
+      "path": "public/national-flags/lc/lc-passport.webp",
+      "sha256": "cde97db1609464de809d98b85a41350a1323a88cb76aad9cea7e3e41e60e19e9",
+      "design": "The cover of the Saint Lucia passport.",
+      "meaning": {
+        "description": "Saint Lucia's passport bears the national coat of arms, designed in 1967: a rose for the island's period under British administration and a fleur-de-lis for the French rule that preceded it — Saint Lucia changed hands between the two powers some fourteen times — alongside an African spearhead recalling the ancestors brought to the island during the transatlantic slave trade, and a torch held aloft to light the nation's way forward. The shield is supported by two Saint Lucia parrots (Amazona versicolor), the island's national bird, found nowhere else in the world.",
+        "sources": [
+          {
+            "title": "Coat of arms of Saint Lucia — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Lucia"
+          }
+        ]
+      },
+      "source": "https://gicg.net/passport/lc/",
+      "from": null,
+      "to": null
+    },
+    {
+      "country": "MT",
+      "id": "mt-passport",
+      "path": "public/national-flags/mt/mt-passport.webp",
+      "sha256": "ea86a583a3c1020acd7149f549d5efd9afb571a321a918272d0ed8e5a0df2236",
+      "design": "The cover of the Malta passport.",
+      "meaning": {
+        "description": "Malta's burgundy EU passport bears the country's coat of arms, whose shield shows the national flag's own white-and-red halves charged with the George Cross — awarded to the island by King George VI in 1942 for its people's resistance under siege in the Second World War, and kept on the flag and arms ever since as a permanent mark that \"Malta does not break\". A mural crown of five towers above the shield represents the island's fortress walls, flanked by an olive branch for peace and a palm branch for victory and honour.",
+        "sources": [
+          {
+            "title": "The Hidden Power Behind the Coat of Arms of Malta — Cultural Malta",
+            "url": "https://culturalmalta.org/coat-of-arms-of-malta/"
+          }
+        ]
+      },
+      "source": "https://gicg.net/passport/mt/",
+      "from": null,
+      "to": null
+    },
+    {
+      "country": "MU",
+      "id": "mu-arms",
+      "path": "public/national-flags/mu/mu-arms.svg",
+      "sha256": "e3214cb7677c75c0366d7b31e9e6adfebde3d792effb2bb95c4f05c23389eca1",
+      "design": "A quartered shield with a ship, palm trees, a key and a star, held by a dodo and a deer.",
+      "meaning": {
+        "description": "The quartered shield shows a ship for the island's discovery and trade, three palm trees, a golden key, and a five-pointed star. The key and star give the motto, Stella Clavisque Maris Indici — “the Star and Key of the Indian Ocean,” Mauritius's place on the ocean routes. A dodo, the flightless bird found only here, and a sambar deer support the shield, each holding a stalk of sugarcane, the island's great crop.",
+        "sources": [
+          {
+            "title": "Coat of arms of Mauritius — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Mauritius"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Mauritius",
+      "from": 1906,
+      "to": 9999
+    },
+    {
+      "country": "SZ",
+      "id": "sz-passport",
+      "path": "public/national-flags/sz/sz-passport.webp",
+      "sha256": "ca361d91a6182f75be3ab13eb967226a1ddb71b653117f7280520e38046c54a5",
+      "design": "The cover of the Eswatini passport.",
+      "meaning": {
+        "description": "Eswatini's passport bears the national coat of arms: a lion, representing the King, and an elephant, representing the Queen Mother, supporting a traditional Nguni shield for protection, framed by palm leaves recalling the traditional Swazi crown. Above the shield sits the lidlabe, the king's feathered headdress worn during the Incwala harvest festival, beneath the national motto \"Siyinqaba\" — \"We are the fortress\".",
+        "sources": [
+          {
+            "title": "Coat of arms of Eswatini — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Eswatini"
+          }
+        ]
+      },
+      "source": "https://gicg.net/passport/sz/",
+      "from": null,
+      "to": null
+    },
+    {
+      "country": "VC",
+      "id": "vc-arms",
+      "path": "public/national-flags/vc/vc-arms.svg",
+      "sha256": "b907a0e44d0147dd830a80024d09cf26dffe21fdd1d853f057f683639fc7c0d6",
+      "design": "Two women representing Peace and Justice before an altar, with a cotton plant.",
+      "meaning": {
+        "description": "Two women in classical Roman dress stand for the country's ideals — Peace, holding an olive branch, and Justice, kneeling with golden scales before an altar. The green shield between them bears a cotton plant, a mainstay of the old island economy. The motto reads Pax et Justitia — “Peace and Justice.”",
+        "sources": [
+          {
+            "title": "Coat of arms of Saint Vincent and the Grenadines — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines",
+      "from": 1979,
+      "to": 9999
+    },
+    {
+      "country": "VC",
+      "id": "vc-passport",
+      "path": "public/national-flags/vc/vc-passport.webp",
+      "sha256": "9dc48f34446a1acd3a5b12731242fc2046fbed03d8c150ca8c94c4dfc93cd01a",
+      "design": "The cover of the Saint Vincent and the Grenadines passport.",
+      "meaning": {
+        "description": "Saint Vincent and the Grenadines' passport bears the national coat of arms, adopted in 1979 and based on a colonial badge used since 1907: two women in classical dress flank a gold altar, one holding an olive branch for peace, the other kneeling with the scales of justice, beneath the Latin motto \"Pax et Justitia\" — \"Peace and Justice\". A cotton plant crowns the design, marking the crop that was once central to the islands' economy.",
+        "sources": [
+          {
+            "title": "Coat of arms of Saint Vincent and the Grenadines — Wikipedia",
+            "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines"
+          }
+        ]
+      },
+      "source": "https://gicg.net/passport/vc/",
+      "from": null,
+      "to": null
+    },
+    {
+      "country": "ZM",
+      "id": "zm-president",
+      "path": "public/national-flags/zm/zm-president.svg",
+      "sha256": "0c557e0beb2206ac29a44084c5c8dba6cf3997813989c80a67087ec941b4ec6e",
+      "design": "The standard of the President of Zambia.",
+      "meaning": {
+        "description": "The presidential standard, flown since Zambian independence in 1964, is a green field bearing an orange fish eagle in flight over the same block of red-black-orange vertical stripes carried on the national flag. The eagle stands for the freedom of the Zambian people and their ability to rise above the challenges facing the nation, while the block's colours repeat the national flag's own meaning: red for the struggle for freedom, black for the people, and orange for the country's mineral wealth.",
+        "sources": [
+          {
+            "title": "Wikipedia — Flag of Zambia",
+            "url": "https://en.wikipedia.org/wiki/Flag_of_Zambia"
+          },
+          {
+            "title": "Parliament of Zambia — National Flag and Armorial Ensigns Act",
+            "url": "https://www.parliament.gov.zm/sites/default/files/documents/acts/National%20Flag%20and%20Armorial%20Ensigns%20Act.pdf"
+          }
+        ]
+      },
+      "source": "https://en.wikipedia.org/wiki/Flag_of_Zambia",
+      "from": 1964,
+      "to": 9999
+    }
+  ],
+  "public_assets": [
+    {
+      "id": "bb-colonial",
+      "public_sha256": "19d7d057465e62ab46d83759bd95ece48a0c7b9c9a3de442c49b2d6da9166710",
+      "public_matches": true
+    },
+    {
+      "id": "bs-civil-ensign",
+      "public_sha256": "7e7f1c8616a5d043cd3629d00a5c133e90ba32502531e219e0a284abee52f844",
+      "public_matches": true
+    },
+    {
+      "id": "bs-arms",
+      "public_sha256": "116435acb656034ae66c54f0adcd71e0e6ec7f1f355561765ab97663f53736f2",
+      "public_matches": true
+    },
+    {
+      "id": "bs-passport",
+      "public_sha256": "41491650a947f14b458da1911bbac75194fadae692262e977df487dc139b5d20",
+      "public_matches": true
+    },
+    {
+      "id": "bw-passport",
+      "public_sha256": "439e997a93cf153c0cf78422d6cdb07136c315e7f312f8500cf574e1655882c5",
+      "public_matches": true
+    },
+    {
+      "id": "gd-arms",
+      "public_sha256": "0e88e9d9fe9c48b101d39c3bcd65f7846ee31ba7e87444ce77ee1d4284205ea5",
+      "public_matches": true
+    },
+    {
+      "id": "gd-passport",
+      "public_sha256": "7f794a1560acb406f3904f5c2b5e138fe6fea3d0a3357f8973fc48def88216fd",
+      "public_matches": true
+    },
+    {
+      "id": "jm-governor-general",
+      "public_sha256": "66e548c3aa4a59890ea5834c5fa9665d57f8c20b112fa2f108758e6a2a232d00",
+      "public_matches": true
+    },
+    {
+      "id": "lc-arms",
+      "public_sha256": "e2e15b9b240d909a7c1d9efff65cc1c440f4e578e09e8a38d50a6176a1ac383e",
+      "public_matches": true
+    },
+    {
+      "id": "lc-passport",
+      "public_sha256": "cde97db1609464de809d98b85a41350a1323a88cb76aad9cea7e3e41e60e19e9",
+      "public_matches": true
+    },
+    {
+      "id": "mt-passport",
+      "public_sha256": "ea86a583a3c1020acd7149f549d5efd9afb571a321a918272d0ed8e5a0df2236",
+      "public_matches": true
+    },
+    {
+      "id": "mu-arms",
+      "public_sha256": "e3214cb7677c75c0366d7b31e9e6adfebde3d792effb2bb95c4f05c23389eca1",
+      "public_matches": true
+    },
+    {
+      "id": "sz-passport",
+      "public_sha256": "ca361d91a6182f75be3ab13eb967226a1ddb71b653117f7280520e38046c54a5",
+      "public_matches": true
+    },
+    {
+      "id": "vc-arms",
+      "public_sha256": "b907a0e44d0147dd830a80024d09cf26dffe21fdd1d853f057f683639fc7c0d6",
+      "public_matches": true
+    },
+    {
+      "id": "vc-passport",
+      "public_sha256": "9dc48f34446a1acd3a5b12731242fc2046fbed03d8c150ca8c94c4dfc93cd01a",
+      "public_matches": true
+    },
+    {
+      "id": "zm-president",
+      "public_sha256": "0c557e0beb2206ac29a44084c5c8dba6cf3997813989c80a67087ec941b4ec6e",
+      "public_matches": true
+    }
+  ]
+}
