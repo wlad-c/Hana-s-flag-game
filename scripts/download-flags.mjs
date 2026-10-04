@@ -46,6 +46,10 @@ const NATIONAL_SOURCE_OVERRIDES = {
   // Emirate (Taliban) flag — de facto national flag since August 2021.
   // Source: Ristoufe/Jeu_Capitale (Wikimedia-derived Thuluth calligraphy artwork, pinned commit).
   AF: "https://raw.githubusercontent.com/Ristoufe/Jeu_Capitale/cbba1206533388af0f0b4768acdef696df30c452/Drapeaux/Flag_of_Afghanistan.svg",
+  // Kyrgyzstan's December 2023 flag law straightened the sun's 40 wavy rays (Kabar, 23 Dec 2023;
+  // new flag raised 8 Jan 2024). hampusborgos still carries the wavy-ray sun, so this pins the
+  // Commons file of the current design (audit F21).
+  KG: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan.svg",
 };
 
 // ---------------------------------------------------------------------------

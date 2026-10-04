@@ -24,7 +24,7 @@ export function DiasporaMapLegend({ kind, originCode }: DiasporaMapLegendProps) 
   const title =
     kind === "flow"
       ? `Moved from ${name}, 2015–2020`
-      : `Born in ${name}, living abroad (2020)`;
+      : `Born in ${name}, living abroad (${DIASPORA_STOCK_SOURCE.year})`;
   const source = kind === "flow" ? DIASPORA_FLOW_SOURCE : DIASPORA_STOCK_SOURCE;
 
   return (

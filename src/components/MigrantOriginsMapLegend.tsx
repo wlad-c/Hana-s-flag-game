@@ -1,5 +1,5 @@
 import {
-  MIGRANT_ORIGINS_BLUE,
+  MIGRANT_ORIGINS_HEATMAP_STOPS,
   MIGRANT_ORIGINS_COLORS,
   MIGRANT_ORIGINS_SOURCE,
   formatMigrantStock,
@@ -18,15 +18,27 @@ export function MigrantOriginsMapLegend({
   const name =
     ALL_COUNTRY_OPTIONS.find((c) => c.code === destinationCode)?.name ??
     destinationCode;
-  const title = `Migrant origins into ${name}`;
+  const title = `Migrant origins into ${name} (${MIGRANT_ORIGINS_SOURCE.year})`;
   const range = migrantOriginRange(destinationCode);
-  const light = MIGRANT_ORIGINS_BLUE[0];
-  const dark = MIGRANT_ORIGINS_BLUE[MIGRANT_ORIGINS_BLUE.length - 1];
 
   return (
     <div className="democracy-map-legend" role="region" aria-label={`${title} map legend`}>
       <span className="democracy-map-legend__title">{title}:</span>
       <ul className="democracy-map-legend__list">
+        <li className="democracy-map-legend__item democracy-map-legend__item--gradient">
+          <span
+            className="democracy-map-legend__gradient"
+            style={{
+              background: `linear-gradient(90deg, ${MIGRANT_ORIGINS_HEATMAP_STOPS.join(", ")})`,
+            }}
+            aria-hidden="true"
+          />
+          <span className="democracy-map-legend__label">
+            {range
+              ? `Fewer (${formatMigrantStock(range.min)}) → more (${formatMigrantStock(range.max)}) people`
+              : "Fewer → more people"}
+          </span>
+        </li>
         <li className="democracy-map-legend__item">
           <span
             className="democracy-map-legend__swatch"
@@ -35,40 +47,22 @@ export function MigrantOriginsMapLegend({
           />
           <span className="democracy-map-legend__label">{name} (destination)</span>
         </li>
-        {range ? (
-          <li className="democracy-map-legend__item migrant-origins-legend__scale">
-            <span
-              className="migrant-origins-legend__bar"
-              style={{
-                background: `linear-gradient(90deg, ${light}, ${dark})`,
-              }}
-              aria-hidden="true"
-            />
-            <span className="democracy-map-legend__label">
-              {formatMigrantStock(range.min)} → {formatMigrantStock(range.max)}{" "}
-              people ({range.count} origins with a published figure)
-            </span>
-          </li>
-        ) : (
-          <li className="democracy-map-legend__item">
-            <span className="democracy-map-legend__label">
-              No country-level origin figures published for this destination
-            </span>
-          </li>
-        )}
-        <li className="democracy-map-legend__item">
-          <span
-            className="democracy-map-legend__swatch"
-            style={{ backgroundColor: MIGRANT_ORIGINS_COLORS.noData }}
-            aria-hidden="true"
-          />
-          <span className="democracy-map-legend__label">No country-level figure</span>
-        </li>
       </ul>
+      {range ? (
+        <p className="democracy-map-legend__note">
+          {formatMigrantStock(range.total)} people living in {name} from{" "}
+          {range.count} {range.count === 1 ? "country" : "countries"} with a reported
+          stock. Uncoloured countries have no positive stock in the source.
+          Destination-born descendants are not counted.
+        </p>
+      ) : (
+        <p className="democracy-map-legend__note">
+          No country-level origin figures published for this destination.
+          Uncoloured countries have no positive stock in the source.
+        </p>
+      )}
       <p className="democracy-map-legend__note">
-        Source: {MIGRANT_ORIGINS_SOURCE.name}, {MIGRANT_ORIGINS_SOURCE.edition}. Absolute
-        stock (both sexes). Darker blue = more migrants. Missing ≠ zero — residual stock may
-        sit in UN DESA&apos;s &quot;Others&quot; aggregate.
+        Source: {MIGRANT_ORIGINS_SOURCE.name} (year {MIGRANT_ORIGINS_SOURCE.year}; {MIGRANT_ORIGINS_SOURCE.licence}).
       </p>
     </div>
   );

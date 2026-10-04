@@ -150,7 +150,7 @@ for (const [label, src, needle] of [
   ["LearnPage", learn, "MigrantOriginsPanelRows"],
   ["TravelMigrationMapControl", control, "Filter countries"],
   ["TravelMigrationMapControl", control, "kind: \"migrant-origins\""],
-  ["MigrantOriginsMapLegend", legend, "MIGRANT_ORIGINS_BLUE"],
+  ["MigrantOriginsMapLegend", legend, "MIGRANT_ORIGINS_HEATMAP_STOPS"],
   ["MigrantOriginsMapLegend", legend, "MIGRANT_ORIGINS_SOURCE"],
   ["migrantOriginsColors", lib, "getMigrantOriginsColorOverlay"],
   ["migrantOriginsColors", lib, "MIGRANT_ORIGINS_COLORS"],
@@ -161,8 +161,54 @@ for (const [label, src, needle] of [
   if (!src.includes(needle)) errors.push(`${label} no longer references ${needle}`);
 }
 
-if (!lib.includes("noData:") || !/#(?:[0-9a-fA-F]{6})/.test(lib)) {
-  errors.push("migrantOriginsColors must define noData grey and blue palette hexes");
+if (!/light:\s*"#d8f3e0"/.test(lib) || !/dark:\s*"#004d1a"/.test(lib)) {
+  errors.push("migrantOriginsColors green heatmap endpoints must match diaspora benchmark (#d8f3e0, #004d1a)");
+}
+if (!/destination:\s*"#000000"/.test(lib)) {
+  errors.push("migrantOriginsColors destination must be black (#000000)");
+}
+if (!/Math\.log/.test(lib)) {
+  errors.push("migrantOriginsColors must use a log scale matching diaspora benchmark");
+}
+
+// Bilateral symmetry check: Migrant Origins positive pairs must match Diaspora stock.
+const DIASPORA_FILE = R("../src/data/diaspora.ts");
+const diasporaSrc = readFileSync(DIASPORA_FILE, "utf8");
+let inStock = false;
+let currentOrigin = null;
+const diasporaStockMap = new Map();
+for (const line of diasporaSrc.split(/\r?\n/)) {
+  if (line.startsWith("export const DIASPORA_STOCK:")) {
+    inStock = true;
+    continue;
+  }
+  if (line.startsWith("export const DIASPORA_FLOW:")) break;
+  if (!inStock) continue;
+  const oMatch = line.match(/^  "([A-Z]{2})": \{$/);
+  if (oMatch) {
+    currentOrigin = oMatch[1];
+    diasporaStockMap.set(currentOrigin, new Map());
+    continue;
+  }
+  const dMatch = line.match(/^    "([A-Z]{2})": (\d+),$/);
+  if (dMatch && currentOrigin) {
+    diasporaStockMap.get(currentOrigin).set(dMatch[1], Number(dMatch[2]));
+  }
+}
+let symmetryChecked = 0;
+for (const [dest, origins] of gen.data) {
+  for (const [orig, stock] of origins) {
+    if (stock > 0) {
+      const diasporaVal = diasporaStockMap.get(orig)?.get(dest);
+      if (diasporaVal !== stock) {
+        errors.push(`Bilateral mismatch ${dest}←${orig}: MigrantOrigins=${stock} vs Diaspora=${diasporaVal}`);
+      }
+      symmetryChecked++;
+    }
+  }
+}
+if (symmetryChecked !== 8178) {
+  errors.push(`Expected 8178 positive bilateral pairs checked against diaspora, got ${symmetryChecked}`);
 }
 
 if (errors.length) {

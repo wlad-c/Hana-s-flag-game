@@ -13,8 +13,8 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const R = (p) => resolve(__dirname, p);
 
-const STOCK_CSV = R("data/diaspora-migrant-stock-2020-wb.csv");
-const STOCK_META = R("data/diaspora-migrant-stock-2020-wb.meta.json");
+const STOCK_CSV = R("data/diaspora-migrant-stock-2024.csv");
+const STOCK_META = R("data/diaspora-migrant-stock-2024.meta.json");
 const FLOW_CSV = R("data/diaspora-migrant-flow-2015-2020.csv");
 const FLOW_META = R("data/diaspora-migrant-flow-2015-2020.meta.json");
 const GENERATED = R("../src/data/diaspora.ts");
@@ -24,7 +24,7 @@ const CONTROL = R("../src/components/TravelMigrationMapControl.tsx");
 const LEGEND = R("../src/components/DiasporaMapLegend.tsx");
 const LIB = R("../src/lib/diasporaColors.ts");
 
-const STOCK_ALLOWED_MISSING = new Set(["ME", "VA"]);
+const STOCK_ALLOWED_MISSING = new Set();
 
 function loadUnCodes(src) {
   const m = src.match(/UN_MEMBER_CODES[\s\S]*?=[\s\S]*?new Set\(\[([\s\S]*?)\]\)/);
@@ -136,12 +136,48 @@ for (const code of unCodes) {
 assertMatch("stock", stockCsv.data, gen.stock, errors);
 assertMatch("flow", flowCsv.data, gen.flow, errors);
 
-// Coverage guards: Australia stock must include the corridors DESA omitted.
-for (const dest of ["US", "FR", "DE", "TH", "KR"]) {
-  if (!stockCsv.data.get("AU")?.has(dest)) {
-    errors.push(`AU→${dest} missing from World Bank stock extract`);
+// Spot-check known UN DESA 2024 figures (Table 1, both sexes) — refuse fabrication.
+const spot = [
+  ["MX", "US", 11279561],
+  ["IN", "US", 3165238],
+  ["GB", "AU", 1107102],
+  ["NZ", "AU", 588088],
+];
+for (const [o, d, n] of spot) {
+  const got = stockCsv.data.get(o)?.get(d);
+  if (got !== n) errors.push(`Spot-check ${o}→${d}: CSV=${got} expected ${n}`);
+  const genN = gen.stock.get(o)?.get(d);
+  if (genN !== n) errors.push(`Spot-check ${o}→${d}: generated=${genN} expected ${n}`);
+}
+
+// Bilateral symmetry check: Diaspora stock must match Migrant Origins for every positive pair.
+const MIGRANT_DATA_FILE = R("../src/data/migrantOrigins.ts");
+const migrantSrc = readFileSync(MIGRANT_DATA_FILE, "utf8");
+let currentDest = null;
+let symmetryPairsChecked = 0;
+for (const line of migrantSrc.split("\n")) {
+  const dMatch = line.match(/^  "([A-Z]{2})": \{$/);
+  if (dMatch) {
+    currentDest = dMatch[1];
+    continue;
+  }
+  const oMatch = line.match(/^    "([A-Z]{2})": (\d+),$/);
+  if (oMatch && currentDest) {
+    const orig = oMatch[1];
+    const migrantStock = Number(oMatch[2]);
+    if (migrantStock > 0) {
+      const diasporaStock = gen.stock.get(orig)?.get(currentDest);
+      if (diasporaStock !== migrantStock) {
+        errors.push(`Bilateral mismatch for ${orig}→${currentDest}: Diaspora=${diasporaStock} vs MigrantOrigins=${migrantStock}`);
+      }
+      symmetryPairsChecked++;
+    }
   }
 }
+if (symmetryPairsChecked !== 8178) {
+  errors.push(`Expected 8178 positive bilateral pairs checked, got ${symmetryPairsChecked}`);
+}
+
 if (!flowCsv.data.get("AU")?.has("US")) errors.push("AU→US missing from Abel–Cohen flow extract");
 if (!flowCsv.data.get("JP")?.has("BR")) errors.push("JP→BR missing from Abel–Cohen flow extract");
 

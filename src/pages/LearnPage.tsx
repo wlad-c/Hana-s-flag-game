@@ -66,12 +66,14 @@ import {
   diasporaValueFor,
   formatDiasporaNumber,
   getDiasporaColorOverlay,
+  DIASPORA_STOCK_SOURCE,
   type DiasporaMapMode,
 } from "../lib/diasporaColors";
 import {
   formatMigrantStock,
   getMigrantOriginsColorOverlay,
   isMigrantOriginsMode,
+  migrantOriginRange,
   migrantStockFor,
   MIGRANT_ORIGINS_SOURCE,
   type MigrantOriginsMapMode,
@@ -1585,7 +1587,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         kind === "flow"
           ? `Moved from ${originName}, 2015–2020`
           : `Born in ${originName}, living abroad`;
-      const year = 2020;
+      const year = kind === "flow" ? 2020 : DIASPORA_STOCK_SOURCE.year;
       return (code: string) => {
         const color = diasporaColorOverlay?.get(code) ?? null;
         if (code === originCode) {
@@ -1620,6 +1622,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       const destCode = migrantOriginsMapMode.code;
       const destName =
         countries.find((c) => c.code === destCode)?.name ?? destCode;
+      const range = migrantOriginRange(destCode);
       return (code: string) => {
         const color = migrantOriginsColorOverlay?.get(code) ?? null;
         if (code === destCode) {
@@ -1635,9 +1638,11 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
         return {
           measure: `Born here, living in ${destName}`,
           value:
-            stock == null
-              ? null
-              : `${formatMigrantStock(stock)} people`,
+            stock != null
+              ? `${formatMigrantStock(stock)} people`
+              : range
+                ? "No stock reported"
+                : null,
           category: null,
           color,
           year: MIGRANT_ORIGINS_SOURCE.year,

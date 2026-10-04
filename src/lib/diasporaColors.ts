@@ -1,7 +1,7 @@
 /**
  * Learn-mode world-map colours for diaspora STOCK and FLOW modes.
  *
- * STOCK — foreign-born living in each destination (World Bank 2020).
+ * STOCK — foreign-born living in each destination (UN DESA International Migrant Stock 2024).
  * FLOW  — estimated movers during 2015–2020 (Abel & Cohen da_pb_closed).
  *
  * Neither is ethnic/ancestry diaspora. Missing pairs stay neutral land —

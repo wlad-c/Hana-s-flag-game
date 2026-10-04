@@ -276,7 +276,7 @@ export function TravelMigrationMapControl({
                     className={`map-view-control__preset${draftKind === "stock" ? " map-view-control__preset--active" : ""}`}
                     onClick={() => pickMeasure("stock")}
                     aria-pressed={draftKind === "stock"}
-                    title="Living abroad now (foreign-born stock, 2020)"
+                    title="Living abroad now (foreign-born stock, 2024)"
                   >
                     Living abroad now
                   </button>

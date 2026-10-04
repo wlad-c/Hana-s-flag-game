@@ -10,10 +10,9 @@ country is shaded by how many people **born there** live in that destination
 |----------|--------|
 | Source | UN DESA Population Division — International Migrant Stock **2024** |
 | Metric | Absolute stock (both sexes, mid-year 2024) |
-| Selected destination | **Black** |
-| Published **0** | Lightest blue |
-| No country-level figure | Grey (missing ≠ zero) |
-| Scale | Per-destination continuous blue (min → max among published origins) |
+| Selected destination | **Black** (`#000000`) |
+| No positive country-level figure | Neutral land (matching diaspora benchmark) |
+| Scale | Green heatmap (`#d8f3e0` → `#004d1a`) with log scale, matching diaspora benchmark |
 | UI | Toolbar control with searchable destination list; panel rows + legend citation |
 
 ## Source (authoritative — never fabricate)
@@ -48,13 +47,13 @@ country is shaded by how many people **born there** live in that destination
 
 Learn mode also has a **diaspora** layer (`docs/DIASPORA_MAP.md`): pick an
 **origin**, paint **destinations** green. This migrant-origins layer is the
-inverse: pick a **destination**, paint **origins** blue. Both use the same UN
+inverse: pick a **destination**, paint **origins** green. Both use the same UN
 DESA International Migrant Stock 2024 Table 1; they are mutually exclusive in
 the toolbar with each other and with flag / passport / democracy layers.
 
 ## UI
 
-- `MigrantOriginsMapControl` — toolbar icon; Off + searchable “People living in…” list
-- `getMigrantOriginsColorOverlay` — blue heatmap + black destination + grey gaps
+- `TravelMigrationMapControl` — toolbar icon; Off + searchable list
+- `getMigrantOriginsColorOverlay` — green heatmap + black destination + neutral land gaps
 - `MigrantOriginsMapLegend` — scale + source note
 - `MigrantOriginsPanelRows` — stock / year / citation on the Overview fact-sheet when the layer is on

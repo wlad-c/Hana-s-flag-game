@@ -3,8 +3,8 @@
  * Generates src/data/diaspora.ts from the committed stock + flow extracts.
  *
  * STOCK (people living abroad now — foreign-born):
- *   scripts/data/diaspora-migrant-stock-2020-wb.csv
- *   World Bank Global Bilateral Migration Matrix 1960–2020 (WDR 2023), year 2020
+ *   scripts/data/diaspora-migrant-stock-2024.csv
+ *   UN DESA International Migrant Stock 2024 (Table 1), mid-year 2024
  *
  * FLOW (people who moved in a five-year window — estimated):
  *   scripts/data/diaspora-migrant-flow-2015-2020.csv
@@ -24,15 +24,15 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
-const STOCK_CSV = resolve(__dirname, "data/diaspora-migrant-stock-2020-wb.csv");
-const STOCK_META = resolve(__dirname, "data/diaspora-migrant-stock-2020-wb.meta.json");
+const STOCK_CSV = resolve(__dirname, "data/diaspora-migrant-stock-2024.csv");
+const STOCK_META = resolve(__dirname, "data/diaspora-migrant-stock-2024.meta.json");
 const FLOW_CSV = resolve(__dirname, "data/diaspora-migrant-flow-2015-2020.csv");
 const FLOW_META = resolve(__dirname, "data/diaspora-migrant-flow-2015-2020.meta.json");
 const UN_CODES_FILE = resolve(ROOT, "src/lib/unMemberStates.ts");
 const OUT = resolve(ROOT, "src/data/diaspora.ts");
 
-/** Origins the World Bank stock matrix has no country code for. */
-const STOCK_ALLOWED_MISSING = new Set(["ME", "VA"]);
+/** Origins the stock matrix has no country code for (none in UN DESA 2024). */
+const STOCK_ALLOWED_MISSING = new Set();
 
 function loadUnCodes(src) {
   const m = src.match(/UN_MEMBER_CODES[\s\S]*?=[\s\S]*?new Set\(\[([\s\S]*?)\]\)/);

@@ -7,7 +7,7 @@ for a chosen origin. It offers **two sourced measures** — pick the measure,
 then the country:
 
 1. **Off** — default map colours.
-2. **Living abroad now (foreign-born stock, 2020)** — how many people *born in*
+2. **Living abroad now (foreign-born stock, 2024)** — how many people *born in*
    the origin live in each destination today.
 3. **Moved 2015–2020 (estimated flows)** — estimated people who *moved* from
    the origin to each destination during that five-year window.
@@ -24,7 +24,7 @@ Flag / passport·visa / diaspora / democracy layers stay mutually exclusive.
 
 Example (Japan → Brazil):
 
-- **Stock (2020):** ~62,000 Japan-born residents of Brazil (World Bank).
+- **Stock (2024):** ~59,000 Japan-born residents of Brazil (UN DESA).
 - **Flow (2015–2020):** ~21,000 estimated movers Japan→Brazil in that window (Abel & Cohen).
 - **Ethnic Nikkei community in Brazil:** on the order of 1–2 million — **not** shown; it is a different concept.
 
@@ -36,27 +36,26 @@ selected origin’s own min→max.
 
 ## Sources — never fabricated
 
-### Stock — World Bank Global Bilateral Migration Matrix 1960–2020 (active)
+### Stock — UN DESA International Migrant Stock 2024 (active)
 
 | Field | Value |
 |-------|--------|
-| Publisher | World Bank (World Development Report 2023 Migration Database) |
-| File | `WBMM_1960_2020.xlsx` (from [WDR 2023 data](https://www.worldbank.org/en/publication/wdr2023/data)) |
-| Year | **2020** (male + female summed) |
-| Bundled extract | `scripts/data/diaspora-migrant-stock-2020-wb.csv` |
-| Upstream xlsx sha256 | `0f6b085b83fb1b4203f01c3fe736c5e64dcab5291ed7ce77c028e12ce84ea28b` |
+| Publisher | United Nations DESA Population Division |
+| File | `undesa_pd_2024_ims_stock_by_sex_destination_and_origin.xlsx` (Table 1) |
+| Year | **2024** (mid-year estimates, both sexes combined) |
+| Bundled extract | `scripts/data/diaspora-migrant-stock-2024.csv` |
+| Upstream xlsx sha256 | `0e10179d05186041a65cf5c6200943b2231701f9c1fd33cbbe21d23b8ea47316` |
+| Licence | CC BY 3.0 IGO |
 
-Stock was **kept** as a first-class layer; denser WB 2020 pairs replaced the
-previous UN DESA Table 1 extract for the live map because DESA omitted many
-real corridors (e.g. Australia→United States / France / Germany / Thailand /
-Korea). Legacy ISO3 aliases mapped: `ROM→RO`, `ZAR→CD`, `YUG→RS`, `TMP→TL`.
-Montenegro and Vatican City have no WB country codes — honest empty stock for
-those origins.
+Stock uses UN DESA 2024 Table 1, providing the exact bilateral transpose of the
+Learn-mode Migrant Origins layer (`docs/MIGRANT_ORIGINS.md`). When comparing
+Diaspora (origin O → destination D) and Migrant Origins (destination D ← origin O)
+for the same 2024 period, figures match identically.
 
-### Stock — UN DESA International Migrant Stock 2024 (retained extract)
+### Stock — World Bank Global Bilateral Migration Matrix 1960–2020 (retained extract)
 
-The earlier DESA extract remains in the repo for provenance and comparison —
-it is **not** deleted:
+The World Bank 2020 extract remains in `scripts/data/diaspora-migrant-stock-2020-wb.csv`
+and `scripts/data/diaspora-migrant-stock-2020-wb.meta.json` for historical comparison:
 
 | Field | Value |
 |-------|--------|

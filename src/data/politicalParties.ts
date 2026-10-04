@@ -15505,8 +15505,8 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "positionRaw": "Centre to centre-left",
       "founded": 1875,
       "coalitionId": "DE-GOV",
-      "leader": "Lars Klingbeil",
-      "leaderTitle": "Co-leader",
+      "leader": "Bärbel Bas; Lars Klingbeil",
+      "leaderTitle": "Co-leaders",
       "inPower": true,
       "inExecutive": true,
       "timeInPower": "Junior partner in the CDU/CSU–SPD coalition formed in May 2025.",
@@ -15514,6 +15514,10 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
       "seatsTotal": 630,
       "chamberName": "Bundestag",
       "sources": [
+        {
+          "title": "SPD press release 27 June 2025: Bärbel Bas und Lars Klingbeil als SPD-Vorsitzende gewählt",
+          "url": "https://www.spd.de/service/pressemitteilungen/detail/news/baerbel-bas-und-lars-klingbeil-als-spd-vorsitzende-gewaehlt/27/06/2025"
+        },
         {
           "title": "Social Democratic Party of Germany — Wikipedia: ideology, political position, founding year and leadership",
           "url": "https://en.wikipedia.org/wiki/Social_Democratic_Party_of_Germany"
@@ -15630,6 +15634,38 @@ export const POLITICAL_PARTIES: Record<string, readonly PoliticalParty[]> = {
         {
           "title": "Bundestag — Wikipedia: 21st Bundestag, 630 seats elected 23 February 2025 — Government (Merz cabinet) 328 (CDU 164, CSU 44, SPD 120); Opposition 302 (AfD 150, Greens 85, Die Linke 64, 3 non-attached)",
           "url": "https://en.wikipedia.org/wiki/Bundestag"
+        }
+      ]
+    },
+    {
+      "id": "DE-SSW",
+      "country": "DE",
+      "shortName": "SSW",
+      "name": "Südschleswigscher Wählerverband",
+      "nameEn": "South Schleswig Voters' Association",
+      "noImageReason": "Searched for an SSW emblem and found none that can be shown here: Wikimedia Commons has no freely-licensed logo file for the party, the party's Wikipedia articles carry no infobox logo, and the party's own website (ssw.de) does not provide a downloadable logo in a usable format. An acknowledged gap is noted until a verified image is sourced.",
+      "ideology": [
+        "Social liberalism",
+        "Regionalism",
+        "Minority rights"
+      ],
+      "ideologyPosition": "centre-left",
+      "positionRaw": "Centre-left",
+      "founded": 1948,
+      "leader": "Stefan Seidler",
+      "leaderTitle": "Bundestag member",
+      "inPower": false,
+      "seats": 1,
+      "seatsTotal": 630,
+      "chamberName": "Bundestag",
+      "sources": [
+        {
+          "title": "SSW parliamentary page — Stefan Seidler, 21st Bundestag (re-elected February 2025; SSW is exempt from the 5% threshold as a national minority party)",
+          "url": "https://www.ssw.de/stefan-seidler"
+        },
+        {
+          "title": "South Schleswig Voters' Association — Wikipedia: minority party for Danish and Frisian communities in Schleswig-Holstein",
+          "url": "https://en.wikipedia.org/wiki/South_Schleswig_Voters%27_Association"
         }
       ]
     }
