@@ -16,7 +16,7 @@ This document is the shared audit and implementation record. The detailed JSON f
 
 | Agent | Assigned or observed role | Last documented state | Scope / handoff |
 |---|---|---|---|
-| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F104–F107 narrative recovered; F105 names and F106 exact public asset verified; F108 open. All 29 new Norway population values match SSB. | Latest application baseline `081f2dea`; observed public build `38b87bc`. F104/SF-17, F107 wording dispute and broader unchecked coverage remain open; preserve other agents' implementation records. |
+| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F109–F112 recovered from persisted evidence; open. 35 subdivision and 35 capital census values matched; 13 capital scope discrepancies. F108 current flag verified; historical residual open. | Application baseline `e99f6ac`; fresh October 4 check found no later application commit. October 4 continuation investigates remaining Moldova population coverage and Malta sources. |
 | Opus 5.5 (Cursor cloud agent) | Implement findings and continue audit; see detailed remediation log | Corrections are now on `main`, as documented in Opus's log and observed through `7c75c318`; earlier PR #1709 branch-only state is superseded. | R01, R02, … remain Opus finding IDs. Independent verification and deployment are recorded separately per finding; do not treat merged as verified. |
 | Claude Code, sub-national flag audit (branch `claude/subnational-flags-audit-pc1zvz`) | Audits and fixes sub-national and capital-city flags, their explainers, the capitals behind them and the Sub-national flags quiz; ships by PR, each confirmed live | Batches 1–6a live (#1703–#1708); batch 6b live (#1717, `6d8406e`); batch 7 claimed | Method, status and the claimable SF-01…SF-16 queue: [`SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md`](SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md). Evidence per decision: [`SUBNATIONAL_FLAG_AUDIT_2026-09.md`](SUBNATIONAL_FLAG_AUDIT_2026-09.md). Any agent may claim an SF item there and here. |
 
@@ -39,6 +39,7 @@ Preserve existing finding IDs and dated evidence. Mark a finding's resolution al
 
 | Updated (timezone stated) | Agent | Finding / bounded scope | Status | Action and reason | Commit / validation / remaining work |
 |---|---|---|---|---|---|
+| 2026-10-04 11:51 Melbourne / 00:51 UTC (request time) | Codex | Restore F109–F112; continue remaining Moldova population and Malta source checks | Investigating | October 2 Markdown save was blocked by a usage-limit approval-review failure; evidence `7d3a01e` survived. Restored its findings without changing application data. Fresh repository/source checks follow. | No newer application commit than `e99f6ac` observed. Preserve other agents' implementation records. |
 | 2026-10-02 00:46 Melbourne / 2026-10-01 14:46 UTC (request time) | Codex | Independent review of batches 8f–8h through `e99f6ac`: Malta council flags, F108 remediation, Moldova administrative geometry/data | Investigating | Read current shared ledger; preserve implementation ownership. Check primary sources and exact asset/data outputs; distinguish administrative status from de facto control. | Audit/documentation only; no application changes. |
 | 2026-10-01 23:15 Melbourne / 13:15 UTC | Claude Code (sub-national flag audit) | Batch 8h: Moldova's 37 official units (SF-06) | Verified in the running app: the map draws 37 units, the grid groups 32 districts, 3 cities, Gagauzia and Transnistria (labelled "Flag not officially recognised by Moldova"), and the Transnistria, Gagauzia, Dubăsari and Bender panels show capitals with populations and the new flags and explainers; no page errors, no remote flag requests. `flags:check` and `npm run build` pass; merge pending | The map had 40 Natural Earth features (duplicate Transnistria and Rezina, non-ISO Camenca and Grigoriopol), no Dubăsari district, and Gagauzia named after its capital. Rebuilt on the OCHA/UNHCR COD-AB set (HDX cod-ab-mda, CC BY-IGO); capitals fixed from Natural Earth and Wikidata; Dubăsari's 2024 census population added (NBS final results); flags and explainers for Transnistria, Gagauzia, Dubăsari district and Tiraspol. Transnistria's and Bender's populations are logged for re-sourcing. | PR pending; evidence in the ledger's Batch 8h section. |
 | 2026-10-01 22:55 Melbourne / 12:55 UTC | Claude Code (sub-national flag audit) | F108 (batch 8g): BIOT flag artwork | Fixed; verified in the running app: the GB-IO panel and the UK's sub-national National symbols tab paint the October 2025 flag with the gold Tudor Crown, and the 1990–2025 flag is listed as historical; no page errors, no remote flag requests. `flags:check`, `check-national-flags` and `npm run build` pass. Live (`eacf690`, 11:10 PM AEST 1 October 2026) | `io.svg` replaced with the Commons redraw of the October 2025 design (public domain), compared with the administration's own artwork and pinned in `download-flags.mjs`; the National symbols entry is dated from 2025 and the 1990–2025 flag is kept as a dated historical entry; the GB-IO explainer is corrected to distinguish the 1990 grant from the 2025 crown change. | #1740 `eacf690`; evidence in the ledger's Batch 8g section. |
@@ -159,6 +160,66 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
 - The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
 - Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
+
+## Recovered October 2 findings and October 4 continuation
+
+**Codex, audit/documentation only.** The October 2 Markdown update failed automatic approval review because of a usage limit; it was not executed. The supporting evidence was successfully committed as `7d3a01e055c1fef2d933cbf455c8da57250b0c77`. This section restores those findings on 4 October 2026. Fresh repository inspection found no newer application commit than `e99f6ac157fd7e2dd9a482e9d97e8eddd5e3956e`. Do not mistake this documentation recovery for new implementation.
+
+Evidence: [MOLDOVA_BIOT_DELTA_VERIFICATION_2026-10-02.json](audit/MOLDOVA_BIOT_DELTA_VERIFICATION_2026-10-02.json). It preserves all 35 subdivision and 35 capital census comparisons, exact source cells and scope, source/file hashes, public asset checks and limitations. October 2 public bundle: `c97a92d`, built `2026-10-01T14:48:41.947Z`. The current and historical BIOT flags, Dubăsari district flag and Moldova GeoJSON downloaded from the public site exactly matched the inspected repository. Those were HTTP delivery and local image-rendering checks, not an independent browser walkthrough.
+
+### F109 — Dubăsari's newly added capital is the wrong administrative seat (P2)
+
+The new `MD-DU` fallback in `src/data/subdivisionCapitals.ts` selects **Cocieri**, and `capitalDetails.ts` supplies its 2,943 residents. The [district council's history](https://dubasari.md/pagins/istoria-raionului) explicitly identifies **Coșnița** as the present official administrative centre. The [council contact address](https://dubasari.md/) and [education directorate](https://dedubasari.md/prezentarea-generala/) corroborate this. The English Wikipedia/Wikidata assertion used in batch 8h conflicts with these primary local sources.
+
+Correct the capital name, sourced coordinates, population and regeneration inputs together. NBS table 8.3 distinguishes **Coșnița village 3,977 (E977)** from **Coșnița commune 4,481 (E976)**. Cocieri's **2,943 (E974)** is a genuine 2024 village count, but belongs to the wrong capital selection. No date of an administrative transfer was established; do not invent one.
+
+### F110 — Dubăsari's new flag has the wrong proportions (P2)
+
+The [district council's symbols page](https://dubasari.md/pagins/simbolica) specifies **2:3 height-to-width**, with the white band half the height. The bundled `public/flags/sub/MD/MD-DU.png` is **800 × 500 (5:8)**, and `flagOverlayAspectRatios.ts` stores width/height **1.6**, instead of **1.5**. Visual inspection confirms that the field fills the image; padding does not explain the difference. The same bytes were publicly served.
+
+Correct the artwork, source record and ratio metadata together. A metadata-only change cannot repair the image. The blue–white–blue arrangement and red boat agree with the primary description. The council also supplies attributed symbolism that can replace reliance on FOTW alone.
+
+### F111 — Transnistria's caption conflates adoption with later legislation (P2)
+
+The new `FLAG_MEANINGS["MD-SN"]` says the flag was adopted in July 2000. The de facto legislature's [historical account](https://vspmr.org/about/verhovniy-sovet-istoriya-fakti-i-kommentarii/o-gosudarstvennoy-simvolike-pridnestrovjya.html) distinguishes **2 September 1991 adoption** from the **2000 symbols law**; its [2023 anniversary account](https://www.vspmr.org/news/supreme-council/denj-rojdeniya-respubliki2092023.html) also dates adoption to 1991. Explain these events separately. These sources establish the administration's own acts, not international recognition.
+
+Prefer describing Russia's flag as used alongside the PMR flag under the 2017 law to asserting unspecified equal legal standing. The [official announcement](https://novostipmr.com/ru/content/utverzhden-poryadok-ispolzovaniya-na-territorii-pridnestrovya-gosflaga) describes designated institutions and display order. The legislative catalogue identifies law **90-З-VI, 27 April 2017**; its attached full text failed retrieval. This legal-status wording remains a qualified recommendation. The [presidential specification](https://president.gospmr.org/gos-flag-pmr/) confirms the geometry but excludes state authorities from using the simplified emblem-free variant; retain that qualification.
+
+### F112 — Moldova capital counts mix geographic scopes without labels (P2)
+
+All **35 capital records claiming a 2024 census count** match a numeric row in NBS table 8.3. Thirteen are municipal totals including subordinate villages, despite `CapitalDetail.population` being documented as city-proper. The UI labels only population, year and basis. Cocieri uses the smaller village count.
+
+| Code / capital | Stored municipal total | Central settlement |
+|---|---:|---:|
+| MD-AN Anenii Noi | 8,933 | 6,610 |
+| MD-CA Cahul | 22,223 | 21,326 |
+| MD-CL Călărași | 9,469 | 9,413 |
+| MD-CM Cimișlia | 8,765 | 7,918 |
+| MD-CR Criuleni | 5,844 | 5,044 |
+| MD-ED Edineț | 12,369 | 11,290 |
+| MD-FA Fălești | 11,946 | 11,328 |
+| MD-GL Glodeni | 7,284 | 7,075 |
+| MD-RE Rezina | 9,380 | 7,586 |
+| MD-RI Rîșcani | 8,622 | 8,054 |
+| MD-SI Sîngerei | 9,954 | 9,550 |
+| MD-ST Strășeni | 14,497 | 13,915 |
+| MD-TE Telenești | 5,670 | 4,695 |
+
+Choose and label the intended unit. Preserve the CUATM identifier, source table/cell, reference date and scope in generator inputs and generated data. A correctly sourced municipal count need not be discarded if clearly labelled. The existing `MD-CA` label `Cahul, satul Gotești` also needs source review: NBS's matching row is `or. Cahul`; the prefix-based `sameCity` guard accepts the longer label. This is a data-quality warning, not proof that 22,223 belongs to Gotești.
+
+### F108 — current flag independently resolved; historical artwork/caption residual open
+
+The current `public/flags/io.svg` visually agrees with the [BIOT administration's Tudor Crown design](https://www.biot.gov.io/governance/flag-and-crest/). Its SHA-256 is `92dfde33af9ab9597c325915d2c7f4265792142a56122b204679c013896b0e94`; identical bytes were publicly served. The generator pins the new design and the National symbols entry starts in 2025. **The original current-flag discrepancy is independently resolved.**
+
+The newly added historical `public/national-flags/io/io-1990.svg`, SHA-256 `7c3b6a1b1551bed08f7862c2fbfff81b371533bee2c7a6d2b94f2834da176f36`, renders St Edward's crown without the red lining and coloured jewels described by its caption. The blue field shows through. The former current asset visibly had those details. Both were rendered and inspected, and the inconsistent historical file was publicly served. Keep this residual issue under F108; select a historically supported rendering and align its manifest and caption. This does not reopen the verified current Tudor Crown correction.
+
+### Positive verification and remaining coverage
+
+- **35/35 Moldova subdivision census values match** NBS table 8.2 and sum to its national census total **2,409,207**. [Workbook](https://statistica.gov.md/files/files/ComPresa/Recensamant/2024/Ro/Anexa_Localitati_RPL2024.xlsx), SHA-256 `e29cde70af8c2807e6c702c750bea933c015343213041a30deebbd0541f257ed`, released 26 March 2026, reference 8 April 2024. The [release notes](https://statistica.gov.md/ro/rezultatele-finale-ale-recensamantului-populatiei-si-locuintelor-2024-distributi-10121_62380.html) exclude 157 localities outside constitutional authorities' de facto control. Preserve coverage notes, particularly for Dubăsari and Căușeni.
+- `MD-BD` and `MD-SN` subdivision counts and Bender/Tiraspol capital estimates remain outside this census verification. Their already logged scope/method concerns remain open.
+- Moldova GeoJSON has **37 distinct codes** and matched the public download. This does not certify every boundary, control line, ISO classification or historical period.
+- Malta batch 8f's nine new assets and four new explainers were inventoried. Primary authentication of all nine flags remains unfinished. The [Birżebbuġa council's history](https://birzebbugalc.gov.mt/en/homepage/geography-and-history/) presents competing place-name stories. Attribute the traditional derivation. The present-tense economic importance of olive growing remains supported here only by the cited secondary heraldic account, not current primary economic evidence.
+- F104/SF-17 co-capitals, F107 event wording, historical boundaries, passports, arms, political-party metadata and other unchecked registries remain open. Numeric/source matches are not a universal accuracy certificate.
 
 ## Independent verification and territorial-flag follow-up — 1 October 2026
 
