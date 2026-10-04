@@ -16,7 +16,7 @@ This document is the shared audit and implementation record. The detailed JSON f
 
 | Agent | Assigned or observed role | Last documented state | Scope / handoff |
 |---|---|---|---|
-| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F109–F112 recovered from persisted evidence; open. 35 subdivision and 35 capital census values matched; 13 capital scope discrepancies. F108 current flag verified; historical residual open. | Application baseline `e99f6ac`; fresh October 4 check found no later application commit. October 4 continuation investigates remaining Moldova population coverage and Malta sources. |
+| Codex, this audit thread | Independent factual/artwork audit; audit-document edits only | F109–F112 restored; F113–F117 documented and open. Nine new Malta council flags compared with statutory arms; principal elements agree. | Application baseline `e99f6ac`; October 4 public build `c635476` checked. Moldova register/census distinctions and Malta national captions need correction; exact remaining source gaps listed below. |
 | Opus 5.5 (Cursor cloud agent) | Implement findings and continue audit; see detailed remediation log | Corrections are now on `main`, as documented in Opus's log and observed through `7c75c318`; earlier PR #1709 branch-only state is superseded. | R01, R02, … remain Opus finding IDs. Independent verification and deployment are recorded separately per finding; do not treat merged as verified. |
 | Claude Code, sub-national flag audit (branch `claude/subnational-flags-audit-pc1zvz`) | Audits and fixes sub-national and capital-city flags, their explainers, the capitals behind them and the Sub-national flags quiz; ships by PR, each confirmed live | Batches 1–6a live (#1703–#1708); batch 6b live (#1717, `6d8406e`); batch 7 claimed | Method, status and the claimable SF-01…SF-16 queue: [`SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md`](SUBNATIONAL_FLAG_AUDIT_HANDBOOK.md). Evidence per decision: [`SUBNATIONAL_FLAG_AUDIT_2026-09.md`](SUBNATIONAL_FLAG_AUDIT_2026-09.md). Any agent may claim an SF item there and here. |
 
@@ -39,7 +39,7 @@ Preserve existing finding IDs and dated evidence. Mark a finding's resolution al
 
 | Updated (timezone stated) | Agent | Finding / bounded scope | Status | Action and reason | Commit / validation / remaining work |
 |---|---|---|---|---|---|
-| 2026-10-04 11:51 Melbourne / 00:51 UTC (request time) | Codex | Restore F109–F112; continue remaining Moldova population and Malta source checks | Investigating | October 2 Markdown save was blocked by a usage-limit approval-review failure; evidence `7d3a01e` survived. Restored its findings without changing application data. Fresh repository/source checks follow. | No newer application commit than `e99f6ac` observed. Preserve other agents' implementation records. |
+| 2026-10-04 01:06 UTC public verification / 12:06 Melbourne; report saved subsequently | Codex | F109–F112 restoration; F113–F117; Malta statutory arms/flag checks | Independently verified — bounded checks; findings open | Restored October 2 text in `c635476`, read back exactly. Primary evidence identifies Moldova register and census-method errors, Malta naval-jack caption mismatch, emblem-symbolism errors and George Cross award-date ambiguity. Nine new council images match principal statutory shield elements. | Evidence `3ed63f4`; 13 public assets byte-equal; defective phrases present in public bundle. Audit only; no application fixes. Original Bender table and individual council flag approvals remain unresolved. |
 | 2026-10-02 00:46 Melbourne / 2026-10-01 14:46 UTC (request time) | Codex | Independent review of batches 8f–8h through `e99f6ac`: Malta council flags, F108 remediation, Moldova administrative geometry/data | Investigating | Read current shared ledger; preserve implementation ownership. Check primary sources and exact asset/data outputs; distinguish administrative status from de facto control. | Audit/documentation only; no application changes. |
 | 2026-10-01 23:15 Melbourne / 13:15 UTC | Claude Code (sub-national flag audit) | Batch 8h: Moldova's 37 official units (SF-06) | Verified in the running app: the map draws 37 units, the grid groups 32 districts, 3 cities, Gagauzia and Transnistria (labelled "Flag not officially recognised by Moldova"), and the Transnistria, Gagauzia, Dubăsari and Bender panels show capitals with populations and the new flags and explainers; no page errors, no remote flag requests. `flags:check` and `npm run build` pass; merge pending | The map had 40 Natural Earth features (duplicate Transnistria and Rezina, non-ISO Camenca and Grigoriopol), no Dubăsari district, and Gagauzia named after its capital. Rebuilt on the OCHA/UNHCR COD-AB set (HDX cod-ab-mda, CC BY-IGO); capitals fixed from Natural Earth and Wikidata; Dubăsari's 2024 census population added (NBS final results); flags and explainers for Transnistria, Gagauzia, Dubăsari district and Tiraspol. Transnistria's and Bender's populations are logged for re-sourcing. | PR pending; evidence in the ledger's Batch 8h section. |
 | 2026-10-01 22:55 Melbourne / 12:55 UTC | Claude Code (sub-national flag audit) | F108 (batch 8g): BIOT flag artwork | Fixed; verified in the running app: the GB-IO panel and the UK's sub-national National symbols tab paint the October 2025 flag with the gold Tudor Crown, and the 1990–2025 flag is listed as historical; no page errors, no remote flag requests. `flags:check`, `check-national-flags` and `npm run build` pass. Live (`eacf690`, 11:10 PM AEST 1 October 2026) | `io.svg` replaced with the Commons redraw of the October 2025 design (public domain), compared with the administration's own artwork and pinned in `download-flags.mjs`; the National symbols entry is dated from 2025 and the 1990–2025 flag is kept as a dated historical entry; the GB-IO explainer is corrected to distinguish the 1990 grant from the 2025 crown change. | #1740 `eacf690`; evidence in the ledger's Batch 8g section. |
@@ -160,6 +160,87 @@ New gate in `check-political-parties.mjs`: a single-category `positionRaw` must 
 - NZ logos: entity recognition is corroborated, but exact registered variants/colours and rights are not fully verified. National's May 2026 registration alone does not prove which bundled variant must replace the existing file.
 - The next NZ national-symbol check had only begun: the national-flag description was read and official flag/arms/passport sources located. **No completed claim ledger or additional finding from that exploratory work exists yet.** No exclusive claim on that scope is held.
 - Preserve the already recorded source conflicts and historical revision distinctions. A corrected registry does not alone prove the public site's fresh or cached rendering has changed.
+
+
+## Independent Moldova and Malta primary-source continuation — 4 October 2026
+
+**Codex; audit/documentation only.** Application baseline remains `e99f6ac`; the fresh checkout was `7d3a01e`. Restoration of the missing October 2 Markdown findings was saved as `c635476` and read back byte-for-byte. At **01:06 UTC on 4 October**, the public site served build `c635476`, bundle `assets/index-CRUWiiVZ.js`, built `2026-10-04T00:55:49.256Z`. This replaces the earlier observation of public build `7d3a01e`; neither documentation commit changes application data.
+
+Supporting evidence: [MOLDOVA_MALTA_PRIMARY_VERIFICATION_2026-10-04.json](audit/MOLDOVA_MALTA_PRIMARY_VERIFICATION_2026-10-04.json), saved in `3ed63f4`. It records source URLs, PDF hashes, 13 asset hashes, public byte comparisons and finding status. All 13 inspected public assets equal the repository files. The public JavaScript contains the population values and defective Malta caption phrases discussed below. This was HTTP/bundle and image inspection, **not a fresh browser walkthrough**. No application build/test was run because this pass changes documentation only.
+
+### F113 — Transnistria registration count presented as a resident-population estimate (P2; open)
+
+**Affected:** `src/data/subdivisionPopulation.ts` (`MD-SN`), `scripts/build-subdivision-population.mjs` (`MD-SN` item pin), and `src/components/SubdivisionPopulation.tsx`.
+
+The row is `367776 / 2024 / estimate`; the type and renderer describe a subdivision's total resident population and calculate a national population share. The original source is **Moldova's Public Services Agency population register**, not a Pridnestrovian statistical estimate: the [Romanian government release of 17 April 2024](https://gov.md/ro/comunicate-de-presa-bpr/peste-358-mii-de-locuitori-din-regiunea-transnistreana-sunt-cetateni-ai) reports **367,776 registered people domiciled in the Transnistrian region on 31 March 2024**. Its citizenship/documentation context includes the left bank and Bender; it supplies no MD-SN-only breakdown or usual-resident-population methodology.
+
+**Correction:** supersede the earlier handoff's characterization of this number as a “Pridnestrovian total.” Preserve the primary source, full reference date and **register** basis. Do not present it as the population of the de jure MD-SN polygon until geographic compatibility is established; otherwise withhold that population row. This source does not prove the number itself fabricated. It also does not establish what fraction belongs to Bender, so do not invent a subtraction. National-share calculations need compatible date, territory and population concept before display. This is a concrete continuation of F06/F68's method/metadata problem.
+
+### F114 — Bender's population is falsely labelled “2014 census” (P2; open)
+
+**Affected:** `src/data/subdivisionPopulation.ts`, `MD-BD: { population: 98726, year: 2014, basis: "census" }`, plus its generator/provenance.
+
+Two primary checks contradict that label:
+
+- Moldova NBS's [census methodology, section 2.1, printed page 12](https://statistica.gov.md/files/files/Recensamint/Recesamint_2024/Sedinte_CNRPL_2024/15_02_2024/2024/Anexa1_Metodologia_clasificatoare_Subiectul_2.pdf) explicitly identifies Bender among territories excluded from Moldova's 2004 and 2014 censuses, as also from the planned 2024 coverage.
+- The [Bender administration's announcement of the next census](https://bendery.gospmr.org/2266-v-pridnestrove-proydet-perepis-naseleniya.html) says the previous de facto census was in **2004**. It does not identify a 2014 census.
+
+**Confirmed defect:** the current census designation. **Not independently certified:** the exact source table and territorial composition of 98,726. The [Russian Wikipedia reference trail](https://ru.wikipedia.org/wiki/Бендеры) attributes 98,726, including subordinate settlements, to a **1 January 2014** population figure in the final 2013 socioeconomic report, distinguishing it from 91,882 for the city. This is a secondary retrieval lead only; the original statistical report and Bender yearbook were not recovered. It must not be relabelled a 2004 census figure or silently substituted with the city-only number.
+
+**Correction:** remove the false census assertion; recover the original reference date, method and territorial definition before retaining/replacing the value for MD-BD. The Bender capital row's 83,200/2018 is a different record and was not validated by this finding.
+
+### F115 — Malta naval-jack captions describe a blue flag despite correct red-and-white artwork (P2; open)
+
+**Affected:** both `design` and explanatory `description` for `mt-naval-jack` in `src/data/nationalFlags.ts`.
+
+The design says a George Cross is on blue within a red border; the explainer repeats blue. [Malta's official flag guidance](https://www.gov.mt/en/About%20Malta/Pages/Flags-Symbols-and-their-use.aspx), the naval-jack provision, specifies a square design with a red-edged George Cross in a **white central square**, surrounded by red with **four white Maltese crosses**, one at each corner.
+
+The rendered `public/national-flags/mt/malta-naval-jack.svg` has those principal elements and no blue field. Its exact public bytes match, SHA-256 `77714d13f420201534546bdf81bf272104847f140634d2bbec94ac3a0e293d0c`. **Correct the two captions; this finding does not call for replacing the image.** The adjacent bombardment/casualty statistics were not verified in this pass.
+
+### F116 — Malta's arms, presidential-standard and passport explainers substitute unsupported symbolism (P2; open)
+
+**Affected:** `mt-arms`, `mt-president`, `mt-passport` in `src/data/nationalFlags.ts`.
+
+The first two assign the palm to endurance; the passport assigns it to victory and honour. The presidential entry also interprets the mural crown as marking republic status. [Emblem and Public Seal of Malta Act, Cap. 253, article 2(1)](https://legislation.mt/eli/cap/253/eng/pdf) instead identifies **both branches as symbols of peace** and the crown with Malta's fortifications and **City State**. It specifies eight turrets, five visible. The Act's First Schedule, page 3, was visually inspected.
+
+**Correction:** use the emblem-specific statutory interpretation consistently across all three entries. Generic heraldic associations of a palm do not establish the intended meaning of this particular emblem. Describe five visible turrets if discussing its appearance.
+
+The presidential image was also rendered: its blue field, central emblem and four gold corner Maltese crosses agree with the [government's presidential-flag description](https://www.gov.mt/en/About%20Malta/Pages/Flags-Symbols-and-their-use.aspx). The current short design omits those corner crosses; add them for completeness. This image check does not validate every historical sentence about the arms or passport. The passport's “Malta does not break” quotation, asserted uninterrupted post-1942 emblem continuity, and the Mintoff anecdote remain unverified.
+
+### F117 — Malta colonial explainer shifts the George Cross award to the wrong April (P2; open)
+
+**Affected:** `mt-colonial` explanation in `src/data/nationalFlags.ts`.
+
+After dating a warrant to December 1943, the text says the decoration had been awarded **“that April”**, implying April 1943. The [Royal Household's historical award account](https://www.royal.uk/queen-awards-george-cross-uks-national-health-services) explicitly dates the award message to **15 April 1942**; the [Maltese-language government flag guidance](https://www.gov.mt/mt/About%20Malta/Pages/Flags-Symbols-and-their-use.aspx) agrees. The record's short design already says 1942, creating an internal contradiction.
+
+**Correction:** replace the relative phrase with the explicit award date. Keep the award event distinct from the later colonial flag/warrant event; this check does not independently certify the asserted 28 December 1943 warrant date or every colonial flag transition.
+
+### Malta council flags: primary comparison now completed for the nine new images
+
+The [Maltese text of the Local Government Act, Cap. 363](https://legislation.mt/eli/cap/363/mlt/pdf), First Schedule, supplies the statutory coats of arms. Rendered pages were compared with all nine added PNGs. Their **principal shield charges and colour arrangements match**:
+
+| Code | Council | Principal matching elements | Printed schedule page |
+|---|---|---|---|
+| MT-05 | Birżebbuġa | Blue inverted chevron and branch on white | 46 |
+| MT-22 | Ta' Kerċem | Three gold rings on a red band, white field | 48 |
+| MT-23 | Ħal Kirkop | Red horizontal band and lower vertical limb on white | 48 |
+| MT-24 | Ħal Lija | Orange branch with three fruits; red/blue upper corners | 48 |
+| MT-25 | Ħal Luqa | Red saltire on white | 48 |
+| MT-26 | Il-Marsa | Gold vessel over differently coloured horizontal bars | 48 |
+| MT-27 | Marsaskala | Green sides, white wedge with blue waves | 48 |
+| MT-29 | L-Imdina | White/red vertical division | 45 |
+| MT-30 | Il-Mellieħa | Gold chevron, white six-pointed star, blue field | 49 |
+
+The same schedule shows Kalkara's flame design (page 48) and Paola's peacocks/sheaves with spiral-bearing chief (page 50), supporting the earlier decision not to use their obsolete arms. This does not supply a cleared replacement flag asset.
+
+**Method recommendation:** [article 74(5), English text](https://legislation.mt/eli/cap/363/eng/pdf) provides for a **square flag showing the arms or another design approved by the minister**. The nine bundled banners are rectangular. Record the actual council flag/approval evidence and proportions separately from the shield comparison. The legal provision alone neither proves every rectangular banner wrong nor authenticates every freely available banner of arms. Exact shades, relative charge dimensions, approval history and all explanatory symbolism remain outside this positive verification.
+
+### Handoff and remaining work
+
+F113–F117 are new **open** findings, with no application implementation claimed by Codex. F109–F112 and the F108 historical-BIOT residual remain open. Preserve the other agents' existing ownership and implementation entries.
+
+Next unresolved checks include the original Bender statistical table and de jure/de facto territorial reconciliation; MD-SN-specific population coverage; Malta council flag approval/proportions; the civil-ensign claim of identity with the pre-1798 flag; naval-jack casualty figures; passport chronology/slogan; and unsourced historical anecdotes. The rest of the country/registry audit remains incomplete. A positive comparison of nine shields, or public byte equality, is not universal factual verification.
+
 
 ## Recovered October 2 findings and October 4 continuation
 
