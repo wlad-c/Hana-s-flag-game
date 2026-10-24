@@ -5,7 +5,8 @@ import { useProfile } from "../context/ProfileContext";
 import { DEFAULT_AVATAR_ID } from "../lib/avatars";
 import {
   BINGO_CELLS,
-  BINGO_POOL_SIZE,
+  BINGO_MATCH_POOL_SIZE,
+  BINGO_UN_POOL_SIZE,
   countryNameForCode,
   findBingoLine,
   flagPathForCode,
@@ -43,6 +44,7 @@ export default function FlagBingoPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [joining, setJoining] = useState(true);
+  const [inspectCode, setInspectCode] = useState<string | null>(null);
 
   const seat = useMemo(() => seatFromProfile(activeProfile), [activeProfile]);
 
@@ -89,6 +91,16 @@ export default function FlagBingoPage() {
     };
   }, [playerId]);
 
+  // Close the inspect modal on Escape.
+  useEffect(() => {
+    if (!inspectCode) return;
+    const onKey = (ev: KeyboardEvent) => {
+      if (ev.key === "Escape") setInspectCode(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [inspectCode]);
+
   const me: BingoPlayer | undefined = snap?.players.find((p) => p.id === playerId);
   const lastDrawn = snap?.room.drawnCodes[snap.room.drawnCodes.length - 1] ?? null;
   const myMarked = me?.marked ?? [];
@@ -99,6 +111,10 @@ export default function FlagBingoPage() {
     () => new Set(snap?.room.drawnCodes ?? []),
     [snap?.room.drawnCodes],
   );
+  const matchPoolSize =
+    snap?.room.poolCodes?.length && snap.room.poolCodes.length > 0
+      ? snap.room.poolCodes.length
+      : BINGO_MATCH_POOL_SIZE;
   const readyCount = snap?.players.filter((p) => p.ready).length ?? 0;
   const playerCount = snap?.players.length ?? 0;
 
@@ -176,10 +192,12 @@ export default function FlagBingoPage() {
               Flag <span>Bingo</span>
             </h1>
             <p className="bingo__lede">
-              Open lobby — everyone who opens this page plays together. Personal
-              5×5 boards from all {BINGO_POOL_SIZE} UN country flags. When
-              everyone is ready, one flag is drawn — tap matching flags on your
-              board to mark them. First to five in a row wins.
+              Open lobby — everyone who opens this page plays together. Each
+              match uses {BINGO_MATCH_POOL_SIZE} flags picked at random from
+              all {BINGO_UN_POOL_SIZE} UN countries; every board uses only that
+              match&apos;s pool. When everyone is ready, one flag is drawn —
+              tap matching flags on your board to mark them. First to five in a
+              row wins.
             </p>
           </div>
           <button
@@ -260,17 +278,24 @@ export default function FlagBingoPage() {
                   <div className="bingo__draw">
                     {lastDrawn ? (
                       <>
-                        <img
-                          key={flagPathForCode(lastDrawn)}
-                          className="bingo__draw-flag"
-                          src={flagPathForCode(lastDrawn)}
-                          alt={`Flag of ${countryNameForCode(lastDrawn)}`}
-                        />
+                        <button
+                          type="button"
+                          className="bingo__draw-flag-btn"
+                          onClick={() => setInspectCode(lastDrawn)}
+                          aria-label={`View larger flag of ${countryNameForCode(lastDrawn)}`}
+                        >
+                          <img
+                            key={flagPathForCode(lastDrawn)}
+                            className="bingo__draw-flag"
+                            src={flagPathForCode(lastDrawn)}
+                            alt={`Flag of ${countryNameForCode(lastDrawn)}`}
+                          />
+                        </button>
                         <div className="bingo__draw-meta">
                           <p className="bingo__draw-label">Just drawn</p>
                           <p className="bingo__draw-name">{countryNameForCode(lastDrawn)}</p>
                           <p className="bingo__draw-count">
-                            Draw {snap.room.drawnCodes.length} of {BINGO_POOL_SIZE}
+                            Draw {snap.room.drawnCodes.length} of {matchPoolSize}
                             {" · "}
                             Ready {readyCount}/{playerCount}
                           </p>
@@ -282,7 +307,7 @@ export default function FlagBingoPage() {
                         <p className="bingo__draw-name">Everyone ready?</p>
                         <p className="bingo__draw-count">
                           Ready {readyCount}/{playerCount} — the first flag appears when
-                          all players tap ready.
+                          all players tap ready. This match uses {matchPoolSize} flags.
                         </p>
                       </div>
                     )}
@@ -320,11 +345,18 @@ export default function FlagBingoPage() {
                             .join(" ");
                           const body = (
                             <>
-                              <img
-                                key={flagPathForCode(code)}
-                                src={flagPathForCode(code)}
-                                alt=""
-                              />
+                              <span className="bingo__cell-flag">
+                                <img
+                                  key={flagPathForCode(code)}
+                                  src={flagPathForCode(code)}
+                                  alt=""
+                                />
+                                {marked && (
+                                  <span className="bingo__cell-tick" aria-hidden="true">
+                                    ✓
+                                  </span>
+                                )}
+                              </span>
                               <span className="bingo__cell-name">{name}</span>
                             </>
                           );
@@ -368,19 +400,26 @@ export default function FlagBingoPage() {
                       <p className="bingo__hint">None yet</p>
                     ) : (
                       <ul className="bingo__history">
-                        {[...snap.room.drawnCodes].reverse().map((code) => (
-                          <li
-                            key={code}
-                            className="bingo__history-item"
-                            title={countryNameForCode(code)}
-                          >
-                            <img
-                              key={flagPathForCode(code)}
-                              src={flagPathForCode(code)}
-                              alt={countryNameForCode(code)}
-                            />
-                          </li>
-                        ))}
+                        {[...snap.room.drawnCodes].reverse().map((code) => {
+                          const name = countryNameForCode(code);
+                          return (
+                            <li key={code}>
+                              <button
+                                type="button"
+                                className="bingo__history-item"
+                                title={`View ${name}`}
+                                aria-label={`View larger flag of ${name}`}
+                                onClick={() => setInspectCode(code)}
+                              >
+                                <img
+                                  key={flagPathForCode(code)}
+                                  src={flagPathForCode(code)}
+                                  alt={name}
+                                />
+                              </button>
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
                   </aside>
@@ -416,11 +455,18 @@ export default function FlagBingoPage() {
                             .filter(Boolean)
                             .join(" ")}
                         >
-                          <img
-                            key={flagPathForCode(code)}
-                            src={flagPathForCode(code)}
-                            alt=""
-                          />
+                          <span className="bingo__cell-flag">
+                            <img
+                              key={flagPathForCode(code)}
+                              src={flagPathForCode(code)}
+                              alt=""
+                            />
+                            {marked && (
+                              <span className="bingo__cell-tick" aria-hidden="true">
+                                ✓
+                              </span>
+                            )}
+                          </span>
                           <span className="bingo__cell-name">{name}</span>
                         </div>
                       );
@@ -454,9 +500,18 @@ export default function FlagBingoPage() {
             <h2 className="bingo__panel-title">How it works</h2>
             <ol className="bingo__rules">
               <li>Open this page — you join the shared lobby automatically.</li>
-              <li>Each player gets a random board of 25 different country flags.</li>
-              <li>Tap <strong>Ready for next flag</strong> when you are set.</li>
-              <li>When every player is ready, the system draws one flag from the 195.</li>
+              <li>
+                Each match picks {BINGO_MATCH_POOL_SIZE} flags from the{" "}
+                {BINGO_UN_POOL_SIZE} UN countries; every player gets a board of
+                25 flags from that match pool only.
+              </li>
+              <li>
+                Tap <strong>Ready for next flag</strong> when you are set.
+              </li>
+              <li>
+                When every player is ready, the system draws one flag from the
+                match pool.
+              </li>
               <li>If that flag is on your board, tap its card to mark it.</li>
               <li>First to complete a row, column, or diagonal wins.</li>
             </ol>
@@ -469,6 +524,39 @@ export default function FlagBingoPage() {
           </p>
         )}
       </div>
+
+      {inspectCode && (
+        <div
+          className="bingo__modal-backdrop"
+          role="presentation"
+          onClick={() => setInspectCode(null)}
+        >
+          <div
+            className="bingo__modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="bingo-inspect-title"
+            onClick={(ev) => ev.stopPropagation()}
+          >
+            <img
+              key={flagPathForCode(inspectCode)}
+              className="bingo__modal-flag"
+              src={flagPathForCode(inspectCode)}
+              alt=""
+            />
+            <h2 id="bingo-inspect-title" className="bingo__modal-name">
+              {countryNameForCode(inspectCode)}
+            </h2>
+            <button
+              type="button"
+              className="bingo__btn bingo__btn--ghost"
+              onClick={() => setInspectCode(null)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
