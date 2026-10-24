@@ -632,9 +632,38 @@ export default function FlagBingoPage() {
         )}
 
         {error && (
-          <p className="bingo__error" role="alert">
-            {error}
-          </p>
+          <div className="bingo__error" role="alert">
+            <p style={{ margin: 0 }}>{error}</p>
+            <div className="bingo__actions" style={{ marginTop: "0.75rem" }}>
+              <button
+                type="button"
+                className="bingo__btn bingo__btn--coral"
+                disabled={joining || busy}
+                onClick={() => {
+                  setError(null);
+                  setSnap(null);
+                  setPlayerId(null);
+                  setJoining(true);
+                  void (async () => {
+                    try {
+                      const joined = await joinOpenBingoLobby(seat);
+                      setPlayerId(joined.playerId);
+                    } catch (err) {
+                      setError(
+                        err instanceof Error
+                          ? err.message
+                          : "Could not join the lobby",
+                      );
+                    } finally {
+                      setJoining(false);
+                    }
+                  })();
+                }}
+              >
+                Try again
+              </button>
+            </div>
+          </div>
         )}
       </div>
 

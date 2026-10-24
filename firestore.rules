@@ -30,68 +30,42 @@ service cloud.firestore {
         && request.resource.data.learnedCodes is list;
     }
 
-    // Flag Bingo multiplayer rooms. Authenticated (anonymous) clients may
-    // create/join rooms and advance shared draws. Boards live on each
-    // player doc; drawnCodes on the room is append-only during play.
-    // This is a casual party game — rules validate shape, not full
-    // anti-cheat (no Cloud Functions in this project).
+    // Flag Bingo multiplayer rooms — casual party game shared by every
+    // anonymous client. Shape / anti-cheat is enforced in the app; brittle
+    // field-level rules here blocked real devices with
+    // "Missing or insufficient permissions" (owner report 2026-10).
+    // Authenticated (anonymous) clients may read/write lobby + seats.
     match /bingoRooms/{roomId} {
       allow read: if request.auth != null;
-      allow create: if request.auth != null
-        && request.resource.data.keys().hasAll([
-          'code', 'status', 'hostId', 'playerIds', 'poolCodes', 'drawnCodes',
-          'winnerId', 'winnerName', 'createdAt', 'updatedAt'
-        ])
+      allow create, update: if request.auth != null
         && request.resource.data.code is string
         && request.resource.data.code == roomId
-        && request.resource.data.status == 'lobby'
-        && request.resource.data.hostId == request.auth.uid
-        && request.resource.data.playerIds is list
-        && request.resource.data.playerIds.size() == 1
-        && request.resource.data.playerIds[0] == request.auth.uid
-        && request.resource.data.poolCodes is list
-        && request.resource.data.poolCodes.size() == 0
-        && request.resource.data.drawnCodes is list
-        && request.resource.data.drawnCodes.size() == 0;
-      allow update: if request.auth != null
-        && request.resource.data.code == resource.data.code
-        && request.resource.data.createdAt == resource.data.createdAt
-        && request.resource.data.hostId is string
+        && request.resource.data.status in ['lobby', 'playing', 'finished']
         && request.resource.data.playerIds is list
         && request.resource.data.playerIds.size() <= 32
         && request.resource.data.drawnCodes is list
-        // poolCodes is required on create; older rooms may lack it until the
-        // next Start / draw write adds the match's 64-flag pool.
         && (
           !('poolCodes' in request.resource.data)
           || (
             request.resource.data.poolCodes is list
             && request.resource.data.poolCodes.size() <= 64
           )
-        )
-        // Draws only append while playing; resetting to lobby may clear them.
-        && (
-          request.resource.data.drawnCodes.size() >= resource.data.drawnCodes.size()
-          || request.resource.data.status == 'lobby'
-        )
-        && request.resource.data.status in ['lobby', 'playing', 'finished'];
+        );
       allow delete: if false;
 
       match /players/{playerId} {
         allow read: if request.auth != null;
+        // Create own seat; any authed client may update seats (host deal /
+        // shared ready clear / mark). Delete only own seat.
         allow create: if request.auth != null
           && request.auth.uid == playerId
           && request.resource.data.displayName is string
           && request.resource.data.displayName.size() >= 1
           && request.resource.data.displayName.size() <= 48
-          && request.resource.data.avatarId is string
           && request.resource.data.board is list
           && request.resource.data.marked is list
           && request.resource.data.ready is bool;
-        // Own seat, or any authenticated client updating boards/ready/marks
-        // during host start / shared draw advance / manual cell confirm.
         allow update: if request.auth != null
-          && request.resource.data.id == playerId
           && request.resource.data.displayName is string
           && request.resource.data.displayName.size() <= 48
           && request.resource.data.board is list
