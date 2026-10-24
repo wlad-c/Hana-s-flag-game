@@ -55,7 +55,7 @@ export type BingoRoom = {
   hostId: string;
   playerIds: string[];
   /**
-   * The 100 country codes in play for this match. Empty in lobby; set once
+   * The 64 country codes in play for this match. Empty in lobby; set once
    * at start. Boards and draws are always subsets of this pool.
    */
   poolCodes: string[];
@@ -303,7 +303,7 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
     id: playerId,
     displayName: seat.displayName.slice(0, 48) || "Player",
     avatarId: seat.avatarId || DEFAULT_AVATAR_ID,
-    // Mid-game joiners get a board from THIS match's 100-flag pool.
+    // Mid-game joiners get a board from THIS match's 64-flag pool.
     board:
       status === "playing" && poolCodes.length > 0
         ? generateBingoBoard(poolCodes)

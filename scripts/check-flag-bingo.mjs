@@ -3,7 +3,7 @@
  *
  * Inlines the board/line/pool helpers so we do not import countrySelection.ts
  * (which pulls localStorage via profile sync). Asserts the UI's promised
- * UN catalogue (195) and per-match pool (100).
+ * UN catalogue (195) and per-match pool (64).
  */
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -49,7 +49,7 @@ for (const code of optionCodes) {
 
 assert.match(flagBingoSrc, /BINGO_SIZE = 5/);
 assert.match(flagBingoSrc, /BINGO_CELLS = BINGO_SIZE \* BINGO_SIZE/);
-assert.match(flagBingoSrc, /BINGO_MATCH_POOL_SIZE = 100/);
+assert.match(flagBingoSrc, /BINGO_MATCH_POOL_SIZE = 64/);
 assert.match(flagBingoSrc, /BINGO_UN_POOL_SIZE/);
 assert.match(flagBingoSrc, /selectMatchPool/);
 assert.match(flagBingoSrc, /generateBingoBoard/);
@@ -79,7 +79,7 @@ assert.match(rulesSrc, /poolCodes/);
 // ── Inlined pure helpers (mirrors src/lib/flagBingo.ts) ───────────────
 const BINGO_SIZE = 5;
 const BINGO_CELLS = 25;
-const BINGO_MATCH_POOL_SIZE = 100;
+const BINGO_MATCH_POOL_SIZE = 64;
 const poolAll = [...optionCodes];
 
 const BINGO_LINES = [];
@@ -128,8 +128,8 @@ function hasBingo(board, markedCodes) {
 }
 
 const matchPool = selectMatchPool(() => 0.37);
-assert.equal(matchPool.length, 100);
-assert.equal(new Set(matchPool).size, 100);
+assert.equal(matchPool.length, 64);
+assert.equal(new Set(matchPool).size, 64);
 for (const c of matchPool) assert.ok(optionCodes.has(c));
 
 const board = generateBingoBoard(matchPool, () => 0.42);
@@ -146,7 +146,7 @@ assert.equal(
 
 const drawn = [];
 const seen = new Set();
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 64; i++) {
   const next = pickNextDraw(drawn, matchPool, () => 0.1);
   assert.ok(next, `exhausted early at ${i}`);
   assert.equal(seen.has(next), false, `repeat ${next}`);
@@ -158,7 +158,7 @@ assert.equal(pickNextDraw(drawn, matchPool, () => 0), null);
 
 // A second match must be able to pick a different pool (not forced identical).
 const poolB = selectMatchPool(() => 0.91);
-assert.equal(poolB.length, 100);
+assert.equal(poolB.length, 64);
 assert.notDeepEqual(matchPool, poolB);
 
 console.log("flag-bingo checks passed");

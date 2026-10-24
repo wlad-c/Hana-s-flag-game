@@ -2,7 +2,7 @@
  * Flag Bingo — pure game logic (no I/O).
  *
  * Rules (v1):
- *  - Each match picks a random pool of 100 flags from the 195 UN member /
+ *  - Each match picks a random pool of 64 flags from the 195 UN member /
  *    permanent-observer states. Every player's board and every draw comes
  *    from that match pool only.
  *  - Each player gets a personal 5×5 board of 25 distinct flags from the
@@ -21,7 +21,7 @@ export const BINGO_CELLS = BINGO_SIZE * BINGO_SIZE; // 25
 /** Full UN catalogue size — source of the per-match pool. */
 export const BINGO_UN_POOL_SIZE = ALL_COUNTRY_OPTIONS.length; // 195
 /** How many flags are in play for a single match. */
-export const BINGO_MATCH_POOL_SIZE = 100;
+export const BINGO_MATCH_POOL_SIZE = 64;
 /** @deprecated Prefer BINGO_MATCH_POOL_SIZE; kept for older copy references. */
 export const BINGO_POOL_SIZE = BINGO_MATCH_POOL_SIZE;
 
@@ -59,7 +59,7 @@ export function shuffleCodes<T>(items: readonly T[], random = Math.random): T[] 
 }
 
 /**
- * Pick the 100-flag match pool from the full UN list. Every board and every
+ * Pick the 64-flag match pool from the full UN list. Every board and every
  * draw for that match must come from this set.
  */
 export function selectMatchPool(
