@@ -495,8 +495,8 @@ export default function FlagBingoPage() {
                   </div>
                 </section>
 
-                <section className="bingo__panel bingo__board-wrap">
-                  <div>
+                <section className="bingo__board-wrap">
+                  <div className="bingo__board-main">
                     <h2 className="bingo__panel-title">Your board</h2>
                     {me?.board.length === BINGO_CELLS ? (
                       <div className="bingo__board" role="grid" aria-label="Your bingo board">
@@ -565,7 +565,7 @@ export default function FlagBingoPage() {
                       </p>
                     )}
                   </div>
-                  <aside className="bingo__sidebar">
+                  <aside className="bingo__sidebar bingo__panel">
                     <h2 className="bingo__panel-title">
                       Drawn so far ({snap.room.drawnCodes.length})
                     </h2>
@@ -631,7 +631,7 @@ export default function FlagBingoPage() {
                 {me?.board.length === BINGO_CELLS && (
                   <div
                     className="bingo__board"
-                    style={{ maxWidth: 420, margin: "0 auto 1rem" }}
+                    style={{ margin: "0 0 1rem" }}
                   >
                     {me.board.map((code, i) => {
                       const marked = marks[i];
