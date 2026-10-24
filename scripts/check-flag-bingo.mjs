@@ -1,9 +1,9 @@
 /**
  * Flag Bingo — pure-logic gate (no Firebase, no browser APIs).
  *
- * Inlines the board/line helpers so we do not import countrySelection.ts
- * (which pulls localStorage via profile sync). Still asserts the UI's
- * promised pool size (195) against the source lists.
+ * Inlines the board/line/pool helpers so we do not import countrySelection.ts
+ * (which pulls localStorage via profile sync). Asserts the UI's promised
+ * UN catalogue (195) and per-match pool (100).
  */
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -23,6 +23,7 @@ const unMembers = fs.readFileSync(
 );
 const bingoRoomSrc = fs.readFileSync(path.join(root, "src/lib/bingoRoom.ts"), "utf8");
 const pageSrc = fs.readFileSync(path.join(root, "src/pages/FlagBingoPage.tsx"), "utf8");
+const pageCss = fs.readFileSync(path.join(root, "src/pages/FlagBingoPage.css"), "utf8");
 const appSrc = fs.readFileSync(path.join(root, "src/App.tsx"), "utf8");
 const rulesSrc = fs.readFileSync(path.join(root, "firestore.rules"), "utf8");
 
@@ -48,6 +49,9 @@ for (const code of optionCodes) {
 
 assert.match(flagBingoSrc, /BINGO_SIZE = 5/);
 assert.match(flagBingoSrc, /BINGO_CELLS = BINGO_SIZE \* BINGO_SIZE/);
+assert.match(flagBingoSrc, /BINGO_MATCH_POOL_SIZE = 100/);
+assert.match(flagBingoSrc, /BINGO_UN_POOL_SIZE/);
+assert.match(flagBingoSrc, /selectMatchPool/);
 assert.match(flagBingoSrc, /generateBingoBoard/);
 assert.match(flagBingoSrc, /findBingoLine/);
 assert.match(flagBingoSrc, /pickNextDraw/);
@@ -55,18 +59,28 @@ assert.match(flagBingoSrc, /BINGO_LINES/);
 assert.match(flagBingoSrc, /ALL_COUNTRY_OPTIONS/);
 
 assert.match(bingoRoomSrc, /bingoRooms/);
+assert.match(bingoRoomSrc, /poolCodes/);
+assert.match(bingoRoomSrc, /selectMatchPool/);
 assert.match(bingoRoomSrc, /setBingoReady/);
 assert.match(bingoRoomSrc, /pickNextDraw/);
 assert.match(bingoRoomSrc, /hasBingo/);
 assert.match(pageSrc, /Ready for next flag/);
+assert.match(pageSrc, /bingo__cell-tick/);
+assert.match(pageSrc, /inspectCode/);
+assert.match(pageSrc, /BINGO_MATCH_POOL_SIZE/);
+assert.match(pageCss, /bingo__cell-tick/);
+assert.match(pageCss, /grayscale/);
+assert.match(pageCss, /bingo__modal/);
 assert.match(appSrc, /path="\/multiplayer"/);
 assert.match(appSrc, /path="\/multiplayer\/bingo"/);
 assert.match(rulesSrc, /match \/bingoRooms\/\{roomId\}/);
+assert.match(rulesSrc, /poolCodes/);
 
 // ── Inlined pure helpers (mirrors src/lib/flagBingo.ts) ───────────────
 const BINGO_SIZE = 5;
 const BINGO_CELLS = 25;
-const pool = [...optionCodes];
+const BINGO_MATCH_POOL_SIZE = 100;
+const poolAll = [...optionCodes];
 
 const BINGO_LINES = [];
 for (let r = 0; r < BINGO_SIZE; r++) {
@@ -92,27 +106,36 @@ function shuffleCodes(items, random) {
   return out;
 }
 
-function generateBingoBoard(random) {
+function selectMatchPool(random, size = BINGO_MATCH_POOL_SIZE) {
+  return shuffleCodes(poolAll, random).slice(0, size);
+}
+
+function generateBingoBoard(pool, random) {
   return shuffleCodes(pool, random).slice(0, BINGO_CELLS);
 }
 
-function pickNextDraw(drawnCodes, random) {
+function pickNextDraw(drawnCodes, pool, random) {
   const drawn = new Set(drawnCodes);
   const remaining = pool.filter((c) => !drawn.has(c));
   if (remaining.length === 0) return null;
   return remaining[Math.floor(random() * remaining.length)];
 }
 
-function hasBingo(board, drawnCodes) {
-  const drawn = new Set(drawnCodes);
-  const marked = board.map((c) => drawn.has(c));
-  return BINGO_LINES.some((line) => line.every((i) => marked[i]));
+function hasBingo(board, markedCodes) {
+  const marked = new Set(markedCodes);
+  const mask = board.map((c) => marked.has(c));
+  return BINGO_LINES.some((line) => line.every((i) => mask[i]));
 }
 
-const board = generateBingoBoard(() => 0.42);
+const matchPool = selectMatchPool(() => 0.37);
+assert.equal(matchPool.length, 100);
+assert.equal(new Set(matchPool).size, 100);
+for (const c of matchPool) assert.ok(optionCodes.has(c));
+
+const board = generateBingoBoard(matchPool, () => 0.42);
 assert.equal(board.length, 25);
 assert.equal(new Set(board).size, 25);
-for (const c of board) assert.ok(optionCodes.has(c));
+for (const c of board) assert.ok(matchPool.includes(c), `${c} not in match pool`);
 
 assert.equal(hasBingo(board, board.slice(0, 5)), true);
 assert.equal(hasBingo(board, board.slice(0, 4)), false);
@@ -123,13 +146,19 @@ assert.equal(
 
 const drawn = [];
 const seen = new Set();
-for (let i = 0; i < 195; i++) {
-  const next = pickNextDraw(drawn, () => 0.1);
+for (let i = 0; i < 100; i++) {
+  const next = pickNextDraw(drawn, matchPool, () => 0.1);
   assert.ok(next, `exhausted early at ${i}`);
   assert.equal(seen.has(next), false, `repeat ${next}`);
+  assert.ok(matchPool.includes(next), `draw ${next} outside match pool`);
   seen.add(next);
   drawn.push(next);
 }
-assert.equal(pickNextDraw(drawn, () => 0), null);
+assert.equal(pickNextDraw(drawn, matchPool, () => 0), null);
+
+// A second match must be able to pick a different pool (not forced identical).
+const poolB = selectMatchPool(() => 0.91);
+assert.equal(poolB.length, 100);
+assert.notDeepEqual(matchPool, poolB);
 
 console.log("flag-bingo checks passed");

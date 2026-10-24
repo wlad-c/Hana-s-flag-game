@@ -39,7 +39,7 @@ service cloud.firestore {
       allow read: if request.auth != null;
       allow create: if request.auth != null
         && request.resource.data.keys().hasAll([
-          'code', 'status', 'hostId', 'playerIds', 'drawnCodes',
+          'code', 'status', 'hostId', 'playerIds', 'poolCodes', 'drawnCodes',
           'winnerId', 'winnerName', 'createdAt', 'updatedAt'
         ])
         && request.resource.data.code is string
@@ -49,6 +49,8 @@ service cloud.firestore {
         && request.resource.data.playerIds is list
         && request.resource.data.playerIds.size() == 1
         && request.resource.data.playerIds[0] == request.auth.uid
+        && request.resource.data.poolCodes is list
+        && request.resource.data.poolCodes.size() == 0
         && request.resource.data.drawnCodes is list
         && request.resource.data.drawnCodes.size() == 0;
       allow update: if request.auth != null
@@ -58,6 +60,15 @@ service cloud.firestore {
         && request.resource.data.playerIds is list
         && request.resource.data.playerIds.size() <= 32
         && request.resource.data.drawnCodes is list
+        // poolCodes is required on create; older rooms may lack it until the
+        // next Start / draw write adds the match's 100-flag pool.
+        && (
+          !('poolCodes' in request.resource.data)
+          || (
+            request.resource.data.poolCodes is list
+            && request.resource.data.poolCodes.size() <= 100
+          )
+        )
         // Draws only append while playing; resetting to lobby may clear them.
         && (
           request.resource.data.drawnCodes.size() >= resource.data.drawnCodes.size()

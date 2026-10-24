@@ -2,11 +2,14 @@
  * Flag Bingo — pure game logic (no I/O).
  *
  * Rules (v1):
- *  - Each player gets a personal 5×5 board of 25 distinct flags drawn from
- *    the 195 UN member / permanent-observer states.
- *  - There is no free centre square — every cell is a real flag.
- *  - The system draws one country at a time from the full 195 (no repeats).
- *  - A cell is marked when its country has been drawn (derived, not stored).
+ *  - Each match picks a random pool of 100 flags from the 195 UN member /
+ *    permanent-observer states. Every player's board and every draw comes
+ *    from that match pool only.
+ *  - Each player gets a personal 5×5 board of 25 distinct flags from the
+ *    match pool. There is no free centre square — every cell is a real flag.
+ *  - The system draws one country at a time from the match pool (no repeats).
+ *  - A cell is marked only when the player taps it after it has been drawn
+ *    (educational mode — never auto-mark).
  *  - First player to mark five in a row (row, column, or either diagonal)
  *    wins. Only one line is required.
  */
@@ -15,9 +18,19 @@ import { ALL_COUNTRY_OPTIONS } from "./countrySelection";
 
 export const BINGO_SIZE = 5;
 export const BINGO_CELLS = BINGO_SIZE * BINGO_SIZE; // 25
-export const BINGO_POOL_SIZE = ALL_COUNTRY_OPTIONS.length; // 195
+/** Full UN catalogue size — source of the per-match pool. */
+export const BINGO_UN_POOL_SIZE = ALL_COUNTRY_OPTIONS.length; // 195
+/** How many flags are in play for a single match. */
+export const BINGO_MATCH_POOL_SIZE = 100;
+/** @deprecated Prefer BINGO_MATCH_POOL_SIZE; kept for older copy references. */
+export const BINGO_POOL_SIZE = BINGO_MATCH_POOL_SIZE;
 
-/** All winning lines on a 5×5 board (row-major indices 0..24). */
+/** All UN country codes (195). */
+export function allBingoCountryCodes(): string[] {
+  return ALL_COUNTRY_OPTIONS.map((c) => c.code);
+}
+
+/** Winning lines on a 5×5 board (row-major indices 0..24). */
 export const BINGO_LINES: readonly (readonly number[])[] = (() => {
   const lines: number[][] = [];
   for (let r = 0; r < BINGO_SIZE; r++) {
@@ -45,50 +58,78 @@ export function shuffleCodes<T>(items: readonly T[], random = Math.random): T[] 
   return out;
 }
 
-/** Build a personal 5×5 board: 25 unique country codes from the UN pool. */
-export function generateBingoBoard(random = Math.random): string[] {
-  if (BINGO_POOL_SIZE < BINGO_CELLS) {
+/**
+ * Pick the 100-flag match pool from the full UN list. Every board and every
+ * draw for that match must come from this set.
+ */
+export function selectMatchPool(
+  random = Math.random,
+  size = BINGO_MATCH_POOL_SIZE,
+): string[] {
+  const all = allBingoCountryCodes();
+  if (all.length < size) {
+    throw new Error(`Need at least ${size} countries for a bingo match pool`);
+  }
+  if (size < BINGO_CELLS) {
+    throw new Error(`Match pool must be at least ${BINGO_CELLS} (one board)`);
+  }
+  return shuffleCodes(all, random).slice(0, size);
+}
+
+/**
+ * Build a personal 5×5 board: 25 unique country codes from the match pool.
+ * Live games always pass the room's `poolCodes`; omitting the pool falls
+ * back to the full UN list (tests / legacy callers only).
+ */
+export function generateBingoBoard(
+  pool: readonly string[] = allBingoCountryCodes(),
+  random = Math.random,
+): string[] {
+  if (pool.length < BINGO_CELLS) {
     throw new Error(`Need at least ${BINGO_CELLS} countries to build a bingo board`);
   }
-  const pool = ALL_COUNTRY_OPTIONS.map((c) => c.code);
   return shuffleCodes(pool, random).slice(0, BINGO_CELLS);
 }
 
-/** Pick the next draw from the 195, excluding already-drawn codes. */
+/**
+ * Pick the next draw from the match pool, excluding already-drawn codes.
+ * Omitting the pool falls back to the full UN list (tests / legacy only).
+ */
 export function pickNextDraw(
   drawnCodes: readonly string[],
+  pool: readonly string[] = allBingoCountryCodes(),
   random = Math.random,
 ): string | null {
   const drawn = new Set(drawnCodes);
-  const remaining = ALL_COUNTRY_OPTIONS.map((c) => c.code).filter((c) => !drawn.has(c));
+  const remaining = pool.filter((c) => !drawn.has(c));
   if (remaining.length === 0) return null;
   return remaining[Math.floor(random() * remaining.length)]!;
 }
 
-/** Whether each board cell is marked, given the drawn set. */
+/** Whether each board cell is marked, given the player's confirmed set. */
 export function markedMask(
   board: readonly string[],
-  drawnCodes: readonly string[],
+  markedCodes: readonly string[],
 ): boolean[] {
-  const drawn = new Set(drawnCodes);
-  return board.map((code) => drawn.has(code));
+  const marked = new Set(markedCodes);
+  return board.map((code) => marked.has(code));
 }
 
 /** Indices of a completed bingo line, or null if none. */
 export function findBingoLine(
   board: readonly string[],
-  drawnCodes: readonly string[],
+  markedCodes: readonly string[],
 ): number[] | null {
   if (board.length !== BINGO_CELLS) return null;
-  const marked = markedMask(board, drawnCodes);
+  const marked = markedMask(board, markedCodes);
   for (const line of BINGO_LINES) {
     if (line.every((i) => marked[i])) return [...line];
   }
   return null;
 }
 
-export function hasBingo(board: readonly string[], drawnCodes: readonly string[]): boolean {
-  return findBingoLine(board, drawnCodes) !== null;
+export function hasBingo(board: readonly string[], markedCodes: readonly string[]): boolean {
+  return findBingoLine(board, markedCodes) !== null;
 }
 
 /**
