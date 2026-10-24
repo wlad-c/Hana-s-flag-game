@@ -120,6 +120,59 @@
   }
 }
 
+/* --- Multiplayer section (Flag Bingo entry) --- */
+.sticker__multiplayer {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.sticker__multiplayer-heading {
+  text-align: center;
+}
+
+.sticker__multiplayer-title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.sticker__multiplayer-lede {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.card-sticker--bingo {
+  width: 100%;
+  max-width: none;
+  border-color: var(--sky);
+  background:
+    linear-gradient(
+      165deg,
+      color-mix(in srgb, var(--sky) 16%, var(--paper)) 0%,
+      var(--paper) 55%
+    );
+}
+
+@media (min-width: 900px) {
+  .sticker__multiplayer {
+    max-width: 100%;
+    align-items: center;
+  }
+  .card-sticker--bingo {
+    max-width: 460px;
+  }
+}
+
 /* ---------------------------------------------------------------------------
    Hero card — rotating poster + Hana's Game CTA. One visual unit (single
    border + shadow). The carousel poster sits flush against the top; the
