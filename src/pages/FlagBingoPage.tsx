@@ -390,6 +390,7 @@ export default function FlagBingoPage() {
                     {lastDrawn ? (
                       <>
                         <img
+                          key={flagPathForCode(lastDrawn)}
                           className="bingo__draw-flag"
                           src={flagPathForCode(lastDrawn)}
                           alt={`Flag of ${countryNameForCode(lastDrawn)}`}
@@ -449,6 +450,7 @@ export default function FlagBingoPage() {
                               title={countryNameForCode(code)}
                             >
                               <img
+                                key={flagPathForCode(code)}
                                 src={flagPathForCode(code)}
                                 alt={countryNameForCode(code)}
                               />
@@ -469,7 +471,11 @@ export default function FlagBingoPage() {
                       <ul className="bingo__history">
                         {[...snap.room.drawnCodes].reverse().map((code) => (
                           <li key={code} className="bingo__history-item" title={countryNameForCode(code)}>
-                            <img src={flagPathForCode(code)} alt={countryNameForCode(code)} />
+                            <img
+                              key={flagPathForCode(code)}
+                              src={flagPathForCode(code)}
+                              alt={countryNameForCode(code)}
+                            />
                           </li>
                         ))}
                       </ul>
@@ -503,7 +509,11 @@ export default function FlagBingoPage() {
                             .filter(Boolean)
                             .join(" ")}
                         >
-                          <img src={flagPathForCode(code)} alt={countryNameForCode(code)} />
+                          <img
+                            key={flagPathForCode(code)}
+                            src={flagPathForCode(code)}
+                            alt={countryNameForCode(code)}
+                          />
                         </div>
                       );
                     })}

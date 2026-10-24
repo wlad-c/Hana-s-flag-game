@@ -50,9 +50,17 @@ function spaFallback() {
       const outDir = resolve(__dirname, 'dist')
       try {
         copyFileSync(resolve(outDir, 'index.html'), resolve(outDir, '404.html'))
-        const reviewDir = resolve(outDir, 'learn/visual-redesign-version-1')
-        mkdirSync(reviewDir, { recursive: true })
-        copyFileSync(resolve(outDir, 'index.html'), resolve(reviewDir, 'index.html'))
+        // Deep-link shells for GitHub Pages (project pages serve these paths
+        // as real files; without them a cold open of the URL is an empty 404).
+        for (const sub of [
+          'learn/visual-redesign-version-1',
+          'multiplayer',
+          'multiplayer/bingo',
+        ]) {
+          const dir = resolve(outDir, sub)
+          mkdirSync(dir, { recursive: true })
+          copyFileSync(resolve(outDir, 'index.html'), resolve(dir, 'index.html'))
+        }
       } catch {
         // ignore — only runs after a successful build
       }
