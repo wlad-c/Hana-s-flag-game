@@ -1,0 +1,425 @@
+/* Flag Bingo — multiplayer lobby + board. Tokens from index.css. */
+
+.bingo {
+  position: relative;
+  min-height: calc(100vh - 7rem);
+  font-family: var(--font-display);
+  color: var(--ink);
+  background:
+    radial-gradient(1000px 520px at 10% -10%, color-mix(in srgb, var(--sky) 28%, transparent) 0%, transparent 55%),
+    radial-gradient(900px 480px at 95% 110%, color-mix(in srgb, var(--coral) 22%, transparent) 0%, transparent 55%),
+    var(--cream);
+  padding: 1.25rem 1rem 5.5rem;
+}
+
+.bingo__shell {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.bingo__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+}
+
+.bingo__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.bingo__title span {
+  color: var(--coral);
+}
+
+.bingo__lede {
+  margin: 0.35rem 0 0;
+  max-width: 38rem;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  line-height: 1.45;
+}
+
+.bingo__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.bingo__panel {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.35rem;
+}
+
+.bingo__panel + .bingo__panel {
+  margin-top: 0;
+}
+
+.bingo__panel-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.bingo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.bingo__btn {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.7rem 1.25rem;
+  cursor: pointer;
+  color: var(--ink-fixed);
+  box-shadow: 0 3px 0 var(--ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.bingo__btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 var(--ink);
+}
+
+.bingo__btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.bingo__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.bingo__btn--sky { background: var(--sky); }
+.bingo__btn--coral { background: var(--coral); }
+.bingo__btn--lime { background: var(--lime); }
+.bingo__btn--mustard { background: var(--mustard); }
+.bingo__btn--pink { background: var(--pink); }
+.bingo__btn--ghost {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.bingo__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 12rem;
+  min-width: 10rem;
+}
+
+.bingo__field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.bingo__field input {
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.65rem 0.85rem;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-md);
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.bingo__error {
+  margin: 0.75rem 0 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--coral) 22%, var(--paper));
+  border: 2px solid var(--ink);
+  font-weight: 600;
+}
+
+.bingo__hint {
+  margin: 0.75rem 0 0;
+  font-size: 0.92rem;
+  opacity: 0.75;
+  line-height: 1.4;
+}
+
+.bingo__rules {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.bingo__roombar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.bingo__code {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.bingo__code-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 0.15rem;
+}
+
+.bingo__players {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.bingo__player {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--ink);
+  background: var(--cream);
+}
+
+.bingo__player-name {
+  flex: 1;
+  font-weight: 700;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bingo__player-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+  background: var(--mustard);
+  color: var(--ink-fixed);
+}
+
+.bingo__player-tag--ready {
+  background: var(--lime);
+}
+
+.bingo__player-tag--you {
+  background: var(--sky);
+}
+
+.bingo__draw {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bingo__draw-flag {
+  width: min(42vw, 160px);
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-md);
+  background: var(--cream);
+  box-shadow: var(--shadow-soft);
+}
+
+.bingo__draw-meta {
+  flex: 1 1 12rem;
+}
+
+.bingo__draw-label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.bingo__draw-name {
+  margin: 0.2rem 0 0;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.bingo__draw-count {
+  margin: 0.45rem 0 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.bingo__board-wrap {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 820px) {
+  .bingo__board-wrap {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    align-items: start;
+  }
+}
+
+.bingo__board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.35rem;
+  padding: 0.45rem;
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--ink);
+}
+
+.bingo__cell {
+  position: relative;
+  aspect-ratio: 1;
+  margin: 0;
+  padding: 0.2rem;
+  border: 0;
+  border-radius: 0.35rem;
+  background: var(--paper);
+  cursor: default;
+  overflow: hidden;
+}
+
+.bingo__cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.bingo__cell--marked {
+  background: color-mix(in srgb, var(--lime) 35%, var(--paper));
+}
+
+.bingo__cell--marked::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--coral) 75%, transparent) 0 28%, transparent 30%);
+  pointer-events: none;
+}
+
+.bingo__cell--line {
+  outline: 3px solid var(--mustard);
+  outline-offset: -3px;
+  z-index: 1;
+}
+
+.bingo__cell-code {
+  position: absolute;
+  left: 0.15rem;
+  bottom: 0.1rem;
+  font-size: 0.55rem;
+  font-weight: 700;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.bingo__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bingo__history {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  max-height: 12rem;
+  overflow: auto;
+}
+
+.bingo__history-item {
+  width: 2.1rem;
+  height: 1.4rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.bingo__history-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bingo__win {
+  text-align: center;
+  padding: 1rem 0.5rem;
+}
+
+.bingo__win h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--coral);
+}
+
+.bingo__win p {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.bingo__status-line {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.bingo__local-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}

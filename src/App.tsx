@@ -4,6 +4,8 @@ import LandingPage from './pages/LandingPage'
 import FlagGamePage from './pages/FlagGamePage'
 import LearnPage from './pages/LearnPage'
 import CalibratePage from './pages/CalibratePage'
+import MultiplayerPage from './pages/MultiplayerPage'
+import FlagBingoPage from './pages/FlagBingoPage'
 import { Topbar } from './components/Topbar'
 import { ProfileBottomNav } from './components/ProfileBottomNav'
 import { gameAudio } from './lib/gameAudio'
@@ -35,6 +37,8 @@ export default function App() {
         <Route path="/game" element={<FlagGamePage />} />
         <Route path="/learn" element={<LearnPage />} />
         <Route path="/learn/visual-redesign-version-1" element={<LearnPage variant="atlas" />} />
+        <Route path="/multiplayer" element={<MultiplayerPage />} />
+        <Route path="/multiplayer/bingo" element={<FlagBingoPage />} />
         <Route path="/calibrate" element={<CalibratePage />} />
       </Routes>
       {/* Persistent bottom bar: build info + refresh on the left, active

@@ -215,6 +215,20 @@ export default function LandingPage() {
             </p>
             <span className="card-sticker__cta card-sticker__cta--lime">PLAY →</span>
           </button>
+
+          {/* Online multiplayer — Flag Bingo and future live games. */}
+          <button
+            type="button"
+            className="card-sticker card-sticker--b card-sticker--secondary"
+            onClick={() => navigate('/multiplayer')}
+          >
+            <h2 className="card-sticker__title">Play together</h2>
+            <p className="card-sticker__sub">
+              Online multiplayer with anyone on the site. First up: Flag Bingo —
+              personal 5×5 boards, shared draws, first to five in a row wins.
+            </p>
+            <span className="card-sticker__cta card-sticker__cta--coral">JOIN →</span>
+          </button>
         </div>
 
         <button
