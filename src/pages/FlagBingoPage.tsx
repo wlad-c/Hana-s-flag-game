@@ -565,8 +565,8 @@ export default function FlagBingoPage() {
                       </p>
                     )}
                   </div>
-                  <aside className="bingo__sidebar bingo__panel">
-                    <h2 className="bingo__panel-title">
+                  <aside className="bingo__sidebar" aria-labelledby="bingo-drawn-title">
+                    <h2 id="bingo-drawn-title" className="bingo__panel-title">
                       Drawn so far ({snap.room.drawnCodes.length})
                     </h2>
                     <p className="bingo__hint" style={{ marginTop: 0 }}>
@@ -604,11 +604,14 @@ export default function FlagBingoPage() {
                                 aria-label={`View larger flag of ${name}`}
                                 onClick={() => setInspectCode(code)}
                               >
-                                <img
-                                  key={flagPathForCode(code)}
-                                  src={flagPathForCode(code)}
-                                  alt={name}
-                                />
+                                <span className="bingo__history-flag">
+                                  <img
+                                    key={flagPathForCode(code)}
+                                    src={flagPathForCode(code)}
+                                    alt=""
+                                  />
+                                </span>
+                                <span className="bingo__history-name">{name}</span>
                               </button>
                             </li>
                           );
