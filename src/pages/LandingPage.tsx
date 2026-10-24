@@ -217,6 +217,32 @@ export default function LandingPage() {
           </button>
         </div>
 
+        {/* Multiplayer — its own home-page section so Flag Bingo is easy to
+            find (not buried under a generic "Play together" label). */}
+        <section className="sticker__multiplayer" aria-labelledby="home-multiplayer-title">
+          <div className="sticker__multiplayer-heading">
+            <h2 id="home-multiplayer-title" className="sticker__multiplayer-title">
+              Multiplayer
+            </h2>
+            <p className="sticker__multiplayer-lede">
+              Play live with anyone on the site — create a room, share the code,
+              and go.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="card-sticker card-sticker--b card-sticker--secondary card-sticker--bingo"
+            onClick={() => navigate('/multiplayer/bingo')}
+          >
+            <h3 className="card-sticker__title">Flag Bingo</h3>
+            <p className="card-sticker__sub">
+              Everyone gets a random 5×5 board of country flags. When all players
+              are ready, one flag is drawn. First to five in a row wins.
+            </p>
+            <span className="card-sticker__cta card-sticker__cta--sky">PLAY BINGO →</span>
+          </button>
+        </section>
+
         <button
           type="button"
           className="sticker__leaderboard"
