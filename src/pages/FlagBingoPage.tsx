@@ -227,12 +227,6 @@ export default function FlagBingoPage() {
     setLateChecked(playerId);
     if (roomStatus === "playing" && drawnCount > 0) setJoinedLate(true);
   }, [hasSnap, playerId, lateChecked, roomStatus, drawnCount]);
-  /** Flags already drawn that are on this board and not yet marked (catch-up). */
-  const catchUpCodes = useMemo(() => {
-    if (!me || me.board.length !== BINGO_CELLS) return [] as string[];
-    const marked = new Set(myMarked);
-    return me.board.filter((code) => drawnSet.has(code) && !marked.has(code));
-  }, [me, myMarked, drawnSet]);
   const joinedMidGame =
     joinedLate &&
     snap?.room.status === "playing" &&
@@ -424,23 +418,8 @@ export default function FlagBingoPage() {
                       {snap.room.drawnCodes.length} flag
                       {snap.room.drawnCodes.length === 1 ? "" : "s"} already
                       drawn — they are listed under <strong>Drawn so far</strong>
-                      {catchUpCodes.length > 0 ? (
-                        <>
-                          . You have{" "}
-                          <strong>
-                            {catchUpCodes.length} matching flag
-                            {catchUpCodes.length === 1 ? "" : "s"}
-                          </strong>{" "}
-                          on your board (highlighted) — tap each to mark it and
-                          catch up, just like players who were here from the
-                          start.
-                        </>
-                      ) : (
-                        <>
-                          . None of those are on your board yet — keep playing;
-                          new draws use the same match pool.
-                        </>
-                      )}
+                      . Scan your board and tap any that match to mark them —
+                      same as players who were here from the start.
                     </p>
                   </section>
                 )}
@@ -503,13 +482,15 @@ export default function FlagBingoPage() {
                         {me.board.map((code, i) => {
                           const marked = marks[i];
                           const inLine = winLine?.includes(i);
-                          const callable =
-                            !marked && drawnSet.has(code) && snap.room.status === "playing";
+                          // No "callable" styling — matching a drawn flag is the
+                          // educational task; every unmarked cell looks the same.
+                          const canTap =
+                            !marked && snap.room.status === "playing";
                           const name = countryNameForCode(code);
                           const className = [
                             "bingo__cell",
                             marked ? "bingo__cell--marked" : "",
-                            callable ? "bingo__cell--callable" : "",
+                            canTap ? "bingo__cell--tap" : "",
                             inLine ? "bingo__cell--line" : "",
                           ]
                             .filter(Boolean)
@@ -531,15 +512,15 @@ export default function FlagBingoPage() {
                               <span className="bingo__cell-name">{name}</span>
                             </>
                           );
-                          if (callable) {
+                          if (canTap) {
                             return (
                               <button
                                 key={`${code}-${i}`}
                                 type="button"
                                 role="gridcell"
                                 className={className}
-                                title={`Tap to mark ${name}`}
-                                aria-label={`Mark ${name}`}
+                                title={name}
+                                aria-label={name}
                                 onClick={() => void handleMarkCell(code)}
                               >
                                 {body}
@@ -579,7 +560,6 @@ export default function FlagBingoPage() {
                       <ul className="bingo__history">
                         {[...snap.room.drawnCodes].reverse().map((code) => {
                           const name = countryNameForCode(code);
-                          const onMyBoard = !!me?.board.includes(code);
                           const marked = myMarked.includes(code);
                           return (
                             <li key={code}>
@@ -587,20 +567,11 @@ export default function FlagBingoPage() {
                                 type="button"
                                 className={[
                                   "bingo__history-item",
-                                  onMyBoard && !marked
-                                    ? "bingo__history-item--mine"
-                                    : "",
                                   marked ? "bingo__history-item--marked" : "",
                                 ]
                                   .filter(Boolean)
                                   .join(" ")}
-                                title={
-                                  marked
-                                    ? `${name} (marked on your board)`
-                                    : onMyBoard
-                                      ? `${name} (on your board — tap the board cell to mark)`
-                                      : `View ${name}`
-                                }
+                                title={`View ${name}`}
                                 aria-label={`View larger flag of ${name}`}
                                 onClick={() => setInspectCode(code)}
                               >

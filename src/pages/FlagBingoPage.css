@@ -399,16 +399,15 @@
   pointer-events: none;
 }
 
-.bingo__cell--callable {
+/* Tappable cells look identical to idle ones — no outline that telegraphs
+   which drawn flags are on the board (educational mode, owner 2026-10). */
+.bingo__cell--tap {
   cursor: pointer;
-  border-color: var(--coral);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--coral) 45%, transparent);
 }
 
-.bingo__cell--callable:hover,
-.bingo__cell--callable:focus-visible {
-  transform: translateY(-1px);
-  outline: none;
+.bingo__cell--tap:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
 }
 
 .bingo__cell--marked {
@@ -530,11 +529,6 @@
 .bingo__history-item:focus-visible {
   outline: 2px solid var(--sky);
   outline-offset: 2px;
-}
-
-.bingo__history-item--mine {
-  border-color: var(--coral);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--coral) 45%, transparent);
 }
 
 .bingo__history-item--marked {
