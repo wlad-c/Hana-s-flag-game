@@ -443,6 +443,17 @@
   gap: 0.75rem;
 }
 
+.bingo__catchup {
+  background: color-mix(in srgb, var(--sky) 22%, var(--paper));
+}
+
+.bingo__catchup-text {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
 .bingo__history {
   margin: 0;
   padding: 0;
@@ -450,7 +461,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  max-height: 12rem;
+  max-height: min(50vh, 22rem);
   overflow: auto;
 }
 
@@ -472,6 +483,17 @@
 .bingo__history-item:focus-visible {
   outline: 2px solid var(--sky);
   outline-offset: 1px;
+}
+
+.bingo__history-item--mine {
+  outline: 2px solid var(--coral);
+  outline-offset: 1px;
+}
+
+.bingo__history-item--marked {
+  outline: 2px solid #1f9d4b;
+  outline-offset: 1px;
+  opacity: 0.7;
 }
 
 .bingo__history-item img {
@@ -524,6 +546,41 @@
   font-size: clamp(1.35rem, 4vw, 1.85rem);
   font-weight: 700;
   line-height: 1.2;
+}
+
+.bingo__modal-backdrop--win {
+  background: color-mix(in srgb, var(--ink) 65%, transparent);
+  z-index: 90;
+}
+
+.bingo__modal--win {
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+  background:
+    radial-gradient(600px 200px at 50% 0%, color-mix(in srgb, var(--lime) 35%, transparent), transparent 70%),
+    var(--paper);
+}
+
+.bingo__win-kicker {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.bingo__win-notice-text {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  max-width: 28rem;
+}
+
+.bingo__modal--win .bingo__modal-name {
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  color: var(--coral);
 }
 
 .bingo__win {
