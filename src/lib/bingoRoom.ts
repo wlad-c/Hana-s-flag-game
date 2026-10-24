@@ -740,13 +740,20 @@ export async function setBingoReady(
     if (!next) return;
 
     // Draw only — marking and bingo claims are player-driven (educational).
-    const roomPatch: Record<string, unknown> = {
-      drawnCodes: [...room.drawnCodes, next],
-      updatedAt: Date.now(),
-    };
     // Persist a recovered pool if an older room doc lacked one.
-    if (!room.poolCodes.length) roomPatch.poolCodes = pool;
-    tx.update(roomRef, roomPatch);
+    tx.update(
+      roomRef,
+      room.poolCodes.length
+        ? {
+            drawnCodes: [...room.drawnCodes, next],
+            updatedAt: Date.now(),
+          }
+        : {
+            drawnCodes: [...room.drawnCodes, next],
+            poolCodes: pool,
+            updatedAt: Date.now(),
+          },
+    );
     for (const pid of room.playerIds) {
       tx.update(doc(db, COLLECTION, normalized, "players", pid), { ready: false });
     }
