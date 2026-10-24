@@ -216,6 +216,27 @@ async function resolvePlayerId(): Promise<{ id: string; local: boolean }> {
   return { id: localClientId(), local: true };
 }
 
+/**
+ * Whether mutations/subscriptions should use the in-tab local store.
+ * The shared PUBLIC lobby must NEVER stay on a stale local copy once
+ * Firebase auth is available — that was splitting phones into solo matches.
+ */
+function useLocalStore(code: string): boolean {
+  const normalized = normalizeRoomCode(code);
+  if (normalized === PUBLIC_BINGO_ROOM && auth?.currentUser) {
+    if (localRooms.has(normalized)) {
+      localRooms.delete(normalized);
+    }
+    return false;
+  }
+  return localRooms.has(normalized);
+}
+
+function firestoreErrorMessage(err: unknown): string {
+  if (err instanceof Error && err.message) return err.message;
+  return String(err);
+}
+
 // ── Public API ─────────────────────────────────────────────────────────
 
 export async function createBingoRoom(seat: BingoSeat): Promise<{
@@ -286,6 +307,10 @@ export async function createBingoRoom(seat: BingoSeat): Promise<{
 /**
  * Open Flag Bingo: join the single shared lobby (creating it if needed).
  * No room code — everyone who opens the section lands here.
+ *
+ * Cross-device sync requires Firestore. When anonymous auth works we NEVER
+ * fall back to a per-tab local lobby (that made each phone its own match).
+ * Local mode is only for true offline / missing Firebase config.
  */
 export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
   code: string;
@@ -337,8 +362,6 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
         s.players.set(playerId, player);
         s.room.playerIds = [...s.room.playerIds, playerId];
         if (!s.room.hostId) s.room.hostId = playerId;
-        // Mid-game join: clear ready so the next draw waits for everyone,
-        // including the newcomer who still needs to catch up on drawn flags.
         if (s.room.status === "playing") {
           for (const id of s.room.playerIds) {
             const p = s.players.get(id);
@@ -363,63 +386,83 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
     return { code, playerId, local: true as const };
   };
 
+  // No Firebase identity → truly offline. Same-browser tabs can still play
+  // via BroadcastChannel; phones cannot.
   if (local) return ensureLocal();
 
-  try {
-    const roomRef = doc(db, COLLECTION, code);
-    await runTransaction(db, async (tx) => {
-      const roomSnap = await tx.get(roomRef);
-      const playerRef = doc(db, COLLECTION, code, "players", playerId);
+  // Drop any stale in-memory PUBLIC room so subscribe/mutations hit Firestore.
+  localRooms.delete(code);
 
-      if (!roomSnap.exists()) {
-        const room = emptyRoom(code, playerId, [playerId], now);
-        tx.set(roomRef, room);
-        tx.set(playerRef, buildPlayer("lobby"));
-        return;
-      }
+  const roomRef = doc(db, COLLECTION, code);
+  let lastErr: unknown;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      await runTransaction(db, async (tx) => {
+        const roomSnap = await tx.get(roomRef);
+        const playerRef = doc(db, COLLECTION, code, "players", playerId);
 
-      const room = roomSnap.data() as BingoRoom;
-      // Older room docs (pre-pool) may lack poolCodes — treat as empty.
-      if (!Array.isArray(room.poolCodes)) room.poolCodes = [];
-      const existingPlayer = await tx.get(playerRef);
-      const statusForBoard: BingoRoomStatus =
-        room.status === "playing" ? "playing" : "lobby";
-      const player = buildPlayer(statusForBoard, room.poolCodes);
-
-      if (!existingPlayer.exists()) {
-        if (room.playerIds.length >= MAX_PLAYERS) {
-          throw new Error(`This lobby is full (${MAX_PLAYERS} players max)`);
+        if (!roomSnap.exists()) {
+          const room = emptyRoom(code, playerId, [playerId], now);
+          tx.set(roomRef, room);
+          tx.set(playerRef, buildPlayer("lobby"));
+          return;
         }
-        tx.set(playerRef, player);
-        tx.update(roomRef, {
-          playerIds: [...room.playerIds, playerId],
-          updatedAt: Date.now(),
-        });
-        // Mid-game join: reset ready on every seat so the next draw waits
-        // for the newcomer too. They share the same drawnCodes / poolCodes.
-        if (room.status === "playing") {
-          for (const pid of room.playerIds) {
-            tx.update(doc(db, COLLECTION, code, "players", pid), {
-              ready: false,
-            });
+
+        const room = roomSnap.data() as BingoRoom;
+        if (!Array.isArray(room.poolCodes)) room.poolCodes = [];
+        const existingPlayer = await tx.get(playerRef);
+
+        // All reads before writes (Firestore transaction rule). When joining
+        // mid-game, read other seats so we can clear ready without updating
+        // missing docs (that used to abort the whole join).
+        const otherIds =
+          !existingPlayer.exists() && room.status === "playing"
+            ? room.playerIds.filter((id) => id !== playerId)
+            : [];
+        const otherSnaps = await Promise.all(
+          otherIds.map((pid) => tx.get(doc(db, COLLECTION, code, "players", pid))),
+        );
+
+        const statusForBoard: BingoRoomStatus =
+          room.status === "playing" ? "playing" : "lobby";
+        const player = buildPlayer(statusForBoard, room.poolCodes);
+
+        if (!existingPlayer.exists()) {
+          if (room.playerIds.length >= MAX_PLAYERS) {
+            throw new Error(`This lobby is full (${MAX_PLAYERS} players max)`);
           }
+          tx.set(playerRef, player);
+          tx.update(roomRef, {
+            playerIds: [...room.playerIds, playerId],
+            updatedAt: Date.now(),
+          });
+          for (const ps of otherSnaps) {
+            if (!ps.exists()) continue;
+            tx.update(ps.ref, { ready: false });
+          }
+        } else {
+          const prev = existingPlayer.data() as BingoPlayer;
+          tx.update(playerRef, {
+            displayName: player.displayName,
+            avatarId: player.avatarId,
+            ...(prev.board?.length === 25
+              ? {}
+              : { board: player.board, marked: [], ready: false }),
+          });
         }
-      } else {
-        const prev = existingPlayer.data() as BingoPlayer;
-        tx.update(playerRef, {
-          displayName: player.displayName,
-          avatarId: player.avatarId,
-          ...(prev.board?.length === 25
-            ? {}
-            : { board: player.board, marked: [], ready: false }),
-        });
-      }
-    });
-    return { code, playerId, local: false };
-  } catch (err) {
-    console.warn("Firestore open bingo lobby failed; using local lobby.", err);
-    return ensureLocal();
+      });
+      return { code, playerId, local: false };
+    } catch (err) {
+      lastErr = err;
+      // Lobby-full is final; don't retry.
+      if (err instanceof Error && /full/i.test(err.message)) throw err;
+      await new Promise((r) => setTimeout(r, 200 * (attempt + 1)));
+    }
   }
+
+  throw new Error(
+    `Could not join the online Flag Bingo lobby (${firestoreErrorMessage(lastErr)}). Check your connection and try again.`,
+  );
 }
 
 export async function joinBingoRoom(
@@ -512,18 +555,14 @@ export function subscribeBingoRoom(
   onError: (err: Error) => void,
 ): Unsubscribe {
   const normalized = normalizeRoomCode(code);
-  if (localRooms.has(normalized)) {
+  if (useLocalStore(normalized)) {
     return subscribeLocal(normalized, onUpdate);
   }
 
-  // Prefer Firestore; if the room doc never appears and a local room arrives
-  // via BroadcastChannel, flip to local.
   let unsubRoom: Unsubscribe | null = null;
   let unsubPlayers: Unsubscribe | null = null;
-  let unsubLocal: Unsubscribe | null = null;
   let latestRoom: BingoRoom | null = null;
   let latestPlayers: BingoPlayer[] = [];
-  let usingLocal = false;
 
   const emit = () => {
     if (!latestRoom) return;
@@ -535,15 +574,15 @@ export function subscribeBingoRoom(
       doc(db, COLLECTION, normalized),
       (snap) => {
         if (!snap.exists()) {
-          // Maybe it's a local room from another tab — try local subscribe.
-          if (!usingLocal) {
-            usingLocal = true;
-            unsubLocal = subscribeLocal(normalized, onUpdate);
-            getLocalChannel()?.postMessage({ type: "request", code: normalized });
-          }
+          // Public lobby doc can briefly be missing while the first joiner
+          // creates it — keep waiting on Firestore; do NOT flip to local
+          // (that desyncs phones).
+          if (normalized === PUBLIC_BINGO_ROOM) return;
+          onError(new Error("Lobby not found"));
           return;
         }
         latestRoom = snap.data() as BingoRoom;
+        if (!Array.isArray(latestRoom.poolCodes)) latestRoom.poolCodes = [];
         emit();
       },
       (err) => onError(err),
@@ -552,7 +591,6 @@ export function subscribeBingoRoom(
       collection(db, COLLECTION, normalized, "players"),
       (snap) => {
         latestPlayers = snap.docs.map((d) => d.data() as BingoPlayer);
-        // Keep lobby order from room.playerIds when available.
         if (latestRoom) {
           const order = new Map(latestRoom.playerIds.map((id, i) => [id, i]));
           latestPlayers.sort(
@@ -570,7 +608,6 @@ export function subscribeBingoRoom(
   return () => {
     unsubRoom?.();
     unsubPlayers?.();
-    unsubLocal?.();
   };
 }
 
@@ -578,7 +615,7 @@ export async function startBingoGame(code: string, playerId: string): Promise<vo
   const normalized = normalizeRoomCode(code);
   const isOpenLobby = normalized === PUBLIC_BINGO_ROOM;
 
-  if (localRooms.has(normalized)) {
+  if (useLocalStore(normalized)) {
     mutateLocal(normalized, (s) => {
       if (!isOpenLobby && s.room.hostId !== playerId) {
         throw new Error("Only the host can start the game");
@@ -643,7 +680,7 @@ export async function startBingoGame(code: string, playerId: string): Promise<vo
 export async function resetBingoLobby(code: string, playerId: string): Promise<void> {
   const normalized = normalizeRoomCode(code);
 
-  if (localRooms.has(normalized)) {
+  if (useLocalStore(normalized)) {
     mutateLocal(normalized, (s) => {
       if (!s.players.has(playerId)) throw new Error("You are not in this lobby");
       s.room.status = "lobby";
@@ -696,7 +733,7 @@ export async function setBingoReady(
 ): Promise<void> {
   const normalized = normalizeRoomCode(code);
 
-  if (localRooms.has(normalized)) {
+  if (useLocalStore(normalized)) {
     mutateLocal(normalized, (s) => {
       if (s.room.status !== "playing") throw new Error("Game is not in progress");
       const me = s.players.get(playerId);
@@ -791,7 +828,7 @@ export async function markBingoCell(
   const normalized = normalizeRoomCode(code);
   const cc = countryCode.toUpperCase();
 
-  if (localRooms.has(normalized)) {
+  if (useLocalStore(normalized)) {
     mutateLocal(normalized, (s) => {
       if (s.room.status !== "playing") throw new Error("Game is not in progress");
       const me = s.players.get(playerId);
@@ -847,7 +884,7 @@ export async function markBingoCell(
 export async function leaveBingoRoom(code: string, playerId: string): Promise<void> {
   const normalized = normalizeRoomCode(code);
 
-  if (localRooms.has(normalized)) {
+  if (useLocalStore(normalized)) {
     mutateLocal(normalized, (s) => {
       s.players.delete(playerId);
       s.room.playerIds = s.room.playerIds.filter((id) => id !== playerId);

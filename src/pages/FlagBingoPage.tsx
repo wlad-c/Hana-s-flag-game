@@ -89,13 +89,16 @@ export default function FlagBingoPage() {
     return unsub;
   }, [playerId]);
 
-  // Best-effort leave when navigating away.
+  // Leave only when the tab/page is actually going away — NOT on React
+  // unmount. Strict Mode remounts and seat re-joins were kicking players out
+  // of the shared online lobby, so two phones looked like separate matches.
   useEffect(() => {
-    return () => {
-      if (playerId) {
-        void leaveBingoRoom(PUBLIC_BINGO_ROOM, playerId).catch(() => {});
-      }
+    if (!playerId) return;
+    const leave = () => {
+      void leaveBingoRoom(PUBLIC_BINGO_ROOM, playerId).catch(() => {});
     };
+    window.addEventListener("pagehide", leave);
+    return () => window.removeEventListener("pagehide", leave);
   }, [playerId]);
 
   // Close the inspect modal on Escape (not while the win notice is up).
@@ -262,12 +265,30 @@ export default function FlagBingoPage() {
                   <h2 id="bingo-players-title" className="bingo__panel-title">
                     Players here ({playerCount})
                   </h2>
-                  <p className="bingo__hint" style={{ marginTop: 0 }}>
+                  <p
+                    className={
+                      snap.local
+                        ? "bingo__hint bingo__conn bingo__conn--local"
+                        : "bingo__hint bingo__conn bingo__conn--online"
+                    }
+                    style={{ marginTop: 0 }}
+                    role={snap.local ? "status" : undefined}
+                  >
                     Playing as <strong>{seat.displayName}</strong>
-                    {activeProfile ? "" : " (pick a profile below anytime)"}.
-                    {snap.local
-                      ? " Local lobby (Firebase offline) — open another tab on this device to play together."
-                      : " Anyone on the site who opens Flag Bingo joins this lobby."}
+                    {activeProfile ? "" : " (pick a profile below anytime)"}.{" "}
+                    {snap.local ? (
+                      <>
+                        <strong>Offline / local lobby</strong> — other phones
+                        cannot join this match. Refresh the page to reconnect to
+                        the shared online lobby.
+                      </>
+                    ) : (
+                      <>
+                        <strong>Online shared lobby</strong> — everyone who opens
+                        Flag Bingo on any device joins this same match (
+                        {playerCount} player{playerCount === 1 ? "" : "s"} here).
+                      </>
+                    )}
                   </p>
                 </div>
               </div>

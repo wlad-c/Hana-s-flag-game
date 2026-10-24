@@ -443,6 +443,21 @@
   gap: 0.75rem;
 }
 
+.bingo__conn--online strong {
+  color: #1f9d4b;
+}
+
+.bingo__conn--local {
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--ink);
+  background: color-mix(in srgb, var(--coral) 22%, var(--paper));
+}
+
+.bingo__conn--local strong {
+  color: color-mix(in srgb, var(--coral) 80%, var(--ink));
+}
+
 .bingo__catchup {
   background: color-mix(in srgb, var(--sky) 22%, var(--paper));
 }
