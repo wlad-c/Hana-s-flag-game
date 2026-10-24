@@ -75,15 +75,18 @@ service cloud.firestore {
           && request.resource.data.displayName.size() <= 48
           && request.resource.data.avatarId is string
           && request.resource.data.board is list
+          && request.resource.data.marked is list
           && request.resource.data.ready is bool;
-        // Own seat, or any authenticated client updating boards/ready
-        // during host start / shared draw advance (transactional).
+        // Own seat, or any authenticated client updating boards/ready/marks
+        // during host start / shared draw advance / manual cell confirm.
         allow update: if request.auth != null
           && request.resource.data.id == playerId
           && request.resource.data.displayName is string
           && request.resource.data.displayName.size() <= 48
           && request.resource.data.board is list
           && request.resource.data.board.size() <= 25
+          && request.resource.data.marked is list
+          && request.resource.data.marked.size() <= 25
           && request.resource.data.ready is bool;
         allow delete: if request.auth != null
           && request.auth.uid == playerId;

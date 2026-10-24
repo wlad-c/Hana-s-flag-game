@@ -15,6 +15,7 @@ import {
 import {
   joinOpenBingoLobby,
   leaveBingoRoom,
+  markBingoCell,
   resetBingoLobby,
   setBingoReady,
   startBingoGame,
@@ -90,11 +91,14 @@ export default function FlagBingoPage() {
 
   const me: BingoPlayer | undefined = snap?.players.find((p) => p.id === playerId);
   const lastDrawn = snap?.room.drawnCodes[snap.room.drawnCodes.length - 1] ?? null;
+  const myMarked = me?.marked ?? [];
   const marks =
-    me?.board.length === BINGO_CELLS
-      ? markedMask(me.board, snap?.room.drawnCodes ?? [])
-      : [];
-  const winLine = me && snap ? findBingoLine(me.board, snap.room.drawnCodes) : null;
+    me?.board.length === BINGO_CELLS ? markedMask(me.board, myMarked) : [];
+  const winLine = me ? findBingoLine(me.board, myMarked) : null;
+  const drawnSet = useMemo(
+    () => new Set(snap?.room.drawnCodes ?? []),
+    [snap?.room.drawnCodes],
+  );
   const readyCount = snap?.players.filter((p) => p.ready).length ?? 0;
   const playerCount = snap?.players.length ?? 0;
 
@@ -148,6 +152,21 @@ export default function FlagBingoPage() {
     navigate("/");
   }, [playerId, navigate]);
 
+  const handleMarkCell = useCallback(
+    async (countryCode: string) => {
+      if (!playerId || !snap || snap.room.status !== "playing") return;
+      if (!drawnSet.has(countryCode)) return;
+      if (myMarked.includes(countryCode)) return;
+      setError(null);
+      try {
+        await markBingoCell(PUBLIC_BINGO_ROOM, playerId, countryCode);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Could not mark that flag");
+      }
+    },
+    [playerId, snap, drawnSet, myMarked],
+  );
+
   return (
     <div className="bingo">
       <div className="bingo__shell">
@@ -159,7 +178,8 @@ export default function FlagBingoPage() {
             <p className="bingo__lede">
               Open lobby — everyone who opens this page plays together. Personal
               5×5 boards from all {BINGO_POOL_SIZE} UN country flags. When
-              everyone is ready, one flag is drawn. First to five in a row wins.
+              everyone is ready, one flag is drawn — tap matching flags on your
+              board to mark them. First to five in a row wins.
             </p>
           </div>
           <button
@@ -287,31 +307,59 @@ export default function FlagBingoPage() {
                         {me.board.map((code, i) => {
                           const marked = marks[i];
                           const inLine = winLine?.includes(i);
+                          const callable =
+                            !marked && drawnSet.has(code) && snap.room.status === "playing";
+                          const name = countryNameForCode(code);
+                          const className = [
+                            "bingo__cell",
+                            marked ? "bingo__cell--marked" : "",
+                            callable ? "bingo__cell--callable" : "",
+                            inLine ? "bingo__cell--line" : "",
+                          ]
+                            .filter(Boolean)
+                            .join(" ");
+                          const body = (
+                            <>
+                              <img
+                                key={flagPathForCode(code)}
+                                src={flagPathForCode(code)}
+                                alt=""
+                              />
+                              <span className="bingo__cell-name">{name}</span>
+                            </>
+                          );
+                          if (callable) {
+                            return (
+                              <button
+                                key={`${code}-${i}`}
+                                type="button"
+                                role="gridcell"
+                                className={className}
+                                title={`Tap to mark ${name}`}
+                                aria-label={`Mark ${name}`}
+                                onClick={() => void handleMarkCell(code)}
+                              >
+                                {body}
+                              </button>
+                            );
+                          }
                           return (
                             <div
                               key={`${code}-${i}`}
                               role="gridcell"
-                              className={[
-                                "bingo__cell",
-                                marked ? "bingo__cell--marked" : "",
-                                inLine ? "bingo__cell--line" : "",
-                              ]
-                                .filter(Boolean)
-                                .join(" ")}
-                              title={countryNameForCode(code)}
+                              className={className}
+                              title={name}
+                              aria-label={marked ? `${name}, marked` : name}
                             >
-                              <img
-                                key={flagPathForCode(code)}
-                                src={flagPathForCode(code)}
-                                alt={countryNameForCode(code)}
-                              />
-                              <span className="bingo__cell-code">{code}</span>
+                              {body}
                             </div>
                           );
                         })}
                       </div>
                     ) : (
-                      <p className="bingo__hint">Dealing your board…</p>
+                      <p className="bingo__hint">
+                        Dealing your board… Tap a flag after it is drawn to mark it.
+                      </p>
                     )}
                   </div>
                   <aside className="bingo__sidebar">
@@ -356,6 +404,7 @@ export default function FlagBingoPage() {
                     {me.board.map((code, i) => {
                       const marked = marks[i];
                       const inLine = winLine?.includes(i);
+                      const name = countryNameForCode(code);
                       return (
                         <div
                           key={`end-${code}-${i}`}
@@ -370,8 +419,9 @@ export default function FlagBingoPage() {
                           <img
                             key={flagPathForCode(code)}
                             src={flagPathForCode(code)}
-                            alt={countryNameForCode(code)}
+                            alt=""
                           />
+                          <span className="bingo__cell-name">{name}</span>
                         </div>
                       );
                     })}
@@ -407,7 +457,7 @@ export default function FlagBingoPage() {
               <li>Each player gets a random board of 25 different country flags.</li>
               <li>Tap <strong>Ready for next flag</strong> when you are set.</li>
               <li>When every player is ready, the system draws one flag from the 195.</li>
-              <li>Matching cells on your board mark automatically.</li>
+              <li>If that flag is on your board, tap its card to mark it.</li>
               <li>First to complete a row, column, or diagonal wins.</li>
             </ol>
           </section>
