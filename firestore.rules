@@ -55,8 +55,11 @@ service cloud.firestore {
 
       match /players/{playerId} {
         allow read: if request.auth != null;
-        // Create own seat; any authed client may update seats (host deal /
-        // shared ready clear / mark). Delete only own seat.
+        // Create own seat; any authed client may update seats (deal / shared
+        // ready clear / mark) and delete abandoned ones (stale-seat pruning).
+        // Update checks only fields that are present: seats written by older
+        // builds lack `marked`/`lastSeen`, and requiring them denied every
+        // join and draw that touched such a seat (owner report 2026-10).
         allow create: if request.auth != null
           && request.auth.uid == playerId
           && request.resource.data.displayName is string
@@ -66,15 +69,13 @@ service cloud.firestore {
           && request.resource.data.marked is list
           && request.resource.data.ready is bool;
         allow update: if request.auth != null
-          && request.resource.data.displayName is string
-          && request.resource.data.displayName.size() <= 48
-          && request.resource.data.board is list
-          && request.resource.data.board.size() <= 25
-          && request.resource.data.marked is list
-          && request.resource.data.marked.size() <= 25
-          && request.resource.data.ready is bool;
-        allow delete: if request.auth != null
-          && request.auth.uid == playerId;
+          && (!('board' in request.resource.data)
+            || (request.resource.data.board is list
+              && request.resource.data.board.size() <= 25))
+          && (!('marked' in request.resource.data)
+            || (request.resource.data.marked is list
+              && request.resource.data.marked.size() <= 25));
+        allow delete: if request.auth != null;
       }
     }
   }

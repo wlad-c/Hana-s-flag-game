@@ -15,6 +15,7 @@ import {
   runTransaction,
   setDoc,
   updateDoc,
+  type Transaction,
   type Unsubscribe,
 } from "firebase/firestore";
 import { auth, db, ensureAnonymousAuth } from "./firebase";
@@ -47,7 +48,24 @@ export type BingoPlayer = {
   marked: string[];
   ready: boolean;
   joinedAt: number;
+  /** Heartbeat timestamp; seats that stop beating are treated as gone. */
+  lastSeen?: number;
 };
+
+export const BINGO_HEARTBEAT_MS = 10_000;
+const STALE_SEAT_MS = 40_000;
+
+/**
+ * A seat counts as present only while its client keeps heartbeating.
+ * Seats written by older builds have no `lastSeen` and are always stale,
+ * so abandoned tabs can never block the "everyone ready" draw.
+ */
+export function isSeatActive(
+  p: Pick<BingoPlayer, "lastSeen"> | undefined,
+  now = Date.now(),
+): boolean {
+  return !!p && typeof p.lastSeen === "number" && p.lastSeen >= now - STALE_SEAT_MS;
+}
 
 export type BingoRoom = {
   code: string;
@@ -336,6 +354,7 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
     marked: [],
     ready: false,
     joinedAt: now,
+    lastSeen: now,
   });
 
   const ensureLocal = () => {
@@ -375,6 +394,7 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
           ...prev,
           displayName: player.displayName,
           avatarId: player.avatarId,
+          lastSeen: now,
           board:
             prev.board.length === 25
               ? prev.board
@@ -409,46 +429,76 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
         }
 
         const room = roomSnap.data() as BingoRoom;
-        if (!Array.isArray(room.poolCodes)) room.poolCodes = [];
-        const existingPlayer = await tx.get(playerRef);
+        const t = Date.now();
+        const roomIds = Array.isArray(room.playerIds) ? room.playerIds : [];
+        const otherIds = roomIds.filter((id) => id !== playerId);
 
-        // All reads before writes (Firestore transaction rule). When joining
-        // mid-game, read other seats so we can clear ready without updating
-        // missing docs (that used to abort the whole join).
-        const otherIds =
-          !existingPlayer.exists() && room.status === "playing"
-            ? room.playerIds.filter((id) => id !== playerId)
-            : [];
+        // All reads before writes (Firestore transaction rule).
+        const existingPlayer = await tx.get(playerRef);
         const otherSnaps = await Promise.all(
           otherIds.map((pid) => tx.get(doc(db, COLLECTION, code, "players", pid))),
         );
+        const activeOthers = otherSnaps.filter(
+          (ps) => ps.exists() && isSeatActive(ps.data() as BingoPlayer, t),
+        );
+        const staleOthers = otherSnaps.filter(
+          (ps) => !activeOthers.includes(ps),
+        );
+        if (activeOthers.length >= MAX_PLAYERS) {
+          throw new Error(`This lobby is full (${MAX_PLAYERS} players max)`);
+        }
 
-        const statusForBoard: BingoRoomStatus =
-          room.status === "playing" ? "playing" : "lobby";
-        const player = buildPlayer(statusForBoard, room.poolCodes);
+        // Nobody else is really here: a match left "playing" by abandoned
+        // tabs can never progress, so start fresh in the lobby.
+        let status: BingoRoomStatus = room.status;
+        let pool = Array.isArray(room.poolCodes) ? room.poolCodes : [];
+        let drawnCodes = Array.isArray(room.drawnCodes) ? room.drawnCodes : [];
+        const resetRoom = activeOthers.length === 0 && status !== "lobby";
+        if (resetRoom) {
+          status = "lobby";
+          pool = [];
+          drawnCodes = [];
+        }
+        const recoverPool = status === "playing" && pool.length === 0;
+        if (recoverPool) pool = selectMatchPool();
 
-        if (!existingPlayer.exists()) {
-          if (room.playerIds.length >= MAX_PLAYERS) {
-            throw new Error(`This lobby is full (${MAX_PLAYERS} players max)`);
-          }
-          tx.set(playerRef, player);
-          tx.update(roomRef, {
-            playerIds: [...room.playerIds, playerId],
-            updatedAt: Date.now(),
-          });
-          for (const ps of otherSnaps) {
-            if (!ps.exists()) continue;
-            tx.update(ps.ref, { ready: false });
-          }
-        } else {
-          const prev = existingPlayer.data() as BingoPlayer;
-          tx.update(playerRef, {
-            displayName: player.displayName,
-            avatarId: player.avatarId,
-            ...(prev.board?.length === 25
-              ? {}
-              : { board: player.board, marked: [], ready: false }),
-          });
+        const prev = existingPlayer.exists()
+          ? (existingPlayer.data() as BingoPlayer)
+          : null;
+        const poolSet = new Set(pool);
+        const keepBoard =
+          !!prev &&
+          status === "playing" &&
+          Array.isArray(prev.board) &&
+          prev.board.length === 25 &&
+          prev.board.every((c) => poolSet.has(c));
+        const wasSeated = !!prev && roomIds.includes(playerId) && isSeatActive(prev, t);
+
+        const fresh = buildPlayer(status === "playing" ? "playing" : "lobby", pool);
+        const player: BingoPlayer = {
+          ...fresh,
+          joinedAt: prev?.joinedAt ?? fresh.joinedAt,
+          board: keepBoard ? prev!.board : fresh.board,
+          marked: keepBoard && Array.isArray(prev!.marked) ? prev!.marked : [],
+          ready: keepBoard && wasSeated ? !!prev!.ready : false,
+          lastSeen: t,
+        };
+        tx.set(playerRef, player);
+
+        const activeIds = activeOthers.map((ps) => ps.id);
+        const playerIds = [...activeIds, playerId];
+        const hostId = activeIds.includes(room.hostId) ? room.hostId : playerIds[0]!;
+        tx.update(roomRef, {
+          playerIds,
+          hostId,
+          status,
+          poolCodes: pool,
+          drawnCodes,
+          ...(resetRoom ? { winnerId: null, winnerName: null } : {}),
+          updatedAt: t,
+        });
+        for (const ps of staleOthers) {
+          if (ps.exists()) tx.delete(ps.ref);
         }
       });
       return { code, playerId, local: false };
@@ -653,26 +703,59 @@ export async function startBingoGame(code: string, playerId: string): Promise<vo
     }
     if (!room.playerIds.includes(playerId)) throw new Error("You are not in this lobby");
     if (room.status !== "lobby") throw new Error("Game already started");
-    if (room.playerIds.length < 1) throw new Error("Need at least one player");
+
+    const t = Date.now();
+    const seats = await readSeats(tx, normalized, room.playerIds);
+    const active = seats.filter(
+      (ps) => ps.exists() && (ps.id === playerId || isSeatActive(ps.data() as BingoPlayer, t)),
+    );
+    if (!active.some((ps) => ps.id === playerId)) throw new Error("You are not in this lobby");
 
     const pool = selectMatchPool();
+    const playerIds = active.map((ps) => ps.id);
     tx.update(roomRef, {
       status: "playing",
       poolCodes: pool,
       drawnCodes: [],
       winnerId: null,
       winnerName: null,
-      updatedAt: Date.now(),
+      playerIds,
+      hostId: playerIds.includes(room.hostId) ? room.hostId : playerId,
+      updatedAt: t,
     });
 
-    for (const pid of room.playerIds) {
-      const pref = doc(db, COLLECTION, normalized, "players", pid);
-      tx.update(pref, {
+    for (const ps of seats) {
+      if (!ps.exists()) continue;
+      if (!active.includes(ps)) {
+        tx.delete(ps.ref);
+        continue;
+      }
+      tx.update(ps.ref, {
         board: generateBingoBoard(pool),
         marked: [],
         ready: false,
+        ...(ps.id === playerId ? { lastSeen: t } : {}),
       });
     }
+  });
+}
+
+function readSeats(tx: Transaction, code: string, ids: readonly string[]) {
+  return Promise.all(ids.map((pid) => tx.get(doc(db, COLLECTION, code, "players", pid))));
+}
+
+/** Keep this seat counted as present; the page calls this on an interval. */
+export async function touchBingoSeat(code: string, playerId: string): Promise<void> {
+  const normalized = normalizeRoomCode(code);
+  if (useLocalStore(normalized)) {
+    mutateLocal(normalized, (s) => {
+      const me = s.players.get(playerId);
+      if (me) s.players.set(playerId, { ...me, lastSeen: Date.now() });
+    });
+    return;
+  }
+  await updateDoc(doc(db, COLLECTION, normalized, "players", playerId), {
+    lastSeen: Date.now(),
   });
 }
 
@@ -703,6 +786,7 @@ export async function resetBingoLobby(code: string, playerId: string): Promise<v
     if (!roomSnap.exists()) throw new Error("Room not found");
     const room = roomSnap.data() as BingoRoom;
     if (!room.playerIds.includes(playerId)) throw new Error("You are not in this lobby");
+    const seats = await readSeats(tx, normalized, room.playerIds);
 
     tx.update(roomRef, {
       status: "lobby",
@@ -710,14 +794,12 @@ export async function resetBingoLobby(code: string, playerId: string): Promise<v
       drawnCodes: [],
       winnerId: null,
       winnerName: null,
+      playerIds: seats.filter((ps) => ps.exists()).map((ps) => ps.id),
       updatedAt: Date.now(),
     });
-    for (const pid of room.playerIds) {
-      tx.update(doc(db, COLLECTION, normalized, "players", pid), {
-        board: [],
-        marked: [],
-        ready: false,
-      });
+    for (const ps of seats) {
+      if (!ps.exists()) continue;
+      tx.update(ps.ref, { board: [], marked: [], ready: false });
     }
   });
 }
@@ -741,7 +823,11 @@ export async function setBingoReady(
       s.players.set(playerId, { ...me, ready });
 
       if (!ready) return;
-      const allReady = s.room.playerIds.every((id) => s.players.get(id)?.ready);
+      const t = Date.now();
+      const allReady = s.room.playerIds.every((id) => {
+        const p = s.players.get(id);
+        return id === playerId || !isSeatActive(p, t) || p?.ready;
+      });
       if (!allReady) return;
 
       const pool =
@@ -762,57 +848,53 @@ export async function setBingoReady(
     return;
   }
 
-  const roomRef = doc(db, COLLECTION, normalized);
   const playerRef = doc(db, COLLECTION, normalized, "players", playerId);
 
-  // Optimistic ready flag first so the lobby updates quickly, then a
-  // transaction that may advance the draw.
-  await updateDoc(playerRef, { ready });
+  // Optimistic ready flag first so the other screens update quickly, then
+  // a transaction that may advance the draw.
+  await updateDoc(playerRef, { ready, lastSeen: Date.now() });
   if (!ready) return;
+  await maybeDrawNext(normalized, playerId);
+}
+
+/**
+ * Draw the next flag once every PRESENT seat is ready. Seats that stopped
+ * heartbeating are ignored, so a closed tab cannot stall the match. On
+ * contention the loser retries, sees the ready flags already cleared by the
+ * winner's draw, and exits without drawing a second flag.
+ */
+export async function maybeDrawNext(code: string, playerId: string): Promise<void> {
+  const normalized = normalizeRoomCode(code);
+  if (useLocalStore(normalized)) return;
+  const roomRef = doc(db, COLLECTION, normalized);
 
   await runTransaction(db, async (tx) => {
     const roomSnap = await tx.get(roomRef);
-    if (!roomSnap.exists()) throw new Error("Room not found");
+    if (!roomSnap.exists()) return;
     const room = roomSnap.data() as BingoRoom;
     if (room.status !== "playing") return;
-    if (!Array.isArray(room.poolCodes)) room.poolCodes = [];
+    const drawn = Array.isArray(room.drawnCodes) ? room.drawnCodes : [];
+    const existingPool = Array.isArray(room.poolCodes) ? room.poolCodes : [];
 
-    const playerSnaps = await Promise.all(
-      room.playerIds.map((pid) => tx.get(doc(db, COLLECTION, normalized, "players", pid))),
+    const t = Date.now();
+    const seats = await readSeats(tx, normalized, room.playerIds);
+    const active = seats.filter(
+      (ps) => ps.exists() && (ps.id === playerId || isSeatActive(ps.data() as BingoPlayer, t)),
     );
-    const players = playerSnaps.map((ps) => {
-      if (!ps.exists()) throw new Error("Player seat missing");
-      return ps.data() as BingoPlayer;
-    });
+    if (active.length === 0) return;
+    if (!active.every((ps) => (ps.data() as BingoPlayer).ready)) return;
 
-    // All seats must already show ready (set by the updateDoc above).
-    // On contention the loser retries, sees ready flags cleared by the
-    // winner's draw, and exits without drawing a second flag.
-    if (!players.every((p) => p.ready)) return;
-
-    const pool =
-      room.poolCodes.length > 0 ? room.poolCodes : selectMatchPool();
-    const next = pickNextDraw(room.drawnCodes, pool);
+    const pool = existingPool.length > 0 ? existingPool : selectMatchPool();
+    const next = pickNextDraw(drawn, pool);
     if (!next) return;
 
     // Draw only — marking and bingo claims are player-driven (educational).
-    // Persist a recovered pool if an older room doc lacked one.
-    tx.update(
-      roomRef,
-      room.poolCodes.length
-        ? {
-            drawnCodes: [...room.drawnCodes, next],
-            updatedAt: Date.now(),
-          }
-        : {
-            drawnCodes: [...room.drawnCodes, next],
-            poolCodes: pool,
-            updatedAt: Date.now(),
-          },
-    );
-    for (const pid of room.playerIds) {
-      tx.update(doc(db, COLLECTION, normalized, "players", pid), { ready: false });
-    }
+    tx.update(roomRef, {
+      drawnCodes: [...drawn, next],
+      poolCodes: pool,
+      updatedAt: t,
+    });
+    for (const ps of active) tx.update(ps.ref, { ready: false });
   });
 }
 
@@ -869,7 +951,7 @@ export async function markBingoCell(
     const marked = me.marked ?? [];
     if (marked.includes(cc)) return;
     const nextMarked = [...marked, cc];
-    tx.update(playerRef, { marked: nextMarked });
+    tx.update(playerRef, { marked: nextMarked, lastSeen: Date.now() });
     if (hasBingo(me.board, nextMarked)) {
       tx.update(roomRef, {
         status: "finished",

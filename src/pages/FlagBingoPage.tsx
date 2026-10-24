@@ -14,13 +14,17 @@ import {
   PUBLIC_BINGO_ROOM,
 } from "../lib/flagBingo";
 import {
+  BINGO_HEARTBEAT_MS,
+  isSeatActive,
   joinOpenBingoLobby,
   leaveBingoRoom,
   markBingoCell,
+  maybeDrawNext,
   resetBingoLobby,
   setBingoReady,
   startBingoGame,
   subscribeBingoRoom,
+  touchBingoSeat,
   type BingoPlayer,
   type BingoRoomSnapshot,
 } from "../lib/bingoRoom";
@@ -54,6 +58,11 @@ export default function FlagBingoPage() {
   const [dismissedWinFor, setDismissedWinFor] = useState<string | null>(null);
 
   const seat = useMemo(() => seatFromProfile(activeProfile), [activeProfile]);
+  /** Bumped to re-join when this device's seat disappears from the lobby. */
+  const [rejoinKey, setRejoinKey] = useState(0);
+  const [now, setNow] = useState(() => Date.now());
+  /** True when this device arrived after the current match's first draw. */
+  const [joinedLate, setJoinedLate] = useState(false);
 
   // Auto-join the shared open lobby — no room code.
   useEffect(() => {
@@ -77,7 +86,39 @@ export default function FlagBingoPage() {
       cancelled = true;
     };
     // Re-join when the active profile name/avatar changes so the seat updates.
-  }, [seat.displayName, seat.avatarId]);
+  }, [seat.displayName, seat.avatarId, rejoinKey]);
+
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(Date.now()), 5_000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  // Heartbeat: other devices only count seats that keep beating, so a closed
+  // tab cannot stall the "everyone ready" draw. Coming back to the tab (iOS
+  // suspends background pages) beats immediately.
+  useEffect(() => {
+    if (!playerId) return;
+    const beat = () => {
+      touchBingoSeat(PUBLIC_BINGO_ROOM, playerId).catch((err: unknown) => {
+        // Seat was removed (left on pagehide, or pruned while suspended).
+        if ((err as { code?: string })?.code === "not-found") {
+          setRejoinKey((k) => k + 1);
+        }
+      });
+    };
+    const onVisible = () => {
+      if (document.visibilityState === "visible") beat();
+    };
+    beat();
+    const id = window.setInterval(beat, BINGO_HEARTBEAT_MS);
+    document.addEventListener("visibilitychange", onVisible);
+    window.addEventListener("pageshow", beat);
+    return () => {
+      window.clearInterval(id);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.removeEventListener("pageshow", beat);
+    };
+  }, [playerId]);
 
   useEffect(() => {
     if (!playerId) return;
@@ -146,8 +187,46 @@ export default function FlagBingoPage() {
     snap?.room.poolCodes?.length && snap.room.poolCodes.length > 0
       ? snap.room.poolCodes.length
       : BINGO_MATCH_POOL_SIZE;
-  const readyCount = snap?.players.filter((p) => p.ready).length ?? 0;
-  const playerCount = snap?.players.length ?? 0;
+  const players = useMemo(
+    () =>
+      snap?.players.filter((p) => p.id === playerId || isSeatActive(p, now)) ?? [],
+    [snap?.players, playerId, now],
+  );
+  const readyCount = players.filter((p) => p.ready).length;
+  const playerCount = players.length;
+  const everyoneReady =
+    snap?.room.status === "playing" && playerCount > 0 && readyCount === playerCount;
+
+  // The draw normally happens inside the last player's ready transaction.
+  // If a seat went stale while others waited, nobody would trigger it, so
+  // any ready client nudges the draw once everyone present is ready.
+  useEffect(() => {
+    if (!playerId || !everyoneReady || snap?.local) return;
+    maybeDrawNext(PUBLIC_BINGO_ROOM, playerId).catch(() => {});
+  }, [playerId, everyoneReady, snap?.local, now]);
+
+  // Seat missing from a live snapshot (another device pruned it while this
+  // one was suspended): re-join instead of showing a board-less screen.
+  const seatMissing = !!snap && !!playerId && !joining && !me;
+  useEffect(() => {
+    if (!seatMissing) return;
+    const id = window.setTimeout(() => setRejoinKey((k) => k + 1), 2_500);
+    return () => window.clearTimeout(id);
+  }, [seatMissing]);
+
+  const roomStatus = snap?.room.status;
+  const drawnCount = snap?.room.drawnCodes.length ?? 0;
+  const hasSnap = !!snap;
+  useEffect(() => {
+    if (!hasSnap) return;
+    if (roomStatus !== "playing") setJoinedLate(false);
+  }, [hasSnap, roomStatus]);
+  const [lateChecked, setLateChecked] = useState<string | null>(null);
+  useEffect(() => {
+    if (!hasSnap || !playerId || lateChecked === playerId) return;
+    setLateChecked(playerId);
+    if (roomStatus === "playing" && drawnCount > 0) setJoinedLate(true);
+  }, [hasSnap, playerId, lateChecked, roomStatus, drawnCount]);
   /** Flags already drawn that are on this board and not yet marked (catch-up). */
   const catchUpCodes = useMemo(() => {
     if (!me || me.board.length !== BINGO_CELLS) return [] as string[];
@@ -155,6 +234,7 @@ export default function FlagBingoPage() {
     return me.board.filter((code) => drawnSet.has(code) && !marked.has(code));
   }, [me, myMarked, drawnSet]);
   const joinedMidGame =
+    joinedLate &&
     snap?.room.status === "playing" &&
     (snap.room.drawnCodes.length > 0) &&
     !!me &&
@@ -293,7 +373,7 @@ export default function FlagBingoPage() {
                 </div>
               </div>
               <ul className="bingo__players">
-                {snap.players.map((p) => (
+                {players.map((p) => (
                   <li key={p.id} className="bingo__player">
                     <MascotAvatar avatarId={p.avatarId} size={36} alt="" />
                     <span className="bingo__player-name">{p.displayName}</span>
