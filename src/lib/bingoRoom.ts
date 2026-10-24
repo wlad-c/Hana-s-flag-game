@@ -332,10 +332,20 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
       if (s.room.status === "finished") {
         player.board = [];
       }
-      if (!s.players.has(playerId)) {
+      const isNew = !s.players.has(playerId);
+      if (isNew) {
         s.players.set(playerId, player);
         s.room.playerIds = [...s.room.playerIds, playerId];
         if (!s.room.hostId) s.room.hostId = playerId;
+        // Mid-game join: clear ready so the next draw waits for everyone,
+        // including the newcomer who still needs to catch up on drawn flags.
+        if (s.room.status === "playing") {
+          for (const id of s.room.playerIds) {
+            const p = s.players.get(id);
+            if (!p) continue;
+            s.players.set(id, { ...p, ready: false });
+          }
+        }
       } else {
         const prev = s.players.get(playerId)!;
         s.players.set(playerId, {
@@ -385,6 +395,15 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
           playerIds: [...room.playerIds, playerId],
           updatedAt: Date.now(),
         });
+        // Mid-game join: reset ready on every seat so the next draw waits
+        // for the newcomer too. They share the same drawnCodes / poolCodes.
+        if (room.status === "playing") {
+          for (const pid of room.playerIds) {
+            tx.update(doc(db, COLLECTION, code, "players", pid), {
+              ready: false,
+            });
+          }
+        }
       } else {
         const prev = existingPlayer.data() as BingoPlayer;
         tx.update(playerRef, {

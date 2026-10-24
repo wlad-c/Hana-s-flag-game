@@ -45,6 +45,13 @@ export default function FlagBingoPage() {
   const [error, setError] = useState<string | null>(null);
   const [joining, setJoining] = useState(true);
   const [inspectCode, setInspectCode] = useState<string | null>(null);
+  /** Interruptive win banner — shown to every seated player when someone wins. */
+  const [winNotice, setWinNotice] = useState<{
+    winnerId: string;
+    winnerName: string;
+  } | null>(null);
+  /** Once dismissed for this winner, don't re-open until the next match. */
+  const [dismissedWinFor, setDismissedWinFor] = useState<string | null>(null);
 
   const seat = useMemo(() => seatFromProfile(activeProfile), [activeProfile]);
 
@@ -91,15 +98,36 @@ export default function FlagBingoPage() {
     };
   }, [playerId]);
 
-  // Close the inspect modal on Escape.
+  // Close the inspect modal on Escape (not while the win notice is up).
   useEffect(() => {
-    if (!inspectCode) return;
+    if (!inspectCode || winNotice) return;
     const onKey = (ev: KeyboardEvent) => {
       if (ev.key === "Escape") setInspectCode(null);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [inspectCode]);
+  }, [inspectCode, winNotice]);
+
+  // Every seated client gets a win notice when the match finishes.
+  useEffect(() => {
+    if (!snap) return;
+    if (snap.room.status === "finished" && snap.room.winnerId) {
+      if (dismissedWinFor === snap.room.winnerId) return;
+      setWinNotice({
+        winnerId: snap.room.winnerId,
+        winnerName: snap.room.winnerName?.trim() || "Someone",
+      });
+      setInspectCode(null);
+    } else {
+      setWinNotice(null);
+      if (snap.room.status !== "finished") setDismissedWinFor(null);
+    }
+  }, [
+    snap?.room.status,
+    snap?.room.winnerId,
+    snap?.room.winnerName,
+    dismissedWinFor,
+  ]);
 
   const me: BingoPlayer | undefined = snap?.players.find((p) => p.id === playerId);
   const lastDrawn = snap?.room.drawnCodes[snap.room.drawnCodes.length - 1] ?? null;
@@ -117,6 +145,17 @@ export default function FlagBingoPage() {
       : BINGO_MATCH_POOL_SIZE;
   const readyCount = snap?.players.filter((p) => p.ready).length ?? 0;
   const playerCount = snap?.players.length ?? 0;
+  /** Flags already drawn that are on this board and not yet marked (catch-up). */
+  const catchUpCodes = useMemo(() => {
+    if (!me || me.board.length !== BINGO_CELLS) return [] as string[];
+    const marked = new Set(myMarked);
+    return me.board.filter((code) => drawnSet.has(code) && !marked.has(code));
+  }, [me, myMarked, drawnSet]);
+  const joinedMidGame =
+    snap?.room.status === "playing" &&
+    (snap.room.drawnCodes.length > 0) &&
+    !!me &&
+    me.board.length === BINGO_CELLS;
 
   const handleStart = useCallback(async () => {
     if (!playerId) return;
@@ -274,6 +313,37 @@ export default function FlagBingoPage() {
 
             {snap.room.status === "playing" && (
               <>
+                {joinedMidGame && (
+                  <section
+                    className="bingo__panel bingo__catchup"
+                    aria-live="polite"
+                  >
+                    <h2 className="bingo__panel-title">Joined mid-game</h2>
+                    <p className="bingo__catchup-text">
+                      {snap.room.drawnCodes.length} flag
+                      {snap.room.drawnCodes.length === 1 ? "" : "s"} already
+                      drawn — they are listed under <strong>Drawn so far</strong>
+                      {catchUpCodes.length > 0 ? (
+                        <>
+                          . You have{" "}
+                          <strong>
+                            {catchUpCodes.length} matching flag
+                            {catchUpCodes.length === 1 ? "" : "s"}
+                          </strong>{" "}
+                          on your board (highlighted) — tap each to mark it and
+                          catch up, just like players who were here from the
+                          start.
+                        </>
+                      ) : (
+                        <>
+                          . None of those are on your board yet — keep playing;
+                          new draws use the same match pool.
+                        </>
+                      )}
+                    </p>
+                  </section>
+                )}
+
                 <section className="bingo__panel">
                   <div className="bingo__draw">
                     {lastDrawn ? (
@@ -395,19 +465,41 @@ export default function FlagBingoPage() {
                     )}
                   </div>
                   <aside className="bingo__sidebar">
-                    <h2 className="bingo__panel-title">Drawn so far</h2>
+                    <h2 className="bingo__panel-title">
+                      Drawn so far ({snap.room.drawnCodes.length})
+                    </h2>
+                    <p className="bingo__hint" style={{ marginTop: 0 }}>
+                      Tap any flag to view it larger. Mid-game joiners see the
+                      full list from this match.
+                    </p>
                     {snap.room.drawnCodes.length === 0 ? (
                       <p className="bingo__hint">None yet</p>
                     ) : (
                       <ul className="bingo__history">
                         {[...snap.room.drawnCodes].reverse().map((code) => {
                           const name = countryNameForCode(code);
+                          const onMyBoard = !!me?.board.includes(code);
+                          const marked = myMarked.includes(code);
                           return (
                             <li key={code}>
                               <button
                                 type="button"
-                                className="bingo__history-item"
-                                title={`View ${name}`}
+                                className={[
+                                  "bingo__history-item",
+                                  onMyBoard && !marked
+                                    ? "bingo__history-item--mine"
+                                    : "",
+                                  marked ? "bingo__history-item--marked" : "",
+                                ]
+                                  .filter(Boolean)
+                                  .join(" ")}
+                                title={
+                                  marked
+                                    ? `${name} (marked on your board)`
+                                    : onMyBoard
+                                      ? `${name} (on your board — tap the board cell to mark)`
+                                      : `View ${name}`
+                                }
                                 aria-label={`View larger flag of ${name}`}
                                 onClick={() => setInspectCode(code)}
                               >
@@ -433,7 +525,7 @@ export default function FlagBingoPage() {
                 <p>
                   {snap.room.winnerId === playerId
                     ? "You won!"
-                    : `${snap.room.winnerName ?? "Someone"} completed a line first.`}
+                    : `${snap.room.winnerName ?? "Someone"} got Bingo!`}
                 </p>
                 {me?.board.length === BINGO_CELLS && (
                   <div
@@ -525,7 +617,7 @@ export default function FlagBingoPage() {
         )}
       </div>
 
-      {inspectCode && (
+      {inspectCode && !winNotice && (
         <div
           className="bingo__modal-backdrop"
           role="presentation"
@@ -554,6 +646,55 @@ export default function FlagBingoPage() {
             >
               Close
             </button>
+          </div>
+        </div>
+      )}
+
+      {winNotice && (
+        <div
+          className="bingo__modal-backdrop bingo__modal-backdrop--win"
+          role="presentation"
+        >
+          <div
+            className="bingo__modal bingo__modal--win"
+            role="alertdialog"
+            aria-modal="true"
+            aria-labelledby="bingo-win-title"
+            aria-describedby="bingo-win-desc"
+          >
+            <p className="bingo__win-kicker">Game over</p>
+            <h2 id="bingo-win-title" className="bingo__modal-name">
+              Bingo!
+            </h2>
+            <p id="bingo-win-desc" className="bingo__win-notice-text">
+              {winNotice.winnerId === playerId
+                ? "You completed a line first — you win!"
+                : `${winNotice.winnerName} completed a line first and wins this match.`}
+            </p>
+            <div className="bingo__actions" style={{ justifyContent: "center" }}>
+              <button
+                type="button"
+                className="bingo__btn bingo__btn--lime"
+                disabled={busy}
+                onClick={() => {
+                  setDismissedWinFor(winNotice.winnerId);
+                  setWinNotice(null);
+                  void handlePlayAgain();
+                }}
+              >
+                Play again
+              </button>
+              <button
+                type="button"
+                className="bingo__btn bingo__btn--ghost"
+                onClick={() => {
+                  setDismissedWinFor(winNotice.winnerId);
+                  setWinNotice(null);
+                }}
+              >
+                Continue
+              </button>
+            </div>
           </div>
         </div>
       )}
