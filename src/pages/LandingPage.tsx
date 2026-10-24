@@ -225,8 +225,7 @@ export default function LandingPage() {
               Multiplayer
             </h2>
             <p className="sticker__multiplayer-lede">
-              Play live with anyone on the site — create a room, share the code,
-              and go.
+              Play live with anyone on the site — open Flag Bingo and you are in.
             </p>
           </div>
           <button
