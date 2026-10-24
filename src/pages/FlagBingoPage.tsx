@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import { MascotAvatar } from "../components/MascotAvatar";
 import { useProfile } from "../context/ProfileContext";
@@ -233,6 +240,97 @@ export default function FlagBingoPage() {
     (snap.room.drawnCodes.length > 0) &&
     !!me &&
     me.board.length === BINGO_CELLS;
+  const playing = snap?.room.status === "playing";
+  const boardRef = useRef<HTMLDivElement | null>(null);
+  const stageRef = useRef<HTMLElement | null>(null);
+
+  // Pin a play-stage to the space above the bottom nav, then shrink the
+  // 5×5 so every row and column is visible without scrolling.
+  useLayoutEffect(() => {
+    const stage = stageRef.current;
+    const el = boardRef.current;
+    if (!stage || !el || !playing || me?.board.length !== BINGO_CELLS) {
+      if (el) {
+        el.style.width = "";
+        el.style.maxWidth = "";
+      }
+      if (stage) stage.style.height = "";
+      return;
+    }
+
+    let scheduled = false;
+    const fit = () => {
+      window.scrollTo(0, 0);
+      // Reset before measuring so a prior shrink cannot collapse parent width.
+      el.style.width = "";
+      el.style.maxWidth = "";
+
+      const bottomNav = document.querySelector(".bottom-nav");
+      const bottom =
+        bottomNav?.getBoundingClientRect().top ??
+        (window.visualViewport?.height ?? window.innerHeight);
+      const stageTop = stage.getBoundingClientRect().top;
+      const stageW = stage.clientWidth;
+      if (stageW < 120) return;
+      const stageH = Math.max(180, bottom - stageTop - 4);
+      stage.style.height = `${stageH}px`;
+
+      const chrome = stage.querySelector(".bingo__play-chrome");
+      const chromeH = chrome?.getBoundingClientRect().height ?? 0;
+      const title = stage.querySelector(".bingo__board-main > .bingo__panel-title");
+      const titleH = title instanceof HTMLElement ? title.offsetHeight + 4 : 0;
+      const avail = Math.max(120, stageH - chromeH - titleH - 6);
+
+      el.style.width = `${stageW}px`;
+      el.style.maxWidth = "none";
+      if (el.getBoundingClientRect().height <= avail) {
+        el.style.width = "";
+        el.style.maxWidth = "";
+        return;
+      }
+      let lo = Math.min(160, stageW);
+      let hi = stageW;
+      let best = lo;
+      while (lo <= hi) {
+        const mid = Math.round((lo + hi) / 2);
+        el.style.width = `${mid}px`;
+        if (el.getBoundingClientRect().height <= avail) {
+          best = mid;
+          lo = mid + 1;
+        } else {
+          hi = mid - 1;
+        }
+      }
+      el.style.width = `${best}px`;
+      el.style.maxWidth = `${best}px`;
+    };
+    const requestFit = () => {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(() => {
+        scheduled = false;
+        fit();
+      });
+    };
+
+    requestFit();
+    window.addEventListener("resize", requestFit);
+    window.visualViewport?.addEventListener("resize", requestFit);
+    return () => {
+      window.removeEventListener("resize", requestFit);
+      window.visualViewport?.removeEventListener("resize", requestFit);
+      stage.style.height = "";
+      el.style.width = "";
+      el.style.maxWidth = "";
+    };
+  }, [
+    playing,
+    me?.board.length,
+    playerCount,
+    joinedMidGame,
+    snap?.room.drawnCodes.length,
+    lastDrawn,
+  ]);
 
   const handleStart = useCallback(async () => {
     if (!playerId) return;
@@ -300,21 +398,23 @@ export default function FlagBingoPage() {
   );
 
   return (
-    <div className="bingo">
+    <div className={playing ? "bingo bingo--playing" : "bingo"}>
       <div className="bingo__shell">
         <header className="bingo__header">
           <div>
             <h1 className="bingo__title">
               Flag <span>Bingo</span>
             </h1>
-            <p className="bingo__lede">
-              Open lobby — everyone who opens this page plays together. Each
-              match uses {BINGO_MATCH_POOL_SIZE} flags picked at random from
-              all {BINGO_UN_POOL_SIZE} UN countries; every board uses only that
-              match&apos;s pool. When everyone is ready, one flag is drawn —
-              tap matching flags on your board to mark them. First to five in a
-              row wins.
-            </p>
+            {!playing && (
+              <p className="bingo__lede">
+                Open lobby — everyone who opens this page plays together. Each
+                match uses {BINGO_MATCH_POOL_SIZE} flags picked at random from
+                all {BINGO_UN_POOL_SIZE} UN countries; every board uses only that
+                match&apos;s pool. When everyone is ready, one flag is drawn —
+                tap matching flags on your board to mark them. First to five in a
+                row wins.
+              </p>
+            )}
           </div>
           <button
             type="button"
@@ -333,101 +433,86 @@ export default function FlagBingoPage() {
 
         {snap && (
           <>
-            <section className="bingo__panel" aria-labelledby="bingo-players-title">
-              <div className="bingo__roombar">
-                <div>
-                  <h2 id="bingo-players-title" className="bingo__panel-title">
-                    Players here ({playerCount})
-                  </h2>
-                  <p
-                    className={
-                      snap.local
-                        ? "bingo__hint bingo__conn bingo__conn--local"
-                        : "bingo__hint bingo__conn bingo__conn--online"
-                    }
-                    style={{ marginTop: 0 }}
-                    role={snap.local ? "status" : undefined}
-                  >
-                    Playing as <strong>{seat.displayName}</strong>
-                    {activeProfile ? "" : " (pick a profile below anytime)"}.{" "}
-                    {snap.local ? (
-                      <>
-                        <strong>Offline / local lobby</strong> — other phones
-                        cannot join this match. Refresh the page to reconnect to
-                        the shared online lobby.
-                      </>
-                    ) : (
-                      <>
-                        <strong>Online shared lobby</strong> — everyone who opens
-                        Flag Bingo on any device joins this same match (
-                        {playerCount} player{playerCount === 1 ? "" : "s"} here).
-                      </>
-                    )}
-                  </p>
-                </div>
-              </div>
-              <ul className="bingo__players">
-                {players.map((p) => (
-                  <li key={p.id} className="bingo__player">
-                    <MascotAvatar avatarId={p.avatarId} size={36} alt="" />
-                    <span className="bingo__player-name">{p.displayName}</span>
-                    {p.id === playerId && (
-                      <span className="bingo__player-tag bingo__player-tag--you">You</span>
-                    )}
-                    {snap.room.status === "playing" && (
-                      <span
-                        className={
-                          p.ready
-                            ? "bingo__player-tag bingo__player-tag--ready"
-                            : "bingo__player-tag"
-                        }
-                      >
-                        {p.ready ? "Ready" : "Waiting"}
-                      </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-
-              {snap.room.status === "lobby" && (
-                <div className="bingo__actions" style={{ marginTop: "1rem" }}>
-                  <button
-                    type="button"
-                    className="bingo__btn bingo__btn--lime"
-                    disabled={busy || playerCount < 1 || !playerId}
-                    onClick={handleStart}
-                  >
-                    Start game
-                  </button>
-                  <p className="bingo__hint" style={{ margin: 0, alignSelf: "center" }}>
-                    Anyone here can start when you are ready.
-                  </p>
-                </div>
-              )}
-            </section>
-
-            {snap.room.status === "playing" && (
-              <>
-                {joinedMidGame && (
-                  <section
-                    className="bingo__panel bingo__catchup"
-                    aria-live="polite"
-                  >
-                    <h2 className="bingo__panel-title">Joined mid-game</h2>
-                    <p className="bingo__catchup-text">
-                      {snap.room.drawnCodes.length} flag
-                      {snap.room.drawnCodes.length === 1 ? "" : "s"} already
-                      drawn — they are listed under <strong>Drawn so far</strong>
-                      . Scan your board and tap any that match to mark them —
-                      same as players who were here from the start.
+            {!playing && (
+              <section className="bingo__panel" aria-labelledby="bingo-players-title">
+                <div className="bingo__roombar">
+                  <div>
+                    <h2 id="bingo-players-title" className="bingo__panel-title">
+                      Players here ({playerCount})
+                    </h2>
+                    <p
+                      className={
+                        snap.local
+                          ? "bingo__hint bingo__conn bingo__conn--local"
+                          : "bingo__hint bingo__conn bingo__conn--online"
+                      }
+                      style={{ marginTop: 0 }}
+                      role={snap.local ? "status" : undefined}
+                    >
+                      Playing as <strong>{seat.displayName}</strong>
+                      {activeProfile ? "" : " (pick a profile below anytime)"}.{" "}
+                      {snap.local ? (
+                        <>
+                          <strong>Offline / local lobby</strong> — other phones
+                          cannot join this match. Refresh the page to reconnect to
+                          the shared online lobby.
+                        </>
+                      ) : (
+                        <>
+                          <strong>Online shared lobby</strong> — everyone who opens
+                          Flag Bingo on any device joins this same match (
+                          {playerCount} player{playerCount === 1 ? "" : "s"} here).
+                        </>
+                      )}
                     </p>
-                  </section>
-                )}
+                  </div>
+                </div>
+                <ul className="bingo__players">
+                  {players.map((p) => (
+                    <li key={p.id} className="bingo__player">
+                      <MascotAvatar avatarId={p.avatarId} size={36} alt="" />
+                      <span className="bingo__player-name">{p.displayName}</span>
+                      {p.id === playerId && (
+                        <span className="bingo__player-tag bingo__player-tag--you">You</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
 
-                <section className="bingo__panel">
-                  <div className="bingo__draw">
-                    {lastDrawn ? (
-                      <>
+                {snap.room.status === "lobby" && (
+                  <div className="bingo__actions" style={{ marginTop: "1rem" }}>
+                    <button
+                      type="button"
+                      className="bingo__btn bingo__btn--lime"
+                      disabled={busy || playerCount < 1 || !playerId}
+                      onClick={handleStart}
+                    >
+                      Start game
+                    </button>
+                    <p className="bingo__hint" style={{ margin: 0, alignSelf: "center" }}>
+                      Anyone here can start when you are ready.
+                    </p>
+                  </div>
+                )}
+              </section>
+            )}
+
+            {playing && (
+              <>
+                <section
+                  ref={stageRef}
+                  className="bingo__play-stage bingo__board-wrap"
+                >
+                  <div className="bingo__play-chrome">
+                    {joinedMidGame && (
+                      <p className="bingo__catchup-inline" aria-live="polite">
+                        Joined mid-game — {snap.room.drawnCodes.length} flag
+                        {snap.room.drawnCodes.length === 1 ? "" : "s"} already
+                        drawn. Tap matches on your board.
+                      </p>
+                    )}
+                    <div className="bingo__draw-row">
+                      {lastDrawn ? (
                         <button
                           type="button"
                           className="bingo__draw-flag-btn"
@@ -441,44 +526,67 @@ export default function FlagBingoPage() {
                             alt={`Flag of ${countryNameForCode(lastDrawn)}`}
                           />
                         </button>
-                        <div className="bingo__draw-meta">
-                          <p className="bingo__draw-label">Just drawn</p>
-                          <p className="bingo__draw-name">{countryNameForCode(lastDrawn)}</p>
-                          <p className="bingo__draw-count">
-                            Draw {snap.room.drawnCodes.length} of {matchPoolSize}
-                            {" · "}
-                            Ready {readyCount}/{playerCount}
-                          </p>
-                        </div>
-                      </>
-                    ) : (
+                      ) : null}
                       <div className="bingo__draw-meta">
-                        <p className="bingo__draw-label">First draw</p>
-                        <p className="bingo__draw-name">Everyone ready?</p>
-                        <p className="bingo__draw-count">
-                          Ready {readyCount}/{playerCount} — the first flag appears when
-                          all players tap ready. This match uses {matchPoolSize} flags.
-                        </p>
+                        {lastDrawn ? (
+                          <>
+                            <p className="bingo__draw-label">Just drawn</p>
+                            <p className="bingo__draw-name">
+                              {countryNameForCode(lastDrawn)}
+                            </p>
+                            <p className="bingo__draw-count">
+                              Draw {snap.room.drawnCodes.length} of {matchPoolSize}
+                              {" · "}
+                              Ready {readyCount}/{playerCount}
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <p className="bingo__draw-label">First draw</p>
+                            <p className="bingo__draw-name">Everyone ready?</p>
+                            <p className="bingo__draw-count">
+                              Ready {readyCount}/{playerCount}
+                            </p>
+                          </>
+                        )}
                       </div>
-                    )}
+                      <button
+                        type="button"
+                        className="bingo__btn bingo__btn--coral bingo__ready-btn"
+                        disabled={busy || !!me?.ready || !me}
+                        onClick={handleReady}
+                      >
+                        {me?.ready ? "Waiting…" : "Ready"}
+                      </button>
+                    </div>
+                    <ul className="bingo__players bingo__players--compact">
+                      {players.map((p) => (
+                        <li key={p.id} className="bingo__player">
+                          <MascotAvatar avatarId={p.avatarId} size={24} alt="" />
+                          <span className="bingo__player-name">{p.displayName}</span>
+                          <span
+                            className={
+                              p.ready
+                                ? "bingo__player-tag bingo__player-tag--ready"
+                                : "bingo__player-tag"
+                            }
+                          >
+                            {p.ready ? "Ready" : "…"}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="bingo__actions" style={{ marginTop: "1rem" }}>
-                    <button
-                      type="button"
-                      className="bingo__btn bingo__btn--coral"
-                      disabled={busy || !!me?.ready || !me}
-                      onClick={handleReady}
-                    >
-                      {me?.ready ? "Waiting for others…" : "Ready for next flag"}
-                    </button>
-                  </div>
-                </section>
 
-                <section className="bingo__board-wrap">
                   <div className="bingo__board-main">
                     <h2 className="bingo__panel-title">Your board</h2>
                     {me?.board.length === BINGO_CELLS ? (
-                      <div className="bingo__board" role="grid" aria-label="Your bingo board">
+                      <div
+                        ref={boardRef}
+                        className="bingo__board"
+                        role="grid"
+                        aria-label="Your bingo board"
+                      >
                         {me.board.map((code, i) => {
                           const marked = marks[i];
                           const inLine = winLine?.includes(i);
@@ -546,51 +654,52 @@ export default function FlagBingoPage() {
                       </p>
                     )}
                   </div>
-                  <aside className="bingo__sidebar" aria-labelledby="bingo-drawn-title">
-                    <h2 id="bingo-drawn-title" className="bingo__panel-title">
-                      Drawn so far ({snap.room.drawnCodes.length})
-                    </h2>
-                    <p className="bingo__hint" style={{ marginTop: 0 }}>
-                      Tap any flag to view it larger. Mid-game joiners see the
-                      full list from this match.
-                    </p>
-                    {snap.room.drawnCodes.length === 0 ? (
-                      <p className="bingo__hint">None yet</p>
-                    ) : (
-                      <ul className="bingo__history">
-                        {[...snap.room.drawnCodes].reverse().map((code) => {
-                          const name = countryNameForCode(code);
-                          const marked = myMarked.includes(code);
-                          return (
-                            <li key={code}>
-                              <button
-                                type="button"
-                                className={[
-                                  "bingo__history-item",
-                                  marked ? "bingo__history-item--marked" : "",
-                                ]
-                                  .filter(Boolean)
-                                  .join(" ")}
-                                title={`View ${name}`}
-                                aria-label={`View larger flag of ${name}`}
-                                onClick={() => setInspectCode(code)}
-                              >
-                                <span className="bingo__history-flag">
-                                  <img
-                                    key={flagPathForCode(code)}
-                                    src={flagPathForCode(code)}
-                                    alt=""
-                                  />
-                                </span>
-                                <span className="bingo__history-name">{name}</span>
-                              </button>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    )}
-                  </aside>
                 </section>
+
+                <aside className="bingo__sidebar" aria-labelledby="bingo-drawn-title">
+                  <h2 id="bingo-drawn-title" className="bingo__panel-title">
+                    Drawn so far ({snap.room.drawnCodes.length})
+                  </h2>
+                  <p className="bingo__hint" style={{ marginTop: 0 }}>
+                    Tap any flag to view it larger. Mid-game joiners see the
+                    full list from this match.
+                  </p>
+                  {snap.room.drawnCodes.length === 0 ? (
+                    <p className="bingo__hint">None yet</p>
+                  ) : (
+                    <ul className="bingo__history">
+                      {[...snap.room.drawnCodes].reverse().map((code) => {
+                        const name = countryNameForCode(code);
+                        const marked = myMarked.includes(code);
+                        return (
+                          <li key={code}>
+                            <button
+                              type="button"
+                              className={[
+                                "bingo__history-item",
+                                marked ? "bingo__history-item--marked" : "",
+                              ]
+                                .filter(Boolean)
+                                .join(" ")}
+                              title={`View ${name}`}
+                              aria-label={`View larger flag of ${name}`}
+                              onClick={() => setInspectCode(code)}
+                            >
+                              <span className="bingo__history-flag">
+                                <img
+                                  key={flagPathForCode(code)}
+                                  src={flagPathForCode(code)}
+                                  alt=""
+                                />
+                              </span>
+                              <span className="bingo__history-name">{name}</span>
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </aside>
               </>
             )}
 
