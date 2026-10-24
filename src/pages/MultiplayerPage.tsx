@@ -17,8 +17,8 @@ export default function MultiplayerPage() {
             Play <span>together</span>
           </h1>
           <p className="multiplayer__lede">
-            Online flag games anyone on the site can join. Create a room, share
-            the code, and play in real time — no account required.
+            Online flag games anyone on the site can join. Open a game and you
+            are in the shared lobby — no room codes, no account required.
           </p>
         </div>
 

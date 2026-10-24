@@ -91,6 +91,13 @@ export function hasBingo(board: readonly string[], drawnCodes: readonly string[]
   return findBingoLine(board, drawnCodes) !== null;
 }
 
+/**
+ * Single open lobby everyone joins when they open Flag Bingo — no room
+ * codes, no create/join step. Kept as a 6-char id so it fits the existing
+ * Firestore document id shape.
+ */
+export const PUBLIC_BINGO_ROOM = "PUBLIC";
+
 /** Short room codes: 6 chars, unambiguous alphabet (no 0/O/1/I). */
 const ROOM_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 

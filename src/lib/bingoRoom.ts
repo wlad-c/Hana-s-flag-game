@@ -25,8 +25,11 @@ import {
   isValidRoomCode,
   normalizeRoomCode,
   pickNextDraw,
+  PUBLIC_BINGO_ROOM,
 } from "./flagBingo";
 import { DEFAULT_AVATAR_ID } from "./avatars";
+
+export { PUBLIC_BINGO_ROOM };
 
 export type BingoRoomStatus = "lobby" | "playing" | "finished";
 
@@ -65,7 +68,8 @@ export type BingoRoomSnapshot = {
 };
 
 const COLLECTION = "bingoRooms";
-const MAX_PLAYERS = 8;
+/** Open public lobby — anyone on the site can sit here. */
+const MAX_PLAYERS = 32;
 
 // ── Local (BroadcastChannel) fallback ──────────────────────────────────
 
@@ -276,11 +280,139 @@ export async function createBingoRoom(seat: BingoSeat): Promise<{
   throw new Error("Could not allocate a free room code — try again");
 }
 
+/**
+ * Open Flag Bingo: join the single shared lobby (creating it if needed).
+ * No room code — everyone who opens the section lands here.
+ */
+export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
+  code: string;
+  playerId: string;
+  local: boolean;
+}> {
+  const code = PUBLIC_BINGO_ROOM;
+  const { id: playerId, local } = await resolvePlayerId();
+  const now = Date.now();
+
+  const buildPlayer = (status: BingoRoomStatus): BingoPlayer => ({
+    id: playerId,
+    displayName: seat.displayName.slice(0, 48) || "Player",
+    avatarId: seat.avatarId || DEFAULT_AVATAR_ID,
+    // Mid-game joiners get a board immediately so already-drawn flags mark.
+    board: status === "playing" ? generateBingoBoard() : [],
+    ready: false,
+    joinedAt: now,
+  });
+
+  const ensureLocal = () => {
+    if (!localRooms.has(code)) {
+      const room: BingoRoom = {
+        code,
+        status: "lobby",
+        hostId: playerId,
+        playerIds: [],
+        drawnCodes: [],
+        winnerId: null,
+        winnerName: null,
+        createdAt: now,
+        updatedAt: now,
+      };
+      localRooms.set(code, { room, players: new Map() });
+      getLocalChannel();
+    }
+    mutateLocal(code, (s) => {
+      if (!s.players.has(playerId) && s.room.playerIds.length >= MAX_PLAYERS) {
+        throw new Error(`This lobby is full (${MAX_PLAYERS} players max)`);
+      }
+      const player = buildPlayer(s.room.status === "finished" ? "lobby" : s.room.status);
+      // Finished open lobby: late arrivals wait for the next round.
+      if (s.room.status === "finished") {
+        player.board = [];
+      }
+      if (!s.players.has(playerId)) {
+        s.players.set(playerId, player);
+        s.room.playerIds = [...s.room.playerIds, playerId];
+        if (!s.room.hostId) s.room.hostId = playerId;
+      } else {
+        const prev = s.players.get(playerId)!;
+        s.players.set(playerId, {
+          ...prev,
+          displayName: player.displayName,
+          avatarId: player.avatarId,
+          board:
+            prev.board.length === 25
+              ? prev.board
+              : player.board,
+        });
+      }
+    });
+    broadcastLocal(code);
+    return { code, playerId, local: true as const };
+  };
+
+  if (local) return ensureLocal();
+
+  try {
+    const roomRef = doc(db, COLLECTION, code);
+    await runTransaction(db, async (tx) => {
+      const roomSnap = await tx.get(roomRef);
+      const playerRef = doc(db, COLLECTION, code, "players", playerId);
+
+      if (!roomSnap.exists()) {
+        const room: BingoRoom = {
+          code,
+          status: "lobby",
+          hostId: playerId,
+          playerIds: [playerId],
+          drawnCodes: [],
+          winnerId: null,
+          winnerName: null,
+          createdAt: now,
+          updatedAt: now,
+        };
+        tx.set(roomRef, room);
+        tx.set(playerRef, buildPlayer("lobby"));
+        return;
+      }
+
+      const room = roomSnap.data() as BingoRoom;
+      const existingPlayer = await tx.get(playerRef);
+      const statusForBoard: BingoRoomStatus =
+        room.status === "playing" ? "playing" : "lobby";
+      const player = buildPlayer(statusForBoard);
+
+      if (!existingPlayer.exists()) {
+        if (room.playerIds.length >= MAX_PLAYERS) {
+          throw new Error(`This lobby is full (${MAX_PLAYERS} players max)`);
+        }
+        tx.set(playerRef, player);
+        tx.update(roomRef, {
+          playerIds: [...room.playerIds, playerId],
+          updatedAt: Date.now(),
+        });
+      } else {
+        const prev = existingPlayer.data() as BingoPlayer;
+        tx.update(playerRef, {
+          displayName: player.displayName,
+          avatarId: player.avatarId,
+          ...(prev.board?.length === 25
+            ? {}
+            : { board: player.board, ready: false }),
+        });
+      }
+    });
+    return { code, playerId, local: false };
+  } catch (err) {
+    console.warn("Firestore open bingo lobby failed; using local lobby.", err);
+    return ensureLocal();
+  }
+}
+
 export async function joinBingoRoom(
   rawCode: string,
   seat: BingoSeat,
 ): Promise<{ code: string; playerId: string; local: boolean }> {
   const code = normalizeRoomCode(rawCode);
+  if (code === PUBLIC_BINGO_ROOM) return joinOpenBingoLobby(seat);
   if (!isValidRoomCode(code)) throw new Error("Room codes are 6 letters or numbers");
 
   const { id: playerId, local } = await resolvePlayerId();
@@ -308,7 +440,7 @@ export async function joinBingoRoom(
       return { code, playerId, local: true };
     }
     if (!store.players.has(playerId) && store.room.playerIds.length >= MAX_PLAYERS) {
-      throw new Error("This room is full (8 players max)");
+      throw new Error(`This room is full (${MAX_PLAYERS} players max)`);
     }
     mutateLocal(code, (s) => {
       if (!s.players.has(playerId)) {
@@ -338,7 +470,7 @@ export async function joinBingoRoom(
       throw new Error("That game has already started");
     }
     if (!existingPlayer.exists() && room.playerIds.length >= MAX_PLAYERS) {
-      throw new Error("This room is full (8 players max)");
+      throw new Error(`This room is full (${MAX_PLAYERS} players max)`);
     }
 
     if (!existingPlayer.exists()) {
@@ -426,12 +558,16 @@ export function subscribeBingoRoom(
   };
 }
 
-export async function startBingoGame(code: string, hostId: string): Promise<void> {
+export async function startBingoGame(code: string, playerId: string): Promise<void> {
   const normalized = normalizeRoomCode(code);
+  const isOpenLobby = normalized === PUBLIC_BINGO_ROOM;
 
   if (localRooms.has(normalized)) {
     mutateLocal(normalized, (s) => {
-      if (s.room.hostId !== hostId) throw new Error("Only the host can start the game");
+      if (!isOpenLobby && s.room.hostId !== playerId) {
+        throw new Error("Only the host can start the game");
+      }
+      if (!s.players.has(playerId)) throw new Error("You are not in this lobby");
       if (s.room.status !== "lobby") throw new Error("Game already started");
       if (s.room.playerIds.length < 1) throw new Error("Need at least one player");
       s.room.status = "playing";
@@ -456,7 +592,10 @@ export async function startBingoGame(code: string, hostId: string): Promise<void
     const roomSnap = await tx.get(roomRef);
     if (!roomSnap.exists()) throw new Error("Room not found");
     const room = roomSnap.data() as BingoRoom;
-    if (room.hostId !== hostId) throw new Error("Only the host can start the game");
+    if (!isOpenLobby && room.hostId !== playerId) {
+      throw new Error("Only the host can start the game");
+    }
+    if (!room.playerIds.includes(playerId)) throw new Error("You are not in this lobby");
     if (room.status !== "lobby") throw new Error("Game already started");
     if (room.playerIds.length < 1) throw new Error("Need at least one player");
 
@@ -471,6 +610,49 @@ export async function startBingoGame(code: string, hostId: string): Promise<void
     for (const pid of room.playerIds) {
       const pref = doc(db, COLLECTION, normalized, "players", pid);
       tx.update(pref, { board: generateBingoBoard(), ready: false });
+    }
+  });
+}
+
+/** Reset a finished (or stuck) open lobby back to waiting for the next round. */
+export async function resetBingoLobby(code: string, playerId: string): Promise<void> {
+  const normalized = normalizeRoomCode(code);
+
+  if (localRooms.has(normalized)) {
+    mutateLocal(normalized, (s) => {
+      if (!s.players.has(playerId)) throw new Error("You are not in this lobby");
+      s.room.status = "lobby";
+      s.room.drawnCodes = [];
+      s.room.winnerId = null;
+      s.room.winnerName = null;
+      for (const id of s.room.playerIds) {
+        const p = s.players.get(id);
+        if (!p) continue;
+        s.players.set(id, { ...p, board: [], ready: false });
+      }
+    });
+    return;
+  }
+
+  const roomRef = doc(db, COLLECTION, normalized);
+  await runTransaction(db, async (tx) => {
+    const roomSnap = await tx.get(roomRef);
+    if (!roomSnap.exists()) throw new Error("Room not found");
+    const room = roomSnap.data() as BingoRoom;
+    if (!room.playerIds.includes(playerId)) throw new Error("You are not in this lobby");
+
+    tx.update(roomRef, {
+      status: "lobby",
+      drawnCodes: [],
+      winnerId: null,
+      winnerName: null,
+      updatedAt: Date.now(),
+    });
+    for (const pid of room.playerIds) {
+      tx.update(doc(db, COLLECTION, normalized, "players", pid), {
+        board: [],
+        ready: false,
+      });
     }
   });
 }

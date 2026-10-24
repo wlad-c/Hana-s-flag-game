@@ -56,9 +56,13 @@ service cloud.firestore {
         && request.resource.data.createdAt == resource.data.createdAt
         && request.resource.data.hostId is string
         && request.resource.data.playerIds is list
-        && request.resource.data.playerIds.size() <= 8
+        && request.resource.data.playerIds.size() <= 32
         && request.resource.data.drawnCodes is list
-        && request.resource.data.drawnCodes.size() >= resource.data.drawnCodes.size()
+        // Draws only append while playing; resetting to lobby may clear them.
+        && (
+          request.resource.data.drawnCodes.size() >= resource.data.drawnCodes.size()
+          || request.resource.data.status == 'lobby'
+        )
         && request.resource.data.status in ['lobby', 'playing', 'finished'];
       allow delete: if false;
 
