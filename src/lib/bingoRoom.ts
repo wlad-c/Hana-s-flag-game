@@ -39,6 +39,11 @@ export type BingoPlayer = {
   avatarId: string;
   /** 25 country codes once the game has started; empty in lobby. */
   board: string[];
+  /**
+   * Country codes the player has manually confirmed on their board after
+   * those flags were drawn. Educational mode — never auto-mark from draws.
+   */
+  marked: string[];
   ready: boolean;
   joinedAt: number;
 };
@@ -204,6 +209,7 @@ export async function createBingoRoom(seat: BingoSeat): Promise<{
       displayName: seat.displayName.slice(0, 48) || "Player",
       avatarId: seat.avatarId || DEFAULT_AVATAR_ID,
       board: [],
+      marked: [],
       ready: false,
       joinedAt: now,
     };
@@ -229,6 +235,7 @@ export async function createBingoRoom(seat: BingoSeat): Promise<{
     displayName: seat.displayName.slice(0, 48) || "Player",
     avatarId: seat.avatarId || DEFAULT_AVATAR_ID,
     board: [],
+    marked: [],
     ready: false,
     joinedAt: now,
   };
@@ -297,8 +304,9 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
     id: playerId,
     displayName: seat.displayName.slice(0, 48) || "Player",
     avatarId: seat.avatarId || DEFAULT_AVATAR_ID,
-    // Mid-game joiners get a board immediately so already-drawn flags mark.
+    // Mid-game joiners get a board immediately; they still mark cells by hand.
     board: status === "playing" ? generateBingoBoard() : [],
+    marked: [],
     ready: false,
     joinedAt: now,
   });
@@ -396,7 +404,7 @@ export async function joinOpenBingoLobby(seat: BingoSeat): Promise<{
           avatarId: player.avatarId,
           ...(prev.board?.length === 25
             ? {}
-            : { board: player.board, ready: false }),
+            : { board: player.board, marked: [], ready: false }),
         });
       }
     });
@@ -422,6 +430,7 @@ export async function joinBingoRoom(
     displayName: seat.displayName.slice(0, 48) || "Player",
     avatarId: seat.avatarId || DEFAULT_AVATAR_ID,
     board: [],
+    marked: [],
     ready: false,
     joinedAt: now,
   };
@@ -580,6 +589,7 @@ export async function startBingoGame(code: string, playerId: string): Promise<vo
         s.players.set(id, {
           ...p,
           board: generateBingoBoard(),
+          marked: [],
           ready: false,
         });
       }
@@ -609,7 +619,7 @@ export async function startBingoGame(code: string, playerId: string): Promise<vo
 
     for (const pid of room.playerIds) {
       const pref = doc(db, COLLECTION, normalized, "players", pid);
-      tx.update(pref, { board: generateBingoBoard(), ready: false });
+      tx.update(pref, { board: generateBingoBoard(), marked: [], ready: false });
     }
   });
 }
@@ -628,7 +638,7 @@ export async function resetBingoLobby(code: string, playerId: string): Promise<v
       for (const id of s.room.playerIds) {
         const p = s.players.get(id);
         if (!p) continue;
-        s.players.set(id, { ...p, board: [], ready: false });
+        s.players.set(id, { ...p, board: [], marked: [], ready: false });
       }
     });
     return;
@@ -651,6 +661,7 @@ export async function resetBingoLobby(code: string, playerId: string): Promise<v
     for (const pid of room.playerIds) {
       tx.update(doc(db, COLLECTION, normalized, "players", pid), {
         board: [],
+        marked: [],
         ready: false,
       });
     }
@@ -687,17 +698,7 @@ export async function setBingoReady(
         if (!p) continue;
         s.players.set(id, { ...p, ready: false });
       }
-
-      // Auto-finish if someone already has bingo after this draw.
-      for (const id of s.room.playerIds) {
-        const p = s.players.get(id);
-        if (p && hasBingo(p.board, s.room.drawnCodes)) {
-          s.room.status = "finished";
-          s.room.winnerId = p.id;
-          s.room.winnerName = p.displayName;
-          break;
-        }
-      }
+      // Do NOT auto-mark or auto-finish — players tap matching cells themselves.
     });
     return;
   }
@@ -732,28 +733,78 @@ export async function setBingoReady(
     const next = pickNextDraw(room.drawnCodes);
     if (!next) return;
 
-    const drawnCodes = [...room.drawnCodes, next];
-    let winnerId: string | null = null;
-    let winnerName: string | null = null;
-    let status: BingoRoomStatus = "playing";
-    for (const p of players) {
-      if (hasBingo(p.board, drawnCodes)) {
-        winnerId = p.id;
-        winnerName = p.displayName;
-        status = "finished";
-        break;
-      }
-    }
-
+    // Draw only — marking and bingo claims are player-driven (educational).
     tx.update(roomRef, {
-      drawnCodes,
-      status,
-      winnerId,
-      winnerName,
+      drawnCodes: [...room.drawnCodes, next],
       updatedAt: Date.now(),
     });
     for (const pid of room.playerIds) {
       tx.update(doc(db, COLLECTION, normalized, "players", pid), { ready: false });
+    }
+  });
+}
+
+/**
+ * Player confirms a drawn flag on their board. Only codes that appear both
+ * on the board and in drawnCodes may be marked. Completing a line wins.
+ */
+export async function markBingoCell(
+  code: string,
+  playerId: string,
+  countryCode: string,
+): Promise<void> {
+  const normalized = normalizeRoomCode(code);
+  const cc = countryCode.toUpperCase();
+
+  if (localRooms.has(normalized)) {
+    mutateLocal(normalized, (s) => {
+      if (s.room.status !== "playing") throw new Error("Game is not in progress");
+      const me = s.players.get(playerId);
+      if (!me) throw new Error("You are not in this lobby");
+      if (!me.board.includes(cc)) throw new Error("That flag is not on your board");
+      if (!s.room.drawnCodes.includes(cc)) {
+        throw new Error("That flag has not been drawn yet");
+      }
+      const marked = me.marked ?? [];
+      if (marked.includes(cc)) return;
+      const nextMarked = [...marked, cc];
+      s.players.set(playerId, { ...me, marked: nextMarked });
+      if (hasBingo(me.board, nextMarked)) {
+        s.room.status = "finished";
+        s.room.winnerId = me.id;
+        s.room.winnerName = me.displayName;
+      }
+    });
+    return;
+  }
+
+  const roomRef = doc(db, COLLECTION, normalized);
+  const playerRef = doc(db, COLLECTION, normalized, "players", playerId);
+
+  await runTransaction(db, async (tx) => {
+    const roomSnap = await tx.get(roomRef);
+    if (!roomSnap.exists()) throw new Error("Room not found");
+    const room = roomSnap.data() as BingoRoom;
+    if (room.status !== "playing") throw new Error("Game is not in progress");
+
+    const playerSnap = await tx.get(playerRef);
+    if (!playerSnap.exists()) throw new Error("You are not in this lobby");
+    const me = playerSnap.data() as BingoPlayer;
+    if (!me.board.includes(cc)) throw new Error("That flag is not on your board");
+    if (!room.drawnCodes.includes(cc)) {
+      throw new Error("That flag has not been drawn yet");
+    }
+    const marked = me.marked ?? [];
+    if (marked.includes(cc)) return;
+    const nextMarked = [...marked, cc];
+    tx.update(playerRef, { marked: nextMarked });
+    if (hasBingo(me.board, nextMarked)) {
+      tx.update(roomRef, {
+        status: "finished",
+        winnerId: me.id,
+        winnerName: me.displayName,
+        updatedAt: Date.now(),
+      });
     }
   });
 }

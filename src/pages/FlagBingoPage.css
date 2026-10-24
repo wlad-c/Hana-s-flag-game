@@ -306,35 +306,74 @@
 .bingo__board {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.35rem;
-  padding: 0.45rem;
-  background: var(--ink);
+  gap: 0.45rem;
+  padding: 0.55rem;
+  background: color-mix(in srgb, var(--ink) 8%, var(--cream));
   border-radius: var(--radius-lg);
   border: 3px solid var(--ink);
 }
 
 .bingo__cell {
   position: relative;
-  aspect-ratio: 1;
   margin: 0;
-  padding: 0.2rem;
-  border: 0;
-  border-radius: 0.35rem;
-  background: var(--paper);
+  padding: 0.35rem 0.3rem 0.4rem;
+  border: 2.5px solid var(--ink);
+  border-radius: 0.55rem;
+  background: #fff;
+  color: var(--ink);
   cursor: default;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 0;
+  font: inherit;
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--ink) 25%, transparent);
+}
+
+:root[data-theme="dark"] .bingo__cell {
+  background: #fff;
+  color: #1a2238;
 }
 
 .bingo__cell img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 2;
   object-fit: contain;
   display: block;
   pointer-events: none;
+  border-radius: 0.15rem;
+}
+
+.bingo__cell-name {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(0.48rem, 1.7vw, 0.68rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  /* Cap to two lines so the grid stays even on long names. */
+  max-height: 2.3em;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bingo__cell--callable {
+  cursor: pointer;
+  border-color: var(--coral);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--coral) 45%, transparent);
+}
+
+.bingo__cell--callable:hover,
+.bingo__cell--callable:focus-visible {
+  transform: translateY(-1px);
+  outline: none;
 }
 
 .bingo__cell--marked {
-  background: color-mix(in srgb, var(--lime) 35%, var(--paper));
+  background: color-mix(in srgb, var(--lime) 28%, #fff);
 }
 
 .bingo__cell--marked::after {
@@ -342,7 +381,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--coral) 75%, transparent) 0 28%, transparent 30%);
+    radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--coral) 75%, transparent) 0 22%, transparent 24%);
   pointer-events: none;
 }
 
@@ -350,16 +389,6 @@
   outline: 3px solid var(--mustard);
   outline-offset: -3px;
   z-index: 1;
-}
-
-.bingo__cell-code {
-  position: absolute;
-  left: 0.15rem;
-  bottom: 0.1rem;
-  font-size: 0.55rem;
-  font-weight: 700;
-  opacity: 0.55;
-  pointer-events: none;
 }
 
 .bingo__sidebar {
