@@ -27,10 +27,8 @@ export default function App() {
 
   return (
     <>
-      {/* Sticky top bar — Home link (or brand on the landing page) on
-          the left, light/dark toggle on the right. Replaces the old
-          floating .global-theme-toggle + per-page .game-nav /
-          .learn-topbar widgets. Single source of truth. */}
+      {/* Sticky top bar — Home (or brand) on the left; Share, mute, and
+          theme on the right. Single source of truth for every page. */}
       <Topbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />

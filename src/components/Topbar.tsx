@@ -27,8 +27,6 @@ export function Topbar() {
   const { triggerGuard } = useNavigationGuard();
   const isHome = location.pathname === "/";
   const isGame = location.pathname === "/game";
-  const isLearn = location.pathname.startsWith("/learn");
-  const isMultiplayer = location.pathname.startsWith("/multiplayer");
 
   const doNavigateHome = () => navigate("/");
 
@@ -84,7 +82,7 @@ export function Topbar() {
       </div>
       <div className="site-topbar__center" id="site-topbar-slot" />
       <div className="site-topbar__right">
-        {(isGame || isLearn || isMultiplayer) && <ShareLinkButton />}
+        <ShareLinkButton />
         <MuteToggle />
         <ThemeToggle />
       </div>

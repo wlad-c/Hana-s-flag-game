@@ -2,10 +2,9 @@ import { UiIcon } from "./UiIcon";
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Copies the current page URL to the clipboard so the user can share the
- * exact view they're looking at (a game mode, or a country/era in Learn).
- * The address bar already reflects the view — this just makes sharing a
- * one-click action and discoverable.
+ * Icon-only topbar control that shares the current address-bar URL so the
+ * recipient lands on the same page/view (game mode query, Learn country/era,
+ * Bingo lobby, …). Pages keep that URL in sync via their own write-back.
  */
 export function ShareLinkButton() {
   const [copied, setCopied] = useState(false);
@@ -20,7 +19,7 @@ export function ShareLinkButton() {
     try {
       // Prefer the native share sheet on mobile; fall back to clipboard.
       if (navigator.share) {
-        await navigator.share({ url });
+        await navigator.share({ url, title: document.title });
         return;
       }
       await navigator.clipboard.writeText(url);
@@ -38,13 +37,14 @@ export function ShareLinkButton() {
   return (
     <button
       type="button"
-      className="site-topbar__share"
+      className={`site-topbar__share${copied ? " site-topbar__share--copied" : ""}`}
       onClick={handleClick}
-      aria-label="Share a link to this page"
-      title="Share a link to this page"
+      aria-label={copied ? "Link copied" : "Share a link to this page"}
+      title={copied ? "Link copied" : "Share a link to this page"}
     >
-      <span className="site-topbar__btn-icon" aria-hidden="true"><UiIcon name={copied ? "check" : "share"} /></span>
-      <span className="site-topbar__btn-label">{copied ? "Copied" : "Share"}</span>
+      <span className="site-topbar__btn-icon" aria-hidden="true">
+        <UiIcon name={copied ? "check" : "share"} />
+      </span>
     </button>
   );
 }

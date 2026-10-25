@@ -81,6 +81,7 @@ import {
 import { meaningLabel, symbolNoun } from "../lib/nationalFlags";
 import { withFootballCrestStats } from "../lib/footballCrestStats";
 import {
+  GRID_CONTENT_TYPE_LABELS,
   loadGridContentType,
   saveGridContentType,
   type GridContentType,
@@ -304,6 +305,8 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     subdivisions: boolean;
     sub: string | null;
     polity: string | null;
+    /** World-map Show dropdown (`flag` omitted). */
+    show: string | null;
   } | null>(null);
   if (initialParamsRef.current === null) {
     initialParamsRef.current = {
@@ -312,8 +315,13 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       subdivisions: searchParams.get("subdivisions") === "1",
       sub: searchParams.get("sub")?.toUpperCase() ?? null,
       polity: searchParams.get("polity"),
+      show: searchParams.get("show"),
     };
   }
+  const initialShowType: GridContentType = (() => {
+    const s = initialParamsRef.current!.show;
+    return s && s in GRID_CONTENT_TYPE_LABELS ? (s as GridContentType) : loadGridContentType();
+  })();
   // Tracks whether the one-time hydration from the URL has completed; the
   // write-back effect stays silent until it has, so it can't clobber the link.
   const hydratedRef = useRef(false);
@@ -482,25 +490,25 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
   // passport. Owned here (not in FlagGrid) so clicking a coat-of-arms/passport
   // tile swaps the panel above to that symbol too. See lib/gridContentType.ts.
   const [gridContentType, setGridContentType] = useState<GridContentType>(
-    loadGridContentType,
+    () => initialShowType,
   );
   // Information-panel tabs organise the country fact-sheet (Overview / Indices) and
   // the Media / Travel / Politics browsers. Synced from the world-map Show
   // dropdown so picking "Top newspapers" lands on Media, etc.
   const [panelTab, setPanelTab] = useState<LearnPanelTabId>(() =>
-    panelTabForGridContent(loadGridContentType()),
+    panelTabForGridContent(initialShowType),
   );
   const [mediaSection, setMediaSection] = useState<LearnPanelMediaSection>(
-    () => mediaSectionForGridContent(loadGridContentType()) ?? "newspaper",
+    () => mediaSectionForGridContent(initialShowType) ?? "newspaper",
   );
   const [travelSection, setTravelSection] = useState<LearnPanelTravelSection>(
-    () => travelSectionForGridContent(loadGridContentType()) ?? "airline",
+    () => travelSectionForGridContent(initialShowType) ?? "airline",
   );
   const [sportsSection, setSportsSection] = useState<LearnPanelSportsSection>(
-    () => sportsSectionForGridContent(loadGridContentType()) ?? "footballcrest",
+    () => sportsSectionForGridContent(initialShowType) ?? "footballcrest",
   );
   const [financeSection, setFinanceSection] = useState<LearnPanelFinanceSection>(
-    () => financeSectionForGridContent(loadGridContentType()) ?? "centralbank",
+    () => financeSectionForGridContent(initialShowType) ?? "centralbank",
   );
   // Overview leading image: Flag vs Coat of arms pills.
   const [overviewIdentity, setOverviewIdentity] =
@@ -1273,6 +1281,9 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
       } else if (selected?.kind === "modern") {
         next.set("country", selected.country.code);
       }
+      // Show dropdown — omitted for the default national-flag view so plain
+      // Learn links stay short; a shared crest/arms/passport link restores it.
+      if (gridContentType !== "flag") next.set("show", gridContentType);
     } else if (selected?.kind === "historical") {
       next.set("polity", selected.name);
     }
@@ -1286,6 +1297,7 @@ export default function LearnPage({ variant = "atlas" }: { variant?: "atlas" | "
     subdivisionMode,
     subdivisionCountry,
     selectedSubdivision,
+    gridContentType,
     searchParams,
     setSearchParams,
   ]);

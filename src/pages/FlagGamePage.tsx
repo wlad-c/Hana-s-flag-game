@@ -31,6 +31,7 @@ import {
   UNDISPUTED_TERRITORY_PARENT,
 } from "../lib/territoryParentMap";
 import {
+  gameConfigToParams,
   hasGameMode,
   paramsToGameConfig,
   type GameConfig,
@@ -66,8 +67,23 @@ function useResolvedGameConfig(): GameConfig {
   return paramsToGameConfig(searchParams) ?? {};
 }
 
+/**
+ * Keep the address bar in lock-step with the active game config so the
+ * topbar Share button (and a copied URL) always reopen this same mode —
+ * even when the game was launched with router state alone.
+ */
+function useSyncGameShareUrl(config: GameConfig) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const desired = gameConfigToParams(config).toString();
+  useEffect(() => {
+    if (desired === searchParams.toString()) return;
+    setSearchParams(new URLSearchParams(desired), { replace: true });
+  }, [desired, searchParams, setSearchParams]);
+}
+
 export default function FlagGamePage() {
   const config = useResolvedGameConfig();
+  useSyncGameShareUrl(config);
 
   // The two historical decks answer with a ruling power or a period, not a
   // country, so they get their own component tree (hooks are never conditional).
