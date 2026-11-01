@@ -5146,15 +5146,19 @@
           "file": "bo/bolivia-wiphala.svg",
           "design": "A seven-by-seven patchwork of squares in the seven colours of the rainbow, set on the diagonal.",
           "meaning": {
-            "description": "The Wiphala of the Qullasuyu is recognised by Article 6 of Bolivia's 2009 constitution as a dual national symbol alongside the tricolour — the state's acknowledgement that it is plurinational. Its 49 squares are arranged so that the seven colours run diagonally, and it stands for the Andean indigenous peoples of the region the Inca called Qullasuyu.",
+            "description": "The Wiphala of the Qullasuyu is one of Bolivia's state symbols under Article 6 of the 2009 constitution, flown beside the red-yellow-green tricolour as the state's acknowledgement that it is plurinational. Its forty-nine squares are arranged so the seven rainbow colours run diagonally; Decreto Supremo Nº 241 assigns each colour a meaning — red for the earth and Andean thought, orange for society and culture, yellow for energy and reciprocity, white for time and knowledge, green for production and natural wealth, blue for the cosmos, and violet for Andean self-government — so the banner reads as a map of plurinational community rather than as decoration.",
             "sources": [
               {
                 "title": "Wiphala — Wikipedia",
                 "url": "https://en.wikipedia.org/wiki/Wiphala"
               },
               {
-                "title": "List of Bolivian flags — Wikipedia",
-                "url": "https://en.wikipedia.org/wiki/List_of_Bolivian_flags"
+                "title": "Decreto Supremo Nº 241 — Símbolos del Estado Plurinacional de Bolivia (Gaceta Oficial)",
+                "url": "http://gacetaoficialdebolivia.gob.bo/normas/verGratis_gob/56983"
+              },
+              {
+                "title": "Constitution of Bolivia, Article 6 — symbols of the State",
+                "url": "https://en.wikipedia.org/wiki/Constitution_of_Bolivia"
               }
             ]
           },
@@ -28303,6 +28307,36 @@
           "source": "https://en.wikipedia.org/wiki/Flag_of_Mongolia"
         },
         {
+          "id": "mn-nine-white-banners",
+          "category": "official",
+          "name": "Nine White Banners of Mongolia",
+          "from": 1992,
+          "to": 9999,
+          "commons": "Nine White Banners at Mongolian Government House.jpg",
+          "file": "mn/mongolia-nine-white-banners.jpg",
+          "design": "Nine white horsehair spirit banners (sulde) on poles topped with golden tridents — a taller central banner ringed by eight shorter ones — kept as the state ceremonial display in the Government Palace in Ulaanbaatar.",
+          "meaning": {
+            "description": "Article 12 of Mongolia's 1992 constitution lists the State Emblem, Banner, Flag, Seal and Anthem as symbols of independence, and names the traditional Great White Banner of the unified Mongol state as the state's ceremonial attribute. The Nine White Banners (Есөн хөлт цагаан туг) — white horse-tail hair hung from poles with flame-shaped finials — are that Banner: a peacetime symbol of the khans since the empire of Chinggis Khaan, kept in the State Palace and carried out for Naadam and National Pride Day. They are not a cloth national flag; they are the Banner the constitution places beside the Flag.",
+            "sources": [
+              {
+                "title": "Constitution of Mongolia, Article 12 — State Symbols",
+                "url": "https://conscourt.gov.mn/?lang=en&page_id=842"
+              },
+              {
+                "title": "Tug (banner) — Nine White Banners — Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Tug_(banner)"
+              },
+              {
+                "title": "National Naadam Festival Opens with Ceremony of Raising Nine White Banners — MONTSAME",
+                "url": "https://www.montsame.mn/en/read/347627"
+              }
+            ]
+          },
+          "source": "https://en.wikipedia.org/wiki/Tug_(banner)",
+          "sha256": "9e529bec5d3818e5d9f652f1fe97ee1838ec3c623ac981e0ae5d3943c7e89366",
+          "fetched": "2026-11-01"
+        },
+        {
           "id": "mn-1992",
           "category": "historical",
           "name": "Flag of Mongolia (1992–2011)",
@@ -31616,6 +31650,36 @@
           "reuse": "flags/ni.svg",
           "design": "The national flag of Nicaragua, in the form adopted in 1908.",
           "source": "https://en.wikipedia.org/wiki/Flag_of_Nicaragua"
+        },
+        {
+          "id": "ni-fsln",
+          "category": "official",
+          "name": "Red-and-black Sandinista banner (FSLN)",
+          "from": 2025,
+          "to": 9999,
+          "commons": "Flag of the FSLN.svg",
+          "file": "ni/nicaragua-fsln.svg",
+          "design": "A horizontal bicolour of red over black with the white letters FSLN centred across both bands — the flag of the Sandinista National Liberation Front.",
+          "meaning": {
+            "description": "Nicaragua's January 2025 partial constitutional reform rewrote Article 13 so the símbolos patrios include the national anthem, the blue-and-white flag of Nicaragua, and \"la rojinegra de la lucha antiimperialista del general Augusto C. Sandino y de la revolución popular sandinista,\" alongside the national coat of arms. The red-over-black FSLN banner shown here is the form associated with the Sandinista revolution named in that article; it is a co-recognised patriotic symbol under the 2025 text, not a replacement for the blue-and-white national flag.",
+            "sources": [
+              {
+                "title": "La bandera del FSLN es ahora un símbolo patrio en Nicaragua — EFE (15 Jan 2025)",
+                "url": "https://efe.com/mundo/2025-01-15/la-bandera-del-fsln-es-ahora-un-simbolo-patrio-en-nicaragua/"
+              },
+              {
+                "title": "Asamblea Nacional — reformas constitucionales sobre el Estado (incluye la bandera rojinegra)",
+                "url": "https://noticias.asamblea.gob.ni/aprobamos-reformas-a-los-articulos-de-nuestra-constitucion-sobre-el-estado-y-nacionalidad-nicaraguense/"
+              },
+              {
+                "title": "Flag of the Sandinista National Liberation Front — Wikimedia Commons",
+                "url": "https://commons.wikimedia.org/wiki/File:Flag_of_the_FSLN.svg"
+              }
+            ]
+          },
+          "source": "https://efe.com/mundo/2025-01-15/la-bandera-del-fsln-es-ahora-un-simbolo-patrio-en-nicaragua/",
+          "sha256": "0b21d9378562c19117ba6ec7b82f9ec6fd64577e6782b594c53ec4a40d3ecb8f",
+          "fetched": "2026-11-01"
         },
         {
           "id": "ni-1908",
@@ -37006,6 +37070,32 @@
           "reuse": "flags/ru.svg",
           "design": "The national flag of Russia, in the form adopted in 1991.",
           "source": "https://en.wikipedia.org/wiki/Flag_of_Russia"
+        },
+        {
+          "id": "ru-victory-banner",
+          "category": "official",
+          "name": "Victory Banner",
+          "from": 2007,
+          "to": 9999,
+          "commons": "Soviet Znamya Pobedy.svg",
+          "file": "ru/russia-victory-banner.svg",
+          "design": "A red field with a white hammer, sickle and five-pointed star in the canton and four lines of white Cyrillic naming the 150th Idritsa Rifle Division, 79th Rifle Corps, 3rd Shock Army and 1st Belorussian Front — the assault flag raised on the Reichstag in May 1945.",
+          "meaning": {
+            "description": "Federal Law No. 68-FZ of 7 May 2007 defines the Victory Banner as the assault flag of the 150th Order of Kutuzov 2nd Class Idritsa Rifle Division raised on the Reichstag in Berlin on 1 May 1945. The law makes that banner the official symbol of the Soviet people's and Armed Forces' victory over Nazi Germany in the Great Patriotic War of 1941–1945, and a state relic of Russia kept permanently for public view. Copies matching the original may be flown with the State Flag of the Russian Federation on Victory Day and related commemorations. It is not a second national flag of Russia; it is a dated victory symbol the Federation has given its own statute.",
+            "sources": [
+              {
+                "title": "Federal Law No. 68-FZ of 7 May 2007 — On the Banner of Victory (Kremlin)",
+                "url": "http://kremlin.ru/acts/bank/25518"
+              },
+              {
+                "title": "Victory Banner — Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Banner_of_Victory"
+              }
+            ]
+          },
+          "source": "https://en.wikipedia.org/wiki/Banner_of_Victory",
+          "sha256": "c54575d98180eaeb93885aabd82044e031130e3994f2bf1c8434c3eabe13aa80",
+          "fetched": "2026-11-01"
         },
         {
           "id": "ru-1991",
@@ -45495,6 +45585,36 @@
           "reuse": "flags/us.svg",
           "design": "The national flag, fifty stars since 1960.",
           "source": "https://en.wikipedia.org/wiki/Flag_of_the_United_States"
+        },
+        {
+          "id": "us-pow-mia",
+          "category": "official",
+          "name": "National League of Families POW/MIA flag",
+          "from": 1990,
+          "to": 9999,
+          "commons": "United States POW-MIA flag.svg",
+          "file": "us/us-pow-mia.svg",
+          "design": "A black field bearing a white circular emblem: the silhouette of a bowed prisoner before a guard tower and barbed wire, arched \"POW★MIA\" above and \"YOU ARE NOT FORGOTTEN\" below.",
+          "meaning": {
+            "description": "Created in 1972 for the National League of Families of American Prisoners and Missing in Southeast Asia and designed by Newt Heisley, the black-and-white banner was designated by Congress in 1990 (36 U.S.C. § 902) as the symbol of the Nation's concern and commitment to accounting for Americans still prisoner, missing, or otherwise unaccounted for. The National POW/MIA Flag Act of 2019 requires it to be displayed at named federal sites — including the Capitol, the White House, national cemeteries and VA medical centres — on every day the United States flag is displayed. It is a federally recognised remembrance flag flown with the Stars and Stripes, not a second national flag that replaces it.",
+            "sources": [
+              {
+                "title": "36 U.S.C. § 902 — National League of Families POW/MIA flag",
+                "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title36-section902&num=0&edition=prelim"
+              },
+              {
+                "title": "National POW/MIA Flag Act — Pub. L. 116-67 (2019)",
+                "url": "https://www.congress.gov/116/plaws/publ67/PLAW-116publ67.pdf"
+              },
+              {
+                "title": "National League of Families POW/MIA flag — Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/National_League_of_Families_POW/MIA_flag"
+              }
+            ]
+          },
+          "source": "https://en.wikipedia.org/wiki/National_League_of_Families_POW/MIA_flag",
+          "sha256": "0ca02d016122538e69dfc9d3cb59fecb1e5bd5e0e395fd5351baab44e061627f",
+          "fetched": "2026-11-01"
         },
         {
           "id": "us-passport",
