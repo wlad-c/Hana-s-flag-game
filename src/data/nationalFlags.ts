@@ -1560,6 +1560,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
   ],
   "MN": [
     { id: "mn-official-national", category: "official", name: "Flag of Mongolia", from: 1992, to: 9999, primary: true, path: "flags/mn.svg", design: "The national flag of Mongolia, in the form adopted in 1992.", source: "https://en.wikipedia.org/wiki/Flag_of_Mongolia" },
+    { id: "mn-nine-white-banners", category: "official", name: "Nine White Banners of Mongolia", from: 1992, to: 9999, path: "national-flags/mn/mongolia-nine-white-banners.jpg", design: "Nine white horsehair spirit banners (sulde) on poles topped with golden tridents — a taller central banner ringed by eight shorter ones — kept as the state ceremonial display in the Government Palace in Ulaanbaatar.", source: "https://en.wikipedia.org/wiki/Tug_(banner)" },
     { id: "mn-1992", category: "historical", name: "Flag of Mongolia (1992–2011)", from: 1992, to: 2011, path: "national-flags/mn/mongolia-1992.svg", design: "The red-blue-red flag with the Soyombo, in a lighter blue than the 2011 revision — adopted when the socialist star was removed at the end of the People's Republic.", source: "https://en.wikipedia.org/wiki/List_of_Mongolian_flags" },
     { id: "mn-qing", category: "historical", name: "Flag of the Qing dynasty", from: 1691, to: 1911, sovereign: "the Qing Empire", path: "national-flags/mn/mn-qing.svg", design: "The yellow dragon banner of Qing China, whose rule over Outer Mongolia ended when it declared independence in 1911.", source: "https://en.wikipedia.org/wiki/Bogd_Khanate_of_Mongolia" },
     { id: "mn-general-banner", category: "military", name: "General banner of the Mongolian Armed Forces", from: 2014, to: 9999, path: "national-flags/mn/mongolia-general-banner.svg", design: "The banner of the armed forces.", source: "https://en.wikipedia.org/wiki/List_of_Mongolian_flags" },
@@ -1731,6 +1732,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
   ],
   "NI": [
     { id: "ni-official-national", category: "official", name: "Flag of Nicaragua", from: 1908, to: 9999, primary: true, path: "flags/ni.svg", design: "The national flag of Nicaragua, in the form adopted in 1908.", source: "https://en.wikipedia.org/wiki/Flag_of_Nicaragua" },
+    { id: "ni-fsln", category: "official", name: "Red-and-black Sandinista banner (FSLN)", from: 2025, to: 9999, path: "national-flags/ni/nicaragua-fsln.svg", design: "A horizontal bicolour of red over black with the white letters FSLN centred across both bands — the flag of the Sandinista National Liberation Front.", source: "https://efe.com/mundo/2025-01-15/la-bandera-del-fsln-es-ahora-un-simbolo-patrio-en-nicaragua/" },
     { id: "ni-1908", category: "historical", name: "Flag of Nicaragua (1908–1971)", from: 1908, to: 1971, path: "national-flags/ni/nicaragua-1908.svg", design: "The blue-white-blue flag with the arms, before the 1971 revision of the shade and emblem.", source: "https://en.wikipedia.org/wiki/List_of_Nicaraguan_flags" },
     { id: "ni-federal", category: "historical", name: "Flag of the Federal Republic of Central America", from: 1824, to: 1838, priorPolity: "the Federal Republic of Central America", path: "national-flags/ni/nicaragua-federal.svg", design: "The blue-white-blue flag of the federation from which Nicaragua's own flag directly descends.", source: "https://en.wikipedia.org/wiki/List_of_Nicaraguan_flags" },
     { id: "ni-mexican-empire", category: "historical", name: "Flag of the First Mexican Empire", from: 1821, to: 1823, sovereign: "the First Mexican Empire", path: "national-flags/ni/nicaragua-mexican-empire.svg", design: "Iturbide's imperial flag, flown over Central America in the two years after separation from Spain.", source: "https://en.wikipedia.org/wiki/List_of_Nicaraguan_flags" },
@@ -2007,6 +2009,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
   ],
   "RU": [
     { id: "ru-official-national", category: "official", name: "Flag of Russia", from: 1991, to: 9999, primary: true, path: "flags/ru.svg", design: "The national flag of Russia, in the form adopted in 1991.", source: "https://en.wikipedia.org/wiki/Flag_of_Russia" },
+    { id: "ru-victory-banner", category: "official", name: "Victory Banner", from: 2007, to: 9999, path: "national-flags/ru/russia-victory-banner.svg", design: "A red field with a white hammer, sickle and five-pointed star in the canton and four lines of white Cyrillic naming the 150th Idritsa Rifle Division, 79th Rifle Corps, 3rd Shock Army and 1st Belorussian Front — the assault flag raised on the Reichstag in May 1945.", source: "https://en.wikipedia.org/wiki/Banner_of_Victory" },
     { id: "ru-1991", category: "historical", name: "Flag of Russia (1991–1993)", from: 1991, to: 1993, path: "national-flags/ru/russia-1991.svg", design: "The white-azure-red tricolour as first restored in 1991, in 1:2 proportions and with an azure middle stripe; the 1993 decree changed it to 2:3 and blue.", source: "https://en.wikipedia.org/wiki/List_of_Russian_flags" },
     { id: "ru-ussr", category: "historical", name: "Flag of the Soviet Union", from: 1922, to: 1991, priorPolity: "the Soviet Union", path: "historical-flags/ussr.png", design: "The red flag with gold hammer, sickle and star, flown over Russia while it was the largest republic of the USSR.", source: "https://en.wikipedia.org/wiki/Flag_of_the_Soviet_Union" },
     { id: "ru-empire-tricolour", category: "historical", name: "Flag of the Russian Empire", from: 1896, to: 1917, priorPolity: "the Russian Empire", path: "historical-flags/russian-empire.png", design: "The white-blue-red tricolour, naval from 1693 and the empire's national flag from 1896 until the revolution.", source: "https://en.wikipedia.org/wiki/Flag_of_Russia" },
@@ -2404,6 +2407,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
   ],
   "US": [
     { id: "us-official-national", category: "official", name: "Flag of the United States", from: 1960, to: 9999, primary: true, path: "flags/us.svg", design: "The national flag, fifty stars since 1960.", source: "https://en.wikipedia.org/wiki/Flag_of_the_United_States" },
+    { id: "us-pow-mia", category: "official", name: "National League of Families POW/MIA flag", from: 1990, to: 9999, path: "national-flags/us/us-pow-mia.svg", design: "A black field bearing a white circular emblem: the silhouette of a bowed prisoner before a guard tower and barbed wire, arched \"POW★MIA\" above and \"YOU ARE NOT FORGOTTEN\" below.", source: "https://en.wikipedia.org/wiki/National_League_of_Families_POW/MIA_flag" },
     { id: "us-1959", category: "historical", name: "Flag of the United States (1959–1960)", from: 1959, to: 1960, path: "national-flags/us/us-1959.svg", design: "49 stars — the stripes returned to thirteen in 1818, and from then a star was added on the 4th of July following each new state's admission.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_the_United_States" },
     { id: "us-1912", category: "historical", name: "Flag of the United States (1912–1959)", from: 1912, to: 1959, path: "national-flags/us/us-1912.svg", design: "48 stars — the stripes returned to thirteen in 1818, and from then a star was added on the 4th of July following each new state's admission.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_the_United_States" },
     { id: "us-1908", category: "historical", name: "Flag of the United States (1908–1912)", from: 1908, to: 1912, path: "national-flags/us/us-1908.svg", design: "46 stars — the stripes returned to thirteen in 1818, and from then a star was added on the 4th of July following each new state's admission.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_the_United_States" },
@@ -3769,10 +3773,11 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "bo-wiphala": {
-    description: "The Wiphala of the Qullasuyu is recognised by Article 6 of Bolivia's 2009 constitution as a dual national symbol alongside the tricolour — the state's acknowledgement that it is plurinational. Its 49 squares are arranged so that the seven colours run diagonally, and it stands for the Andean indigenous peoples of the region the Inca called Qullasuyu.",
+    description: "The Wiphala of the Qullasuyu is one of Bolivia's state symbols under Article 6 of the 2009 constitution, flown beside the red-yellow-green tricolour as the state's acknowledgement that it is plurinational. Its forty-nine squares are arranged so the seven rainbow colours run diagonally; Decreto Supremo Nº 241 assigns each colour a meaning — red for the earth and Andean thought, orange for society and culture, yellow for energy and reciprocity, white for time and knowledge, green for production and natural wealth, blue for the cosmos, and violet for Andean self-government — so the banner reads as a map of plurinational community rather than as decoration.",
     sources: [
       { title: "Wiphala — Wikipedia", url: "https://en.wikipedia.org/wiki/Wiphala" },
-      { title: "List of Bolivian flags — Wikipedia", url: "https://en.wikipedia.org/wiki/List_of_Bolivian_flags" },
+      { title: "Decreto Supremo Nº 241 — Símbolos del Estado Plurinacional de Bolivia (Gaceta Oficial)", url: "http://gacetaoficialdebolivia.gob.bo/normas/verGratis_gob/56983" },
+      { title: "Constitution of Bolivia, Article 6 — symbols of the State", url: "https://en.wikipedia.org/wiki/Constitution_of_Bolivia" },
     ],
   },
   "bo-1826": {
@@ -8482,6 +8487,14 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
       { title: "Chinthe — Wikipedia", url: "https://en.wikipedia.org/wiki/Chinthe" },
     ],
   },
+  "mn-nine-white-banners": {
+    description: "Article 12 of Mongolia's 1992 constitution lists the State Emblem, Banner, Flag, Seal and Anthem as symbols of independence, and names the traditional Great White Banner of the unified Mongol state as the state's ceremonial attribute. The Nine White Banners (Есөн хөлт цагаан туг) — white horse-tail hair hung from poles with flame-shaped finials — are that Banner: a peacetime symbol of the khans since the empire of Chinggis Khaan, kept in the State Palace and carried out for Naadam and National Pride Day. They are not a cloth national flag; they are the Banner the constitution places beside the Flag.",
+    sources: [
+      { title: "Constitution of Mongolia, Article 12 — State Symbols", url: "https://conscourt.gov.mn/?lang=en&page_id=842" },
+      { title: "Tug (banner) — Nine White Banners — Wikipedia", url: "https://en.wikipedia.org/wiki/Tug_(banner)" },
+      { title: "National Naadam Festival Opens with Ceremony of Raising Nine White Banners — MONTSAME", url: "https://www.montsame.mn/en/read/347627" },
+    ],
+  },
   "mn-1992": {
     description: "Adopted 12 January 1992 as Mongolia's peaceful Democratic Revolution ended one-party communist rule, this flag kept the same red-blue-red bands and golden Soyombo emblem as the socialist-era flag but removed the five-pointed star that had crowned the Soyombo. Blue stands for the eternal sky central to Mongolian belief and red for the country's thriving vitality; the Soyombo itself combines fire, sun, moon, earth, water and the yin-yang symbol. The exact shade of blue was only formally standardised in 2011.",
     sources: [
@@ -9180,6 +9193,14 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     sources: [
       { title: "Nigeria national football team — Wikipedia", url: "https://en.wikipedia.org/wiki/Nigeria_national_football_team" },
       { title: "Nigeria Football Federation — Wikipedia", url: "https://en.wikipedia.org/wiki/Nigeria_Football_Federation" },
+    ],
+  },
+  "ni-fsln": {
+    description: "Nicaragua's January 2025 partial constitutional reform rewrote Article 13 so the símbolos patrios include the national anthem, the blue-and-white flag of Nicaragua, and \"la rojinegra de la lucha antiimperialista del general Augusto C. Sandino y de la revolución popular sandinista,\" alongside the national coat of arms. The red-over-black FSLN banner shown here is the form associated with the Sandinista revolution named in that article; it is a co-recognised patriotic symbol under the 2025 text, not a replacement for the blue-and-white national flag.",
+    sources: [
+      { title: "La bandera del FSLN es ahora un símbolo patrio en Nicaragua — EFE (15 Jan 2025)", url: "https://efe.com/mundo/2025-01-15/la-bandera-del-fsln-es-ahora-un-simbolo-patrio-en-nicaragua/" },
+      { title: "Asamblea Nacional — reformas constitucionales sobre el Estado (incluye la bandera rojinegra)", url: "https://noticias.asamblea.gob.ni/aprobamos-reformas-a-los-articulos-de-nuestra-constitucion-sobre-el-estado-y-nacionalidad-nicaraguense/" },
+      { title: "Flag of the Sandinista National Liberation Front — Wikimedia Commons", url: "https://commons.wikimedia.org/wiki/File:Flag_of_the_FSLN.svg" },
     ],
   },
   "ni-1908": {
@@ -10322,6 +10343,13 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     description: "The Serbian cross — a cross with four firesteels, popularly read since the 19th century as four Cyrillic “С” letters standing for the national motto “Само слога Србина спасава” (“Only unity saves the Serbs”) — is Serbia's own national heraldic symbol. It derives from the Byzantine emblem of the Palaiologos dynasty, adopted after Michael VIII Palaiologos restored the Byzantine Empire in 1261, and was in Serbian use by the reign of Despot Stefan Lazarević around 1397.",
     sources: [
       { title: "Serbian cross — Wikipedia", url: "https://en.wikipedia.org/wiki/Serbian_cross" },
+    ],
+  },
+  "ru-victory-banner": {
+    description: "Federal Law No. 68-FZ of 7 May 2007 defines the Victory Banner as the assault flag of the 150th Order of Kutuzov 2nd Class Idritsa Rifle Division raised on the Reichstag in Berlin on 1 May 1945. The law makes that banner the official symbol of the Soviet people's and Armed Forces' victory over Nazi Germany in the Great Patriotic War of 1941–1945, and a state relic of Russia kept permanently for public view. Copies matching the original may be flown with the State Flag of the Russian Federation on Victory Day and related commemorations. It is not a second national flag of Russia; it is a dated victory symbol the Federation has given its own statute.",
+    sources: [
+      { title: "Federal Law No. 68-FZ of 7 May 2007 — On the Banner of Victory (Kremlin)", url: "http://kremlin.ru/acts/bank/25518" },
+      { title: "Victory Banner — Wikipedia", url: "https://en.wikipedia.org/wiki/Banner_of_Victory" },
     ],
   },
   "ru-1991": {
@@ -11815,6 +11843,14 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     description: "The black, yellow and red sash repeats the bands of Uganda's own national flag, adopted at independence in 1962.",
     sources: [
       { title: "Flag of Uganda — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Uganda" },
+    ],
+  },
+  "us-pow-mia": {
+    description: "Created in 1972 for the National League of Families of American Prisoners and Missing in Southeast Asia and designed by Newt Heisley, the black-and-white banner was designated by Congress in 1990 (36 U.S.C. § 902) as the symbol of the Nation's concern and commitment to accounting for Americans still prisoner, missing, or otherwise unaccounted for. The National POW/MIA Flag Act of 2019 requires it to be displayed at named federal sites — including the Capitol, the White House, national cemeteries and VA medical centres — on every day the United States flag is displayed. It is a federally recognised remembrance flag flown with the Stars and Stripes, not a second national flag that replaces it.",
+    sources: [
+      { title: "36 U.S.C. § 902 — National League of Families POW/MIA flag", url: "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title36-section902&num=0&edition=prelim" },
+      { title: "National POW/MIA Flag Act — Pub. L. 116-67 (2019)", url: "https://www.congress.gov/116/plaws/publ67/PLAW-116publ67.pdf" },
+      { title: "National League of Families POW/MIA flag — Wikipedia", url: "https://en.wikipedia.org/wiki/National_League_of_Families_POW/MIA_flag" },
     ],
   },
   "us-1959": {
