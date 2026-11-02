@@ -6544,6 +6544,32 @@
           "source": "https://en.wikipedia.org/wiki/Flag_of_Belarus"
         },
         {
+          "id": "by-victory-banner",
+          "category": "official",
+          "name": "Victory Banner",
+          "from": 1996,
+          "to": 9999,
+          "commons": "Soviet Znamya Pobedy.svg",
+          "file": "by/belarus-victory-banner.svg",
+          "design": "A red field with a white hammer, sickle and five-pointed star in the canton and four lines of white Cyrillic naming the 150th Idritsa Rifle Division, 79th Rifle Corps, 3rd Shock Army and 1st Belorussian Front — the assault flag raised on the Reichstag in May 1945.",
+          "meaning": {
+            "description": "Presidential Decree No. 158 of 6 May 1996, \"On the Victory Banner,\" makes a duplicate of the Victory Banner raised over the Reichstag in May 1945 an official symbol of victory in Belarus. The decree provides that the duplicate is carried alongside the State Flag of Belarus on Victory Day (9 May), Defenders of the Fatherland Day (23 February) and Liberation Day of Belarus (3 July); on other named occasions a simplified Symbol of the Victory Banner (a red field with a five-pointed star, sickle and hammer) and the State Flag of the USSR may also be used. The image here is the Idritsa assault-flag duplicate — the same design Belarus received as an official copy from Russia in 2011 and keeps at the Belarusian State Museum of the Great Patriotic War. It is not a second national flag of Belarus; it is a dated victory relic the Republic has given its own decree.",
+            "sources": [
+              {
+                "title": "Presidential Decree No. 158 of 6 May 1996 — On the Victory Banner (Belarus)",
+                "url": "https://normativka.by/lib/document/500055371"
+              },
+              {
+                "title": "Victory Banner — Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Banner_of_Victory"
+              }
+            ]
+          },
+          "source": "https://en.wikipedia.org/wiki/Banner_of_Victory",
+          "sha256": "c54575d98180eaeb93885aabd82044e031130e3994f2bf1c8434c3eabe13aa80",
+          "fetched": "2026-11-02"
+        },
+        {
           "id": "by-1995",
           "category": "historical",
           "name": "Flag of Belarus (1995–2012)",
@@ -32166,6 +32192,36 @@
           "source": "https://en.wikipedia.org/wiki/Flag_of_Norway"
         },
         {
+          "id": "no-sami",
+          "category": "official",
+          "from": 1986,
+          "to": 9999,
+          "name": "Sámi flag",
+          "commons": "Sami flag.svg",
+          "file": "no/no-sami.svg",
+          "design": "Red, green, yellow and blue fields bearing a red-and-blue circle for the sun and moon.",
+          "source": "https://en.wikipedia.org/wiki/S%C3%A1mi_flag",
+          "meaning": {
+            "description": "Adopted in 1986 as the flag of the Sámi people across northern Norway, Sweden, Finland and Russia, its four colours — red, green, yellow and blue — are the Sámi national colours, drawn from traditional gákti dress. The off-centre circle is a sun-and-moon symbol taken from the drums of Sámi shamans: red for the sun, blue for the moon, reflecting the Sámi self-identity as \"sons and daughters of the sun.\" In Norway the flag has statutory status: Sámi Act (Sameloven) § 1-6, added by Act of 11 April 2003 No. 22, names this 1986 design as the Sámi flag and empowers the Sámi Parliament to regulate its use; the municipal flagging law was amended the same year so that municipalities may fly it, and Sámi National Day (6 February) is an official flag day on which state buildings fly it with the Norwegian flag. It is not a second national flag of Norway, but a co-recognised Indigenous people's flag with Flags-Act-strength recognition.",
+            "sources": [
+              {
+                "title": "The Sámi Act § 1-6 — The Sámi Flag (regjeringen.no)",
+                "url": "https://www.regjeringen.no/en/documents/the-sami-act-/id449701/"
+              },
+              {
+                "title": "Sameloven § 1-6 — Lovdata",
+                "url": "https://lovdata.no/dokument/NL/lov/1987-06-12-56/"
+              },
+              {
+                "title": "Sámi flag — Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/S%C3%A1mi_flag"
+              }
+            ]
+          },
+          "sha256": "5c3e16b6a6af76e26285a086cc9841b81d68a1e2a6eb1043c16af55b7b76efb2",
+          "fetched": "2026-08-12"
+        },
+        {
           "id": "no-union-1844",
           "category": "historical",
           "from": 1844,
@@ -32342,28 +32398,6 @@
               }
             ]
           }
-        },
-        {
-          "id": "no-sami",
-          "category": "indigenous",
-          "from": 1986,
-          "to": 9999,
-          "name": "Sámi flag",
-          "commons": "Sami flag.svg",
-          "file": "no/no-sami.svg",
-          "design": "Red, green, yellow and blue fields bearing a red-and-blue circle for the sun and moon.",
-          "source": "https://en.wikipedia.org/wiki/S%C3%A1mi_flag",
-          "meaning": {
-            "description": "Adopted in 1986 as the flag of the Sámi people across northern Norway, Sweden, Finland and Russia, its four colours — red, green, yellow and blue — are the Sámi national colours, drawn from traditional gákti dress. The off-centre circle is a sun-and-moon symbol taken from the drums of Sámi shamans: red for the sun, blue for the moon, reflecting the Sámi self-identity as “sons and daughters of the sun.”",
-            "sources": [
-              {
-                "title": "Sámi flag — Wikipedia",
-                "url": "https://en.wikipedia.org/wiki/S%C3%A1mi_flag"
-              }
-            ]
-          },
-          "sha256": "5c3e16b6a6af76e26285a086cc9841b81d68a1e2a6eb1043c16af55b7b76efb2",
-          "fetched": "2026-08-12"
         },
         {
           "id": "no-football-crest",
@@ -33610,8 +33644,47 @@
           "to": 9999,
           "name": "Flag of Peru",
           "reuse": "flags/pe.svg",
-          "design": "The national flag of Peru, in the form adopted in 1825.",
-          "source": "https://en.wikipedia.org/wiki/Flag_of_Peru"
+          "design": "A vertical triband of red, white and red with no emblem — the Bandera Nacional created by the Law of 25 February 1825 and confirmed by Ley Nº 32251 (2025) as the principal ensign of Peru's sovereignty and national identity.",
+          "source": "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4",
+          "meaning": {
+            "description": "Ley Nº 32251 of 2025 names the Bandera Nacional among the símbolos de la patria: a rectangular red-white-red vertical triband with no shield, proportions three long by two high. Red is commonly read as the blood of those who fought for independence and white as purity and peace; the plain form without arms has been the civil flag since President Odría's 1950 decree separated the civil Bandera from the state Pabellón and the military Bandera de guerra.",
+            "sources": [
+              {
+                "title": "Ley Nº 32251 — Símbolos de la patria, del Estado y emblemas nacionales (El Peruano)",
+                "url": "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4"
+              },
+              {
+                "title": "Flag of Peru — Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Flag_of_Peru"
+              }
+            ]
+          }
+        },
+        {
+          "id": "pe-state",
+          "category": "civilstate",
+          "name": "National standard of Peru (Pabellón nacional)",
+          "from": 1825,
+          "to": 9999,
+          "commons": "Flag of Peru (state) 2025.svg",
+          "file": "pe/peru-state.svg",
+          "design": "The vertical red-white-red triband charged on the white stripe with the Escudo Nacional — the national shield topped by a civic crown and flanked on each side by two national flags with the flags interlaced below — with no additional inscription.",
+          "meaning": {
+            "description": "Ley Nº 32251 Article 8 defines the Pabellón nacional as a símbolo del Estado: the Bandera Nacional with the Escudo Nacional at its centre, reserved for state institutions and flown without any added text. Article 5 describes that Escudo Nacional — vicuña, cinchona and cornucopia, civic crown, and four national flags as supporters — as the principal insignia of Peru's sovereignty. The 2025 image follows the graphic annex published with the law. It complements the plain Bandera Nacional rather than replacing it.",
+            "sources": [
+              {
+                "title": "Ley Nº 32251 Arts. 5 and 8 — Escudo nacional and Pabellón nacional (El Peruano)",
+                "url": "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4"
+              },
+              {
+                "title": "Flag of Peru — Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Flag_of_Peru"
+              }
+            ]
+          },
+          "source": "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4",
+          "sha256": "f6c5be44a4bf3d456594a142f605b1d09d24feae4b23848debd364dae017e01f",
+          "fetched": "2026-11-02"
         },
         {
           "id": "pe-war",
@@ -33619,21 +33692,25 @@
           "name": "War flag of Peru",
           "from": 1901,
           "to": 9999,
-          "commons": "State flag of Peru.svg",
+          "commons": "War flag of Peru.svg",
           "file": "pe/peru-war.svg",
-          "design": "The vertical triband charged with the national shield beneath the motto of the unit that carries it.",
-          "source": "https://en.wikipedia.org/wiki/List_of_flags_of_Peru",
-          "sha256": "afe0ddece5e6c5d375343d014add5b7644d527e6e2dafa84577a795f8826f35e",
-          "fetched": "2026-08-08",
+          "design": "The vertical red-white-red triband charged on the white stripe with the Escudo de Armas — the national shield topped by a civic crown and flanked by a palm branch and a laurel branch tied with a red-and-white ribbon. Units may add a gold inscription naming the service or unit beneath the arms.",
+          "source": "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4",
           "meaning": {
-            "description": "The national shield charged on this flag shows a vicuña for Peru's animal wealth, a cinchona tree for its plant wealth (the source of quinine), and a cornucopia spilling gold and silver coins for its mineral wealth — adopted in 1825 under Simón Bolívar to celebrate the newly independent nation's natural riches.",
+            "description": "Ley Nº 32251 Article 10 defines the Bandera de guerra as a símbolo del Estado for the Armed Forces and the National Police: the Bandera Nacional charged with the Escudo de Armas (palm and laurel), optionally inscribed with the unit's name in gold. The Escudo de Armas itself — Article 11 — shows a vicuña for animal wealth, a cinchona tree for plant wealth and a cornucopia of coins for mineral wealth, the same blazon José Gregorio Paredes designed in 1825. Its use is reserved to the forces and may also be raised at the Basilica of Our Lady of Mercy, patron of the Armed Forces.",
             "sources": [
+              {
+                "title": "Ley Nº 32251 Arts. 10–11 — Bandera de guerra and Escudo de armas (El Peruano)",
+                "url": "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4"
+              },
               {
                 "title": "Coat of arms of Peru — Wikipedia",
                 "url": "https://en.wikipedia.org/wiki/Coat_of_arms_of_Peru"
               }
             ]
-          }
+          },
+          "sha256": "926d99a88c797b060854bc06001eb53ef0adaea6092e128c1400002be6fdc1d7",
+          "fetched": "2026-11-02"
         },
         {
           "id": "pe-1884",

@@ -50,6 +50,11 @@ const NATIONAL_SOURCE_OVERRIDES = {
   // new flag raised 8 Jan 2024). hampusborgos still carries the wavy-ray sun, so this pins the
   // Commons file of the current design (audit F21).
   KG: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Flag_of_Kyrgyzstan.svg",
+  // Peru: hampusborgos ships the Escudo-de-Armas (war) form as pe.svg; Ley Nº 32251
+  // Art. 4 makes the plain Bandera Nacional (no shield) the principal national ensign.
+  // Pin the Commons plain flag so quiz/Learn match the Bandera Nacional; pabellón and
+  // bandera de guerra live as separate National-symbols entries.
+  PE: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg",
 };
 
 // ---------------------------------------------------------------------------

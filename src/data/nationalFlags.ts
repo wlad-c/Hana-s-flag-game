@@ -439,6 +439,7 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
   ],
   "BY": [
     { id: "by-official-national", category: "official", name: "Flag of Belarus", from: 1995, to: 9999, primary: true, path: "flags/by.svg", design: "The national flag of Belarus, in the form adopted in 1995.", source: "https://en.wikipedia.org/wiki/Flag_of_Belarus" },
+    { id: "by-victory-banner", category: "official", name: "Victory Banner", from: 1996, to: 9999, path: "national-flags/by/belarus-victory-banner.svg", design: "A red field with a white hammer, sickle and five-pointed star in the canton and four lines of white Cyrillic naming the 150th Idritsa Rifle Division, 79th Rifle Corps, 3rd Shock Army and 1st Belorussian Front — the assault flag raised on the Reichstag in May 1945.", source: "https://en.wikipedia.org/wiki/Banner_of_Victory" },
     { id: "by-1995", category: "historical", name: "Flag of Belarus (1995–2012)", from: 1995, to: 2012, path: "national-flags/by/belarus-1995.svg", design: "The flag readopted by the 1995 referendum, before the 2012 revision of the ornament.", source: "https://en.wikipedia.org/wiki/List_of_Belarusian_flags" },
     { id: "by-1991", category: "historical", name: "White-red-white flag of Belarus", from: 1991, to: 1995, path: "national-flags/by/belarus-1991.svg", design: "The white-red-white flag of the 1918 Belarusian Democratic Republic, restored at independence in 1991 and replaced by referendum in 1995.", source: "https://en.wikipedia.org/wiki/List_of_Belarusian_flags" },
     { id: "by-ssr", category: "historical", name: "Flag of the Byelorussian SSR", from: 1951, to: 1991, priorPolity: "the Byelorussian Soviet Socialist Republic", path: "national-flags/by/belarus-ssr.svg", design: "The red-and-green flag with a woven ornament along the hoist — the republic's flag within the Soviet Union, and the direct ancestor of the present design.", source: "https://en.wikipedia.org/wiki/List_of_Belarusian_flags" },
@@ -1758,13 +1759,13 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
   ],
   "NO": [
     { id: "no-official-national", category: "official", name: "Flag of Norway", from: 1821, to: 9999, primary: true, path: "flags/no.svg", design: "The national flag of Norway, in the form adopted in 1821.", source: "https://en.wikipedia.org/wiki/Flag_of_Norway" },
+    { id: "no-sami", category: "official", name: "Sámi flag", from: 1986, to: 9999, path: "national-flags/no/no-sami.svg", design: "Red, green, yellow and blue fields bearing a red-and-blue circle for the sun and moon.", source: "https://en.wikipedia.org/wiki/S%C3%A1mi_flag" },
     { id: "no-union-1844", category: "historical", name: "Flag of Norway (1844–1899)", from: 1844, to: 1899, path: "national-flags/no/union-1844.svg", design: "The red-white-blue Nordic cross defaced in the canton with the Swedish–Norwegian union badge (popularly the 'herring salad'), flown during the union with Sweden; the badge was removed from the civil flag in 1899.", source: "https://en.wikipedia.org/wiki/Flag_of_Norway" },
     { id: "no-1814", category: "historical", name: "Flag of Norway (1814–1821)", from: 1814, to: 1821, path: "national-flags/no/dano-1814.svg", design: "The Dano-Norwegian Dannebrog — a red field with a white-bordered red cross — defaced in the canton with the gold Norwegian lion bearing an axe, flown in the years after 1814 before the modern flag was adopted in 1821.", source: "https://en.wikipedia.org/wiki/Flag_of_Norway" },
     { id: "no-war-flag", category: "military", name: "Naval ensign and war flag of Norway", from: 1905, to: 9999, path: "national-flags/no/norway-war-flag.svg", design: "The national flag with a swallowtail and tongue (a three-tailed fly), flown as the state flag and by the armed forces.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
     { id: "no-naval-jack", category: "maritime", name: "Naval jack of Norway", path: "national-flags/no/norway-naval-jack.svg", design: "The national flag in square proportions.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
     { id: "no-royal", category: "standard", name: "Royal Standard of Norway", from: 1905, to: 9999, path: "national-flags/no/norway-royal-standard.svg", design: "The coat of arms of Norway on a red field.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
     { id: "no-crown-prince", category: "standard", name: "Standard of the Crown Prince of Norway", from: 1924, to: 9999, path: "national-flags/no/norway-crown-prince.svg", design: "The royal standard differenced for the heir.", source: "https://en.wikipedia.org/wiki/List_of_Norwegian_flags" },
-    { id: "no-sami", category: "indigenous", name: "Sámi flag", from: 1986, to: 9999, path: "national-flags/no/no-sami.svg", design: "Red, green, yellow and blue fields bearing a red-and-blue circle for the sun and moon.", source: "https://en.wikipedia.org/wiki/S%C3%A1mi_flag" },
     { id: "no-arms", category: "coatofarms", name: "Coat of arms of Norway", from: 1937, to: 9999, path: "national-flags/no/norway-arms.svg", design: "A standing golden lion on red, crowned, bearing a silver-bladed axe.", source: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Norway" },
     { id: "no-passport", category: "passport", name: "Passport of Norway", path: "national-flags/no/no-passport.webp", design: "The cover of the Norway passport.", source: "https://gicg.net/passport/no/" },
     { id: "no-football-crest", category: "footballcrest", name: "Crest of the Norway national football team", path: "national-flags/no/no-football-crest.svg", design: "The crest of the Norway national football team — a shield in the red field and blue-white Nordic cross of Norway's flag, topped by two confronted gold lions from Norway's coat of arms flanking a circular “NFF” monogram, lettered “Norge”.", source: "https://en.wikipedia.org/wiki/Norway_national_football_team" },
@@ -1831,19 +1832,20 @@ export const NATIONAL_FLAGS: Readonly<Record<string, readonly NationalFlag[]>> =
     { id: "pa-olympic-committee", category: "olympiccommittee", name: "Logo of the Panama Olympic Committee", path: "national-flags/pa/pa-olympic-committee.png", stats: [{ label: "NOC founded", value: "1934" }, { label: "Summer Games participated", value: "19" }, { label: "Winter Games participated", value: "0" }, { label: "Summer Olympic medals (G–S–B)", value: "1–1–2 (4 total)" }, { label: "Winter Olympic medals (G–S–B)", value: "N/A — never competed" }, { label: "Athletes at Paris 2024 (Summer)", value: "8" }, { label: "Athletes at Milano Cortina 2026 (Winter)", value: "0 — did not compete" }], design: "The Panamanian Olympic Committee's mark: an abstract eagle/wave shape in Panama's red and blue, above the words “COMITÉ OLÍMPICO DE PANAMÁ” and the Olympic rings.", source: "https://en.wikipedia.org/wiki/Panama_Olympic_Committee" },
   ],
   "PE": [
-    { id: "pe-official-national", category: "official", name: "Flag of Peru", from: 1825, to: 9999, primary: true, path: "flags/pe.svg", design: "The national flag of Peru, in the form adopted in 1825.", source: "https://en.wikipedia.org/wiki/Flag_of_Peru" },
+    { id: "pe-official-national", category: "official", name: "Flag of Peru", from: 1825, to: 9999, primary: true, path: "flags/pe.svg", design: "A vertical triband of red, white and red with no emblem — the Bandera Nacional created by the Law of 25 February 1825 and confirmed by Ley Nº 32251 (2025) as the principal ensign of Peru's sovereignty and national identity.", source: "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4" },
     { id: "pe-1884", category: "historical", name: "Flag of Peru (1884–1950)", from: 1884, to: 1950, path: "national-flags/pe/peru-1884.svg", design: "The vertical triband as standardised in 1884, before the 1950 division into national, state and war flags.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-1825", category: "historical", name: "Flag of Peru (1825–1884)", from: 1825, to: 1884, path: "national-flags/pe/peru-1825.svg", design: "The fourth flag of Peru, which fixed the vertical triband and the present arms.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-1822", category: "historical", name: "Flag of Peru (1822–1825)", from: 1822, to: 1825, path: "national-flags/pe/peru-1822.svg", design: "The third flag, designed by José Bernardo de Tagle.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-1821", category: "historical", name: "First flag of Peru", from: 1821, to: 1822, path: "national-flags/pe/peru-1821.svg", design: "The diagonally quartered flag created by José de San Martín at the declaration of independence.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-spain", category: "historical", name: "Flag of Spain", from: 1785, to: 1821, sovereign: "Spain", path: "historical-flags/spain-1785.png", design: "The Spanish ensign of 1785, the last to fly over the Viceroyalty of Peru.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-burgundy", category: "historical", name: "Cross of Burgundy", from: 1542, to: 1785, sovereign: "Spain", path: "historical-flags/spain-burgundy.png", design: "The ragged saltire of Burgundy, flown over the Viceroyalty of Peru from its foundation in 1542.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
-    { id: "pe-war", category: "military", name: "War flag of Peru", from: 1901, to: 9999, path: "national-flags/pe/peru-war.svg", design: "The vertical triband charged with the national shield beneath the motto of the unit that carries it.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
+    { id: "pe-war", category: "military", name: "War flag of Peru", from: 1901, to: 9999, path: "national-flags/pe/peru-war.svg", design: "The vertical red-white-red triband charged on the white stripe with the Escudo de Armas — the national shield topped by a civic crown and flanked by a palm branch and a laurel branch tied with a red-and-white ribbon. Units may add a gold inscription naming the service or unit beneath the arms.", source: "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4" },
     { id: "pe-army", category: "military", name: "Flag of the Peruvian Army", path: "national-flags/pe/peru-army.svg", design: "A green field with the army's emblem.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-navy", category: "military", name: "Flag of the Peruvian Navy", path: "national-flags/pe/peru-navy.svg", design: "A dark blue field with the navy's emblem.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-air-force", category: "military", name: "Flag of the Peruvian Air Force", path: "national-flags/pe/peru-air-force.svg", design: "A blue field with the air force's emblem.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-naval-jack", category: "maritime", name: "Naval jack of Peru", path: "national-flags/pe/peru-naval-jack.svg", design: "A square red flag with a white square bearing the arms.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
     { id: "pe-president", category: "standard", name: "Presidential standard of Peru", path: "national-flags/pe/peru-president.svg", design: "A white field bearing the coat of arms.", source: "https://en.wikipedia.org/wiki/List_of_flags_of_Peru" },
+    { id: "pe-state", category: "civilstate", name: "National standard of Peru (Pabellón nacional)", from: 1825, to: 9999, path: "national-flags/pe/peru-state.svg", design: "The vertical red-white-red triband charged on the white stripe with the Escudo Nacional — the national shield topped by a civic crown and flanked on each side by two national flags with the flags interlaced below — with no additional inscription.", source: "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4" },
     { id: "pe-arms", category: "coatofarms", name: "National coat of arms of Peru", from: 1825, to: 9999, path: "national-flags/pe/peru-arms.svg", design: "A shield of three fields — a vicuña, a cinchona tree and a cornucopia spilling coins — between a palm and a laurel branch beneath a civic crown.", source: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Peru" },
     { id: "pe-passport", category: "passport", name: "Passport of Peru", path: "national-flags/pe/pe-passport.webp", design: "The cover of the Peru passport.", source: "https://gicg.net/passport/pe/" },
     { id: "pe-football-crest", category: "footballcrest", name: "Crest of the Peru national football team", path: "national-flags/pe/pe-football-crest.svg", design: "The crest of the Peru national football team — a shield in vertical red-white-red bands, bordered in gold, with the letters “F P F”.", source: "https://en.wikipedia.org/wiki/Peru_national_football_team" },
@@ -4087,6 +4089,13 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     description: "Botswana's blue passport bears the national coat of arms, adopted in 1966: a shield flanked by two zebras — deliberately chosen because the animal belongs to no single tribe's totem, making it politically neutral, and because its black-and-white stripes were read as symbolising the unity of the country's people as one nation, an idea the national flag repeats. Three cogwheels above the shield represent industry, three wavy blue bands stand for water — echoing the national motto \"Pula\", meaning \"rain\" — and a bull's head marks the importance of cattle herding to Botswana's economy.",
     sources: [
       { title: "Coat of arms of Botswana — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Botswana" },
+    ],
+  },
+  "by-victory-banner": {
+    description: "Presidential Decree No. 158 of 6 May 1996, \"On the Victory Banner,\" makes a duplicate of the Victory Banner raised over the Reichstag in May 1945 an official symbol of victory in Belarus. The decree provides that the duplicate is carried alongside the State Flag of Belarus on Victory Day (9 May), Defenders of the Fatherland Day (23 February) and Liberation Day of Belarus (3 July); on other named occasions a simplified Symbol of the Victory Banner (a red field with a five-pointed star, sickle and hammer) and the State Flag of the USSR may also be used. The image here is the Idritsa assault-flag duplicate — the same design Belarus received as an official copy from Russia in 2011 and keeps at the Belarusian State Museum of the Great Patriotic War. It is not a second national flag of Belarus; it is a dated victory relic the Republic has given its own decree.",
+    sources: [
+      { title: "Presidential Decree No. 158 of 6 May 1996 — On the Victory Banner (Belarus)", url: "https://normativka.by/lib/document/500055371" },
+      { title: "Victory Banner — Wikipedia", url: "https://en.wikipedia.org/wiki/Banner_of_Victory" },
     ],
   },
   "by-1995": {
@@ -9301,6 +9310,14 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
       { title: "Netherlands national football team — Wikipedia", url: "https://en.wikipedia.org/wiki/Netherlands_national_football_team" },
     ],
   },
+  "no-sami": {
+    description: "Adopted in 1986 as the flag of the Sámi people across northern Norway, Sweden, Finland and Russia, its four colours — red, green, yellow and blue — are the Sámi national colours, drawn from traditional gákti dress. The off-centre circle is a sun-and-moon symbol taken from the drums of Sámi shamans: red for the sun, blue for the moon, reflecting the Sámi self-identity as \"sons and daughters of the sun.\" In Norway the flag has statutory status: Sámi Act (Sameloven) § 1-6, added by Act of 11 April 2003 No. 22, names this 1986 design as the Sámi flag and empowers the Sámi Parliament to regulate its use; the municipal flagging law was amended the same year so that municipalities may fly it, and Sámi National Day (6 February) is an official flag day on which state buildings fly it with the Norwegian flag. It is not a second national flag of Norway, but a co-recognised Indigenous people's flag with Flags-Act-strength recognition.",
+    sources: [
+      { title: "The Sámi Act § 1-6 — The Sámi Flag (regjeringen.no)", url: "https://www.regjeringen.no/en/documents/the-sami-act-/id449701/" },
+      { title: "Sameloven § 1-6 — Lovdata", url: "https://lovdata.no/dokument/NL/lov/1987-06-12-56/" },
+      { title: "Sámi flag — Wikipedia", url: "https://en.wikipedia.org/wiki/S%C3%A1mi_flag" },
+    ],
+  },
   "no-union-1844": {
     description: "From 1844, Norway's Nordic-cross flag carried the Swedish-Norwegian union badge in its canton — a device combining both kingdoms' colours in equal measure, introduced by King Oscar I to assert Norway's equal status within their personal union after Norwegians had objected to an earlier, more Sweden-centred design. Detractors nicknamed it \"the herring salad\" (sillsallaten) for its resemblance to the classic Scandinavian dish of pickled herring, beetroot and potato; the badge was dropped from Norway's civil flag in 1899 and the union itself ended in 1905.",
     sources: [
@@ -9336,12 +9353,6 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     description: "Identical in its central device to the King's own royal standard — Norway's crowned golden lion bearing an axe, the attribute of Saint Olav — but given a swallow-tailed (forked) fly instead of the King's rectangular field, a difference introduced by royal resolution in 1924 to visually distinguish the flag of the heir to the throne from the sovereign's own standard.",
     sources: [
       { title: "Royal standard of Norway — Wikipedia", url: "https://en.wikipedia.org/wiki/Royal_standard_of_Norway" },
-    ],
-  },
-  "no-sami": {
-    description: "Adopted in 1986 as the flag of the Sámi people across northern Norway, Sweden, Finland and Russia, its four colours — red, green, yellow and blue — are the Sámi national colours, drawn from traditional gákti dress. The off-centre circle is a sun-and-moon symbol taken from the drums of Sámi shamans: red for the sun, blue for the moon, reflecting the Sámi self-identity as “sons and daughters of the sun.”",
-    sources: [
-      { title: "Sámi flag — Wikipedia", url: "https://en.wikipedia.org/wiki/S%C3%A1mi_flag" },
     ],
   },
   "no-arms": {
@@ -9600,6 +9611,13 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
       { title: "Coat of arms of Panama — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Panama" },
     ],
   },
+  "pe-official-national": {
+    description: "Ley Nº 32251 of 2025 names the Bandera Nacional among the símbolos de la patria: a rectangular red-white-red vertical triband with no shield, proportions three long by two high. Red is commonly read as the blood of those who fought for independence and white as purity and peace; the plain form without arms has been the civil flag since President Odría's 1950 decree separated the civil Bandera from the state Pabellón and the military Bandera de guerra.",
+    sources: [
+      { title: "Ley Nº 32251 — Símbolos de la patria, del Estado y emblemas nacionales (El Peruano)", url: "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4" },
+      { title: "Flag of Peru — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Peru" },
+    ],
+  },
   "pe-1884": {
     description: "A 1884 standardisation of the 1825 vertical triband and arms, used as Peru's single national flag until a 1950 decree split the design into three purposes still used today: a plain triband without arms for general civil use, and the arms-bearing version reserved for state and naval/war use.",
     sources: [
@@ -9640,8 +9658,9 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     ],
   },
   "pe-war": {
-    description: "The national shield charged on this flag shows a vicuña for Peru's animal wealth, a cinchona tree for its plant wealth (the source of quinine), and a cornucopia spilling gold and silver coins for its mineral wealth — adopted in 1825 under Simón Bolívar to celebrate the newly independent nation's natural riches.",
+    description: "Ley Nº 32251 Article 10 defines the Bandera de guerra as a símbolo del Estado for the Armed Forces and the National Police: the Bandera Nacional charged with the Escudo de Armas (palm and laurel), optionally inscribed with the unit's name in gold. The Escudo de Armas itself — Article 11 — shows a vicuña for animal wealth, a cinchona tree for plant wealth and a cornucopia of coins for mineral wealth, the same blazon José Gregorio Paredes designed in 1825. Its use is reserved to the forces and may also be raised at the Basilica of Our Lady of Mercy, patron of the Armed Forces.",
     sources: [
+      { title: "Ley Nº 32251 Arts. 10–11 — Bandera de guerra and Escudo de armas (El Peruano)", url: "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4" },
       { title: "Coat of arms of Peru — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Peru" },
     ],
   },
@@ -9676,6 +9695,13 @@ export const NATIONAL_FLAG_MEANINGS: Record<string, FlagMeaning> = {
     description: "The presidential standard bears Peru's coat of arms, adopted in 1825: a vicuña for the country's fauna and animal wealth (and a symbol of liberty in its own right), a cinchona tree — source of the malaria drug quinine — for its plant life, and a cornucopia overflowing with gold coins for its mineral riches, together showcasing Peru's natural wealth across the animal, plant and mineral kingdoms.",
     sources: [
       { title: "Coat of arms of Peru — Wikipedia", url: "https://en.wikipedia.org/wiki/Coat_of_arms_of_Peru" },
+    ],
+  },
+  "pe-state": {
+    description: "Ley Nº 32251 Article 8 defines the Pabellón nacional as a símbolo del Estado: the Bandera Nacional with the Escudo Nacional at its centre, reserved for state institutions and flown without any added text. Article 5 describes that Escudo Nacional — vicuña, cinchona and cornucopia, civic crown, and four national flags as supporters — as the principal insignia of Peru's sovereignty. The 2025 image follows the graphic annex published with the law. It complements the plain Bandera Nacional rather than replacing it.",
+    sources: [
+      { title: "Ley Nº 32251 Arts. 5 and 8 — Escudo nacional and Pabellón nacional (El Peruano)", url: "https://busquedas.elperuano.pe/dispositivo/NL/2363369-4" },
+      { title: "Flag of Peru — Wikipedia", url: "https://en.wikipedia.org/wiki/Flag_of_Peru" },
     ],
   },
   "pe-arms": {
